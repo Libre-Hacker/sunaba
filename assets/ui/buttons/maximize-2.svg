@@ -1,0 +1,25 @@
+<svg version="1.1" width="278" height="289" viewBox="-1 -1 278 289" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="grad_1" x2="1">
+      <stop offset="0" stop-color="#545456" stop-opacity="1"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="grad_2" x2="1">
+      <stop offset="0" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="1" stop-color="#545456" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="grad_3" x2="1">
+      <stop offset="0" stop-color="#040404" stop-opacity="1"/>
+      <stop offset="1" stop-color="#4D4D4F" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="grad_4" x2="1">
+      <stop offset="0" stop-color="#040404" stop-opacity="1"/>
+      <stop offset="1" stop-color="#4D4D4F" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.5060239466838539" fill="none" stroke="url(#grad_1)" stroke-width="10" d="M 200.750 148.500 L 265.250 148.500 L 265.250 212.250 L 200.750 212.250 L 200.750 148.500 Z " transform="matrix(2.751779556274414, 0, 0, 2.7749810218811035, -466.15, -397.55)"/>
+  <path id="ID0.5060239466838539" fill="none" stroke="url(#grad_2)" stroke-width="10" d="M 200.750 148.500 L 265.250 148.500 L 265.250 212.250 L 200.750 212.250 L 200.750 148.500 Z " transform="matrix(2.751779556274414, 0, 0, 2.7749810218811035, -537.95, -315.05)"/>
+  <path id="ID0.7706079413183033" fill="url(#grad_3)" stroke="none" d="M 141.250 125.250 L 294.500 125.250 L 294.500 160.750 L 141.250 160.750 L 141.250 125.250 Z " transform="matrix(1.017944574356079, 0, 0, 0.8521126508712769, -118.5, 3.3)"/>
+  <path id="ID0.7706079413183033" fill="url(#grad_4)" stroke="none" d="M 141.250 125.250 L 294.500 125.250 L 294.500 160.750 L 141.250 160.750 L 141.250 125.250 Z " transform="matrix(-1.017944574356079, 0, 0, 0.8521127104759216, 397.75, -82)"/>
+</svg>

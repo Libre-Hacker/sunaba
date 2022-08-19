@@ -28,7 +28,6 @@ content_margin_top = 6.0
 content_margin_bottom = 6.0
 
 [resource]
-default_font = ExtResource( 14 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 0.2 )
 Button/styles/disabled = ExtResource( 11 )

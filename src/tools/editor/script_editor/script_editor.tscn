@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/fonts/mono.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/tools/editor/script_editor/script_editor.gd" type="Script" id=2]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/script_start.png" type="Texture" id=4]
+
+[node name="App" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.642
+margin_top = 39.0
+margin_bottom = -0.200012
+custom_colors/current_line_color = Color( 0.760784, 0.87451, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "print(\"Hi\")"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+bookmark_gutter = true
+breakpoint_gutter = true
+fold_gutter = true
+highlight_all_occurrences = true
+wrap_enabled = true
+
+[node name="Menubar" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 32.0
+
+[node name="FileMenuButton" type="MenuButton" parent="Menubar"]
+margin_right = 37.0
+margin_bottom = 32.0
+text = "File"
+items = [ "Open", null, 0, false, false, 0, 0, null, "", false, "Save", null, 0, false, false, 1, 0, null, "", false, "Save As", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -56.0
+margin_bottom = 32.0
+text = "Run"
+icon = ExtResource( 4 )
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -332.0
+margin_top = -210.0
+margin_right = 332.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 300, 105 )
+theme = ExtResource( 3 )
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 2
+current_dir = "/sunaba"
+current_path = "/sunaba/"
+
+[node name="LuaFileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -332.0
+margin_top = -210.0
+margin_right = 332.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 300, 105 )
+theme = ExtResource( 3 )
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 1
+current_dir = "user://D:/sunaba"
+current_path = "user://D:/sunaba/"
+
+[node name="SaveFileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -332.0
+margin_top = -210.0
+margin_right = 332.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 300, 105 )
+theme = ExtResource( 3 )
+resizable = true
+access = 2
+current_dir = "/sunaba"
+current_path = "/sunaba/"
+
+[node name="Panel" type="Panel" parent="."]
+anchor_top = 0.642
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 12.8
+
+[node name="Output" type="RichTextLabel" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = 10.0
+margin_right = -11.0
+margin_bottom = -10.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="file_selected" from="LuaFileDialog" to="." method="_on_LuaFileDialog_file_selected"]
+[connection signal="file_selected" from="SaveFileDialog" to="." method="_on_SaveFileDialog_file_selected"]

@@ -1,0 +1,573 @@
+[gd_scene load_steps=59 format=2]
+
+[ext_resource path="res://src/tools/VoxelMesh.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_right.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/minetest_textures/default_sand.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/minetest_textures/default_bookshelf.png" type="Texture" id=4]
+[ext_resource path="res://src/tools/DirectionalLight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/textures/minetest_textures/default_junglewood.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/Shadow.png" type="Texture" id=7]
+[ext_resource path="res://src/tools/water.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_out.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_rotate_anticlockwise.png" type="Texture" id=10]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=11]
+[ext_resource path="res://assets/textures/minetest_textures/default_diamond_block.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/minetest_textures/default_pine_wood.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/minetest_textures/default_leaves.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/minetest_textures/default_cobble.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/minetest_textures/default_tree.png" type="Texture" id=16]
+[ext_resource path="res://assets/textures/minetest_textures/default_brick.png" type="Texture" id=17]
+[ext_resource path="res://assets/textures/minetest_textures/default_ice.png" type="Texture" id=18]
+[ext_resource path="res://assets/textures/minetest_textures/default_gold_block.png" type="Texture" id=19]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/tile_add.png" type="Texture" id=20]
+[ext_resource path="res://assets/textures/minetest_textures/default_aspen_wood.png" type="Texture" id=21]
+[ext_resource path="res://assets/textures/minetest_textures/default_dirt.png" type="Texture" id=22]
+[ext_resource path="res://assets/textures/minetest_textures/default_furnace_front.png" type="Texture" id=23]
+[ext_resource path="res://assets/textures/minetest_textures/farming_straw.png" type="Texture" id=24]
+[ext_resource path="res://assets/textures/minetest_textures/default_gravel.png" type="Texture" id=25]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/cursor.png" type="Texture" id=26]
+[ext_resource path="res://assets/textures/minetest_textures/default_grass.png" type="Texture" id=27]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/script_edit.png" type="Texture" id=28]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/voxel.png" type="Texture" id=30]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/disk.png" type="Texture" id=31]
+[ext_resource path="res://assets/fonts/open_sans/OpenSans-Medium.ttf" type="DynamicFontData" id=32]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/tile_impassable.png" type="Texture" id=33]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/information.png" type="Texture" id=35]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder.png" type="Texture" id=38]
+[ext_resource path="res://src/tools/AboutDialog.tscn" type="PackedScene" id=42]
+[ext_resource path="res://src/tools/editor/editor_view/editor_view.tscn" type="PackedScene" id=44]
+[ext_resource path="res://src/tools/editor/scene_tree.gd" type="Script" id=45]
+[ext_resource path="res://src/tools/main.gd" type="Script" id=46]
+
+[sub_resource type="StyleBoxFlat" id=58]
+bg_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 27 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 22 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=15]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=17]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=18]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 24 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=26]
+texture = ExtResource( 23 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=28]
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=29]
+texture = ExtResource( 19 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxTexture" id=30]
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="DynamicFont" id=57]
+font_data = ExtResource( 32 )
+
+[sub_resource type="StyleBoxFlat" id=44]
+bg_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+
+[node name="Editor" type="Spatial"]
+script = ExtResource( 46 )
+
+[node name="EditorView" parent="." instance=ExtResource( 44 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06145, 0 )
+world_path = NodePath("../VoxelMesh")
+
+[node name="Editor" type="Node" parent="."]
+
+[node name="VoxelTools" type="Panel" parent="Editor"]
+anchor_bottom = 1.0
+margin_top = 32.0
+margin_right = 123.0
+margin_bottom = -1.0
+custom_styles/panel = SubResource( 58 )
+
+[node name="Panel" type="Control" parent="Editor/VoxelTools"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="GridContainer" type="GridContainer" parent="Editor/VoxelTools/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 7.0
+margin_right = -3.0
+margin_bottom = -3.0
+rect_min_size = Vector2( 34, 34 )
+columns = 3
+
+[node name="Button" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_right = 34.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
+
+[node name="Button2" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 38.0
+margin_right = 72.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+
+[node name="Button3" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 76.0
+margin_right = 110.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 12 )
+
+[node name="Button4" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_top = 38.0
+margin_right = 34.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 13 )
+custom_styles/disabled = SubResource( 13 )
+custom_styles/normal = SubResource( 13 )
+
+[node name="Button5" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 38.0
+margin_top = 38.0
+margin_right = 72.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 14 )
+custom_styles/normal = SubResource( 14 )
+
+[node name="Button6" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 76.0
+margin_top = 38.0
+margin_right = 110.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 15 )
+
+[node name="Button7" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_top = 76.0
+margin_right = 34.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 16 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 16 )
+
+[node name="Button8" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 38.0
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 17 )
+
+[node name="Button9" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 76.0
+margin_top = 76.0
+margin_right = 110.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = SubResource( 18 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+
+[node name="Button10" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_top = 114.0
+margin_right = 34.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/focus = SubResource( 19 )
+custom_styles/disabled = SubResource( 19 )
+custom_styles/normal = SubResource( 19 )
+
+[node name="Button11" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 38.0
+margin_top = 114.0
+margin_right = 72.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 20 )
+custom_styles/disabled = SubResource( 20 )
+custom_styles/normal = SubResource( 20 )
+
+[node name="Button12" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 76.0
+margin_top = 114.0
+margin_right = 110.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 25 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 25 )
+custom_styles/disabled = SubResource( 25 )
+custom_styles/normal = SubResource( 25 )
+
+[node name="Button13" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_top = 152.0
+margin_right = 34.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 26 )
+custom_styles/pressed = SubResource( 26 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 26 )
+custom_styles/normal = SubResource( 26 )
+
+[node name="Button14" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 38.0
+margin_top = 152.0
+margin_right = 72.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 27 )
+custom_styles/focus = SubResource( 27 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 27 )
+
+[node name="Button15" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 76.0
+margin_top = 152.0
+margin_right = 110.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 28 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 28 )
+custom_styles/disabled = SubResource( 28 )
+custom_styles/normal = SubResource( 28 )
+
+[node name="Button16" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_top = 190.0
+margin_right = 34.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 29 )
+custom_styles/pressed = SubResource( 29 )
+custom_styles/focus = SubResource( 29 )
+custom_styles/disabled = SubResource( 29 )
+custom_styles/normal = SubResource( 29 )
+
+[node name="Button17" type="Button" parent="Editor/VoxelTools/Panel/GridContainer"]
+margin_left = 38.0
+margin_top = 190.0
+margin_right = 72.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 34, 34 )
+custom_styles/hover = SubResource( 30 )
+custom_styles/pressed = SubResource( 30 )
+custom_styles/focus = SubResource( 30 )
+custom_styles/disabled = SubResource( 30 )
+custom_styles/normal = SubResource( 30 )
+
+[node name="Scene" type="Panel" parent="Editor"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -295.0
+margin_top = 48.0
+margin_right = -17.0
+margin_bottom = 329.0
+script = ExtResource( 45 )
+
+[node name="Tree" type="Tree" parent="Editor/Scene"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 45.0
+margin_right = -7.0
+margin_bottom = -7.0
+
+[node name="AddButton" type="MenuButton" parent="Editor/Scene"]
+margin_left = 236.0
+margin_top = 7.0
+margin_right = 271.0
+margin_bottom = 42.0
+theme = ExtResource( 11 )
+custom_fonts/font = SubResource( 57 )
+text = "+"
+flat = false
+
+[node name="Label" type="Label" parent="Editor/Scene"]
+margin_left = 11.0
+margin_top = 7.0
+margin_right = 90.0
+margin_bottom = 41.0
+text = "World"
+valign = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Editor"]
+anchor_right = 1.0
+margin_top = 25.0
+margin_bottom = 39.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="ScriptEditor" type="WindowDialog" parent="Editor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -283.0
+margin_top = -166.5
+margin_right = 283.0
+margin_bottom = 166.5
+theme = ExtResource( 11 )
+resizable = true
+
+[node name="Tabs" type="Tabs" parent="Editor/ScriptEditor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="Editor/ScriptEditor/Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 8.0
+tab_align = 0
+
+[node name="Toolbar" type="Panel" parent="Editor"]
+anchor_right = 1.0
+margin_bottom = 35.0
+
+[node name="Menubar" type="HBoxContainer" parent="Editor/Toolbar"]
+anchor_right = 1.0
+margin_right = -936.0
+margin_bottom = 35.0
+
+[node name="MenuButton" type="MenuButton" parent="Editor/Toolbar/Menubar"]
+margin_right = 33.0
+margin_bottom = 35.0
+text = "File"
+items = [ "Open", ExtResource( 38 ), 0, false, false, 0, 0, null, "", false, "Save", ExtResource( 31 ), 0, false, false, 1, 0, null, "", false, "Save As", ExtResource( 31 ), 0, false, false, 2, 0, null, "", false, "Item 3", null, 0, false, false, 3, 0, null, "", false ]
+switch_on_hover = true
+
+[node name="HelpMenuButton" type="MenuButton" parent="Editor/Toolbar/Menubar"]
+visible = false
+margin_left = 37.0
+margin_right = 77.0
+margin_bottom = 35.0
+focus_mode = 2
+text = "Help"
+items = [ "About", ExtResource( 35 ), 0, false, false, 0, 0, null, "", false ]
+switch_on_hover = true
+
+[node name="SelectButton" type="Button" parent="Editor/Toolbar/Menubar"]
+margin_left = 37.0
+margin_right = 63.0
+margin_bottom = 35.0
+icon = ExtResource( 26 )
+flat = true
+
+[node name="AddButton" type="Button" parent="Editor/Toolbar/Menubar"]
+margin_left = 67.0
+margin_right = 93.0
+margin_bottom = 35.0
+icon = ExtResource( 20 )
+flat = true
+
+[node name="RemoveButton2" type="Button" parent="Editor/Toolbar/Menubar"]
+margin_left = 97.0
+margin_right = 123.0
+margin_bottom = 35.0
+icon = ExtResource( 33 )
+flat = true
+
+[node name="ScriptButton" type="Button" parent="Editor/Toolbar/Menubar"]
+visible = false
+margin_left = 180.0
+margin_right = 206.0
+margin_bottom = 35.0
+icon = ExtResource( 28 )
+flat = true
+
+[node name="MoveButton2" type="Button" parent="Editor/Toolbar/Menubar"]
+visible = false
+margin_left = 178.0
+margin_right = 204.0
+margin_bottom = 35.0
+icon = ExtResource( 2 )
+flat = true
+
+[node name="RotateButton3" type="Button" parent="Editor/Toolbar/Menubar"]
+visible = false
+margin_left = 178.0
+margin_right = 204.0
+margin_bottom = 35.0
+icon = ExtResource( 10 )
+flat = true
+
+[node name="ScaleButton4" type="Button" parent="Editor/Toolbar/Menubar"]
+visible = false
+margin_left = 178.0
+margin_right = 204.0
+margin_bottom = 35.0
+icon = ExtResource( 9 )
+flat = true
+
+[node name="Tabbar" type="Panel" parent="Editor"]
+visible = false
+anchor_right = 1.0
+margin_top = 48.0
+margin_bottom = 80.0
+custom_styles/panel = SubResource( 44 )
+
+[node name="3DButton" type="Button" parent="Editor/Tabbar"]
+visible = false
+margin_right = 80.0
+margin_bottom = 32.0
+text = "3D View"
+icon = ExtResource( 30 )
+
+[node name="SaveDialog" type="FileDialog" parent="Editor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -280.0
+margin_top = -188.0
+margin_right = 280.0
+margin_bottom = 188.0
+window_title = "Guardar un Archivo"
+resizable = true
+access = 2
+
+[node name="FileDialog" type="FileDialog" parent="Editor"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -280.0
+margin_top = -188.0
+margin_right = 280.0
+margin_bottom = 188.0
+window_title = "Open a File"
+resizable = true
+mode = 0
+access = 2
+
+[node name="AboutDialog" parent="." instance=ExtResource( 42 )]
+
+[node name="VoxelMesh" parent="." instance=ExtResource( 1 )]
+
+[node name="Water" parent="." instance=ExtResource( 8 )]
+
+[node name="DirectionalLight" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button" to="EditorView" method="_select_block_0"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button2" to="EditorView" method="_select_block_1"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button3" to="EditorView" method="_select_block_2"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button4" to="EditorView" method="_select_block_3"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button5" to="EditorView" method="_select_block_4"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button6" to="EditorView" method="_select_block_5"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button7" to="EditorView" method="_select_block_6"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button8" to="EditorView" method="_select_block_7"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button9" to="EditorView" method="_select_block_8"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button10" to="EditorView" method="_select_block_9"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button11" to="EditorView" method="_select_block_10"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button12" to="EditorView" method="_select_block_11"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button13" to="EditorView" method="_select_block_12"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button14" to="EditorView" method="_select_block_13"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button15" to="EditorView" method="_select_block_14"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button16" to="EditorView" method="_select_block_15"]
+[connection signal="pressed" from="Editor/VoxelTools/Panel/GridContainer/Button17" to="EditorView" method="_select_block_16"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/SelectButton" to="." method="_object_mode"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/AddButton" to="." method="show_voxel_tools"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/AddButton" to="EditorView" method="_block_create_mode_on"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/RemoveButton2" to="." method="show_voxel_tools"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/RemoveButton2" to="EditorView" method="_block_remove_mode_on"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/ScriptButton" to="." method="_object_mode"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/ScriptButton" to="." method="_on_ScriptButton_pressed"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/MoveButton2" to="." method="_object_mode"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/RotateButton3" to="." method="_object_mode"]
+[connection signal="pressed" from="Editor/Toolbar/Menubar/ScaleButton4" to="." method="_object_mode"]
+[connection signal="pressed" from="Editor/Tabbar/3DButton" to="." method="_on_3DButton_pressed"]
+[connection signal="file_selected" from="Editor/SaveDialog" to="EditorView" method="_on_file_saved"]
+[connection signal="file_selected" from="Editor/FileDialog" to="EditorView" method="_on_file_opened"]
+
+[editable path="EditorView"]

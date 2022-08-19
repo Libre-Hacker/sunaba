@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Camera",
+"class": "EditorCamera",
+"language": "GDScript",
+"path": "res://src/tools/editor/camera.gd"
+}, {
 "base": "Reference",
 "class": "GPLReader",
 "language": "GDScript",
@@ -19,10 +24,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/voxel-core/classes/readers/image.gd"
 }, {
+"base": "Spatial",
+"class": "MapObject",
+"language": "GDScript",
+"path": "res://src/tools/map_object_node.gd"
+}, {
 "base": "Reference",
 "class": "Reader",
 "language": "GDScript",
 "path": "res://addons/voxel-core/classes/reader.gd"
+}, {
+"base": "Resource",
+"class": "TerrainData",
+"language": "GDScript",
+"path": "res://src/tools/editor/terrain_data.gd"
 }, {
 "base": "Reference",
 "class": "VarReader",
@@ -60,9 +75,12 @@ _global_script_classes=[ {
 "path": "res://addons/voxel-core/classes/voxel_tool.gd"
 } ]
 _global_script_class_icons={
+"EditorCamera": "",
 "GPLReader": "",
 "ImageReader": "res://addons/voxel-core/assets/logos/MagicaVoxel.png",
+"MapObject": "",
 "Reader": "",
+"TerrainData": "",
 "VarReader": "",
 "VoxReader": "res://addons/voxel-core/assets/logos/MagicaVoxel.png",
 "Voxel": "res://addons/voxel-core/assets/classes/voxel.png",
@@ -75,16 +93,29 @@ _global_script_class_icons={
 [application]
 
 config/name="Sunaba"
-run/main_scene="res://src/world.tscn"
+run/main_scene="res://src/main.tscn"
 boot_splash/image="res://sunaba-wordmark.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://sunaba-icon2.png"
 config/windows_native_icon="res://sunaba-icon2.ico"
 
+[autoload]
+
+GameManager="*res://src/game_manager.gd"
+Network="*res://src/netcode/network.gd"
+
+[debug]
+
+multirun/number_of_windows=2
+multirun/window_distance=1270
+multirun/add_custom_args=true
+multirun/first_window_args="listen"
+multirun/other_window_args="join"
+
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/voxel-core/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/multirun/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
 
 [gdnative]
 
@@ -93,7 +124,6 @@ singletons=[  ]
 [gui]
 
 theme/custom="res://assets/theme.tres"
-theme/custom_font="res://assets/fonts/fredoka.tres"
 
 [input]
 
@@ -138,4 +168,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+quality/driver/fallback_to_gles2=true
 environment/default_environment="res://default_env.tres"

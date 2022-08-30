@@ -1,58 +1,56 @@
-extends Panel
+extends Control
 
-var file_selected = false
+var room_name: String
+var map_path : String
+
 
 func _ready():
-	$Panel2/HBoxContainer/Button.get_popup().connect("id_pressed", self, "_on_item_pressed")
-	$Panel2/HBoxContainer/Button2.get_popup().connect("id_pressed", self, "_on_editor_item_pressed")
+	$NewRoomDialog/Panel/MenuButton.get_popup().connect("id_pressed", self, "_id_pressed")
+	GameManager.room_name = ""
+	GameManager.path = map_path
+	GameManager.is_host = false
 
-func _open_file(path):
-	if ".sbvx" in path:
-		GameManager.path = path
-		$Panel/TextBox/Label.text = path
-		file_selected = true
-	else:
-		OS.alert(path + " is not an .sbvx fie")
-	
-	#get_tree().change_scene("res://src/game.tscn")
+func _on_new_roon_button_pressed():
+	$NewRoomDialog.popup()
+	GameManager.room_name = ""
+	GameManager.path = ""
+	GameManager.is_host = false
 
 
-func on_ip_address_changed(new_text):
-	Network.ip_address = new_text
+func _on_map_editor_button_pressed():
+	get_tree().change_scene("res://src/tools/editor.tscn")
 
 
-func join_game():
-	if file_selected:
-		Network.join_server()
-		get_tree().change_scene("res://src/game.tscn")
-	else:
-		OS.alert(".sbg file not found")
-
-
-func host_game():
-	if file_selected:
-		Network.create_server()
-		get_tree().change_scene("res://src/game.tscn")
-	else:
-		OS.alert(".sbg file not found")
-
-
-func on_file_button_pressed():
-	#if OS.nam
-		#$NativeDialogOpenFile.show()
-	#else:
-	$FileDialog.show()
-
-
-func _on_NativeDialogOpenFile_files_selected(files):
-	var path = files[0]
-	if ".sbvx" in path:
-		GameManager.path = path
-		$Panel/TextBox/Label.text = path
-		file_selected = true
-	else:
-		OS.alert(path + " is not an .sbg fie")
-
-func _on_editor_item_pressed(id):
+func _id_pressed(id):
 	if id == 0:
-		get_tree().change_scene("res://src/tools/main.tscn")
+		$FileDialog.popup()
+	if id == 1:
+		$CustomFileDialog.popup()
+
+
+func _on_file_selected(path):
+	GameManager.path = path
+	$NewRoomDialog/Panel/Label.text = path
+
+
+func _on_room_name_changed(new_text):
+	GameManager.room_name = new_text
+
+
+func _create_room():
+	if GameManager.room_name == "":
+		#OS.alert("Please choose a name for your room")
+		#return
+		GameManager.room_name = "Hello World"
+	elif GameManager.path == "":
+		OS.alert("Please choose a map")
+		return
+	GameManager.room_name = room_name
+	GameManager.is_host = true
+	get_tree().change_scene("res://src/game.tscn")
+
+
+
+func play():
+	GameManager.is_host = false
+	get_tree().change_scene("res://src/game.tscn")

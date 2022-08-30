@@ -29,3 +29,11 @@ current = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
 
 [node name="Myoko" parent="." instance=ExtResource( 1 )]
+
+[node name="NetworkTickRate" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[node name="MovementTween" type="Tween" parent="."]
+
+[connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]

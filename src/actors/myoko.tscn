@@ -175,7 +175,7 @@ surfaces/11 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 240,
-"material": ExtResource( 1 ),
+"material": ExtResource( 5 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.048326, 0.0209635, -0.0856456, 0.147458, 0.0438952, 0.28609 ), AABB( 0.048326, 0.019255, -0.0635673, 0.147458, 0.0456038, 0.279498 ), AABB( 0.048326, 0.00760771, -0.000761837, 0.147458, 0.0572511, 0.216692 ), AABB( 0.048326, 0.00760771, -0.0856456, 0.147458, 0.0572511, 0.167683 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.188373, 0.0209635, -0.0842561, 0.147458, 0.0438952, 0.301577 ), AABB( -0.188373, 0.019255, -0.0621782, 0.147458, 0.0456038, 0.279499 ), AABB( -0.188373, 0.00760771, 0.00062779, 0.147458, 0.0572511, 0.216693 ), AABB( -0.188373, 0.00760771, -0.0842561, 0.147458, 0.0572511, 0.167683 ) ],
 "vertex_count": 54
@@ -337,8 +337,6 @@ surfaces/0 = {
 [node name="Hair" type="MeshInstance" parent="."]
 transform = Transform( -0.0015845, 0, 0.269824, 0, 0.269829, 0, -0.269824, 0, -0.0015845, 0.000899121, 0.973907, -0.00213797 )
 mesh = SubResource( 1 )
-material/0 = null
-material/1 = null
 
 [node name="metarig" type="Spatial" parent="."]
 transform = Transform( 0.575395, 0, 0, 0, 0.575395, 0, 0, 0, 0.575395, 0.00454998, 0.0377529, 0.00476219 )
@@ -568,20 +566,7 @@ bones/43/bound_children = [  ]
 [node name="Base Character" type="MeshInstance" parent="metarig/Skeleton"]
 mesh = SubResource( 2 )
 skin = SubResource( 3 )
-material/0 = null
-material/1 = null
-material/2 = null
-material/3 = null
-material/4 = null
-material/5 = null
-material/6 = null
-material/7 = null
-material/8 = null
-material/9 = null
-material/10 = null
-material/11 = null
 
 [node name="LowerDress" type="MeshInstance" parent="metarig/Skeleton"]
 mesh = SubResource( 4 )
 skin = SubResource( 3 )
-material/0 = null

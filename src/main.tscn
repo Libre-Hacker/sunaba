@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/fredoka_one.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/ui/button_disabled.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/ui/backdrop.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_image.png" type="Texture" id=7]
+[ext_resource path="res://src/tools/text_editor/text_editor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/character.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_down.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/page_edit.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 6 )
@@ -157,6 +161,21 @@ window_title = "Open a File"
 mode = 0
 access = 1
 
+[node name="DownloadFileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -253.5
+margin_top = -196.5
+margin_right = 253.5
+margin_bottom = 196.5
+rect_min_size = Vector2( 300, 105 )
+theme = ExtResource( 2 )
+window_title = "Open a File"
+mode = 0
+access = 1
+
 [node name="FileDialog" type="FileDialog" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -171,10 +190,35 @@ theme = ExtResource( 2 )
 window_title = "Open a File"
 mode = 0
 
+[node name="MapTextEditor" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -361.5
+margin_top = -184.5
+margin_right = 361.5
+margin_bottom = 184.5
+window_title = "Map Text Editor"
+resizable = true
+
+[node name="App" parent="MapTextEditor" instance=ExtResource( 8 )]
+
+[node name="Button" type="MenuButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -78.0
+margin_top = 30.0
+margin_right = -36.0
+margin_bottom = 74.0
+icon = ExtResource( 9 )
+items = [ "Download Map File", ExtResource( 10 ), 0, false, false, 0, 0, null, "", false, "Open Map Text Editor", ExtResource( 11 ), 0, false, false, 1, 0, null, "", false ]
+
 [connection signal="pressed" from="Panel/Button" to="." method="play"]
 [connection signal="pressed" from="Panel/Button2" to="." method="_on_new_roon_button_pressed"]
 [connection signal="pressed" from="Panel/Button3" to="." method="_on_map_editor_button_pressed"]
 [connection signal="text_changed" from="NewRoomDialog/RoomName" to="." method="_on_room_name_changed"]
 [connection signal="pressed" from="NewRoomDialog/Button" to="." method="_create_room"]
 [connection signal="file_selected" from="CustomFileDialog" to="." method="_on_file_selected"]
+[connection signal="file_selected" from="DownloadFileDialog" to="." method="_download_file"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]

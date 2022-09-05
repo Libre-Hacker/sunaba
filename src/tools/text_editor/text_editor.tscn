@@ -8,16 +8,15 @@
 [node name="App" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="TextEdit" type="TextEdit" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.642
-margin_top = 39.0
-margin_bottom = -0.200012
+anchor_bottom = 1.0
+margin_top = 31.0
 custom_colors/current_line_color = Color( 0.760784, 0.87451, 1, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "print(\"Hi\")"
 highlight_current_line = true
 syntax_highlighting = true
 show_line_numbers = true
@@ -40,6 +39,7 @@ text = "File"
 items = [ "Open", null, 0, false, false, 0, 0, null, "", false, "Save", null, 0, false, false, 1, 0, null, "", false, "Save As", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="Button" type="Button" parent="."]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -56.0
@@ -61,7 +61,7 @@ theme = ExtResource( 3 )
 window_title = "Open a File"
 resizable = true
 mode = 0
-access = 2
+access = 1
 
 [node name="LuaFileDialog" type="FileDialog" parent="."]
 anchor_left = 0.5
@@ -91,21 +91,7 @@ margin_bottom = 210.0
 rect_min_size = Vector2( 300, 105 )
 theme = ExtResource( 3 )
 resizable = true
-access = 2
-
-[node name="Panel" type="Panel" parent="."]
-anchor_top = 0.642
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 12.8
-
-[node name="Output" type="RichTextLabel" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 9.0
-margin_top = 10.0
-margin_right = -11.0
-margin_bottom = -10.0
+access = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_FileDialog_file_selected"]

@@ -1,6 +1,9 @@
 extends Spatial
 
+export var online : bool
+
 var player = preload("res://src/actors/player.tscn")
+var networked_player = preload("res://src/actors/networked_player.tscn")
 var map = null
 
 onready var voxel_mesh = $VoxelMesh
@@ -15,24 +18,27 @@ func _ready():
 	$LoadingScreen.show()
 	$Hud.hide()
 	loading_bar.value = 0
-	
-	if GameManager.is_host:
-		log_to_chat("Creating Room")
-		var peer = NetworkedMultiplayerENet.new()
-		peer.create_server(8070)
-		get_tree().set_network_peer(peer)
-		#loading_bar.value = 1
-		loading_bar.value = 1
-		_import_map(GameManager.path)
-		_instance_player(get_tree().get_network_unique_id())
+	if online:
+		if GameManager.is_host:
+			log_to_chat("Creating Game")
+			var peer = NetworkedMultiplayerENet.new()
+			peer.create_server(8070)
+			get_tree().set_network_peer(peer)
+			loading_bar.value = 1
+			loading_bar.value = 1
+			_import_map(GameManager.path)
+			_instance_player(get_tree().get_network_unique_id())
+		else:
+			log_to_chat("Joining Room")
+			var peer = NetworkedMultiplayerENet.new()
+			peer.create_client(GameManager.ip_ad, 8070)
+			get_tree().set_network_peer(peer)
+			loading_bar.value = 1
+			_import_map(GameManager.path)
+			_instance_player(get_tree().get_network_unique_id())
 	else:
-		log_to_chat("Joining Room")
-		var peer = NetworkedMultiplayerENet.new()
-		peer.create_client(GameManager.ip_ad, 8070)
-		get_tree().set_network_peer(peer)
 		loading_bar.value = 1
 		_import_map(GameManager.path)
-		_instance_player(get_tree().get_network_unique_id())
 
 
 func _connected(id):
@@ -88,6 +94,14 @@ func _import_map(path):
 			voxel_mesh.update_mesh()
 	loading_bar.value = 3
 	
+	if !online:
+		var player_instance = player.instance()
+		player_instance.name == "Lulu"
+		add_child(player_instance)
+		player_instance.global_transform.origin = Vector3(0, 5, 0)
+		loading_bar.value = 4
+		$LoadingScreen.hide()
+	
 	
 
 func _load_map():
@@ -105,7 +119,7 @@ func _load_map():
 
 
 func _instance_player(id):
-	var player_instance = player.instance()
+	var player_instance = networked_player.instance()
 	player_instance.set_network_master(id)
 	player_instance.name == str(id)
 	add_child(player_instance)

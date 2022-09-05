@@ -6,6 +6,7 @@ var map_path : String
 
 func _ready():
 	$NewRoomDialog/Panel/MenuButton.get_popup().connect("id_pressed", self, "_id_pressed")
+	$Button.get_popup().connect("id_pressed", self, "_menu_pressed")
 	GameManager.room_name = ""
 	GameManager.path = map_path
 	GameManager.is_host = false
@@ -26,6 +27,12 @@ func _id_pressed(id):
 		$FileDialog.popup()
 	if id == 1:
 		$CustomFileDialog.popup()
+
+func _menu_pressed(id):
+	if id == 0:
+		$DownloadFileDialog.popup()
+	if id == 1:
+		$MapTextEditor.popup()
 
 
 func _on_file_selected(path):
@@ -54,3 +61,11 @@ func _create_room():
 func play():
 	GameManager.is_host = false
 	get_tree().change_scene("res://src/game.tscn")
+
+
+
+func _download_file(path):
+	var file = File.new()
+	file.open(path, File.READ)
+	var sbg_text = file.get_as_text()
+	JavaScript.download_buffer(sbg_text.to_utf8(), "map.sbvx")

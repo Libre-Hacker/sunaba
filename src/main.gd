@@ -10,6 +10,10 @@ func _ready():
 	GameManager.room_name = ""
 	GameManager.path = map_path
 	GameManager.is_host = false
+	if OS.get_name() == "HTML5":
+		$Button.show()
+	else:
+		$Button.hide()
 
 func _on_new_roon_button_pressed():
 	$NewRoomDialog.popup()

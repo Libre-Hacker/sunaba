@@ -72,7 +72,7 @@ margin_left = -243.0
 margin_top = 8.0
 margin_right = -128.0
 margin_bottom = -8.0
-text = "New Room"
+text = "New Game"
 
 [node name="Button3" type="Button" parent="Panel"]
 anchor_left = 1.0
@@ -100,24 +100,25 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -168.0
-margin_top = -49.5
+margin_top = -67.5
 margin_right = 168.0
-margin_bottom = 49.5
+margin_bottom = 67.5
 window_title = "New Room"
 
 [node name="RoomName" type="LineEdit" parent="NewRoomDialog"]
 anchor_right = 1.0
 margin_left = 7.0
+margin_top = 8.0
 margin_right = -7.0
-margin_bottom = 28.0
+margin_bottom = 43.0
 placeholder_text = "Room Name"
 
 [node name="Panel" type="Panel" parent="NewRoomDialog"]
 anchor_right = 1.0
 margin_left = 7.0
-margin_top = 32.0
+margin_top = 51.0
 margin_right = -7.0
-margin_bottom = 60.0
+margin_bottom = 86.0
 custom_styles/panel = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="NewRoomDialog/Panel"]
@@ -141,9 +142,9 @@ items = [ "Import Included Maps", ExtResource( 7 ), 0, false, false, 0, 0, null,
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -82.0
-margin_top = 63.5
+margin_top = 93.0
 margin_right = -7.0
-margin_bottom = 91.5
+margin_bottom = 128.0
 text = "Create"
 
 [node name="CustomFileDialog" type="FileDialog" parent="."]

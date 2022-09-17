@@ -84,8 +84,8 @@ func _import_map(path):
 	var sbg_text = file.get_as_text()
 	map = str2var(sbg_text)
 	loading_bar.value = 2
-	for id in map:
-		var sbg_item = map[id]
+	for id in map.terrain:
+		var sbg_item = map.terrain[id]
 		if !sbg_item.type == -1:
 			voxel_mesh.set_voxel(sbg_item.position, sbg_item.type)
 			voxel_mesh.update_mesh()
@@ -101,6 +101,8 @@ func _import_map(path):
 		player_instance.global_transform.origin = Vector3(0, 5, 0)
 		loading_bar.value = 4
 		$LoadingScreen.hide()
+		
+	file.close()
 	
 	
 

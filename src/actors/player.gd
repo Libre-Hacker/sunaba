@@ -14,7 +14,7 @@ var puppet_rot = Vector3()
 
 onready var spring_arm = $SpringArm
 onready var camera = $SpringArm/Camera
-onready var _model := $Myoko as Spatial
+onready var _model := $Ling as Spatial
 onready var parent = get_parent()
 onready var ntr = $NetworkTickRate
 onready var movetween = $MovementTween

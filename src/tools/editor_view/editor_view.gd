@@ -38,8 +38,8 @@ export var blocks := {}
 func add_block_to_list(unique_id: int, new_type : int, new_pos : Vector3):
 	var new_block = block_data.new(new_type, new_pos)
 	blocks[unique_id] = {type = new_type, position = new_pos}
-	print(blocks[unique_id])
-	print(blocks[unique_id].type)
+	#print(blocks[unique_id])
+	#print(blocks[unique_id].type)
 	#emit_changed()
 
 
@@ -324,10 +324,14 @@ func _select_block_20():
 
 func _on_file_saved(path):
 	var file = File.new()
-	file.open(path + ".sbvx", File.WRITE)
-	file.store_string(var2str(blocks))
+	if ".snb" in path:
+		file.open(path, File.WRITE)
+	else:
+		file.open(path + ".snb", File.WRITE)
+	var sbg = { props = get_parent().props, terrain = blocks }
+	file.store_string(var2str(sbg))
 	file.close()
-	
+	get_parent().path == path
 
 
 func _on_file_opened(path):
@@ -335,11 +339,14 @@ func _on_file_opened(path):
 	file.open(path, File.READ)
 	var sbg_text = file.get_as_text()
 	var sbg = str2var(sbg_text)
-	print(sbg)
-	for id in sbg:
-		print(id)
-		var sbg_item = sbg[id]
-		print(sbg_item)
+	#var terrain = sbg.terrain
+	#print(sbg)
+	#print(sbg.terrain)
+	get_parent().load_props(sbg.props)
+	for id in sbg.terrain:
+		#print(id)
+		var sbg_item = sbg.terrain[id]
+		#print(sbg_item)
 		if !sbg_item.type == -1:
 			_block_id = sbg_item.type
 			_update_block()
@@ -347,7 +354,9 @@ func _on_file_opened(path):
 			add_block_using_pos(block_pos)
 		else:
 			remove_block_using_pos(sbg_item.position)
+	
 	file.close()
+	get_parent().path == path
 
 
 func _on_Panel_hide():

@@ -304,6 +304,8 @@ _global_script_class_icons={
 
 config/name="Sunaba"
 run/main_scene="res://src/main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Sunaba"
 boot_splash/image="res://sunaba-wordmark.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
@@ -367,7 +369,7 @@ camera_button={
 [locale]
 
 locale_filter=[ 1, [ "en", "es", "ja" ] ]
-translations=PoolStringArray( "res://localization/localizations.en_US.translation" )
+translations=PoolStringArray(  )
 
 [physics]
 

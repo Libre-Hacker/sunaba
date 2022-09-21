@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Hau_oli City.ogg-b67c55b1f1563ee6897d544969c6b375.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Hau_oli City.ogg"
+dest_files=[ "res://.import/Hau_oli City.ogg-b67c55b1f1563ee6897d544969c6b375.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

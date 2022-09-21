@@ -6,6 +6,11 @@ var player = preload("res://src/actors/player.tscn")
 var networked_player = preload("res://src/actors/networked_player.tscn")
 var map = null
 
+var prop_num : int = 1
+var prop_name : String
+var ball = preload("res://src/runtime/props/ball.tscn")
+var beach_ball = preload("res://src/runtime/props/beach_ball.tscn")
+
 onready var voxel_mesh = $VoxelMesh
 onready var loading_bar = $LoadingScreen/Panel/ProgressBar
 
@@ -27,7 +32,8 @@ func _ready():
 			loading_bar.value = 1
 			loading_bar.value = 1
 			_import_map(GameManager.path)
-			_instance_player(get_tree().get_network_unique_id())
+			#_instance_player(get_tree().get_network_unique_id())
+			
 		else:
 			log_to_chat("Joining Room")
 			var peer = NetworkedMultiplayerENet.new()
@@ -35,7 +41,7 @@ func _ready():
 			get_tree().set_network_peer(peer)
 			loading_bar.value = 1
 			_import_map(GameManager.path)
-			_instance_player(get_tree().get_network_unique_id())
+			#_instance_player(get_tree().get_network_unique_id())
 	else:
 		loading_bar.value = 1
 		_import_map(GameManager.path)
@@ -44,7 +50,7 @@ func _ready():
 func _connected(id):
 	print("Connected to server")
 	log_to_chat("Player " + var2str(id) + " has connected to the room")
-	_instance_player(id)
+	#_instance_player(id)
 
 
 func _player_disconnected(id):
@@ -93,13 +99,15 @@ func _import_map(path):
 			voxel_mesh.erase_voxel(sbg_item.position)
 			voxel_mesh.update_mesh()
 	loading_bar.value = 3
+	load_props(map.props)
+	loading_bar.value = 4
 	
 	if !online:
 		var player_instance = player.instance()
 		player_instance.name == "Lulu"
 		add_child(player_instance)
 		player_instance.global_transform.origin = Vector3(0, 5, 0)
-		loading_bar.value = 4
+		loading_bar.value = 5
 		$LoadingScreen.hide()
 		
 	file.close()
@@ -128,3 +136,42 @@ func _instance_player(id):
 	player_instance.global_transform.origin = Vector3(0, 5, 0)
 	loading_bar.value = 4
 	$LoadingScreen.hide()
+
+
+
+func load_props(prop_data):
+	for prop in prop_data:
+		var item = prop_data[prop]
+		if item.type == 0:
+			add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size, item.type)
+		elif item.type == 1:
+			add_prop_to_scene_with_vectors("Beach Ball", beach_ball, item.position, item.rotation, item.size, item.type)
+
+
+func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type):
+	if prop_num == 1:
+		prop_name = prp_name
+	else:
+		prop_name = prp_name + " " + var2str(prop_num)
+	var prop_instance = prop_source.instance()
+	prop_instance.name = prop_name
+	add_child(prop_instance)
+	prop_instance.translation = pos
+	prop_instance.rotation = rot
+	
+	#var pos = Vector3(0,0,0)
+	#var rot = Vector3(0,0,0)
+	#var size = Vector3(0,0,0)
+	prop_num += 1
+
+
+func _on_chat_entry_entered(new_text):
+	rpc("_chat", new_text, var2str(get_tree().get_network_unique_id()))
+	$ChatEntry.clear()
+
+
+func _chat(logstring, username):
+	logstring = username + " : " + logstring
+	print(logstring)
+	$Chatbox.add_text(logstring)
+	$Chatbox.newline()

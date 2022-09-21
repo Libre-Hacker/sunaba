@@ -11,6 +11,7 @@ var prop_num : int = 1
 var prop_name : String
 var path = null
 var ball = preload("res://src/tools/props/ball.tscn")
+var beach_ball = preload("res://src/tools/props/beach_ball.tscn")
 
 export var props := {}
 
@@ -62,10 +63,12 @@ func show_toolbar():
 func add_prop(id):
 	print("hi")
 	if id == 0:
-		add_prop_to_scene("Ball", ball)
+		add_prop_to_scene("Ball", ball, id)
+	elif id == 1:
+		add_prop_to_scene("Beach Ball", beach_ball, id)
 
 
-func add_prop_to_scene(prp_name, prop_source):
+func add_prop_to_scene(prp_name, prop_source, prop_type):
 	var prop_item = tree.create_item(root)
 	if prop_num == 1:
 		prop_name = prp_name
@@ -81,12 +84,12 @@ func add_prop_to_scene(prp_name, prop_source):
 	var rot = Vector3(0,0,0)
 	var size = Vector3(0,0,0)
 
-	props[prop_num] = {name = prop_name, position = pos, rotation = rot, size = size}
+	props[prop_num] = {name = prop_name, type = prop_type, position = pos, rotation = rot, size = size}
 	print(props[prop_num])
 
 	prop_num += 1
 	
-func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size):
+func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type):
 	var prop_item = tree.create_item(root)
 	if prop_num == 1:
 		prop_name = prp_name
@@ -104,7 +107,7 @@ func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size):
 	#var rot = Vector3(0,0,0)
 	#var size = Vector3(0,0,0)
 
-	props[prop_num] = {name = prop_name, position = pos, rotation = rot, size = size}
+	props[prop_num] = {name = prop_name, type = type, position = pos, rotation = rot, size = size}
 	print(props[prop_num])
 	prop_num += 1
 	
@@ -127,4 +130,7 @@ func update_prop_transform(unique_id: int, pos: Vector3, rot: Vector3, size: Vec
 func load_props(prop_data):
 	for prop in prop_data:
 		var item = prop_data[prop]
-		add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size)
+		if item.type == 0:
+			add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size, item.type)
+		elif item.type == 1:
+			add_prop_to_scene_with_vectors("Beach Ball", beach_ball, item.position, item.rotation, item.size, item.type)

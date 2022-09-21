@@ -30,9 +30,11 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		_mouse_position = event.relative
 	
+	if Input.is_action_just_pressed("shift_key"):
+		holding_camera_button = true
 	if Input.is_action_just_pressed("camera_button"):
 		holding_camera_button = true
-	if Input.is_action_just_released("camera_button"):
+	if Input.is_action_just_released("camera_button") or Input.is_action_just_released("shift_key"):
 		holding_camera_button = false
 	
 	# Receives mouse button input

@@ -434,7 +434,7 @@ margin_right = 165.0
 margin_bottom = 36.0
 icon = ExtResource( 32 )
 icon_align = 1
-items = [ "Ball", null, 0, false, false, 0, 0, null, "", false ]
+items = [ "Ball", null, 0, false, false, 0, 0, null, "", false, "Beach Ball", null, 0, false, false, 1, 0, null, "", false ]
 
 [node name="Button" type="Button" parent="Editor/Panel"]
 margin_left = 101.0

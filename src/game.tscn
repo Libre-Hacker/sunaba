@@ -28,6 +28,7 @@ surfaces/0 = {
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 5 )
+online = true
 
 [node name="LoadingScreen" type="Control" parent="."]
 anchor_right = 1.0
@@ -51,7 +52,7 @@ margin_left = 8.0
 margin_top = 49.0
 margin_right = -8.0
 margin_bottom = -8.0
-max_value = 4.0
+max_value = 5.0
 percent_visible = false
 
 [node name="Label" type="Label" parent="LoadingScreen/Panel"]
@@ -76,13 +77,38 @@ mesh = SubResource( 2 )
 [node name="Chatbox" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 23.0
-margin_top = -227.0
-margin_right = 299.0
-margin_bottom = -28.0
+margin_left = 22.0
+margin_top = -255.0
+margin_right = 298.0
+margin_bottom = -56.0
+text = "|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|"
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5.63565, 0 )
 light_bake_mode = 0
 shadow_enabled = true
 shadow_reverse_cull_face = true
+
+[node name="ChatEntry" type="LineEdit" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = -54.0
+margin_right = 298.0
+margin_bottom = -22.0
+theme = ExtResource( 1 )
+placeholder_text = "Click to chat"
+
+[connection signal="text_entered" from="ChatEntry" to="." method="_on_chat_entry_entered"]

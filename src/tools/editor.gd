@@ -10,8 +10,8 @@ var root = null
 var prop_num : int = 1
 var prop_name : String
 var path = null
-var ball = preload("res://src/tools/props/ball.tscn")
-var beach_ball = preload("res://src/tools/props/beach_ball.tscn")
+var has_bgm : bool = false
+
 
 export var props := {}
 
@@ -60,12 +60,23 @@ func show_toolbar():
 	toolbar.show()
 
 
+
 func add_prop(id):
-	print("hi")
 	if id == 0:
+		var ball = load("res://src/tools/props/ball.tscn")
 		add_prop_to_scene("Ball", ball, id)
 	elif id == 1:
+		var beach_ball = load("res://src/tools/props/beach_ball.tscn")
 		add_prop_to_scene("Beach Ball", beach_ball, id)
+	elif id == 2:
+		if has_bgm == true:
+			OS.alert("Cannot add more than 1 of this prop")
+			return
+		else:
+			has_bgm = true
+			var background_music = load("res://src/tools/props/bg_music.tscn")
+			add_prop_to_scene("Background Music", background_music, id)
+
 
 
 func add_prop_to_scene(prp_name, prop_source, prop_type):
@@ -79,17 +90,19 @@ func add_prop_to_scene(prp_name, prop_source, prop_type):
 	prop_instance.name = prop_name
 	prop_instance.prop_id = prop_num
 	add_child(prop_instance)
+	prop_instance.initialize()
+	
 	
 	var pos = Vector3(0,0,0)
 	var rot = Vector3(0,0,0)
 	var size = Vector3(0,0,0)
 
-	props[prop_num] = {name = prop_name, type = prop_type, position = pos, rotation = rot, size = size}
+	props[prop_num] = {name = prop_name, type = prop_type, position = pos, rotation = rot, size = size, custom_properties = prop_instance.custom_properties}
 	print(props[prop_num])
 
 	prop_num += 1
 	
-func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type):
+func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type, cp):
 	var prop_item = tree.create_item(root)
 	if prop_num == 1:
 		prop_name = prp_name
@@ -102,6 +115,7 @@ func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type)
 	add_child(prop_instance)
 	prop_instance.translation = pos
 	prop_instance.rotation = rot
+	prop_instance.update_data(cp)
 	
 	#var pos = Vector3(0,0,0)
 	#var rot = Vector3(0,0,0)
@@ -120,17 +134,25 @@ func edit_item():
 	var prop = get_node(selected_prop)
 	prop.edit_prop()
 
-func update_prop_transform(unique_id: int, pos: Vector3, rot: Vector3, size: Vector3):
+func update_prop_data(unique_id: int, pos: Vector3, rot: Vector3, size: Vector3, custom_properties: Dictionary):
 	props[unique_id].position = pos
 	props[unique_id].rotation = rot
 	props[unique_id].size = size
+	props[unique_id].custom_properties = custom_properties
 	print(props[unique_id])
+
+
 
 
 func load_props(prop_data):
 	for prop in prop_data:
 		var item = prop_data[prop]
 		if item.type == 0:
-			add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size, item.type)
+			var ball = load("res://src/tools/props/ball.tscn")
+			add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size, item.type, item.custom_properties)
 		elif item.type == 1:
-			add_prop_to_scene_with_vectors("Beach Ball", beach_ball, item.position, item.rotation, item.size, item.type)
+			var beach_ball = load("res://src/tools/props/beach_ball.tscn")
+			add_prop_to_scene_with_vectors("Beach Ball", beach_ball, item.position, item.rotation, item.size, item.type, item.custom_properties)
+		elif item.type == 2:
+			var bgm = load("res://src/tools/props/bg_music.tscn")
+			add_prop_to_scene_with_vectors("Background Music", bgm, item.position, item.rotation, item.size, item.type, item.custom_properties)

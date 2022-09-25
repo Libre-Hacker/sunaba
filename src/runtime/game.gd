@@ -8,8 +8,6 @@ var map = null
 
 var prop_num : int = 1
 var prop_name : String
-var ball = preload("res://src/runtime/props/ball.tscn")
-var beach_ball = preload("res://src/runtime/props/beach_ball.tscn")
 
 onready var voxel_mesh = $VoxelMesh
 onready var loading_bar = $LoadingScreen/Panel/ProgressBar
@@ -21,7 +19,8 @@ func _ready():
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
 	
 	$LoadingScreen.show()
-	$Hud.hide()
+	$Hud.show()
+	$Hud/Menu.popup()
 	loading_bar.value = 0
 	if online:
 		if GameManager.is_host:
@@ -29,9 +28,6 @@ func _ready():
 			var peer = NetworkedMultiplayerENet.new()
 			peer.create_server(8070)
 			get_tree().set_network_peer(peer)
-			loading_bar.value = 1
-			loading_bar.value = 1
-			_import_map(GameManager.path)
 			#_instance_player(get_tree().get_network_unique_id())
 			
 		else:
@@ -39,12 +35,20 @@ func _ready():
 			var peer = NetworkedMultiplayerENet.new()
 			peer.create_client(GameManager.ip_ad, 8070)
 			get_tree().set_network_peer(peer)
-			loading_bar.value = 1
-			_import_map(GameManager.path)
+			
 			#_instance_player(get_tree().get_network_unique_id())
+		loading_bar.value = 1
+		_import_map(GameManager.path)
+		rpc_config("_chat", 1)
+		rpc_config("_instance_player", 1)
 	else:
 		loading_bar.value = 1
 		_import_map(GameManager.path)
+
+
+func _process(delta):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		$Hud/Menu.popup()
 
 
 func _connected(id):
@@ -143,12 +147,17 @@ func load_props(prop_data):
 	for prop in prop_data:
 		var item = prop_data[prop]
 		if item.type == 0:
-			add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size, item.type)
+			var ball = load("res://src/runtime/props/ball.tscn")
+			add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size, item.type, item.custom_properties)
 		elif item.type == 1:
-			add_prop_to_scene_with_vectors("Beach Ball", beach_ball, item.position, item.rotation, item.size, item.type)
+			var beach_ball = load("res://src/runtime/props/beach_ball.tscn")
+			add_prop_to_scene_with_vectors("Beach Ball", beach_ball, item.position, item.rotation, item.size, item.type, item.custom_properties)
+		elif item.type == 2:
+			var bg_music = load("res://src/runtime/props/bg_music.tscn")
+			add_prop_to_scene_with_vectors("Background Music", bg_music, item.position, item.rotation, item.size, item.type, item.custom_properties)
 
 
-func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type):
+func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type, custom_properties):
 	if prop_num == 1:
 		prop_name = prp_name
 	else:
@@ -158,6 +167,9 @@ func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type)
 	add_child(prop_instance)
 	prop_instance.translation = pos
 	prop_instance.rotation = rot
+	prop_instance.custom_properties = custom_properties
+	
+	prop_instance.initialize()
 	
 	#var pos = Vector3(0,0,0)
 	#var rot = Vector3(0,0,0)
@@ -167,6 +179,7 @@ func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type)
 
 func _on_chat_entry_entered(new_text):
 	rpc("_chat", new_text, var2str(get_tree().get_network_unique_id()))
+	_chat(new_text, var2str(get_tree().get_network_unique_id()))
 	$ChatEntry.clear()
 
 
@@ -175,3 +188,15 @@ func _chat(logstring, username):
 	print(logstring)
 	$Chatbox.add_text(logstring)
 	$Chatbox.newline()
+
+
+func _exit_game():
+	reset_network_connection()
+
+
+func _join_game():
+	_instance_player(get_tree().get_network_unique_id())
+	rpc("_instance_player", get_tree().get_network_unique_id())
+	
+	$Hud/Menu/VBoxContainer/Button.disabled
+	$Hud/Menu.hide()

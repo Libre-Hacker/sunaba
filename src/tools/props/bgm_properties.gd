@@ -1,14 +1,18 @@
 extends WindowDialog
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var root = null
 
 
-# Called when the node enters the scene tree for the first time.
+onready var tree = $Tabs/TabContainer/Music/Tree
+
+
 func _ready():
-	pass # Replace with function body.
+	root = tree.create_item()
+	var music1 = tree.create_item(root)
+	var music2 = tree.create_item(root)
+	music1.set_text(0, "Funky Disco")
+	music2.set_text(0, "Hau_oli City")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

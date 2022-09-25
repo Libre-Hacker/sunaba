@@ -340,7 +340,7 @@ margin_right = -936.0
 margin_bottom = 35.0
 
 [node name="MenuButton" type="MenuButton" parent="Editor/Toolbar/Menubar"]
-margin_right = 38.0
+margin_right = 33.0
 margin_bottom = 35.0
 text = "File"
 items = [ "Open", ExtResource( 10 ), 0, false, false, 0, 0, null, "", false, "Save", ExtResource( 17 ), 0, false, false, 1, 0, null, "", false, "Save As", ExtResource( 17 ), 0, false, false, 2, 0, null, "", false, "Exit Map Editor", ExtResource( 30 ), 0, false, false, 3, 0, null, "", false ]
@@ -357,22 +357,22 @@ items = [ "About", ExtResource( 24 ), 0, false, false, 0, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="SelectButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 42.0
-margin_right = 68.0
+margin_left = 37.0
+margin_right = 63.0
 margin_bottom = 35.0
 icon = ExtResource( 27 )
 flat = true
 
 [node name="AddButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 72.0
-margin_right = 98.0
+margin_left = 67.0
+margin_right = 93.0
 margin_bottom = 35.0
 icon = ExtResource( 21 )
 flat = true
 
 [node name="RemoveButton2" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 102.0
-margin_right = 128.0
+margin_left = 97.0
+margin_right = 123.0
 margin_bottom = 35.0
 icon = ExtResource( 18 )
 flat = true
@@ -434,7 +434,7 @@ margin_right = 165.0
 margin_bottom = 36.0
 icon = ExtResource( 32 )
 icon_align = 1
-items = [ "Ball", null, 0, false, false, 0, 0, null, "", false, "Beach Ball", null, 0, false, false, 1, 0, null, "", false ]
+items = [ "Ball", null, 0, false, false, 0, 0, null, "", false, "Beach Ball", null, 0, false, false, 1, 0, null, "", false, "Background Music", null, 0, false, false, 2, 0, null, "", false ]
 
 [node name="Button" type="Button" parent="Editor/Panel"]
 margin_left = 101.0

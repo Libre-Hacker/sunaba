@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=2]
+[gd_resource type="Theme" load_steps=19 format=2]
 
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" type="Texture" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://assets/ui/button_pressed.tres" type="StyleBox" id=12]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_refresh.png" type="Texture" id=13]
 [ext_resource path="res://assets/fonts/open_sans.tres" type="DynamicFont" id=14]
-[ext_resource path="res://assets/fonts/fredoka.tres" type="DynamicFont" id=15]
+[ext_resource path="res://assets/ui/tab_fg.tres" type="StyleBox" id=15]
+[ext_resource path="res://assets/ui/tab_bg.tres" type="StyleBox" id=16]
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 5 )
@@ -29,7 +30,7 @@ content_margin_top = 6.0
 content_margin_bottom = 6.0
 
 [resource]
-default_font = ExtResource( 15 )
+default_font = ExtResource( 14 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 0.2 )
 Button/styles/disabled = ExtResource( 11 )
@@ -93,16 +94,17 @@ RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 RichTextLabel/colors/selection_color = Color( 0.129412, 0.666667, 0.894118, 0.8 )
 TabContainer/colors/font_color_bg = Color( 0.25098, 0.25098, 0.25098, 1 )
 TabContainer/colors/font_color_disabled = Color( 0, 0, 0, 0.2 )
-TabContainer/colors/font_color_fg = Color( 0, 0, 0, 1 )
+TabContainer/colors/font_color_fg = Color( 1, 1, 1, 1 )
 TabContainer/styles/panel = ExtResource( 10 )
-TabContainer/styles/tab_bg = SubResource( 3 )
+TabContainer/styles/tab_bg = ExtResource( 16 )
 TabContainer/styles/tab_disabled = SubResource( 3 )
-TabContainer/styles/tab_fg = ExtResource( 9 )
+TabContainer/styles/tab_fg = ExtResource( 15 )
 Tabs/colors/font_color_bg = Color( 0.211765, 0.211765, 0.211765, 1 )
 Tabs/colors/font_color_disabled = Color( 0.129412, 0.129412, 0.129412, 0.2 )
 Tabs/colors/font_color_fg = Color( 1, 1, 1, 1 )
 Tabs/styles/button = null
-Tabs/styles/button_pressed = ExtResource( 9 )
+Tabs/styles/button_pressed = ExtResource( 16 )
+Tabs/styles/tab_fg = ExtResource( 16 )
 TextEdit/colors/background_color = Color( 1, 1, 1, 0 )
 TextEdit/colors/caret_background_color = Color( 1, 1, 1, 1 )
 TextEdit/colors/caret_color = Color( 0.2, 0.2, 0.2, 1 )

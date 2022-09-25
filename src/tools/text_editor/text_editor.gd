@@ -41,7 +41,7 @@ func _on_FileDialog_file_selected(path):
 
 func _on_SaveFileDialog_file_selected(path):
 	var f = File.new()
-	f.open(path + ".sbvx", File.WRITE)
+	f.open(path + ".snb", File.WRITE)
 	f.store_string($TextEdit.text)
 
 

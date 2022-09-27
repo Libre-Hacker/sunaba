@@ -1,11 +1,36 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/materials/socks.material" type="Material" id=1]
 [ext_resource path="res://assets/materials/myoko_skin.material" type="Material" id=2]
 [ext_resource path="res://assets/materials/myoko_pink_glossy.tres" type="Material" id=3]
 [ext_resource path="res://assets/materials/myoko_face.material" type="Material" id=4]
 [ext_resource path="res://assets/materials/blue_cloth.tres" type="Material" id=5]
-[ext_resource path="res://assets/materials/white_cloth.tres" type="Material" id=6]
+[ext_resource path="res://assets/shaders/outline.shader" type="Shader" id=6]
+[ext_resource path="res://addons/flexible_toon_shader/flexible_toon.shader" type="Shader" id=7]
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 6 )
+shader_param/outline_thickness = 0.005
+shader_param/outline_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=14]
+next_pass = SubResource( 13 )
+shader = ExtResource( 7 )
+shader_param/albedo = Color( 0.47451, 0.247059, 0.00392157, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 3
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
 
 [sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.419608, 0.172549, 0.00784314, 1 )
@@ -37,11 +62,51 @@ surfaces/1 = {
 "vertex_count": 267
 }
 
-[sub_resource type="SpatialMaterial" id=6]
-albedo_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 6 )
+shader_param/outline_thickness = 0.005
+shader_param/outline_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="SpatialMaterial" id=7]
-roughness = 0.4
+[sub_resource type="ShaderMaterial" id=11]
+next_pass = SubResource( 12 )
+shader = ExtResource( 7 )
+shader_param/albedo = Color( 0.968627, 0.866667, 0.776471, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 32.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+
+[sub_resource type="ShaderMaterial" id=15]
+shader = ExtResource( 7 )
+shader_param/albedo = Color( 0.839216, 0.839216, 0.839216, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+
+[sub_resource type="SpatialMaterial" id=6]
+next_pass = SubResource( 15 )
+albedo_color = Color( 0.839216, 0.839216, 0.839216, 1 )
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "myoko_Sphere"
@@ -76,7 +141,7 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 240,
-"material": ExtResource( 6 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.002596, 0.886596, -0.106649, 1e-05, 1e-05, 1e-05 ), AABB( -0.119289, 0.886596, -0.106649, 0.243943, 0.102478, 0.207132 ), AABB( -0.0608414, 0.988993, -0.0721273, 0.127289, 0.0134788, 0.138098 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.00262134, 0.887039, -0.103943, 0.179446, 0.115319, 0.200887 ), AABB( 0.065821, 0.874245, -0.103943, 0.124243, 0.128113, 0.198293 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.17566, 0.886596, -0.10311, 0.301357, 0.115762, 0.203593 ), AABB( -0.183655, 0.874245, -0.10311, 0.124243, 0.128113, 0.198243 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.002596, 0.874245, -0.106649, 0.187468, 0.114748, 0.207132 ), AABB( -0.183655, 0.874245, -0.106649, 0.187468, 0.114748, 0.207132 ), AABB( 0.159647, 0.874245, -0.00400178, 9.99868e-06, 1.00136e-05, 1.00001e-05 ), AABB( -0.153239, 0.874245, -0.00216444, 9.99868e-06, 1.00136e-05, 1.00001e-05 ) ],
 "vertex_count": 64
@@ -88,7 +153,7 @@ surfaces/3 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 216,
-"material": SubResource( 7 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -0.0752062, 0.631746, -0.106649, 0.156821, 0.0850745, 0.202817 ), AABB( -0.152075, 0.627592, -0.106649, 0.310559, 0.177942, 0.207132 ), AABB( -0.073857, 0.716631, -0.106649, 0.155279, 0.169974, 0.207132 ), AABB( -0.0683156, 0.886596, -0.106649, 0.14304, 0.000442922, 0.207132 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.0735443, 0.887039, -0.103943, 0.0661219, 0.00381726, 0.200887 ), AABB( 0.0735443, 0.804229, -0.103943, 0.086103, 0.0866272, 0.17432 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.133248, 0.886596, -0.10311, 0.13707, 0.00425017, 0.203603 ), AABB( -0.153239, 0.804229, -0.10311, 0.0849234, 0.0866272, 0.175084 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.002596, 0.627592, -0.106649, 0.157051, 0.263264, 0.207132 ), AABB( -0.153239, 0.627592, -0.106649, 0.230186, 0.263254, 0.207132 ), AABB( 0.00262134, 0.626302, -0.102334, 0.158471, 0.247943, 0.202817 ), AABB( -0.154684, 0.626302, -0.106649, 0.158496, 0.247943, 0.207132 ), AABB( 0.0802654, 0.626302, -0.10206, 0.080827, 0.0903291, 0.195052 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.154684, 0.626302, -0.101149, 0.0806115, 0.0903291, 0.195054 ) ],
 "vertex_count": 56
@@ -100,7 +165,7 @@ surfaces/4 = {
 "blend_shape_data": [  ],
 "format": 2194903,
 "index_count": 288,
-"material": SubResource( 7 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.134768, 0.917719, -0.0748432, 0.0713401, 0.0990354, 0.141668 ), AABB( 0.134768, 0.903814, -0.0748432, 0.108467, 0.117855, 0.141668 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( -0.199152, 0.917719, -0.0729907, 0.0707925, 0.0990354, 0.141668 ), AABB( -0.236827, 0.903814, -0.0729907, 0.108467, 0.117855, 0.141668 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.141476, 0.903814, -0.0748432, 0.0868903, 0.084253, 0.141668 ), AABB( -0.221958, 0.903814, -0.0729907, 0.0868903, 0.084253, 0.141668 ) ],
 "vertex_count": 80
@@ -349,6 +414,7 @@ surfaces/0 = {
 
 [node name="Hair" type="MeshInstance" parent="."]
 transform = Transform( -0.0015845, 0, 0.269824, 0, 0.269829, 0, -0.269824, 0, -0.0015845, 0.000899121, 0.973907, -0.00213797 )
+material_overlay = SubResource( 14 )
 mesh = SubResource( 1 )
 
 [node name="metarig" type="Spatial" parent="."]
@@ -577,6 +643,7 @@ bones/43/enabled = true
 bones/43/bound_children = [  ]
 
 [node name="BaseCharacter" type="MeshInstance" parent="metarig/Skeleton"]
+material_overlay = SubResource( 11 )
 mesh = SubResource( 2 )
 skin = SubResource( 3 )
 

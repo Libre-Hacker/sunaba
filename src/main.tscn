@@ -1,28 +1,31 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://assets/fonts/fredoka_one.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/open_sans/OpenSans-SemiBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/theme.tres" type="Theme" id=2]
 [ext_resource path="res://src/main.gd" type="Script" id=3]
-[ext_resource path="res://assets/ui/button_green.tres" type="StyleBox" id=4]
+[ext_resource path="res://assets/fonts/open_sans/OpenSans-Medium.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/ui/button_disabled.tres" type="StyleBox" id=5]
-[ext_resource path="res://assets/ui/backdrop.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_image.png" type="Texture" id=7]
 [ext_resource path="res://src/tools/text_editor/text_editor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/character.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/information.png" type="Texture" id=9]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_down.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/page_edit.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/map.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/add.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/play.png" type="Texture" id=14]
+[ext_resource path="res://addons/native_dialogs/bin/native_dialog_message.gdns" type="Script" id=15]
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 2168, 1354 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 22
-font_data = ExtResource( 1 )
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 75
+size = 30
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = ExtResource( 4 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -32,69 +35,96 @@ script = ExtResource( 3 )
 
 [node name="Panel2" type="Panel" parent="."]
 anchor_right = 1.0
+margin_bottom = 35.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 3 )
+
+[node name="MenuButton" type="MenuButton" parent="Panel2/HBoxContainer"]
+margin_right = 60.0
+margin_bottom = 35.0
+text = "sunaba"
+items = [ "About", ExtResource( 9 ), 0, false, false, 0, 0, null, "", false, "Exit", ExtResource( 6 ), 0, false, false, 1, 0, null, "", false ]
+
+[node name="Button" type="MenuButton" parent="Panel2/HBoxContainer"]
+margin_left = 64.0
+margin_right = 106.0
+margin_bottom = 35.0
+text = "tools"
+items = [ "Download Map File", ExtResource( 10 ), 0, false, false, 0, 0, null, "", false, "Open Map Text Editor", ExtResource( 11 ), 0, false, false, 1, 0, null, "", false ]
 
 [node name="Panel" type="Panel" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -379.0
-margin_top = -67.0
-margin_right = -8.0
-margin_bottom = -8.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -185.5
+margin_top = -146.5
+margin_right = 185.5
+margin_bottom = 146.5
 
-[node name="Button" type="Button" parent="Panel"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -123.0
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 22.0
 margin_top = 8.0
-margin_right = -8.0
-margin_bottom = -8.0
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 1 )
-custom_styles/hover = ExtResource( 4 )
-custom_styles/pressed = ExtResource( 4 )
-custom_styles/focus = ExtResource( 4 )
-custom_styles/normal = ExtResource( 4 )
-text = "Play"
-
-[node name="Button2" type="Button" parent="Panel"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -243.0
-margin_top = 8.0
-margin_right = -128.0
-margin_bottom = -8.0
-text = "New Game"
-
-[node name="Button3" type="Button" parent="Panel"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -363.0
-margin_top = 8.0
-margin_right = -248.0
-margin_bottom = -8.0
-text = "Map Editor"
-
-[node name="Label" type="Label" parent="."]
-margin_left = 31.0
-margin_top = 9.0
-margin_right = 292.0
-margin_bottom = 101.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+margin_right = 358.0
+margin_bottom = 69.0
 custom_fonts/font = SubResource( 2 )
-text = "sunaba"
+text = "Sunaba v0.2"
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 20.0
+margin_top = 65.0
+margin_right = 352.0
+margin_bottom = 235.0
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 332.0
+margin_bottom = 44.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+disabled = true
+text = " Play"
+icon = ExtResource( 14 )
+flat = true
+align = 0
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 48.0
+margin_right = 332.0
+margin_bottom = 92.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = " New Game"
+icon = ExtResource( 13 )
+flat = true
+align = 0
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 96.0
+margin_right = 332.0
+margin_bottom = 140.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = " Map Editor"
+icon = ExtResource( 12 )
+flat = true
+align = 0
 
 [node name="NewRoomDialog" type="WindowDialog" parent="."]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -205,19 +235,15 @@ resizable = true
 
 [node name="App" parent="MapTextEditor" instance=ExtResource( 8 )]
 
-[node name="Button" type="MenuButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -78.0
-margin_top = 30.0
-margin_right = -36.0
-margin_bottom = 74.0
-icon = ExtResource( 9 )
-items = [ "Download Map File", ExtResource( 10 ), 0, false, false, 0, 0, null, "", false, "Open Map Text Editor", ExtResource( 11 ), 0, false, false, 1, 0, null, "", false ]
+[node name="AboutMessage" type="Node" parent="."]
+script = ExtResource( 15 )
+title = "About Sunaba"
+text = "Sunaba v0.2"
+choice = 0
 
-[connection signal="pressed" from="Panel/Button" to="." method="play"]
-[connection signal="pressed" from="Panel/Button2" to="." method="_on_new_roon_button_pressed"]
-[connection signal="pressed" from="Panel/Button3" to="." method="_on_map_editor_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="play"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_new_roon_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button3" to="." method="_on_map_editor_button_pressed"]
 [connection signal="text_changed" from="NewRoomDialog/RoomName" to="." method="_on_room_name_changed"]
 [connection signal="pressed" from="NewRoomDialog/Button" to="." method="_create_room"]
 [connection signal="file_selected" from="CustomFileDialog" to="." method="_on_file_selected"]

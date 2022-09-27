@@ -2,8 +2,8 @@ extends Spatial
 
 export var online : bool
 
-var player = preload("res://src/actors/player.tscn")
-var networked_player = preload("res://src/actors/networked_player.tscn")
+var player = preload("res://src/runtime/actors/player.tscn")
+var networked_player = preload("res://src/runtime/actors/networked_player.tscn")
 var map = null
 
 var prop_num : int = 1
@@ -49,6 +49,9 @@ func _ready():
 func _process(delta):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		$Hud/Menu.popup()
+
+func menu_button():
+	$Hud/Menu.popup()
 
 
 func _connected(id):

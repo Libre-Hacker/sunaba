@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://src/tools/editor.gd" type="Script" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=30]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/group_edit.png" type="Texture" id=31]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/group_add.png" type="Texture" id=32]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture" id=33]
 
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 15 )
@@ -100,6 +101,9 @@ region_rect = Rect2( 0, 0, 128, 128 )
 [sub_resource type="StyleBoxTexture" id=30]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="StyleBoxFlat" id=31]
+bg_color = Color( 1, 1, 1, 1 )
 
 [node name="Editor" type="Spatial"]
 script = ExtResource( 2 )
@@ -333,47 +337,56 @@ custom_styles/normal = SubResource( 30 )
 anchor_right = 1.0
 margin_bottom = 35.0
 theme = ExtResource( 28 )
+custom_styles/panel = SubResource( 31 )
 
 [node name="Menubar" type="HBoxContainer" parent="Editor/Toolbar"]
 anchor_right = 1.0
-margin_right = -936.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 250, 0 )
+
+[node name="Control" type="Control" parent="Editor/Toolbar/Menubar"]
 margin_bottom = 35.0
 
 [node name="MenuButton" type="MenuButton" parent="Editor/Toolbar/Menubar"]
-margin_right = 33.0
+margin_left = 4.0
+margin_right = 58.0
 margin_bottom = 35.0
-text = "File"
+text = " file"
+icon = ExtResource( 33 )
 items = [ "Open", ExtResource( 10 ), 0, false, false, 0, 0, null, "", false, "Save", ExtResource( 17 ), 0, false, false, 1, 0, null, "", false, "Save As", ExtResource( 17 ), 0, false, false, 2, 0, null, "", false, "Exit Map Editor", ExtResource( 30 ), 0, false, false, 3, 0, null, "", false ]
-switch_on_hover = true
 
 [node name="HelpMenuButton" type="MenuButton" parent="Editor/Toolbar/Menubar"]
 visible = false
-margin_left = 37.0
-margin_right = 77.0
+margin_left = 35.0
+margin_right = 135.0
 margin_bottom = 35.0
 focus_mode = 2
 text = "Help"
+flat = false
 items = [ "About", ExtResource( 24 ), 0, false, false, 0, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="SelectButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 37.0
-margin_right = 63.0
+margin_left = 62.0
+margin_right = 124.0
 margin_bottom = 35.0
+text = " view"
 icon = ExtResource( 27 )
 flat = true
 
 [node name="AddButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 67.0
-margin_right = 93.0
+margin_left = 128.0
+margin_right = 186.0
 margin_bottom = 35.0
+text = " add"
 icon = ExtResource( 21 )
 flat = true
 
 [node name="RemoveButton2" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 97.0
-margin_right = 123.0
+margin_left = 190.0
+margin_right = 272.0
 margin_bottom = 35.0
+text = " remove"
 icon = ExtResource( 18 )
 flat = true
 

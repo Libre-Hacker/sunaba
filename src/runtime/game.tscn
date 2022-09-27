@@ -31,6 +31,7 @@ script = ExtResource( 5 )
 online = true
 
 [node name="LoadingScreen" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -62,6 +63,24 @@ margin_right = 57.0
 margin_bottom = 46.0
 text = "Loading"
 valign = 1
+
+[node name="Chatbox" type="RichTextLabel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = -255.0
+margin_right = 298.0
+margin_bottom = -56.0
+
+[node name="ChatEntry" type="LineEdit" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 22.0
+margin_top = -54.0
+margin_right = 298.0
+margin_bottom = -22.0
+theme = ExtResource( 1 )
+placeholder_text = "Click to chat"
 
 [node name="Hud" type="Control" parent="."]
 anchor_right = 1.0
@@ -105,18 +124,18 @@ margin_right = 123.0
 margin_bottom = 68.0
 text = "exit game"
 
+[node name="MenuButton" type="Button" parent="Hud"]
+margin_left = 10.0
+margin_right = 123.0
+margin_bottom = 32.0
+focus_mode = 0
+enabled_focus_mode = 0
+text = "menu [esc]"
+
 [node name="Water" parent="." instance=ExtResource( 3 )]
 
 [node name="VoxelMesh" parent="." instance=ExtResource( 2 )]
 mesh = SubResource( 2 )
-
-[node name="Chatbox" type="RichTextLabel" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 22.0
-margin_top = -255.0
-margin_right = 298.0
-margin_bottom = -56.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5.63565, 0 )
@@ -124,16 +143,7 @@ light_bake_mode = 0
 shadow_enabled = true
 shadow_reverse_cull_face = true
 
-[node name="ChatEntry" type="LineEdit" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 22.0
-margin_top = -54.0
-margin_right = 298.0
-margin_bottom = -22.0
-theme = ExtResource( 1 )
-placeholder_text = "Click to chat"
-
+[connection signal="text_entered" from="ChatEntry" to="." method="_on_chat_entry_entered"]
 [connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_join_game"]
 [connection signal="pressed" from="Hud/Menu/VBoxContainer/Button2" to="." method="_exit_game"]
-[connection signal="text_entered" from="ChatEntry" to="." method="_on_chat_entry_entered"]
+[connection signal="pressed" from="Hud/MenuButton" to="." method="menu_button"]

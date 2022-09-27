@@ -6,14 +6,15 @@ var map_path : String
 
 func _ready():
 	$NewRoomDialog/Panel/MenuButton.get_popup().connect("id_pressed", self, "_id_pressed")
-	$Button.get_popup().connect("id_pressed", self, "_menu_pressed")
+	$Panel2/HBoxContainer/Button.get_popup().connect("id_pressed", self, "_menu_pressed")
+	$Panel2/HBoxContainer/MenuButton.get_popup().connect("id_pressed", self, "_menu_one")
 	GameManager.room_name = ""
 	GameManager.path = map_path
 	GameManager.is_host = false
 	if OS.get_name() == "HTML5":
-		$Button.show()
+		$Panel2/HBoxContainer/Button.show()
 	else:
-		$Button.hide()
+		$Panel2/HBoxContainer/Button.hide()
 
 func _on_new_roon_button_pressed():
 	$NewRoomDialog.popup()
@@ -39,6 +40,13 @@ func _menu_pressed(id):
 		$MapTextEditor.popup()
 
 
+func _menu_one(id):
+	if id == 0:
+		$AboutMessage.show()
+	elif id == 1:
+		get_tree().quit()
+
+
 func _on_file_selected(path):
 	GameManager.path = path
 	$NewRoomDialog/Panel/Label.text = path
@@ -58,13 +66,13 @@ func _create_room():
 		return
 	GameManager.room_name = room_name
 	GameManager.is_host = true
-	get_tree().change_scene("res://src/game.tscn")
+	get_tree().change_scene("res://src/runtime/game.tscn")
 
 
 
 func play():
 	GameManager.is_host = false
-	get_tree().change_scene("res://src/game.tscn")
+	get_tree().change_scene("res://src/runtime/game.tscn")
 
 
 

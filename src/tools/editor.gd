@@ -63,8 +63,8 @@ func show_toolbar():
 
 func add_prop(id):
 	if id == 0:
-		var ball = load("res://src/tools/props/ball.tscn")
-		add_prop_to_scene("Ball", ball, id)
+		var table = load("res://src/tools/props/table.tscn")
+		add_prop_to_scene("Table", table, id)
 	elif id == 1:
 		var beach_ball = load("res://src/tools/props/beach_ball.tscn")
 		add_prop_to_scene("Beach Ball", beach_ball, id)

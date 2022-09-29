@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/tools/props/properties.gd" type="Script" id=2]
-[ext_resource path="res://src/tools/props/prop.gd" type="Script" id=3]
-[ext_resource path="res://assets/models/props/beach_ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/tools/props/prop.gd" type="Script" id=2]
+[ext_resource path="res://src/tools/props/properties.gd" type="Script" id=3]
+[ext_resource path="res://assets/models/props/table.tscn" type="PackedScene" id=4]
 
 [node name="Ball" type="Spatial"]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
-script = ExtResource( 3 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+script = ExtResource( 2 )
 
 [node name="Properties" type="WindowDialog" parent="."]
 visible = true
@@ -20,7 +20,7 @@ margin_right = 216.0
 margin_bottom = 130.0
 window_title = "Properties"
 resizable = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Tabs" type="Tabs" parent="Properties"]
 anchor_right = 1.0
@@ -63,6 +63,9 @@ margin_right = 74.0
 margin_bottom = 32.0
 max_value = 9000.0
 step = 0.01
+page = 1.0
+allow_greater = true
+allow_lesser = true
 
 [node name="y" type="SpinBox" parent="Properties/Tabs/TabContainer/Transform/Control/HBoxContainer"]
 margin_left = 78.0
@@ -70,6 +73,9 @@ margin_right = 152.0
 margin_bottom = 32.0
 max_value = 9000.0
 step = 0.01
+page = 1.0
+allow_greater = true
+allow_lesser = true
 
 [node name="z" type="SpinBox" parent="Properties/Tabs/TabContainer/Transform/Control/HBoxContainer"]
 margin_left = 156.0
@@ -77,9 +83,12 @@ margin_right = 230.0
 margin_bottom = 32.0
 max_value = 9000.0
 step = 0.01
+page = 1.0
+allow_greater = true
+allow_lesser = true
 
-[node name="beach_ball" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00526, 0, -1.00526 )
+[node name="table" parent="." instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.854, 0, -0.852 )
 
 [connection signal="value_changed" from="Properties/Tabs/TabContainer/Transform/Control/HBoxContainer/x" to="Properties" method="_on_x_value_changed"]
 [connection signal="value_changed" from="Properties/Tabs/TabContainer/Transform/Control/HBoxContainer/y" to="Properties" method="_on_y_value_changed"]

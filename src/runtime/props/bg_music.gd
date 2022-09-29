@@ -3,9 +3,9 @@ extends Spatial
 
 var prop_id : int
 var music : String
-var custom_properties = {music = music, music_src = m1}
+var custom_properties = {music = music, music_src = null}
 
-var m1 = preload("res://assets/music/Funky Disco.ogg")
+#var m1 = preload("res://assets/music/Funky Disco.ogg")
 var music_source : AudioStreamOGGVorbis
 
 onready var music_player = $AudioStreamPlayer

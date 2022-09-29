@@ -3,10 +3,10 @@ extends Spatial
 
 var prop_id : int
 var music : String
-var custom_properties = {music = music, music_src = m1}
+var custom_properties = {music = music, music_src = null}
 
-var m1 = preload("res://assets/music/Funky Disco.ogg")
-var m2 = preload("res://assets/music/Hau_oli City.ogg")
+#var m1 = preload("res://assets/music/Funky Disco.ogg")
+#var m2 = preload("res://assets/music/Hau_oli City.ogg")
 var music_source : AudioStreamOGGVorbis
 
 
@@ -16,7 +16,7 @@ onready var music_player = $AudioStreamPlayer
 
 func initialize():
 	music == "Funky Disco"
-	music_source = m1
+	#music_source = m1
 	custom_properties = {music = music, music_src = music_source}
 
 
@@ -37,10 +37,10 @@ func _get_selected_music():
 
 func _on_Tree_item_selected():
 	music = _get_selected_music()
-	if music == "Funky Disco":
-		music_source = m1
-	elif music == "Hau_oli City":
-		music_source = m2
+	#if music == "Funky Disco":
+		#music_source = m1
+	#elif music == "Hau_oli City":
+		#music_source = m2
 	custom_properties = {music = music, music_src = music_source}
 	get_parent().update_prop_data(prop_id, translation, rotation, scale, custom_properties)
 

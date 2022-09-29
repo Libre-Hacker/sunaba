@@ -1,4 +1,4 @@
-extends RigidBody
+extends Spatial
 
 var custom_properties = {}
 

@@ -316,6 +316,12 @@ config/windows_native_icon="res://sunaba-icon2.ico"
 GameManager="*res://src/runtime/game_manager.gd"
 Gotm="*res://gotm/Gotm.gd"
 
+[compression]
+
+formats/zstd/compression_level=4
+formats/zlib/compression_level=0
+formats/gzip/compression_level=0
+
 [debug]
 
 multirun/number_of_windows=2
@@ -324,11 +330,6 @@ multirun/add_custom_args=true
 multirun/first_window_args="listen"
 multirun/other_window_args="join"
 
-[display]
-
-window/size/width=640
-window/size/height=480
-
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/multirun/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
@@ -336,6 +337,10 @@ enabled=PoolStringArray( "res://addons/multirun/plugin.cfg", "res://addons/nativ
 [gdnative]
 
 singletons=[  ]
+
+[gui]
+
+theme/custom_font="res://assets/fonts/open_sans.tres"
 
 [input]
 

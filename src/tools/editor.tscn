@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://src/tools/editor.gd" type="Script" id=2]
@@ -27,11 +27,13 @@
 [ext_resource path="res://src/VoxelMesh.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/textures/minetest_textures/default_sand.png" type="Texture" id=26]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/cursor.png" type="Texture" id=27]
+[ext_resource path="res://assets/ui/theme.tres" type="Theme" id=28]
 [ext_resource path="res://src/tools/editor_view/editor_view.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=30]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/group_edit.png" type="Texture" id=31]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/group_add.png" type="Texture" id=32]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture" id=33]
+[ext_resource path="res://assets/ui/panel_square.tres" type="StyleBox" id=34]
 
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 15 )
@@ -114,6 +116,8 @@ world_path = NodePath("../VoxelMesh")
 anchor_bottom = 1.0
 margin_top = 34.0
 margin_right = 123.0
+theme = ExtResource( 28 )
+custom_styles/panel = ExtResource( 34 )
 
 [node name="Panel" type="Control" parent="Editor/VoxelTools"]
 anchor_right = 1.0
@@ -331,6 +335,8 @@ custom_styles/normal = SubResource( 30 )
 [node name="Toolbar" type="Panel" parent="Editor"]
 anchor_right = 1.0
 margin_bottom = 35.0
+theme = ExtResource( 28 )
+custom_styles/panel = ExtResource( 34 )
 
 [node name="Menubar" type="HBoxContainer" parent="Editor/Toolbar"]
 anchor_right = 1.0
@@ -342,7 +348,7 @@ margin_bottom = 35.0
 
 [node name="MenuButton" type="MenuButton" parent="Editor/Toolbar/Menubar"]
 margin_left = 4.0
-margin_right = 60.0
+margin_right = 58.0
 margin_bottom = 35.0
 text = " file"
 icon = ExtResource( 33 )
@@ -360,24 +366,24 @@ items = [ "About", ExtResource( 24 ), 0, false, false, 0, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="SelectButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 64.0
-margin_right = 128.0
+margin_left = 62.0
+margin_right = 124.0
 margin_bottom = 35.0
 text = " view"
 icon = ExtResource( 27 )
 flat = true
 
 [node name="AddButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 132.0
-margin_right = 192.0
+margin_left = 128.0
+margin_right = 186.0
 margin_bottom = 35.0
 text = " add"
 icon = ExtResource( 21 )
 flat = true
 
 [node name="RemoveButton2" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 196.0
-margin_right = 280.0
+margin_left = 190.0
+margin_right = 272.0
 margin_bottom = 35.0
 text = " remove"
 icon = ExtResource( 18 )
@@ -392,6 +398,7 @@ margin_left = -280.0
 margin_top = -188.0
 margin_right = 280.0
 margin_bottom = 188.0
+theme = ExtResource( 28 )
 window_title = "Save File"
 resizable = true
 access = 1
@@ -405,6 +412,7 @@ margin_left = -280.0
 margin_top = -188.0
 margin_right = 280.0
 margin_bottom = 188.0
+theme = ExtResource( 28 )
 window_title = "Open a File"
 resizable = true
 mode = 0
@@ -417,6 +425,7 @@ margin_left = -174.0
 margin_top = 40.0
 margin_right = -6.0
 margin_bottom = 217.0
+theme = ExtResource( 28 )
 
 [node name="Tree" type="Tree" parent="Editor/Panel"]
 anchor_right = 1.0

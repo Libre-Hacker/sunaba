@@ -1,0 +1,155 @@
+[gd_resource type="Theme" load_steps=23 format=2]
+
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/window.tres" type="StyleBox" id=3]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/eye.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/blue_button12.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/page_data.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/folder.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_up.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/button_normal.tres" type="StyleBox" id=9]
+[ext_resource path="res://assets/ui/panel.tres" type="StyleBox" id=10]
+[ext_resource path="res://assets/ui/button_disabled.tres" type="StyleBox" id=11]
+[ext_resource path="res://assets/ui/button_pressed.tres" type="StyleBox" id=12]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_refresh.png" type="Texture" id=13]
+[ext_resource path="res://assets/fonts/open_sans.tres" type="DynamicFont" id=14]
+[ext_resource path="res://assets/ui/tab_fg.tres" type="StyleBox" id=15]
+[ext_resource path="res://assets/ui/tab_bg.tres" type="StyleBox" id=16]
+[ext_resource path="res://assets/ui/grey_button09.png" type="Texture" id=17]
+[ext_resource path="res://assets/ui/blue_button08.png" type="Texture" id=18]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 49, 45 )
+margin_left = 4.0
+margin_right = 4.0
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 49, 45 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 49, 45 )
+margin_left = 5.0
+margin_right = 5.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[sub_resource type="StyleBoxEmpty" id=3]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+
+[resource]
+default_font = ExtResource( 14 )
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0, 0, 0, 0.2 )
+Button/styles/disabled = ExtResource( 11 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = ExtResource( 9 )
+Button/styles/pressed = ExtResource( 12 )
+CheckBox/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+CheckBox/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+CheckBox/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = ExtResource( 14 )
+CheckBox/icons/radio_unchecked_disabled = null
+CheckBox/icons/unchecked_disabled = null
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/hover_pressed = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+FileDialog/colors/file_icon_modulate = Color( 1, 1, 1, 1 )
+FileDialog/colors/folder_icon_modulate = Color( 1, 1, 1, 1 )
+FileDialog/icons/file = ExtResource( 6 )
+FileDialog/icons/folder = ExtResource( 7 )
+FileDialog/icons/parent_folder = ExtResource( 8 )
+FileDialog/icons/reload = ExtResource( 13 )
+FileDialog/icons/toggle_hidden = ExtResource( 4 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/cursor_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color = Color( 0, 0, 0, 1 )
+LineEdit/colors/font_color_selected = Color( 1, 1, 1, 1 )
+LineEdit/colors/font_color_uneditable = Color( 0, 0, 0, 0.501961 )
+LineEdit/colors/selection_color = Color( 0.129412, 0.666667, 0.894118, 1 )
+LineEdit/styles/focus = ExtResource( 11 )
+LineEdit/styles/normal = ExtResource( 11 )
+LineEdit/styles/read_only = ExtResource( 9 )
+MenuButton/colors/font_color = Color( 0, 0, 0, 1 )
+MenuButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+MenuButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+MenuButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Panel/styles/panel = ExtResource( 10 )
+PopupDialog/styles/panel = ExtResource( 10 )
+PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
+PopupMenu/colors/font_color_accel = Color( 0, 0, 0, 0.8 )
+PopupMenu/colors/font_color_disabled = Color( 0, 0, 0, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 1, 1, 1, 1 )
+PopupMenu/colors/font_color_separator = Color( 0, 0, 0, 1 )
+PopupMenu/styles/hover = ExtResource( 12 )
+PopupMenu/styles/panel = ExtResource( 10 )
+PopupPanel/styles/panel = ExtResource( 10 )
+ProgressBar/colors/font_color = Color( 0, 0, 0, 1 )
+ProgressBar/colors/font_color_shadow = Color( 1, 1, 1, 1 )
+ProgressBar/styles/bg = SubResource( 4 )
+ProgressBar/styles/fg = SubResource( 5 )
+RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/font_color_selected = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+RichTextLabel/colors/selection_color = Color( 0.129412, 0.666667, 0.894118, 0.8 )
+TabContainer/colors/font_color_bg = Color( 0.25098, 0.25098, 0.25098, 1 )
+TabContainer/colors/font_color_disabled = Color( 0, 0, 0, 0.2 )
+TabContainer/colors/font_color_fg = Color( 1, 1, 1, 1 )
+TabContainer/styles/panel = ExtResource( 10 )
+TabContainer/styles/tab_bg = ExtResource( 16 )
+TabContainer/styles/tab_disabled = SubResource( 3 )
+TabContainer/styles/tab_fg = ExtResource( 15 )
+Tabs/colors/font_color_bg = Color( 0.211765, 0.211765, 0.211765, 1 )
+Tabs/colors/font_color_disabled = Color( 0.129412, 0.129412, 0.129412, 0.2 )
+Tabs/colors/font_color_fg = Color( 1, 1, 1, 1 )
+Tabs/styles/button = null
+Tabs/styles/button_pressed = ExtResource( 16 )
+Tabs/styles/tab_fg = ExtResource( 16 )
+TextEdit/colors/background_color = Color( 1, 1, 1, 0 )
+TextEdit/colors/caret_background_color = Color( 1, 1, 1, 1 )
+TextEdit/colors/caret_color = Color( 0.2, 0.2, 0.2, 1 )
+TextEdit/colors/code_folding_color = Color( 0.25098, 0.25098, 0.25098, 0.8 )
+TextEdit/colors/completion_background_color = Color( 1, 1, 1, 1 )
+TextEdit/colors/completion_font_color = Color( 0.341176, 0.341176, 0.341176, 1 )
+TextEdit/colors/completion_scroll_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/completion_selected_color = Color( 0.121569, 0.658824, 0.886275, 1 )
+TextEdit/colors/current_line_color = Color( 0, 0.360784, 0.654902, 0.8 )
+TextEdit/colors/font_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/font_color_readonly = Color( 0.101961, 0.101961, 0.101961, 0.501961 )
+TextEdit/colors/selection_color = Color( 0.129412, 0.666667, 0.894118, 1 )
+TextEdit/colors/symbol_color = Color( 0.117647, 0.117647, 0.117647, 1 )
+TextEdit/styles/normal = ExtResource( 10 )
+Tree/colors/custom_button_font_highlight = Color( 0, 0, 0, 1 )
+Tree/colors/font_color = Color( 0, 0, 0, 1 )
+Tree/colors/font_color_selected = Color( 0, 0, 0, 1 )
+Tree/colors/title_button_color = Color( 0, 0, 0, 1 )
+Tree/icons/arrow = ExtResource( 2 )
+Tree/icons/arrow_collapsed = ExtResource( 1 )
+Tree/icons/select_arrow = ExtResource( 2 )
+Tree/styles/bg = ExtResource( 10 )
+Tree/styles/button_pressed = ExtResource( 12 )
+Tree/styles/custom_button_hover = ExtResource( 12 )
+Tree/styles/custom_button_pressed = ExtResource( 12 )
+Tree/styles/selected = ExtResource( 12 )
+Tree/styles/selected_focus = ExtResource( 12 )
+VSlider/icons/grabber_disabled = null
+WindowDialog/styles/panel = ExtResource( 3 )

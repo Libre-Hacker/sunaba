@@ -9,7 +9,7 @@ func _ready():
 	$Panel2/HBoxContainer/Button.get_popup().connect("id_pressed", self, "_menu_pressed")
 	$Panel2/HBoxContainer/MenuButton.get_popup().connect("id_pressed", self, "_menu_one")
 	GameManager.room_name = ""
-	GameManager.path = map_path
+	GameManager.path = ""
 	GameManager.is_host = false
 	if OS.get_name() == "HTML5":
 		$Panel2/HBoxContainer/Button.show()
@@ -29,9 +29,9 @@ func _on_map_editor_button_pressed():
 
 func _id_pressed(id):
 	if id == 0:
-		$FileDialog.popup()
-	if id == 1:
 		$CustomFileDialog.popup()
+	if id == 1:
+		$NativeDialogOpenFile.show()
 
 func _menu_pressed(id):
 	if id == 0:
@@ -57,12 +57,15 @@ func _on_room_name_changed(new_text):
 
 
 func _create_room():
-	if GameManager.room_name == "":
+	if room_name == "":
 		#OS.alert("Please choose a name for your room")
 		#return
 		GameManager.room_name = "Hello World"
-	elif GameManager.path == "":
-		OS.alert("Please choose a map")
+	if GameManager.path == "":
+		$MapNotFoundError.show()
+		return
+	elif !".snb" in  GameManager.path:
+		$FileIsNotMapError.show()
 		return
 	GameManager.room_name = room_name
 	GameManager.is_host = true
@@ -81,3 +84,8 @@ func _download_file(path):
 	file.open(path, File.READ)
 	var sbg_text = file.get_as_text()
 	JavaScript.download_buffer(sbg_text.to_utf8(), "map.sbvx")
+
+
+func _on_NativeDialogOpenFile_files_selected(files: PoolStringArray):
+	var path = files[0]
+	_on_file_selected(path)

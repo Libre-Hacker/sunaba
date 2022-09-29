@@ -36,7 +36,6 @@ var list = ""
 export var blocks := {}
 
 func add_block_to_list(unique_id: int, new_type : int, new_pos : Vector3):
-	var new_block = block_data.new(new_type, new_pos)
 	blocks[unique_id] = {type = new_type, position = new_pos}
 	#print(blocks[unique_id])
 	#print(blocks[unique_id].type)
@@ -138,26 +137,6 @@ func _process(delta : float) -> void:
 	cursor.visible = true
 	if not camera.current or Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		return
-	#var direction := Vector3()
-	#if Input.is_action_pressed("move_forward"):
-	#	direction += Vector3.BACK
-	#if Input.is_action_pressed("move_back"):
-	#	direction += Vector3.FORWARD
-	#if Input.is_action_pressed("move_right"):
-	#	direction += Vector3.RIGHT
-	#if Input.is_action_pressed("move_left"):
-	#	direction += Vector3.LEFT
-	
-	#if Input.is_action_just_pressed("jump"):
-	#	translate(Vector3.UP * jump)
-	
-	#var velocity := Vector3()
-	#velocity += -camera.global_transform.basis.z * direction.z
-	#velocity += camera.global_transform.basis.x * direction.x
-	#velocity.y = 0
-	#velocity = (velocity * speed) + Vector3(0, gravity, 0)
-	
-	#move_and_collide(velocity * delta)
 	_update_cursor_position()
 
 
@@ -217,110 +196,10 @@ func _block_remove_mode_on():
 	block_create_mode = false
 	block_remove_mode = true
 
-
-func _select_block_0():
-	_block_id = 0
+func select_block(num):
+	_block_id = num
 	_update_block()
 
-
-func _select_block_1():
-	_block_id = 1
-	_update_block()
-
-
-func _select_block_2():
-	_block_id = 2
-	_update_block()
-
-
-func _select_block_3():
-	_block_id = 3
-	_update_block()
-
-
-func _select_block_4():
-	_block_id = 4
-	_update_block()
-
-
-func _select_block_5():
-	_block_id = 5
-	_update_block()
-
-
-func _select_block_6():
-	_block_id = 6
-	_update_block()
-
-
-func _select_block_7():
-	_block_id = 7
-	_update_block()
-
-
-func _select_block_8():
-	_block_id = 8
-	_update_block()
-
-
-func _select_block_9():
-	_block_id = 9
-	_update_block()
-
-
-func _select_block_10():
-	_block_id = 10
-	_update_block()
-
-
-func _select_block_11():
-	_block_id = 11
-	_update_block()
-
-
-func _select_block_12():
-	_block_id = 12
-	_update_block()
-
-
-func _select_block_13():
-	_block_id = 13
-	_update_block()
-
-
-func _select_block_14():
-	_block_id = 14
-	_update_block()
-
-
-func _select_block_15():
-	_block_id = 15
-	_update_block()
-
-
-func _select_block_16():
-	_block_id = 16
-	_update_block()
-
-
-func _select_block_17():
-	_block_id = 17
-	_update_block()
-
-
-func _select_block_18():
-	_block_id = 18
-	_update_block()
-
-
-func _select_block_19():
-	_block_id = 19
-	_update_block()
-
-
-func _select_block_20():
-	_block_id = 20
-	_update_block()
 
 func _on_file_saved(path):
 	var file = File.new()
@@ -372,18 +251,7 @@ func _on_VoxelTools_popup_hide():
 	block_create_mode = false
 	block_remove_mode = false
 
-class block_data:
-	var type : int
-	var position : Vector3
-	
-	func _init(_type : int, _position : Vector3):
-		type = _type
-		position = _position
-	
-	func to_string():
-		return "type: %d position: %s" % [type, position]
 
-
-
-func _on_FileDialog_file_selected(path):
-	pass # Replace with function body.
+func _on_file_selected(files: PoolStringArray):
+	var path = files[0]
+	_on_file_opened(path)

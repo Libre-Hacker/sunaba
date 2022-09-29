@@ -1,6 +1,7 @@
 extends Spatial
 
 export var online : bool
+export var use_web_sockets : bool
 
 var player = preload("res://src/runtime/actors/player.tscn")
 var networked_player = preload("res://src/runtime/actors/networked_player.tscn")
@@ -25,16 +26,27 @@ func _ready():
 	if online:
 		if GameManager.is_host:
 			log_to_chat("Creating Game")
-			var peer = NetworkedMultiplayerENet.new()
-			peer.create_server(8070)
-			get_tree().set_network_peer(peer)
+			if use_web_sockets:
+				var server = WebSocketServer.new()
+				server.listen(8070, PoolStringArray(), true)
+				get_tree().set_network_peer(server)
+			else:
+				var peer = NetworkedMultiplayerENet.new()
+				peer.create_server(8070)
+				get_tree().set_network_peer(peer)
 			#_instance_player(get_tree().get_network_unique_id())
 			
 		else:
 			log_to_chat("Joining Room")
-			var peer = NetworkedMultiplayerENet.new()
-			peer.create_client(GameManager.ip_ad, 8070)
-			get_tree().set_network_peer(peer)
+			if use_web_sockets:
+				var client = WebSocketClient.new()
+				var url = "ws://127.0.0.1:" + str(8070)
+				var error = client.connect_to_url(url, PoolStringArray(), true)
+				get_tree().set_network_peer(client)
+			else:
+				var peer = NetworkedMultiplayerENet.new()
+				peer.create_client(GameManager.ip_ad, 8070)
+				get_tree().set_network_peer(peer)
 			
 			#_instance_player(get_tree().get_network_unique_id())
 		loading_bar.value = 1

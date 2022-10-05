@@ -4,14 +4,17 @@ export var online : bool
 export var use_web_sockets : bool
 
 var player = preload("res://src/runtime/actors/player.tscn")
-var networked_player = preload("res://src/runtime/actors/networked_player.tscn")
 var map = null
+
+
+var player_paused = false
 
 var prop_num : int = 1
 var prop_name : String
 
 onready var voxel_mesh = $VoxelMesh
 onready var loading_bar = $LoadingScreen/Panel/ProgressBar
+
 
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_connected")
@@ -40,7 +43,7 @@ func _ready():
 			log_to_chat("Joining Room")
 			if use_web_sockets:
 				var client = WebSocketClient.new()
-				var url = "ws://127.0.0.1:" + str(8070)
+				var url = "ws://" + GameManager.ip_ad + ":" + str(8070)
 				var error = client.connect_to_url(url, PoolStringArray(), true)
 				get_tree().set_network_peer(client)
 			else:
@@ -59,8 +62,13 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		$Hud/Menu.popup()
+	if Input.is_key_pressed(KEY_TAB):
+		if !player_paused:
+			$Hud/Menu.popup()
+			player_paused = true
+		else:
+			$Hud/Menu.hide()
+			player_paused = false
 
 func menu_button():
 	$Hud/Menu.popup()
@@ -120,14 +128,6 @@ func _import_map(path):
 	loading_bar.value = 3
 	load_props(map.props)
 	loading_bar.value = 4
-	
-	if !online:
-		var player_instance = player.instance()
-		player_instance.name == "Lulu"
-		add_child(player_instance)
-		player_instance.global_transform.origin = Vector3(0, 5, 0)
-		loading_bar.value = 5
-		$LoadingScreen.hide()
 		
 	file.close()
 	
@@ -148,9 +148,9 @@ func _load_map():
 
 
 func _instance_player(id):
-	var player_instance = networked_player.instance()
+	var player_instance = player.instance()
 	player_instance.set_network_master(id)
-	player_instance.name == str(id)
+	player_instance.name = str(id)
 	add_child(player_instance)
 	player_instance.global_transform.origin = Vector3(0, 5, 0)
 	loading_bar.value = 4
@@ -212,6 +212,6 @@ func _exit_game():
 func _join_game():
 	_instance_player(get_tree().get_network_unique_id())
 	rpc("_instance_player", get_tree().get_network_unique_id())
-	
 	$Hud/Menu/VBoxContainer/Button.disabled
+	$Hud/Menu/VBoxContainer/Button.visible = false
 	$Hud/Menu.hide()

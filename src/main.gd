@@ -5,7 +5,6 @@ var map_path : String
 
 
 func _ready():
-	$NewRoomDialog/Panel/MenuButton.get_popup().connect("id_pressed", self, "_id_pressed")
 	$Panel2/HBoxContainer/Button.get_popup().connect("id_pressed", self, "_menu_pressed")
 	$Panel2/HBoxContainer/MenuButton.get_popup().connect("id_pressed", self, "_menu_one")
 	GameManager.room_name = ""
@@ -27,10 +26,10 @@ func _on_map_editor_button_pressed():
 	get_tree().change_scene("res://src/tools/editor.tscn")
 
 
-func _id_pressed(id):
-	if id == 0:
-		$CustomFileDialog.popup()
-	if id == 1:
+func _file_button_pressed():
+	if OS.get_name() == "HTML5":
+		$CustomFileDialog.show()
+	else:
 		$NativeDialogOpenFile.show()
 
 func _menu_pressed(id):
@@ -89,3 +88,11 @@ func _download_file(path):
 func _on_NativeDialogOpenFile_files_selected(files: PoolStringArray):
 	var path = files[0]
 	_on_file_selected(path)
+
+
+func _on_ip_address_changed(new_text):
+	GameManager.ip_ad == new_text
+
+
+func _on_play_button_pressed():
+	$IpAddressDialog.popup()

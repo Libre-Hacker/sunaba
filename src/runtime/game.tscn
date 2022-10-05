@@ -116,7 +116,7 @@ margin_right = -3.0
 [node name="Button" type="Button" parent="Hud/Menu/VBoxContainer"]
 margin_right = 123.0
 margin_bottom = 32.0
-text = "join game"
+text = "play"
 
 [node name="Button2" type="Button" parent="Hud/Menu/VBoxContainer"]
 margin_top = 36.0
@@ -130,7 +130,7 @@ margin_right = 123.0
 margin_bottom = 32.0
 focus_mode = 0
 enabled_focus_mode = 0
-text = "menu [esc]"
+text = "menu [tab]"
 
 [node name="Water" parent="." instance=ExtResource( 3 )]
 
@@ -144,6 +144,6 @@ shadow_enabled = true
 shadow_reverse_cull_face = true
 
 [connection signal="text_entered" from="ChatEntry" to="." method="_on_chat_entry_entered"]
-[connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_join_game"]
+[connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_join_game" flags=6]
 [connection signal="pressed" from="Hud/Menu/VBoxContainer/Button2" to="." method="_exit_game"]
 [connection signal="pressed" from="Hud/MenuButton" to="." method="menu_button"]

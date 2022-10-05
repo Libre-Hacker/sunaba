@@ -5,16 +5,23 @@ export var mouse_sensitivity := 0.25
 var is_camera_button_hold = false
 
 func _ready():
+	if !get_parent().camera_mode == 3:
+		return
 	set_as_toplevel(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(_delta):
+	if !get_parent().camera_mode == 3:
+		return
 	if Input.is_action_pressed("camera_button"):
 		is_camera_button_hold = true
 	else:
 		is_camera_button_hold = false
 
 func _input(event: InputEvent) -> void:
+	if !get_parent().camera_mode == 3:
+		return
+	
 	if is_camera_button_hold:
 		#print("Camera Button Hold")
 		if event is InputEventMouseMotion:

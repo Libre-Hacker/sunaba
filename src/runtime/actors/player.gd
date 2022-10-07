@@ -30,7 +30,8 @@ func _ready():
 	if !is_network_master():
 		#fp_camera.current = false
 		#tp_camera.current = false
-		pass#return
+		$Control/Panel.hide()
+		$Control/HBoxContainer.hide()
 	#if is_network_master():
 		#if camera_mode == 1:
 			#fp_camera.current = false

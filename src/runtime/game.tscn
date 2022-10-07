@@ -29,6 +29,7 @@ surfaces/0 = {
 [node name="Game" type="Spatial"]
 script = ExtResource( 5 )
 online = true
+use_web_sockets = true
 
 [node name="LoadingScreen" type="Control" parent="."]
 visible = false
@@ -53,7 +54,7 @@ margin_left = 8.0
 margin_top = 49.0
 margin_right = -8.0
 margin_bottom = -8.0
-max_value = 5.0
+max_value = 4.0
 percent_visible = false
 
 [node name="Label" type="Label" parent="LoadingScreen/Panel"]
@@ -145,5 +146,6 @@ shadow_reverse_cull_face = true
 
 [connection signal="text_entered" from="ChatEntry" to="." method="_on_chat_entry_entered"]
 [connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_join_game" flags=6]
+[connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_resume"]
 [connection signal="pressed" from="Hud/Menu/VBoxContainer/Button2" to="." method="_exit_game"]
 [connection signal="pressed" from="Hud/MenuButton" to="." method="menu_button"]

@@ -38,6 +38,7 @@ func _ready():
 				peer.create_server(8070)
 				get_tree().set_network_peer(peer)
 			#_instance_player(get_tree().get_network_unique_id())
+			_import_map(GameManager.path)
 			
 		else:
 			log_to_chat("Joining Room")
@@ -53,9 +54,10 @@ func _ready():
 			
 			#_instance_player(get_tree().get_network_unique_id())
 		loading_bar.value = 1
-		_import_map(GameManager.path)
 		rpc_config("_chat", 1)
 		rpc_config("_instance_player", 1)
+		rpc_config("_load_map", 1)
+		rpc_config("load_props", 1)
 	else:
 		loading_bar.value = 1
 		_import_map(GameManager.path)
@@ -78,6 +80,8 @@ func _connected(id):
 	print("Connected to server")
 	log_to_chat("Player " + var2str(id) + " has connected to the room")
 	#_instance_player(id)
+	if GameManager.is_host:
+		rpc("_load_map", map)
 
 
 func _player_disconnected(id):
@@ -127,23 +131,25 @@ func _import_map(path):
 			voxel_mesh.update_mesh()
 	loading_bar.value = 3
 	load_props(map.props)
+	rpc("load_props")
 	loading_bar.value = 4
-		
+	$LoadingScreen.hide()
 	file.close()
 	
 	
 
-func _load_map():
-	for id in map:
-		var sbg_item = map[id]
+func _load_map(data):
+	for id in data.terrain:
+		var sbg_item = data.terrain[id]
 		if !sbg_item.type == -1:
 			voxel_mesh.set_voxel(sbg_item.position, sbg_item.type)
 			voxel_mesh.update_mesh()
 		else:
 			voxel_mesh.erase_voxel(sbg_item.position)
 			voxel_mesh.update_mesh()
-	loading_bar.value = 3
-	_instance_player(get_tree().get_network_unique_id())
+	load_props(data.props)
+	loading_bar.value = 4
+	$LoadingScreen.hide()
 
 
 
@@ -153,8 +159,6 @@ func _instance_player(id):
 	player_instance.name = str(id)
 	add_child(player_instance)
 	player_instance.global_transform.origin = Vector3(0, 5, 0)
-	loading_bar.value = 4
-	$LoadingScreen.hide()
 
 
 
@@ -212,6 +216,9 @@ func _exit_game():
 func _join_game():
 	_instance_player(get_tree().get_network_unique_id())
 	rpc("_instance_player", get_tree().get_network_unique_id())
-	$Hud/Menu/VBoxContainer/Button.disabled
-	$Hud/Menu/VBoxContainer/Button.visible = false
+	#$Hud/Menu/VBoxContainer/Button.disabled
+	#$Hud/Menu/VBoxContainer/Button.visible = false
+
+
+func _resume():
 	$Hud/Menu.hide()

@@ -1,5 +1,7 @@
 extends Control
 
+export var use_bultin_fd = true
+
 var room_name: String
 var map_path : String
 
@@ -27,7 +29,7 @@ func _on_map_editor_button_pressed():
 
 
 func _file_button_pressed():
-	if OS.get_name() == "HTML5":
+	if OS.get_name() == "HTML5" or use_bultin_fd:
 		$CustomFileDialog.show()
 	else:
 		$NativeDialogOpenFile.show()

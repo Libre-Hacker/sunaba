@@ -14,6 +14,7 @@ var has_bgm : bool = false
 
 
 export var props := {}
+export var use_bultin_fd = true
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,7 +30,7 @@ func _ready():
 func _on_item_pressed(id):
 	var item_name = menu_button.get_popup().get_item_text(id)
 	if id == 0:
-		if OS.get_name() == "HTML5":
+		if OS.get_name() == "HTML5" or use_bultin_fd:
 			$Editor/FileDialog.popup()
 		else:
 			$Editor/NativeDialogOpenFile.show()
@@ -41,7 +42,7 @@ func _on_item_pressed(id):
 		file.store_string(var2str(editor_view.blocks))
 		file.close()
 	elif id == 2:
-		if OS.get_name() == "HTML5":
+		if OS.get_name() == "HTML5" or use_bultin_fd:
 			$Editor/SaveDialog.popup()
 		else:
 			$Editor/NativeDialogSaveFile.show()

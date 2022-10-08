@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://src/tools/editor.gd" type="Script" id=2]
@@ -27,7 +27,6 @@
 [ext_resource path="res://src/VoxelMesh.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/textures/minetest_textures/default_sand.png" type="Texture" id=26]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/cursor.png" type="Texture" id=27]
-[ext_resource path="res://assets/ui/theme.tres" type="Theme" id=28]
 [ext_resource path="res://src/tools/editor_view/editor_view.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=30]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/group_edit.png" type="Texture" id=31]
@@ -37,7 +36,6 @@
 [ext_resource path="res://addons/native_dialogs/bin/native_dialog_open_file.gdns" type="Script" id=35]
 [ext_resource path="res://addons/native_dialogs/bin/native_dialog_save_file.gdns" type="Script" id=36]
 [ext_resource path="res://assets/textures/texture-atlas.png" type="Texture" id=37]
-[ext_resource path="res://assets/ui/panel.tres" type="StyleBox" id=38]
 
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 15 )
@@ -142,8 +140,6 @@ margin_left = 8.0
 margin_top = 40.0
 margin_right = 132.0
 margin_bottom = -320.0
-theme = ExtResource( 28 )
-custom_styles/panel = ExtResource( 38 )
 
 [node name="Panel" type="Control" parent="Editor/VoxelTools"]
 anchor_right = 1.0
@@ -357,8 +353,6 @@ custom_styles/normal = SubResource( 30 )
 [node name="Toolbar" type="Panel" parent="Editor"]
 anchor_right = 1.0
 margin_bottom = 35.0
-theme = ExtResource( 28 )
-custom_styles/panel = ExtResource( 38 )
 
 [node name="Menubar" type="HBoxContainer" parent="Editor/Toolbar"]
 anchor_right = 1.0
@@ -425,7 +419,6 @@ margin_left = -280.0
 margin_top = -188.0
 margin_right = 280.0
 margin_bottom = 188.0
-theme = ExtResource( 28 )
 window_title = "Save File"
 resizable = true
 access = 1
@@ -439,7 +432,6 @@ margin_left = -280.0
 margin_top = -188.0
 margin_right = 280.0
 margin_bottom = 188.0
-theme = ExtResource( 28 )
 window_title = "Open a File"
 resizable = true
 mode = 0
@@ -452,7 +444,6 @@ margin_left = -174.0
 margin_top = 40.0
 margin_right = -6.0
 margin_bottom = 217.0
-theme = ExtResource( 28 )
 
 [node name="Tree" type="Tree" parent="Editor/Panel"]
 anchor_right = 1.0

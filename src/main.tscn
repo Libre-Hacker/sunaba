@@ -1,9 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/fonts/open_sans/OpenSans-SemiBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/theme.tres" type="Theme" id=2]
 [ext_resource path="res://src/main.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/open_sans_xl.tres" type="DynamicFont" id=4]
-[ext_resource path="res://addons/native_dialogs/bin/native_dialog_open_file.gdns" type="Script" id=5]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_image.png" type="Texture" id=7]
 [ext_resource path="res://src/tools/text_editor/text_editor.tscn" type="PackedScene" id=8]
@@ -13,17 +13,23 @@
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/map.png" type="Texture" id=12]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/add.png" type="Texture" id=13]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/play.png" type="Texture" id=14]
-[ext_resource path="res://addons/native_dialogs/bin/native_dialog_message.gdns" type="Script" id=15]
 [ext_resource path="res://assets/ui/button_flat.tres" type="StyleBox" id=16]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=17]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/widget.png" type="Texture" id=18]
+[ext_resource path="res://assets/fonts/open_sans/OpenSans-Medium.ttf" type="DynamicFontData" id=19]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 23
+font_data = ExtResource( 19 )
+
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Panel2" type="Panel" parent="."]
@@ -42,7 +48,7 @@ custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_styles/normal = ExtResource( 16 )
 text = "sunaba"
 flat = false
-items = [ "About", ExtResource( 9 ), 0, false, false, 0, 0, null, "", false, "Exit", ExtResource( 6 ), 0, false, false, 1, 0, null, "", false ]
+items = [ "Manage Plugins", ExtResource( 18 ), 0, false, false, 0, 0, null, "", false, "About", ExtResource( 9 ), 0, false, false, 1, 0, null, "", false, "Exit", ExtResource( 6 ), 0, false, false, 2, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="Button" type="MenuButton" parent="Panel2/HBoxContainer"]
@@ -85,7 +91,7 @@ margin_bottom = 235.0
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
 margin_right = 332.0
-margin_bottom = 38.0
+margin_bottom = 44.0
 custom_fonts/font = ExtResource( 4 )
 text = " Play"
 icon = ExtResource( 14 )
@@ -93,9 +99,9 @@ flat = true
 align = 0
 
 [node name="Button2" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 42.0
+margin_top = 48.0
 margin_right = 332.0
-margin_bottom = 80.0
+margin_bottom = 92.0
 custom_fonts/font = ExtResource( 4 )
 text = " New Game"
 icon = ExtResource( 13 )
@@ -103,9 +109,9 @@ flat = true
 align = 0
 
 [node name="Button3" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 84.0
+margin_top = 96.0
 margin_right = 332.0
-margin_bottom = 122.0
+margin_bottom = 140.0
 custom_fonts/font = ExtResource( 4 )
 text = " Map Editor"
 icon = ExtResource( 12 )
@@ -113,6 +119,7 @@ flat = true
 align = 0
 
 [node name="NewRoomDialog" type="WindowDialog" parent="."]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -121,6 +128,7 @@ margin_left = -168.0
 margin_top = -67.5
 margin_right = 168.0
 margin_bottom = 67.5
+popup_exclusive = true
 window_title = "New Room"
 
 [node name="RoomName" type="LineEdit" parent="NewRoomDialog"]
@@ -173,6 +181,7 @@ margin_top = -196.5
 margin_right = 253.5
 margin_bottom = 196.5
 rect_min_size = Vector2( 300, 105 )
+popup_exclusive = true
 window_title = "Open a File"
 mode = 0
 access = 1
@@ -187,26 +196,10 @@ margin_top = -196.5
 margin_right = 253.5
 margin_bottom = 196.5
 rect_min_size = Vector2( 300, 105 )
+popup_exclusive = true
 window_title = "Open a File"
 mode = 0
 access = 1
-
-[node name="FileDialog" type="FileDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -253.5
-margin_top = -196.5
-margin_right = 253.5
-margin_bottom = 196.5
-rect_min_size = Vector2( 300, 105 )
-window_title = "Open a File"
-mode = 0
-
-[node name="NativeDialogOpenFile" type="Node" parent="."]
-script = ExtResource( 5 )
-title = "Choose a snb file"
 
 [node name="MapTextEditor" type="WindowDialog" parent="."]
 anchor_left = 0.5
@@ -217,30 +210,11 @@ margin_left = -361.5
 margin_top = -184.5
 margin_right = 361.5
 margin_bottom = 184.5
+popup_exclusive = true
 window_title = "Map Text Editor"
 resizable = true
 
 [node name="App" parent="MapTextEditor" instance=ExtResource( 8 )]
-
-[node name="AboutMessage" type="Node" parent="."]
-script = ExtResource( 15 )
-title = "About Sunaba"
-text = "Sunaba v0.2"
-choice = 0
-
-[node name="MapNotFoundError" type="Node" parent="."]
-script = ExtResource( 15 )
-title = "snb file not found"
-text = "Please choose a snb file"
-choice = 0
-icon = 2
-
-[node name="FileIsNotMapError" type="Node" parent="."]
-script = ExtResource( 15 )
-title = "File is not a snb file"
-text = "Please choose a snb file"
-choice = 0
-icon = 2
 
 [node name="IpAddressDialog" type="WindowDialog" parent="."]
 anchor_left = 0.5
@@ -273,6 +247,81 @@ margin_right = 332.0
 margin_bottom = 39.0
 text = "127.0.0.1"
 
+[node name="PluginManager" type="WindowDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -255.0
+margin_top = -165.5
+margin_right = 255.0
+margin_bottom = 165.5
+popup_exclusive = true
+
+[node name="Label" type="Label" parent="PluginManager"]
+margin_left = 16.0
+margin_top = -12.5
+margin_right = 94.0
+margin_bottom = 19.5
+custom_fonts/font = SubResource( 3 )
+text = "Plugins"
+
+[node name="Tree" type="Tree" parent="PluginManager"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 27.0
+margin_right = -11.0
+margin_bottom = -8.0
+
+[node name="Button" type="Button" parent="PluginManager"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -58.0
+margin_top = -12.5
+margin_right = -25.0
+margin_bottom = 19.5
+text = "+"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -253.5
+margin_top = -196.5
+margin_right = 253.5
+margin_bottom = 196.5
+rect_min_size = Vector2( 300, 105 )
+popup_exclusive = true
+window_title = "Open a File"
+mode = 0
+
+[node name="AboutDialog" type="AcceptDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -85.5
+margin_top = -61.0
+margin_right = 85.5
+margin_bottom = 61.0
+window_title = "About Sunaba"
+
+[node name="Label2" type="Label" parent="AboutDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -48.0
+text = "Sunaba
+Version 0.2.0
+(C) 2022 mintkat"
+align = 1
+valign = 1
+
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_new_roon_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button3" to="." method="_on_map_editor_button_pressed"]
@@ -281,7 +330,6 @@ text = "127.0.0.1"
 [connection signal="pressed" from="NewRoomDialog/Button" to="." method="_create_room"]
 [connection signal="file_selected" from="CustomFileDialog" to="." method="_on_file_selected"]
 [connection signal="file_selected" from="DownloadFileDialog" to="." method="_download_file"]
-[connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]
-[connection signal="files_selected" from="NativeDialogOpenFile" to="." method="_on_NativeDialogOpenFile_files_selected"]
 [connection signal="pressed" from="IpAddressDialog/Button" to="." method="play"]
 [connection signal="text_changed" from="IpAddressDialog/IPEdit" to="." method="_on_ip_address_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]

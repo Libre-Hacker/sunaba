@@ -248,6 +248,11 @@ _global_script_classes=[ {
 "class": "_LocalStore",
 "language": "GDScript",
 "path": "res://gotm/_impl/_LocalStore.gd"
+}, {
+"base": "Resource",
+"class": "handprop_info",
+"language": "GDScript",
+"path": "res://src/runtime/handprop_info.gd"
 } ]
 _global_script_class_icons={
 "EditorCamera": "",
@@ -297,7 +302,8 @@ _global_script_class_icons={
 "_GotmUser": "",
 "_GotmUserLocal": "",
 "_GotmUtility": "",
-"_LocalStore": ""
+"_LocalStore": "",
+"handprop_info": ""
 }
 
 [application]
@@ -315,6 +321,7 @@ config/windows_native_icon="res://sunaba-icon2.ico"
 
 GameManager="*res://src/runtime/game_manager.gd"
 Gotm="*res://gotm/Gotm.gd"
+PluginManager="*res://src/plugin_manager.gd"
 
 [compression]
 
@@ -332,7 +339,7 @@ multirun/other_window_args="join"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/multirun/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/multirun/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
 
 [gdnative]
 

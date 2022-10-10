@@ -15,6 +15,14 @@ var puppet_pos = Vector3()
 var puppet_vel = Vector3()
 var puppet_rot = Vector3()
 
+var current_handprop = null
+var handprop1 = preload("res://src/runtime/handprops/hello_world.tres")
+var handprop2 = preload("res://src/runtime/handprops/ball_stick.tres")
+var handprop3 = null
+var handprop4 = null
+var handprop5 = null
+var item
+
 onready var spring_arm = $SpringArm
 onready var head = $Head
 onready var fp_camera = null
@@ -76,30 +84,30 @@ func _physics_process(delta: float) -> void:
 				_snap_vector = Vector3.ZERO
 			elif just_landed:
 				_snap_vector = Vector3.DOWN
-		elif camera_mode == 1:
-			if get_parent().player_paused:
-				if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-					Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				return
-			else:
-				if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-					Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			
-			_velocity.y -= gravity * delta
+			if Input.is_key_pressed(KEY_1) and !handprop1 == null and !current_handprop == handprop1:
+				if _model.has_node("handprop"):
+					_model.get_node("handprop").queue_free()
+				current_handprop = handprop1
+				item = handprop1.scene.instance()
+				item.name == "handprop"
+				_model.add_child(item)
+				item.translation = Vector3(0.238, 0.747, 0.448)
+			if Input.is_key_pressed(KEY_2) and !handprop2 == null and !current_handprop == handprop2:
+				if _model.has_node("handprop"):
+					_model.get_node("handprop").queue_free()
+				current_handprop = handprop2
+				item = handprop2.scene.instance()
+				item.name == "handprop"
+				_model.add_child(item)
+				item.translation = Vector3(0.238, 0.747, 0.448)
 			
 			
-			var desired_velocity = get_input() * speed
-			_velocity.x = desired_velocity.x
-			_velocity.z = desired_velocity.z
 			
-			var just_landed = is_on_floor() and _snap_vector == Vector3.ZERO
-			var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
-			if is_jumping:
-				_velocity.y = jump_strength
-				_snap_vector = Vector3.ZERO
-			elif just_landed:
-				_snap_vector = Vector3.DOWN
+			if Input.is_key_pressed(KEY_P):
+				#handprop1 = load("res://src/runtime/handprops/hello_world.tres")
+				print(var2str(handprop1))
+			
 	else:
 		global_transform.origin = puppet_pos
 		_velocity.x = puppet_vel.x

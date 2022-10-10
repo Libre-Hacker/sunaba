@@ -55,7 +55,7 @@ shader_param/border_width = 0.01
 next_pass = SubResource( 15 )
 albedo_color = Color( 0.839216, 0.839216, 0.839216, 1 )
 
-[sub_resource type="ArrayMesh" id=2]
+[sub_resource type="ArrayMesh" id=16]
 resource_name = "myoko_Sphere"
 surfaces/0 = {
 "aabb": AABB( -0.290416, 0.966066, -0.28472, 0.570082, 0.570092, 0.570082 ),
@@ -342,7 +342,7 @@ bind/43/pose = Transform( 0, -3.47022e-06, -1.73793, -1.73794, 0, 0, 0, 1.73794,
 albedo_color = Color( 0.164706, 0.164706, 0.164706, 1 )
 roughness = 0.4
 
-[sub_resource type="ArrayMesh" id=4]
+[sub_resource type="ArrayMesh" id=17]
 resource_name = "myoko_Cylinder001"
 surfaces/0 = {
 "aabb": AABB( -0.290239, 0.345177, -0.275202, 0.572283, 0.302015, 0.544273 ),
@@ -588,10 +588,10 @@ bones/43/bound_children = [  ]
 
 [node name="BaseCharacter" type="MeshInstance" parent="metarig/Skeleton"]
 material_overlay = SubResource( 11 )
-mesh = SubResource( 2 )
+mesh = SubResource( 16 )
 skin = SubResource( 3 )
 
 [node name="LowerDress" type="MeshInstance" parent="metarig/Skeleton"]
 visible = false
-mesh = SubResource( 4 )
+mesh = SubResource( 17 )
 skin = SubResource( 3 )

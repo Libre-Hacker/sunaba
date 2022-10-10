@@ -1,10 +1,7 @@
 extends Control
 
-export var use_bultin_fd = true
-
 var room_name: String
 var map_path : String
-
 
 func _ready():
 	$Panel2/HBoxContainer/Button.get_popup().connect("id_pressed", self, "_menu_pressed")
@@ -29,10 +26,7 @@ func _on_map_editor_button_pressed():
 
 
 func _file_button_pressed():
-	if OS.get_name() == "HTML5" or use_bultin_fd:
-		$CustomFileDialog.show()
-	else:
-		$NativeDialogOpenFile.show()
+	$CustomFileDialog.show()
 
 func _menu_pressed(id):
 	if id == 0:
@@ -43,8 +37,10 @@ func _menu_pressed(id):
 
 func _menu_one(id):
 	if id == 0:
-		$AboutMessage.show()
+		$PluginManager.popup()
 	elif id == 1:
+		$AboutDialog.popup()
+	elif id == 2:
 		get_tree().quit()
 
 
@@ -63,10 +59,13 @@ func _create_room():
 		#return
 		GameManager.room_name = "Hello World"
 	if GameManager.path == "":
-		$MapNotFoundError.show()
-		return
-	elif !".snb" in  GameManager.path:
-		$FileIsNotMapError.show()
+		if $NewRoomDialog/Panel/Label.text == "":
+			OS.alert("Please choose a snb file")
+			return
+		else:
+			GameManager.path = $NewRoomDialog/Panel/Label.text
+	if !".snb" in  GameManager.path:
+		OS.alert("File is not a snb file")
 		return
 	GameManager.room_name = room_name
 	GameManager.is_host = true
@@ -93,7 +92,7 @@ func _on_NativeDialogOpenFile_files_selected(files: PoolStringArray):
 
 
 func _on_ip_address_changed(new_text):
-	GameManager.ip_ad == new_text
+	GameManager.ip_ad = new_text
 
 
 func _on_play_button_pressed():

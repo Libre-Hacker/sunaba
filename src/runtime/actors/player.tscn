@@ -2,10 +2,9 @@
 
 [ext_resource path="res://src/runtime/actors/spring_arm.gd" type="Script" id=1]
 [ext_resource path="res://src/runtime/actors/player.gd" type="Script" id=2]
-[ext_resource path="res://assets/ui/theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/fonts/open_sans/OpenSans-Light.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/ui/carbon_ui/font/inter.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=4]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/tools.png" type="Texture" id=5]
-[ext_resource path="res://assets/ui/green_button08.png" type="Texture" id=6]
 [ext_resource path="res://sunaba-icon2.png" type="Texture" id=7]
 [ext_resource path="res://src/runtime/actors/default.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/runtime/ui/handprop_icon.tscn" type="PackedScene" id=10]
@@ -14,21 +13,43 @@
 radius = 0.328175
 height = 0.899992
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 49, 45 )
-margin_left = 5.0
-margin_right = 5.0
-margin_top = 6.0
-margin_bottom = 6.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.533333, 0.878431, 0.376471, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.631373, 0.72549, 0.411765, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.847059, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.494118, 0, 0, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
@@ -66,7 +87,7 @@ margin_left = 10.0
 margin_top = 45.0
 margin_right = 246.0
 margin_bottom = 114.0
-theme = ExtResource( 3 )
+theme = ExtResource( 4 )
 
 [node name="Icon" type="TextureRect" parent="Control/Panel"]
 anchor_top = 1.0
@@ -88,6 +109,7 @@ margin_top = -40.0
 margin_right = -5.0
 margin_bottom = -8.0
 custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 value = 100.0
 
 [node name="Label" type="Label" parent="Control/Panel"]
@@ -110,10 +132,11 @@ margin_bottom = -20.0
 alignment = 2
 
 [node name="Button" parent="Control/HBoxContainer" instance=ExtResource( 10 )]
+margin_right = 57.0
 
 [node name="Button2" type="Button" parent="Control/HBoxContainer"]
-margin_left = 64.0
-margin_right = 124.0
+margin_left = 61.0
+margin_right = 122.0
 margin_bottom = 57.0
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
@@ -127,8 +150,8 @@ flat = true
 icon_align = 2
 
 [node name="Button3" type="Button" parent="Control/HBoxContainer"]
-margin_left = 128.0
-margin_right = 188.0
+margin_left = 126.0
+margin_right = 187.0
 margin_bottom = 57.0
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
@@ -142,7 +165,7 @@ flat = true
 icon_align = 2
 
 [node name="Button4" type="Button" parent="Control/HBoxContainer"]
-margin_left = 192.0
+margin_left = 191.0
 margin_right = 252.0
 margin_bottom = 57.0
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
@@ -158,7 +181,7 @@ icon_align = 2
 
 [node name="Button5" type="Button" parent="Control/HBoxContainer"]
 margin_left = 256.0
-margin_right = 316.0
+margin_right = 317.0
 margin_bottom = 57.0
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )

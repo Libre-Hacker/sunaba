@@ -26,7 +26,7 @@ func _on_map_editor_button_pressed():
 
 
 func _file_button_pressed():
-	$CustomFileDialog.show()
+	$NativeDialogOpenFile.show()
 
 func _menu_pressed(id):
 	if id == 0:

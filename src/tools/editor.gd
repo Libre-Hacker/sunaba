@@ -29,7 +29,7 @@ func _ready():
 func _on_item_pressed(id):
 	var item_name = menu_button.get_popup().get_item_text(id)
 	if id == 0:
-		$Editor/FileDialog.popup()
+		$Editor/NativeDialogOpenFile.show()
 	elif id == 1:
 		#$Editor/SaveDialog.popup()
 		pass
@@ -38,7 +38,7 @@ func _on_item_pressed(id):
 		file.store_string(var2str(editor_view.blocks))
 		file.close()
 	elif id == 2:
-		$Editor/SaveDialog.popup()
+		$Editor/NativeDialogSaveFile.show()
 	elif id == 3:
 		get_tree().change_scene("res://src/main.tscn")
 	print(item_name + ' pressed')

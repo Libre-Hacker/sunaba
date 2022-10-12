@@ -1,0 +1,208 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://addons/voxel-core/classes/voxel_set.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/terrain_texture.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[resource]
+script = ExtResource( 1 )
+tile_size = Vector2( 128, 128 )
+tiles = ExtResource( 2 )
+materials = [ SubResource( 1 ) ]
+VOXELS = [ {
+"color": Color( 1, 1, 1, 1 ),
+"name": "grass",
+"specular": 0.0,
+"uv": Vector2( 1, 1 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "dirt_grass",
+"specular": 0.0,
+"uv": Vector2( 3, 0 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 2, 0 ),
+Vector3( 0, 1, 0 ): Vector2( 1, 1 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "stone_grass",
+"specular": 0.0,
+"uv": Vector2( 7, 3 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 6, 2 ),
+Vector3( 0, 1, 0 ): Vector2( 1, 1 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "snow",
+"specular": 0.0,
+"uv": Vector2( 5, 2 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "dirt_snow",
+"specular": 0.0,
+"uv": Vector2( 5, 0 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 2, 0 ),
+Vector3( 0, 1, 0 ): Vector2( 5, 2 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "stone_snow",
+"specular": 0.0,
+"uv": Vector2( 6, 4 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 6, 2 ),
+Vector3( 0, 1, 0 ): Vector2( 5, 2 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "sand",
+"specular": 0.0,
+"uv": Vector2( 4, 2 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "dirt_sand",
+"specular": 0.0,
+"uv": Vector2( 4, 0 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 2, 0 ),
+Vector3( 0, 1, 0 ): Vector2( 4, 2 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "stone_sand",
+"specular": 0.0,
+"uv": Vector2( 4, 6 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 6, 2 ),
+Vector3( 0, 1, 0 ): Vector2( 4, 2 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "dirt",
+"specular": 0.0,
+"uv": Vector2( 2, 0 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "stone",
+"specular": 0.0,
+"uv": Vector2( 6, 2 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "gravel_stone",
+"specular": 0.0,
+"uv": Vector2( 1, 3 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "brick_red",
+"specular": 0.0,
+"uv": Vector2( 0, 1 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "brick_grey",
+"specular": 0.0,
+"uv": Vector2( 0, 0 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "greystone",
+"specular": 0.0,
+"uv": Vector2( 1, 5 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "trunk",
+"specular": 0.0,
+"uv": Vector2( 5, 5 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 5, 6 ),
+Vector3( 0, 1, 0 ): Vector2( 5, 6 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "trunk_white",
+"specular": 0.0,
+"uv": Vector2( 5, 7 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 6, 5 ),
+Vector3( 0, 0, -1 ): Vector2( 5, 7 ),
+Vector3( 0, 1, 0 ): Vector2( 6, 5 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "ice",
+"specular": 0.0,
+"uv": Vector2( 3, 1 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "cotton_blue",
+"specular": 0.0,
+"uv": Vector2( 0, 5 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "cotton_green",
+"specular": 0.0,
+"uv": Vector2( 0, 6 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "cotton_red",
+"specular": 0.0,
+"uv": Vector2( 0, 7 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "cotton_tan",
+"specular": 0.0,
+"uv": Vector2( 1, 0 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "wood",
+"uv": Vector2( 6, 6 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "wood_red",
+"uv": Vector2( 6, 7 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "leaves",
+"uv": Vector2( 5, 1 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "leaves_orange",
+"uv": Vector2( 6, 1 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "gravel_dirt",
+"uv": Vector2( 1, 2 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "redsand",
+"uv": Vector2( 2, 4 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "redstone",
+"uv": Vector2( 2, 5 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "redstone_sand",
+"uv": Vector2( 3, 2 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 2, 5 ),
+Vector3( 0, 1, 0 ): Vector2( 2, 4 )
+}
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "cactus",
+"uv": Vector2( 0, 4 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "greysand",
+"uv": Vector2( 1, 4 )
+}, {
+"color": Color( 1, 1, 1, 1 ),
+"name": "greystone_sand",
+"uv": Vector2( 2, 1 ),
+"uvs": {
+Vector3( 0, -1, 0 ): Vector2( 1, 5 ),
+Vector3( 0, 1, 0 ): Vector2( 1, 4 )
+}
+} ]

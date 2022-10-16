@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "BuildFlags",
+"language": "GDScript",
+"path": "res://src/build_flags.gd"
+}, {
 "base": "Camera",
 "class": "EditorCamera",
 "language": "GDScript",
@@ -255,6 +260,7 @@ _global_script_classes=[ {
 "path": "res://src/runtime/handprop_info.gd"
 } ]
 _global_script_class_icons={
+"BuildFlags": "",
 "EditorCamera": "",
 "GPLReader": "",
 "GotmAuth": "",
@@ -322,6 +328,7 @@ config/windows_native_icon="res://sunaba-icon2.ico"
 GameManager="*res://src/runtime/game_manager.gd"
 Gotm="*res://gotm/Gotm.gd"
 PluginManager="*res://src/plugin_manager.gd"
+Build="*res://src/build.gd"
 
 [compression]
 
@@ -337,17 +344,17 @@ multirun/add_custom_args=true
 multirun/first_window_args="listen"
 multirun/other_window_args="join"
 
+[display]
+
+window/dpi/allow_hidpi=true
+
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/multirun/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/multirun/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
 
 [gdnative]
 
 singletons=[  ]
-
-[gui]
-
-theme/custom_font="res://assets/fonts/open_sans.tres"
 
 [input]
 

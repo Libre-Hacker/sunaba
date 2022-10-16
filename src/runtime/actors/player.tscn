@@ -1,13 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://src/runtime/actors/spring_arm.gd" type="Script" id=1]
 [ext_resource path="res://src/runtime/actors/player.gd" type="Script" id=2]
-[ext_resource path="res://assets/ui/carbon_ui/font/inter.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=4]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/tools.png" type="Texture" id=5]
 [ext_resource path="res://sunaba-icon2.png" type="Texture" id=7]
 [ext_resource path="res://src/runtime/actors/default.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/runtime/ui/handprop_icon.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.328175
@@ -45,32 +41,20 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="DynamicFont" id=2]
-size = 24
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
-
 [node name="Player" type="KinematicBody"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 script = ExtResource( 2 )
-camera_mode = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.779987, -0.00298238 )
 shape = SubResource( 1 )
 
-[node name="SpringArm" type="SpringArm" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.14615, 0 )
-spring_length = 5.0
-margin = 0.02
-script = ExtResource( 1 )
-
-[node name="TPCamera" type="Camera" parent="SpringArm"]
-current = true
-
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.15385, 0 )
+current = true
 
 [node name="Skin" parent="." instance=ExtResource( 9 )]
 
@@ -85,11 +69,12 @@ autostart = true
 [node name="Panel" type="Panel" parent="Control"]
 margin_left = 10.0
 margin_top = 45.0
-margin_right = 246.0
+margin_right = 190.0
 margin_bottom = 114.0
 theme = ExtResource( 4 )
 
 [node name="Icon" type="TextureRect" parent="Control/Panel"]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -101,21 +86,24 @@ expand = true
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/Panel"]
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 66.0
+margin_left = -170.0
 margin_top = -40.0
 margin_right = -5.0
 margin_bottom = -8.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 value = 100.0
 
 [node name="Label" type="Label" parent="Control/Panel"]
+anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 66.0
-margin_top = 5.0
+margin_left = -170.0
+margin_top = 8.0
 margin_right = -5.0
 margin_bottom = 25.0
 text = "Player"
@@ -131,67 +119,6 @@ margin_right = -19.0
 margin_bottom = -20.0
 alignment = 2
 
-[node name="Button" parent="Control/HBoxContainer" instance=ExtResource( 10 )]
-margin_right = 57.0
-
-[node name="Button2" type="Button" parent="Control/HBoxContainer"]
-margin_left = 61.0
-margin_right = 122.0
-margin_bottom = 57.0
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "2"
-icon = ExtResource( 5 )
-flat = true
-icon_align = 2
-
-[node name="Button3" type="Button" parent="Control/HBoxContainer"]
-margin_left = 126.0
-margin_right = 187.0
-margin_bottom = 57.0
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "3"
-icon = ExtResource( 5 )
-flat = true
-icon_align = 2
-
-[node name="Button4" type="Button" parent="Control/HBoxContainer"]
-margin_left = 191.0
-margin_right = 252.0
-margin_bottom = 57.0
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "4"
-icon = ExtResource( 5 )
-flat = true
-icon_align = 2
-
-[node name="Button5" type="Button" parent="Control/HBoxContainer"]
-margin_left = 256.0
-margin_right = 317.0
-margin_bottom = 57.0
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "5"
-icon = ExtResource( 5 )
-flat = true
-icon_align = 2
-
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
+
+[editable path="Skin"]

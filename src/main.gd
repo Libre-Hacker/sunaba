@@ -1,6 +1,8 @@
 extends Control
 
-var room_name: String
+var use_native_dialogs : bool = false
+
+var room_name : String
 var map_path : String
 
 func _ready():
@@ -26,7 +28,10 @@ func _on_map_editor_button_pressed():
 
 
 func _file_button_pressed():
-	$NativeDialogOpenFile.show()
+	if OS.get_name() == "Windows" and Build.use_native_fd:
+		$NativeDialogOpenFile.show()
+	else:
+		$CustomFileDialog.popup()
 
 func _menu_pressed(id):
 	if id == 0:
@@ -37,11 +42,7 @@ func _menu_pressed(id):
 
 func _menu_one(id):
 	if id == 0:
-		$PluginManager.popup()
-	elif id == 1:
-		$AboutDialog.popup()
-	elif id == 2:
-		get_tree().quit()
+		$SettingsDialog.popup()
 
 
 func _on_file_selected(path):

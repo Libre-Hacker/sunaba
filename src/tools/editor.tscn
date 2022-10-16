@@ -96,11 +96,10 @@ world_path = NodePath("../VoxelMesh")
 [node name="Editor" type="Node" parent="."]
 
 [node name="VoxelTools" type="Panel" parent="Editor"]
-anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 40.0
 margin_right = 132.0
-margin_bottom = -129.0
+margin_bottom = 471.0
 theme = ExtResource( 28 )
 
 [node name="Panel" type="Control" parent="Editor/VoxelTools"]
@@ -482,7 +481,7 @@ margin_bottom = 35.0
 
 [node name="MenuButton" type="MenuButton" parent="Editor/Toolbar/Menubar"]
 margin_left = 4.0
-margin_right = 56.0
+margin_right = 57.0
 margin_bottom = 35.0
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -505,7 +504,7 @@ items = [ "About", ExtResource( 24 ), 0, false, false, 0, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="SelectButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 60.0
+margin_left = 61.0
 margin_right = 122.0
 margin_bottom = 35.0
 custom_styles/normal = ExtResource( 34 )
@@ -514,15 +513,15 @@ icon = ExtResource( 27 )
 
 [node name="AddButton" type="Button" parent="Editor/Toolbar/Menubar"]
 margin_left = 126.0
-margin_right = 184.0
+margin_right = 181.0
 margin_bottom = 35.0
 custom_styles/normal = ExtResource( 34 )
 text = " add"
 icon = ExtResource( 21 )
 
 [node name="RemoveButton2" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 188.0
-margin_right = 269.0
+margin_left = 185.0
+margin_right = 266.0
 margin_bottom = 35.0
 custom_styles/normal = ExtResource( 34 )
 text = " remove"

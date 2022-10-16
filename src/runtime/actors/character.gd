@@ -1,15 +1,18 @@
 extends Spatial
 
 
-
 var skin = null
 
+
 onready var body = $metarig/Skeleton/BaseCharacter
+onready var headwear = $metarig/Skeleton/HeadwearAttachment
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
+func hide_meshes():
+	body.hide()
+	headwear.hide()
 
 
-
+func show_meshes():
+	body.show()
+	headwear.show()

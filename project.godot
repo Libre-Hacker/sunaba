@@ -109,6 +109,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/voxel-core/classes/readers/var.gd"
 }, {
+"base": "Control",
+"class": "VirtualJoystick",
+"language": "GDScript",
+"path": "res://joystick/virtual_joystick.gd"
+}, {
 "base": "Reference",
 "class": "VoxReader",
 "language": "GDScript",
@@ -280,6 +285,7 @@ _global_script_class_icons={
 "ImageReader": "res://addons/voxel-core/assets/logos/MagicaVoxel.png",
 "Reader": "",
 "VarReader": "",
+"VirtualJoystick": "",
 "VoxReader": "res://addons/voxel-core/assets/logos/MagicaVoxel.png",
 "Voxel": "res://addons/voxel-core/assets/classes/voxel.png",
 "VoxelImporter": "",
@@ -411,6 +417,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/fallback_to_gles2=true
+vram_compression/import_etc=true
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false

@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.s3tc.stex"
 path.etc2="res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.etc2.stex"
+path.etc="res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/textures/voxel/Other/skybox_side.png"
-dest_files=[ "res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.s3tc.stex", "res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.etc2.stex" ]
+dest_files=[ "res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.s3tc.stex", "res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.etc2.stex", "res://.import/skybox_side.png-c823ba191d6053e07353723cf6a9bf4d.etc.stex" ]
 
 [params]
 

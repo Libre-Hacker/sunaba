@@ -65,27 +65,6 @@ margin_bottom = 46.0
 text = "Loading"
 valign = 1
 
-[node name="Chatbox" type="RichTextLabel" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 22.0
-margin_top = -255.0
-margin_right = 298.0
-margin_bottom = -56.0
-theme = ExtResource( 4 )
-custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-
-[node name="ChatEntry" type="LineEdit" parent="."]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 22.0
-margin_top = -54.0
-margin_right = 298.0
-margin_bottom = -22.0
-theme = ExtResource( 4 )
-placeholder_text = "Click to chat"
-
 [node name="Hud" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -139,6 +118,23 @@ custom_styles/normal = SubResource( 2 )
 enabled_focus_mode = 0
 text = "menu"
 
+[node name="Chatbox" type="RichTextLabel" parent="."]
+margin_left = 10.0
+margin_top = 122.0
+margin_right = 286.0
+margin_bottom = 321.0
+theme = ExtResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="ChatEntry" type="LineEdit" parent="."]
+margin_left = 65.0
+margin_top = 6.0
+margin_right = 341.0
+margin_bottom = 38.0
+theme = ExtResource( 4 )
+placeholder_text = "Click to chat"
+
 [node name="Water" parent="." instance=ExtResource( 3 )]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -149,8 +145,8 @@ shadow_reverse_cull_face = true
 
 [node name="VoxelMesh" parent="." instance=ExtResource( 2 )]
 
-[connection signal="text_entered" from="ChatEntry" to="." method="_on_chat_entry_entered"]
-[connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_join_game" flags=6]
 [connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_resume"]
+[connection signal="pressed" from="Hud/Menu/VBoxContainer/Button" to="." method="_join_game" flags=6]
 [connection signal="pressed" from="Hud/Menu/VBoxContainer/Button2" to="." method="_exit_game"]
 [connection signal="pressed" from="Hud/MenuButton" to="." method="menu_button"]
+[connection signal="text_entered" from="ChatEntry" to="." method="_on_chat_entry_entered"]

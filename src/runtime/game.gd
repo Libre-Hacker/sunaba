@@ -166,7 +166,7 @@ func load_props(prop_data):
 	for prop in prop_data:
 		var item = prop_data[prop]
 		if item.type == 0:
-			var ball = load("res://src/runtime/props/ball.tscn")
+			var ball = load("res://src/runtime/props/table.tscn")
 			add_prop_to_scene_with_vectors("Ball", ball, item.position, item.rotation, item.size, item.type, item.custom_properties)
 		elif item.type == 1:
 			var beach_ball = load("res://src/runtime/props/beach_ball.tscn")

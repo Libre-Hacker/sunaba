@@ -32,7 +32,8 @@ func _on_item_pressed(id):
 		if OS.get_name == "HTML5" or Build.use_native_fd == false:
 			$Editor/FileDialog.popup()
 		else:
-			$Editor/NativeDialogOpenFile.show()
+			#$Editor/NativeDialogOpenFile.show()
+			pass
 	elif id == 1:
 		#$Editor/SaveDialog.popup()
 		pass
@@ -44,7 +45,8 @@ func _on_item_pressed(id):
 		if OS.get_name() == "HTML5" or Build.use_native_fd == false:
 			$Editor/SaveDialog.popup()
 		else:
-			$Editor/NativeDialogSaveFile.show()
+			#$Editor/NativeDialogSaveFile.show()
+			pass
 	elif id == 3:
 		get_tree().change_scene("res://src/main.tscn")
 	print(item_name + ' pressed')

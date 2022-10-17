@@ -29,7 +29,8 @@ func _on_map_editor_button_pressed():
 
 func _file_button_pressed():
 	if OS.get_name() == "Windows" and Build.use_native_fd:
-		$NativeDialogOpenFile.show()
+		#$NativeDialogOpenFile.show()
+		pass
 	else:
 		$CustomFileDialog.popup()
 

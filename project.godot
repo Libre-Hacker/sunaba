@@ -419,4 +419,5 @@ common/enable_pause_aware_picking=true
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 quality/depth/hdr=false
+environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false

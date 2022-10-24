@@ -25,9 +25,7 @@ func connect_to_server() -> void:
 	# Open a realtime socket to Nakama.
 	nakama_socket = Nakama.create_socket_from(nakama_client)
 	yield(nakama_socket.connect_async(nakama_session), "completed")
- 
-	print ("Connected to Nakama!")
- 
+	
 	# We can configure OnlineMatch before using it:
 	OnlineMatch.min_players = 1
 	OnlineMatch.max_players = 10
@@ -47,5 +45,4 @@ func connect_to_server() -> void:
 	OnlineMatch.connect("match_ready", self, "_on_OnlineMatch_match_ready")
 	OnlineMatch.connect("match_not_ready", self, "_on_OnlineMatch_match_not_ready")
 	
-	print ("Joined the matchmaking queue...")
-
+	print ("Connected to Nakama!")

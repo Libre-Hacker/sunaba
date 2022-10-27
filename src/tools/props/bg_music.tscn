@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=1]
 [ext_resource path="res://src/tools/props/bgm_properties.gd" type="Script" id=2]
 [ext_resource path="res://src/tools/props/bgm_prop.gd" type="Script" id=3]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/stop.png" type="Texture" id=4]
@@ -23,7 +22,6 @@ margin_left = -216.0
 margin_top = -130.0
 margin_right = 216.0
 margin_bottom = 130.0
-theme = ExtResource( 1 )
 popup_exclusive = true
 window_title = "Properties"
 resizable = true
@@ -42,10 +40,10 @@ tab_align = 0
 [node name="Music" type="Control" parent="Properties/Tabs/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 43.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="Tree" type="Tree" parent="Properties/Tabs/TabContainer/Music"]
 anchor_right = 1.0

@@ -1,40 +1,20 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=2]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=2]
 [ext_resource path="res://src/main.gd" type="Script" id=3]
 [ext_resource path="res://assets/ui/carbon_ui/flat.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_image.png" type="Texture" id=7]
 [ext_resource path="res://src/text_editor/text_editor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/information.png" type="Texture" id=9]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_down.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/page_edit.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=17]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/widget.png" type="Texture" id=18]
 
-[sub_resource type="StyleBoxFlat" id=15]
-content_margin_left = 5.0
-content_margin_right = 5.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
-bg_color = Color( 1, 1, 1, 1 )
-border_width_top = 2
-border_width_right = 2
-corner_radius_top_right = 5
-
-[sub_resource type="StyleBoxFlat" id=14]
-content_margin_left = 5.0
-content_margin_right = 5.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
-bg_color = Color( 1, 1, 1, 1 )
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_bottom_right = 5
+[sub_resource type="StyleBoxEmpty" id=17]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
@@ -47,16 +27,14 @@ margin_top = -25.0
 margin_right = -7.0
 margin_bottom = -7.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Sunaba v0.2"
+text = "Sunaba v0.1"
 align = 2
 valign = 2
 
 [node name="Panel" type="Panel" parent="."]
-anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -105.0
+margin_top = 33.0
 margin_right = 188.0
-custom_styles/panel = SubResource( 15 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 anchor_right = 1.0
@@ -68,23 +46,23 @@ margin_bottom = 1.0
 
 [node name="Button" type="Button" parent="Panel/VBoxContainer"]
 margin_right = 165.0
-margin_bottom = 26.0
+margin_bottom = 31.0
 custom_styles/normal = ExtResource( 5 )
 text = " Play"
 align = 0
 
 [node name="Button2" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 30.0
+margin_top = 35.0
 margin_right = 165.0
-margin_bottom = 56.0
+margin_bottom = 66.0
 custom_styles/normal = ExtResource( 5 )
 text = " New Game"
 align = 0
 
 [node name="Button3" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 60.0
+margin_top = 70.0
 margin_right = 165.0
-margin_bottom = 86.0
+margin_bottom = 101.0
 custom_styles/normal = ExtResource( 5 )
 text = " Map Editor"
 align = 0
@@ -246,7 +224,8 @@ window_title = "Settings"
 [node name="Tabs" type="Tabs" parent="SettingsDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -8.0
+margin_top = 6.0
+margin_bottom = 1.0
 
 [node name="TabContainer" type="TabContainer" parent="SettingsDialog/Tabs"]
 anchor_right = 1.0
@@ -256,10 +235,10 @@ tab_align = 0
 [node name="\?" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 39.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 10.0
+margin_top = 49.0
+margin_right = -10.0
+margin_bottom = -10.0
 
 [node name="Label2" type="Label" parent="SettingsDialog/Tabs/TabContainer/\?"]
 anchor_right = 1.0
@@ -269,17 +248,17 @@ margin_top = 8.0
 margin_right = -8.0
 margin_bottom = -8.0
 text = "Sunaba
-Version 0.2.0
+Version 0.1.0
 (C) 2022 mintkat"
 
 [node name="Graphics" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 39.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsDialog/Tabs/TabContainer/Graphics"]
 anchor_right = 1.0
@@ -290,28 +269,30 @@ margin_right = -5.0
 margin_bottom = -5.0
 rect_min_size = Vector2( 0, 40 )
 
-[node name="Label" type="Label" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_right = 387.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 0, 30 )
-text = "Resolution"
-valign = 1
-
-[node name="OptionButton" type="OptionButton" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer/Label"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -146.0
-margin_top = -12.0
-margin_bottom = 12.0
-text = "640x480"
+[node name="Label" type="CheckButton" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
+margin_right = 389.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 0, 42 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 17 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/focus = SubResource( 17 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/hover_pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 17 )
+text = "Fullscreen Mode"
+flat = true
 
 [node name="Label2" type="Label" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_top = 34.0
-margin_right = 387.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 0, 30 )
+margin_top = 46.0
+margin_right = 389.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 42 )
 text = "Resolution"
 valign = 1
 
@@ -325,10 +306,10 @@ margin_top = -12.0
 margin_bottom = 12.0
 
 [node name="Label3" type="Label" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_top = 68.0
-margin_right = 387.0
-margin_bottom = 98.0
-rect_min_size = Vector2( 0, 30 )
+margin_top = 92.0
+margin_right = 389.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 0, 42 )
 text = "Resolution"
 valign = 1
 
@@ -342,10 +323,10 @@ margin_top = -12.0
 margin_bottom = 12.0
 
 [node name="Label4" type="Label" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_top = 102.0
-margin_right = 387.0
-margin_bottom = 132.0
-rect_min_size = Vector2( 0, 30 )
+margin_top = 138.0
+margin_right = 389.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 0, 42 )
 text = "Resolution"
 valign = 1
 
@@ -358,16 +339,33 @@ margin_left = -146.0
 margin_top = -12.0
 margin_bottom = 12.0
 
+[node name="Audio" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 49.0
+margin_right = -10.0
+margin_bottom = -10.0
+
+[node name="Controls" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 49.0
+margin_right = -10.0
+margin_bottom = -10.0
+
 [node name="Panel2" type="Panel" parent="."]
-margin_right = 112.0
+anchor_right = 1.0
 margin_bottom = 34.0
-custom_styles/panel = SubResource( 14 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
 anchor_bottom = 1.0
 
 [node name="MenuButton" type="MenuButton" parent="Panel2/HBoxContainer"]
-margin_right = 55.0
+margin_right = 61.0
 margin_bottom = 34.0
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -375,12 +373,12 @@ custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_styles/normal = ExtResource( 5 )
 text = "sunaba"
 flat = false
-items = [ "Settings", ExtResource( 18 ), 0, false, false, 0, 0, null, "", false, "About", ExtResource( 9 ), 0, false, false, 1, 0, null, "", false ]
+items = [ "Settings", ExtResource( 18 ), 0, false, false, 0, 0, null, "", false, "Quit", ExtResource( 2 ), 0, false, false, 1, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="Button" type="MenuButton" parent="Panel2/HBoxContainer"]
-margin_left = 59.0
-margin_right = 101.0
+margin_left = 65.0
+margin_right = 111.0
 margin_bottom = 34.0
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )

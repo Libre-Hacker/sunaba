@@ -62,10 +62,6 @@ current = true
 
 [node name="Skin" parent="." instance=ExtResource( 9 )]
 
-[node name="Skeleton" parent="Skin/metarig" index="0"]
-bones/7/bound_children = [ NodePath("HeadwearAttachment") ]
-bones/22/bound_children = [ NodePath("ItemAttachment") ]
-
 [node name="HeadwearAttachment" parent="Skin/metarig/Skeleton" index="2"]
 transform = Transform( 1, 6.4837e-14, 2.38419e-07, 4.03596e-09, 0.999857, -0.016928, -2.38384e-07, 0.016928, 0.999857, 5.24605e-15, 1.71076, -0.016035 )
 
@@ -104,10 +100,9 @@ text = "jump"
 
 [node name="Panel" type="Panel" parent="Control"]
 margin_left = 10.0
-margin_top = 45.0
+margin_top = 43.0
 margin_right = 190.0
 margin_bottom = 114.0
-theme = ExtResource( 4 )
 
 [node name="Icon" type="TextureRect" parent="Control/Panel"]
 visible = false

@@ -44,6 +44,8 @@ func _menu_pressed(id):
 func _menu_one(id):
 	if id == 0:
 		$SettingsDialog.popup()
+	elif id == 1:
+		get_tree().quit()
 
 
 func _on_file_selected(path):

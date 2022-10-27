@@ -362,6 +362,10 @@ enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multiru
 
 singletons=[  ]
 
+[gui]
+
+theme/custom="res://assets/ui/2kui/2kui.tres"
+
 [input]
 
 move_forward={

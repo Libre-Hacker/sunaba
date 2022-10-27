@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://src/tools/editor.gd" type="Script" id=2]
@@ -27,7 +27,6 @@
 [ext_resource path="res://src/VoxelMesh.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/textures/voxel/Tiles/cactus_top.png" type="Texture" id=26]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/cursor.png" type="Texture" id=27]
-[ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=28]
 [ext_resource path="res://src/tools/editor_view/editor_view.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=30]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/group_edit.png" type="Texture" id=31]
@@ -51,18 +50,6 @@
 [ext_resource path="res://assets/textures/terrain_texture.png" type="Texture" id=49]
 [ext_resource path="res://assets/textures/voxel/Tiles/redstone_sand.png" type="Texture" id=51]
 [ext_resource path="res://assets/textures/voxel/Tiles/gravel_dirt.png" type="Texture" id=52]
-
-[sub_resource type="StyleBoxFlat" id=36]
-content_margin_left = 5.0
-content_margin_right = 5.0
-content_margin_top = 5.0
-content_margin_bottom = 5.0
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 1
-border_width_right = 1
-border_width_bottom = 2
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="SpatialMaterial" id=34]
 vertex_color_use_as_albedo = true
@@ -98,7 +85,6 @@ margin_left = 8.0
 margin_top = 40.0
 margin_right = 132.0
 margin_bottom = 471.0
-theme = ExtResource( 28 )
 
 [node name="Panel" type="Control" parent="Editor/VoxelTools"]
 anchor_right = 1.0
@@ -466,8 +452,6 @@ expand_icon = true
 [node name="Toolbar" type="Panel" parent="Editor"]
 anchor_right = 1.0
 margin_bottom = 35.0
-theme = ExtResource( 28 )
-custom_styles/panel = SubResource( 36 )
 
 [node name="Menubar" type="HBoxContainer" parent="Editor/Toolbar"]
 anchor_right = 1.0
@@ -503,23 +487,23 @@ switch_on_hover = true
 
 [node name="SelectButton" type="Button" parent="Editor/Toolbar/Menubar"]
 margin_left = 61.0
-margin_right = 122.0
+margin_right = 125.0
 margin_bottom = 35.0
 custom_styles/normal = ExtResource( 34 )
 text = " view"
 icon = ExtResource( 27 )
 
 [node name="AddButton" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 126.0
-margin_right = 181.0
+margin_left = 129.0
+margin_right = 188.0
 margin_bottom = 35.0
 custom_styles/normal = ExtResource( 34 )
 text = " add"
 icon = ExtResource( 21 )
 
 [node name="RemoveButton2" type="Button" parent="Editor/Toolbar/Menubar"]
-margin_left = 185.0
-margin_right = 266.0
+margin_left = 192.0
+margin_right = 278.0
 margin_bottom = 35.0
 custom_styles/normal = ExtResource( 34 )
 text = " remove"
@@ -534,7 +518,6 @@ margin_left = -280.0
 margin_top = -188.0
 margin_right = 280.0
 margin_bottom = 188.0
-theme = ExtResource( 28 )
 popup_exclusive = true
 window_title = "Save File"
 resizable = true
@@ -550,7 +533,6 @@ margin_left = -280.0
 margin_top = -188.0
 margin_right = 280.0
 margin_bottom = 188.0
-theme = ExtResource( 28 )
 popup_exclusive = true
 window_title = "Open a File"
 resizable = true
@@ -564,7 +546,6 @@ margin_left = -174.0
 margin_top = 40.0
 margin_right = -6.0
 margin_bottom = 217.0
-theme = ExtResource( 28 )
 
 [node name="Tree" type="Tree" parent="Editor/Panel"]
 anchor_right = 1.0

@@ -81,11 +81,11 @@ texture = ExtResource( 16 )
 region_rect = Rect2( 0, 0, 100, 100 )
 margin_left = 10.0
 margin_right = 10.0
-margin_top = 21.0
+margin_top = 31.0
 margin_bottom = 10.0
 expand_margin_left = 4.0
 expand_margin_right = 4.0
-expand_margin_top = 20.0
+expand_margin_top = 30.0
 expand_margin_bottom = 4.0
 
 [resource]
@@ -203,4 +203,7 @@ VSlider/icons/grabber_highlight = SubResource( 10 )
 VSlider/styles/grabber_area = ExtResource( 7 )
 VSlider/styles/grabber_area_highlight = ExtResource( 7 )
 VSlider/styles/slider = ExtResource( 4 )
+WindowDialog/constants/close_h_ofs = 21
+WindowDialog/constants/close_v_ofs = 23
+WindowDialog/constants/title_height = 30
 WindowDialog/styles/panel = SubResource( 16 )

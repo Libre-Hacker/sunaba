@@ -30,7 +30,7 @@ script = ExtResource( 2 )
 [node name="Tabs" type="Tabs" parent="Properties"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -8.0
+margin_top = 8.0
 
 [node name="TabContainer" type="TabContainer" parent="Properties/Tabs"]
 anchor_right = 1.0
@@ -40,10 +40,10 @@ tab_align = 0
 [node name="Music" type="Control" parent="Properties/Tabs/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_left = 10.0
+margin_top = 49.0
+margin_right = -10.0
+margin_bottom = -10.0
 
 [node name="Tree" type="Tree" parent="Properties/Tabs/TabContainer/Music"]
 anchor_right = 1.0

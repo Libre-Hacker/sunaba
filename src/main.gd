@@ -28,9 +28,8 @@ func _on_map_editor_button_pressed():
 
 
 func _file_button_pressed():
-	if OS.get_name() == "Windows" and Build.use_native_fd:
-		#$NativeDialogOpenFile.show()
-		pass
+	if Build.use_native_fd and !OS.get_name() == "HTML5":
+		$NativeDialogOpenFile.show()
 	else:
 		$CustomFileDialog.popup()
 
@@ -92,7 +91,8 @@ func _download_file(path):
 
 func _on_NativeDialogOpenFile_files_selected(files: PoolStringArray):
 	var path = files[0]
-	_on_file_selected(path)
+	if path != null:
+		_on_file_selected(path)
 
 
 func _on_ip_address_changed(new_text):

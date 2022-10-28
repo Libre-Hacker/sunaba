@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://addons/native_dialogs/bin/native_dialog_open_file.gdns" type="Script" id=1]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=2]
 [ext_resource path="res://src/main.gd" type="Script" id=3]
+[ext_resource path="res://src/settings_dialog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/ui/carbon_ui/flat.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_image.png" type="Texture" id=7]
 [ext_resource path="res://src/text_editor/text_editor.tscn" type="PackedScene" id=8]
@@ -9,8 +11,6 @@
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/page_edit.png" type="Texture" id=11]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=17]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/widget.png" type="Texture" id=18]
-
-[sub_resource type="StyleBoxEmpty" id=17]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -194,6 +194,9 @@ popup_exclusive = true
 window_title = "Open a File"
 mode = 0
 
+[node name="NativeDialogOpenFile" type="Node" parent="."]
+script = ExtResource( 1 )
+
 [node name="CustomFileDialog" type="FileDialog" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -209,153 +212,8 @@ window_title = "Open a File"
 mode = 0
 access = 1
 
-[node name="SettingsDialog" type="WindowDialog" parent="."]
-visible = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -203.5
-margin_top = -158.5
-margin_right = 203.5
-margin_bottom = 158.5
-window_title = "Settings"
-
-[node name="Tabs" type="Tabs" parent="SettingsDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 6.0
-margin_bottom = 1.0
-
-[node name="TabContainer" type="TabContainer" parent="SettingsDialog/Tabs"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-tab_align = 0
-
-[node name="\?" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 49.0
-margin_right = -10.0
-margin_bottom = -10.0
-
-[node name="Label2" type="Label" parent="SettingsDialog/Tabs/TabContainer/\?"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = -8.0
-text = "Sunaba
-Version 0.1.0
-(C) 2022 mintkat"
-
-[node name="Graphics" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
+[node name="SettingsDialog" parent="." instance=ExtResource( 4 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsDialog/Tabs/TabContainer/Graphics"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
-rect_min_size = Vector2( 0, 40 )
-
-[node name="Label" type="CheckButton" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_right = 389.0
-margin_bottom = 42.0
-rect_min_size = Vector2( 0, 42 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-custom_styles/hover = SubResource( 17 )
-custom_styles/pressed = SubResource( 17 )
-custom_styles/focus = SubResource( 17 )
-custom_styles/disabled = SubResource( 17 )
-custom_styles/hover_pressed = SubResource( 17 )
-custom_styles/normal = SubResource( 17 )
-text = "Fullscreen Mode"
-flat = true
-
-[node name="Label2" type="Label" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_top = 46.0
-margin_right = 389.0
-margin_bottom = 88.0
-rect_min_size = Vector2( 0, 42 )
-text = "Resolution"
-valign = 1
-
-[node name="OptionButton" type="OptionButton" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer/Label2"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -146.0
-margin_top = -12.0
-margin_bottom = 12.0
-
-[node name="Label3" type="Label" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_top = 92.0
-margin_right = 389.0
-margin_bottom = 134.0
-rect_min_size = Vector2( 0, 42 )
-text = "Resolution"
-valign = 1
-
-[node name="OptionButton" type="OptionButton" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer/Label3"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -146.0
-margin_top = -12.0
-margin_bottom = 12.0
-
-[node name="Label4" type="Label" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer"]
-margin_top = 138.0
-margin_right = 389.0
-margin_bottom = 180.0
-rect_min_size = Vector2( 0, 42 )
-text = "Resolution"
-valign = 1
-
-[node name="OptionButton" type="OptionButton" parent="SettingsDialog/Tabs/TabContainer/Graphics/VBoxContainer/Label4"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -146.0
-margin_top = -12.0
-margin_bottom = 12.0
-
-[node name="Audio" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 49.0
-margin_right = -10.0
-margin_bottom = -10.0
-
-[node name="Controls" type="Control" parent="SettingsDialog/Tabs/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 49.0
-margin_right = -10.0
-margin_bottom = -10.0
 
 [node name="Panel2" type="Panel" parent="."]
 anchor_right = 1.0
@@ -399,4 +257,5 @@ switch_on_hover = true
 [connection signal="pressed" from="IpAddressDialog/Button" to="." method="play"]
 [connection signal="text_changed" from="IpAddressDialog/IPEdit" to="." method="_on_ip_address_changed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]
+[connection signal="files_selected" from="NativeDialogOpenFile" to="." method="_on_NativeDialogOpenFile_files_selected"]
 [connection signal="file_selected" from="CustomFileDialog" to="." method="_on_file_selected"]

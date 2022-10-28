@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://src/tools/editor.gd" type="Script" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://src/VoxelMesh.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/textures/voxel/Tiles/cactus_top.png" type="Texture" id=26]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/cursor.png" type="Texture" id=27]
+[ext_resource path="res://addons/native_dialogs/bin/native_dialog_save_file.gdns" type="Script" id=28]
 [ext_resource path="res://src/tools/editor_view/editor_view.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=30]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/group_edit.png" type="Texture" id=31]
@@ -48,6 +49,7 @@
 [ext_resource path="res://assets/textures/voxel/Tiles/redstone.png" type="Texture" id=47]
 [ext_resource path="res://assets/textures/voxel/Tiles/greysand.png" type="Texture" id=48]
 [ext_resource path="res://assets/textures/terrain_texture.png" type="Texture" id=49]
+[ext_resource path="res://addons/native_dialogs/bin/native_dialog_open_file.gdns" type="Script" id=50]
 [ext_resource path="res://assets/textures/voxel/Tiles/redstone_sand.png" type="Texture" id=51]
 [ext_resource path="res://assets/textures/voxel/Tiles/gravel_dirt.png" type="Texture" id=52]
 
@@ -577,6 +579,12 @@ icon = ExtResource( 31 )
 flat = true
 align = 2
 icon_align = 1
+
+[node name="NativeDialogOpenFile" type="Node" parent="Editor"]
+script = ExtResource( 50 )
+
+[node name="NativeDialogSaveFile" type="Node" parent="Editor"]
+script = ExtResource( 28 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
@@ -3705,5 +3713,7 @@ shadow_enabled = true
 [connection signal="file_selected" from="Editor/SaveDialog" to="EditorView" method="_on_file_saved"]
 [connection signal="file_selected" from="Editor/FileDialog" to="EditorView" method="_on_file_opened"]
 [connection signal="pressed" from="Editor/Panel/Button" to="." method="edit_item"]
+[connection signal="files_selected" from="Editor/NativeDialogOpenFile" to="EditorView" method="_on_file_selected"]
+[connection signal="file_selected" from="Editor/NativeDialogSaveFile" to="EditorView" method="_on_file_saved"]
 
 [editable path="EditorView"]

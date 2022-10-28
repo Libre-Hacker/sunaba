@@ -356,7 +356,7 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
 
 [gdnative]
 
@@ -420,7 +420,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 quality/depth/hdr=false

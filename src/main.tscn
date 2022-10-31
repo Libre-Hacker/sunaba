@@ -1,8 +1,91 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://assets/ui/2kui/banner.png" type="Texture" id=1]
+[ext_resource path="res://src/main.gd" type="Script" id=2]
 [ext_resource path="res://src/network_manager.gd" type="Script" id=3]
 
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 960, 720 )
+
 [node name="Main" type="Node"]
+script = ExtResource( 2 )
 
 [node name="NetworkManager" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopBar" type="Panel" parent="UI"]
+anchor_right = 1.0
+margin_bottom = 50.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Menubar" type="HBoxContainer" parent="UI/TopBar"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 6.0
+margin_top = -14.0
+margin_right = 112.0
+margin_bottom = 15.0
+
+[node name="MenuButtonGame" type="MenuButton" parent="UI/TopBar/Menubar"]
+margin_right = 52.0
+margin_bottom = 29.0
+text = "Game"
+items = [ "Find Game", null, 0, false, false, 0, 0, null, "", false, "Create Game", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true
+
+[node name="MenuButtonTools" type="MenuButton" parent="UI/TopBar/Menubar"]
+margin_left = 56.0
+margin_right = 106.0
+margin_bottom = 29.0
+focus_mode = 2
+text = "Tools"
+items = [ "Map Editor", null, 0, false, false, 0, 0, null, "", false, "Settings", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true
+
+[node name="AddressBar" type="LineEdit" parent="UI/TopBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.5
+margin_top = -14.5
+margin_right = 127.5
+margin_bottom = 14.5
+align = 1
+placeholder_text = "sunaba://127.0.0.1"
+
+[node name="WindowDialog" type="WindowDialog" parent="UI"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.5
+margin_top = -160.0
+margin_right = 210.5
+margin_bottom = 160.0
+
+[node name="RoomName" type="LineEdit" parent="UI/WindowDialog"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -199.5
+margin_top = 15.0
+margin_right = 200.5
+margin_bottom = 44.0
+placeholder_text = "Room Name"
+
+[node name="MapPath" type="LineEdit" parent="UI/WindowDialog"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -199.0
+margin_top = 52.0
+margin_right = 201.0
+margin_bottom = 81.0
+placeholder_text = "Map Path"
+
+[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManager" method="_on_address_entered"]

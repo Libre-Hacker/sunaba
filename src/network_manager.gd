@@ -46,3 +46,7 @@ func connect_to_server() -> void:
 	OnlineMatch.connect("match_not_ready", self, "_on_OnlineMatch_match_not_ready")
 	
 	print ("Connected to Nakama!")
+
+
+func _on_address_entered(new_text):
+	pass # Replace with function body.

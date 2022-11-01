@@ -222,7 +222,7 @@ enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multiru
 
 [gdnative]
 
-singletons=[  ]
+singletons=[ "res://webrtc/webrtc.tres", "res://webrtc_debug/webrtc_debug.tres" ]
 
 [gui]
 

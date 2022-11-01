@@ -1,11 +1,8 @@
 extends Node
 
+var path = null
 
-func _ready():
-	$UI/TopBar/Menubar/MenuButtonGame.get_popup().connect("id_pressed", self, "_game_menu")
+onready var network_manager = $NetworkManager
 
-func _game_menu(id):
-	if id == 0:
-		print(id)
-	elif id == 1:
-		print(id)
+func create_room():
+	network_manager.create_room()

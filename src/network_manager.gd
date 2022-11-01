@@ -1,10 +1,13 @@
 extends Node
 
 
-var nakama_client: NakamaClient
-var nakama_session: NakamaSession
-var nakama_socket: NakamaSocket
+var nakama_client : NakamaClient
+var nakama_session : NakamaSession
+var nakama_socket : NakamaSocket
 
+var match_id : String
+
+export var address_bar : NodePath
 
 func _ready() -> void:
 	connect_to_server()
@@ -34,19 +37,28 @@ func connect_to_server() -> void:
 	OnlineMatch.use_network_relay = OnlineMatch.NetworkRelay.AUTO
  
 	# Connect to all of OnlineMatch's signals.
-	OnlineMatch.connect("error", self, "_on_OnlineMatch_error")
-	OnlineMatch.connect("disconnected", self, "_on_OnlineMatch_disconnected")
-	OnlineMatch.connect("match_created", self, "_on_OnlineMatch_match_created")
-	OnlineMatch.connect("match_joined", self, "_on_OnlineMatch_match_joined")
-	OnlineMatch.connect("matchmaker_matched", self, "_on_OnlineMatch_matchmaker_matched")
-	OnlineMatch.connect("player_joined", self, "_on_OnlineMatch_player_joined")
-	OnlineMatch.connect("player_left", self, "_on_OnlineMatch_player_left")
-	OnlineMatch.connect("player_status_changed", self, "_on_OnlineMatch_player_status_changed")
-	OnlineMatch.connect("match_ready", self, "_on_OnlineMatch_match_ready")
-	OnlineMatch.connect("match_not_ready", self, "_on_OnlineMatch_match_not_ready")
+	OnlineMatch.connect("match_created", self, "_on_room_created")
+	OnlineMatch.connect("match_joined", self, "_on_room_joined")
 	
 	print ("Connected to Nakama!")
 
 
 func _on_address_entered(new_text):
-	pass # Replace with function body.
+	OnlineMatch.join_match(nakama_socket, new_text)
+
+func create_room():
+	#print("Create_room")
+	OnlineMatch.create_match(nakama_socket)
+
+func _on_room_created(id):
+	print("Room created")
+	get_node(address_bar).text = id
+
+func _on_room_joined(id : String):
+	print("Room joined" + id)
+
+func _player_joined():
+	pass
+
+func _on_player_status_changed():
+	pass

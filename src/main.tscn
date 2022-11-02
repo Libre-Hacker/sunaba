@@ -37,16 +37,16 @@ margin_right = 112.0
 margin_bottom = 15.0
 
 [node name="MenuButtonGame" type="MenuButton" parent="UI/TopBar/Menubar"]
-margin_right = 55.0
-margin_bottom = 33.0
+margin_right = 50.0
+margin_bottom = 29.0
 text = "Game"
 items = [ "Find Game", null, 0, false, false, 0, 0, null, "", false, "Create Game", null, 0, false, false, 1, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="MenuButtonTools" type="MenuButton" parent="UI/TopBar/Menubar"]
-margin_left = 59.0
-margin_right = 110.0
-margin_bottom = 33.0
+margin_left = 54.0
+margin_right = 100.0
+margin_bottom = 29.0
 focus_mode = 2
 text = "Tools"
 items = [ "Map Editor", null, 0, false, false, 0, 0, null, "", false, "Settings", null, 0, false, false, 1, 0, null, "", false ]

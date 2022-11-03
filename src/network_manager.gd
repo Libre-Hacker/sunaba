@@ -9,8 +9,6 @@ var match_id : String
 
 export var address_bar : NodePath
 
-func _ready() -> void:
-	connect_to_server()
 
 
 func connect_to_server() -> void:

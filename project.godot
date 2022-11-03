@@ -194,8 +194,6 @@ config/windows_native_icon="res://sunaba-icon2.ico"
 [autoload]
 
 GameManager="*res://src/runtime/game_manager.gd"
-Gotm="*res://gotm/Gotm.gd"
-PluginManager="*res://src/plugin_manager.gd"
 Build="*res://src/build.gd"
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 OnlineMatch="*res://addons/nakama-webrtc/OnlineMatch.gd"
@@ -224,7 +222,7 @@ enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multiru
 
 [gdnative]
 
-singletons=[ "res://webrtc/webrtc.tres", "res://webrtc_debug/webrtc_debug.tres" ]
+singletons=[  ]
 
 [gui]
 

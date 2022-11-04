@@ -38,7 +38,7 @@ func connect_to_server() -> void:
 	OnlineMatch.connect("match_created", self, "_on_room_created")
 	OnlineMatch.connect("match_joined", self, "_on_room_joined")
 	
-	print ("Connected to Nakama!")
+	get_parent().log_to_chat("Connected to Nakama!")
 
 
 func _on_address_entered(new_text):
@@ -49,14 +49,19 @@ func create_room():
 	OnlineMatch.create_match(nakama_socket)
 
 func _on_room_created(id):
-	print("Room created")
+	get_parent().log_to_chat("Room created")
 	get_node(address_bar).text = id
+	get_parent().enable_chat()
 
 func _on_room_joined(id : String):
-	print("Room joined" + id)
+	get_parent().log_to_chat("Room joined" + id)
+	get_parent().enable_chat()
 
 func _player_joined():
 	pass
 
 func _on_player_status_changed():
 	pass
+
+remote func chat(id , chatstring):
+	get_parent().chat(id, chatstring)

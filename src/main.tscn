@@ -139,7 +139,7 @@ text = "sunaba"
 align = 1
 valign = 1
 
-[node name="LineEdit" type="LineEdit" parent="UI/Bottombar"]
+[node name="ChatEntry" type="LineEdit" parent="UI/Bottombar"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 12.0
@@ -148,7 +148,15 @@ margin_right = 284.0
 margin_bottom = 17.0
 placeholder_text = "chatbox"
 
+[node name="Chatbox" type="RichTextLabel" parent="UI"]
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 65.0
+margin_right = 288.0
+margin_bottom = -46.0
+
 [connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManager" method="_on_address_entered"]
 [connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
 [connection signal="files_selected" from="UI/NativeDialogOpenFile" to="UI" method="_on_NativeDialogOpenFile_files_selected"]
+[connection signal="text_entered" from="UI/Bottombar/ChatEntry" to="." method="_on_chat_text_entered"]

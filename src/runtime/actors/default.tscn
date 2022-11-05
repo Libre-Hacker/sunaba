@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/materials/socks.material" type="Material" id=1]
 [ext_resource path="res://assets/materials/myoko_skin.material" type="Material" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://addons/flexible_toon_shader/flexible_toon.shader" type="Shader" id=7]
 [ext_resource path="res://assets/models/headwear/long_hair.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/runtime/actors/character.gd" type="Script" id=9]
+[ext_resource path="res://assets/animations/idle.tres" type="Animation" id=10]
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 6 )
@@ -606,3 +607,6 @@ transform = Transform( 1.73794, 7.01414e-09, -4.14298e-07, 1.16558e-15, 1.73769,
 [node name="ItemAttachment" type="BoneAttachment" parent="metarig/Skeleton"]
 transform = Transform( -0.967105, -0.248166, -0.0558729, 0.250347, -0.967484, -0.0360693, -0.0451036, -0.04887, 0.997787, -0.427538, 0.997951, -0.0255819 )
 bone_name = "hand.R"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = ExtResource( 10 )

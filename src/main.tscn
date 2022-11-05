@@ -1,261 +1,162 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://addons/native_dialogs/bin/native_dialog_open_file.gdns" type="Script" id=1]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=2]
-[ext_resource path="res://src/main.gd" type="Script" id=3]
-[ext_resource path="res://src/settings_dialog.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/ui/carbon_ui/flat.tres" type="StyleBox" id=5]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_image.png" type="Texture" id=7]
-[ext_resource path="res://src/text_editor/text_editor.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_down.png" type="Texture" id=10]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/page_edit.png" type="Texture" id=11]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=17]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/widget.png" type="Texture" id=18]
+[ext_resource path="res://assets/ui/2kui/banner.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture" id=2]
+[ext_resource path="res://src/network_manager.gd" type="Script" id=3]
+[ext_resource path="res://src/ui.gd" type="Script" id=4]
+[ext_resource path="res://addons/native_dialogs/bin/native_dialog_open_file.gdns" type="Script" id=5]
+[ext_resource path="res://src/main.gd" type="Script" id=6]
+[ext_resource path="res://assets/fonts/dokyo.TTF" type="DynamicFontData" id=7]
 
-[node name="Main" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 960, 720 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 7 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 6 )
+
+[node name="NetworkManager" type="Node" parent="."]
 script = ExtResource( 3 )
+address_bar = NodePath("../UI/TopBar/AddressBar")
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
+[node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -90.0
-margin_top = -25.0
-margin_right = -7.0
-margin_bottom = -7.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Sunaba v0.1"
-align = 2
-valign = 2
+script = ExtResource( 4 )
 
-[node name="Panel" type="Panel" parent="."]
-anchor_bottom = 1.0
-margin_top = 33.0
-margin_right = 188.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="TopBar" type="Panel" parent="UI"]
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 13.0
-margin_top = 12.0
-margin_right = -10.0
-margin_bottom = 1.0
+margin_bottom = 60.0
+custom_styles/panel = SubResource( 1 )
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer"]
-margin_right = 165.0
-margin_bottom = 31.0
-custom_styles/normal = ExtResource( 5 )
-text = " Play"
-align = 0
+[node name="Menubar" type="HBoxContainer" parent="UI/TopBar"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 9.0
+margin_top = -16.0
+margin_right = 119.0
+margin_bottom = 17.0
 
-[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 35.0
-margin_right = 165.0
-margin_bottom = 66.0
-custom_styles/normal = ExtResource( 5 )
-text = " New Game"
-align = 0
+[node name="MenuButtonGame" type="MenuButton" parent="UI/TopBar/Menubar"]
+margin_right = 55.0
+margin_bottom = 33.0
+text = "Game"
+items = [ "Find Game", null, 0, false, false, 0, 0, null, "", false, "Create Game", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true
 
-[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 70.0
-margin_right = 165.0
-margin_bottom = 101.0
-custom_styles/normal = ExtResource( 5 )
-text = " Map Editor"
-align = 0
+[node name="MenuButtonTools" type="MenuButton" parent="UI/TopBar/Menubar"]
+margin_left = 59.0
+margin_right = 110.0
+margin_bottom = 33.0
+focus_mode = 2
+text = "Tools"
+items = [ "Map Editor", null, 0, false, false, 0, 0, null, "", false, "Settings", null, 0, false, false, 1, 0, null, "", false ]
+switch_on_hover = true
 
-[node name="NewRoomDialog" type="WindowDialog" parent="."]
+[node name="AddressBar" type="LineEdit" parent="UI/TopBar"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -168.0
-margin_top = -67.5
-margin_right = 168.0
-margin_bottom = 67.5
-popup_exclusive = true
-window_title = "New Room"
+margin_left = -209.5
+margin_top = -14.5
+margin_right = 209.5
+margin_bottom = 14.5
+align = 1
+placeholder_text = "Insert Room Address Here"
 
-[node name="RoomName" type="LineEdit" parent="NewRoomDialog"]
-anchor_right = 1.0
-margin_left = 7.0
-margin_top = 8.0
-margin_right = -7.0
-margin_bottom = 43.0
+[node name="NewRoomDialog" type="WindowDialog" parent="UI"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.5
+margin_top = -160.0
+margin_right = 210.5
+margin_bottom = 160.0
+window_title = "Create a Room"
+
+[node name="RoomName" type="LineEdit" parent="UI/NewRoomDialog"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -199.5
+margin_top = 15.0
+margin_right = 200.5
+margin_bottom = 44.0
 placeholder_text = "Room Name"
 
-[node name="Panel" type="Panel" parent="NewRoomDialog"]
-anchor_right = 1.0
-margin_left = 7.0
-margin_top = 51.0
-margin_right = -7.0
-margin_bottom = 86.0
+[node name="MapPath" type="LineEdit" parent="UI/NewRoomDialog"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -199.0
+margin_top = 52.0
+margin_right = 201.0
+margin_bottom = 81.0
+editable = false
+placeholder_text = "Map Path"
 
-[node name="Label" type="Label" parent="NewRoomDialog/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_right = -121.0
-text = "Map"
-valign = 1
-
-[node name="MenuButton" type="Button" parent="NewRoomDialog/Panel"]
+[node name="Button" type="Button" parent="UI/NewRoomDialog/MapPath"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -35.0
-icon = ExtResource( 7 )
+margin_left = -46.0
+icon = ExtResource( 2 )
 icon_align = 1
 
-[node name="Button" type="Button" parent="NewRoomDialog"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -82.0
-margin_top = 93.0
-margin_right = -7.0
-margin_bottom = 128.0
-text = "Create"
-
-[node name="DownloadFileDialog" type="FileDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -253.5
-margin_top = -196.5
-margin_right = 253.5
-margin_bottom = 196.5
-rect_min_size = Vector2( 300, 105 )
-popup_exclusive = true
-window_title = "Open a File"
-mode = 0
-access = 1
-
-[node name="MapTextEditor" type="WindowDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -361.5
-margin_top = -184.5
-margin_right = 361.5
-margin_bottom = 184.5
-popup_exclusive = true
-window_title = "Map Text Editor"
-resizable = true
-
-[node name="App" parent="MapTextEditor" instance=ExtResource( 8 )]
-
-[node name="IpAddressDialog" type="WindowDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -170.0
-margin_top = -42.0
-margin_right = 170.0
-margin_bottom = 42.0
-window_title = "Enter IP Address"
-
-[node name="Button" type="Button" parent="IpAddressDialog"]
+[node name="CreateRoomButton" type="Button" parent="UI/NewRoomDialog"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -75.0
-margin_top = -39.0
-margin_right = -8.0
-margin_bottom = -7.0
-text = "Play"
-icon = ExtResource( 17 )
-expand_icon = true
+margin_left = -66.0
+margin_top = -43.0
+margin_right = -9.0
+margin_bottom = -14.0
+text = "Create"
+icon_align = 1
 
-[node name="IPEdit" type="LineEdit" parent="IpAddressDialog"]
-margin_left = 8.0
-margin_top = 7.0
-margin_right = 332.0
-margin_bottom = 39.0
-text = "127.0.0.1"
+[node name="NativeDialogOpenFile" type="Node" parent="UI"]
+script = ExtResource( 5 )
 
-[node name="FileDialog" type="FileDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -253.5
-margin_top = -196.5
-margin_right = 253.5
-margin_bottom = 196.5
-rect_min_size = Vector2( 300, 105 )
-popup_exclusive = true
-window_title = "Open a File"
-mode = 0
-
-[node name="NativeDialogOpenFile" type="Node" parent="."]
-script = ExtResource( 1 )
-
-[node name="CustomFileDialog" type="FileDialog" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -253.5
-margin_top = -196.5
-margin_right = 253.5
-margin_bottom = 196.5
-rect_min_size = Vector2( 300, 105 )
-popup_exclusive = true
-window_title = "Open a File"
-mode = 0
-access = 1
-
-[node name="SettingsDialog" parent="." instance=ExtResource( 4 )]
-visible = false
-
-[node name="Panel2" type="Panel" parent="."]
+[node name="Bottombar" type="Panel" parent="UI"]
+anchor_top = 1.0
 anchor_right = 1.0
-margin_bottom = 34.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel2"]
 anchor_bottom = 1.0
+margin_top = -40.0
 
-[node name="MenuButton" type="MenuButton" parent="Panel2/HBoxContainer"]
-margin_right = 61.0
-margin_bottom = 34.0
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-custom_styles/normal = ExtResource( 5 )
+[node name="Label" type="Label" parent="UI/Bottombar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -106.0
+custom_fonts/font = SubResource( 2 )
 text = "sunaba"
-flat = false
-items = [ "Settings", ExtResource( 18 ), 0, false, false, 0, 0, null, "", false, "Quit", ExtResource( 2 ), 0, false, false, 1, 0, null, "", false ]
-switch_on_hover = true
+align = 1
+valign = 1
 
-[node name="Button" type="MenuButton" parent="Panel2/HBoxContainer"]
-margin_left = 65.0
-margin_right = 111.0
-margin_bottom = 34.0
-custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
-custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-custom_styles/normal = ExtResource( 5 )
-text = "tools"
-flat = false
-items = [ "Download Map File", ExtResource( 10 ), 0, false, false, 0, 0, null, "", false, "Open Map Text Editor", ExtResource( 11 ), 0, false, false, 1, 0, null, "", false ]
-switch_on_hover = true
+[node name="ChatEntry" type="LineEdit" parent="UI/Bottombar"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 12.0
+margin_top = -16.0
+margin_right = 284.0
+margin_bottom = 17.0
+placeholder_text = "chatbox"
 
-[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_new_roon_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Button3" to="." method="_on_map_editor_button_pressed"]
-[connection signal="text_changed" from="NewRoomDialog/RoomName" to="." method="_on_room_name_changed"]
-[connection signal="pressed" from="NewRoomDialog/Panel/MenuButton" to="." method="_file_button_pressed"]
-[connection signal="pressed" from="NewRoomDialog/Button" to="." method="_create_room"]
-[connection signal="file_selected" from="DownloadFileDialog" to="." method="_download_file"]
-[connection signal="pressed" from="IpAddressDialog/Button" to="." method="play"]
-[connection signal="text_changed" from="IpAddressDialog/IPEdit" to="." method="_on_ip_address_changed"]
-[connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]
-[connection signal="files_selected" from="NativeDialogOpenFile" to="." method="_on_NativeDialogOpenFile_files_selected"]
-[connection signal="file_selected" from="CustomFileDialog" to="." method="_on_file_selected"]
+[node name="Chatbox" type="RichTextLabel" parent="UI"]
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 65.0
+margin_right = 288.0
+margin_bottom = -46.0
+
+[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManager" method="_on_address_entered"]
+[connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
+[connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
+[connection signal="files_selected" from="UI/NativeDialogOpenFile" to="UI" method="_on_NativeDialogOpenFile_files_selected"]
+[connection signal="text_entered" from="UI/Bottombar/ChatEntry" to="." method="_on_chat_text_entered"]

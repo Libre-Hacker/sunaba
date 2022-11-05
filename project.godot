@@ -228,10 +228,6 @@ singletons=[ "res://webrtc/webrtc.tres", "res://webrtc_debug/webrtc_debug.tres" 
 
 theme/custom="res://assets/ui/2kui/2kui.tres"
 
-[gui]
-
-theme/custom="res://assets/ui/2kui/2kui.tres"
-
 [input]
 
 move_forward={

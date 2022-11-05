@@ -3,12 +3,17 @@ extends Node
 
 func _ready():
 	$TopBar/Menubar/MenuButtonGame.get_popup().connect("id_pressed", self, "_game_menu")
+	$TopBar/Menubar/MenuButtonTools.get_popup().connect("id_pressed", self, "_tools_menu")
 
 func _game_menu(id):
 	if id == 0:
 		print(id)
 	elif id == 1:
 		$NewRoomDialog.popup()
+
+func _tools_menu(id):
+	if id == 0:
+		get_tree().change_scene("res://src/tools/editor.tscn")
 
 
 func _on_file_button_pressed():

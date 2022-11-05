@@ -77,6 +77,5 @@ anims/idle = SubResource( 4 )
 next/act = "idle"
 
 [node name="Cursor" type="MeshInstance" parent="."]
-visible = false
 mesh = SubResource( 5 )
 material/0 = SubResource( 6 )

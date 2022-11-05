@@ -8,7 +8,7 @@ var nakama_socket : NakamaSocket
 var match_id : String
 
 export var address_bar : NodePath
-
+export var world : NodePath
 
 
 func connect_to_server() -> void:
@@ -52,10 +52,19 @@ func _on_room_created(id):
 	get_parent().log_to_chat("Room created")
 	get_node(address_bar).text = id
 	get_parent().enable_chat()
+	get_parent().load_world()
+	
+remote func get_world(id):
+	var map_data = get_node(world).map
+	rpc_id(id, "load_world", map_data)
+
+remote func load_world(map_data):
+	get_node(world).load_map(map_data)
 
 func _on_room_joined(id : String):
-	get_parent().log_to_chat("Room joined" + id)
+	get_parent().log_to_chat("Room joined - " + id)
 	get_parent().enable_chat()
+	rpc_id(1, "get_world", id)
 
 func _player_joined():
 	pass

@@ -5,6 +5,7 @@ var path = null
 onready var network_manager = $NetworkManager
 onready var chatbox = $UI/Chatbox
 onready var chat_entry = $UI/Bottombar/ChatEntry
+onready var world = $UI/ViewportContainer/WorldViewport/World
 
 func _ready() -> void:
 	network_manager.connect_to_server()
@@ -31,6 +32,8 @@ func chat(id , chatstring):
 	chat_entry.clear()
 	#chat_entry.focus_mode = false
 
+func load_world():
+	world.import_map(path)
 
 func _on_chat_text_entered(new_text):
 	var id = var2str(get_tree().get_network_unique_id())

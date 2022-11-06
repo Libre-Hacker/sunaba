@@ -350,11 +350,11 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
 
 [gdnative]
 
-singletons=[ "res://webrtc/webrtc.tres", "res://webrtc_debug/webrtc_debug.tres" ]
+singletons=[  ]
 
 [gui]
 
@@ -418,5 +418,4 @@ quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 environment/default_clear_color=Color( 0.572549, 0.572549, 0.572549, 1 )
 quality/depth/hdr=false
-environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false

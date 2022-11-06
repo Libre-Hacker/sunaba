@@ -6,6 +6,10 @@ func _ready():
 	$TopBar/Menubar/MenuButtonTools.get_popup().connect("id_pressed", self, "_tools_menu")
 	if OS.get_name() == "HTML5":
 		$TopBar/AddressBar.editable = false
+	$TopBar/PlayButton.disabled = true
+
+func show_play_button():
+	$UI/TopBar/PlayButton.disabled = false
 
 func _game_menu(id):
 	if id == 0:
@@ -21,7 +25,7 @@ func _tools_menu(id):
 
 
 func _on_file_button_pressed():
-	$NativeDialogOpenFile.show()
+	$FileDialog.popup()
 
 func _on_file_selected(path):
 	get_parent().path = path

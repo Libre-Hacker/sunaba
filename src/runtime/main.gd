@@ -3,13 +3,13 @@ extends Node
 var path = null
 var network_manager = null
 
-onready var network_manager_gotm = $NetworkManagerGotm
+onready var network_manager_enet = $NetworkManagerENet
 onready var chatbox = $UI/Chatbox
 onready var chat_entry = $UI/Bottombar/ChatEntry
 onready var world = $UI/ViewportContainer/WorldViewport/World
 
 func _ready() -> void:
-	network_manager = network_manager_gotm
+	network_manager = network_manager_enet
 	network_manager.connect_to_server()
 	chat_entry.editable = false
 	$UI.theme = ThemeManager.theme
@@ -39,7 +39,9 @@ func import_world():
 	world.import_map(path)
 
 func load_world():
+	$UI.show_play_button()
 	world.load_map(path)
+
 
 func _on_chat_text_entered(new_text):
 	var id = var2str(get_tree().get_network_unique_id())

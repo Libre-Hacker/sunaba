@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/fonts/dokyo.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture" id=5]
 [ext_resource path="res://src/runtime/world.tscn" type="PackedScene" id=6]
-[ext_resource path="res://addons/native_dialogs/bin/native_dialog_open_file.gdns" type="Script" id=7]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=7]
 [ext_resource path="res://src/runtime/ui.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=2]
@@ -16,7 +16,7 @@ font_data = ExtResource( 4 )
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
-[node name="NetworkManagerGotm" type="Node" parent="."]
+[node name="NetworkManagerENet" type="Node" parent="."]
 script = ExtResource( 2 )
 address_bar = NodePath("../UI/TopBar/AddressBar")
 world = NodePath("../UI/ViewportContainer/WorldViewport/World")
@@ -25,6 +25,22 @@ world = NodePath("../UI/ViewportContainer/WorldViewport/World")
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 8 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 60.0
+margin_bottom = -40.0
+stretch = true
+
+[node name="WorldViewport" type="Viewport" parent="UI/ViewportContainer"]
+size = Vector2( 1024, 500 )
+own_world = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
+master_node = NodePath("../../../..")
 
 [node name="TopBar" type="Panel" parent="UI"]
 anchor_right = 1.0
@@ -65,6 +81,19 @@ margin_right = 187.0
 margin_bottom = 14.5
 align = 1
 placeholder_text = "Insert Room Address Here"
+
+[node name="PlayButton" type="Button" parent="UI/TopBar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 193.0
+margin_top = -14.0
+margin_right = 250.0
+margin_bottom = 15.0
+icon = ExtResource( 7 )
+icon_align = 1
+expand_icon = true
 
 [node name="NewRoomDialog" type="WindowDialog" parent="UI"]
 visible = true
@@ -117,9 +146,6 @@ margin_bottom = -14.0
 text = "Create"
 icon_align = 1
 
-[node name="NativeDialogOpenFile" type="Node" parent="UI"]
-script = ExtResource( 7 )
-
 [node name="Bottombar" type="Panel" parent="UI"]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -145,21 +171,19 @@ margin_right = 276.0
 margin_bottom = 16.0
 placeholder_text = "chatbox"
 
-[node name="ViewportContainer" type="ViewportContainer" parent="UI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 60.0
-margin_bottom = -40.0
-stretch = true
-
-[node name="WorldViewport" type="Viewport" parent="UI/ViewportContainer"]
-size = Vector2( 1024, 500 )
-own_world = true
-handle_input_locally = false
-render_target_update_mode = 3
-
-[node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
-master_node = NodePath("../../../..")
+[node name="FileDialog" type="FileDialog" parent="UI"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -291.5
+margin_top = -186.5
+margin_right = 291.5
+margin_bottom = 186.5
+window_title = "Open a File"
+mode = 0
+access = 1
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
 anchor_bottom = 1.0
@@ -175,8 +199,9 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 [node name="SettingsDialog" parent="UI" instance=ExtResource( 1 )]
 gui = NodePath("..")
 
-[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManagerGotm" method="_on_address_entered" flags=6]
+[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManagerENet" method="_on_address_entered" flags=6]
+[connection signal="pressed" from="UI/TopBar/PlayButton" to="UI/ViewportContainer/WorldViewport/World" method="_on_play_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
-[connection signal="files_selected" from="UI/NativeDialogOpenFile" to="UI" method="_on_NativeDialogOpenFile_files_selected"]
 [connection signal="text_entered" from="UI/Bottombar/ChatEntry" to="." method="_on_chat_text_entered"]
+[connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]

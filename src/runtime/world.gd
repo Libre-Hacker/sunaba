@@ -63,3 +63,7 @@ func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type,
 	#var rot = Vector3(0,0,0)
 	#var size = Vector3(0,0,0)
 	prop_num += 1
+
+
+func _on_play_button_pressed():
+	print("Hello World")

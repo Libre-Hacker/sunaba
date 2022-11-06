@@ -4,6 +4,8 @@ extends Node
 func _ready():
 	$TopBar/Menubar/MenuButtonGame.get_popup().connect("id_pressed", self, "_game_menu")
 	$TopBar/Menubar/MenuButtonTools.get_popup().connect("id_pressed", self, "_tools_menu")
+	if OS.get_name() == "HTML5":
+		$TopBar/AddressBar.editable = false
 
 func _game_menu(id):
 	if id == 0:

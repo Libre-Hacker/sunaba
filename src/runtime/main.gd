@@ -1,13 +1,15 @@
 extends Node
 
 var path = null
+var network_manager = null
 
-onready var network_manager = $NetworkManager
+onready var network_manager_gotm = $NetworkManagerGotm
 onready var chatbox = $UI/Chatbox
 onready var chat_entry = $UI/Bottombar/ChatEntry
 onready var world = $UI/ViewportContainer/WorldViewport/World
 
 func _ready() -> void:
+	network_manager = network_manager_gotm
 	network_manager.connect_to_server()
 	chat_entry.editable = false
 	$UI.theme = ThemeManager.theme

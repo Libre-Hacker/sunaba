@@ -16,7 +16,7 @@ font_data = ExtResource( 4 )
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
-[node name="NetworkManager" type="Node" parent="."]
+[node name="NetworkManagerGotm" type="Node" parent="."]
 script = ExtResource( 2 )
 address_bar = NodePath("../UI/TopBar/AddressBar")
 world = NodePath("../UI/ViewportContainer/WorldViewport/World")
@@ -175,7 +175,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 [node name="SettingsDialog" parent="UI" instance=ExtResource( 1 )]
 gui = NodePath("..")
 
-[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManager" method="_on_address_entered"]
+[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManagerGotm" method="_on_address_entered" flags=6]
 [connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
 [connection signal="files_selected" from="UI/NativeDialogOpenFile" to="UI" method="_on_NativeDialogOpenFile_files_selected"]

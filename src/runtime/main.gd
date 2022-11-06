@@ -10,6 +10,7 @@ onready var world = $UI/ViewportContainer/WorldViewport/World
 func _ready() -> void:
 	network_manager.connect_to_server()
 	chat_entry.editable = false
+	$UI.theme = ThemeManager.theme
 
 func create_room() -> void:
 	network_manager.create_room()
@@ -32,8 +33,11 @@ func chat(id , chatstring):
 	chat_entry.clear()
 	#chat_entry.focus_mode = false
 
-func load_world():
+func import_world():
 	world.import_map(path)
+
+func load_world():
+	world.load_map(path)
 
 func _on_chat_text_entered(new_text):
 	var id = var2str(get_tree().get_network_unique_id())

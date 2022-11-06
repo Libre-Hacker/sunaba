@@ -26,6 +26,13 @@ func _ready():
 	root.set_text(0, "Scene")
 	$Editor/Panel/AddButton.get_popup().connect("id_pressed", self, "add_prop")
 
+func _process(delta):
+	voxel_tools.theme = ThemeManager.theme
+	toolbar.theme = ThemeManager.theme
+	$Editor/Panel.theme = ThemeManager.theme
+	$Editor/SaveDialog.theme = ThemeManager.theme
+	$Editor/FileDialog.theme = ThemeManager.theme
+
 func _on_item_pressed(id):
 	var item_name = menu_button.get_popup().get_item_text(id)
 	if id == 0:
@@ -46,7 +53,7 @@ func _on_item_pressed(id):
 		else:
 			$Editor/NativeDialogSaveFile.show()
 	elif id == 3:
-		get_tree().change_scene("res://src/main.tscn")
+		get_tree().change_scene("res://src/runtime/main.tscn")
 	print(item_name + ' pressed')
 
 func _on_item_pressed_help(id):

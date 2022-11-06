@@ -10,6 +10,9 @@ var match_id : String
 export var address_bar : NodePath
 export var world : NodePath
 
+func _ready():
+	rpc_config("get_world", 1)
+	rpc_config("load_world", 1)
 
 func connect_to_server() -> void:
 	# Connect to a local Nakama instance using all the default settings.
@@ -37,6 +40,7 @@ func connect_to_server() -> void:
 	# Connect to all of OnlineMatch's signals.
 	OnlineMatch.connect("match_created", self, "_on_room_created")
 	OnlineMatch.connect("match_joined", self, "_on_room_joined")
+	OnlineMatch.connect("player_joined", self, "_player_joined")
 	
 	get_parent().log_to_chat("Connected to Nakama!")
 
@@ -52,22 +56,23 @@ func _on_room_created(id):
 	get_parent().log_to_chat("Room created")
 	get_node(address_bar).text = id
 	get_parent().enable_chat()
-	get_parent().load_world()
-	
-remote func get_world(id):
-	var map_data = get_node(world).map
-	rpc_id(id, "load_world", map_data)
+	get_parent().import_world()
 
-remote func load_world(map_data):
+func load_world(map_data):
 	get_node(world).load_map(map_data)
 
 func _on_room_joined(id : String):
 	get_parent().log_to_chat("Room joined - " + id)
-	get_parent().enable_chat()
-	rpc_id(1, "get_world", id)
 
-func _player_joined():
-	pass
+func _player_joined(player):
+	get_parent().log_to_chat(player.username + " has joined")
+	get_parent().enable_chat()
+	if get_tree().get_network_unique_id() == 1:
+		var map_data = get_node(world).map
+		if player.peer_id == get_tree().get_network_unique_id():
+			get_node(world).load_map(map_data)
+		else:
+			rpc("load_world", map_data)
 
 func _on_player_status_changed():
 	pass

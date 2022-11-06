@@ -197,6 +197,7 @@ GameManager="*res://src/runtime/game_manager.gd"
 Build="*res://src/build.gd"
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 OnlineMatch="*res://addons/nakama-webrtc/OnlineMatch.gd"
+ThemeManager="*res://src/theme_manager.gd"
 
 [compression]
 
@@ -226,7 +227,7 @@ singletons=[ "res://webrtc/webrtc.tres", "res://webrtc_debug/webrtc_debug.tres" 
 
 [gui]
 
-theme/custom="res://assets/ui/2kui/2kui.tres"
+theme/custom="res://assets/ui/sl33k/sl33k.tres"
 
 [input]
 

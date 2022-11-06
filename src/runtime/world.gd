@@ -1,5 +1,7 @@
 extends Spatial
 
+export var master_node : NodePath
+
 var player = preload("res://src/runtime/actors/player.tscn")
 var map = null
 
@@ -17,16 +19,6 @@ func import_map(path):
 	file.open(path, File.READ)
 	var sbg_text = file.get_as_text()
 	map = str2var(sbg_text)
-	for id in map.terrain:
-		var sbg_item = map.terrain[id]
-		if !sbg_item.type == -1:
-			voxel_mesh.set_voxel(sbg_item.position, sbg_item.type)
-			voxel_mesh.update_mesh()
-		else:
-			voxel_mesh.erase_voxel(sbg_item.position)
-			voxel_mesh.update_mesh()
-	load_props(map.props)
-	#rpc("load_props")
 	file.close()
 
 func load_map(data):

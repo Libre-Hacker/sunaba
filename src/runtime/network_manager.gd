@@ -4,6 +4,7 @@ var match_id : String
 
 export var address_bar : NodePath
 export var world : NodePath
+export var ui_node : NodePath
 
 func _ready():
 	rpc_config("get_world", 1)
@@ -41,6 +42,7 @@ func _on_room_joined(id : String):
 func _player_joined(id):
 	get_parent().log_to_chat(var2str(id) + " has joined")
 	get_parent().enable_chat()
+	get_node(ui_node).show_play_button()
 	if get_tree().get_network_unique_id() == 1:
 		var map_data = get_node(world).map
 		if id == get_tree().get_network_unique_id():

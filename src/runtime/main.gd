@@ -5,7 +5,7 @@ var network_manager = null
 
 onready var network_manager_enet = $NetworkManagerENet
 onready var chatbox = $UI/Chatbox
-onready var chat_entry = $UI/Bottombar/ChatEntry
+onready var chat_entry = $UI/Bottombar/RoomControls/ChatEntry
 onready var world = $UI/ViewportContainer/WorldViewport/World
 
 func _ready() -> void:

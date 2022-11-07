@@ -1,15 +1,18 @@
 extends Node
 
+onready var room_controls = $Bottombar/RoomControls
 
 func _ready():
 	$TopBar/Menubar/MenuButtonGame.get_popup().connect("id_pressed", self, "_game_menu")
 	$TopBar/Menubar/MenuButtonTools.get_popup().connect("id_pressed", self, "_tools_menu")
 	if OS.get_name() == "HTML5":
 		$TopBar/AddressBar.editable = false
-	$TopBar/PlayButton.disabled = true
+	$Bottombar/RoomControls/PlayButton.disabled = true
+	#room_controls.hide()
 
 func show_play_button():
-	$UI/TopBar/PlayButton.disabled = false
+	$Bottombar/RoomControls/PlayButton.disabled = false
+	#room_controls.show()
 
 func _game_menu(id):
 	if id == 0:

@@ -67,48 +67,47 @@ func get_input():
 
 func _physics_process(delta: float) -> void:
 	if is_network_master():
-		if !get_parent().player_paused:
-			var move_direction := Vector3.ZERO
-			move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-			move_direction.z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
-			move_direction = move_direction.rotated(Vector3.UP, spring_arm.rotation.y).normalized()
-			
-			
-			_velocity.x = move_direction.x * speed
-			_velocity.z = move_direction.z * speed
-			_velocity.y -= gravity * delta
-			
-			var just_landed = is_on_floor() and _snap_vector == Vector3.ZERO
-			var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
-			if is_jumping:
-				_velocity.y = jump_strength
-				_snap_vector = Vector3.ZERO
-			elif just_landed:
-				_snap_vector = Vector3.DOWN
-			
-			if Input.is_key_pressed(KEY_1) and !handprop1 == null and !current_handprop == handprop1:
-				if _model.has_node("handprop"):
-					_model.get_node("handprop").queue_free()
-				current_handprop = handprop1
-				item = handprop1.scene.instance()
-				item.name == "handprop"
-				_model.add_child(item)
-				item.translation = Vector3(0.238, 0.747, 0.448)
-			if Input.is_key_pressed(KEY_2) and !handprop2 == null and !current_handprop == handprop2:
-				if _model.has_node("handprop"):
-					_model.get_node("handprop").queue_free()
-				current_handprop = handprop2
-				item = handprop2.scene.instance()
-				item.name == "handprop"
-				_model.add_child(item)
-				item.translation = Vector3(0.238, 0.747, 0.448)
-			
-			
-			
-			if Input.is_key_pressed(KEY_P):
-				#handprop1 = load("res://src/runtime/handprops/hello_world.tres")
-				print(var2str(handprop1))
-			
+		var move_direction := Vector3.ZERO
+		move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		move_direction.z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
+		move_direction = move_direction.rotated(Vector3.UP, spring_arm.rotation.y).normalized()
+		
+		
+		_velocity.x = move_direction.x * speed
+		_velocity.z = move_direction.z * speed
+		_velocity.y -= gravity * delta
+		
+		var just_landed = is_on_floor() and _snap_vector == Vector3.ZERO
+		var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
+		if is_jumping:
+			_velocity.y = jump_strength
+			_snap_vector = Vector3.ZERO
+		elif just_landed:
+			_snap_vector = Vector3.DOWN
+		
+		if Input.is_key_pressed(KEY_1) and !handprop1 == null and !current_handprop == handprop1:
+			if _model.has_node("handprop"):
+				_model.get_node("handprop").queue_free()
+			current_handprop = handprop1
+			item = handprop1.scene.instance()
+			item.name == "handprop"
+			_model.add_child(item)
+			item.translation = Vector3(0.238, 0.747, 0.448)
+		if Input.is_key_pressed(KEY_2) and !handprop2 == null and !current_handprop == handprop2:
+			if _model.has_node("handprop"):
+				_model.get_node("handprop").queue_free()
+			current_handprop = handprop2
+			item = handprop2.scene.instance()
+			item.name == "handprop"
+			_model.add_child(item)
+			item.translation = Vector3(0.238, 0.747, 0.448)
+		
+		
+		
+		if Input.is_key_pressed(KEY_P):
+			#handprop1 = load("res://src/runtime/handprops/hello_world.tres")
+			print(var2str(handprop1))
+		
 	else:
 		global_transform.origin = puppet_pos
 		_velocity.x = puppet_vel.x

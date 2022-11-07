@@ -12,7 +12,7 @@ onready var voxel_mesh = $VoxelMesh
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	rpc_config("_instance_player", 1)
 
 func import_map(path):
 	var file = File.new()
@@ -67,3 +67,12 @@ func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type,
 
 func _on_play_button_pressed():
 	print("Hello World")
+	_instance_player(get_tree().get_network_unique_id())
+	rpc("_instance_player", get_tree().get_network_unique_id())
+
+func _instance_player(id):
+	var player_instance = player.instance()
+	player_instance.set_network_master(id)
+	player_instance.name = str(id)
+	add_child(player_instance)
+	player_instance.global_transform.origin = Vector3(0, 5, 0)

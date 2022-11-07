@@ -314,7 +314,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Sunaba"
+config/name="Sandbox Game"
 run/main_scene="res://src/runtime/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
@@ -329,12 +329,6 @@ GameManager="*res://src/runtime/game_manager.gd"
 Build="*res://src/build.gd"
 ThemeManager="*res://src/theme_manager.gd"
 Gotm="*res://gotm/Gotm.gd"
-
-[compression]
-
-formats/zstd/compression_level=4
-formats/zlib/compression_level=0
-formats/gzip/compression_level=0
 
 [debug]
 

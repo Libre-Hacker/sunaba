@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/settings_dialog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/runtime/network_manager.gd" type="Script" id=2]
@@ -8,7 +8,10 @@
 [ext_resource path="res://src/runtime/world.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=7]
 [ext_resource path="res://src/runtime/ui.gd" type="Script" id=8]
-[ext_resource path="res://assets/ui/2kui/2kui.tres" type="Theme" id=9]
+[ext_resource path="res://default_env.tres" type="Environment" id=9]
+
+[sub_resource type="World" id=3]
+environment = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
@@ -37,11 +40,11 @@ stretch = true
 
 [node name="WorldViewport" type="Viewport" parent="UI/ViewportContainer"]
 size = Vector2( 1024, 500 )
-own_world = true
+world = SubResource( 3 )
+handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
-visible = false
 master_node = NodePath("../../../..")
 
 [node name="TopBar" type="Panel" parent="UI"]
@@ -140,7 +143,6 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -40.0
-theme = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="UI/Bottombar"]
 anchor_left = 1.0
@@ -172,6 +174,8 @@ margin_left = 282.0
 margin_top = -17.0
 margin_right = 339.0
 margin_bottom = 16.0
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 7 )
 icon_align = 1
 expand_icon = true
@@ -191,15 +195,16 @@ mode = 0
 access = 1
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 14.0
-margin_top = 65.0
-margin_right = 288.0
-margin_bottom = -46.0
+margin_left = 15.0
+margin_top = 76.0
+margin_right = -378.0
+margin_bottom = -133.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_colors/selection_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+scroll_following = true
 
 [node name="SettingsDialog" parent="UI" instance=ExtResource( 1 )]
 gui = NodePath("..")
@@ -208,5 +213,5 @@ gui = NodePath("..")
 [connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
 [connection signal="text_entered" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
-[connection signal="pressed" from="UI/Bottombar/RoomControls/PlayButton" to="UI/ViewportContainer/WorldViewport/World" method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/Bottombar/RoomControls/PlayButton" to="UI/ViewportContainer/WorldViewport/World" method="_on_play_button_pressed" flags=6]
 [connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]

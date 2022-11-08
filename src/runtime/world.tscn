@@ -30,10 +30,6 @@ surfaces/0 = {
 [node name="World" type="Spatial"]
 script = ExtResource( 3 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.76397, 17.0428 )
-visible = false
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
 

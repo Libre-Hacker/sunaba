@@ -35,7 +35,7 @@ func _ready():
 	
 		#change_theme(load(settings[1]))
 	#else:
-	change_theme(two_k_ui)
+	change_theme(sleek)
 
 func change_theme(theme):
 	theme = theme

@@ -53,8 +53,11 @@ shape = SubResource( 1 )
 
 [node name="Skin" parent="." instance=ExtResource( 5 )]
 
-[node name="BoneAttachment" parent="Skin/Character/Skeleton" index="2"]
+[node name="HeadwearAttachment" parent="Skin/Character/Skeleton" index="2"]
 transform = Transform( 1, 1.75408e-10, 2.73281e-07, 4.45071e-09, 0.999856, -0.016928, -2.73245e-07, 0.0169278, 0.999856, -5.10035e-09, 1.71076, -0.0160351 )
+
+[node name="ItemAttachment" parent="Skin/Character/Skeleton" index="3"]
+transform = Transform( 0.0308244, -0.658758, -0.751723, -0.962942, 0.182035, -0.199008, 0.267938, 0.730002, -0.628736, -0.962459, 1.58555, 0.0407526 )
 
 [node name="SpringArm" type="SpringArm" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
@@ -96,11 +99,12 @@ theme = ExtResource( 4 )
 text = "jump"
 
 [node name="Panel" type="Panel" parent="Control"]
-margin_left = 10.0
-margin_top = 45.0
-margin_right = 190.0
-margin_bottom = 114.0
-theme = ExtResource( 4 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = -77.0
+margin_right = 186.0
+margin_bottom = -8.0
 
 [node name="Icon" type="TextureRect" parent="Control/Panel"]
 visible = false

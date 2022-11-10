@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource( 1 )
-use_native_fd = true
+use_native_fd = false

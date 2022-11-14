@@ -38,3 +38,7 @@ func _on_NativeDialogOpenFile_files_selected(files: PoolStringArray):
 	var path = files[0]
 	if path != null:
 		_on_file_selected(path)
+
+
+func _on_play_button_pressed():
+	$Bottombar/RoomControls/PlayButton.hide()

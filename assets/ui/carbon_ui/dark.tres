@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/ui/carbon_ui/blue_dark.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/ui/carbon_ui/black.tres" type="StyleBox" id=2]
-[ext_resource path="res://assets/fonts/uifont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/inter.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/ui/carbon_ui/line_edit.tres" type="StyleBox" id=4]
 [ext_resource path="res://assets/ui/carbon_ui/disabled.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/ui/carbon_ui/dark_window.tres" type="StyleBox" id=6]

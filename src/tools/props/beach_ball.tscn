@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/models/props/beach_ball.tscn" type="PackedScene" id=4]
 
 [node name="Ball" type="Spatial"]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 script = ExtResource( 3 )
 
 [node name="Properties" type="WindowDialog" parent="."]
@@ -36,10 +36,10 @@ tab_align = 0
 [node name="Transform" type="Control" parent="Properties/Tabs/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 49.0
-margin_right = -10.0
-margin_bottom = -10.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="Control" type="Control" parent="Properties/Tabs/TabContainer/Transform"]
 anchor_right = 1.0

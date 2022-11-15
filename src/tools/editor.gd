@@ -1,10 +1,9 @@
-extends Spatial
+extends Panel
 
-onready var voxel_tools = $Editor/VoxelTools
-onready var menu_button = $Editor/Toolbar/Menubar/MenuButton
-onready var editor_view = $EditorView
-onready var toolbar = $Editor/Toolbar
-onready var tree = $Editor/Panel/Tree
+onready var menu_button = $Toolbar/Menubar/MenuButton
+onready var toolbar = $Toolbar
+onready var tree = $Panel/Tree
+onready var world = $ViewportContainer/Viewport/World
 
 var root = null
 var prop_num : int = 1
@@ -18,26 +17,21 @@ export var props := {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	voxel_tools.hide()
 	menu_button.get_popup().connect("id_pressed", self, "_on_item_pressed")
-	$Editor/Toolbar/Menubar/HelpMenuButton.get_popup().connect("id_pressed", self, "_on_item_pressed_help")
+	$Toolbar/Menubar/HelpMenuButton.get_popup().connect("id_pressed", self, "_on_item_pressed_help")
 	toolbar.show()
 	root = tree.create_item()
 	root.set_text(0, "Scene")
-	$Editor/Panel/AddButton.get_popup().connect("id_pressed", self, "add_prop")
+	$Panel/AddButton.get_popup().connect("id_pressed", self, "add_prop")
 
 func _process(delta):
-	voxel_tools.theme = ThemeManager.theme
-	toolbar.theme = ThemeManager.theme
-	$Editor/Panel.theme = ThemeManager.theme
-	$Editor/SaveDialog.theme = ThemeManager.theme
-	$Editor/FileDialog.theme = ThemeManager.theme
+	theme = ThemeManager.theme
 
 func _on_item_pressed(id):
 	var item_name = menu_button.get_popup().get_item_text(id)
 	if id == 0:
 		if OS.get_name() == "HTML5" or Build.use_native_fd == false:
-			$Editor/FileDialog.popup()
+			$FileDialog.popup()
 		else:
 			#$Editor/NativeDialogOpenFile.show()
 			pass
@@ -46,11 +40,11 @@ func _on_item_pressed(id):
 		pass
 		var file = File.new()
 		file.open(path, File.WRITE)
-		file.store_string(var2str(editor_view.blocks))
+		#file.store_string(var2str(editor_view.blocks))
 		file.close()
 	elif id == 2:
 		if OS.get_name() == "HTML5" or Build.use_native_fd == false:
-			$Editor/SaveDialog.popup()
+			$SaveDialog.popup()
 		else:
 			#$Editor/NativeDialogSaveFile.show()
 			pass
@@ -62,13 +56,6 @@ func _on_item_pressed_help(id):
 	if id == 0:
 		$AboutDialog.show()
 
-func show_voxel_tools():
-	voxel_tools.show()
-	editor_view.block_edit_mode = true
-
-func _object_mode():
-	editor_view.block_edit_mode = false
-	voxel_tools.hide()
 
 func show_toolbar():
 	toolbar.show()
@@ -103,7 +90,7 @@ func add_prop_to_scene(prp_name, prop_source, prop_type):
 	var prop_instance = prop_source.instance()
 	prop_instance.name = prop_name
 	prop_instance.prop_id = prop_num
-	add_child(prop_instance)
+	world.add_child(prop_instance)
 	prop_instance.initialize()
 	
 	
@@ -126,7 +113,7 @@ func add_prop_to_scene_with_vectors(prp_name, prop_source, pos, rot, size, type,
 	var prop_instance = prop_source.instance()
 	prop_instance.name = prop_name
 	prop_instance.prop_id = prop_num
-	add_child(prop_instance)
+	world.add_child(prop_instance)
 	prop_instance.translation = pos
 	prop_instance.rotation = rot
 	prop_instance.update_data(cp)
@@ -143,9 +130,10 @@ func edit_item():
 	var item = tree.get_selected()
 	var selected_prop = item.get_text(0)
 	if selected_prop == "Scene":
+		$WorldProperties.popup()
 		return
 	print(selected_prop)
-	var prop = get_node(selected_prop)
+	var prop = world.get_node(selected_prop)
 	prop.edit_prop()
 
 func update_prop_data(unique_id: int, pos: Vector3, rot: Vector3, size: Vector3, custom_properties: Dictionary):
@@ -170,3 +158,7 @@ func load_props(prop_data):
 		elif item.type == 2:
 			var bgm = load("res://src/tools/props/bg_music.tscn")
 			add_prop_to_scene_with_vectors("Background Music", bgm, item.position, item.rotation, item.size, item.type, item.custom_properties)
+
+
+func _on_load_map_button_pressed():
+	$ImportDialog.popup()

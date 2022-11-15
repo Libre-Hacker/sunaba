@@ -12,7 +12,7 @@ func edit_prop():
 	$Properties.popup()
 
 func update_transform():
-	get_parent().update_prop_data(prop_id, translation, rotation, scale, custom_properties)
+	get_parent().get_parent().get_parent().get_parent().update_prop_data(prop_id, translation, rotation, scale, custom_properties)
 
 func update_data(cp):
 	custom_properties = cp

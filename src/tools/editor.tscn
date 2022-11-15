@@ -29,7 +29,7 @@ margin_right = -168.0
 stretch = true
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
-size = Vector2( 640, 480 )
+size = Vector2( 856, 565 )
 handle_input_locally = false
 render_target_update_mode = 3
 
@@ -163,6 +163,7 @@ margin_top = 9.0
 margin_right = 50.0
 margin_bottom = 29.0
 text = "Props"
+valign = 1
 
 [node name="AddButton" type="MenuButton" parent="Panel"]
 margin_left = 133.0

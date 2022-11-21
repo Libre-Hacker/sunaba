@@ -12,3 +12,7 @@ builds/
 webrtc/
 webrtc_debug/
 *.import
+
+*.dll
+*.dylib
+*.so

@@ -8,7 +8,7 @@ export_presets.cfg
 .mono/
 data_*/
 
-builds/
+bin/
 webrtc/
 webrtc_debug/
 *.import

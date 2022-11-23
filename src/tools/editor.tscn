@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/ui/carbon_ui/flat.tres" type="StyleBox" id=34]
 
 [sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
 
 [node name="Editor" type="Panel"]
 anchor_right = 1.0
@@ -48,10 +49,10 @@ script = ExtResource( 4 )
 __meta__ = {
 "_editor_description_": ""
 }
-map_file = "P:/Personal/Godot/Qodot/qodot-example/addons/qodot/example_scenes/2-miscallaneous/1-runtime-map-building/1-runtime-map-building.map"
+map_file = "C:/sunaba/maps/unnamed.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource( 5 )
-base_texture_dir = "res://addons/qodot/textures"
+base_texture_dir = "res://textures"
 texture_file_extensions = PoolStringArray( "png" )
 worldspawn_layers = [  ]
 brush_clip_texture = "special/clip"

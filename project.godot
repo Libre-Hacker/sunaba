@@ -506,14 +506,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Sandbox Game"
+config/name="Sunaba"
 run/main_scene="res://src/runtime/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
 boot_splash/show_image=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://sunaba-icon2.png"
-config/windows_native_icon="res://sunaba-icon2.ico"
+config/icon="res://sb_icon2.png"
+config/windows_native_icon="res://sb_icon2.ico"
 
 [autoload]
 

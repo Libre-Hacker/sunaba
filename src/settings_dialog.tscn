@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/settings_dialog.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="InputEventKey" id=20]
+scancode = 16777254
+
+[sub_resource type="ShortCut" id=19]
+shortcut = SubResource( 20 )
 
 [node name="SettingsDialog" type="WindowDialog"]
 anchor_left = 0.5
@@ -29,7 +35,6 @@ anchor_bottom = 1.0
 tab_align = 0
 
 [node name="\?" type="Control" parent="Tabs/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -86,6 +91,7 @@ items = [ "2kUI", null, false, 0, null, "Carbon Light", null, false, 1, null, "C
 selected = 0
 
 [node name="Graphics" type="Control" parent="Tabs/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -112,6 +118,7 @@ custom_styles/focus = SubResource( 17 )
 custom_styles/disabled = SubResource( 17 )
 custom_styles/hover_pressed = SubResource( 17 )
 custom_styles/normal = SubResource( 17 )
+shortcut = SubResource( 19 )
 text = "Fullscreen Mode"
 flat = true
 

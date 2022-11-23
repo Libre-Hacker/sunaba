@@ -81,4 +81,3 @@ func save():
 	file.open("user://config.tres", File.WRITE)
 	file.store_string(var2str(settings))
 	file.close()
-

@@ -42,9 +42,7 @@ func change_theme(theme):
 	get_node(gui).theme = theme
 	ThemeManager.theme = theme
 	save()
-	
-func _process(delta):
-	pass
+
 
 
 func _on_theme_selected(index):

@@ -512,8 +512,8 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
 boot_splash/show_image=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://sb_icon2.png"
-config/windows_native_icon="res://sb_icon2.ico"
+config/icon="res://sb_icon1.png"
+config/windows_native_icon="res://sb_icon1.ico"
 
 [autoload]
 

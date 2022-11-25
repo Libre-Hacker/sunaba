@@ -43,12 +43,6 @@ func _player_joined(id):
 	get_parent().log_to_chat(var2str(id) + " has joined")
 	get_parent().enable_chat()
 	get_node(ui_node).show_play_button()
-	if get_tree().get_network_unique_id() == 1:
-		var map_data = get_node(world).map
-		if id == get_tree().get_network_unique_id():
-			get_node(world).load_map(map_data)
-		else:
-			rpc_id(id, "load_world", map_data)
 
 func _on_player_status_changed():
 	pass

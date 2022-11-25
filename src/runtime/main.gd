@@ -38,10 +38,6 @@ func chat(id , chatstring):
 func import_world():
 	world.import_map(path)
 
-func load_world():
-	$UI.show_play_button()
-	world.load_map(path)
-
 
 func _on_chat_text_entered(new_text):
 	var id = var2str(get_tree().get_network_unique_id())

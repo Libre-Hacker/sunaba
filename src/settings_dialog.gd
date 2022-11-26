@@ -37,6 +37,11 @@ func _ready():
 	#else:
 	change_theme(two_k_ui)
 
+func _input(event):
+	if Input.is_key_pressed(KEY_F11):
+		OS.window_fullscreen = !OS.window_fullscreen
+		save()
+
 func change_theme(theme):
 	theme = theme
 	get_node(gui).theme = theme
@@ -71,8 +76,9 @@ func _on_theme_selected(index):
 
 
 func _on_fullscreen_toggled(button_pressed):
-	OS.window_fullscreen = button_pressed
-	save()
+	#OS.window_fullscreen = button_pressed
+	#save()
+	pass
 
 func save():
 	var file = File.new()

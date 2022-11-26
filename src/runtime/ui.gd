@@ -22,7 +22,7 @@ func _game_menu(id):
 
 func _tools_menu(id):
 	if id == 0:
-		get_tree().change_scene("res://src/tools/editor.tscn")
+		pass
 	elif id == 1:
 		$SettingsDialog.popup()
 

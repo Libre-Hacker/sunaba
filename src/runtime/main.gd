@@ -36,7 +36,8 @@ func chat(id , chatstring):
 	#chat_entry.focus_mode = false
 
 func import_world():
-	world.import_map(path)
+	log_to_chat("Importing world from File")
+	world.load_map(path)
 
 
 func _on_chat_text_entered(new_text):

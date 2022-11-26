@@ -36,10 +36,7 @@ func chat(id , chatstring):
 	#chat_entry.focus_mode = false
 
 func import_world():
-	world.import_map(path)
-
-func load_world():
-	$UI.show_play_button()
+	log_to_chat("Importing world from File")
 	world.load_map(path)
 
 

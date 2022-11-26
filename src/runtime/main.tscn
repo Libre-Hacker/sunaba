@@ -72,7 +72,7 @@ margin_right = 100.0
 margin_bottom = 33.0
 focus_mode = 2
 text = "Tools"
-items = [ "Map Editor", null, 0, false, false, 0, 0, null, "", false, "Settings", null, 0, false, false, 1, 0, null, "", false ]
+items = [ "Settings", null, 0, false, false, 1, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="AddressBar" type="LineEdit" parent="UI/TopBar"]
@@ -192,7 +192,7 @@ margin_right = 291.5
 margin_bottom = 186.5
 window_title = "Open a File"
 mode = 0
-access = 1
+access = 2
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
 anchor_right = 1.0
@@ -218,3 +218,5 @@ gui = NodePath("..")
 [connection signal="pressed" from="UI/Bottombar/RoomControls/PlayButton" to="UI" method="_on_play_button_pressed" flags=6]
 [connection signal="pressed" from="UI/Bottombar/RoomControls/PlayButton" to="UI/ViewportContainer/WorldViewport/World" method="_on_play_button_pressed" flags=6]
 [connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]
+
+[editable path="UI/ViewportContainer/WorldViewport/World"]

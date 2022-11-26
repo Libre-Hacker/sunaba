@@ -21,9 +21,7 @@ func _game_menu(id):
 		$NewRoomDialog.popup()
 
 func _tools_menu(id):
-	if id == 0:
-		pass
-	elif id == 1:
+	if id == 1:
 		$SettingsDialog.popup()
 
 

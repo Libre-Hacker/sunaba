@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://assets/models/headwear/keiko's_hair.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/models/White.material" type="Material" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://assets/animations/run.tres" type="Animation" id=10]
 [ext_resource path="res://assets/animations/t_pose.tres" type="Animation" id=11]
 [ext_resource path="res://assets/animations/walk.tres" type="Animation" id=12]
+[ext_resource path="res://assets/materials/outline.tres" type="Material" id=13]
+[ext_resource path="res://assets/textures/faces/face_red_pale.png" type="Texture" id=14]
+[ext_resource path="res://addons/flexible_toon_shader/flexible_toon.shader" type="Shader" id=15]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "keiko_Sphere003"
@@ -215,6 +218,45 @@ bind/56/name = "heel.02.R_end"
 bind/56/bone = -1
 bind/56/pose = Transform( 0.141607, -0.0236039, -1.732, -1.73055, 0.0729599, -0.142483, 0.0746457, 1.73624, -0.0175584, -0.0229814, -0.22055, 0.0136476 )
 
+[sub_resource type="ShaderMaterial" id=6]
+next_pass = ExtResource( 13 )
+shader = ExtResource( 15 )
+shader_param/albedo = Color( 0.964706, 0.862745, 0.772549, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+
+[sub_resource type="ShaderMaterial" id=11]
+next_pass = ExtResource( 13 )
+shader = ExtResource( 15 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+shader_param/albedo_texture = ExtResource( 14 )
+
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "keiko_Cube001"
 surfaces/0 = {
@@ -265,6 +307,82 @@ surfaces/3 = {
 "skeleton_aabb": [ AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.0960006, 0.64136, 0.101897, 0.0467691, 0.046923, 0.0320484 ), AABB( 0.0960006, 0.64136, 0.101897, 0.0467691, 0.046923, 0.0320484 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.0960006, 0.64136, 0.101897, 0.0467691, 0.046923, 0.0320484 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0, 0, 0, -1, -1, -1 ), AABB( 0.0960006, 0.64136, 0.101897, 0.0467691, 0.046923, 0.0320484 ) ],
 "vertex_count": 559
 }
+
+[sub_resource type="ShaderMaterial" id=7]
+next_pass = ExtResource( 13 )
+shader = ExtResource( 15 )
+shader_param/albedo = Color( 1, 0, 0, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+
+[sub_resource type="ShaderMaterial" id=8]
+next_pass = ExtResource( 13 )
+shader = ExtResource( 15 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+
+[sub_resource type="ShaderMaterial" id=9]
+next_pass = ExtResource( 13 )
+shader = ExtResource( 15 )
+shader_param/albedo = Color( 0, 0, 0, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 16.0
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
+
+[sub_resource type="ShaderMaterial" id=10]
+next_pass = ExtResource( 13 )
+shader = ExtResource( 15 )
+shader_param/albedo = Color( 0.964706, 0.882353, 0, 1 )
+shader_param/clamp_diffuse_to_max = false
+shader_param/cuts = 2
+shader_param/wrap = 0.0
+shader_param/steepness = 1.0
+shader_param/use_attenuation = true
+shader_param/use_specular = true
+shader_param/specular_strength = 1.0
+shader_param/specular_shininess = 6.807
+shader_param/use_rim = true
+shader_param/rim_width = 8.0
+shader_param/rim_color = Color( 1, 1, 1, 1 )
+shader_param/use_ramp = false
+shader_param/use_borders = false
+shader_param/border_width = 0.01
 
 [sub_resource type="Animation" id=5]
 resource_name = "Fall001"
@@ -971,20 +1089,26 @@ bones/56/bound_children = [  ]
 [node name="Base Character" type="MeshInstance" parent="Character/Skeleton"]
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
+material/0 = SubResource( 6 )
+material/1 = SubResource( 11 )
 
 [node name="Dress" type="MeshInstance" parent="Character/Skeleton"]
 mesh = SubResource( 3 )
 skin = SubResource( 2 )
+material/0 = SubResource( 7 )
+material/1 = SubResource( 8 )
+material/2 = SubResource( 9 )
+material/3 = SubResource( 10 )
 
 [node name="HeadwearAttachment" type="BoneAttachment" parent="Character/Skeleton"]
-transform = Transform( 0.989533, -0.141583, 0.0279116, 0.140246, 0.989085, 0.0451547, -0.0340003, -0.0407677, 0.998589, -0.0479233, 1.7077, 0.0167482 )
+transform = Transform( 1, 1.75408e-10, 2.73281e-07, 4.45071e-09, 0.999856, -0.016928, -2.73245e-07, 0.0169278, 0.999856, -5.10035e-09, 1.71076, -0.0160351 )
 bone_name = "face"
 
 [node name="keiko\'s_hair" parent="Character/Skeleton/HeadwearAttachment" instance=ExtResource( 1 )]
 transform = Transform( 1.8, 1.86265e-08, 0, 6.51926e-09, 1.8, 9.31323e-10, 0, -1.86265e-09, 1.8, -0.0160809, 0.38272, -0.00127651 )
 
 [node name="ItemAttachment" type="BoneAttachment" parent="Character/Skeleton"]
-transform = Transform( 0.911533, -0.404391, 0.0746743, -0.123259, -0.441916, -0.888546, 0.39232, 0.800738, -0.452666, -0.32275, 0.857227, 0.0322468 )
+transform = Transform( 0.0308244, -0.658758, -0.751723, -0.962942, 0.182035, -0.199008, 0.267938, 0.730002, -0.628736, -0.962459, 1.58555, 0.0407526 )
 bone_name = "thumb.01.R"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

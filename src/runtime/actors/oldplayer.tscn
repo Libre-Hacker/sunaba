@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/runtime/actors/oldplayer.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=2]
+[ext_resource path="res://src/runtime/actors/spring_arm.gd" type="Script" id=3]
+[ext_resource path="res://sunaba-icon2.png" type="Texture" id=4]
+[ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/runtime/actors/himiko.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.328175
+height = 0.899992
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.533333, 0.878431, 0.376471, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.631373, 0.72549, 0.411765, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 5.0
+content_margin_right = 5.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.847059, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.494118, 0, 0, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+speed = 7.0
+jump_strength = 20.0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.779987, -0.00298238 )
+shape = SubResource( 1 )
+
+[node name="Skin" parent="." instance=ExtResource( 6 )]
+
+[node name="SpringArm" type="SpringArm" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23942, 0 )
+spring_length = 2.0
+script = ExtResource( 3 )
+
+[node name="Camera" type="Camera" parent="SpringArm"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15385, 0 )
+current = true
+
+[node name="NetworkTickRate" type="Timer" parent="."]
+wait_time = 0.03
+autostart = true
+
+[node name="MovementTween" type="Tween" parent="."]
+
+[node name="Control" type="Node" parent="."]
+
+[node name="MobileControls" type="Node" parent="Control"]
+
+[node name="Virtual joystick" parent="Control/MobileControls" instance=ExtResource( 5 )]
+visible = false
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_forward"
+action_down = "move_backward"
+
+[node name="JumpButton" type="Button" parent="Control/MobileControls"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -261.0
+margin_top = -199.0
+margin_right = -100.0
+margin_bottom = -94.0
+theme = ExtResource( 2 )
+text = "jump"
+
+[node name="Panel" type="Panel" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = -77.0
+margin_right = 186.0
+margin_bottom = -8.0
+
+[node name="Icon" type="TextureRect" parent="Control/Panel"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -61.0
+margin_right = 61.0
+margin_bottom = -7.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/Panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -170.0
+margin_top = -40.0
+margin_right = -5.0
+margin_bottom = -8.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 100.0
+
+[node name="Label" type="Label" parent="Control/Panel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -170.0
+margin_top = 8.0
+margin_right = -5.0
+margin_bottom = 25.0
+text = "Player"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -335.0
+margin_top = -77.0
+margin_right = -19.0
+margin_bottom = -20.0
+alignment = 2
+
+[connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
+[connection signal="pressed" from="Control/MobileControls/JumpButton" to="." method="jump"]

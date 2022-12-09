@@ -23,7 +23,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""
 }
-map_file = "/home/mintkat/maps/unnamed.map"
+map_file = "C:/sunaba/maps/testmap.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource( 5 )
 base_texture_dir = "res://textures"

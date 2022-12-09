@@ -20,11 +20,6 @@ _global_script_classes=[ {
 "path": "res://src/camera.gd"
 }, {
 "base": "Reference",
-"class": "GPLReader",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/readers/gpl.gd"
-}, {
-"base": "Reference",
 "class": "GotmAuth",
 "language": "GDScript",
 "path": "res://gotm/GotmAuth.gd"
@@ -93,11 +88,6 @@ _global_script_classes=[ {
 "class": "GotmUser",
 "language": "GDScript",
 "path": "res://gotm/GotmUser.gd"
-}, {
-"base": "Reference",
-"class": "ImageReader",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/readers/image.gd"
 }, {
 "base": "LiquidLayer",
 "class": "LavaLayer",
@@ -229,11 +219,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/import_plugins/quake_wad_import_plugin.gd"
 }, {
-"base": "Reference",
-"class": "Reader",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/reader.gd"
-}, {
 "base": "LiquidLayer",
 "class": "SlimeLayer",
 "language": "GDScript",
@@ -259,45 +244,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_tag.gd"
 }, {
-"base": "Reference",
-"class": "VarReader",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/readers/var.gd"
-}, {
 "base": "Control",
 "class": "VirtualJoystick",
 "language": "GDScript",
 "path": "res://joystick/virtual_joystick.gd"
-}, {
-"base": "Reference",
-"class": "VoxReader",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/readers/vox.gd"
-}, {
-"base": "Object",
-"class": "Voxel",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/voxel.gd"
-}, {
-"base": "EditorImportPlugin",
-"class": "VoxelImporter",
-"language": "GDScript",
-"path": "res://addons/voxel-core/engine/importers/voxel_importer.gd"
-}, {
-"base": "MeshInstance",
-"class": "VoxelMesh",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/voxel_mesh.gd"
-}, {
-"base": "Resource",
-"class": "VoxelSet",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/voxel_set.gd"
-}, {
-"base": "Reference",
-"class": "VoxelTool",
-"language": "GDScript",
-"path": "res://addons/voxel-core/classes/voxel_tool.gd"
 }, {
 "base": "LiquidLayer",
 "class": "WaterLayer",
@@ -422,7 +372,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BuildFlags": "",
 "EditorCamera": "",
-"GPLReader": "",
 "GotmAuth": "",
 "GotmBlob": "",
 "GotmConfig": "",
@@ -437,7 +386,6 @@ _global_script_class_icons={
 "GotmQuery": "",
 "GotmScore": "",
 "GotmUser": "",
-"ImageReader": "res://addons/voxel-core/assets/logos/MagicaVoxel.png",
 "LavaLayer": "",
 "LiquidLayer": "",
 "OrbitArm": "",
@@ -464,20 +412,12 @@ _global_script_class_icons={
 "QuakePaletteImportPlugin": "",
 "QuakeWadFile": "",
 "QuakeWadImportPlugin": "",
-"Reader": "",
 "SlimeLayer": "",
 "TrenchBroomFaceAttrib": "",
 "TrenchBroomGameConfigFile": "",
 "TrenchBroomGameConfigFolder": "",
 "TrenchBroomTag": "",
-"VarReader": "",
 "VirtualJoystick": "",
-"VoxReader": "res://addons/voxel-core/assets/logos/MagicaVoxel.png",
-"Voxel": "res://addons/voxel-core/assets/classes/voxel.png",
-"VoxelImporter": "",
-"VoxelMesh": "res://addons/voxel-core/assets/classes/voxel_mesh.png",
-"VoxelSet": "res://addons/voxel-core/assets/classes/voxel_set.png",
-"VoxelTool": "",
 "WaterLayer": "",
 "_Gotm": "",
 "_GotmAuth": "",
@@ -506,7 +446,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Sunaba"
+config/name="Toonbox"
 run/main_scene="res://src/runtime/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
@@ -536,7 +476,7 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
 
 [gdnative]
 

@@ -1,20 +1,44 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/qodot/src/nodes/qodot_map.gd" type="Script" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=3]
+[ext_resource path="res://src/runtime/actors/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://textures/prototype/grey_texture1.png" type="Texture" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
-flags_unshaded = true
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="ArrayMesh" id=3]
+surfaces/0 = {
+"aabb": AABB( -4, -1, -4, 8, 2.00001, 8 ),
+"array_data": PoolByteArray( 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 127, 127, 127, 193, 0, 193, 0, 185, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 127, 127, 127, 193, 0, 193, 0, 57, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 127, 127, 127, 193, 0, 65, 0, 57, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 127, 127, 127, 193, 0, 65, 0, 185, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 129, 0, 0, 63, 0, 193, 0, 185, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 129, 0, 0, 63, 0, 65, 0, 185, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 129, 0, 0, 63, 0, 65, 0, 57, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 129, 0, 0, 63, 0, 193, 0, 57, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 0, 129, 0, 193, 0, 193, 0, 193, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 0, 129, 0, 193, 0, 193, 0, 65, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 0, 129, 0, 193, 0, 65, 0, 65, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 129, 0, 193, 0, 65, 0, 193, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 0, 127, 0, 63, 0, 193, 0, 193, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 127, 0, 63, 0, 65, 0, 193, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 127, 0, 63, 0, 65, 0, 65, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 0, 127, 0, 63, 0, 193, 0, 65, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 127, 0, 0, 193, 0, 193, 0, 185, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 127, 0, 0, 193, 0, 193, 0, 57, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 127, 0, 0, 193, 0, 65, 0, 57, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 127, 0, 0, 193, 0, 65, 0, 185, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 127, 63, 0, 193, 0, 185, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 127, 63, 0, 65, 0, 185, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 127, 63, 0, 65, 0, 57, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 127, 63, 0, 193, 0, 57 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0 ),
+"blend_shape_data": [  ],
+"format": 2194711,
+"index_count": 36,
+"material": SubResource( 2 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="ConvexPolygonShape" id=4]
+points = PoolVector3Array( -4, 1, -4, -4, -1, -4, 4, -1, -4, 4, 1, -4, -4, 1, 4, -4, -1, 4, 4, -1, 4, 4, 1, 4 )
 
 [node name="Spatial" type="Spatial"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58376, 0 )
+
 [node name="QodotMap" type="Spatial" parent="."]
 script = ExtResource( 1 )
-__meta__ = {
-"_editor_description_": ""
-}
-map_file = "C:/sunaba/maps/testmap.map"
+map_file = "C:/sunaba/maps/unnamed.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource( 3 )
 base_texture_dir = "res://textures"
@@ -27,9 +51,15 @@ material_file_extension = "tres"
 default_material = SubResource( 1 )
 uv_unwrap_texel_size = 0.05
 print_profiling_data = false
-use_trenchbroom_group_hierarchy = true
+use_trenchbroom_group_hierarchy = false
 tree_attach_batch_size = 16
 set_owner_batch_size = 16
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 2 )
+[node name="entity_0_worldspawn" type="StaticBody" parent="QodotMap"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance" parent="QodotMap/entity_0_worldspawn"]
+use_in_baked_light = true
+mesh = SubResource( 3 )
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape" parent="QodotMap/entity_0_worldspawn"]
+shape = SubResource( 4 )

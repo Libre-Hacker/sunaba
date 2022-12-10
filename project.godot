@@ -447,7 +447,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Toonbox"
-run/main_scene="res://src/runtime/main.tscn"
+run/main_scene="res://src/testmap.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
 boot_splash/show_image=false
@@ -476,7 +476,7 @@ window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/voxel-core/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/qodot/plugin.cfg" )
 
 [gdnative]
 

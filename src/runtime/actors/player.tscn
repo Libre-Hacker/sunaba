@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://default_env.tres" type="Environment" id=1]
+[ext_resource path="res://src/runtime/actors/player.gd" type="Script" id=2]
+[ext_resource path="res://src/runtime/actors/himiko.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CylinderShape" id=2]
+height = 0.193335
+radius = 0.231481
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.293445
+height = 0.96792
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="Himiko" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.00645109, 0 )
+
+[node name="Foot" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0981678, 0 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+
+[node name="GroundCheck" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, -1.5, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.800358, 0 )
+shape = SubResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )

@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/ui/2kui/blue_tab.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/2kui/grey_button11.png" type="Texture" id=3]
 [ext_resource path="res://assets/ui/carbon_ui/white.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/fonts/ubuntu.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/fonts/uifont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" type="Texture" id=9]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" type="Texture" id=10]
 [ext_resource path="res://assets/ui/carbon_ui/scroll.tres" type="StyleBox" id=11]
@@ -82,7 +82,7 @@ expand_margin_top = 30.0
 expand_margin_bottom = 4.0
 
 [resource]
-default_font = ExtResource( 8 )
+default_font = ExtResource( 5 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 0.486275 )
 Button/styles/disabled = SubResource( 11 )

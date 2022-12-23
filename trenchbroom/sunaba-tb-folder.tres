@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_game_config_folder.gd" type="Script" id=1]
+[ext_resource path="res://src/entities/configs/sunaba_fgd.tres" type="Resource" id=2]
+[ext_resource path="res://addons/qodot/game_definitions/trenchbroom/qodot_trenchbroom_config_file.tres" type="Resource" id=3]
+[ext_resource path="res://sb_icon1.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+export_file = false
+trenchbroom_games_folder = "C:/QuakeDev/TrenchBroom/games"
+game_name = "Sunaba"
+icon = ExtResource( 4 )
+game_config_file = ExtResource( 3 )
+fgd_files = [ ExtResource( 2 ) ]

@@ -1,0 +1,52 @@
+// Game: Sunaba
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/brick"
+// brush 0
+{
+( -16 -64 -16 ) ( -16 -63 -16 ) ( -16 -64 -15 ) brick/Blue_glazed_pxr128 0 0 0 0.05 0.05
+( -64 0 -16 ) ( -64 0 -15 ) ( -63 0 -16 ) brick/Blue_glazed_pxr128 0 0 0 0.05 0.05
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) brick/Blue_glazed_pxr128 0 0 0 0.05 0.05
+( 64 64 0 ) ( 64 65 0 ) ( 65 64 0 ) brick/Blue_glazed_pxr128 0 0 0 0.05 0.05
+( 64 16 16 ) ( 65 16 16 ) ( 64 16 17 ) brick/Blue_glazed_pxr128 0 0 0 0.05 0.05
+( 0 64 16 ) ( 0 64 17 ) ( 0 65 16 ) brick/Blue_glazed_pxr128 0 0 0 0.05 0.05
+}
+// brush 1
+{
+( 0 0 -16 ) ( 0 1 -16 ) ( 0 0 -15 ) brick/Building_block_pxr128 0 0 0 0.05 0.05
+( 0 0 -16 ) ( 0 0 -15 ) ( 1 0 -16 ) brick/Building_block_pxr128 0 0 0 0.05 0.05
+( 0 0 -16 ) ( 1 0 -16 ) ( 0 1 -16 ) brick/Building_block_pxr128 0 0 0 0.05 0.05
+( 16 16 0 ) ( 16 17 0 ) ( 17 16 0 ) brick/Building_block_pxr128 0 0 0 0.05 0.05
+( 16 16 0 ) ( 17 16 0 ) ( 16 16 1 ) brick/Building_block_pxr128 0 0 0 0.05 0.05
+( 16 16 0 ) ( 16 16 1 ) ( 16 17 0 ) brick/Building_block_pxr128 0 0 0 0.05 0.05
+}
+// brush 2
+{
+( 16 0 -16 ) ( 16 1 -16 ) ( 16 0 -15 ) brick/Cement_block_pxr128 0 0 0 0.05 0.05
+( 16 0 -16 ) ( 16 0 -15 ) ( 17 0 -16 ) brick/Cement_block_pxr128 0 0 0 0.05 0.05
+( 16 0 -16 ) ( 17 0 -16 ) ( 16 1 -16 ) brick/Cement_block_pxr128 0 0 0 0.05 0.05
+( 32 16 0 ) ( 32 17 0 ) ( 33 16 0 ) brick/Cement_block_pxr128 0 0 0 0.05 0.05
+( 32 16 0 ) ( 33 16 0 ) ( 32 16 1 ) brick/Cement_block_pxr128 0 0 0 0.05 0.05
+( 32 16 0 ) ( 32 16 1 ) ( 32 17 0 ) brick/Cement_block_pxr128 0 0 0 0.05 0.05
+}
+// brush 3
+{
+( 32 0 -16 ) ( 32 1 -16 ) ( 32 0 -15 ) brick/Cinder_block_pxr128 0 0 0 0.05 0.05
+( 32 0 -16 ) ( 32 0 -15 ) ( 33 0 -16 ) brick/Cinder_block_pxr128 0 0 0 0.05 0.05
+( 32 0 -16 ) ( 33 0 -16 ) ( 32 1 -16 ) brick/Cinder_block_pxr128 0 0 0 0.05 0.05
+( 48 16 0 ) ( 48 17 0 ) ( 49 16 0 ) brick/Cinder_block_pxr128 0 0 0 0.05 0.05
+( 48 16 0 ) ( 49 16 0 ) ( 48 16 1 ) brick/Cinder_block_pxr128 0 0 0 0.05 0.05
+( 48 16 0 ) ( 48 16 1 ) ( 48 17 0 ) brick/Cinder_block_pxr128 0 0 0 0.05 0.05
+}
+// brush 4
+{
+( 48 0 -16 ) ( 48 1 -16 ) ( 48 0 -15 ) brick/Gray_deco_block_pxr128 0 0 0 0.05 0.05
+( 48 0 -16 ) ( 48 0 -15 ) ( 49 0 -16 ) brick/Gray_deco_block_pxr128 0 0 0 0.05 0.05
+( 48 0 -16 ) ( 49 0 -16 ) ( 48 1 -16 ) brick/Gray_deco_block_pxr128 0 0 0 0.05 0.05
+( 64 16 0 ) ( 64 17 0 ) ( 65 16 0 ) brick/Gray_deco_block_pxr128 0 0 0 0.05 0.05
+( 64 16 0 ) ( 65 16 0 ) ( 64 16 1 ) brick/Gray_deco_block_pxr128 0 0 0 0.05 0.05
+( 64 16 0 ) ( 64 16 1 ) ( 64 17 0 ) brick/Gray_deco_block_pxr128 0 0 0 0.05 0.05
+}
+}

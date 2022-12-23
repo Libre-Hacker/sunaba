@@ -32,10 +32,11 @@ static func format_github_release_download_url(repo: String, artifact: String) -
 static func get_dependencies() -> Dictionary:
 	var platform_string := get_platform_string()
 	var platform_extension := get_platform_library_extension()
-
-	var libqodot_destination := "res://addons/qodot/bin/%s/libqodot.%s" % [platform_string, platform_extension]
-	var libmap_destination := "res://addons/qodot/bin/%s/libmap.%s" % [platform_string, platform_extension]
-
+	
+	var libqodot_destination := "user://libqodot.%s" % [platform_extension]
+	var libmap_destination := "user://libmap.%s" % [platform_extension]
+		
+	
 	var libqodot_source := format_github_release_download_url("libqodot", "libqodot.%s" % get_platform_library_extension())
 	var libmap_source := format_github_release_download_url("libmap", "libmap.%s" % get_platform_library_extension())
 

@@ -446,7 +446,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Sunaba"
+config/name="Toonbox"
 run/main_scene="res://src/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
@@ -473,8 +473,6 @@ multirun/other_window_args="join"
 [display]
 
 window/size/width=800
-window/size/fullscreen=true
-window/dpi/allow_hidpi=true
 
 [editor_plugins]
 
@@ -626,6 +624,12 @@ look_left={
 look_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":2,"axis_value":1.0,"script":null)
+ ]
+}
+camera_toggle={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
 

@@ -23,7 +23,6 @@ margin_top = 10.0
 margin_bottom = 10.0
 
 [node name="Player" type="KinematicBody"]
-visible = false
 script = ExtResource( 2 )
 max_speed = 6
 jump_impulse = 10
@@ -36,6 +35,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 far = 200.0
+
+[node name="SpringArm" type="SpringArm" parent="Head"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+spring_length = 0.3
+
+[node name="SpringArm" type="SpringArm" parent="Head/SpringArm"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.32439e-08, 0, 0.302986 )
+spring_length = 2.0
+
+[node name="TPCamera" type="Camera" parent="Head/SpringArm/SpringArm"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.800358, 0 )
@@ -148,3 +158,5 @@ margin_bottom = 14.0
 texture = ExtResource( 6 )
 
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
+
+[editable path="Himiko"]

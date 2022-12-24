@@ -6,12 +6,12 @@
 "_tb_textures" "textures/Brick;textures/Elements;textures/Grass;textures/Metal;textures/Roofs;textures/Sand;textures/Tile;textures/Tile2;textures/Wood"
 // brush 0
 {
-( -1968 2096 -16 ) ( -1968 2097 -16 ) ( -1968 2096 -15 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
-( -1968 -1872 -16 ) ( -1968 -1872 -15 ) ( -1967 -1872 -16 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
+( -28544 2096 -16 ) ( -28544 2097 -16 ) ( -28544 2096 -15 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
+( -1968 -30768 -16 ) ( -1968 -30768 -15 ) ( -1967 -30768 -16 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
 ( -1968 2096 -16 ) ( -1967 2096 -16 ) ( -1968 2097 -16 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
 ( -1840 2224 0 ) ( -1840 2225 0 ) ( -1839 2224 0 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
-( -1840 2224 16 ) ( -1839 2224 16 ) ( -1840 2224 17 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
-( 2144 2224 16 ) ( 2144 2224 17 ) ( 2144 2225 16 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
+( -1840 30672 16 ) ( -1839 30672 16 ) ( -1840 30672 17 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
+( 29600 2224 16 ) ( 29600 2224 17 ) ( 29600 2225 16 ) Elements/Elements_15-256x256 0 0 0 0.125 0.125
 }
 // brush 1
 {

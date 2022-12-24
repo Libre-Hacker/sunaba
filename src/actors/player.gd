@@ -19,6 +19,9 @@ var puppet_rot = Vector3()
 
 
 onready var head = $Head
+onready var fp_camera = $Head/Camera
+onready var tp_camera = $Head/SpringArm/SpringArm/TPCamera
+onready var model = $Himiko
 onready var ntr = $NetworkTickRate
 onready var movetween = $MovementTween
 onready var crosshair = $Hud/Crosshair
@@ -26,7 +29,9 @@ onready var crosshair = $Hud/Crosshair
 func _ready():
 	if is_network_master():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	$Head/Camera.current = is_network_master()
+	fp_camera.current = is_network_master()
+	tp_camera.current = false
+	model.visible = !is_network_master()
 	
 
 func _input(event):
@@ -74,7 +79,15 @@ func _physics_process(delta):
 func _process(_delta): 
 	$Hud/Panel.theme = ThemeManager.theme
 	
-	
+	if Input.is_action_just_pressed("camera_toggle"):
+		if fp_camera.current == true:
+			fp_camera.current = false
+			tp_camera.current = is_network_master()
+			model.visible = true
+		elif tp_camera.current == true:
+			fp_camera.current = is_network_master()
+			tp_camera.current = false
+			model.visible = !is_network_master()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

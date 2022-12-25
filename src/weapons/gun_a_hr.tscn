@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[node name="Gun A HR" type="MeshInstance"]
+transform = Transform( 0.1, 0, 0, 0, 0.144, 0, 0, 0, 0.608, 0, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 3 )

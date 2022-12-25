@@ -13,10 +13,14 @@ export var controller_sensitivity : int = 3
 var velocity = Vector3.ZERO
 var snap_vector = Vector3.ZERO
 
+var tool_to_spawn
+var tool_to_drop
+
 var puppet_pos = Vector3()
 var puppet_vel = Vector3()
 var puppet_rot = Vector3()
 
+var reach = null
 
 onready var head = $Head
 onready var fp_camera = $Head/Camera
@@ -25,6 +29,14 @@ onready var model = $Himiko
 onready var ntr = $NetworkTickRate
 onready var movetween = $MovementTween
 onready var crosshair = $Hud/Crosshair
+onready var hand = $Head/Hand
+onready var fp_reach = $Head/Camera/Reach
+onready var tp_reach = $Head/Camera/Reach
+
+onready var gun_a_hr = preload("res://src/weapons/gun_a_hr.tscn")
+onready var gun_a = preload("res://src/weapons/gun_a.tscn")
+onready var gun_b_hr = preload("res://src/weapons/gun_b_hr.tscn")
+onready var gun_b = preload("res://src/weapons/gun_b.tscn")
 
 func _ready():
 	if is_network_master():
@@ -32,6 +44,7 @@ func _ready():
 	fp_camera.current = is_network_master()
 	tp_camera.current = false
 	model.visible = !is_network_master()
+	reach = fp_reach
 	
 
 func _input(event):
@@ -84,10 +97,46 @@ func _process(_delta):
 			fp_camera.current = false
 			tp_camera.current = is_network_master()
 			model.visible = true
+			reach = tp_reach
 		elif tp_camera.current == true:
 			fp_camera.current = is_network_master()
 			tp_camera.current = false
 			model.visible = !is_network_master()
+			reach = fp_reach
+	
+	if reach.is_colliding():
+		if reach.get_collider().get_name() == "Gun A":
+			tool_to_spawn = gun_a_hr.instance()
+		elif reach.get_collider().get_name() == "Gun B":
+			tool_to_spawn = gun_b_hr.instance()
+		else:
+			tool_to_spawn = null
+	else:
+		tool_to_spawn = null
+	
+	if hand.get_child_count() > 0:
+		print(hand.get_child(0))
+		if hand.get_child(0) != null:
+			if hand.get_child(0).get_name() == "Gun A HR":
+				tool_to_drop = gun_a.instance()
+			elif hand.get_child(0).get_name() == "Gun B HR":
+				tool_to_drop = gun_b.instance()
+		else:
+			tool_to_drop = null
+	else:
+		tool_to_drop = null
+	
+	if Input.is_action_just_pressed("interact"):
+		if tool_to_spawn != null:
+			if hand.get_child_count() > 0:
+				if hand.get_child(0) != null:
+					get_parent().add_child(tool_to_drop)
+					tool_to_drop.global_transform = hand.global_transform
+					tool_to_drop.dropped = true
+					hand.get_child(0).queue_free()
+			reach.get_collider().queue_free()
+			hand.add_child(tool_to_spawn)
+			tool_to_spawn.rotation = hand.rotation
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=1]
 [ext_resource path="res://src/actors/player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sunaba-icon2.png" type="Texture" id=7]
 [ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/actors/himiko.tscn" type="PackedScene" id=9]
+[ext_resource path="res://new_environment.tres" type="Environment" id=10]
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.293445
@@ -36,6 +37,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0 )
 [node name="Camera" type="Camera" parent="Head"]
 far = 200.0
 
+[node name="Reach" type="RayCast" parent="Head/Camera"]
+cast_to = Vector3( 0, 0, -5 )
+
 [node name="SpringArm" type="SpringArm" parent="Head"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 spring_length = 0.3
@@ -46,6 +50,12 @@ spring_length = 2.0
 
 [node name="TPCamera" type="Camera" parent="Head/SpringArm/SpringArm"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413 )
+
+[node name="Reach" type="RayCast" parent="Head/SpringArm/SpringArm/TPCamera"]
+cast_to = Vector3( 0, 0, -7 )
+
+[node name="Hand" type="Spatial" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.308106, -0.091748, -0.333585 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.800358, 0 )
@@ -156,5 +166,8 @@ margin_top = -14.0
 margin_right = 14.0
 margin_bottom = 14.0
 texture = ExtResource( 6 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 10 )
 
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]

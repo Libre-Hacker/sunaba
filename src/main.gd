@@ -1,6 +1,6 @@
 extends Node
 
-var path = "C:/sunaba/maps/testmap.map"
+var path = null
 var network_manager = null
 
 onready var network_manager_enet = $NetworkManagerENet
@@ -36,7 +36,10 @@ func chat(id , chatstring):
 	#chat_entry.focus_mode = false
 
 func import_world():
-	log_to_chat("Importing world from File - " + path)
+	if path == null:
+		log_to_chat("No Map File Selected, Defaulting to preloaded map")
+	else:
+		log_to_chat("Importing world from File - " + path)
 	world.load_map(path)
 
 

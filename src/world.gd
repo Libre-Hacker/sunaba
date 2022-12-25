@@ -31,10 +31,10 @@ func import_map(path):
 	file.close()
 
 func load_map(path):
-	qodot_map.set_map_file(path)
-	qodot_map.verify_and_build()
-	qodot_map.unwrap_uv2()
-	can_rebuild = true
+	if path != null:
+		qodot_map.set_map_file(path)
+		qodot_map.verify_and_build()
+		qodot_map.unwrap_uv2()
 	$AmbiantNoise.play()
 
 func _on_play_button_pressed():

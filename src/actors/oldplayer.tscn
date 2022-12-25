@@ -5,7 +5,8 @@
 [ext_resource path="res://src/actors/spring_arm.gd" type="Script" id=3]
 [ext_resource path="res://sunaba-icon2.png" type="Texture" id=4]
 [ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/actors/himiko.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/actors/himiko_old.tscn" type="PackedScene" id=6]
+
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.328175

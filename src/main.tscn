@@ -197,6 +197,7 @@ margin_left = -291.5
 margin_top = -186.5
 margin_right = 291.5
 margin_bottom = 186.5
+rect_min_size = Vector2( 300, 105 )
 window_title = "Open a File"
 mode = 0
 access = 2

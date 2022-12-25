@@ -28,7 +28,7 @@ max_speed = 6
 jump_impulse = 10
 
 [node name="Himiko" parent="." instance=ExtResource( 9 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.00645109, 0 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0 )
@@ -158,5 +158,3 @@ margin_bottom = 14.0
 texture = ExtResource( 6 )
 
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
-
-[editable path="Himiko"]

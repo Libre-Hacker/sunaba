@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/ui/carbon_ui/carbon_ui.tres" type="Theme" id=1]
 [ext_resource path="res://src/actors/player.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/actors/himiko.tscn" type="PackedScene" id=9]
 [ext_resource path="res://new_environment.tres" type="Environment" id=10]
+[ext_resource path="res://assets/ui/2kui/button_blue.tres" type="StyleBox" id=11]
 
 [sub_resource type="CapsuleShape" id=3]
 radius = 0.293445
@@ -38,7 +39,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0 )
 far = 200.0
 
 [node name="Reach" type="RayCast" parent="Head/Camera"]
+enabled = true
 cast_to = Vector3( 0, 0, -5 )
+
+[node name="AimCast" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, -1, -1000 )
 
 [node name="SpringArm" type="SpringArm" parent="Head"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
@@ -52,7 +58,12 @@ spring_length = 2.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413 )
 
 [node name="Reach" type="RayCast" parent="Head/SpringArm/SpringArm/TPCamera"]
+enabled = true
 cast_to = Vector3( 0, 0, -7 )
+
+[node name="AimCast" type="RayCast" parent="Head/SpringArm/SpringArm/TPCamera"]
+enabled = true
+cast_to = Vector3( 0, -1, -1000 )
 
 [node name="Hand" type="Spatial" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.308106, -0.091748, -0.333585 )
@@ -145,16 +156,51 @@ margin_right = -5.0
 margin_bottom = 25.0
 text = "Player"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Hud"]
+[node name="ToolPanel" type="Panel" parent="Hud"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -335.0
-margin_top = -77.0
-margin_right = -19.0
-margin_bottom = -20.0
-alignment = 2
+margin_left = -188.0
+margin_top = -89.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="Icon" type="TextureRect" parent="Hud/ToolPanel"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -61.0
+margin_right = 61.0
+margin_bottom = -7.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -173.0
+margin_top = -48.0
+margin_right = -8.0
+margin_bottom = -8.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_styles/fg = ExtResource( 11 )
+custom_styles/bg = ExtResource( 3 )
+value = 100.0
+
+[node name="Label" type="Label" parent="Hud/ToolPanel"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -170.0
+margin_top = 8.0
+margin_right = -9.0
+margin_bottom = 25.0
+text = "Gun A"
+align = 2
 
 [node name="Crosshair" type="TextureRect" parent="Hud"]
 anchor_left = 0.5

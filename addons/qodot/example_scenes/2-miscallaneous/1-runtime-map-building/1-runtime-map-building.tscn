@@ -5,6 +5,7 @@
 [ext_resource path="res://addons/qodot/example_scenes/2-miscallaneous/1-runtime-map-building/orbit_arm.gd" type="Script" id=5]
 [ext_resource path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" type="Resource" id=14]
 
+
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.654902, 0.647059, 0.945098, 1 )
 sky_curve = 0.0170518

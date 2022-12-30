@@ -21,6 +21,9 @@ var puppet_vel = Vector3()
 var puppet_rot = Vector3()
 
 var reach = null
+var aimcast = null
+var damage = 100
+
 
 onready var head = $Head
 onready var fp_camera = $Head/Camera
@@ -28,10 +31,17 @@ onready var tp_camera = $Head/SpringArm/SpringArm/TPCamera
 onready var model = $Himiko
 onready var ntr = $NetworkTickRate
 onready var movetween = $MovementTween
-onready var crosshair = $Hud/Crosshair
 onready var hand = $Head/Hand
 onready var fp_reach = $Head/Camera/Reach
-onready var tp_reach = $Head/Camera/Reach
+onready var tp_reach = $Head/SpringArm/SpringArm/TPCamera/Reach
+onready var fp_aimcast = $Head/Camera/AimCast
+onready var tp_aimcast = $Head/Hand/AimCast
+
+# Hud Related Nodes
+onready var crosshair = $Hud/Crosshair
+onready var tool_label = $Hud/ToolPanel/Label
+onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
+
 
 onready var gun_a_hr = preload("res://src/weapons/gun_a_hr.tscn")
 onready var gun_a = preload("res://src/weapons/gun_a.tscn")
@@ -45,6 +55,7 @@ func _ready():
 	tp_camera.current = false
 	model.visible = !is_network_master()
 	reach = fp_reach
+	aimcast = fp_aimcast
 	
 
 func _input(event):
@@ -98,11 +109,13 @@ func _process(_delta):
 			tp_camera.current = is_network_master()
 			model.visible = true
 			reach = tp_reach
+			aimcast = tp_aimcast
 		elif tp_camera.current == true:
 			fp_camera.current = is_network_master()
 			tp_camera.current = false
 			model.visible = !is_network_master()
 			reach = fp_reach
+			aimcast = fp_aimcast
 	
 	if reach.is_colliding():
 		if reach.get_collider().get_name() == "Gun A":
@@ -115,7 +128,6 @@ func _process(_delta):
 		tool_to_spawn = null
 	
 	if hand.get_child_count() > 0:
-		print(hand.get_child(0))
 		if hand.get_child(0) != null:
 			if hand.get_child(0).get_name() == "Gun A HR":
 				tool_to_drop = gun_a.instance()
@@ -134,9 +146,22 @@ func _process(_delta):
 					tool_to_drop.global_transform = hand.global_transform
 					tool_to_drop.dropped = true
 					hand.get_child(0).queue_free()
+			tool_label.text = reach.get_collider().get_name()
+			tool_ammo_bar.max_value = 100
+			tool_ammo_bar.value = 100
 			reach.get_collider().queue_free()
 			hand.add_child(tool_to_spawn)
 			tool_to_spawn.rotation = hand.rotation
+	
+	if Input.is_action_pressed("action_button"):
+		tool_ammo_bar.value -= 1
+		
+		if tool_ammo_bar.value != 0:
+			if aimcast.is_colliding():
+				var target = fp_aimcast.get_collider()
+				if target.is_in_group("bot"):
+					print("hit bot")
+					target.health -= damage
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

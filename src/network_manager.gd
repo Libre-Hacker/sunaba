@@ -14,7 +14,7 @@ func connect_to_server() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_joined")
 	join_room("127.0.0.1")
 
-func _on_address_entered(new_text):
+func _on_address_entered(_new_text):
 	join_room("127.0.0.1")
 
 func create_room():

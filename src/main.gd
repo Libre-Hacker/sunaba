@@ -52,7 +52,7 @@ func _on_chat_text_entered(new_text):
 func quit():
 	get_tree().quit()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_key_pressed(KEY_CONTROL) and Input.is_key_pressed(KEY_R):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene("res://src/reload.tscn")

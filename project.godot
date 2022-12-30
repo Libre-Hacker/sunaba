@@ -542,7 +542,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Toonbox"
+config/name="Sunaba"
 run/main_scene="res://src/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
@@ -734,6 +734,26 @@ interact={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+tool1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+tool2={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+tool3={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+tool4={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":52,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [locale]
 
@@ -742,6 +762,7 @@ translations=PoolStringArray(  )
 
 [physics]
 
+common/physics_fps=240
 common/enable_pause_aware_picking=true
 
 [rendering]
@@ -749,7 +770,7 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
-quality/shadows/filter_mode=2
+quality/shadows/filter_mode=0
 quality/shading/force_vertex_shading=true
 quality/shading/force_lambert_over_burley=true
 quality/shading/force_blinn_over_ggx=true

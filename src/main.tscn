@@ -52,6 +52,9 @@ physics_object_picking = true
 [node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
 main_node_path = NodePath("../../../..")
 
+[node name="DirectionalLight" parent="UI/ViewportContainer/WorldViewport/World" index="1"]
+shadow_enabled = false
+
 [node name="TopBar" type="Panel" parent="UI"]
 anchor_right = 1.0
 margin_bottom = 40.0

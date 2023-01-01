@@ -2,7 +2,7 @@ extends WindowDialog
 
 var settings = {
 	# Theme
-	1 : "res://assets/ui/sl33k/sl33k.tres",
+	1 : "res://assets/ui/2kui/2kui.tres",
 	# Fullscreen Mode
 	2 : false
 }
@@ -35,7 +35,7 @@ func _ready():
 	
 		#change_theme(load(settings[1]))
 	#else:
-	change_theme(sleek)
+	change_theme(two_k_ui)
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_F11):

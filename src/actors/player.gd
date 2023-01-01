@@ -23,7 +23,10 @@ var puppet_rot = Vector3()
 var reach = null
 var aimcast = null
 var damage = 100
-
+var is_reloading : bool
+var has_fired : bool = false
+var weapon_type : String = ""
+var muzzle = null
 
 onready var head = $Head
 onready var fp_camera = $Head/Camera
@@ -35,10 +38,11 @@ onready var hand = $Head/Hand
 onready var fp_reach = $Head/Camera/Reach
 onready var tp_reach = $Head/SpringArm/SpringArm/TPCamera/Reach
 onready var fp_aimcast = $Head/Camera/AimCast
-onready var tp_aimcast = $Head/Hand/AimCast
+onready var tp_aimcast = $Head/SpringArm/SpringArm/TPCamera/AimCast
 
 # Hud Related Nodes
 onready var crosshair = $Hud/Crosshair
+onready var reload_label = $Hud/Crosshair/Label 
 onready var tool_label = $Hud/ToolPanel/Label
 onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
 
@@ -47,6 +51,10 @@ onready var gun_a_hr = preload("res://src/weapons/gun_a_hr.tscn")
 onready var gun_a = preload("res://src/weapons/gun_a.tscn")
 onready var gun_b_hr = preload("res://src/weapons/gun_b_hr.tscn")
 onready var gun_b = preload("res://src/weapons/gun_b.tscn")
+onready var pb_gun_hr = preload("res://src/weapons/paintball_gun_hr.tscn")
+onready var pb_gun = preload("res://src/weapons/paintball_gun.tscn")
+
+onready var b_decal = preload("res://src/bullet_decal.tscn")
 
 func _ready():
 	if is_network_master():
@@ -56,7 +64,8 @@ func _ready():
 	model.visible = !is_network_master()
 	reach = fp_reach
 	aimcast = fp_aimcast
-	
+	reload_label.hide()
+	$Hud/ToolPanel.hide()
 
 func _input(event):
 	if !is_network_master():
@@ -102,6 +111,9 @@ func _physics_process(delta):
 
 func _process(_delta): 
 	$Hud/Panel.theme = ThemeManager.theme
+	$Hud/ToolPanel.theme = ThemeManager.theme
+	crosshair.theme = ThemeManager.theme
+	tool_ammo_bar.get_node("Label").text = var2str(round(tool_ammo_bar.value)) + " / " + var2str(round(tool_ammo_bar.max_value))
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
@@ -122,6 +134,8 @@ func _process(_delta):
 			tool_to_spawn = gun_a_hr.instance()
 		elif reach.get_collider().get_name() == "Gun B":
 			tool_to_spawn = gun_b_hr.instance()
+		elif reach.get_collider().get_name() == "Paintball Gun":
+			tool_to_spawn = pb_gun_hr.instance()
 		else:
 			tool_to_spawn = null
 	else:
@@ -133,6 +147,8 @@ func _process(_delta):
 				tool_to_drop = gun_a.instance()
 			elif hand.get_child(0).get_name() == "Gun B HR":
 				tool_to_drop = gun_b.instance()
+			elif hand.get_child(0).get_name() == "Paintball Gun HR":
+				tool_to_drop = pb_gun.instance()
 		else:
 			tool_to_drop = null
 	else:
@@ -151,17 +167,34 @@ func _process(_delta):
 			tool_ammo_bar.value = 100
 			reach.get_collider().queue_free()
 			hand.add_child(tool_to_spawn)
+			tool_ammo_bar.value = tool_to_spawn.max_ammo
+			tool_ammo_bar.max_value = tool_to_spawn.max_ammo
+			damage = tool_to_spawn.damage
+			weapon_type = tool_to_spawn.weapon_type
 			tool_to_spawn.rotation = hand.rotation
+			muzzle = tool_to_spawn.get_node("Muzzle")
+			$Hud/ToolPanel.show()
 	
-	if Input.is_action_pressed("action_button"):
-		tool_ammo_bar.value -= 1
-		
-		if tool_ammo_bar.value != 0:
-			if aimcast.is_colliding():
-				var target = fp_aimcast.get_collider()
-				if target.is_in_group("bot"):
-					print("hit bot")
-					target.health -= damage
+	if weapon_type == "semi":
+		if Input.is_action_just_pressed("action_button"):
+			if hand.get_child_count() > 0:
+				if hand.get_child(0) != null:
+					if !has_fired:
+							_fire()
+		elif Input.is_action_just_released("action_button"):
+			has_fired = false
+	elif weapon_type == "auto":
+		if Input.is_action_pressed("action_button"):
+			if hand.get_child_count() > 0:
+				if hand.get_child(0) != null:
+					if !has_fired:
+							_fire()
+	
+	if (Input.is_action_pressed("reload") and tool_ammo_bar.value < tool_ammo_bar.max_value ) or tool_ammo_bar.value == tool_ammo_bar.min_value:
+		if is_reloading: return
+		is_reloading = true
+		$ReloadTimer.start()
+		reload_label.show()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
@@ -224,4 +257,32 @@ func _on_timeout():
 	if is_network_master():
 		rpc_unreliable("update_state", global_transform.origin, velocity, Vector2(rotation.x, rotation.y))
 
+func _fire():
+	tool_ammo_bar.value -= 1
+	if tool_ammo_bar.value != 0:
+		$WeaponSound.play()
+		if aimcast.is_colliding():
+			var target = aimcast.get_collider()
+			if target.is_in_group("bot"):
+				print("hit bot")
+				target.health -= damage
+			else:
+				var b = b_decal.instance()
+				target.add_child(b)
+				b.global_transform.origin = aimcast.get_collision_point()
+				b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal(), Vector3.UP)
+	has_fired = true
+	if weapon_type == "auto":
+		$FireTimer.start()
 
+func _on_reload_timer_timeout():
+	$ReloadTimer.stop()
+	tool_ammo_bar.value = tool_ammo_bar.max_value
+	reload_label.hide()
+	is_reloading = false
+	
+
+
+func _on_fire_timer_timeout():
+	if weapon_type == "auto":
+		has_fired = false

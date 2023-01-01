@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/network_manager.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/dokyo.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/fredoka_one.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/main.gd" type="Script" id=3]
 [ext_resource path="res://src/ui.gd" type="Script" id=4]
 [ext_resource path="res://src/settings_dialog.tscn" type="PackedScene" id=5]
@@ -51,9 +51,6 @@ physics_object_picking = true
 
 [node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
 main_node_path = NodePath("../../../..")
-
-[node name="DirectionalLight" parent="UI/ViewportContainer/WorldViewport/World" index="1"]
-shadow_enabled = false
 
 [node name="TopBar" type="Panel" parent="UI"]
 anchor_right = 1.0
@@ -158,9 +155,9 @@ margin_top = -40.0
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -106.0
+margin_left = -115.0
 custom_fonts/font = SubResource( 2 )
-text = "sunaba"
+text = "toonbox"
 align = 1
 valign = 1
 

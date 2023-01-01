@@ -11,6 +11,7 @@ scancode = 16777254
 shortcut = SubResource( 20 )
 
 [node name="SettingsDialog" type="WindowDialog"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

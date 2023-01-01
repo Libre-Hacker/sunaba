@@ -1,0 +1,304 @@
+// Game: Sunaba
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/Paper"
+// brush 0
+{
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) Paper/notebook_paper 0 0 0 1 1
+( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) Paper/notebook_paper 0 0 0 1 1
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) Paper/notebook_paper 0 0 0 1 1
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) Paper/notebook_paper 0 0 0 1 1
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) Paper/notebook_paper 0 0 0 1 1
+( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) Paper/notebook_paper 0 0 0 1 1
+}
+// brush 1
+{
+( 64 32 0 ) ( 64 33 0 ) ( 64 32 1 ) Paper/notebook_paper_black 0 0 0 1 1
+( 64 32 0 ) ( 64 32 1 ) ( 65 32 0 ) Paper/notebook_paper_black 0 0 0 1 1
+( 64 32 -16 ) ( 65 32 -16 ) ( 64 33 -16 ) Paper/notebook_paper_black 0 0 0 1 1
+( 96 64 16 ) ( 96 65 16 ) ( 97 64 16 ) Paper/notebook_paper_black 0 0 0 1 1
+( 96 64 16 ) ( 97 64 16 ) ( 96 64 17 ) Paper/notebook_paper_black 0 0 0 1 1
+( 96 64 16 ) ( 96 64 17 ) ( 96 65 16 ) Paper/notebook_paper_black 0 0 0 1 1
+}
+// brush 2
+{
+( 64 0 -16 ) ( 64 1 -16 ) ( 64 0 -15 ) Paper/notebook_paper_blackblue 0 0 0 1 1
+( 64 0 -16 ) ( 64 0 -15 ) ( 65 0 -16 ) Paper/notebook_paper_blackblue 0 0 0 1 1
+( 64 0 -16 ) ( 65 0 -16 ) ( 64 1 -16 ) Paper/notebook_paper_blackblue 0 0 0 1 1
+( 96 32 16 ) ( 96 33 16 ) ( 97 32 16 ) Paper/notebook_paper_blackblue 0 0 0 1 1
+( 96 32 0 ) ( 97 32 0 ) ( 96 32 1 ) Paper/notebook_paper_blackblue 0 0 0 1 1
+( 96 32 0 ) ( 96 32 1 ) ( 96 33 0 ) Paper/notebook_paper_blackblue 0 0 0 1 1
+}
+// brush 3
+{
+( 64 -32 -16 ) ( 64 -31 -16 ) ( 64 -32 -15 ) Paper/notebook_paper_blackorange 0 0 0 1 1
+( 64 -32 -16 ) ( 64 -32 -15 ) ( 65 -32 -16 ) Paper/notebook_paper_blackorange 0 0 0 1 1
+( 64 -32 -16 ) ( 65 -32 -16 ) ( 64 -31 -16 ) Paper/notebook_paper_blackorange 0 0 0 1 1
+( 96 0 16 ) ( 96 1 16 ) ( 97 0 16 ) Paper/notebook_paper_blackorange 0 0 0 1 1
+( 96 0 0 ) ( 97 0 0 ) ( 96 0 1 ) Paper/notebook_paper_blackorange 0 0 0 1 1
+( 96 0 0 ) ( 96 0 1 ) ( 96 1 0 ) Paper/notebook_paper_blackorange 0 0 0 1 1
+}
+// brush 4
+{
+( 64 -64 -16 ) ( 64 -63 -16 ) ( 64 -64 -15 ) Paper/notebook_paper_blue 0 0 0 1 1
+( 64 -64 -16 ) ( 64 -64 -15 ) ( 65 -64 -16 ) Paper/notebook_paper_blue 0 0 0 1 1
+( 64 -64 -16 ) ( 65 -64 -16 ) ( 64 -63 -16 ) Paper/notebook_paper_blue 0 0 0 1 1
+( 96 -32 16 ) ( 96 -31 16 ) ( 97 -32 16 ) Paper/notebook_paper_blue 0 0 0 1 1
+( 96 -32 0 ) ( 97 -32 0 ) ( 96 -32 1 ) Paper/notebook_paper_blue 0 0 0 1 1
+( 96 -32 0 ) ( 96 -32 1 ) ( 96 -31 0 ) Paper/notebook_paper_blue 0 0 0 1 1
+}
+// brush 5
+{
+( 64 -80 -16 ) ( 64 -79 -16 ) ( 64 -80 -15 ) Paper/notebook_paper_bluegreen 0 0 0 1 1
+( 64 -96 -16 ) ( 64 -96 -15 ) ( 65 -96 -16 ) Paper/notebook_paper_bluegreen 0 0 0 1 1
+( 64 -80 -16 ) ( 65 -80 -16 ) ( 64 -79 -16 ) Paper/notebook_paper_bluegreen 0 0 0 1 1
+( 96 -64 16 ) ( 96 -63 16 ) ( 97 -64 16 ) Paper/notebook_paper_bluegreen 0 0 0 1 1
+( 96 -64 0 ) ( 97 -64 0 ) ( 96 -64 1 ) Paper/notebook_paper_bluegreen 0 0 0 1 1
+( 96 -64 0 ) ( 96 -64 1 ) ( 96 -63 0 ) Paper/notebook_paper_bluegreen 0 0 0 1 1
+}
+// brush 6
+{
+( 32 -96 -16 ) ( 32 -95 -16 ) ( 32 -96 -15 ) Paper/notebook_paper_cyan 0 0 0 1 1
+( 32 -96 -16 ) ( 32 -96 -15 ) ( 33 -96 -16 ) Paper/notebook_paper_cyan 0 0 0 1 1
+( 32 -96 -16 ) ( 33 -96 -16 ) ( 32 -95 -16 ) Paper/notebook_paper_cyan 0 0 0 1 1
+( 64 -64 16 ) ( 64 -63 16 ) ( 65 -64 16 ) Paper/notebook_paper_cyan 0 0 0 1 1
+( 64 -64 0 ) ( 65 -64 0 ) ( 64 -64 1 ) Paper/notebook_paper_cyan 0 0 0 1 1
+( 64 -64 0 ) ( 64 -64 1 ) ( 64 -63 0 ) Paper/notebook_paper_cyan 0 0 0 1 1
+}
+// brush 7
+{
+( 0 -96 -16 ) ( 0 -95 -16 ) ( 0 -96 -15 ) Paper/notebook_paper_cyanblue 0 0 0 1 1
+( 0 -96 -16 ) ( 0 -96 -15 ) ( 1 -96 -16 ) Paper/notebook_paper_cyanblue 0 0 0 1 1
+( 0 -96 -16 ) ( 1 -96 -16 ) ( 0 -95 -16 ) Paper/notebook_paper_cyanblue 0 0 0 1 1
+( 32 -64 16 ) ( 32 -63 16 ) ( 33 -64 16 ) Paper/notebook_paper_cyanblue 0 0 0 1 1
+( 32 -64 0 ) ( 33 -64 0 ) ( 32 -64 1 ) Paper/notebook_paper_cyanblue 0 0 0 1 1
+( 32 -64 0 ) ( 32 -64 1 ) ( 32 -63 0 ) Paper/notebook_paper_cyanblue 0 0 0 1 1
+}
+// brush 8
+{
+( -32 -96 -16 ) ( -32 -95 -16 ) ( -32 -96 -15 ) Paper/notebook_paper_cyanpink 0 0 0 1 1
+( -32 -96 -16 ) ( -32 -96 -15 ) ( -31 -96 -16 ) Paper/notebook_paper_cyanpink 0 0 0 1 1
+( -32 -96 -16 ) ( -31 -96 -16 ) ( -32 -95 -16 ) Paper/notebook_paper_cyanpink 0 0 0 1 1
+( 0 -64 16 ) ( 0 -63 16 ) ( 1 -64 16 ) Paper/notebook_paper_cyanpink 0 0 0 1 1
+( 0 -64 0 ) ( 1 -64 0 ) ( 0 -64 1 ) Paper/notebook_paper_cyanpink 0 0 0 1 1
+( 0 -64 0 ) ( 0 -64 1 ) ( 0 -63 0 ) Paper/notebook_paper_cyanpink 0 0 0 1 1
+}
+// brush 9
+{
+( -64 -96 -16 ) ( -64 -95 -16 ) ( -64 -96 -15 ) Paper/notebook_paper_dark 0 0 0 1 1
+( -64 -96 -16 ) ( -64 -96 -15 ) ( -63 -96 -16 ) Paper/notebook_paper_dark 0 0 0 1 1
+( -64 -96 -16 ) ( -63 -96 -16 ) ( -64 -95 -16 ) Paper/notebook_paper_dark 0 0 0 1 1
+( -32 -64 16 ) ( -32 -63 16 ) ( -31 -64 16 ) Paper/notebook_paper_dark 0 0 0 1 1
+( -32 -64 0 ) ( -31 -64 0 ) ( -32 -64 1 ) Paper/notebook_paper_dark 0 0 0 1 1
+( -32 -64 0 ) ( -32 -64 1 ) ( -32 -63 0 ) Paper/notebook_paper_dark 0 0 0 1 1
+}
+// brush 10
+{
+( -96 -96 -16 ) ( -96 -95 -16 ) ( -96 -96 -15 ) Paper/notebook_paper_green 0 0 0 1 1
+( -96 -96 -16 ) ( -96 -96 -15 ) ( -95 -96 -16 ) Paper/notebook_paper_green 0 0 0 1 1
+( -96 -96 -16 ) ( -95 -96 -16 ) ( -96 -95 -16 ) Paper/notebook_paper_green 0 0 0 1 1
+( -64 -64 16 ) ( -64 -63 16 ) ( -63 -64 16 ) Paper/notebook_paper_green 0 0 0 1 1
+( -64 -64 0 ) ( -63 -64 0 ) ( -64 -64 1 ) Paper/notebook_paper_green 0 0 0 1 1
+( -64 -64 0 ) ( -64 -64 1 ) ( -64 -63 0 ) Paper/notebook_paper_green 0 0 0 1 1
+}
+// brush 11
+{
+( -96 -64 -16 ) ( -96 -63 -16 ) ( -96 -64 -15 ) Paper/notebook_paper_greenblue 0 0 0 1 1
+( -96 -64 -16 ) ( -96 -64 -15 ) ( -95 -64 -16 ) Paper/notebook_paper_greenblue 0 0 0 1 1
+( -96 -64 -16 ) ( -95 -64 -16 ) ( -96 -63 -16 ) Paper/notebook_paper_greenblue 0 0 0 1 1
+( -64 -32 16 ) ( -64 -31 16 ) ( -63 -32 16 ) Paper/notebook_paper_greenblue 0 0 0 1 1
+( -64 -32 0 ) ( -63 -32 0 ) ( -64 -32 1 ) Paper/notebook_paper_greenblue 0 0 0 1 1
+( -64 -32 0 ) ( -64 -32 1 ) ( -64 -31 0 ) Paper/notebook_paper_greenblue 0 0 0 1 1
+}
+// brush 12
+{
+( -96 -32 -16 ) ( -96 -31 -16 ) ( -96 -32 -15 ) Paper/notebook_paper_grey 0 0 0 1 1
+( -96 -32 -16 ) ( -96 -32 -15 ) ( -95 -32 -16 ) Paper/notebook_paper_grey 0 0 0 1 1
+( -96 -32 -16 ) ( -95 -32 -16 ) ( -96 -31 -16 ) Paper/notebook_paper_grey 0 0 0 1 1
+( -64 0 16 ) ( -64 1 16 ) ( -63 0 16 ) Paper/notebook_paper_grey 0 0 0 1 1
+( -64 0 0 ) ( -63 0 0 ) ( -64 0 1 ) Paper/notebook_paper_grey 0 0 0 1 1
+( -64 0 0 ) ( -64 0 1 ) ( -64 1 0 ) Paper/notebook_paper_grey 0 0 0 1 1
+}
+// brush 13
+{
+( -96 0 -16 ) ( -96 1 -16 ) ( -96 0 -15 ) Paper/notebook_paper_lime 0 0 0 1 1
+( -96 0 -16 ) ( -96 0 -15 ) ( -95 0 -16 ) Paper/notebook_paper_lime 0 0 0 1 1
+( -96 0 -16 ) ( -95 0 -16 ) ( -96 1 -16 ) Paper/notebook_paper_lime 0 0 0 1 1
+( -64 32 16 ) ( -64 33 16 ) ( -63 32 16 ) Paper/notebook_paper_lime 0 0 0 1 1
+( -64 32 0 ) ( -63 32 0 ) ( -64 32 1 ) Paper/notebook_paper_lime 0 0 0 1 1
+( -64 32 0 ) ( -64 32 1 ) ( -64 33 0 ) Paper/notebook_paper_lime 0 0 0 1 1
+}
+// brush 14
+{
+( -96 32 -16 ) ( -96 33 -16 ) ( -96 32 -15 ) Paper/notebook_paper_limeblue 0 0 0 1 1
+( -96 32 -16 ) ( -96 32 -15 ) ( -95 32 -16 ) Paper/notebook_paper_limeblue 0 0 0 1 1
+( -96 32 -16 ) ( -95 32 -16 ) ( -96 33 -16 ) Paper/notebook_paper_limeblue 0 0 0 1 1
+( -64 64 16 ) ( -64 65 16 ) ( -63 64 16 ) Paper/notebook_paper_limeblue 0 0 0 1 1
+( -64 64 0 ) ( -63 64 0 ) ( -64 64 1 ) Paper/notebook_paper_limeblue 0 0 0 1 1
+( -64 64 0 ) ( -64 64 1 ) ( -64 65 0 ) Paper/notebook_paper_limeblue 0 0 0 1 1
+}
+// brush 15
+{
+( -96 64 -16 ) ( -96 65 -16 ) ( -96 64 -15 ) Paper/notebook_paper_limecyan 0 0 0 1 1
+( -96 64 -16 ) ( -96 64 -15 ) ( -95 64 -16 ) Paper/notebook_paper_limecyan 0 0 0 1 1
+( -96 64 -16 ) ( -95 64 -16 ) ( -96 65 -16 ) Paper/notebook_paper_limecyan 0 0 0 1 1
+( -64 96 16 ) ( -64 97 16 ) ( -63 96 16 ) Paper/notebook_paper_limecyan 0 0 0 1 1
+( -64 96 0 ) ( -63 96 0 ) ( -64 96 1 ) Paper/notebook_paper_limecyan 0 0 0 1 1
+( -64 96 0 ) ( -64 96 1 ) ( -64 97 0 ) Paper/notebook_paper_limecyan 0 0 0 1 1
+}
+// brush 16
+{
+( -64 64 -16 ) ( -64 65 -16 ) ( -64 64 -15 ) Paper/notebook_paper_orange 0 0 0 1 1
+( -64 64 -16 ) ( -64 64 -15 ) ( -63 64 -16 ) Paper/notebook_paper_orange 0 0 0 1 1
+( -64 64 -16 ) ( -63 64 -16 ) ( -64 65 -16 ) Paper/notebook_paper_orange 0 0 0 1 1
+( -32 96 16 ) ( -32 97 16 ) ( -31 96 16 ) Paper/notebook_paper_orange 0 0 0 1 1
+( -32 96 0 ) ( -31 96 0 ) ( -32 96 1 ) Paper/notebook_paper_orange 0 0 0 1 1
+( -32 96 0 ) ( -32 96 1 ) ( -32 97 0 ) Paper/notebook_paper_orange 0 0 0 1 1
+}
+// brush 17
+{
+( -32 64 -16 ) ( -32 65 -16 ) ( -32 64 -15 ) Paper/notebook_paper_orangeblue 0 0 0 1 1
+( -32 64 -16 ) ( -32 64 -15 ) ( -31 64 -16 ) Paper/notebook_paper_orangeblue 0 0 0 1 1
+( -32 64 -16 ) ( -31 64 -16 ) ( -32 65 -16 ) Paper/notebook_paper_orangeblue 0 0 0 1 1
+( 0 96 16 ) ( 0 97 16 ) ( 1 96 16 ) Paper/notebook_paper_orangeblue 0 0 0 1 1
+( 0 96 0 ) ( 1 96 0 ) ( 0 96 1 ) Paper/notebook_paper_orangeblue 0 0 0 1 1
+( 0 96 0 ) ( 0 96 1 ) ( 0 97 0 ) Paper/notebook_paper_orangeblue 0 0 0 1 1
+}
+// brush 18
+{
+( 0 64 -16 ) ( 0 65 -16 ) ( 0 64 -15 ) Paper/notebook_paper_orangelime 0 0 0 1 1
+( 0 64 -16 ) ( 0 64 -15 ) ( 1 64 -16 ) Paper/notebook_paper_orangelime 0 0 0 1 1
+( 0 64 -16 ) ( 1 64 -16 ) ( 0 65 -16 ) Paper/notebook_paper_orangelime 0 0 0 1 1
+( 32 96 16 ) ( 32 97 16 ) ( 33 96 16 ) Paper/notebook_paper_orangelime 0 0 0 1 1
+( 32 96 0 ) ( 33 96 0 ) ( 32 96 1 ) Paper/notebook_paper_orangelime 0 0 0 1 1
+( 32 96 0 ) ( 32 96 1 ) ( 32 97 0 ) Paper/notebook_paper_orangelime 0 0 0 1 1
+}
+// brush 19
+{
+( 32 64 -16 ) ( 32 65 -16 ) ( 32 64 -15 ) Paper/notebook_paper_pink 0 0 0 1 1
+( 32 64 -16 ) ( 32 64 -15 ) ( 33 64 -16 ) Paper/notebook_paper_pink 0 0 0 1 1
+( 32 64 -16 ) ( 33 64 -16 ) ( 32 65 -16 ) Paper/notebook_paper_pink 0 0 0 1 1
+( 64 96 16 ) ( 64 97 16 ) ( 65 96 16 ) Paper/notebook_paper_pink 0 0 0 1 1
+( 64 96 0 ) ( 65 96 0 ) ( 64 96 1 ) Paper/notebook_paper_pink 0 0 0 1 1
+( 64 96 0 ) ( 64 96 1 ) ( 64 97 0 ) Paper/notebook_paper_pink 0 0 0 1 1
+}
+// brush 20
+{
+( 64 64 -16 ) ( 64 65 -16 ) ( 64 64 -15 ) Paper/notebook_paper_pinkgreen 0 0 0 1 1
+( 64 64 -16 ) ( 64 64 -15 ) ( 65 64 -16 ) Paper/notebook_paper_pinkgreen 0 0 0 1 1
+( 64 64 -16 ) ( 65 64 -16 ) ( 64 65 -16 ) Paper/notebook_paper_pinkgreen 0 0 0 1 1
+( 96 96 16 ) ( 96 97 16 ) ( 97 96 16 ) Paper/notebook_paper_pinkgreen 0 0 0 1 1
+( 96 96 0 ) ( 97 96 0 ) ( 96 96 1 ) Paper/notebook_paper_pinkgreen 0 0 0 1 1
+( 96 96 0 ) ( 96 96 1 ) ( 96 97 0 ) Paper/notebook_paper_pinkgreen 0 0 0 1 1
+}
+// brush 21
+{
+( 96 64 -16 ) ( 96 65 -16 ) ( 96 64 -15 ) Paper/notebook_paper_pinkgrey 0 0 0 1 1
+( 96 64 -16 ) ( 96 64 -15 ) ( 97 64 -16 ) Paper/notebook_paper_pinkgrey 0 0 0 1 1
+( 96 64 -16 ) ( 97 64 -16 ) ( 96 65 -16 ) Paper/notebook_paper_pinkgrey 0 0 0 1 1
+( 128 96 16 ) ( 128 97 16 ) ( 129 96 16 ) Paper/notebook_paper_pinkgrey 0 0 0 1 1
+( 128 96 0 ) ( 129 96 0 ) ( 128 96 1 ) Paper/notebook_paper_pinkgrey 0 0 0 1 1
+( 128 96 0 ) ( 128 96 1 ) ( 128 97 0 ) Paper/notebook_paper_pinkgrey 0 0 0 1 1
+}
+// brush 22
+{
+( 96 32 -16 ) ( 96 33 -16 ) ( 96 32 -15 ) Paper/notebook_paper_pinklime 0 0 0 1 1
+( 96 32 -16 ) ( 96 32 -15 ) ( 97 32 -16 ) Paper/notebook_paper_pinklime 0 0 0 1 1
+( 96 32 -16 ) ( 97 32 -16 ) ( 96 33 -16 ) Paper/notebook_paper_pinklime 0 0 0 1 1
+( 128 64 16 ) ( 128 65 16 ) ( 129 64 16 ) Paper/notebook_paper_pinklime 0 0 0 1 1
+( 128 64 0 ) ( 129 64 0 ) ( 128 64 1 ) Paper/notebook_paper_pinklime 0 0 0 1 1
+( 128 64 0 ) ( 128 64 1 ) ( 128 65 0 ) Paper/notebook_paper_pinklime 0 0 0 1 1
+}
+// brush 23
+{
+( 96 0 -16 ) ( 96 1 -16 ) ( 96 0 -15 ) Paper/notebook_paper_pinkorange 0 0 0 1 1
+( 96 0 -16 ) ( 96 0 -15 ) ( 97 0 -16 ) Paper/notebook_paper_pinkorange 0 0 0 1 1
+( 96 0 -16 ) ( 97 0 -16 ) ( 96 1 -16 ) Paper/notebook_paper_pinkorange 0 0 0 1 1
+( 128 32 16 ) ( 128 33 16 ) ( 129 32 16 ) Paper/notebook_paper_pinkorange 0 0 0 1 1
+( 128 32 0 ) ( 129 32 0 ) ( 128 32 1 ) Paper/notebook_paper_pinkorange 0 0 0 1 1
+( 128 32 0 ) ( 128 32 1 ) ( 128 33 0 ) Paper/notebook_paper_pinkorange 0 0 0 1 1
+}
+// brush 24
+{
+( 96 -32 -16 ) ( 96 -31 -16 ) ( 96 -32 -15 ) Paper/notebook_paper_purple 0 0 0 1 1
+( 96 -32 -16 ) ( 96 -32 -15 ) ( 97 -32 -16 ) Paper/notebook_paper_purple 0 0 0 1 1
+( 96 -32 -16 ) ( 97 -32 -16 ) ( 96 -31 -16 ) Paper/notebook_paper_purple 0 0 0 1 1
+( 128 0 16 ) ( 128 1 16 ) ( 129 0 16 ) Paper/notebook_paper_purple 0 0 0 1 1
+( 128 0 0 ) ( 129 0 0 ) ( 128 0 1 ) Paper/notebook_paper_purple 0 0 0 1 1
+( 128 0 0 ) ( 128 0 1 ) ( 128 1 0 ) Paper/notebook_paper_purple 0 0 0 1 1
+}
+// brush 25
+{
+( 96 -64 -16 ) ( 96 -63 -16 ) ( 96 -64 -15 ) Paper/notebook_paper_purpleblue 0 0 0 1 1
+( 96 -64 -16 ) ( 96 -64 -15 ) ( 97 -64 -16 ) Paper/notebook_paper_purpleblue 0 0 0 1 1
+( 96 -64 -16 ) ( 97 -64 -16 ) ( 96 -63 -16 ) Paper/notebook_paper_purpleblue 0 0 0 1 1
+( 128 -32 16 ) ( 128 -31 16 ) ( 129 -32 16 ) Paper/notebook_paper_purpleblue 0 0 0 1 1
+( 128 -32 0 ) ( 129 -32 0 ) ( 128 -32 1 ) Paper/notebook_paper_purpleblue 0 0 0 1 1
+( 128 -32 0 ) ( 128 -32 1 ) ( 128 -31 0 ) Paper/notebook_paper_purpleblue 0 0 0 1 1
+}
+// brush 26
+{
+( 96 -96 -16 ) ( 96 -95 -16 ) ( 96 -96 -15 ) Paper/notebook_paper_purplepink 0 0 0 1 1
+( 96 -96 -16 ) ( 96 -96 -15 ) ( 97 -96 -16 ) Paper/notebook_paper_purplepink 0 0 0 1 1
+( 96 -96 -16 ) ( 97 -96 -16 ) ( 96 -95 -16 ) Paper/notebook_paper_purplepink 0 0 0 1 1
+( 128 -64 16 ) ( 128 -63 16 ) ( 129 -64 16 ) Paper/notebook_paper_purplepink 0 0 0 1 1
+( 128 -64 0 ) ( 129 -64 0 ) ( 128 -64 1 ) Paper/notebook_paper_purplepink 0 0 0 1 1
+( 128 -64 0 ) ( 128 -64 1 ) ( 128 -63 0 ) Paper/notebook_paper_purplepink 0 0 0 1 1
+}
+// brush 27
+{
+( 96 -128 -16 ) ( 96 -127 -16 ) ( 96 -128 -15 ) Paper/notebook_paper_red 0 0 0 1 1
+( 96 -128 -16 ) ( 96 -128 -15 ) ( 97 -128 -16 ) Paper/notebook_paper_red 0 0 0 1 1
+( 96 -128 -16 ) ( 97 -128 -16 ) ( 96 -127 -16 ) Paper/notebook_paper_red 0 0 0 1 1
+( 128 -96 16 ) ( 128 -95 16 ) ( 129 -96 16 ) Paper/notebook_paper_red 0 0 0 1 1
+( 128 -96 0 ) ( 129 -96 0 ) ( 128 -96 1 ) Paper/notebook_paper_red 0 0 0 1 1
+( 128 -96 0 ) ( 128 -96 1 ) ( 128 -95 0 ) Paper/notebook_paper_red 0 0 0 1 1
+}
+// brush 28
+{
+( 64 -128 -16 ) ( 64 -127 -16 ) ( 64 -128 -15 ) Paper/notebook_paper_white 0 0 0 1 1
+( 64 -128 -16 ) ( 64 -128 -15 ) ( 65 -128 -16 ) Paper/notebook_paper_white 0 0 0 1 1
+( 64 -128 -16 ) ( 65 -128 -16 ) ( 64 -127 -16 ) Paper/notebook_paper_white 0 0 0 1 1
+( 96 -96 16 ) ( 96 -95 16 ) ( 97 -96 16 ) Paper/notebook_paper_white 0 0 0 1 1
+( 96 -96 0 ) ( 97 -96 0 ) ( 96 -96 1 ) Paper/notebook_paper_white 0 0 0 1 1
+( 96 -96 0 ) ( 96 -96 1 ) ( 96 -95 0 ) Paper/notebook_paper_white 0 0 0 1 1
+}
+// brush 29
+{
+( 32 -128 -16 ) ( 32 -127 -16 ) ( 32 -128 -15 ) Paper/notebook_paper_whiteblue 0 0 0 1 1
+( 32 -128 -16 ) ( 32 -128 -15 ) ( 33 -128 -16 ) Paper/notebook_paper_whiteblue 0 0 0 1 1
+( 32 -128 -16 ) ( 33 -128 -16 ) ( 32 -127 -16 ) Paper/notebook_paper_whiteblue 0 0 0 1 1
+( 64 -96 16 ) ( 64 -95 16 ) ( 65 -96 16 ) Paper/notebook_paper_whiteblue 0 0 0 1 1
+( 64 -96 0 ) ( 65 -96 0 ) ( 64 -96 1 ) Paper/notebook_paper_whiteblue 0 0 0 1 1
+( 64 -96 0 ) ( 64 -96 1 ) ( 64 -95 0 ) Paper/notebook_paper_whiteblue 0 0 0 1 1
+}
+// brush 30
+{
+( 0 -128 -16 ) ( 0 -127 -16 ) ( 0 -128 -15 ) Paper/notebook_paper_yellow 0 0 0 1 1
+( 0 -128 -16 ) ( 0 -128 -15 ) ( 1 -128 -16 ) Paper/notebook_paper_yellow 0 0 0 1 1
+( 0 -128 -16 ) ( 1 -128 -16 ) ( 0 -127 -16 ) Paper/notebook_paper_yellow 0 0 0 1 1
+( 32 -96 16 ) ( 32 -95 16 ) ( 33 -96 16 ) Paper/notebook_paper_yellow 0 0 0 1 1
+( 32 -96 0 ) ( 33 -96 0 ) ( 32 -96 1 ) Paper/notebook_paper_yellow 0 0 0 1 1
+( 32 -96 0 ) ( 32 -96 1 ) ( 32 -95 0 ) Paper/notebook_paper_yellow 0 0 0 1 1
+}
+// brush 31
+{
+( -32 -128 -16 ) ( -32 -127 -16 ) ( -32 -128 -15 ) Paper/notebook_paper_yellowblue 0 0 0 1 1
+( -32 -128 -16 ) ( -32 -128 -15 ) ( -31 -128 -16 ) Paper/notebook_paper_yellowblue 0 0 0 1 1
+( -32 -128 -16 ) ( -31 -128 -16 ) ( -32 -127 -16 ) Paper/notebook_paper_yellowblue 0 0 0 1 1
+( 0 -96 16 ) ( 0 -95 16 ) ( 1 -96 16 ) Paper/notebook_paper_yellowblue 0 0 0 1 1
+( 0 -96 0 ) ( 1 -96 0 ) ( 0 -96 1 ) Paper/notebook_paper_yellowblue 0 0 0 1 1
+( 0 -96 0 ) ( 0 -96 1 ) ( 0 -95 0 ) Paper/notebook_paper_yellowblue 0 0 0 1 1
+}
+// brush 32
+{
+( -64 -128 -16 ) ( -64 -127 -16 ) ( -64 -128 -15 ) Paper/notebook_paper_yellowpurple 0 0 0 1 1
+( -64 -128 -16 ) ( -64 -128 -15 ) ( -63 -128 -16 ) Paper/notebook_paper_yellowpurple 0 0 0 1 1
+( -64 -128 -16 ) ( -63 -128 -16 ) ( -64 -127 -16 ) Paper/notebook_paper_yellowpurple 0 0 0 1 1
+( -32 -96 16 ) ( -32 -95 16 ) ( -31 -96 16 ) Paper/notebook_paper_yellowpurple 0 0 0 1 1
+( -32 -96 0 ) ( -31 -96 0 ) ( -32 -96 1 ) Paper/notebook_paper_yellowpurple 0 0 0 1 1
+( -32 -96 0 ) ( -32 -96 1 ) ( -32 -95 0 ) Paper/notebook_paper_yellowpurple 0 0 0 1 1
+}
+}

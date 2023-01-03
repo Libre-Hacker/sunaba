@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/weapons/gun_a_hr.gd" type="Script" id=1]
+[ext_resource path="res://src/weapons/weapon.gd" type="Script" id=1]
 
 [sub_resource type="CubeMesh" id=4]
 
@@ -12,6 +12,7 @@ transform = Transform( 0.1, 0, 0, 0, 0.144, 0, 0, 0, 0.608, 0, 0, 0 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 3 )
 script = ExtResource( 1 )
+weapon_type = "auto"
 
 [node name="Muzzle" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.996249 )

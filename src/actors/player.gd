@@ -53,6 +53,8 @@ onready var gun_b_hr = preload("res://src/weapons/gun_b_hr.tscn")
 onready var gun_b = preload("res://src/weapons/gun_b.tscn")
 onready var pb_gun_hr = preload("res://src/weapons/paintball_gun_hr.tscn")
 onready var pb_gun = preload("res://src/weapons/paintball_gun.tscn")
+onready var pb_pistol_hr = preload("res://src/weapons/paintball_pistol_hr.tscn")
+onready var pb_pistol = preload("res://src/weapons/paintball_pistol.tscn")
 
 onready var b_decal = preload("res://src/bullet_decal.tscn")
 
@@ -136,6 +138,8 @@ func _process(_delta):
 			tool_to_spawn = gun_b_hr.instance()
 		elif reach.get_collider().get_name() == "Paintball Gun":
 			tool_to_spawn = pb_gun_hr.instance()
+		elif reach.get_collider().get_name() == "Paintball Pistol":
+			tool_to_spawn = pb_pistol_hr.instance()
 		else:
 			tool_to_spawn = null
 	else:
@@ -149,6 +153,8 @@ func _process(_delta):
 				tool_to_drop = gun_b.instance()
 			elif hand.get_child(0).get_name() == "Paintball Gun HR":
 				tool_to_drop = pb_gun.instance()
+			elif hand.get_child(0).get_name() == "Paintball Pistol HR":
+				tool_to_drop = pb_pistol.instance()
 		else:
 			tool_to_drop = null
 	else:

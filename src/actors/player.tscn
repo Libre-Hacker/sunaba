@@ -67,7 +67,7 @@ enabled = true
 cast_to = Vector3( 0, -1, -1000 )
 
 [node name="Hand" type="Spatial" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.308106, -0.222124, -0.135644 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.455246 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.800358, 0 )

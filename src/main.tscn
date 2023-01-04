@@ -52,6 +52,9 @@ physics_object_picking = true
 [node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
 main_node_path = NodePath("../../../..")
 
+[node name="QodotMap" parent="UI/ViewportContainer/WorldViewport/World" index="3"]
+map_file = "/home/mintkat/toonbox/maps/texturetest.map"
+
 [node name="TopBar" type="Panel" parent="UI"]
 anchor_right = 1.0
 margin_bottom = 40.0

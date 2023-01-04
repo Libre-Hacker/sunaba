@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource( 1 )
 export_file = false
-target_file = "C:/QuakeDev/TrenchBroom/games/Sunaba/GameConfig.cfg"
+target_file = "/home/mintkat/.TrenchBroom/games/Sunaba/GameConfig.cfg"
 game_name = "Sunaba"
 brush_tags = [ ExtResource( 5 ), ExtResource( 4 ) ]
 face_tags = [ ExtResource( 3 ), ExtResource( 2 ) ]

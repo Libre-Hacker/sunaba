@@ -448,6 +448,11 @@ _global_script_classes=[ {
 "class": "handprop_info",
 "language": "GDScript",
 "path": "res://src/handprop_info.gd"
+}, {
+"base": "Spatial",
+"class": "ps_player",
+"language": "GDScript",
+"path": "res://src/entities/ps_player.gd"
 } ]
 _global_script_class_icons={
 "BuildFlags": "",
@@ -537,7 +542,8 @@ _global_script_class_icons={
 "_GotmUserLocal": "",
 "_GotmUtility": "",
 "_LocalStore": "",
-"handprop_info": ""
+"handprop_info": "",
+"ps_player": ""
 }
 
 [application]
@@ -779,8 +785,6 @@ vram_compression/import_etc=true
 quality/shadows/filter_mode=0
 quality/shading/use_physical_light_attenuation=true
 quality/spatial_partitioning/use_bvh=false
-environment/default_clear_color=Color( 0.572549, 0.572549, 0.572549, 1 )
 quality/filters/msaa=3
 quality/depth/hdr=false
-environment/default_environment="res://new_environment.tres"
 quality/dynamic_fonts/use_oversampling=false

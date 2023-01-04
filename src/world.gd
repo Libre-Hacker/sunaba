@@ -35,14 +35,12 @@ func load_map(path):
 		qodot_map.set_map_file(path)
 		qodot_map.verify_and_build()
 		qodot_map.unwrap_uv2()
-	$AmbiantNoise.play()
 
 func _on_play_button_pressed():
 	_instance_player(get_tree().get_network_unique_id())
 	rpc("_instance_player", get_tree().get_network_unique_id())
 
 func _instance_player(id):
-	$Camera.queue_free()
 	main_node.log_to_chat("Instancing Player " + var2str(id))
 	var player_instance = player.instance()
 	player_instance.set_network_master(id)

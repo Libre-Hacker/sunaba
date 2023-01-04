@@ -1,0 +1,36 @@
+// Game: Sunaba
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" ""
+// brush 0
+{
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) __TB_empty 0 0 0 1 1
+( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) __TB_empty 0 0 0 1 1
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) __TB_empty 0 0 0 1 1
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) __TB_empty 0 0 0 1 1
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) __TB_empty 0 0 0 1 1
+( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) __TB_empty 0 0 0 1 1
+}
+}
+// entity 1
+{
+"classname" "wp_pistol"
+"origin" "8 8 24"
+}
+// entity 2
+{
+"classname" "ev_void"
+"origin" "-40 24 24"
+}
+// entity 3
+{
+"classname" "wp_pbgun"
+"origin" "40 8 24"
+}
+// entity 4
+{
+"classname" "ps_player"
+"origin" "-40 -40 24"
+}

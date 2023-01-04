@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/models/handprops/Material_001.material" type="Material" id=8]
 [ext_resource path="res://assets/models/handprops/Material_011.material" type="Material" id=9]
 [ext_resource path="res://assets/models/handprops/Material_003.material" type="Material" id=10]
-[ext_resource path="res://src/weapons/gun_a.gd" type="Script" id=11]
+[ext_resource path="res://src/weapons/tool.gd" type="Script" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "paintball_gun_Cube001"
@@ -148,7 +148,7 @@ roughness = 0.3
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.057929, 0.190637, 0.320234 )
 
-[node name="Paintball Gun" type="RigidBody"]
+[node name="wp_pbgun" type="RigidBody"]
 script = ExtResource( 11 )
 
 [node name="GunMesh" type="MeshInstance" parent="."]

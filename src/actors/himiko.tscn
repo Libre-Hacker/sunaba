@@ -277,35 +277,35 @@ bind/56/pose = Transform( -90.1084, -12.4539, -41.5371, -41.6114, -2.12246, 90.9
 
 [sub_resource type="SpatialMaterial" id=10]
 next_pass = ExtResource( 12 )
-flags_vertex_lighting = true
+flags_unshaded = true
 params_diffuse_mode = 4
 params_specular_mode = 3
 albedo_color = Color( 0.964706, 0.862745, 0.772549, 1 )
 
 [sub_resource type="SpatialMaterial" id=11]
 next_pass = ExtResource( 12 )
-flags_vertex_lighting = true
+flags_unshaded = true
 params_diffuse_mode = 4
 params_specular_mode = 3
 albedo_texture = ExtResource( 9 )
 
 [sub_resource type="SpatialMaterial" id=12]
 next_pass = ExtResource( 12 )
-flags_vertex_lighting = true
+flags_unshaded = true
 params_diffuse_mode = 4
 params_specular_mode = 3
 albedo_texture = ExtResource( 10 )
 
 [sub_resource type="SpatialMaterial" id=13]
 next_pass = ExtResource( 12 )
-flags_vertex_lighting = true
+flags_unshaded = true
 params_diffuse_mode = 4
 params_specular_mode = 3
 albedo_texture = ExtResource( 11 )
 
 [sub_resource type="SpatialMaterial" id=14]
 next_pass = ExtResource( 12 )
-flags_vertex_lighting = true
+flags_unshaded = true
 params_diffuse_mode = 4
 params_specular_mode = 3
 
@@ -325,7 +325,8 @@ surfaces/0 = {
 }
 
 [sub_resource type="SpatialMaterial" id=15]
-flags_vertex_lighting = true
+next_pass = ExtResource( 12 )
+flags_unshaded = true
 params_diffuse_mode = 4
 params_specular_mode = 3
 albedo_color = Color( 0, 0, 0, 1 )

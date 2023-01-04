@@ -47,14 +47,10 @@ onready var tool_label = $Hud/ToolPanel/Label
 onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
 
 
-onready var gun_a_hr = preload("res://src/weapons/gun_a_hr.tscn")
-onready var gun_a = preload("res://src/weapons/gun_a.tscn")
-onready var gun_b_hr = preload("res://src/weapons/gun_b_hr.tscn")
-onready var gun_b = preload("res://src/weapons/gun_b.tscn")
 onready var pb_gun_hr = preload("res://src/weapons/paintball_gun_hr.tscn")
-onready var pb_gun = preload("res://src/weapons/paintball_gun.tscn")
+onready var pb_gun = preload("res://src/entities/wp_pbgun.tscn")
 onready var pb_pistol_hr = preload("res://src/weapons/paintball_pistol_hr.tscn")
-onready var pb_pistol = preload("res://src/weapons/paintball_pistol.tscn")
+onready var pb_pistol = preload("res://src/entities/wp_pistol.tscn")
 
 onready var b_decal = preload("res://src/bullet_decal.tscn")
 
@@ -132,13 +128,9 @@ func _process(_delta):
 			aimcast = fp_aimcast
 	
 	if reach.is_colliding():
-		if reach.get_collider().get_name() == "Gun A":
-			tool_to_spawn = gun_a_hr.instance()
-		elif reach.get_collider().get_name() == "Gun B":
-			tool_to_spawn = gun_b_hr.instance()
-		elif reach.get_collider().get_name() == "Paintball Gun":
+		if "wp_pbgun" in reach.get_collider().get_name():
 			tool_to_spawn = pb_gun_hr.instance()
-		elif reach.get_collider().get_name() == "Paintball Pistol":
+		elif "wp_pistol" in reach.get_collider().get_name():
 			tool_to_spawn = pb_pistol_hr.instance()
 		else:
 			tool_to_spawn = null
@@ -147,11 +139,7 @@ func _process(_delta):
 	
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
-			if hand.get_child(0).get_name() == "Gun A HR":
-				tool_to_drop = gun_a.instance()
-			elif hand.get_child(0).get_name() == "Gun B HR":
-				tool_to_drop = gun_b.instance()
-			elif hand.get_child(0).get_name() == "Paintball Gun HR":
+			if hand.get_child(0).get_name() == "Paintball Gun HR":
 				tool_to_drop = pb_gun.instance()
 			elif hand.get_child(0).get_name() == "Paintball Pistol HR":
 				tool_to_drop = pb_pistol.instance()

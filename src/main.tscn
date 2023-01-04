@@ -202,6 +202,7 @@ window_title = "Open a File"
 mode = 0
 access = 2
 filters = PoolStringArray( "*.map" )
+show_hidden_files = true
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
 anchor_right = 1.0

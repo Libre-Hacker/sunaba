@@ -2890,3 +2890,8 @@
 "classname" "light"
 "origin" "-120 56 -8"
 }
+// entity 2
+{
+"classname" "ev_day"
+"origin" "-104 -8 -8"
+}

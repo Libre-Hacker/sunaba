@@ -52,9 +52,6 @@ physics_object_picking = true
 [node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
 main_node_path = NodePath("../../../..")
 
-[node name="QodotMap" parent="UI/ViewportContainer/WorldViewport/World" index="3"]
-map_file = "/home/mintkat/toonbox/maps/texturetest.map"
-
 [node name="TopBar" type="Panel" parent="UI"]
 anchor_right = 1.0
 margin_bottom = 40.0
@@ -221,38 +218,8 @@ custom_styles/normal = SubResource( 4 )
 scroll_following = true
 
 [node name="SettingsDialog" parent="UI" instance=ExtResource( 5 )]
-gui = NodePath("..")
-
-[node name="Splitscreen" type="Control" parent="UI"]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 40.0
-margin_bottom = -40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Splitscreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_min_size = Vector2( 512, 260 )
-
-[node name="ViewportContainer" type="ViewportContainer" parent="UI/Splitscreen/VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 260.0
-
-[node name="Viewport" type="Viewport" parent="UI/Splitscreen/VBoxContainer/ViewportContainer"]
-size = Vector2( 1024, 260 )
-handle_input_locally = false
-render_target_update_mode = 0
-
-[node name="ViewportContainer2" type="ViewportContainer" parent="UI/Splitscreen/VBoxContainer"]
-margin_top = 264.0
-margin_right = 1024.0
-margin_bottom = 524.0
-
-[node name="Viewport" type="Viewport" parent="UI/Splitscreen/VBoxContainer/ViewportContainer2"]
-size = Vector2( 1024, 260 )
-handle_input_locally = false
-render_target_update_mode = 0
+gui = NodePath("..")
 
 [connection signal="mouse_entered" from="UI/TopBar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/TopBar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]

@@ -35,3 +35,7 @@ func _on_NativeDialogOpenFile_files_selected(files: PoolStringArray):
 
 func _on_play_button_pressed():
 	$Bottombar/RoomControls/PlayButton.hide()
+
+
+func _on_connect_button_pressed():
+	$ConnectDialog.popup()

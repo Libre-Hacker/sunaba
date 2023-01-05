@@ -6,19 +6,21 @@
 [ext_resource path="res://src/ui.gd" type="Script" id=4]
 [ext_resource path="res://src/settings_dialog.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/world.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/fredoka/fredoka_regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/gear.png" type="Texture" id=9]
+[ext_resource path="res://src/connect_dialog.gd" type="Script" id=9]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture" id=10]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/add.png" type="Texture" id=11]
+[ext_resource path="res://assets/textures/backdrop.png" type="Texture" id=12]
 
-[sub_resource type="StyleBoxEmpty" id=5]
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
@@ -37,12 +39,11 @@ script = ExtResource( 4 )
 [node name="ViewportContainer" type="ViewportContainer" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 40.0
 margin_bottom = -40.0
 stretch = true
 
 [node name="WorldViewport" type="Viewport" parent="UI/ViewportContainer"]
-size = Vector2( 800, 520 )
+size = Vector2( 800, 560 )
 handle_input_locally = false
 hdr = false
 debug_draw = 3
@@ -52,38 +53,24 @@ physics_object_picking = true
 [node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 6 )]
 main_node_path = NodePath("../../../..")
 
-[node name="TopBar" type="Panel" parent="UI"]
-anchor_right = 1.0
-margin_bottom = 40.0
-
-[node name="Menubar" type="HBoxContainer" parent="UI/TopBar"]
-anchor_left = 1.0
+[node name="Chatbox" type="RichTextLabel" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -92.0
+margin_left = 15.0
+margin_top = 14.0
+margin_right = -378.0
+margin_bottom = -335.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 1
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+scroll_following = true
 
-[node name="CreateButton" type="Button" parent="UI/TopBar/Menubar"]
-margin_right = 28.0
+[node name="TopBar" type="Panel" parent="UI"]
+visible = false
+anchor_right = 1.0
 margin_bottom = 40.0
-custom_styles/focus = SubResource( 5 )
-icon = ExtResource( 11 )
-flat = true
-
-[node name="SettingsButton" type="Button" parent="UI/TopBar/Menubar"]
-margin_left = 32.0
-margin_right = 60.0
-margin_bottom = 40.0
-custom_styles/focus = SubResource( 5 )
-icon = ExtResource( 9 )
-flat = true
-
-[node name="QuitButton" type="Button" parent="UI/TopBar/Menubar"]
-margin_left = 64.0
-margin_right = 92.0
-margin_bottom = 40.0
-custom_styles/focus = SubResource( 5 )
-icon = ExtResource( 7 )
-flat = true
 
 [node name="AddressBar" type="LineEdit" parent="UI/TopBar"]
 anchor_right = 1.0
@@ -94,56 +81,81 @@ margin_right = -98.0
 margin_bottom = -4.0
 placeholder_text = "Insert Room Address Here"
 
-[node name="NewRoomDialog" type="WindowDialog" parent="UI"]
-visible = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -210.5
-margin_top = -160.0
-margin_right = 210.5
-margin_bottom = 160.0
-window_title = "Create a Room"
-
-[node name="RoomName" type="LineEdit" parent="UI/NewRoomDialog"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -199.5
-margin_top = 15.0
-margin_right = 200.5
-margin_bottom = 44.0
-placeholder_text = "Room Name"
-
-[node name="MapPath" type="LineEdit" parent="UI/NewRoomDialog"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -199.0
-margin_top = 52.0
-margin_right = 201.0
-margin_bottom = 81.0
-editable = false
-placeholder_text = "Map Path"
-
-[node name="Button" type="Button" parent="UI/NewRoomDialog/MapPath"]
-anchor_left = 1.0
+[node name="MainMenu" type="Control" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -46.0
-icon = ExtResource( 10 )
-icon_align = 1
+margin_bottom = -40.0
 
-[node name="CreateRoomButton" type="Button" parent="UI/NewRoomDialog"]
-anchor_left = 1.0
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -66.0
-margin_top = -43.0
-margin_right = -9.0
-margin_bottom = -14.0
-text = "Create"
-icon_align = 1
+margin_left = 27.0
+margin_top = -176.0
+margin_right = 177.0
+margin_bottom = -28.0
+alignment = 2
+
+[node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
+margin_top = 12.0
+margin_right = 150.0
+margin_bottom = 43.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "New Game"
+flat = true
+align = 0
+
+[node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
+margin_top = 47.0
+margin_right = 150.0
+margin_bottom = 78.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Connect"
+flat = true
+align = 0
+
+[node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer"]
+margin_top = 82.0
+margin_right = 150.0
+margin_bottom = 113.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Settings"
+flat = true
+align = 0
+
+[node name="Button3" type="Button" parent="UI/MainMenu/VBoxContainer"]
+margin_top = 117.0
+margin_right = 150.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Quit"
+flat = true
+align = 0
 
 [node name="Bottombar" type="Panel" parent="UI"]
 anchor_top = 1.0
@@ -187,8 +199,57 @@ icon = ExtResource( 8 )
 icon_align = 1
 expand_icon = true
 
+[node name="NewRoomDialog" type="WindowDialog" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -155.0
+margin_top = -51.5
+margin_right = 155.0
+margin_bottom = 51.5
+popup_exclusive = true
+window_title = "Create a room"
+
+[node name="RoomName" type="LineEdit" parent="UI/NewRoomDialog"]
+visible = false
+anchor_right = 1.0
+margin_left = 11.0
+margin_top = 15.0
+margin_right = -10.0
+margin_bottom = 44.0
+placeholder_text = "Room Name"
+
+[node name="MapPath" type="LineEdit" parent="UI/NewRoomDialog"]
+anchor_right = 1.0
+margin_left = 11.5
+margin_top = 15.0
+margin_right = -9.5
+margin_bottom = 45.0
+editable = false
+placeholder_text = "Map Path"
+
+[node name="Button" type="Button" parent="UI/NewRoomDialog/MapPath"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -46.0
+icon = ExtResource( 10 )
+icon_align = 1
+
+[node name="CreateRoomButton" type="Button" parent="UI/NewRoomDialog"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -66.0
+margin_top = -43.0
+margin_right = -9.0
+margin_bottom = -14.0
+text = "Create"
+icon_align = 1
+
 [node name="FileDialog" type="FileDialog" parent="UI"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -204,40 +265,56 @@ access = 2
 filters = PoolStringArray( "*.map" )
 show_hidden_files = true
 
-[node name="Chatbox" type="RichTextLabel" parent="UI"]
+[node name="ConnectDialog" type="WindowDialog" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -116.0
+margin_top = -37.5
+margin_right = 116.0
+margin_bottom = 37.5
+popup_exclusive = true
+window_title = "Connect to a room"
+script = ExtResource( 9 )
+netman_path = NodePath("../../NetworkManagerENet")
+
+[node name="LineEdit" type="LineEdit" parent="UI/ConnectDialog"]
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 47.0
-margin_right = -378.0
-margin_bottom = -133.0
-custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_as_outline = 1
-custom_styles/focus = SubResource( 4 )
-custom_styles/normal = SubResource( 4 )
-scroll_following = true
+margin_left = 4.0
+margin_top = 5.0
+margin_right = -4.0
+margin_bottom = 35.0
+text = "127.0.0.1"
+
+[node name="Button" type="Button" parent="UI/ConnectDialog"]
+margin_left = 150.0
+margin_top = 41.0
+margin_right = 228.0
+margin_bottom = 71.0
+text = "Connect"
 
 [node name="SettingsDialog" parent="UI" instance=ExtResource( 5 )]
-visible = false
 gui = NodePath("..")
 
 [connection signal="mouse_entered" from="UI/TopBar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/TopBar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
-[connection signal="pressed" from="UI/TopBar/Menubar/CreateButton" to="UI" method="_on_create_button_pressed"]
-[connection signal="pressed" from="UI/TopBar/Menubar/SettingsButton" to="UI" method="_on_sb_pressed"]
-[connection signal="pressed" from="UI/TopBar/Menubar/QuitButton" to="." method="quit"]
 [connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManagerENet" method="_on_address_entered" flags=6]
-[connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
-[connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
-[connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="_on_create_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="_on_connect_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="quit"]
 [connection signal="mouse_entered" from="UI/Bottombar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Bottombar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
 [connection signal="text_entered" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
 [connection signal="pressed" from="UI/Bottombar/RoomControls/PlayButton" to="UI" method="_on_play_button_pressed" flags=6]
 [connection signal="pressed" from="UI/Bottombar/RoomControls/PlayButton" to="UI/ViewportContainer/WorldViewport/World" method="_on_play_button_pressed" flags=6]
+[connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
+[connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
+[connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
 [connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]
+[connection signal="pressed" from="UI/ConnectDialog/Button" to="UI/ConnectDialog" method="_connect"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
 

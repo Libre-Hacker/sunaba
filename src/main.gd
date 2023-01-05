@@ -17,6 +17,7 @@ func _ready() -> void:
 func create_room() -> void:
 	network_manager.create_room()
 	$UI/NewRoomDialog.hide()
+	$UI/MainMenu.hide()
 
 func enable_chat() -> void:
 	chat_entry.editable = true

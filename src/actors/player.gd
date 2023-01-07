@@ -139,9 +139,9 @@ func _process(_delta):
 	
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
-			if hand.get_child(0).get_name() == "Paintball Gun HR":
+			if hand.get_child(0).get_name() == "Paintball Gun":
 				tool_to_drop = pb_gun.instance()
-			elif hand.get_child(0).get_name() == "Paintball Pistol HR":
+			elif hand.get_child(0).get_name() == "Paintball Pistol":
 				tool_to_drop = pb_pistol.instance()
 		else:
 			tool_to_drop = null
@@ -156,7 +156,6 @@ func _process(_delta):
 					tool_to_drop.global_transform = hand.global_transform
 					tool_to_drop.dropped = true
 					hand.get_child(0).queue_free()
-			tool_label.text = reach.get_collider().get_name()
 			tool_ammo_bar.max_value = 100
 			tool_ammo_bar.value = 100
 			reach.get_collider().queue_free()
@@ -167,6 +166,7 @@ func _process(_delta):
 			weapon_type = tool_to_spawn.weapon_type
 			tool_to_spawn.rotation = hand.rotation
 			muzzle = tool_to_spawn.get_node("Muzzle")
+			tool_label.text = tool_to_spawn.get_name()
 			$Hud/ToolPanel.show()
 	
 	if weapon_type == "semi":

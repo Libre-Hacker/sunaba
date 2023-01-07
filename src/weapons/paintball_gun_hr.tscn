@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/models/handprops/Material_004.material" type="Material" id=1]
 [ext_resource path="res://assets/models/handprops/Material_007.material" type="Material" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/models/handprops/Material_011.material" type="Material" id=9]
 [ext_resource path="res://assets/models/handprops/Material_003.material" type="Material" id=10]
 [ext_resource path="res://src/weapons/weapon.gd" type="Script" id=11]
+[ext_resource path="res://assets/materials/outline.tres" type="Material" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "paintball_gun_Cube001"
@@ -136,29 +137,52 @@ surfaces/9 = {
 }
 
 [sub_resource type="SpatialMaterial" id=3]
-flags_vertex_lighting = true
+next_pass = ExtResource( 12 )
+flags_unshaded = true
 albedo_color = Color( 0.180392, 0.180392, 0.180392, 1 )
-metallic_specular = 1.0
+
+[sub_resource type="SpatialMaterial" id=4]
+next_pass = ExtResource( 12 )
+flags_unshaded = true
+albedo_color = Color( 0.4, 0.4, 0.4, 1 )
 
 [sub_resource type="SpatialMaterial" id=2]
-flags_vertex_lighting = true
+next_pass = ExtResource( 12 )
+flags_unshaded = true
 albedo_color = Color( 0.00784314, 1, 0, 1 )
-metallic = 0.4
-metallic_specular = 1.0
-roughness = 0.3
 
-[node name="Paintball Gun HR" type="Spatial"]
+[sub_resource type="SpatialMaterial" id=6]
+flags_unshaded = true
+albedo_color = Color( 0.00784314, 1, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0.101961, 0.101961, 0.101961, 0 )
+
+[sub_resource type="SpatialMaterial" id=5]
+next_pass = ExtResource( 12 )
+flags_unshaded = true
+albedo_color = Color( 0.101961, 0.101961, 0.101961, 1 )
+
+[node name="Paintball Gun" type="Spatial"]
 script = ExtResource( 11 )
-max_ammo = 40
+max_ammo = 25
 weapon_type = "auto"
 
 [node name="GunMesh" type="MeshInstance" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 3 )
+material/1 = SubResource( 4 )
 material/2 = SubResource( 2 )
-material/6 = SubResource( 2 )
-material/9 = SubResource( 2 )
+material/3 = SubResource( 3 )
+material/4 = SubResource( 3 )
+material/5 = SubResource( 2 )
+material/6 = SubResource( 6 )
+material/7 = SubResource( 7 )
+material/8 = SubResource( 5 )
+material/9 = SubResource( 6 )
 
 [node name="Muzzle" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867 )

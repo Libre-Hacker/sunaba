@@ -811,3 +811,13 @@
 "classname" "physics_ball"
 "origin" "40 -296 24"
 }
+// entity 3
+{
+"classname" "wp_pbgun"
+"origin" "272 64 40"
+}
+// entity 4
+{
+"classname" "wp_pistol"
+"origin" "296 64 40"
+}

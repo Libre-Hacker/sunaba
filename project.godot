@@ -782,6 +782,7 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
+misc/lossless_compression/force_png=true
 quality/shadows/filter_mode=0
 quality/shading/use_physical_light_attenuation=true
 quality/spatial_partitioning/use_bvh=false

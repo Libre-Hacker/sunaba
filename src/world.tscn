@@ -8,9 +8,9 @@
 [ext_resource path="res://textures/blockout/gray_cross.png" type="Texture" id=6]
 [ext_resource path="res://textures/Grass2/grass_06.png" type="Texture" id=7]
 [ext_resource path="res://textures/blockout/blue_light_cross.png" type="Texture" id=8]
-[ext_resource path="res://textures/Paper/notebook_paper_cyanblue.png" type="Texture" id=9]
+[ext_resource path="res://textures/Bricks/Bricks_17-256x256.png" type="Texture" id=9]
 [ext_resource path="res://textures/Organic/Lichen_12.jpg" type="Texture" id=10]
-[ext_resource path="res://textures/Paper/notebook_paper_blackblue.png" type="Texture" id=11]
+[ext_resource path="res://textures/Roofs/Roofs_14-256x256.png" type="Texture" id=11]
 [ext_resource path="res://textures/Grass2/grass_05.png" type="Texture" id=12]
 [ext_resource path="res://textures/Organic/Vasculature_04.jpg" type="Texture" id=13]
 [ext_resource path="res://textures/Metal2/Metal_10.png" type="Texture" id=14]
@@ -23,339 +23,339 @@
 [ext_resource path="res://textures/Brick_Version/Brick_Version_15.png" type="Texture" id=21]
 [ext_resource path="res://textures/Route_66/Route_66_02.png" type="Texture" id=22]
 [ext_resource path="res://textures/blockout/white_dots.png" type="Texture" id=23]
-[ext_resource path="res://textures/Wood2/Wood_10-256x256.png" type="Texture" id=24]
+[ext_resource path="res://textures/Elements/Elements_18-256x256.png" type="Texture" id=24]
 [ext_resource path="res://addons/qodot/game_definitions/fgd/point_classes/light.gd" type="Script" id=25]
-[ext_resource path="res://textures/prototype/orange_texture1.png" type="Texture" id=26]
-[ext_resource path="res://textures/prototype/green_texture2.png" type="Texture" id=27]
-[ext_resource path="res://textures/prototype/green_texture1.png" type="Texture" id=28]
-[ext_resource path="res://textures/prototype/purple_texture1.png" type="Texture" id=29]
-[ext_resource path="res://textures/prototype/black_texture1.png" type="Texture" id=30]
+[ext_resource path="res://textures/Elements/Elements_16-256x256.png" type="Texture" id=26]
+[ext_resource path="res://textures/Elements/Elements_14-256x256.png" type="Texture" id=27]
+[ext_resource path="res://textures/Elements/Elements_08-256x256.png" type="Texture" id=28]
+[ext_resource path="res://textures/Grass/Grass_02-256x256.png" type="Texture" id=29]
+[ext_resource path="res://textures/Elements/Elements_19-256x256.png" type="Texture" id=30]
 [ext_resource path="res://textures/Metal2/Metal_08.png" type="Texture" id=31]
 [ext_resource path="res://textures/Crate_Factory/crate_factory_08.png" type="Texture" id=32]
 [ext_resource path="res://textures/clouds/clouds_07.png" type="Texture" id=33]
-[ext_resource path="res://textures/Bricks/Bricks_23-256x256.png" type="Texture" id=34]
+[ext_resource path="res://textures/Elements/Elements_07-256x256.png" type="Texture" id=34]
 [ext_resource path="res://textures/Grass2/grass_01.png" type="Texture" id=35]
-[ext_resource path="res://textures/Grass/Grass_05-256x256.png" type="Texture" id=36]
-[ext_resource path="res://textures/Tile2/Tile_11-256x256.png" type="Texture" id=37]
+[ext_resource path="res://textures/Elements/Elements_17-256x256.png" type="Texture" id=36]
+[ext_resource path="res://textures/Elements/Elements_15-256x256.png" type="Texture" id=37]
 [ext_resource path="res://textures/Building/vintage_clay_tile_1.jpg" type="Texture" id=38]
 [ext_resource path="res://textures/Brick_Version/Brick_Version_09.png" type="Texture" id=39]
-[ext_resource path="res://textures/Wood2/Wood_03-256x256.png" type="Texture" id=40]
-[ext_resource path="res://textures/Wood2/Wood_13-256x256.png" type="Texture" id=41]
-[ext_resource path="res://textures/Roofs/Roofs_10-256x256.png" type="Texture" id=42]
-[ext_resource path="res://textures/Wood2/Wood_02-256x256.png" type="Texture" id=43]
-[ext_resource path="res://textures/Paper/notebook_paper_limecyan.png" type="Texture" id=44]
-[ext_resource path="res://textures/Plaster/Plaster_13-256x256.png" type="Texture" id=45]
-[ext_resource path="res://textures/Paper/notebook_paper_bluegreen.png" type="Texture" id=46]
-[ext_resource path="res://textures/Stone/Stone_20-256x256.png" type="Texture" id=47]
-[ext_resource path="res://textures/Bricks/Bricks_20-256x256.png" type="Texture" id=48]
-[ext_resource path="res://textures/Paper/notebook_paper_yellow.png" type="Texture" id=49]
-[ext_resource path="res://textures/Wood2/Wood_17-256x256.png" type="Texture" id=50]
-[ext_resource path="res://textures/Bricks/Bricks_13-256x256.png" type="Texture" id=51]
-[ext_resource path="res://textures/Elements/Elements_03-256x256.png" type="Texture" id=52]
-[ext_resource path="res://textures/Roofs/Roofs_04-256x256.png" type="Texture" id=53]
-[ext_resource path="res://textures/Tile2/Tile_15-256x256.png" type="Texture" id=54]
-[ext_resource path="res://textures/Bricks/Bricks_21-256x256.png" type="Texture" id=55]
-[ext_resource path="res://textures/Paper/notebook_paper_blue.png" type="Texture" id=56]
-[ext_resource path="res://textures/Tile/Tile_22-256x256.png" type="Texture" id=57]
-[ext_resource path="res://textures/Dirt/Dirt_08-256x256.png" type="Texture" id=58]
-[ext_resource path="res://textures/Brick/Brick_18-256x256.png" type="Texture" id=59]
-[ext_resource path="res://textures/Grass/Grass_20-256x256.png" type="Texture" id=60]
-[ext_resource path="res://textures/Wood/Wood_19-256x256.png" type="Texture" id=61]
-[ext_resource path="res://textures/Tile2/Tile_04-256x256.png" type="Texture" id=62]
-[ext_resource path="res://textures/Tile2/Tile_03-256x256.png" type="Texture" id=63]
-[ext_resource path="res://textures/Stone/Stone_16-256x256.png" type="Texture" id=64]
-[ext_resource path="res://textures/Tile2/Tile_14-256x256.png" type="Texture" id=65]
-[ext_resource path="res://textures/Roofs/Roofs_13-256x256.png" type="Texture" id=66]
-[ext_resource path="res://textures/Grass/Grass_21-256x256.png" type="Texture" id=67]
-[ext_resource path="res://textures/Wood/Wood_15-256x256.png" type="Texture" id=68]
-[ext_resource path="res://textures/Wood2/Wood_05-256x256.png" type="Texture" id=69]
-[ext_resource path="res://textures/Plaster/Plaster_08-256x256.png" type="Texture" id=70]
-[ext_resource path="res://textures/Bricks/Bricks_25-256x256.png" type="Texture" id=71]
-[ext_resource path="res://textures/Stone/Stone_11-256x256.png" type="Texture" id=72]
-[ext_resource path="res://textures/Plaster/Plaster_15-256x256.png" type="Texture" id=73]
-[ext_resource path="res://textures/Metal/Metal_10-256x256.png" type="Texture" id=74]
-[ext_resource path="res://textures/Grass/Grass_10-256x256.png" type="Texture" id=75]
-[ext_resource path="res://textures/Elements/Elements_19-256x256.png" type="Texture" id=76]
-[ext_resource path="res://textures/Bricks/Bricks_10-256x256.png" type="Texture" id=77]
-[ext_resource path="res://textures/Grass/Grass_25-256x256.png" type="Texture" id=78]
-[ext_resource path="res://textures/Tile/Tile_13-256x256.png" type="Texture" id=79]
-[ext_resource path="res://textures/Tile/Tile_12-256x256.png" type="Texture" id=80]
-[ext_resource path="res://textures/Dirt/Dirt_02-256x256.png" type="Texture" id=81]
-[ext_resource path="res://textures/Elements/Elements_10-256x256.png" type="Texture" id=82]
-[ext_resource path="res://textures/Elements/Elements_01-256x256.png" type="Texture" id=83]
-[ext_resource path="res://textures/Elements/Elements_11-256x256.png" type="Texture" id=84]
-[ext_resource path="res://textures/Stone/Stone_17-256x256.png" type="Texture" id=85]
-[ext_resource path="res://textures/Wood/Wood_06-256x256.png" type="Texture" id=86]
-[ext_resource path="res://textures/Tile2/Tile_02-256x256.png" type="Texture" id=87]
-[ext_resource path="res://textures/Tile2/Tile_01-256x256.png" type="Texture" id=88]
-[ext_resource path="res://textures/Bricks/Bricks_03-256x256.png" type="Texture" id=89]
-[ext_resource path="res://textures/Stone/Stone_14-256x256.png" type="Texture" id=90]
-[ext_resource path="res://textures/Plaster/Plaster_11-256x256.png" type="Texture" id=91]
-[ext_resource path="res://textures/Plaster/Plaster_20-256x256.png" type="Texture" id=92]
-[ext_resource path="res://textures/Grass/Grass_03-256x256.png" type="Texture" id=93]
-[ext_resource path="res://textures/Wood/Wood_24-256x256.png" type="Texture" id=94]
-[ext_resource path="res://textures/Wood/Wood_23-256x256.png" type="Texture" id=95]
-[ext_resource path="res://textures/Water/water.jpg" type="Texture" id=96]
-[ext_resource path="res://textures/Tile/Tile_17-256x256.png" type="Texture" id=97]
-[ext_resource path="res://textures/Roofs/Roofs_03-256x256.png" type="Texture" id=98]
-[ext_resource path="res://textures/Tile/Tile_03-256x256.png" type="Texture" id=99]
-[ext_resource path="res://textures/Grass/Grass_15-256x256.png" type="Texture" id=100]
-[ext_resource path="res://textures/Brick/Brick_03-256x256.png" type="Texture" id=101]
-[ext_resource path="res://textures/Wood2/Wood_15-256x256.png" type="Texture" id=102]
-[ext_resource path="res://textures/Wood/Wood_18-256x256.png" type="Texture" id=103]
-[ext_resource path="res://textures/Elements/Elements_08-256x256.png" type="Texture" id=104]
-[ext_resource path="res://textures/Metal/Metal_14-256x256.png" type="Texture" id=105]
-[ext_resource path="res://textures/Metal/Metal_06-256x256.png" type="Texture" id=106]
-[ext_resource path="res://textures/Grass/Grass_02-256x256.png" type="Texture" id=107]
-[ext_resource path="res://textures/Roofs/Roofs_24-256x256.png" type="Texture" id=108]
-[ext_resource path="res://textures/Wood/Wood_09-256x256.png" type="Texture" id=109]
-[ext_resource path="res://textures/Wood2/Wood_06-256x256.png" type="Texture" id=110]
-[ext_resource path="res://textures/Wood/Wood_02-256x256.png" type="Texture" id=111]
-[ext_resource path="res://textures/Tile/Tile_11-256x256.png" type="Texture" id=112]
-[ext_resource path="res://textures/Tile/Tile_10-256x256.png" type="Texture" id=113]
-[ext_resource path="res://textures/Brick/Brick_05-256x256.png" type="Texture" id=114]
-[ext_resource path="res://textures/Metal/Metal_09-256x256.png" type="Texture" id=115]
-[ext_resource path="res://textures/Metal/Metal_12-256x256.png" type="Texture" id=116]
-[ext_resource path="res://textures/Wood/Wood_13-256x256.png" type="Texture" id=117]
-[ext_resource path="res://textures/Wood2/Wood_14-256x256.png" type="Texture" id=118]
-[ext_resource path="res://textures/Roofs/Roofs_22-256x256.png" type="Texture" id=119]
-[ext_resource path="res://textures/Tile/Tile_25-256x256.png" type="Texture" id=120]
-[ext_resource path="res://textures/Grass/Grass_09-256x256.png" type="Texture" id=121]
-[ext_resource path="res://textures/Grass/Grass_17-256x256.png" type="Texture" id=122]
-[ext_resource path="res://textures/Roofs/Roofs_20-256x256.png" type="Texture" id=123]
-[ext_resource path="res://textures/prototype/black_texture2.png" type="Texture" id=124]
-[ext_resource path="res://textures/Brick/Brick_01-256x256.png" type="Texture" id=125]
-[ext_resource path="res://textures/Dirt/Dirt_05-256x256.png" type="Texture" id=126]
-[ext_resource path="res://textures/Grass/Grass_11-256x256.png" type="Texture" id=127]
-[ext_resource path="res://textures/Metal/Metal_13-256x256.png" type="Texture" id=128]
-[ext_resource path="res://textures/prototype/red_texture1.png" type="Texture" id=129]
-[ext_resource path="res://textures/Roofs/Roofs_21-256x256.png" type="Texture" id=130]
-[ext_resource path="res://textures/Elements/Elements_20-256x256.png" type="Texture" id=131]
-[ext_resource path="res://textures/Grass/Grass_14-256x256.png" type="Texture" id=132]
-[ext_resource path="res://textures/Grass/Grass_06-256x256.png" type="Texture" id=133]
-[ext_resource path="res://textures/Metal/Metal_19-256x256.png" type="Texture" id=134]
-[ext_resource path="res://textures/Elements/Elements_18-256x256.png" type="Texture" id=135]
-[ext_resource path="res://textures/Elements/Elements_15-256x256.png" type="Texture" id=136]
-[ext_resource path="res://textures/Elements/Elements_16-256x256.png" type="Texture" id=137]
-[ext_resource path="res://textures/Roofs/Roofs_11-256x256.png" type="Texture" id=138]
-[ext_resource path="res://textures/Grass/Grass_12-256x256.png" type="Texture" id=139]
-[ext_resource path="res://textures/Grass/Grass_04-256x256.png" type="Texture" id=140]
-[ext_resource path="res://textures/Elements/Elements_05-256x256.png" type="Texture" id=141]
-[ext_resource path="res://textures/Roofs/Roofs_25-256x256.png" type="Texture" id=142]
-[ext_resource path="res://textures/Stone/Stone_01-256x256.png" type="Texture" id=143]
-[ext_resource path="res://textures/Grass/Grass_16-256x256.png" type="Texture" id=144]
-[ext_resource path="res://textures/Roofs/Roofs_12-256x256.png" type="Texture" id=145]
-[ext_resource path="res://textures/Roofs/Roofs_17-256x256.png" type="Texture" id=146]
-[ext_resource path="res://textures/Roofs/Roofs_15-256x256.png" type="Texture" id=147]
-[ext_resource path="res://textures/Bricks/Bricks_17-256x256.png" type="Texture" id=148]
-[ext_resource path="res://textures/Bricks/Bricks_04-256x256.png" type="Texture" id=149]
-[ext_resource path="res://textures/Plaster/Plaster_14-256x256.png" type="Texture" id=150]
-[ext_resource path="res://textures/Paper/notebook_paper_orange.png" type="Texture" id=151]
-[ext_resource path="res://textures/Tile2/Tile_08-256x256.png" type="Texture" id=152]
-[ext_resource path="res://textures/Grass/Grass_22-256x256.png" type="Texture" id=153]
-[ext_resource path="res://textures/Wood/Wood_14-256x256.png" type="Texture" id=154]
-[ext_resource path="res://textures/Tile/Tile_05-256x256.png" type="Texture" id=155]
-[ext_resource path="res://textures/Tile/Tile_04-256x256.png" type="Texture" id=156]
-[ext_resource path="res://textures/Tile/Tile_15-256x256.png" type="Texture" id=157]
-[ext_resource path="res://textures/Tile/Tile_14-256x256.png" type="Texture" id=158]
-[ext_resource path="res://textures/Plaster/Plaster_10-256x256.png" type="Texture" id=159]
-[ext_resource path="res://textures/Elements/Elements_17-256x256.png" type="Texture" id=160]
-[ext_resource path="res://textures/Bricks/Bricks_24-256x256.png" type="Texture" id=161]
-[ext_resource path="res://textures/Bricks/Bricks_16-256x256.png" type="Texture" id=162]
-[ext_resource path="res://textures/Grass/Grass_07-256x256.png" type="Texture" id=163]
-[ext_resource path="res://textures/Dirt/Dirt_07-256x256.png" type="Texture" id=164]
-[ext_resource path="res://textures/Wood/Wood_21-256x256.png" type="Texture" id=165]
-[ext_resource path="res://textures/Dirt/Dirt_09-256x256.png" type="Texture" id=166]
-[ext_resource path="res://textures/Elements/Elements_07-256x256.png" type="Texture" id=167]
-[ext_resource path="res://textures/Stone/Stone_10-256x256.png" type="Texture" id=168]
-[ext_resource path="res://textures/Roofs/Roofs_07-256x256.png" type="Texture" id=169]
-[ext_resource path="res://textures/Stone/Stone_12-256x256.png" type="Texture" id=170]
-[ext_resource path="res://textures/Brick/Brick_15-256x256.png" type="Texture" id=171]
-[ext_resource path="res://textures/Roofs/Roofs_06-256x256.png" type="Texture" id=172]
-[ext_resource path="res://textures/Stone/Stone_06-256x256.png" type="Texture" id=173]
-[ext_resource path="res://textures/Stone/Stone_09-256x256.png" type="Texture" id=174]
-[ext_resource path="res://textures/Stone/Stone_05-256x256.png" type="Texture" id=175]
-[ext_resource path="res://textures/Wood2/Wood_20-256x256.png" type="Texture" id=176]
-[ext_resource path="res://textures/Roofs/Roofs_09-256x256.png" type="Texture" id=177]
-[ext_resource path="res://textures/Stone/Stone_13-256x256.png" type="Texture" id=178]
-[ext_resource path="res://textures/Brick/Brick_06-256x256.png" type="Texture" id=179]
-[ext_resource path="res://textures/Grass/Grass_24-256x256.png" type="Texture" id=180]
-[ext_resource path="res://textures/Roofs/Roofs_16-256x256.png" type="Texture" id=181]
-[ext_resource path="res://textures/Tile2/Tile_13-256x256.png" type="Texture" id=182]
-[ext_resource path="res://textures/Tile2/Tile_12-256x256.png" type="Texture" id=183]
-[ext_resource path="res://textures/Brick/Brick_20-256x256.png" type="Texture" id=184]
-[ext_resource path="res://textures/Stone/Stone_04-256x256.png" type="Texture" id=185]
-[ext_resource path="res://textures/Stone/Stone_08-256x256.png" type="Texture" id=186]
-[ext_resource path="res://textures/Bricks/Bricks_02-256x256.png" type="Texture" id=187]
-[ext_resource path="res://textures/Wood2/Wood_18-256x256.png" type="Texture" id=188]
-[ext_resource path="res://textures/Stone/Stone_07-256x256.png" type="Texture" id=189]
-[ext_resource path="res://textures/Paper/notebook_paper_cyan.png" type="Texture" id=190]
-[ext_resource path="res://textures/Paper/notebook_paper_black.png" type="Texture" id=191]
-[ext_resource path="res://textures/Wood/Wood_11-256x256.png" type="Texture" id=192]
-[ext_resource path="res://textures/Tile2/Tile_16-256x256.png" type="Texture" id=193]
-[ext_resource path="res://textures/Plaster/Plaster_18-256x256.png" type="Texture" id=194]
-[ext_resource path="res://textures/Paper/notebook_paper_red.png" type="Texture" id=195]
-[ext_resource path="res://textures/Dirt/Dirt_01-256x256.png" type="Texture" id=196]
-[ext_resource path="res://textures/Bricks/Bricks_22-256x256.png" type="Texture" id=197]
-[ext_resource path="res://textures/Wood2/Wood_07-256x256.png" type="Texture" id=198]
-[ext_resource path="res://textures/Paper/notebook_paper_yellowpurple.png" type="Texture" id=199]
-[ext_resource path="res://textures/Plaster/Plaster_03-256x256.png" type="Texture" id=200]
-[ext_resource path="res://textures/Brick/Brick_09-256x256.png" type="Texture" id=201]
-[ext_resource path="res://textures/Wood/Wood_10-256x256.png" type="Texture" id=202]
+[ext_resource path="res://textures/Elements/Elements_06-256x256.png" type="Texture" id=40]
+[ext_resource path="res://textures/Grass/Grass_01-256x256.png" type="Texture" id=41]
+[ext_resource path="res://textures/Elements/Elements_13-256x256.png" type="Texture" id=42]
+[ext_resource path="res://textures/Elements/Elements_05-256x256.png" type="Texture" id=43]
+[ext_resource path="res://textures/Dirt/Dirt_19-256x256.png" type="Texture" id=44]
+[ext_resource path="res://textures/Grass/Grass_15-256x256.png" type="Texture" id=45]
+[ext_resource path="res://textures/Dirt/Dirt_10-256x256.png" type="Texture" id=46]
+[ext_resource path="res://textures/Elements/Elements_03-256x256.png" type="Texture" id=47]
+[ext_resource path="res://textures/Brick/Brick_06-256x256.png" type="Texture" id=48]
+[ext_resource path="res://textures/Grass/Grass_17-256x256.png" type="Texture" id=49]
+[ext_resource path="res://textures/Bricks/Bricks_05-256x256.png" type="Texture" id=50]
+[ext_resource path="res://textures/Wood2/Wood_02-256x256.png" type="Texture" id=51]
+[ext_resource path="res://textures/Grass/Grass_13-256x256.png" type="Texture" id=52]
+[ext_resource path="res://textures/Metal/Metal_03-256x256.png" type="Texture" id=53]
+[ext_resource path="res://textures/Grass/Grass_09-256x256.png" type="Texture" id=54]
+[ext_resource path="res://textures/Dirt/Dirt_08-256x256.png" type="Texture" id=55]
+[ext_resource path="res://textures/Bricks/Bricks_11-256x256.png" type="Texture" id=56]
+[ext_resource path="res://textures/Dirt/Dirt_07-256x256.png" type="Texture" id=57]
+[ext_resource path="res://textures/Dirt/Dirt_11-256x256.png" type="Texture" id=58]
+[ext_resource path="res://textures/Plaster/Plaster_07-256x256.png" type="Texture" id=59]
+[ext_resource path="res://textures/Brick/Brick_12-256x256.png" type="Texture" id=60]
+[ext_resource path="res://textures/Brick/Brick_10-256x256.png" type="Texture" id=61]
+[ext_resource path="res://textures/Bricks/Bricks_15-256x256.png" type="Texture" id=62]
+[ext_resource path="res://textures/Bricks/Bricks_14-256x256.png" type="Texture" id=63]
+[ext_resource path="res://textures/Grass/Grass_08-256x256.png" type="Texture" id=64]
+[ext_resource path="res://textures/Grass/Grass_07-256x256.png" type="Texture" id=65]
+[ext_resource path="res://textures/Bricks/Bricks_25-256x256.png" type="Texture" id=66]
+[ext_resource path="res://textures/Elements/Elements_11-256x256.png" type="Texture" id=67]
+[ext_resource path="res://textures/Roofs/Roofs_18-256x256.png" type="Texture" id=68]
+[ext_resource path="res://textures/Grass/Grass_12-256x256.png" type="Texture" id=69]
+[ext_resource path="res://textures/Paper/notebook_paper_greenblue.png" type="Texture" id=70]
+[ext_resource path="res://textures/Paper/notebook_paper_cyanblue.png" type="Texture" id=71]
+[ext_resource path="res://textures/Bricks/Bricks_01-256x256.png" type="Texture" id=72]
+[ext_resource path="res://textures/Paper/notebook_paper_limeblue.png" type="Texture" id=73]
+[ext_resource path="res://textures/Paper/notebook_paper_dark.png" type="Texture" id=74]
+[ext_resource path="res://textures/Tile/Tile_10-256x256.png" type="Texture" id=75]
+[ext_resource path="res://textures/Grass/Grass_19-256x256.png" type="Texture" id=76]
+[ext_resource path="res://textures/Roofs/Roofs_12-256x256.png" type="Texture" id=77]
+[ext_resource path="res://textures/Tile/Tile_22-256x256.png" type="Texture" id=78]
+[ext_resource path="res://textures/Bricks/Bricks_23-256x256.png" type="Texture" id=79]
+[ext_resource path="res://textures/Wood/Wood_06-256x256.png" type="Texture" id=80]
+[ext_resource path="res://textures/Stone/Stone_07-256x256.png" type="Texture" id=81]
+[ext_resource path="res://textures/Paper/notebook_paper_pinklime.png" type="Texture" id=82]
+[ext_resource path="res://textures/Grass/Grass_20-256x256.png" type="Texture" id=83]
+[ext_resource path="res://textures/Brick/Brick_13-256x256.png" type="Texture" id=84]
+[ext_resource path="res://textures/Dirt/Dirt_01-256x256.png" type="Texture" id=85]
+[ext_resource path="res://textures/Paper/notebook_paper_yellowblue.png" type="Texture" id=86]
+[ext_resource path="res://textures/Bricks/Bricks_18-256x256.png" type="Texture" id=87]
+[ext_resource path="res://textures/Wood/Wood_09-256x256.png" type="Texture" id=88]
+[ext_resource path="res://textures/Brick/Brick_08-256x256.png" type="Texture" id=89]
+[ext_resource path="res://textures/Bricks/Bricks_19-256x256.png" type="Texture" id=90]
+[ext_resource path="res://textures/Roofs/Roofs_15-256x256.png" type="Texture" id=91]
+[ext_resource path="res://textures/Roofs/Roofs_23-256x256.png" type="Texture" id=92]
+[ext_resource path="res://textures/Grass/Grass_18-256x256.png" type="Texture" id=93]
+[ext_resource path="res://textures/Grass/Grass_22-256x256.png" type="Texture" id=94]
+[ext_resource path="res://textures/Dirt/Dirt_12-256x256.png" type="Texture" id=95]
+[ext_resource path="res://textures/Paper/notebook_paper_whiteblue.png" type="Texture" id=96]
+[ext_resource path="res://textures/Metal/Metal_12-256x256.png" type="Texture" id=97]
+[ext_resource path="res://textures/Brick/Brick_14-256x256.png" type="Texture" id=98]
+[ext_resource path="res://textures/Grass/Grass_21-256x256.png" type="Texture" id=99]
+[ext_resource path="res://textures/Bricks/Bricks_16-256x256.png" type="Texture" id=100]
+[ext_resource path="res://textures/Paper/notebook_paper_white.png" type="Texture" id=101]
+[ext_resource path="res://textures/Paper/notebook_paper_purpleblue.png" type="Texture" id=102]
+[ext_resource path="res://textures/Dirt/Dirt_14-256x256.png" type="Texture" id=103]
+[ext_resource path="res://textures/Roofs/Roofs_19-256x256.png" type="Texture" id=104]
+[ext_resource path="res://textures/Brick/Brick_15-256x256.png" type="Texture" id=105]
+[ext_resource path="res://textures/Dirt/Dirt_20-256x256.png" type="Texture" id=106]
+[ext_resource path="res://textures/Tile/Tile_21-256x256.png" type="Texture" id=107]
+[ext_resource path="res://textures/Elements/Elements_12-256x256.png" type="Texture" id=108]
+[ext_resource path="res://textures/Tile/Tile_20-256x256.png" type="Texture" id=109]
+[ext_resource path="res://textures/Brick/Brick_20-256x256.png" type="Texture" id=110]
+[ext_resource path="res://textures/Grass/Grass_05-256x256.png" type="Texture" id=111]
+[ext_resource path="res://textures/Metal/Metal_04-256x256.png" type="Texture" id=112]
+[ext_resource path="res://textures/Brick/Brick_18-256x256.png" type="Texture" id=113]
+[ext_resource path="res://textures/Wood/Wood_15-256x256.png" type="Texture" id=114]
+[ext_resource path="res://textures/Grass/Grass_16-256x256.png" type="Texture" id=115]
+[ext_resource path="res://textures/Brick/Brick_07-256x256.png" type="Texture" id=116]
+[ext_resource path="res://textures/Wood2/Wood_08-256x256.png" type="Texture" id=117]
+[ext_resource path="res://textures/prototype/purple_texture1.png" type="Texture" id=118]
+[ext_resource path="res://textures/Tile/Tile_15-256x256.png" type="Texture" id=119]
+[ext_resource path="res://textures/Paper/notebook_paper_blackblue.png" type="Texture" id=120]
+[ext_resource path="res://textures/Tile/Tile_04-256x256.png" type="Texture" id=121]
+[ext_resource path="res://textures/Brick/Brick_17-256x256.png" type="Texture" id=122]
+[ext_resource path="res://textures/Roofs/Roofs_11-256x256.png" type="Texture" id=123]
+[ext_resource path="res://textures/Wood/Wood_14-256x256.png" type="Texture" id=124]
+[ext_resource path="res://textures/Wood2/Wood_01-256x256.png" type="Texture" id=125]
+[ext_resource path="res://textures/Paper/notebook_paper_pinkgreen.png" type="Texture" id=126]
+[ext_resource path="res://textures/Paper/notebook_paper_orangeblue.png" type="Texture" id=127]
+[ext_resource path="res://textures/Roofs/Roofs_08-256x256.png" type="Texture" id=128]
+[ext_resource path="res://textures/Wood/Wood_05-256x256.png" type="Texture" id=129]
+[ext_resource path="res://textures/Brick/Brick_04-256x256.png" type="Texture" id=130]
+[ext_resource path="res://textures/Brick/Brick_16-256x256.png" type="Texture" id=131]
+[ext_resource path="res://textures/Bricks/Bricks_04-256x256.png" type="Texture" id=132]
+[ext_resource path="res://textures/Roofs/Roofs_20-256x256.png" type="Texture" id=133]
+[ext_resource path="res://textures/Roofs/Roofs_21-256x256.png" type="Texture" id=134]
+[ext_resource path="res://textures/Wood/Wood_24-256x256.png" type="Texture" id=135]
+[ext_resource path="res://textures/Paper/notebook_paper_pinkorange.png" type="Texture" id=136]
+[ext_resource path="res://textures/Grass/Grass_06-256x256.png" type="Texture" id=137]
+[ext_resource path="res://textures/Paper/notebook_paper_pinkgrey.png" type="Texture" id=138]
+[ext_resource path="res://textures/Tile/Tile_14-256x256.png" type="Texture" id=139]
+[ext_resource path="res://textures/Dirt/Dirt_05-256x256.png" type="Texture" id=140]
+[ext_resource path="res://textures/Roofs/Roofs_03-256x256.png" type="Texture" id=141]
+[ext_resource path="res://textures/Roofs/Roofs_16-256x256.png" type="Texture" id=142]
+[ext_resource path="res://textures/Tile/Tile_16-256x256.png" type="Texture" id=143]
+[ext_resource path="res://textures/Bricks/Bricks_08-256x256.png" type="Texture" id=144]
+[ext_resource path="res://textures/Stone/Stone_05-256x256.png" type="Texture" id=145]
+[ext_resource path="res://textures/Stone/Stone_06-256x256.png" type="Texture" id=146]
+[ext_resource path="res://textures/Stone/Stone_04-256x256.png" type="Texture" id=147]
+[ext_resource path="res://textures/Stone/Stone_01-256x256.png" type="Texture" id=148]
+[ext_resource path="res://textures/Roofs/Roofs_25-256x256.png" type="Texture" id=149]
+[ext_resource path="res://textures/Stone/Stone_02-256x256.png" type="Texture" id=150]
+[ext_resource path="res://textures/Roofs/Roofs_24-256x256.png" type="Texture" id=151]
+[ext_resource path="res://textures/Stone/Stone_03-256x256.png" type="Texture" id=152]
+[ext_resource path="res://textures/Tile2/Tile_07-256x256.png" type="Texture" id=153]
+[ext_resource path="res://textures/Dirt/Dirt_06-256x256.png" type="Texture" id=154]
+[ext_resource path="res://textures/Elements/Elements_20-256x256.png" type="Texture" id=155]
+[ext_resource path="res://textures/Dirt/Dirt_04-256x256.png" type="Texture" id=156]
+[ext_resource path="res://textures/prototype/black_texture1.png" type="Texture" id=157]
+[ext_resource path="res://textures/Brick/Brick_11-256x256.png" type="Texture" id=158]
+[ext_resource path="res://textures/Bricks/Bricks_20-256x256.png" type="Texture" id=159]
+[ext_resource path="res://textures/Dirt/Dirt_13-256x256.png" type="Texture" id=160]
+[ext_resource path="res://textures/Bricks/Bricks_06-256x256.png" type="Texture" id=161]
+[ext_resource path="res://textures/Dirt/Dirt_02-256x256.png" type="Texture" id=162]
+[ext_resource path="res://textures/Grass/Grass_25-256x256.png" type="Texture" id=163]
+[ext_resource path="res://textures/Grass/Grass_04-256x256.png" type="Texture" id=164]
+[ext_resource path="res://textures/Tile/Tile_08-256x256.png" type="Texture" id=165]
+[ext_resource path="res://textures/Metal/Metal_07-256x256.png" type="Texture" id=166]
+[ext_resource path="res://textures/Grass/Grass_23-256x256.png" type="Texture" id=167]
+[ext_resource path="res://textures/Bricks/Bricks_03-256x256.png" type="Texture" id=168]
+[ext_resource path="res://textures/Dirt/Dirt_15-256x256.png" type="Texture" id=169]
+[ext_resource path="res://textures/Water/water.jpg" type="Texture" id=170]
+[ext_resource path="res://textures/Wood/Wood_22-256x256.png" type="Texture" id=171]
+[ext_resource path="res://textures/Wood2/Wood_06-256x256.png" type="Texture" id=172]
+[ext_resource path="res://textures/prototype/purple_texture2.png" type="Texture" id=173]
+[ext_resource path="res://textures/Wood/Wood_04-256x256.png" type="Texture" id=174]
+[ext_resource path="res://textures/Wood2/Wood_04-256x256.png" type="Texture" id=175]
+[ext_resource path="res://textures/Tile/Tile_11-256x256.png" type="Texture" id=176]
+[ext_resource path="res://textures/Tile/Tile_18-256x256.png" type="Texture" id=177]
+[ext_resource path="res://textures/Roofs/Roofs_17-256x256.png" type="Texture" id=178]
+[ext_resource path="res://textures/Tile/Tile_13-256x256.png" type="Texture" id=179]
+[ext_resource path="res://textures/prototype/red_texture02.png" type="Texture" id=180]
+[ext_resource path="res://textures/Paper/notebook_paper_yellow.png" type="Texture" id=181]
+[ext_resource path="res://textures/Wood/Wood_03-256x256.png" type="Texture" id=182]
+[ext_resource path="res://textures/Brick/Brick_09-256x256.png" type="Texture" id=183]
+[ext_resource path="res://textures/Tile/Tile_03-256x256.png" type="Texture" id=184]
+[ext_resource path="res://textures/Roofs/Roofs_13-256x256.png" type="Texture" id=185]
+[ext_resource path="res://textures/Paper/notebook_paper_red.png" type="Texture" id=186]
+[ext_resource path="res://textures/Paper/notebook_paper_purplepink.png" type="Texture" id=187]
+[ext_resource path="res://textures/Dirt/Dirt_03-256x256.png" type="Texture" id=188]
+[ext_resource path="res://textures/Wood2/Wood_20-256x256.png" type="Texture" id=189]
+[ext_resource path="res://textures/Wood/Wood_19-256x256.png" type="Texture" id=190]
+[ext_resource path="res://textures/Wood/Wood_02-256x256.png" type="Texture" id=191]
+[ext_resource path="res://textures/Wood2/Wood_13-256x256.png" type="Texture" id=192]
+[ext_resource path="res://textures/Wood/Wood_21-256x256.png" type="Texture" id=193]
+[ext_resource path="res://textures/Wood/Wood_08-256x256.png" type="Texture" id=194]
+[ext_resource path="res://textures/prototype/red_texture1.png" type="Texture" id=195]
+[ext_resource path="res://textures/Brick/Brick_01-256x256.png" type="Texture" id=196]
+[ext_resource path="res://textures/Wood/Wood_11-256x256.png" type="Texture" id=197]
+[ext_resource path="res://textures/Bricks/Bricks_24-256x256.png" type="Texture" id=198]
+[ext_resource path="res://textures/Brick/Brick_02-256x256.png" type="Texture" id=199]
+[ext_resource path="res://textures/Wood/Wood_13-256x256.png" type="Texture" id=200]
+[ext_resource path="res://textures/Brick/Brick_03-256x256.png" type="Texture" id=201]
+[ext_resource path="res://textures/prototype/orange_texture2.png" type="Texture" id=202]
 [ext_resource path="res://textures/Wood2/Wood_09-256x256.png" type="Texture" id=203]
-[ext_resource path="res://textures/Wood/Wood_25-256x256.png" type="Texture" id=204]
-[ext_resource path="res://textures/prototype/red_texture02.png" type="Texture" id=205]
-[ext_resource path="res://textures/Wood/Wood_03-256x256.png" type="Texture" id=206]
-[ext_resource path="res://textures/Dirt/Dirt_04-256x256.png" type="Texture" id=207]
-[ext_resource path="res://textures/Wood2/Wood_01-256x256.png" type="Texture" id=208]
-[ext_resource path="res://textures/Plaster/Plaster_19-256x256.png" type="Texture" id=209]
-[ext_resource path="res://textures/Roofs/Roofs_23-256x256.png" type="Texture" id=210]
-[ext_resource path="res://textures/Wood2/Wood_12-256x256.png" type="Texture" id=211]
-[ext_resource path="res://textures/Roofs/Roofs_08-256x256.png" type="Texture" id=212]
-[ext_resource path="res://textures/Metal/Metal_11-256x256.png" type="Texture" id=213]
-[ext_resource path="res://textures/Dirt/Dirt_16-256x256.png" type="Texture" id=214]
-[ext_resource path="res://textures/Tile/Tile_02-256x256.png" type="Texture" id=215]
-[ext_resource path="res://textures/Dirt/Dirt_18-256x256.png" type="Texture" id=216]
-[ext_resource path="res://textures/Dirt/Dirt_11-256x256.png" type="Texture" id=217]
-[ext_resource path="res://textures/Brick/Brick_02-256x256.png" type="Texture" id=218]
-[ext_resource path="res://textures/Dirt/Dirt_17-256x256.png" type="Texture" id=219]
-[ext_resource path="res://textures/Dirt/Dirt_15-256x256.png" type="Texture" id=220]
-[ext_resource path="res://textures/Dirt/Dirt_20-256x256.png" type="Texture" id=221]
-[ext_resource path="res://textures/Dirt/Dirt_13-256x256.png" type="Texture" id=222]
-[ext_resource path="res://textures/Dirt/Dirt_12-256x256.png" type="Texture" id=223]
-[ext_resource path="res://textures/Dirt/Dirt_14-256x256.png" type="Texture" id=224]
-[ext_resource path="res://textures/Grass/Grass_08-256x256.png" type="Texture" id=225]
-[ext_resource path="res://textures/Roofs/Roofs_01-256x256.png" type="Texture" id=226]
-[ext_resource path="res://textures/Wood2/Wood_08-256x256.png" type="Texture" id=227]
-[ext_resource path="res://textures/Bricks/Bricks_06-256x256.png" type="Texture" id=228]
-[ext_resource path="res://textures/Plaster/Plaster_09-256x256.png" type="Texture" id=229]
-[ext_resource path="res://textures/Stone/Stone_15-256x256.png" type="Texture" id=230]
-[ext_resource path="res://textures/Wood/Wood_04-256x256.png" type="Texture" id=231]
-[ext_resource path="res://textures/Paper/notebook_paper_blackorange.png" type="Texture" id=232]
-[ext_resource path="res://textures/Paper/notebook_paper_pink.png" type="Texture" id=233]
-[ext_resource path="res://textures/Elements/Elements_12-256x256.png" type="Texture" id=234]
-[ext_resource path="res://textures/Tile/Tile_19-256x256.png" type="Texture" id=235]
-[ext_resource path="res://textures/Tile/Tile_18-256x256.png" type="Texture" id=236]
-[ext_resource path="res://textures/Stone/Stone_03-256x256.png" type="Texture" id=237]
-[ext_resource path="res://textures/Metal/Metal_01-256x256.png" type="Texture" id=238]
-[ext_resource path="res://textures/Stone/Stone_02-256x256.png" type="Texture" id=239]
-[ext_resource path="res://textures/Roofs/Roofs_18-256x256.png" type="Texture" id=240]
-[ext_resource path="res://textures/Wood2/Wood_19-256x256.png" type="Texture" id=241]
-[ext_resource path="res://textures/Roofs/Roofs_02-256x256.png" type="Texture" id=242]
-[ext_resource path="res://textures/Wood/Wood_17-256x256.png" type="Texture" id=243]
-[ext_resource path="res://textures/Tile/Tile_24-256x256.png" type="Texture" id=244]
-[ext_resource path="res://textures/Roofs/Roofs_05-256x256.png" type="Texture" id=245]
-[ext_resource path="res://textures/Tile2/Tile_20-256x256.png" type="Texture" id=246]
-[ext_resource path="res://textures/Wood/Wood_05-256x256.png" type="Texture" id=247]
-[ext_resource path="res://textures/Tile/Tile_16-256x256.png" type="Texture" id=248]
-[ext_resource path="res://textures/Tile/Tile_09-256x256.png" type="Texture" id=249]
-[ext_resource path="res://textures/Tile/Tile_06-256x256.png" type="Texture" id=250]
-[ext_resource path="res://textures/Tile/Tile_01-256x256.png" type="Texture" id=251]
-[ext_resource path="res://textures/Tile2/Tile_19-256x256.png" type="Texture" id=252]
-[ext_resource path="res://textures/Tile/Tile_23-256x256.png" type="Texture" id=253]
-[ext_resource path="res://textures/Plaster/Plaster_17-256x256.png" type="Texture" id=254]
-[ext_resource path="res://textures/Paper/notebook_paper.png" type="Texture" id=255]
-[ext_resource path="res://textures/Metal/Metal_03-256x256.png" type="Texture" id=256]
-[ext_resource path="res://textures/Metal/Metal_16-256x256.png" type="Texture" id=257]
-[ext_resource path="res://textures/Tile2/Tile_05-256x256.png" type="Texture" id=258]
-[ext_resource path="res://textures/Plaster/Plaster_16-256x256.png" type="Texture" id=259]
-[ext_resource path="res://textures/Wood/Wood_22-256x256.png" type="Texture" id=260]
-[ext_resource path="res://textures/Wood2/Wood_04-256x256.png" type="Texture" id=261]
-[ext_resource path="res://textures/Brick/Brick_19-256x256.png" type="Texture" id=262]
-[ext_resource path="res://textures/Tile/Tile_07-256x256.png" type="Texture" id=263]
-[ext_resource path="res://textures/Dirt/Dirt_10-256x256.png" type="Texture" id=264]
-[ext_resource path="res://textures/Paper/notebook_paper_orangelime.png" type="Texture" id=265]
-[ext_resource path="res://textures/Brick/Brick_08-256x256.png" type="Texture" id=266]
-[ext_resource path="res://textures/Stone/Stone_18-256x256.png" type="Texture" id=267]
-[ext_resource path="res://textures/Brick/Brick_07-256x256.png" type="Texture" id=268]
-[ext_resource path="res://textures/Plaster/Plaster_12-256x256.png" type="Texture" id=269]
-[ext_resource path="res://textures/Wood/Wood_12-256x256.png" type="Texture" id=270]
-[ext_resource path="res://textures/Wood/Wood_07-256x256.png" type="Texture" id=271]
-[ext_resource path="res://textures/Paper/notebook_paper_lime.png" type="Texture" id=272]
-[ext_resource path="res://textures/Metal/Metal_07-256x256.png" type="Texture" id=273]
-[ext_resource path="res://textures/Plaster/Plaster_06-256x256.png" type="Texture" id=274]
-[ext_resource path="res://textures/Bricks/Bricks_19-256x256.png" type="Texture" id=275]
-[ext_resource path="res://textures/Dirt/Dirt_03-256x256.png" type="Texture" id=276]
-[ext_resource path="res://textures/Grass/Grass_13-256x256.png" type="Texture" id=277]
-[ext_resource path="res://textures/Metal/Metal_08-256x256.png" type="Texture" id=278]
-[ext_resource path="res://textures/Metal/Metal_04-256x256.png" type="Texture" id=279]
-[ext_resource path="res://textures/Paper/notebook_paper_purple.png" type="Texture" id=280]
-[ext_resource path="res://textures/Elements/Elements_09-256x256.png" type="Texture" id=281]
-[ext_resource path="res://textures/Wood/Wood_20-256x256.png" type="Texture" id=282]
-[ext_resource path="res://textures/Plaster/Plaster_07-256x256.png" type="Texture" id=283]
-[ext_resource path="res://textures/Wood/Wood_01-256x256.png" type="Texture" id=284]
-[ext_resource path="res://textures/Bricks/Bricks_11-256x256.png" type="Texture" id=285]
-[ext_resource path="res://textures/Bricks/Bricks_09-256x256.png" type="Texture" id=286]
-[ext_resource path="res://textures/Bricks/Bricks_08-256x256.png" type="Texture" id=287]
-[ext_resource path="res://textures/Bricks/Bricks_12-256x256.png" type="Texture" id=288]
-[ext_resource path="res://textures/Bricks/Bricks_18-256x256.png" type="Texture" id=289]
-[ext_resource path="res://textures/Paper/notebook_paper_green.png" type="Texture" id=290]
-[ext_resource path="res://textures/Elements/Elements_04-256x256.png" type="Texture" id=291]
-[ext_resource path="res://textures/Tile/Tile_21-256x256.png" type="Texture" id=292]
-[ext_resource path="res://textures/Tile/Tile_20-256x256.png" type="Texture" id=293]
-[ext_resource path="res://textures/Tile/Tile_08-256x256.png" type="Texture" id=294]
-[ext_resource path="res://textures/Dirt/Dirt_19-256x256.png" type="Texture" id=295]
-[ext_resource path="res://textures/prototype/greytexture2.png" type="Texture" id=296]
-[ext_resource path="res://textures/Bricks/Bricks_07-256x256.png" type="Texture" id=297]
-[ext_resource path="res://textures/Metal/Metal_17-256x256.png" type="Texture" id=298]
-[ext_resource path="res://textures/Plaster/Plaster_02-256x256.png" type="Texture" id=299]
-[ext_resource path="res://textures/Tile2/Tile_07-256x256.png" type="Texture" id=300]
-[ext_resource path="res://textures/Wood/Wood_08-256x256.png" type="Texture" id=301]
-[ext_resource path="res://textures/Brick/Brick_04-256x256.png" type="Texture" id=302]
-[ext_resource path="res://textures/Roofs/Roofs_19-256x256.png" type="Texture" id=303]
-[ext_resource path="res://textures/prototype/purple_texture2.png" type="Texture" id=304]
-[ext_resource path="res://textures/Bricks/Bricks_01-256x256.png" type="Texture" id=305]
-[ext_resource path="res://textures/Wood2/Wood_11-256x256.png" type="Texture" id=306]
-[ext_resource path="res://textures/prototype/grey_texture1.png" type="Texture" id=307]
-[ext_resource path="res://textures/Grass/Grass_18-256x256.png" type="Texture" id=308]
-[ext_resource path="res://textures/Tile2/Tile_17-256x256.png" type="Texture" id=309]
-[ext_resource path="res://textures/Dirt/Dirt_06-256x256.png" type="Texture" id=310]
-[ext_resource path="res://textures/prototype/orange_texture2.png" type="Texture" id=311]
-[ext_resource path="res://textures/Elements/Elements_06-256x256.png" type="Texture" id=312]
-[ext_resource path="res://textures/Metal/Metal_18-256x256.png" type="Texture" id=313]
-[ext_resource path="res://textures/Metal/Metal_02-256x256.png" type="Texture" id=314]
-[ext_resource path="res://textures/Paper/notebook_paper_grey.png" type="Texture" id=315]
-[ext_resource path="res://textures/Plaster/Plaster_01-256x256.png" type="Texture" id=316]
-[ext_resource path="res://textures/Tile2/Tile_10-256x256.png" type="Texture" id=317]
-[ext_resource path="res://textures/Tile2/Tile_09-256x256.png" type="Texture" id=318]
-[ext_resource path="res://textures/Plaster/Plaster_04-256x256.png" type="Texture" id=319]
-[ext_resource path="res://textures/Sand/sand.png" type="Texture" id=320]
-[ext_resource path="res://textures/Grass/Grass_23-256x256.png" type="Texture" id=321]
-[ext_resource path="res://textures/Grass/Grass_01-256x256.png" type="Texture" id=322]
-[ext_resource path="res://textures/Tile2/Tile_18-256x256.png" type="Texture" id=323]
-[ext_resource path="res://textures/Wood/Wood_16-256x256.png" type="Texture" id=324]
-[ext_resource path="res://textures/Plaster/Plaster_05-256x256.png" type="Texture" id=325]
-[ext_resource path="res://textures/Elements/Elements_13-256x256.png" type="Texture" id=326]
-[ext_resource path="res://textures/Grass/Grass_19-256x256.png" type="Texture" id=327]
-[ext_resource path="res://textures/Elements/Elements_14-256x256.png" type="Texture" id=328]
-[ext_resource path="res://textures/Roofs/Roofs_14-256x256.png" type="Texture" id=329]
-[ext_resource path="res://textures/Paper/notebook_paper_cyanpink.png" type="Texture" id=330]
-[ext_resource path="res://textures/Brick/Brick_16-256x256.png" type="Texture" id=331]
-[ext_resource path="res://textures/Metal/Metal_20-256x256.png" type="Texture" id=332]
-[ext_resource path="res://textures/Brick/Brick_17-256x256.png" type="Texture" id=333]
-[ext_resource path="res://textures/Wood2/Wood_16-256x256.png" type="Texture" id=334]
-[ext_resource path="res://textures/Elements/Elements_02-256x256.png" type="Texture" id=335]
-[ext_resource path="res://textures/Stone/Stone_19-256x256.png" type="Texture" id=336]
-[ext_resource path="res://textures/Paper/notebook_paper_purplepink.png" type="Texture" id=337]
-[ext_resource path="res://textures/Metal/Metal_05-256x256.png" type="Texture" id=338]
-[ext_resource path="res://textures/Tile2/Tile_06-256x256.png" type="Texture" id=339]
-[ext_resource path="res://textures/Brick/Brick_11-256x256.png" type="Texture" id=340]
-[ext_resource path="res://textures/Metal/Metal_15-256x256.png" type="Texture" id=341]
-[ext_resource path="res://textures/Brick/Brick_10-256x256.png" type="Texture" id=342]
-[ext_resource path="res://textures/Brick/Brick_14-256x256.png" type="Texture" id=343]
-[ext_resource path="res://textures/Bricks/Bricks_15-256x256.png" type="Texture" id=344]
-[ext_resource path="res://textures/Brick/Brick_13-256x256.png" type="Texture" id=345]
-[ext_resource path="res://textures/Brick/Brick_12-256x256.png" type="Texture" id=346]
-[ext_resource path="res://textures/Bricks/Bricks_14-256x256.png" type="Texture" id=347]
-[ext_resource path="res://textures/Bricks/Bricks_05-256x256.png" type="Texture" id=348]
+[ext_resource path="res://textures/Tile/Tile_12-256x256.png" type="Texture" id=204]
+[ext_resource path="res://textures/Wood2/Wood_12-256x256.png" type="Texture" id=205]
+[ext_resource path="res://textures/Paper/notebook_paper_cyanpink.png" type="Texture" id=206]
+[ext_resource path="res://textures/Brick/Brick_05-256x256.png" type="Texture" id=207]
+[ext_resource path="res://textures/Wood2/Wood_11-256x256.png" type="Texture" id=208]
+[ext_resource path="res://textures/Paper/notebook_paper_pink.png" type="Texture" id=209]
+[ext_resource path="res://textures/Bricks/Bricks_07-256x256.png" type="Texture" id=210]
+[ext_resource path="res://textures/Wood2/Wood_05-256x256.png" type="Texture" id=211]
+[ext_resource path="res://textures/Wood2/Wood_03-256x256.png" type="Texture" id=212]
+[ext_resource path="res://textures/Wood/Wood_12-256x256.png" type="Texture" id=213]
+[ext_resource path="res://textures/Wood2/Wood_07-256x256.png" type="Texture" id=214]
+[ext_resource path="res://textures/Paper/notebook_paper_yellowpurple.png" type="Texture" id=215]
+[ext_resource path="res://textures/Paper/notebook_paper_black.png" type="Texture" id=216]
+[ext_resource path="res://textures/Wood/Wood_01-256x256.png" type="Texture" id=217]
+[ext_resource path="res://textures/Wood/Wood_07-256x256.png" type="Texture" id=218]
+[ext_resource path="res://textures/Wood2/Wood_18-256x256.png" type="Texture" id=219]
+[ext_resource path="res://textures/Wood/Wood_10-256x256.png" type="Texture" id=220]
+[ext_resource path="res://textures/Paper/notebook_paper_purple.png" type="Texture" id=221]
+[ext_resource path="res://textures/Wood2/Wood_16-256x256.png" type="Texture" id=222]
+[ext_resource path="res://textures/Wood/Wood_17-256x256.png" type="Texture" id=223]
+[ext_resource path="res://textures/Wood2/Wood_17-256x256.png" type="Texture" id=224]
+[ext_resource path="res://textures/Wood2/Wood_14-256x256.png" type="Texture" id=225]
+[ext_resource path="res://textures/Paper/notebook_paper_blackorange.png" type="Texture" id=226]
+[ext_resource path="res://textures/Wood/Wood_16-256x256.png" type="Texture" id=227]
+[ext_resource path="res://textures/Wood/Wood_18-256x256.png" type="Texture" id=228]
+[ext_resource path="res://textures/Wood/Wood_20-256x256.png" type="Texture" id=229]
+[ext_resource path="res://textures/Metal/Metal_13-256x256.png" type="Texture" id=230]
+[ext_resource path="res://textures/Paper/notebook_paper_lime.png" type="Texture" id=231]
+[ext_resource path="res://textures/Paper/notebook_paper.png" type="Texture" id=232]
+[ext_resource path="res://textures/Wood2/Wood_19-256x256.png" type="Texture" id=233]
+[ext_resource path="res://textures/Wood2/Wood_10-256x256.png" type="Texture" id=234]
+[ext_resource path="res://textures/Wood/Wood_23-256x256.png" type="Texture" id=235]
+[ext_resource path="res://textures/Wood/Wood_25-256x256.png" type="Texture" id=236]
+[ext_resource path="res://textures/Wood2/Wood_15-256x256.png" type="Texture" id=237]
+[ext_resource path="res://textures/Tile/Tile_24-256x256.png" type="Texture" id=238]
+[ext_resource path="res://textures/Metal/Metal_06-256x256.png" type="Texture" id=239]
+[ext_resource path="res://textures/Tile/Tile_02-256x256.png" type="Texture" id=240]
+[ext_resource path="res://textures/Plaster/Plaster_14-256x256.png" type="Texture" id=241]
+[ext_resource path="res://textures/Paper/notebook_paper_cyan.png" type="Texture" id=242]
+[ext_resource path="res://textures/Stone/Stone_08-256x256.png" type="Texture" id=243]
+[ext_resource path="res://textures/Tile2/Tile_08-256x256.png" type="Texture" id=244]
+[ext_resource path="res://textures/Metal/Metal_08-256x256.png" type="Texture" id=245]
+[ext_resource path="res://textures/Plaster/Plaster_19-256x256.png" type="Texture" id=246]
+[ext_resource path="res://textures/Plaster/Plaster_04-256x256.png" type="Texture" id=247]
+[ext_resource path="res://textures/Tile2/Tile_16-256x256.png" type="Texture" id=248]
+[ext_resource path="res://textures/Stone/Stone_09-256x256.png" type="Texture" id=249]
+[ext_resource path="res://textures/Roofs/Roofs_02-256x256.png" type="Texture" id=250]
+[ext_resource path="res://textures/Tile2/Tile_20-256x256.png" type="Texture" id=251]
+[ext_resource path="res://textures/Roofs/Roofs_04-256x256.png" type="Texture" id=252]
+[ext_resource path="res://textures/Stone/Stone_10-256x256.png" type="Texture" id=253]
+[ext_resource path="res://textures/Plaster/Plaster_03-256x256.png" type="Texture" id=254]
+[ext_resource path="res://textures/Plaster/Plaster_20-256x256.png" type="Texture" id=255]
+[ext_resource path="res://textures/Metal/Metal_09-256x256.png" type="Texture" id=256]
+[ext_resource path="res://textures/Tile2/Tile_09-256x256.png" type="Texture" id=257]
+[ext_resource path="res://textures/Plaster/Plaster_12-256x256.png" type="Texture" id=258]
+[ext_resource path="res://textures/Plaster/Plaster_13-256x256.png" type="Texture" id=259]
+[ext_resource path="res://textures/Plaster/Plaster_02-256x256.png" type="Texture" id=260]
+[ext_resource path="res://textures/Stone/Stone_11-256x256.png" type="Texture" id=261]
+[ext_resource path="res://textures/Plaster/Plaster_01-256x256.png" type="Texture" id=262]
+[ext_resource path="res://textures/Stone/Stone_12-256x256.png" type="Texture" id=263]
+[ext_resource path="res://textures/Tile2/Tile_10-256x256.png" type="Texture" id=264]
+[ext_resource path="res://textures/Metal/Metal_20-256x256.png" type="Texture" id=265]
+[ext_resource path="res://textures/Tile/Tile_07-256x256.png" type="Texture" id=266]
+[ext_resource path="res://textures/Plaster/Plaster_11-256x256.png" type="Texture" id=267]
+[ext_resource path="res://textures/Metal/Metal_19-256x256.png" type="Texture" id=268]
+[ext_resource path="res://textures/Stone/Stone_13-256x256.png" type="Texture" id=269]
+[ext_resource path="res://textures/Tile2/Tile_11-256x256.png" type="Texture" id=270]
+[ext_resource path="res://textures/Metal/Metal_18-256x256.png" type="Texture" id=271]
+[ext_resource path="res://textures/Stone/Stone_14-256x256.png" type="Texture" id=272]
+[ext_resource path="res://textures/Sand/sand.png" type="Texture" id=273]
+[ext_resource path="res://textures/Roofs/Roofs_06-256x256.png" type="Texture" id=274]
+[ext_resource path="res://textures/Stone/Stone_16-256x256.png" type="Texture" id=275]
+[ext_resource path="res://textures/Metal/Metal_17-256x256.png" type="Texture" id=276]
+[ext_resource path="res://textures/Roofs/Roofs_05-256x256.png" type="Texture" id=277]
+[ext_resource path="res://textures/Bricks/Bricks_22-256x256.png" type="Texture" id=278]
+[ext_resource path="res://textures/Paper/notebook_paper_grey.png" type="Texture" id=279]
+[ext_resource path="res://textures/Plaster/Plaster_15-256x256.png" type="Texture" id=280]
+[ext_resource path="res://textures/Stone/Stone_15-256x256.png" type="Texture" id=281]
+[ext_resource path="res://textures/Tile2/Tile_18-256x256.png" type="Texture" id=282]
+[ext_resource path="res://textures/Tile2/Tile_12-256x256.png" type="Texture" id=283]
+[ext_resource path="res://textures/Metal/Metal_11-256x256.png" type="Texture" id=284]
+[ext_resource path="res://textures/Paper/notebook_paper_orangelime.png" type="Texture" id=285]
+[ext_resource path="res://textures/Metal/Metal_16-256x256.png" type="Texture" id=286]
+[ext_resource path="res://textures/Stone/Stone_17-256x256.png" type="Texture" id=287]
+[ext_resource path="res://textures/Stone/Stone_19-256x256.png" type="Texture" id=288]
+[ext_resource path="res://textures/Plaster/Plaster_10-256x256.png" type="Texture" id=289]
+[ext_resource path="res://textures/Stone/Stone_18-256x256.png" type="Texture" id=290]
+[ext_resource path="res://textures/Bricks/Bricks_21-256x256.png" type="Texture" id=291]
+[ext_resource path="res://textures/Paper/notebook_paper_green.png" type="Texture" id=292]
+[ext_resource path="res://textures/Tile2/Tile_01-256x256.png" type="Texture" id=293]
+[ext_resource path="res://textures/Metal/Metal_15-256x256.png" type="Texture" id=294]
+[ext_resource path="res://textures/Tile2/Tile_13-256x256.png" type="Texture" id=295]
+[ext_resource path="res://textures/Plaster/Plaster_17-256x256.png" type="Texture" id=296]
+[ext_resource path="res://textures/Stone/Stone_20-256x256.png" type="Texture" id=297]
+[ext_resource path="res://textures/Plaster/Plaster_18-256x256.png" type="Texture" id=298]
+[ext_resource path="res://textures/Roofs/Roofs_01-256x256.png" type="Texture" id=299]
+[ext_resource path="res://textures/Tile2/Tile_03-256x256.png" type="Texture" id=300]
+[ext_resource path="res://textures/Metal/Metal_14-256x256.png" type="Texture" id=301]
+[ext_resource path="res://textures/Tile2/Tile_14-256x256.png" type="Texture" id=302]
+[ext_resource path="res://textures/Tile2/Tile_02-256x256.png" type="Texture" id=303]
+[ext_resource path="res://textures/Tile/Tile_05-256x256.png" type="Texture" id=304]
+[ext_resource path="res://textures/Plaster/Plaster_06-256x256.png" type="Texture" id=305]
+[ext_resource path="res://textures/Tile2/Tile_19-256x256.png" type="Texture" id=306]
+[ext_resource path="res://textures/Metal/Metal_01-256x256.png" type="Texture" id=307]
+[ext_resource path="res://textures/Metal/Metal_10-256x256.png" type="Texture" id=308]
+[ext_resource path="res://textures/Paper/notebook_paper_orange.png" type="Texture" id=309]
+[ext_resource path="res://textures/Paper/notebook_paper_limecyan.png" type="Texture" id=310]
+[ext_resource path="res://textures/Plaster/Plaster_05-256x256.png" type="Texture" id=311]
+[ext_resource path="res://textures/Tile2/Tile_04-256x256.png" type="Texture" id=312]
+[ext_resource path="res://textures/Metal/Metal_02-256x256.png" type="Texture" id=313]
+[ext_resource path="res://textures/Tile2/Tile_05-256x256.png" type="Texture" id=314]
+[ext_resource path="res://textures/Tile2/Tile_17-256x256.png" type="Texture" id=315]
+[ext_resource path="res://textures/Plaster/Plaster_16-256x256.png" type="Texture" id=316]
+[ext_resource path="res://textures/Plaster/Plaster_09-256x256.png" type="Texture" id=317]
+[ext_resource path="res://textures/Tile2/Tile_15-256x256.png" type="Texture" id=318]
+[ext_resource path="res://textures/Metal/Metal_05-256x256.png" type="Texture" id=319]
+[ext_resource path="res://textures/Tile/Tile_01-256x256.png" type="Texture" id=320]
+[ext_resource path="res://textures/Tile2/Tile_06-256x256.png" type="Texture" id=321]
+[ext_resource path="res://textures/Roofs/Roofs_07-256x256.png" type="Texture" id=322]
+[ext_resource path="res://textures/Tile/Tile_06-256x256.png" type="Texture" id=323]
+[ext_resource path="res://textures/Bricks/Bricks_10-256x256.png" type="Texture" id=324]
+[ext_resource path="res://textures/Grass/Grass_24-256x256.png" type="Texture" id=325]
+[ext_resource path="res://textures/Bricks/Bricks_02-256x256.png" type="Texture" id=326]
+[ext_resource path="res://textures/Grass/Grass_10-256x256.png" type="Texture" id=327]
+[ext_resource path="res://textures/Tile/Tile_23-256x256.png" type="Texture" id=328]
+[ext_resource path="res://textures/Elements/Elements_04-256x256.png" type="Texture" id=329]
+[ext_resource path="res://textures/Plaster/Plaster_08-256x256.png" type="Texture" id=330]
+[ext_resource path="res://textures/Elements/Elements_10-256x256.png" type="Texture" id=331]
+[ext_resource path="res://textures/Tile/Tile_19-256x256.png" type="Texture" id=332]
+[ext_resource path="res://textures/Tile/Tile_09-256x256.png" type="Texture" id=333]
+[ext_resource path="res://textures/Dirt/Dirt_09-256x256.png" type="Texture" id=334]
+[ext_resource path="res://textures/Elements/Elements_01-256x256.png" type="Texture" id=335]
+[ext_resource path="res://textures/Bricks/Bricks_13-256x256.png" type="Texture" id=336]
+[ext_resource path="res://textures/Brick/Brick_19-256x256.png" type="Texture" id=337]
+[ext_resource path="res://textures/Elements/Elements_02-256x256.png" type="Texture" id=338]
+[ext_resource path="res://textures/prototype/greytexture2.png" type="Texture" id=339]
+[ext_resource path="res://textures/prototype/orange_texture1.png" type="Texture" id=340]
+[ext_resource path="res://textures/prototype/green_texture1.png" type="Texture" id=341]
+[ext_resource path="res://textures/prototype/grey_texture1.png" type="Texture" id=342]
+[ext_resource path="res://textures/Bricks/Bricks_12-256x256.png" type="Texture" id=343]
+[ext_resource path="res://textures/prototype/green_texture2.png" type="Texture" id=344]
+[ext_resource path="res://textures/Dirt/Dirt_16-256x256.png" type="Texture" id=345]
+[ext_resource path="res://textures/Dirt/Dirt_17-256x256.png" type="Texture" id=346]
+[ext_resource path="res://textures/Elements/Elements_09-256x256.png" type="Texture" id=347]
+[ext_resource path="res://textures/Tile/Tile_17-256x256.png" type="Texture" id=348]
 [ext_resource path="res://textures/Brick_Version/Brick_Version_07.png" type="Texture" id=349]
 [ext_resource path="res://textures/blockout/red_light_cross.png" type="Texture" id=350]
 [ext_resource path="res://textures/blockout/yellow_dots.png" type="Texture" id=351]
 [ext_resource path="res://textures/Organic/Organics_02.jpg" type="Texture" id=352]
 [ext_resource path="res://textures/Metal2/Metal_02.png" type="Texture" id=353]
 [ext_resource path="res://textures/Grass2/grass_09.png" type="Texture" id=354]
-[ext_resource path="res://textures/Paper/notebook_paper_yellowblue.png" type="Texture" id=355]
-[ext_resource path="res://textures/Paper/notebook_paper_orangeblue.png" type="Texture" id=356]
+[ext_resource path="res://textures/Grass/Grass_11-256x256.png" type="Texture" id=355]
+[ext_resource path="res://textures/Grass/Grass_14-256x256.png" type="Texture" id=356]
 [ext_resource path="res://textures/Metal2/Metal_05.png" type="Texture" id=357]
 [ext_resource path="res://textures/Grass2/grass_10.png" type="Texture" id=358]
 [ext_resource path="res://textures/blockout/orange_check.png" type="Texture" id=359]
@@ -369,7 +369,7 @@
 [ext_resource path="res://textures/Metal2/Metal_06.png" type="Texture" id=367]
 [ext_resource path="res://textures/Techno/brushed_aluminum_01.jpg" type="Texture" id=368]
 [ext_resource path="res://textures/Grass2/grass_08.png" type="Texture" id=369]
-[ext_resource path="res://textures/Paper/notebook_paper_greenblue.png" type="Texture" id=370]
+[ext_resource path="res://textures/Tile/Tile_25-256x256.png" type="Texture" id=370]
 [ext_resource path="res://textures/blockout/orange_cross.png" type="Texture" id=371]
 [ext_resource path="res://textures/clouds/clouds_03.png" type="Texture" id=372]
 [ext_resource path="res://textures/Black_Asphalt/Black_Asphalt_09.png" type="Texture" id=373]
@@ -378,7 +378,7 @@
 [ext_resource path="res://textures/blockout/orange_light_grid.png" type="Texture" id=376]
 [ext_resource path="res://textures/clouds/clouds_08.png" type="Texture" id=377]
 [ext_resource path="res://textures/Route_66/Route_66_10.png" type="Texture" id=378]
-[ext_resource path="res://textures/Paper/notebook_paper_pinkorange.png" type="Texture" id=379]
+[ext_resource path="res://textures/prototype/black_texture2.png" type="Texture" id=379]
 [ext_resource path="res://textures/blockout/orange_light_check.png" type="Texture" id=380]
 [ext_resource path="res://textures/blockout/purple_light_dots.png" type="Texture" id=381]
 [ext_resource path="res://textures/blockout/red_light_check.png" type="Texture" id=382]
@@ -391,7 +391,7 @@
 [ext_resource path="res://textures/blockout/green_light_grid.png" type="Texture" id=389]
 [ext_resource path="res://textures/Metal2/Metal_03.png" type="Texture" id=390]
 [ext_resource path="res://textures/blockout/red_check.png" type="Texture" id=391]
-[ext_resource path="res://textures/Paper/notebook_paper_pinklime.png" type="Texture" id=392]
+[ext_resource path="res://textures/Dirt/Dirt_18-256x256.png" type="Texture" id=392]
 [ext_resource path="res://textures/blockout/yellow_light_check.png" type="Texture" id=393]
 [ext_resource path="res://textures/Brick_Version/Brick_Version_02.png" type="Texture" id=394]
 [ext_resource path="res://textures/blockout/black_check.png" type="Texture" id=395]
@@ -402,7 +402,7 @@
 [ext_resource path="res://textures/Brick_Version/Brick_Version_11.png" type="Texture" id=400]
 [ext_resource path="res://textures/Route_66/Route_66_09.png" type="Texture" id=401]
 [ext_resource path="res://textures/blockout/blue_cross.png" type="Texture" id=402]
-[ext_resource path="res://textures/Paper/notebook_paper_limeblue.png" type="Texture" id=403]
+[ext_resource path="res://textures/Paper/notebook_paper_blue.png" type="Texture" id=403]
 [ext_resource path="res://textures/blockout/blue_check.png" type="Texture" id=404]
 [ext_resource path="res://textures/clouds/clouds_02.png" type="Texture" id=405]
 [ext_resource path="res://textures/Stone2/Toonstone_01.jpg" type="Texture" id=406]
@@ -420,7 +420,7 @@
 [ext_resource path="res://textures/Brick_Version/Brick_Version_03.png" type="Texture" id=418]
 [ext_resource path="res://textures/blockout/black_dots.png" type="Texture" id=419]
 [ext_resource path="res://textures/Brick_Version/Brick_Version_08.png" type="Texture" id=420]
-[ext_resource path="res://textures/Paper/notebook_paper_purpleblue.png" type="Texture" id=421]
+[ext_resource path="res://textures/Paper/notebook_paper_bluegreen.png" type="Texture" id=421]
 [ext_resource path="res://textures/Brick_Version/Brick_Version_04.png" type="Texture" id=422]
 [ext_resource path="res://textures/Building/Metal_01.jpg" type="Texture" id=423]
 [ext_resource path="res://textures/blockout/aqua_light_grid.png" type="Texture" id=424]
@@ -448,7 +448,7 @@
 [ext_resource path="res://textures/blockout/purple_light_check.png" type="Texture" id=446]
 [ext_resource path="res://textures/Grass2/grass_02.png" type="Texture" id=447]
 [ext_resource path="res://textures/blockout/green_light_check.png" type="Texture" id=448]
-[ext_resource path="res://textures/Paper/notebook_paper_dark.png" type="Texture" id=449]
+[ext_resource path="res://textures/Roofs/Roofs_10-256x256.png" type="Texture" id=449]
 [ext_resource path="res://textures/blockout/white_check.png" type="Texture" id=450]
 [ext_resource path="res://textures/Crate_Factory/crate_factory_02.png" type="Texture" id=451]
 [ext_resource path="res://textures/blockout/blue_light_grid.png" type="Texture" id=452]
@@ -458,7 +458,7 @@
 [ext_resource path="res://textures/blockout/purple_check.png" type="Texture" id=456]
 [ext_resource path="res://textures/Crate_Factory/crate_factory_07.png" type="Texture" id=457]
 [ext_resource path="res://textures/clouds/clouds_10.png" type="Texture" id=458]
-[ext_resource path="res://textures/Paper/notebook_paper_whiteblue.png" type="Texture" id=459]
+[ext_resource path="res://textures/Roofs/Roofs_22-256x256.png" type="Texture" id=459]
 [ext_resource path="res://textures/blockout/blue_light_dots.png" type="Texture" id=460]
 [ext_resource path="res://textures/blockout/white_cross.png" type="Texture" id=461]
 [ext_resource path="res://textures/Organic/Organics_01.jpg" type="Texture" id=462]
@@ -467,7 +467,7 @@
 [ext_resource path="res://textures/Stone2/LavaGlow_06.jpg" type="Texture" id=465]
 [ext_resource path="res://textures/Misc/Explosion_01.jpg" type="Texture" id=466]
 [ext_resource path="res://textures/blockout/red_light_dots.png" type="Texture" id=467]
-[ext_resource path="res://textures/Paper/notebook_paper_pinkgrey.png" type="Texture" id=468]
+[ext_resource path="res://textures/Bricks/Bricks_09-256x256.png" type="Texture" id=468]
 [ext_resource path="res://textures/Road_Texture/Road_Texture_02.png" type="Texture" id=469]
 [ext_resource path="res://textures/Route_66/Route_66_03.png" type="Texture" id=470]
 [ext_resource path="res://textures/Brick_Version/Brick_Version_18.png" type="Texture" id=471]
@@ -485,7 +485,7 @@
 [ext_resource path="res://textures/blockout/green_cross.png" type="Texture" id=483]
 [ext_resource path="res://textures/blockout/gray_dots.png" type="Texture" id=484]
 [ext_resource path="res://textures/blockout/purple_cross.png" type="Texture" id=485]
-[ext_resource path="res://textures/Paper/notebook_paper_pinkgreen.png" type="Texture" id=486]
+[ext_resource path="res://textures/Grass/Grass_03-256x256.png" type="Texture" id=486]
 [ext_resource path="res://textures/blockout/aqua_dots.png" type="Texture" id=487]
 [ext_resource path="res://textures/Misc/Electricity_01.jpg" type="Texture" id=488]
 [ext_resource path="res://textures/Route_66/Route_66_08.png" type="Texture" id=489]
@@ -510,7 +510,7 @@
 [ext_resource path="res://textures/Brick_Version/Brick_Version_12.png" type="Texture" id=508]
 [ext_resource path="res://textures/Road_Texture/Road_Texture_01.png" type="Texture" id=509]
 [ext_resource path="res://textures/Brick_Version/Brick_Version_14.png" type="Texture" id=510]
-[ext_resource path="res://textures/Paper/notebook_paper_white.png" type="Texture" id=511]
+[ext_resource path="res://textures/Roofs/Roofs_09-256x256.png" type="Texture" id=511]
 [ext_resource path="res://textures/Stone2/Ground_01.jpg" type="Texture" id=512]
 [ext_resource path="res://textures/Misc/Voyager3_16.jpg" type="Texture" id=513]
 
@@ -519,723 +519,723 @@ flags_unshaded = true
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_unshaded = true
-albedo_texture = ExtResource( 30 )
+albedo_texture = ExtResource( 157 )
 
 [sub_resource type="SpatialMaterial" id=3]
 flags_unshaded = true
-albedo_texture = ExtResource( 124 )
+albedo_texture = ExtResource( 379 )
 
 [sub_resource type="SpatialMaterial" id=4]
 flags_unshaded = true
-albedo_texture = ExtResource( 205 )
+albedo_texture = ExtResource( 180 )
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_unshaded = true
-albedo_texture = ExtResource( 140 )
+albedo_texture = ExtResource( 164 )
 
 [sub_resource type="SpatialMaterial" id=6]
 flags_unshaded = true
-albedo_texture = ExtResource( 36 )
+albedo_texture = ExtResource( 111 )
 
 [sub_resource type="SpatialMaterial" id=7]
 flags_unshaded = true
-albedo_texture = ExtResource( 133 )
+albedo_texture = ExtResource( 137 )
 
 [sub_resource type="SpatialMaterial" id=8]
 flags_unshaded = true
-albedo_texture = ExtResource( 163 )
+albedo_texture = ExtResource( 65 )
 
 [sub_resource type="SpatialMaterial" id=9]
 flags_unshaded = true
-albedo_texture = ExtResource( 225 )
+albedo_texture = ExtResource( 64 )
 
 [sub_resource type="SpatialMaterial" id=10]
 flags_unshaded = true
-albedo_texture = ExtResource( 121 )
+albedo_texture = ExtResource( 54 )
 
 [sub_resource type="SpatialMaterial" id=11]
 flags_unshaded = true
-albedo_texture = ExtResource( 75 )
+albedo_texture = ExtResource( 327 )
 
 [sub_resource type="SpatialMaterial" id=12]
 flags_unshaded = true
-albedo_texture = ExtResource( 127 )
+albedo_texture = ExtResource( 355 )
 
 [sub_resource type="SpatialMaterial" id=13]
 flags_unshaded = true
-albedo_texture = ExtResource( 139 )
+albedo_texture = ExtResource( 69 )
 
 [sub_resource type="SpatialMaterial" id=14]
 flags_unshaded = true
-albedo_texture = ExtResource( 277 )
+albedo_texture = ExtResource( 52 )
 
 [sub_resource type="SpatialMaterial" id=15]
 flags_unshaded = true
-albedo_texture = ExtResource( 129 )
+albedo_texture = ExtResource( 195 )
 
 [sub_resource type="SpatialMaterial" id=16]
 flags_unshaded = true
-albedo_texture = ExtResource( 132 )
+albedo_texture = ExtResource( 356 )
 
 [sub_resource type="SpatialMaterial" id=17]
 flags_unshaded = true
-albedo_texture = ExtResource( 100 )
+albedo_texture = ExtResource( 45 )
 
 [sub_resource type="SpatialMaterial" id=18]
 flags_unshaded = true
-albedo_texture = ExtResource( 144 )
+albedo_texture = ExtResource( 115 )
 
 [sub_resource type="SpatialMaterial" id=19]
 flags_unshaded = true
-albedo_texture = ExtResource( 122 )
+albedo_texture = ExtResource( 49 )
 
 [sub_resource type="SpatialMaterial" id=20]
 flags_unshaded = true
-albedo_texture = ExtResource( 308 )
+albedo_texture = ExtResource( 93 )
 
 [sub_resource type="SpatialMaterial" id=21]
 flags_unshaded = true
-albedo_texture = ExtResource( 327 )
+albedo_texture = ExtResource( 76 )
 
 [sub_resource type="SpatialMaterial" id=22]
 flags_unshaded = true
-albedo_texture = ExtResource( 60 )
+albedo_texture = ExtResource( 83 )
 
 [sub_resource type="SpatialMaterial" id=23]
 flags_unshaded = true
-albedo_texture = ExtResource( 67 )
+albedo_texture = ExtResource( 99 )
 
 [sub_resource type="SpatialMaterial" id=24]
 flags_unshaded = true
-albedo_texture = ExtResource( 153 )
+albedo_texture = ExtResource( 94 )
 
 [sub_resource type="SpatialMaterial" id=25]
 flags_unshaded = true
-albedo_texture = ExtResource( 321 )
+albedo_texture = ExtResource( 167 )
 
 [sub_resource type="SpatialMaterial" id=26]
 flags_unshaded = true
-albedo_texture = ExtResource( 125 )
+albedo_texture = ExtResource( 196 )
 
 [sub_resource type="SpatialMaterial" id=27]
 flags_unshaded = true
-albedo_texture = ExtResource( 180 )
+albedo_texture = ExtResource( 325 )
 
 [sub_resource type="SpatialMaterial" id=28]
 flags_unshaded = true
-albedo_texture = ExtResource( 78 )
+albedo_texture = ExtResource( 163 )
 
 [sub_resource type="SpatialMaterial" id=29]
 flags_unshaded = true
-albedo_texture = ExtResource( 115 )
+albedo_texture = ExtResource( 256 )
 
 [sub_resource type="SpatialMaterial" id=30]
 flags_unshaded = true
-albedo_texture = ExtResource( 74 )
+albedo_texture = ExtResource( 308 )
 
 [sub_resource type="SpatialMaterial" id=31]
 flags_unshaded = true
-albedo_texture = ExtResource( 213 )
+albedo_texture = ExtResource( 284 )
 
 [sub_resource type="SpatialMaterial" id=32]
 flags_unshaded = true
-albedo_texture = ExtResource( 116 )
+albedo_texture = ExtResource( 97 )
 
 [sub_resource type="SpatialMaterial" id=33]
 flags_unshaded = true
-albedo_texture = ExtResource( 128 )
+albedo_texture = ExtResource( 230 )
 
 [sub_resource type="SpatialMaterial" id=34]
 flags_unshaded = true
-albedo_texture = ExtResource( 278 )
+albedo_texture = ExtResource( 245 )
 
 [sub_resource type="SpatialMaterial" id=35]
 flags_unshaded = true
-albedo_texture = ExtResource( 273 )
+albedo_texture = ExtResource( 166 )
 
 [sub_resource type="SpatialMaterial" id=36]
 flags_unshaded = true
-albedo_texture = ExtResource( 256 )
+albedo_texture = ExtResource( 53 )
 
 [sub_resource type="SpatialMaterial" id=37]
 flags_unshaded = true
-albedo_texture = ExtResource( 218 )
+albedo_texture = ExtResource( 199 )
 
 [sub_resource type="SpatialMaterial" id=38]
 flags_unshaded = true
-albedo_texture = ExtResource( 279 )
+albedo_texture = ExtResource( 112 )
 
 [sub_resource type="SpatialMaterial" id=39]
 flags_unshaded = true
-albedo_texture = ExtResource( 106 )
+albedo_texture = ExtResource( 239 )
 
 [sub_resource type="SpatialMaterial" id=40]
 flags_unshaded = true
-albedo_texture = ExtResource( 338 )
+albedo_texture = ExtResource( 319 )
 
 [sub_resource type="SpatialMaterial" id=41]
 flags_unshaded = true
-albedo_texture = ExtResource( 314 )
+albedo_texture = ExtResource( 313 )
 
 [sub_resource type="SpatialMaterial" id=42]
 flags_unshaded = true
-albedo_texture = ExtResource( 238 )
+albedo_texture = ExtResource( 307 )
 
 [sub_resource type="SpatialMaterial" id=43]
 flags_unshaded = true
-albedo_texture = ExtResource( 105 )
+albedo_texture = ExtResource( 301 )
 
 [sub_resource type="SpatialMaterial" id=44]
 flags_unshaded = true
-albedo_texture = ExtResource( 341 )
+albedo_texture = ExtResource( 294 )
 
 [sub_resource type="SpatialMaterial" id=45]
 flags_unshaded = true
-albedo_texture = ExtResource( 257 )
+albedo_texture = ExtResource( 286 )
 
 [sub_resource type="SpatialMaterial" id=46]
 flags_unshaded = true
-albedo_texture = ExtResource( 298 )
+albedo_texture = ExtResource( 276 )
 
 [sub_resource type="SpatialMaterial" id=47]
 flags_unshaded = true
-albedo_texture = ExtResource( 313 )
+albedo_texture = ExtResource( 271 )
 
 [sub_resource type="SpatialMaterial" id=48]
 flags_unshaded = true
-albedo_texture = ExtResource( 101 )
+albedo_texture = ExtResource( 201 )
 
 [sub_resource type="SpatialMaterial" id=49]
 flags_unshaded = true
-albedo_texture = ExtResource( 134 )
+albedo_texture = ExtResource( 268 )
 
 [sub_resource type="SpatialMaterial" id=50]
 flags_unshaded = true
-albedo_texture = ExtResource( 332 )
+albedo_texture = ExtResource( 265 )
 
 [sub_resource type="SpatialMaterial" id=51]
 flags_unshaded = true
-albedo_texture = ExtResource( 316 )
+albedo_texture = ExtResource( 262 )
 
 [sub_resource type="SpatialMaterial" id=52]
 flags_unshaded = true
-albedo_texture = ExtResource( 299 )
+albedo_texture = ExtResource( 260 )
 
 [sub_resource type="SpatialMaterial" id=53]
 flags_unshaded = true
-albedo_texture = ExtResource( 200 )
+albedo_texture = ExtResource( 254 )
 
 [sub_resource type="SpatialMaterial" id=54]
 flags_unshaded = true
-albedo_texture = ExtResource( 319 )
+albedo_texture = ExtResource( 247 )
 
 [sub_resource type="SpatialMaterial" id=55]
 flags_unshaded = true
-albedo_texture = ExtResource( 325 )
+albedo_texture = ExtResource( 311 )
 
 [sub_resource type="SpatialMaterial" id=56]
 flags_unshaded = true
-albedo_texture = ExtResource( 274 )
+albedo_texture = ExtResource( 305 )
 
 [sub_resource type="SpatialMaterial" id=57]
 flags_unshaded = true
-albedo_texture = ExtResource( 283 )
+albedo_texture = ExtResource( 59 )
 
 [sub_resource type="SpatialMaterial" id=58]
 flags_unshaded = true
-albedo_texture = ExtResource( 70 )
+albedo_texture = ExtResource( 330 )
 
 [sub_resource type="SpatialMaterial" id=59]
 flags_unshaded = true
-albedo_texture = ExtResource( 302 )
+albedo_texture = ExtResource( 130 )
 
 [sub_resource type="SpatialMaterial" id=60]
 flags_unshaded = true
-albedo_texture = ExtResource( 229 )
+albedo_texture = ExtResource( 317 )
 
 [sub_resource type="SpatialMaterial" id=61]
 flags_unshaded = true
-albedo_texture = ExtResource( 159 )
+albedo_texture = ExtResource( 289 )
 
 [sub_resource type="SpatialMaterial" id=62]
 flags_unshaded = true
-albedo_texture = ExtResource( 91 )
+albedo_texture = ExtResource( 267 )
 
 [sub_resource type="SpatialMaterial" id=63]
 flags_unshaded = true
-albedo_texture = ExtResource( 269 )
+albedo_texture = ExtResource( 258 )
 
 [sub_resource type="SpatialMaterial" id=64]
 flags_unshaded = true
-albedo_texture = ExtResource( 45 )
+albedo_texture = ExtResource( 259 )
 
 [sub_resource type="SpatialMaterial" id=65]
 flags_unshaded = true
-albedo_texture = ExtResource( 150 )
+albedo_texture = ExtResource( 241 )
 
 [sub_resource type="SpatialMaterial" id=66]
 flags_unshaded = true
-albedo_texture = ExtResource( 73 )
+albedo_texture = ExtResource( 280 )
 
 [sub_resource type="SpatialMaterial" id=67]
 flags_unshaded = true
-albedo_texture = ExtResource( 259 )
+albedo_texture = ExtResource( 316 )
 
 [sub_resource type="SpatialMaterial" id=68]
 flags_unshaded = true
-albedo_texture = ExtResource( 254 )
+albedo_texture = ExtResource( 296 )
 
 [sub_resource type="SpatialMaterial" id=69]
 flags_unshaded = true
-albedo_texture = ExtResource( 194 )
+albedo_texture = ExtResource( 298 )
 
 [sub_resource type="SpatialMaterial" id=70]
 flags_unshaded = true
-albedo_texture = ExtResource( 114 )
+albedo_texture = ExtResource( 207 )
 
 [sub_resource type="SpatialMaterial" id=71]
 flags_unshaded = true
-albedo_texture = ExtResource( 209 )
+albedo_texture = ExtResource( 246 )
 
 [sub_resource type="SpatialMaterial" id=72]
 flags_unshaded = true
-albedo_texture = ExtResource( 92 )
+albedo_texture = ExtResource( 255 )
 
 [sub_resource type="SpatialMaterial" id=73]
 flags_unshaded = true
-albedo_texture = ExtResource( 226 )
+albedo_texture = ExtResource( 299 )
 
 [sub_resource type="SpatialMaterial" id=74]
 flags_unshaded = true
-albedo_texture = ExtResource( 242 )
+albedo_texture = ExtResource( 250 )
 
 [sub_resource type="SpatialMaterial" id=75]
 flags_unshaded = true
-albedo_texture = ExtResource( 98 )
+albedo_texture = ExtResource( 141 )
 
 [sub_resource type="SpatialMaterial" id=76]
 flags_unshaded = true
-albedo_texture = ExtResource( 53 )
+albedo_texture = ExtResource( 252 )
 
 [sub_resource type="SpatialMaterial" id=77]
 flags_unshaded = true
-albedo_texture = ExtResource( 245 )
+albedo_texture = ExtResource( 277 )
 
 [sub_resource type="SpatialMaterial" id=78]
 flags_unshaded = true
-albedo_texture = ExtResource( 172 )
+albedo_texture = ExtResource( 274 )
 
 [sub_resource type="SpatialMaterial" id=79]
 flags_unshaded = true
-albedo_texture = ExtResource( 169 )
+albedo_texture = ExtResource( 322 )
 
 [sub_resource type="SpatialMaterial" id=80]
 flags_unshaded = true
-albedo_texture = ExtResource( 212 )
+albedo_texture = ExtResource( 128 )
 
 [sub_resource type="SpatialMaterial" id=81]
 flags_unshaded = true
-albedo_texture = ExtResource( 179 )
+albedo_texture = ExtResource( 48 )
 
 [sub_resource type="SpatialMaterial" id=82]
 flags_unshaded = true
-albedo_texture = ExtResource( 177 )
+albedo_texture = ExtResource( 511 )
 
 [sub_resource type="SpatialMaterial" id=83]
 flags_unshaded = true
-albedo_texture = ExtResource( 42 )
+albedo_texture = ExtResource( 449 )
 
 [sub_resource type="SpatialMaterial" id=84]
 flags_unshaded = true
-albedo_texture = ExtResource( 138 )
+albedo_texture = ExtResource( 123 )
 
 [sub_resource type="SpatialMaterial" id=85]
 flags_unshaded = true
-albedo_texture = ExtResource( 145 )
+albedo_texture = ExtResource( 77 )
 
 [sub_resource type="SpatialMaterial" id=86]
 flags_unshaded = true
-albedo_texture = ExtResource( 66 )
+albedo_texture = ExtResource( 185 )
 
 [sub_resource type="SpatialMaterial" id=87]
 flags_unshaded = true
-albedo_texture = ExtResource( 329 )
+albedo_texture = ExtResource( 11 )
 
 [sub_resource type="SpatialMaterial" id=88]
 flags_unshaded = true
-albedo_texture = ExtResource( 147 )
+albedo_texture = ExtResource( 91 )
 
 [sub_resource type="SpatialMaterial" id=89]
 flags_unshaded = true
-albedo_texture = ExtResource( 181 )
+albedo_texture = ExtResource( 142 )
 
 [sub_resource type="SpatialMaterial" id=90]
 flags_unshaded = true
-albedo_texture = ExtResource( 146 )
+albedo_texture = ExtResource( 178 )
 
 [sub_resource type="SpatialMaterial" id=91]
 flags_unshaded = true
-albedo_texture = ExtResource( 240 )
+albedo_texture = ExtResource( 68 )
 
 [sub_resource type="SpatialMaterial" id=92]
 flags_unshaded = true
-albedo_texture = ExtResource( 268 )
+albedo_texture = ExtResource( 116 )
 
 [sub_resource type="SpatialMaterial" id=93]
 flags_unshaded = true
-albedo_texture = ExtResource( 303 )
+albedo_texture = ExtResource( 104 )
 
 [sub_resource type="SpatialMaterial" id=94]
 flags_unshaded = true
-albedo_texture = ExtResource( 123 )
+albedo_texture = ExtResource( 133 )
 
 [sub_resource type="SpatialMaterial" id=95]
 flags_unshaded = true
-albedo_texture = ExtResource( 130 )
+albedo_texture = ExtResource( 134 )
 
 [sub_resource type="SpatialMaterial" id=96]
 flags_unshaded = true
-albedo_texture = ExtResource( 119 )
+albedo_texture = ExtResource( 459 )
 
 [sub_resource type="SpatialMaterial" id=97]
 flags_unshaded = true
-albedo_texture = ExtResource( 210 )
+albedo_texture = ExtResource( 92 )
 
 [sub_resource type="SpatialMaterial" id=98]
 flags_unshaded = true
-albedo_texture = ExtResource( 108 )
+albedo_texture = ExtResource( 151 )
 
 [sub_resource type="SpatialMaterial" id=99]
 flags_unshaded = true
-albedo_texture = ExtResource( 142 )
+albedo_texture = ExtResource( 149 )
 
 [sub_resource type="SpatialMaterial" id=100]
 flags_unshaded = true
-albedo_texture = ExtResource( 143 )
+albedo_texture = ExtResource( 148 )
 
 [sub_resource type="SpatialMaterial" id=101]
 flags_unshaded = true
-albedo_texture = ExtResource( 239 )
+albedo_texture = ExtResource( 150 )
 
 [sub_resource type="SpatialMaterial" id=102]
 flags_unshaded = true
-albedo_texture = ExtResource( 237 )
+albedo_texture = ExtResource( 152 )
 
 [sub_resource type="SpatialMaterial" id=103]
 flags_unshaded = true
-albedo_texture = ExtResource( 266 )
+albedo_texture = ExtResource( 89 )
 
 [sub_resource type="SpatialMaterial" id=104]
 flags_unshaded = true
-albedo_texture = ExtResource( 185 )
+albedo_texture = ExtResource( 147 )
 
 [sub_resource type="SpatialMaterial" id=105]
 flags_unshaded = true
-albedo_texture = ExtResource( 175 )
+albedo_texture = ExtResource( 145 )
 
 [sub_resource type="SpatialMaterial" id=106]
 flags_unshaded = true
-albedo_texture = ExtResource( 173 )
+albedo_texture = ExtResource( 146 )
 
 [sub_resource type="SpatialMaterial" id=107]
 flags_unshaded = true
-albedo_texture = ExtResource( 189 )
+albedo_texture = ExtResource( 81 )
 
 [sub_resource type="SpatialMaterial" id=108]
 flags_unshaded = true
-albedo_texture = ExtResource( 186 )
+albedo_texture = ExtResource( 243 )
 
 [sub_resource type="SpatialMaterial" id=109]
 flags_unshaded = true
-albedo_texture = ExtResource( 174 )
+albedo_texture = ExtResource( 249 )
 
 [sub_resource type="SpatialMaterial" id=110]
 flags_unshaded = true
-albedo_texture = ExtResource( 168 )
+albedo_texture = ExtResource( 253 )
 
 [sub_resource type="SpatialMaterial" id=111]
 flags_unshaded = true
-albedo_texture = ExtResource( 72 )
+albedo_texture = ExtResource( 261 )
 
 [sub_resource type="SpatialMaterial" id=112]
 flags_unshaded = true
-albedo_texture = ExtResource( 170 )
+albedo_texture = ExtResource( 263 )
 
 [sub_resource type="SpatialMaterial" id=113]
 flags_unshaded = true
-albedo_texture = ExtResource( 178 )
+albedo_texture = ExtResource( 269 )
 
 [sub_resource type="SpatialMaterial" id=114]
 flags_unshaded = true
-albedo_texture = ExtResource( 28 )
+albedo_texture = ExtResource( 341 )
 
 [sub_resource type="SpatialMaterial" id=115]
 flags_unshaded = true
-albedo_texture = ExtResource( 201 )
+albedo_texture = ExtResource( 183 )
 
 [sub_resource type="SpatialMaterial" id=116]
 flags_unshaded = true
-albedo_texture = ExtResource( 90 )
+albedo_texture = ExtResource( 272 )
 
 [sub_resource type="SpatialMaterial" id=117]
 flags_unshaded = true
-albedo_texture = ExtResource( 230 )
+albedo_texture = ExtResource( 281 )
 
 [sub_resource type="SpatialMaterial" id=118]
 flags_unshaded = true
-albedo_texture = ExtResource( 64 )
+albedo_texture = ExtResource( 275 )
 
 [sub_resource type="SpatialMaterial" id=119]
 flags_unshaded = true
-albedo_texture = ExtResource( 85 )
+albedo_texture = ExtResource( 287 )
 
 [sub_resource type="SpatialMaterial" id=120]
 flags_unshaded = true
-albedo_texture = ExtResource( 267 )
+albedo_texture = ExtResource( 290 )
 
 [sub_resource type="SpatialMaterial" id=121]
 flags_unshaded = true
-albedo_texture = ExtResource( 336 )
+albedo_texture = ExtResource( 288 )
 
 [sub_resource type="SpatialMaterial" id=122]
 flags_unshaded = true
-albedo_texture = ExtResource( 47 )
+albedo_texture = ExtResource( 297 )
 
 [sub_resource type="SpatialMaterial" id=123]
 flags_unshaded = true
-albedo_texture = ExtResource( 88 )
+albedo_texture = ExtResource( 293 )
 
 [sub_resource type="SpatialMaterial" id=124]
 flags_unshaded = true
-albedo_texture = ExtResource( 87 )
+albedo_texture = ExtResource( 303 )
 
 [sub_resource type="SpatialMaterial" id=125]
 flags_unshaded = true
-albedo_texture = ExtResource( 63 )
+albedo_texture = ExtResource( 300 )
 
 [sub_resource type="SpatialMaterial" id=126]
 flags_unshaded = true
-albedo_texture = ExtResource( 342 )
+albedo_texture = ExtResource( 61 )
 
 [sub_resource type="SpatialMaterial" id=127]
 flags_unshaded = true
-albedo_texture = ExtResource( 62 )
+albedo_texture = ExtResource( 312 )
 
 [sub_resource type="SpatialMaterial" id=128]
 flags_unshaded = true
-albedo_texture = ExtResource( 258 )
+albedo_texture = ExtResource( 314 )
 
 [sub_resource type="SpatialMaterial" id=129]
 flags_unshaded = true
-albedo_texture = ExtResource( 339 )
+albedo_texture = ExtResource( 321 )
 
 [sub_resource type="SpatialMaterial" id=130]
 flags_unshaded = true
-albedo_texture = ExtResource( 300 )
+albedo_texture = ExtResource( 153 )
 
 [sub_resource type="SpatialMaterial" id=131]
 flags_unshaded = true
-albedo_texture = ExtResource( 152 )
+albedo_texture = ExtResource( 244 )
 
 [sub_resource type="SpatialMaterial" id=132]
 flags_unshaded = true
-albedo_texture = ExtResource( 318 )
+albedo_texture = ExtResource( 257 )
 
 [sub_resource type="SpatialMaterial" id=133]
 flags_unshaded = true
-albedo_texture = ExtResource( 317 )
+albedo_texture = ExtResource( 264 )
 
 [sub_resource type="SpatialMaterial" id=134]
 flags_unshaded = true
-albedo_texture = ExtResource( 37 )
+albedo_texture = ExtResource( 270 )
 
 [sub_resource type="SpatialMaterial" id=135]
 flags_unshaded = true
-albedo_texture = ExtResource( 183 )
+albedo_texture = ExtResource( 283 )
 
 [sub_resource type="SpatialMaterial" id=136]
 flags_unshaded = true
-albedo_texture = ExtResource( 182 )
+albedo_texture = ExtResource( 295 )
 
 [sub_resource type="SpatialMaterial" id=137]
 flags_unshaded = true
-albedo_texture = ExtResource( 340 )
+albedo_texture = ExtResource( 158 )
 
 [sub_resource type="SpatialMaterial" id=138]
 flags_unshaded = true
-albedo_texture = ExtResource( 65 )
+albedo_texture = ExtResource( 302 )
 
 [sub_resource type="SpatialMaterial" id=139]
 flags_unshaded = true
-albedo_texture = ExtResource( 54 )
+albedo_texture = ExtResource( 318 )
 
 [sub_resource type="SpatialMaterial" id=140]
 flags_unshaded = true
-albedo_texture = ExtResource( 193 )
+albedo_texture = ExtResource( 248 )
 
 [sub_resource type="SpatialMaterial" id=141]
 flags_unshaded = true
-albedo_texture = ExtResource( 309 )
+albedo_texture = ExtResource( 315 )
 
 [sub_resource type="SpatialMaterial" id=142]
 flags_unshaded = true
-albedo_texture = ExtResource( 323 )
+albedo_texture = ExtResource( 282 )
 
 [sub_resource type="SpatialMaterial" id=143]
 flags_unshaded = true
-albedo_texture = ExtResource( 252 )
+albedo_texture = ExtResource( 306 )
 
 [sub_resource type="SpatialMaterial" id=144]
 flags_unshaded = true
-albedo_texture = ExtResource( 246 )
+albedo_texture = ExtResource( 251 )
 
 [sub_resource type="SpatialMaterial" id=145]
 flags_unshaded = true
-albedo_texture = ExtResource( 251 )
+albedo_texture = ExtResource( 320 )
 
 [sub_resource type="SpatialMaterial" id=146]
 flags_unshaded = true
-albedo_texture = ExtResource( 215 )
+albedo_texture = ExtResource( 240 )
 
 [sub_resource type="SpatialMaterial" id=147]
 flags_unshaded = true
-albedo_texture = ExtResource( 99 )
+albedo_texture = ExtResource( 184 )
 
 [sub_resource type="SpatialMaterial" id=148]
 flags_unshaded = true
-albedo_texture = ExtResource( 346 )
+albedo_texture = ExtResource( 60 )
 
 [sub_resource type="SpatialMaterial" id=149]
 flags_unshaded = true
-albedo_texture = ExtResource( 156 )
+albedo_texture = ExtResource( 121 )
 
 [sub_resource type="SpatialMaterial" id=150]
 flags_unshaded = true
-albedo_texture = ExtResource( 155 )
+albedo_texture = ExtResource( 304 )
 
 [sub_resource type="SpatialMaterial" id=151]
 flags_unshaded = true
-albedo_texture = ExtResource( 250 )
+albedo_texture = ExtResource( 323 )
 
 [sub_resource type="SpatialMaterial" id=152]
 flags_unshaded = true
-albedo_texture = ExtResource( 263 )
+albedo_texture = ExtResource( 266 )
 
 [sub_resource type="SpatialMaterial" id=153]
 flags_unshaded = true
-albedo_texture = ExtResource( 294 )
+albedo_texture = ExtResource( 165 )
 
 [sub_resource type="SpatialMaterial" id=154]
 flags_unshaded = true
-albedo_texture = ExtResource( 249 )
+albedo_texture = ExtResource( 333 )
 
 [sub_resource type="SpatialMaterial" id=155]
 flags_unshaded = true
-albedo_texture = ExtResource( 113 )
+albedo_texture = ExtResource( 75 )
 
 [sub_resource type="SpatialMaterial" id=156]
 flags_unshaded = true
-albedo_texture = ExtResource( 112 )
+albedo_texture = ExtResource( 176 )
 
 [sub_resource type="SpatialMaterial" id=157]
 flags_unshaded = true
-albedo_texture = ExtResource( 80 )
+albedo_texture = ExtResource( 204 )
 
 [sub_resource type="SpatialMaterial" id=158]
 flags_unshaded = true
-albedo_texture = ExtResource( 79 )
+albedo_texture = ExtResource( 179 )
 
 [sub_resource type="SpatialMaterial" id=159]
 flags_unshaded = true
-albedo_texture = ExtResource( 345 )
+albedo_texture = ExtResource( 84 )
 
 [sub_resource type="SpatialMaterial" id=160]
 flags_unshaded = true
-albedo_texture = ExtResource( 158 )
+albedo_texture = ExtResource( 139 )
 
 [sub_resource type="SpatialMaterial" id=161]
 flags_unshaded = true
-albedo_texture = ExtResource( 157 )
+albedo_texture = ExtResource( 119 )
 
 [sub_resource type="SpatialMaterial" id=162]
 flags_unshaded = true
-albedo_texture = ExtResource( 248 )
+albedo_texture = ExtResource( 143 )
 
 [sub_resource type="SpatialMaterial" id=163]
 flags_unshaded = true
-albedo_texture = ExtResource( 97 )
+albedo_texture = ExtResource( 348 )
 
 [sub_resource type="SpatialMaterial" id=164]
 flags_unshaded = true
-albedo_texture = ExtResource( 236 )
+albedo_texture = ExtResource( 177 )
 
 [sub_resource type="SpatialMaterial" id=165]
 flags_unshaded = true
-albedo_texture = ExtResource( 235 )
+albedo_texture = ExtResource( 332 )
 
 [sub_resource type="SpatialMaterial" id=166]
 flags_unshaded = true
-albedo_texture = ExtResource( 293 )
+albedo_texture = ExtResource( 109 )
 
 [sub_resource type="SpatialMaterial" id=167]
 flags_unshaded = true
-albedo_texture = ExtResource( 292 )
+albedo_texture = ExtResource( 107 )
 
 [sub_resource type="SpatialMaterial" id=168]
 flags_unshaded = true
-albedo_texture = ExtResource( 57 )
+albedo_texture = ExtResource( 78 )
 
 [sub_resource type="SpatialMaterial" id=169]
 flags_unshaded = true
-albedo_texture = ExtResource( 253 )
+albedo_texture = ExtResource( 328 )
 
 [sub_resource type="SpatialMaterial" id=170]
 flags_unshaded = true
-albedo_texture = ExtResource( 343 )
+albedo_texture = ExtResource( 98 )
 
 [sub_resource type="SpatialMaterial" id=171]
 flags_unshaded = true
-albedo_texture = ExtResource( 244 )
+albedo_texture = ExtResource( 238 )
 
 [sub_resource type="SpatialMaterial" id=172]
 flags_unshaded = true
-albedo_texture = ExtResource( 120 )
+albedo_texture = ExtResource( 370 )
 
 [sub_resource type="SpatialMaterial" id=173]
 flags_unshaded = true
-albedo_texture = ExtResource( 208 )
+albedo_texture = ExtResource( 125 )
 
 [sub_resource type="SpatialMaterial" id=174]
 flags_unshaded = true
-albedo_texture = ExtResource( 43 )
+albedo_texture = ExtResource( 51 )
 
 [sub_resource type="SpatialMaterial" id=175]
 flags_unshaded = true
-albedo_texture = ExtResource( 40 )
+albedo_texture = ExtResource( 212 )
 
 [sub_resource type="SpatialMaterial" id=176]
 flags_unshaded = true
-albedo_texture = ExtResource( 261 )
+albedo_texture = ExtResource( 175 )
 
 [sub_resource type="SpatialMaterial" id=177]
 flags_unshaded = true
-albedo_texture = ExtResource( 69 )
+albedo_texture = ExtResource( 211 )
 
 [sub_resource type="SpatialMaterial" id=178]
 flags_unshaded = true
-albedo_texture = ExtResource( 110 )
+albedo_texture = ExtResource( 172 )
 
 [sub_resource type="SpatialMaterial" id=179]
 flags_unshaded = true
-albedo_texture = ExtResource( 198 )
+albedo_texture = ExtResource( 214 )
 
 [sub_resource type="SpatialMaterial" id=180]
 flags_unshaded = true
-albedo_texture = ExtResource( 227 )
+albedo_texture = ExtResource( 117 )
 
 [sub_resource type="SpatialMaterial" id=181]
 flags_unshaded = true
-albedo_texture = ExtResource( 171 )
+albedo_texture = ExtResource( 105 )
 
 [sub_resource type="SpatialMaterial" id=182]
 flags_unshaded = true
@@ -1243,167 +1243,167 @@ albedo_texture = ExtResource( 203 )
 
 [sub_resource type="SpatialMaterial" id=183]
 flags_unshaded = true
-albedo_texture = ExtResource( 24 )
+albedo_texture = ExtResource( 234 )
 
 [sub_resource type="SpatialMaterial" id=184]
 flags_unshaded = true
-albedo_texture = ExtResource( 306 )
+albedo_texture = ExtResource( 208 )
 
 [sub_resource type="SpatialMaterial" id=185]
 flags_unshaded = true
-albedo_texture = ExtResource( 211 )
+albedo_texture = ExtResource( 205 )
 
 [sub_resource type="SpatialMaterial" id=186]
 flags_unshaded = true
-albedo_texture = ExtResource( 41 )
+albedo_texture = ExtResource( 192 )
 
 [sub_resource type="SpatialMaterial" id=187]
 flags_unshaded = true
-albedo_texture = ExtResource( 118 )
+albedo_texture = ExtResource( 225 )
 
 [sub_resource type="SpatialMaterial" id=188]
 flags_unshaded = true
-albedo_texture = ExtResource( 102 )
+albedo_texture = ExtResource( 237 )
 
 [sub_resource type="SpatialMaterial" id=189]
 flags_unshaded = true
-albedo_texture = ExtResource( 334 )
+albedo_texture = ExtResource( 222 )
 
 [sub_resource type="SpatialMaterial" id=190]
 flags_unshaded = true
-albedo_texture = ExtResource( 50 )
+albedo_texture = ExtResource( 224 )
 
 [sub_resource type="SpatialMaterial" id=191]
 flags_unshaded = true
-albedo_texture = ExtResource( 188 )
+albedo_texture = ExtResource( 219 )
 
 [sub_resource type="SpatialMaterial" id=192]
 flags_unshaded = true
-albedo_texture = ExtResource( 331 )
+albedo_texture = ExtResource( 131 )
 
 [sub_resource type="SpatialMaterial" id=193]
 flags_unshaded = true
-albedo_texture = ExtResource( 241 )
+albedo_texture = ExtResource( 233 )
 
 [sub_resource type="SpatialMaterial" id=194]
 flags_unshaded = true
-albedo_texture = ExtResource( 176 )
+albedo_texture = ExtResource( 189 )
 
 [sub_resource type="SpatialMaterial" id=195]
 flags_unshaded = true
-albedo_texture = ExtResource( 284 )
+albedo_texture = ExtResource( 217 )
 
 [sub_resource type="SpatialMaterial" id=196]
 flags_unshaded = true
-albedo_texture = ExtResource( 111 )
+albedo_texture = ExtResource( 191 )
 
 [sub_resource type="SpatialMaterial" id=197]
 flags_unshaded = true
-albedo_texture = ExtResource( 206 )
+albedo_texture = ExtResource( 182 )
 
 [sub_resource type="SpatialMaterial" id=198]
 flags_unshaded = true
-albedo_texture = ExtResource( 231 )
+albedo_texture = ExtResource( 174 )
 
 [sub_resource type="SpatialMaterial" id=199]
 flags_unshaded = true
-albedo_texture = ExtResource( 247 )
+albedo_texture = ExtResource( 129 )
 
 [sub_resource type="SpatialMaterial" id=200]
 flags_unshaded = true
-albedo_texture = ExtResource( 86 )
+albedo_texture = ExtResource( 80 )
 
 [sub_resource type="SpatialMaterial" id=201]
 flags_unshaded = true
-albedo_texture = ExtResource( 271 )
+albedo_texture = ExtResource( 218 )
 
 [sub_resource type="SpatialMaterial" id=202]
 flags_unshaded = true
-albedo_texture = ExtResource( 301 )
+albedo_texture = ExtResource( 194 )
 
 [sub_resource type="SpatialMaterial" id=203]
 flags_unshaded = true
-albedo_texture = ExtResource( 333 )
+albedo_texture = ExtResource( 122 )
 
 [sub_resource type="SpatialMaterial" id=204]
 flags_unshaded = true
-albedo_texture = ExtResource( 109 )
+albedo_texture = ExtResource( 88 )
 
 [sub_resource type="SpatialMaterial" id=205]
 flags_unshaded = true
-albedo_texture = ExtResource( 202 )
+albedo_texture = ExtResource( 220 )
 
 [sub_resource type="SpatialMaterial" id=206]
 flags_unshaded = true
-albedo_texture = ExtResource( 192 )
+albedo_texture = ExtResource( 197 )
 
 [sub_resource type="SpatialMaterial" id=207]
 flags_unshaded = true
-albedo_texture = ExtResource( 270 )
+albedo_texture = ExtResource( 213 )
 
 [sub_resource type="SpatialMaterial" id=208]
 flags_unshaded = true
-albedo_texture = ExtResource( 117 )
+albedo_texture = ExtResource( 200 )
 
 [sub_resource type="SpatialMaterial" id=209]
 flags_unshaded = true
-albedo_texture = ExtResource( 154 )
+albedo_texture = ExtResource( 124 )
 
 [sub_resource type="SpatialMaterial" id=210]
 flags_unshaded = true
-albedo_texture = ExtResource( 68 )
+albedo_texture = ExtResource( 114 )
 
 [sub_resource type="SpatialMaterial" id=211]
 flags_unshaded = true
-albedo_texture = ExtResource( 324 )
+albedo_texture = ExtResource( 227 )
 
 [sub_resource type="SpatialMaterial" id=212]
 flags_unshaded = true
-albedo_texture = ExtResource( 243 )
+albedo_texture = ExtResource( 223 )
 
 [sub_resource type="SpatialMaterial" id=213]
 flags_unshaded = true
-albedo_texture = ExtResource( 103 )
+albedo_texture = ExtResource( 228 )
 
 [sub_resource type="SpatialMaterial" id=214]
 flags_unshaded = true
-albedo_texture = ExtResource( 59 )
+albedo_texture = ExtResource( 113 )
 
 [sub_resource type="SpatialMaterial" id=215]
 flags_unshaded = true
-albedo_texture = ExtResource( 61 )
+albedo_texture = ExtResource( 190 )
 
 [sub_resource type="SpatialMaterial" id=216]
 flags_unshaded = true
-albedo_texture = ExtResource( 282 )
+albedo_texture = ExtResource( 229 )
 
 [sub_resource type="SpatialMaterial" id=217]
 flags_unshaded = true
-albedo_texture = ExtResource( 165 )
+albedo_texture = ExtResource( 193 )
 
 [sub_resource type="SpatialMaterial" id=218]
 flags_unshaded = true
-albedo_texture = ExtResource( 260 )
+albedo_texture = ExtResource( 171 )
 
 [sub_resource type="SpatialMaterial" id=219]
 flags_unshaded = true
-albedo_texture = ExtResource( 95 )
+albedo_texture = ExtResource( 235 )
 
 [sub_resource type="SpatialMaterial" id=220]
 flags_unshaded = true
-albedo_texture = ExtResource( 94 )
+albedo_texture = ExtResource( 135 )
 
 [sub_resource type="SpatialMaterial" id=221]
 flags_unshaded = true
-albedo_texture = ExtResource( 204 )
+albedo_texture = ExtResource( 236 )
 
 [sub_resource type="SpatialMaterial" id=222]
 flags_unshaded = true
-albedo_texture = ExtResource( 320 )
+albedo_texture = ExtResource( 273 )
 
 [sub_resource type="SpatialMaterial" id=223]
 flags_unshaded = true
-albedo_texture = ExtResource( 96 )
+albedo_texture = ExtResource( 170 )
 
 [sub_resource type="SpatialMaterial" id=224]
 flags_unshaded = true
@@ -1411,98 +1411,98 @@ albedo_texture = ExtResource( 498 )
 
 [sub_resource type="SpatialMaterial" id=225]
 flags_unshaded = true
-albedo_texture = ExtResource( 27 )
+albedo_texture = ExtResource( 344 )
 
 [sub_resource type="SpatialMaterial" id=226]
 flags_unshaded = true
-albedo_texture = ExtResource( 262 )
+albedo_texture = ExtResource( 337 )
 
 [sub_resource type="SpatialMaterial" id=227]
 flags_unshaded = true
-albedo_texture = ExtResource( 255 )
+albedo_texture = ExtResource( 232 )
 
 [sub_resource type="SpatialMaterial" id=228]
 flags_unshaded = true
-albedo_texture = ExtResource( 191 )
+albedo_texture = ExtResource( 216 )
 
 [sub_resource type="SpatialMaterial" id=229]
 flags_unshaded = true
-albedo_texture = ExtResource( 232 )
+albedo_texture = ExtResource( 226 )
 
 [sub_resource type="SpatialMaterial" id=230]
 flags_unshaded = true
-albedo_texture = ExtResource( 56 )
+albedo_texture = ExtResource( 403 )
 
 [sub_resource type="SpatialMaterial" id=231]
 flags_unshaded = true
-albedo_texture = ExtResource( 46 )
+albedo_texture = ExtResource( 421 )
 
 [sub_resource type="SpatialMaterial" id=232]
 flags_unshaded = true
-albedo_texture = ExtResource( 190 )
+albedo_texture = ExtResource( 242 )
 
 [sub_resource type="SpatialMaterial" id=233]
 flags_unshaded = true
-albedo_texture = ExtResource( 330 )
+albedo_texture = ExtResource( 206 )
 
 [sub_resource type="SpatialMaterial" id=234]
 flags_unshaded = true
-albedo_texture = ExtResource( 290 )
+albedo_texture = ExtResource( 292 )
 
 [sub_resource type="SpatialMaterial" id=235]
 flags_unshaded = true
-albedo_texture = ExtResource( 315 )
+albedo_texture = ExtResource( 279 )
 
 [sub_resource type="SpatialMaterial" id=236]
 flags_unshaded = true
-albedo_texture = ExtResource( 272 )
+albedo_texture = ExtResource( 231 )
 
 [sub_resource type="SpatialMaterial" id=237]
 flags_unshaded = true
-albedo_texture = ExtResource( 184 )
+albedo_texture = ExtResource( 110 )
 
 [sub_resource type="SpatialMaterial" id=238]
 flags_unshaded = true
-albedo_texture = ExtResource( 44 )
+albedo_texture = ExtResource( 310 )
 
 [sub_resource type="SpatialMaterial" id=239]
 flags_unshaded = true
-albedo_texture = ExtResource( 151 )
+albedo_texture = ExtResource( 309 )
 
 [sub_resource type="SpatialMaterial" id=240]
 flags_unshaded = true
-albedo_texture = ExtResource( 265 )
+albedo_texture = ExtResource( 285 )
 
 [sub_resource type="SpatialMaterial" id=241]
 flags_unshaded = true
-albedo_texture = ExtResource( 233 )
+albedo_texture = ExtResource( 209 )
 
 [sub_resource type="SpatialMaterial" id=242]
 flags_unshaded = true
-albedo_texture = ExtResource( 280 )
+albedo_texture = ExtResource( 221 )
 
 [sub_resource type="SpatialMaterial" id=243]
 flags_unshaded = true
-albedo_texture = ExtResource( 337 )
+albedo_texture = ExtResource( 187 )
 
 [sub_resource type="SpatialMaterial" id=244]
 flags_unshaded = true
-albedo_texture = ExtResource( 195 )
+albedo_texture = ExtResource( 186 )
 
 [sub_resource type="SpatialMaterial" id=245]
 flags_unshaded = true
-albedo_texture = ExtResource( 49 )
+albedo_texture = ExtResource( 181 )
 
 [sub_resource type="SpatialMaterial" id=246]
 flags_unshaded = true
-albedo_texture = ExtResource( 199 )
+albedo_texture = ExtResource( 215 )
 
 [sub_resource type="SpatialMaterial" id=247]
 flags_unshaded = true
 
 [sub_resource type="SpatialMaterial" id=248]
 flags_unshaded = true
-albedo_texture = ExtResource( 305 )
+albedo_texture = ExtResource( 72 )
 
 [sub_resource type="SpatialMaterial" id=249]
 flags_unshaded = true
@@ -1546,7 +1546,7 @@ albedo_texture = ExtResource( 454 )
 
 [sub_resource type="SpatialMaterial" id=259]
 flags_unshaded = true
-albedo_texture = ExtResource( 187 )
+albedo_texture = ExtResource( 326 )
 
 [sub_resource type="SpatialMaterial" id=260]
 flags_unshaded = true
@@ -1590,7 +1590,7 @@ albedo_texture = ExtResource( 362 )
 
 [sub_resource type="SpatialMaterial" id=270]
 flags_unshaded = true
-albedo_texture = ExtResource( 89 )
+albedo_texture = ExtResource( 168 )
 
 [sub_resource type="SpatialMaterial" id=271]
 flags_unshaded = true
@@ -1634,7 +1634,7 @@ albedo_texture = ExtResource( 492 )
 
 [sub_resource type="SpatialMaterial" id=281]
 flags_unshaded = true
-albedo_texture = ExtResource( 149 )
+albedo_texture = ExtResource( 132 )
 
 [sub_resource type="SpatialMaterial" id=282]
 flags_unshaded = true
@@ -1671,7 +1671,7 @@ albedo_texture = ExtResource( 38 )
 
 [sub_resource type="SpatialMaterial" id=292]
 flags_unshaded = true
-albedo_texture = ExtResource( 348 )
+albedo_texture = ExtResource( 50 )
 
 [sub_resource type="SpatialMaterial" id=293]
 flags_unshaded = true
@@ -1713,7 +1713,7 @@ albedo_texture = ExtResource( 457 )
 
 [sub_resource type="SpatialMaterial" id=303]
 flags_unshaded = true
-albedo_texture = ExtResource( 228 )
+albedo_texture = ExtResource( 161 )
 
 [sub_resource type="SpatialMaterial" id=304]
 flags_unshaded = true
@@ -1753,7 +1753,7 @@ albedo_texture = ExtResource( 503 )
 
 [sub_resource type="SpatialMaterial" id=314]
 flags_unshaded = true
-albedo_texture = ExtResource( 297 )
+albedo_texture = ExtResource( 210 )
 
 [sub_resource type="SpatialMaterial" id=315]
 flags_unshaded = true
@@ -1795,7 +1795,7 @@ albedo_texture = ExtResource( 365 )
 
 [sub_resource type="SpatialMaterial" id=325]
 flags_unshaded = true
-albedo_texture = ExtResource( 287 )
+albedo_texture = ExtResource( 144 )
 
 [sub_resource type="SpatialMaterial" id=326]
 flags_unshaded = true
@@ -1838,11 +1838,11 @@ flags_unshaded = true
 
 [sub_resource type="SpatialMaterial" id=336]
 flags_unshaded = true
-albedo_texture = ExtResource( 307 )
+albedo_texture = ExtResource( 342 )
 
 [sub_resource type="SpatialMaterial" id=337]
 flags_unshaded = true
-albedo_texture = ExtResource( 286 )
+albedo_texture = ExtResource( 468 )
 
 [sub_resource type="SpatialMaterial" id=338]
 flags_unshaded = true
@@ -1883,7 +1883,7 @@ flags_unshaded = true
 
 [sub_resource type="SpatialMaterial" id=348]
 flags_unshaded = true
-albedo_texture = ExtResource( 77 )
+albedo_texture = ExtResource( 324 )
 
 [sub_resource type="SpatialMaterial" id=349]
 flags_unshaded = true
@@ -1922,7 +1922,7 @@ albedo_texture = ExtResource( 462 )
 
 [sub_resource type="SpatialMaterial" id=359]
 flags_unshaded = true
-albedo_texture = ExtResource( 285 )
+albedo_texture = ExtResource( 56 )
 
 [sub_resource type="SpatialMaterial" id=360]
 flags_unshaded = true
@@ -1943,70 +1943,70 @@ albedo_texture = ExtResource( 13 )
 
 [sub_resource type="SpatialMaterial" id=365]
 flags_unshaded = true
-albedo_texture = ExtResource( 11 )
+albedo_texture = ExtResource( 120 )
 
 [sub_resource type="SpatialMaterial" id=366]
 flags_unshaded = true
-albedo_texture = ExtResource( 9 )
+albedo_texture = ExtResource( 71 )
 
 [sub_resource type="SpatialMaterial" id=367]
 flags_unshaded = true
-albedo_texture = ExtResource( 449 )
+albedo_texture = ExtResource( 74 )
 
 [sub_resource type="SpatialMaterial" id=368]
 flags_unshaded = true
-albedo_texture = ExtResource( 370 )
+albedo_texture = ExtResource( 70 )
 
 [sub_resource type="SpatialMaterial" id=369]
 flags_unshaded = true
-albedo_texture = ExtResource( 403 )
+albedo_texture = ExtResource( 73 )
 
 [sub_resource type="SpatialMaterial" id=370]
 flags_unshaded = true
-albedo_texture = ExtResource( 288 )
+albedo_texture = ExtResource( 343 )
 
 [sub_resource type="SpatialMaterial" id=371]
 flags_unshaded = true
-albedo_texture = ExtResource( 356 )
+albedo_texture = ExtResource( 127 )
 
 [sub_resource type="SpatialMaterial" id=372]
 flags_unshaded = true
-albedo_texture = ExtResource( 486 )
+albedo_texture = ExtResource( 126 )
 
 [sub_resource type="SpatialMaterial" id=373]
 flags_unshaded = true
-albedo_texture = ExtResource( 468 )
+albedo_texture = ExtResource( 138 )
 
 [sub_resource type="SpatialMaterial" id=374]
 flags_unshaded = true
-albedo_texture = ExtResource( 392 )
+albedo_texture = ExtResource( 82 )
 
 [sub_resource type="SpatialMaterial" id=375]
 flags_unshaded = true
-albedo_texture = ExtResource( 379 )
+albedo_texture = ExtResource( 136 )
 
 [sub_resource type="SpatialMaterial" id=376]
 flags_unshaded = true
-albedo_texture = ExtResource( 421 )
+albedo_texture = ExtResource( 102 )
 
 [sub_resource type="SpatialMaterial" id=377]
 flags_unshaded = true
-albedo_texture = ExtResource( 511 )
+albedo_texture = ExtResource( 101 )
 
 [sub_resource type="SpatialMaterial" id=378]
 flags_unshaded = true
-albedo_texture = ExtResource( 459 )
+albedo_texture = ExtResource( 96 )
 
 [sub_resource type="SpatialMaterial" id=379]
 flags_unshaded = true
-albedo_texture = ExtResource( 355 )
+albedo_texture = ExtResource( 86 )
 
 [sub_resource type="SpatialMaterial" id=380]
 flags_unshaded = true
 
 [sub_resource type="SpatialMaterial" id=381]
 flags_unshaded = true
-albedo_texture = ExtResource( 51 )
+albedo_texture = ExtResource( 336 )
 
 [sub_resource type="SpatialMaterial" id=382]
 flags_unshaded = true
@@ -2050,7 +2050,7 @@ albedo_texture = ExtResource( 475 )
 
 [sub_resource type="SpatialMaterial" id=392]
 flags_unshaded = true
-albedo_texture = ExtResource( 347 )
+albedo_texture = ExtResource( 63 )
 
 [sub_resource type="SpatialMaterial" id=393]
 flags_unshaded = true
@@ -2090,7 +2090,7 @@ albedo_texture = ExtResource( 512 )
 
 [sub_resource type="SpatialMaterial" id=403]
 flags_unshaded = true
-albedo_texture = ExtResource( 344 )
+albedo_texture = ExtResource( 62 )
 
 [sub_resource type="SpatialMaterial" id=404]
 flags_unshaded = true
@@ -2127,7 +2127,7 @@ flags_unshaded = true
 
 [sub_resource type="SpatialMaterial" id=414]
 flags_unshaded = true
-albedo_texture = ExtResource( 162 )
+albedo_texture = ExtResource( 100 )
 
 [sub_resource type="SpatialMaterial" id=415]
 flags_unshaded = true
@@ -2164,7 +2164,7 @@ albedo_texture = ExtResource( 405 )
 
 [sub_resource type="SpatialMaterial" id=425]
 flags_unshaded = true
-albedo_texture = ExtResource( 148 )
+albedo_texture = ExtResource( 9 )
 
 [sub_resource type="SpatialMaterial" id=426]
 flags_unshaded = true
@@ -2207,7 +2207,7 @@ albedo_texture = ExtResource( 387 )
 
 [sub_resource type="SpatialMaterial" id=436]
 flags_unshaded = true
-albedo_texture = ExtResource( 289 )
+albedo_texture = ExtResource( 87 )
 
 [sub_resource type="SpatialMaterial" id=437]
 flags_unshaded = true
@@ -2251,11 +2251,11 @@ albedo_texture = ExtResource( 360 )
 
 [sub_resource type="SpatialMaterial" id=447]
 flags_unshaded = true
-albedo_texture = ExtResource( 296 )
+albedo_texture = ExtResource( 339 )
 
 [sub_resource type="SpatialMaterial" id=448]
 flags_unshaded = true
-albedo_texture = ExtResource( 275 )
+albedo_texture = ExtResource( 90 )
 
 [sub_resource type="SpatialMaterial" id=449]
 flags_unshaded = true
@@ -2299,7 +2299,7 @@ albedo_texture = ExtResource( 6 )
 
 [sub_resource type="SpatialMaterial" id=459]
 flags_unshaded = true
-albedo_texture = ExtResource( 48 )
+albedo_texture = ExtResource( 159 )
 
 [sub_resource type="SpatialMaterial" id=460]
 flags_unshaded = true
@@ -2343,7 +2343,7 @@ albedo_texture = ExtResource( 389 )
 
 [sub_resource type="SpatialMaterial" id=470]
 flags_unshaded = true
-albedo_texture = ExtResource( 55 )
+albedo_texture = ExtResource( 291 )
 
 [sub_resource type="SpatialMaterial" id=471]
 flags_unshaded = true
@@ -2387,7 +2387,7 @@ albedo_texture = ExtResource( 485 )
 
 [sub_resource type="SpatialMaterial" id=481]
 flags_unshaded = true
-albedo_texture = ExtResource( 197 )
+albedo_texture = ExtResource( 278 )
 
 [sub_resource type="SpatialMaterial" id=482]
 flags_unshaded = true
@@ -2431,7 +2431,7 @@ albedo_texture = ExtResource( 398 )
 
 [sub_resource type="SpatialMaterial" id=492]
 flags_unshaded = true
-albedo_texture = ExtResource( 34 )
+albedo_texture = ExtResource( 79 )
 
 [sub_resource type="SpatialMaterial" id=493]
 flags_unshaded = true
@@ -2475,7 +2475,7 @@ albedo_texture = ExtResource( 443 )
 
 [sub_resource type="SpatialMaterial" id=503]
 flags_unshaded = true
-albedo_texture = ExtResource( 161 )
+albedo_texture = ExtResource( 198 )
 
 [sub_resource type="SpatialMaterial" id=504]
 flags_unshaded = true
@@ -2503,195 +2503,195 @@ albedo_texture = ExtResource( 386 )
 
 [sub_resource type="SpatialMaterial" id=510]
 flags_unshaded = true
-albedo_texture = ExtResource( 71 )
+albedo_texture = ExtResource( 66 )
 
 [sub_resource type="SpatialMaterial" id=511]
 flags_unshaded = true
-albedo_texture = ExtResource( 196 )
+albedo_texture = ExtResource( 85 )
 
 [sub_resource type="SpatialMaterial" id=512]
 flags_unshaded = true
-albedo_texture = ExtResource( 81 )
+albedo_texture = ExtResource( 162 )
 
 [sub_resource type="SpatialMaterial" id=513]
 flags_unshaded = true
-albedo_texture = ExtResource( 276 )
+albedo_texture = ExtResource( 188 )
 
 [sub_resource type="SpatialMaterial" id=514]
 flags_unshaded = true
-albedo_texture = ExtResource( 26 )
+albedo_texture = ExtResource( 340 )
 
 [sub_resource type="SpatialMaterial" id=515]
 flags_unshaded = true
-albedo_texture = ExtResource( 207 )
+albedo_texture = ExtResource( 156 )
 
 [sub_resource type="SpatialMaterial" id=516]
 flags_unshaded = true
-albedo_texture = ExtResource( 126 )
+albedo_texture = ExtResource( 140 )
 
 [sub_resource type="SpatialMaterial" id=517]
 flags_unshaded = true
-albedo_texture = ExtResource( 310 )
+albedo_texture = ExtResource( 154 )
 
 [sub_resource type="SpatialMaterial" id=518]
 flags_unshaded = true
-albedo_texture = ExtResource( 164 )
+albedo_texture = ExtResource( 57 )
 
 [sub_resource type="SpatialMaterial" id=519]
 flags_unshaded = true
-albedo_texture = ExtResource( 58 )
+albedo_texture = ExtResource( 55 )
 
 [sub_resource type="SpatialMaterial" id=520]
 flags_unshaded = true
-albedo_texture = ExtResource( 166 )
+albedo_texture = ExtResource( 334 )
 
 [sub_resource type="SpatialMaterial" id=521]
 flags_unshaded = true
-albedo_texture = ExtResource( 264 )
+albedo_texture = ExtResource( 46 )
 
 [sub_resource type="SpatialMaterial" id=522]
 flags_unshaded = true
-albedo_texture = ExtResource( 217 )
+albedo_texture = ExtResource( 58 )
 
 [sub_resource type="SpatialMaterial" id=523]
 flags_unshaded = true
-albedo_texture = ExtResource( 223 )
+albedo_texture = ExtResource( 95 )
 
 [sub_resource type="SpatialMaterial" id=524]
 flags_unshaded = true
-albedo_texture = ExtResource( 222 )
+albedo_texture = ExtResource( 160 )
 
 [sub_resource type="SpatialMaterial" id=525]
 flags_unshaded = true
-albedo_texture = ExtResource( 311 )
+albedo_texture = ExtResource( 202 )
 
 [sub_resource type="SpatialMaterial" id=526]
 flags_unshaded = true
-albedo_texture = ExtResource( 224 )
+albedo_texture = ExtResource( 103 )
 
 [sub_resource type="SpatialMaterial" id=527]
 flags_unshaded = true
-albedo_texture = ExtResource( 220 )
+albedo_texture = ExtResource( 169 )
 
 [sub_resource type="SpatialMaterial" id=528]
 flags_unshaded = true
-albedo_texture = ExtResource( 214 )
+albedo_texture = ExtResource( 345 )
 
 [sub_resource type="SpatialMaterial" id=529]
 flags_unshaded = true
-albedo_texture = ExtResource( 219 )
+albedo_texture = ExtResource( 346 )
 
 [sub_resource type="SpatialMaterial" id=530]
 flags_unshaded = true
-albedo_texture = ExtResource( 216 )
+albedo_texture = ExtResource( 392 )
 
 [sub_resource type="SpatialMaterial" id=531]
 flags_unshaded = true
-albedo_texture = ExtResource( 295 )
+albedo_texture = ExtResource( 44 )
 
 [sub_resource type="SpatialMaterial" id=532]
 flags_unshaded = true
-albedo_texture = ExtResource( 221 )
+albedo_texture = ExtResource( 106 )
 
 [sub_resource type="SpatialMaterial" id=533]
 flags_unshaded = true
-albedo_texture = ExtResource( 83 )
+albedo_texture = ExtResource( 335 )
 
 [sub_resource type="SpatialMaterial" id=534]
 flags_unshaded = true
-albedo_texture = ExtResource( 335 )
+albedo_texture = ExtResource( 338 )
 
 [sub_resource type="SpatialMaterial" id=535]
 flags_unshaded = true
-albedo_texture = ExtResource( 52 )
+albedo_texture = ExtResource( 47 )
 
 [sub_resource type="SpatialMaterial" id=536]
 flags_unshaded = true
-albedo_texture = ExtResource( 29 )
+albedo_texture = ExtResource( 118 )
 
 [sub_resource type="SpatialMaterial" id=537]
 flags_unshaded = true
-albedo_texture = ExtResource( 291 )
+albedo_texture = ExtResource( 329 )
 
 [sub_resource type="SpatialMaterial" id=538]
 flags_unshaded = true
-albedo_texture = ExtResource( 141 )
+albedo_texture = ExtResource( 43 )
 
 [sub_resource type="SpatialMaterial" id=539]
 flags_unshaded = true
-albedo_texture = ExtResource( 312 )
+albedo_texture = ExtResource( 40 )
 
 [sub_resource type="SpatialMaterial" id=540]
 flags_unshaded = true
-albedo_texture = ExtResource( 167 )
+albedo_texture = ExtResource( 34 )
 
 [sub_resource type="SpatialMaterial" id=541]
 flags_unshaded = true
-albedo_texture = ExtResource( 104 )
+albedo_texture = ExtResource( 28 )
 
 [sub_resource type="SpatialMaterial" id=542]
 flags_unshaded = true
-albedo_texture = ExtResource( 281 )
+albedo_texture = ExtResource( 347 )
 
 [sub_resource type="SpatialMaterial" id=543]
 flags_unshaded = true
-albedo_texture = ExtResource( 82 )
+albedo_texture = ExtResource( 331 )
 
 [sub_resource type="SpatialMaterial" id=544]
 flags_unshaded = true
-albedo_texture = ExtResource( 84 )
+albedo_texture = ExtResource( 67 )
 
 [sub_resource type="SpatialMaterial" id=545]
 flags_unshaded = true
-albedo_texture = ExtResource( 234 )
+albedo_texture = ExtResource( 108 )
 
 [sub_resource type="SpatialMaterial" id=546]
 flags_unshaded = true
-albedo_texture = ExtResource( 326 )
+albedo_texture = ExtResource( 42 )
 
 [sub_resource type="SpatialMaterial" id=547]
 flags_unshaded = true
-albedo_texture = ExtResource( 304 )
+albedo_texture = ExtResource( 173 )
 
 [sub_resource type="SpatialMaterial" id=548]
 flags_unshaded = true
-albedo_texture = ExtResource( 328 )
+albedo_texture = ExtResource( 27 )
 
 [sub_resource type="SpatialMaterial" id=549]
 flags_unshaded = true
-albedo_texture = ExtResource( 136 )
+albedo_texture = ExtResource( 37 )
 
 [sub_resource type="SpatialMaterial" id=550]
 flags_unshaded = true
-albedo_texture = ExtResource( 137 )
+albedo_texture = ExtResource( 26 )
 
 [sub_resource type="SpatialMaterial" id=551]
 flags_unshaded = true
-albedo_texture = ExtResource( 160 )
+albedo_texture = ExtResource( 36 )
 
 [sub_resource type="SpatialMaterial" id=552]
 flags_unshaded = true
-albedo_texture = ExtResource( 135 )
+albedo_texture = ExtResource( 24 )
 
 [sub_resource type="SpatialMaterial" id=553]
 flags_unshaded = true
-albedo_texture = ExtResource( 76 )
+albedo_texture = ExtResource( 30 )
 
 [sub_resource type="SpatialMaterial" id=554]
 flags_unshaded = true
-albedo_texture = ExtResource( 131 )
+albedo_texture = ExtResource( 155 )
 
 [sub_resource type="SpatialMaterial" id=555]
 flags_unshaded = true
-albedo_texture = ExtResource( 322 )
+albedo_texture = ExtResource( 41 )
 
 [sub_resource type="SpatialMaterial" id=556]
 flags_unshaded = true
-albedo_texture = ExtResource( 107 )
+albedo_texture = ExtResource( 29 )
 
 [sub_resource type="SpatialMaterial" id=557]
 flags_unshaded = true
-albedo_texture = ExtResource( 93 )
+albedo_texture = ExtResource( 486 )
 
 [sub_resource type="ArrayMesh" id=558]
 surfaces/0 = {

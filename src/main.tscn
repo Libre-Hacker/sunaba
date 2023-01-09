@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/network_manager.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/fredoka_one.ttf" type="DynamicFontData" id=2]
@@ -10,7 +10,9 @@
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/play.png" type="Texture" id=8]
 [ext_resource path="res://src/connect_dialog.gd" type="Script" id=9]
 [ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture" id=10]
+[ext_resource path="res://src/enet_transport.gd" type="Script" id=11]
 [ext_resource path="res://assets/textures/backdrop.png" type="Texture" id=12]
+[ext_resource path="res://addons/godottpd/http_server.gd" type="Script" id=13]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
@@ -25,11 +27,19 @@ font_data = ExtResource( 2 )
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
-[node name="NetworkManagerENet" type="Node" parent="."]
+[node name="NetworkManager" type="Node" parent="."]
 script = ExtResource( 1 )
 address_bar = NodePath("../UI/TopBar/AddressBar")
 world = NodePath("../UI/ViewportContainer/WorldViewport/World")
 ui_node = NodePath("../UI")
+
+[node name="ENetTransport" type="Node" parent="NetworkManager"]
+script = ExtResource( 11 )
+
+[node name="HttpServer" type="Node" parent="NetworkManager"]
+script = ExtResource( 13 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="NetworkManager"]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -206,10 +216,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -206.5
-margin_top = -51.5
-margin_right = 206.5
-margin_bottom = 51.5
+margin_left = -160.0
+margin_top = -129.0
+margin_right = 207.0
+margin_bottom = 52.0
 popup_exclusive = true
 window_title = "Create a room"
 
@@ -268,40 +278,61 @@ filters = PoolStringArray( "*.map" )
 show_hidden_files = true
 
 [node name="ConnectDialog" type="WindowDialog" parent="UI"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -116.0
-margin_top = -37.5
-margin_right = 116.0
-margin_bottom = 37.5
+margin_left = -159.0
+margin_top = -129.0
+margin_right = 206.0
+margin_bottom = 129.0
 popup_exclusive = true
 window_title = "Connect to a room"
 script = ExtResource( 9 )
-netman_path = NodePath("../../NetworkManagerENet")
+netman_path = NodePath("../../NetworkManager")
 
-[node name="LineEdit" type="LineEdit" parent="UI/ConnectDialog"]
+[node name="Tabs" type="Tabs" parent="UI/ConnectDialog"]
 anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="UI/ConnectDialog/Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Online" type="Control" parent="UI/ConnectDialog/Tabs/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 5.0
+margin_top = 38.0
 margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="LineEdit" type="LineEdit" parent="UI/ConnectDialog/Tabs/TabContainer/Online"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -108.0
+margin_top = 5.0
+margin_right = 108.0
 margin_bottom = 35.0
 text = "127.0.0.1"
 
-[node name="Button" type="Button" parent="UI/ConnectDialog"]
-margin_left = 150.0
+[node name="Button" type="Button" parent="UI/ConnectDialog/Tabs/TabContainer/Online"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 38.0
 margin_top = 41.0
-margin_right = 228.0
+margin_right = 116.0
 margin_bottom = 71.0
 text = "Connect"
 
 [node name="SettingsDialog" parent="UI" instance=ExtResource( 5 )]
+visible = false
 gui = NodePath("..")
 
 [connection signal="mouse_entered" from="UI/TopBar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/TopBar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
-[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManagerENet" method="_on_address_entered" flags=6]
+[connection signal="text_entered" from="UI/TopBar/AddressBar" to="NetworkManager" method="_on_address_entered" flags=6]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="_on_create_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="_on_connect_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
@@ -316,6 +347,6 @@ gui = NodePath("..")
 [connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
 [connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]
-[connection signal="pressed" from="UI/ConnectDialog/Button" to="UI/ConnectDialog" method="_connect"]
+[connection signal="pressed" from="UI/ConnectDialog/Tabs/TabContainer/Online/Button" to="UI/ConnectDialog" method="_connect"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]

@@ -9,15 +9,55 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "ArgParse",
+"language": "GDScript",
+"path": "res://addons/argparse/ArgParse.gd"
+}, {
 "base": "Resource",
 "class": "BuildFlags",
 "language": "GDScript",
 "path": "res://src/build_flags.gd"
 }, {
+"base": "Node",
+"class": "EasyLANNetworkManager",
+"language": "GDScript",
+"path": "res://addons/EasyLAN/EasyLANNetworkManager.gd"
+}, {
 "base": "Camera",
 "class": "EditorCamera",
 "language": "GDScript",
 "path": "res://src/camera.gd"
+}, {
+"base": "Node",
+"class": "FsmState",
+"language": "GDScript",
+"path": "res://addons/jm_game_template/jm_state.gd"
+}, {
+"base": "HttpRouter",
+"class": "HttpFileRouter",
+"language": "GDScript",
+"path": "res://addons/godottpd/http_file_router.gd"
+}, {
+"base": "Reference",
+"class": "HttpRequest",
+"language": "GDScript",
+"path": "res://addons/godottpd/http_request.gd"
+}, {
+"base": "Reference",
+"class": "HttpResponse",
+"language": "GDScript",
+"path": "res://addons/godottpd/http_response.gd"
+}, {
+"base": "Reference",
+"class": "HttpRouter",
+"language": "GDScript",
+"path": "res://addons/godottpd/http_router.gd"
+}, {
+"base": "Node",
+"class": "HttpServer",
+"language": "GDScript",
+"path": "res://addons/godottpd/http_server.gd"
 }, {
 "base": "LiquidLayer",
 "class": "LavaLayer",
@@ -43,6 +83,11 @@ _global_script_classes=[ {
 "class": "PhysicsEntity",
 "language": "GDScript",
 "path": "res://addons/qodot/game_definitions/fgd/solid_classes/physics.gd"
+}, {
+"base": "Reference",
+"class": "PooledObject2D",
+"language": "GDScript",
+"path": "res://addons/jm_game_template/jm_pooled_object_2D.gd"
 }, {
 "base": "Reference",
 "class": "QodotDependencies",
@@ -154,6 +199,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/game_definitions/worldspawn_layers/liquid/slime.gd"
 }, {
+"base": "Reference",
+"class": "SubscriptionList",
+"language": "GDScript",
+"path": "res://addons/jm_game_template/jm_subscription_list.gd"
+}, {
 "base": "Resource",
 "class": "TrenchBroomFaceAttrib",
 "language": "GDScript",
@@ -190,13 +240,22 @@ _global_script_classes=[ {
 "path": "res://src/entities/ps_player.gd"
 } ]
 _global_script_class_icons={
+"ArgParse": "",
 "BuildFlags": "",
+"EasyLANNetworkManager": "",
 "EditorCamera": "",
+"FsmState": "",
+"HttpFileRouter": "",
+"HttpRequest": "",
+"HttpResponse": "",
+"HttpRouter": "",
+"HttpServer": "",
 "LavaLayer": "",
 "LiquidLayer": "",
 "OrbitArm": "",
 "PhysicsBall": "",
 "PhysicsEntity": "",
+"PooledObject2D": "",
 "QodotDependencies": "",
 "QodotEntity": "",
 "QodotFGDBaseClass": "",
@@ -219,6 +278,7 @@ _global_script_class_icons={
 "QuakeWadFile": "",
 "QuakeWadImportPlugin": "",
 "SlimeLayer": "",
+"SubscriptionList": "",
 "TrenchBroomFaceAttrib": "",
 "TrenchBroomGameConfigFile": "",
 "TrenchBroomGameConfigFolder": "",
@@ -236,8 +296,8 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
 boot_splash/show_image=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://sb_icon1.png"
-config/windows_native_icon="res://sb_icon1.ico"
+config/icon="res://sb_icon2.png"
+config/windows_native_icon="res://sb_icon2.ico"
 
 [autoload]
 
@@ -260,7 +320,7 @@ window/size/width=800
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/vrm/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/EasyLAN/plugin.cfg", "res://addons/branch/plugin.cfg", "res://addons/godottpd/plugin.cfg", "res://addons/jm_game_template/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/qodot/plugin.cfg" )
 
 [gdnative]
 

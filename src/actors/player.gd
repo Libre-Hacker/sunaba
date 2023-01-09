@@ -27,6 +27,8 @@ var is_reloading : bool
 var has_fired : bool = false
 var weapon_type : String = ""
 var muzzle = null
+var ammo = 21
+var max_ammo = 25
 
 onready var head = $Head
 onready var fp_camera = $Head/Camera
@@ -111,7 +113,7 @@ func _process(_delta):
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
 	crosshair.theme = ThemeManager.theme
-	tool_ammo_bar.get_node("Label").text = var2str(round(tool_ammo_bar.value)) + " / " + var2str(round(tool_ammo_bar.max_value))
+	tool_ammo_bar.get_node("Label").text = var2str(ammo) + " / " + var2str(max_ammo)
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
@@ -156,10 +158,10 @@ func _process(_delta):
 					tool_to_drop.global_transform = hand.global_transform
 					tool_to_drop.dropped = true
 					hand.get_child(0).queue_free()
-			tool_ammo_bar.max_value = 100
-			tool_ammo_bar.value = 100
 			reach.get_collider().queue_free()
 			hand.add_child(tool_to_spawn)
+			ammo = tool_to_spawn.max_ammo
+			max_ammo = tool_to_spawn.max_ammo
 			tool_ammo_bar.value = tool_to_spawn.max_ammo
 			tool_ammo_bar.max_value = tool_to_spawn.max_ammo
 			damage = tool_to_spawn.damage
@@ -252,8 +254,9 @@ func _on_timeout():
 		rpc_unreliable("update_state", global_transform.origin, velocity, Vector2(rotation.x, rotation.y))
 
 func _fire():
-	tool_ammo_bar.value -= 1
-	if tool_ammo_bar.value != 0:
+	if ammo != 0:
+		ammo -= 1
+		tool_ammo_bar.value = ammo
 		$WeaponSound.play()
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
@@ -271,6 +274,7 @@ func _fire():
 
 func _on_reload_timer_timeout():
 	$ReloadTimer.stop()
+	ammo = max_ammo
 	tool_ammo_bar.value = tool_ammo_bar.max_value
 	reload_label.hide()
 	is_reloading = false

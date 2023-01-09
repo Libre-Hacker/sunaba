@@ -1,20 +1,25 @@
 extends Node
 
 var path = null
-var network_manager = null
 
-onready var network_manager_enet = $NetworkManagerENet
+onready var network_manager = $NetworkManager
 onready var chatbox = $UI/Chatbox
 onready var chat_entry = $UI/Bottombar/RoomControls/ChatEntry
 onready var world = $UI/ViewportContainer/WorldViewport/World
 
 func _ready() -> void:
-	network_manager = network_manager_enet
-	network_manager.connect_to_server()
 	chat_entry.editable = false
 	$UI.theme = ThemeManager.theme
 
 func create_room() -> void:
+	if path != null:
+		var dir = Directory.new()
+		dir.open("user://")
+		dir.make_dir("server")
+		dir.copy(path, "user://server/index.map")
+	
+	
+	
 	network_manager.create_room()
 	$UI/NewRoomDialog.hide()
 	$UI/MainMenu.hide()

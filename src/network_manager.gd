@@ -14,7 +14,6 @@ onready var transport_enet = $ENetTransport
 
 func _ready():
 	rpc_config("get_world", 1)
-	rpc_config("load_world", 1)
 	transport = transport_enet
 	get_tree().connect("network_peer_connected", self, "_player_joined")
 
@@ -37,17 +36,14 @@ func join_room(address):
 	transport.join_room(address)
 
 
-func load_world():
-	get_node(world).load_map("user://server/index.map")
-
 func _on_room_joined(id : String):
 	get_parent().log_to_chat("Room joined - " + id)
 
 func _player_joined(id):
 	get_parent().log_to_chat(var2str(id) + " has joined")
 	get_parent().enable_chat()
-	if get_tree().get_network_unique_id() == 1:
-		rpc_id(id, "load_world")
+	if id == get_tree().get_network_unique_id():
+		get_node(world).load_map("user://server/index.map")
 
 func _on_player_status_changed():
 	pass

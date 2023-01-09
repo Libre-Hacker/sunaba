@@ -514,6 +514,10 @@ reload={
 locale_filter=[ 1, [ "en", "es", "ja" ] ]
 translations=PoolStringArray(  )
 
+[mono]
+
+project/assembly_name="Sunaba"
+
 [physics]
 
 common/physics_fps=240

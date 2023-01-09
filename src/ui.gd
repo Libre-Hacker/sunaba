@@ -35,6 +35,7 @@ func _on_NativeDialogOpenFile_files_selected(files: PoolStringArray):
 
 func _on_play_button_pressed():
 	$Bottombar/RoomControls/PlayButton.hide()
+	$ViewportContainer/WorldViewport/World.load_map("user://server/index.map")
 
 
 func _on_connect_button_pressed():

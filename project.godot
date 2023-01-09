@@ -362,7 +362,7 @@ window/size/width=800
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/vrm/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/vrm/plugin.cfg" )
 
 [gdnative]
 

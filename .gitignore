@@ -18,3 +18,5 @@ webrtc_debug/
 *.so
 
 /maps/autosave/
+
+.vs/

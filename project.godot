@@ -19,76 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/camera.gd"
 }, {
-"base": "",
-"class": "EditorSceneImporterGLTF",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/EditorSceneImporterGLTF.gdns"
-}, {
-"base": "",
-"class": "GLTFAccessor",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFAccessor.gdns"
-}, {
-"base": "",
-"class": "GLTFAnimation",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFAnimation.gdns"
-}, {
-"base": "",
-"class": "GLTFBufferView",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFBufferView.gdns"
-}, {
-"base": "",
-"class": "GLTFCamera",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFCamera.gdns"
-}, {
-"base": "",
-"class": "GLTFDocument",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFDocument.gdns"
-}, {
-"base": "",
-"class": "GLTFLight",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFLight.gdns"
-}, {
-"base": "",
-"class": "GLTFMesh",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFMesh.gdns"
-}, {
-"base": "",
-"class": "GLTFNode",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFNode.gdns"
-}, {
-"base": "",
-"class": "GLTFSkeleton",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFSkeleton.gdns"
-}, {
-"base": "",
-"class": "GLTFSkin",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFSkin.gdns"
-}, {
-"base": "",
-"class": "GLTFSpecGloss",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFSpecGloss.gdns"
-}, {
-"base": "",
-"class": "GLTFState",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFState.gdns"
-}, {
-"base": "",
-"class": "GLTFTexture",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/GLTFTexture.gdns"
-}, {
 "base": "LiquidLayer",
 "class": "LavaLayer",
 "language": "GDScript",
@@ -103,11 +33,6 @@ _global_script_classes=[ {
 "class": "OrbitArm",
 "language": "GDScript",
 "path": "res://addons/qodot/example_scenes/2-miscallaneous/1-runtime-map-building/orbit_arm.gd"
-}, {
-"base": "",
-"class": "PackedSceneGLTF",
-"language": "NativeScript",
-"path": "res://addons/godot_gltf/PackedSceneGLTF.gdns"
 }, {
 "base": "PhysicsEntity",
 "class": "PhysicsBall",
@@ -249,11 +174,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_tag.gd"
 }, {
-"base": "Spatial",
-"class": "VRMTopLevel",
-"language": "GDScript",
-"path": "res://addons/vrm/vrm_toplevel.gd"
-}, {
 "base": "Control",
 "class": "VirtualJoystick",
 "language": "GDScript",
@@ -264,11 +184,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/game_definitions/worldspawn_layers/liquid/water.gd"
 }, {
-"base": "Resource",
-"class": "handprop_info",
-"language": "GDScript",
-"path": "res://src/handprop_info.gd"
-}, {
 "base": "Spatial",
 "class": "ps_player",
 "language": "GDScript",
@@ -277,24 +192,9 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BuildFlags": "",
 "EditorCamera": "",
-"EditorSceneImporterGLTF": "",
-"GLTFAccessor": "",
-"GLTFAnimation": "",
-"GLTFBufferView": "",
-"GLTFCamera": "",
-"GLTFDocument": "",
-"GLTFLight": "",
-"GLTFMesh": "",
-"GLTFNode": "",
-"GLTFSkeleton": "",
-"GLTFSkin": "",
-"GLTFSpecGloss": "",
-"GLTFState": "",
-"GLTFTexture": "",
 "LavaLayer": "",
 "LiquidLayer": "",
 "OrbitArm": "",
-"PackedSceneGLTF": "",
 "PhysicsBall": "",
 "PhysicsEntity": "",
 "QodotDependencies": "",
@@ -323,16 +223,14 @@ _global_script_class_icons={
 "TrenchBroomGameConfigFile": "",
 "TrenchBroomGameConfigFolder": "",
 "TrenchBroomTag": "",
-"VRMTopLevel": "",
 "VirtualJoystick": "",
 "WaterLayer": "",
-"handprop_info": "",
 "ps_player": ""
 }
 
 [application]
 
-config/name="Toonbox"
+config/name="Sunaba"
 run/main_scene="res://src/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
@@ -362,7 +260,7 @@ window/size/width=800
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/vrm/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/branch/plugin.cfg", "res://addons/multirun/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/vrm/plugin.cfg" )
 
 [gdnative]
 

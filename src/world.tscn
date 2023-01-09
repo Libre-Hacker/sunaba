@@ -7383,6 +7383,3 @@ omni_range = 16.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, -6.5 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-shadow_enabled = true

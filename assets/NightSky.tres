@@ -1,8 +1,0 @@
-[gd_resource type="Sky" format=2]
-
-[resource]
-sky_top_color = Color( 0.054902, 0.0588235, 0.219608, 1 )
-sky_horizon_color = Color( 0.149963, 0.154205, 0.328125, 1 )
-ground_bottom_color = Color( 0.14902, 0.152941, 0.329412, 1 )
-ground_horizon_color = Color( 0.14902, 0.152941, 0.329412, 1 )
-sun_latitude = -75.0

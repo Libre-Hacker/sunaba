@@ -3,14 +3,14 @@ extends Node
 @onready var room_controls = $Bottombar/RoomControls
 
 func _on_create_button_pressed():
-	$NewRoomDialog.popup()
+	$NewRoomDialog.popup_centered()
 
 func _on_sb_pressed():
-	$SettingsDialog.popup()
+	$SettingsDialog.popup_centered()
 
 
 func _on_file_button_pressed():
-	$FileDialog.popup()
+	$FileDialog.popup_centered()
 
 func _on_file_selected(path):
 	get_parent().path = path

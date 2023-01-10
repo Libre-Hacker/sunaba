@@ -56,7 +56,7 @@ func get_address():
 	return address
 
 func start_http_server():
-	server.register_router("/", HttpFileRouter.new("user://server"))
+	pass#server.register_router("/", HttpFileRouter.new("user://server"))
 
 func get_map_file():
 	pass

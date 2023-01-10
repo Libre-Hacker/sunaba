@@ -1,11 +1,21 @@
-[gd_resource type="Environment" load_steps=2 format=2]
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dx2o1w4ixn5re"]
 
-[ext_resource path="res://assets/proceduralsky.tres" type="Sky" id=1]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3x5sl"]
+sky_top_color = Color(0.572549, 0.898039, 1, 1)
+sky_horizon_color = Color(0.419608, 0.678431, 0.913725, 1)
+ground_bottom_color = Color(0.419608, 0.678431, 0.913725, 1)
+ground_horizon_color = Color(0.419608, 0.678431, 0.913725, 1)
+
+[sub_resource type="Sky" id="Sky_2o3wk"]
+sky_material = SubResource("ProceduralSkyMaterial_3x5sl")
 
 [resource]
 background_mode = 2
-background_sky = ExtResource( 1 )
+sky = SubResource("Sky_2o3wk")
 ambient_light_sky_contribution = 0.5
+ssr_enabled = true
 ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
 glow_enabled = true
 adjustment_enabled = true

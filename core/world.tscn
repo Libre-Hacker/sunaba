@@ -1,13 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://bnaheix8jti6"]
 
-[ext_resource path="res://core/world.gd" type="Script" id=2]
+[ext_resource type="Script" path="res://core/world.gd" id="2"]
 
 [node name="World3D" type="Node3D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D( -1, -4.23516e-22, -8.74228e-08, -4.89962e-08, 0.828188, 0.560451, 7.24025e-08, 0.560451, -0.828188, 0, 0, 0 )
-light_color = Color( 0.160784, 0.156863, 0.537255, 1 )
-shadow_enabled = true

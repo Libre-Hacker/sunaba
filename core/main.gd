@@ -13,11 +13,11 @@ func _ready() -> void:
 
 func create_room() -> void:
 	if path != null:
-		var dir = Directory.new()
-		dir.open("user://")
-		dir.make_dir("server")
-		dir.copy(path, "user://server/index.map")
-	
+		#var dir = Directory.new()
+		#dir.open("user://")
+		#dir.make_dir("server")
+		#dir.copy(path, "user://server/index.map")
+		pass
 	
 	
 	network_manager.create_room()

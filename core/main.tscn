@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/fredoka/fredoka_regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://addons/godottpd/http_server.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/fredoka_one.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://core/ui.gd" type="Script" id=4]
 [ext_resource path="res://core/connect_dialog.gd" type="Script" id=5]
@@ -33,11 +32,6 @@ ui_node = NodePath("../UI")
 
 [node name="ENetTransport" type="Node" parent="NetworkManager"]
 script = ExtResource( 7 )
-
-[node name="HttpServer" type="Node" parent="NetworkManager"]
-script = ExtResource( 2 )
-
-[node name="HTTPRequest" type="HTTPRequest" parent="NetworkManager"]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -182,7 +176,6 @@ margin_bottom = 16.0
 placeholder_text = "chatbox"
 
 [node name="NewRoomDialog" type="WindowDialog" parent="UI"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -249,7 +242,6 @@ filters = PoolStringArray( "*.map" )
 show_hidden_files = true
 
 [node name="ConnectDialog" type="WindowDialog" parent="UI"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

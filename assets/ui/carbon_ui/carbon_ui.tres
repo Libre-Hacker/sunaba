@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=2]
+[gd_resource type="Theme" load_steps=16 format=2]
 
 [ext_resource path="res://assets/fonts/inter.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/ui/carbon_ui/blue.tres" type="StyleBox" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/ui/carbon_ui/progressbar_blue.tres" type="StyleBox" id=6]
 [ext_resource path="res://assets/ui/carbon_ui/scroll.tres" type="StyleBox" id=7]
 [ext_resource path="res://assets/ui/carbon_ui/progressbar_white.tres" type="StyleBox" id=8]
+[ext_resource path="res://assets/ui/carbon_ui/tab_fg.tres" type="StyleBox" id=9]
+[ext_resource path="res://assets/ui/2kui/empty.tres" type="StyleBox" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 5.0
@@ -41,32 +43,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id=3]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id=4]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 1, 1, 1, 1 )
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-corner_radius_top_left = 5
-corner_radius_top_right = 5
 
 [sub_resource type="StreamTexture" id=10]
 
@@ -158,15 +134,15 @@ TabContainer/colors/font_color_bg = Color( 0.25098, 0.25098, 0.25098, 1 )
 TabContainer/colors/font_color_disabled = Color( 0, 0, 0, 0.2 )
 TabContainer/colors/font_color_fg = Color( 0, 0, 0, 1 )
 TabContainer/styles/panel = SubResource( 2 )
-TabContainer/styles/tab_bg = SubResource( 3 )
-TabContainer/styles/tab_disabled = SubResource( 3 )
-TabContainer/styles/tab_fg = SubResource( 4 )
+TabContainer/styles/tab_bg = ExtResource( 10 )
+TabContainer/styles/tab_disabled = ExtResource( 10 )
+TabContainer/styles/tab_fg = ExtResource( 9 )
 Tabs/colors/font_color_bg = Color( 0.211765, 0.211765, 0.211765, 1 )
 Tabs/colors/font_color_disabled = Color( 0.129412, 0.129412, 0.129412, 0.2 )
 Tabs/colors/font_color_fg = Color( 1, 1, 1, 1 )
-Tabs/styles/button = null
-Tabs/styles/button_pressed = ExtResource( 3 )
-Tabs/styles/tab_fg = SubResource( 5 )
+Tabs/styles/tab_bg = ExtResource( 10 )
+Tabs/styles/tab_disabled = ExtResource( 10 )
+Tabs/styles/tab_fg = ExtResource( 9 )
 TextEdit/colors/background_color = Color( 1, 1, 1, 0 )
 TextEdit/colors/bookmark_color = Color( 0, 0.4, 1, 1 )
 TextEdit/colors/caret_background_color = Color( 1, 1, 1, 1 )

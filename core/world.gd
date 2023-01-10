@@ -11,7 +11,7 @@ var can_rebuild = false
 
 var mouse_over_ui = false
 
-onready var qodot_map = $QodotMap
+#onready var qodot_map = $QodotMap
 onready var main_node = get_node(main_node_path)
 onready var http_request = $HTTPRequest
 
@@ -30,9 +30,10 @@ func import_map(path):
 
 func load_map(path):
 	if path != null:
-		qodot_map.set_map_file(path)
-		qodot_map.verify_and_build()
-		qodot_map.unwrap_uv2()
+		#qodot_map.set_map_file(path)
+		#qodot_map.verify_and_build()
+		#qodot_map.unwrap_uv2()
+		pass
 
 func on_mouse_entered():
 	mouse_over_ui = true

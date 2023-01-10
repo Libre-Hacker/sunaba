@@ -16,10 +16,6 @@ var snap_vector = Vector3.ZERO
 var tool_to_spawn
 var tool_to_drop
 
-var puppet_pos = Vector3()
-var puppet_vel = Vector3()
-var puppet_rot = Vector3()
-
 var reach = null
 var aimcast = null
 var damage = 100
@@ -34,8 +30,6 @@ onready var head = $Head
 onready var fp_camera = $Head/Camera
 onready var tp_camera = $Head/SpringArm/SpringArm/TPCamera
 onready var model = $Himiko
-onready var ntr = $NetworkTickRate
-onready var movetween = $MovementTween
 onready var hand = $Head/Hand
 onready var fp_reach = $Head/Camera/Reach
 onready var tp_reach = $Head/SpringArm/SpringArm/TPCamera/Reach
@@ -98,16 +92,9 @@ func _physics_process(delta):
 		jump()
 		apply_controller_rotation()
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-75), deg2rad(75))
-	else:
-		global_transform.origin = puppet_pos
-		velocity.x = puppet_vel.x
-		velocity.z = puppet_vel.z
-		rotation.y = puppet_rot.y
-	if !movetween.is_active():
-		velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, true, 4, .7853)
 	
-	#for idx in get_slide_count():
-		#var collision = get_slide_collision(idx)
+	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, true, 4, .7853)
+	
 
 func _process(_delta): 
 	$Hud/Panel.theme = ThemeManager.theme
@@ -238,15 +225,6 @@ func apply_controller_rotation():
 	if InputEventJoypadMotion:
 		rotate_y(deg2rad(-axis_vector.x * controller_sensitivity))
 		head.rotate_x(deg2rad(-axis_vector.y * controller_sensitivity))
-
-
-puppet func update_state(p_pos, p_vel, p_rot):
-	puppet_pos = p_pos
-	puppet_vel = p_vel
-	puppet_rot = p_rot
-	
-	movetween.interpolate_property(self, "global_transform", global_transform, Transform(global_transform.basis, puppet_pos), 0.1)
-	movetween.start()
 
 
 func _on_timeout():

@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://core/camera.gd"
 }, {
-"base": "Control",
-"class": "VirtualJoystick",
-"language": "GDScript",
-"path": "res://joystick/virtual_joystick.gd"
-}, {
 "base": "Spatial",
 "class": "ps_player",
 "language": "GDScript",
@@ -32,7 +27,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BuildFlags": "",
 "EditorCamera": "",
-"VirtualJoystick": "",
 "ps_player": ""
 }
 

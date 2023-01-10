@@ -3,7 +3,7 @@
 [ext_resource path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" type="Script" id=1]
 [ext_resource path="res://addons/qodot/game_definitions/fgd/point_classes/physics_ball.tscn" type="PackedScene" id=2]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=100]
 script/source = "class_name PhysicsBall
 extends PhysicsEntity
 tool
@@ -48,4 +48,4 @@ transient_node = false
 scene = "----------------------------------------------------------------"
 scene_file = ExtResource( 2 )
 scripting = "----------------------------------------------------------------"
-script_class = SubResource( 1 )
+script_class = SubResource( 100 )

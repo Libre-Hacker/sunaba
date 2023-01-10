@@ -17,17 +17,17 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "BuildFlags",
 "language": "GDScript",
-"path": "res://src/build_flags.gd"
+"path": "res://core/build_flags.gd"
 }, {
 "base": "Node",
 "class": "EasyLANNetworkManager",
 "language": "GDScript",
 "path": "res://addons/EasyLAN/EasyLANNetworkManager.gd"
 }, {
-"base": "Camera",
+"base": "Reference",
 "class": "EditorCamera",
 "language": "GDScript",
-"path": "res://src/camera.gd"
+"path": "res://core/camera.gd"
 }, {
 "base": "Node",
 "class": "FsmState",
@@ -237,7 +237,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "ps_player",
 "language": "GDScript",
-"path": "res://src/entities/ps_player.gd"
+"path": "res://entities/ps_player.gd"
 } ]
 _global_script_class_icons={
 "ArgParse": "",
@@ -291,7 +291,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Sunaba"
-run/main_scene="res://src/main.tscn"
+run/main_scene="res://core/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
 boot_splash/show_image=false
@@ -301,10 +301,10 @@ config/windows_native_icon="res://sb_icon2.ico"
 
 [autoload]
 
-GameManager="*res://src/game_manager.gd"
-Build="*res://src/build.gd"
-ThemeManager="*res://src/theme_manager.gd"
-Global="*res://src/global.gd"
+GameManager="*res://core/game_manager.gd"
+Build="*res://core/build.gd"
+ThemeManager="*res://core/theme_manager.gd"
+Global="*res://core/global.gd"
 
 [debug]
 
@@ -525,13 +525,10 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 misc/lossless_compression/force_png=true
-quality/shadows/filter_mode=0
 quality/shading/use_physical_light_attenuation=true
-quality/spatial_partitioning/use_bvh=false
+gles3/shaders/shader_compilation_mode=1
+quality/voxel_cone_tracing/high_quality=true
 quality/filters/msaa=3
-quality/depth/hdr=false
-quality/dynamic_fonts/use_oversampling=false

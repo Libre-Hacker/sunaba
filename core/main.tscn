@@ -1,24 +1,24 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/fonts/fredoka/fredoka_regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/fonts/fredoka_one.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/fonts/fredoka/fredoka_regular.ttf" type="FontFile" id=1]
+[ext_resource path="res://assets/fonts/fredoka_one.ttf" type="FontFile" id=3]
 [ext_resource path="res://core/ui.gd" type="Script" id=4]
 [ext_resource path="res://core/connect_dialog.gd" type="Script" id=5]
 [ext_resource path="res://core/network_manager.gd" type="Script" id=6]
 [ext_resource path="res://core/enet_transport.gd" type="Script" id=7]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture" id=8]
-[ext_resource path="res://assets/textures/backdrop.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" type="Texture2D" id=8]
+[ext_resource path="res://assets/textures/backdrop.png" type="Texture2D" id=10]
 [ext_resource path="res://core/settings_dialog.tscn" type="PackedScene" id=11]
 [ext_resource path="res://core/world.tscn" type="PackedScene" id=12]
 [ext_resource path="res://core/main.gd" type="Script" id=13]
 
 [sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="FontFile" id=5]
 size = 20
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 size = 24
 font_data = ExtResource( 3 )
 
@@ -27,7 +27,7 @@ script = ExtResource( 13 )
 
 [node name="NetworkManager" type="Node" parent="."]
 script = ExtResource( 6 )
-world = NodePath("../UI/ViewportContainer/WorldViewport/World")
+world = NodePath("../UI/SubViewportContainer/WorldViewport/World3D")
 ui_node = NodePath("../UI")
 
 [node name="ENetTransport" type="Node" parent="NetworkManager"]
@@ -38,13 +38,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 4 )
 
-[node name="ViewportContainer" type="ViewportContainer" parent="UI"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -40.0
+offset_bottom = -40.0
 stretch = true
 
-[node name="WorldViewport" type="Viewport" parent="UI/ViewportContainer"]
+[node name="WorldViewport" type="SubViewport" parent="UI/SubViewportContainer"]
 size = Vector2( 800, 560 )
 handle_input_locally = false
 hdr = false
@@ -52,16 +52,16 @@ debug_draw = 3
 render_target_update_mode = 3
 physics_object_picking = true
 
-[node name="World" parent="UI/ViewportContainer/WorldViewport" instance=ExtResource( 12 )]
+[node name="World3D" parent="UI/SubViewportContainer/WorldViewport" instance=ExtResource( 12 )]
 main_node_path = NodePath("../../../..")
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 14.0
-margin_right = -378.0
-margin_bottom = -335.0
+offset_left = 15.0
+offset_top = 14.0
+offset_right = -378.0
+offset_bottom = -335.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -72,7 +72,7 @@ scroll_following = true
 [node name="MainMenu" type="Control" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -40.0
+offset_bottom = -40.0
 
 [node name="TextureRect" type="TextureRect" parent="UI/MainMenu"]
 anchor_right = 1.0
@@ -83,17 +83,17 @@ expand = true
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 27.0
-margin_top = -176.0
-margin_right = 177.0
-margin_bottom = -28.0
+offset_left = 27.0
+offset_top = -176.0
+offset_right = 177.0
+offset_bottom = -28.0
 alignment = 2
 
 [node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
-margin_top = 12.0
-margin_right = 150.0
-margin_bottom = 43.0
-rect_min_size = Vector2( 100, 0 )
+offset_top = 12.0
+offset_right = 150.0
+offset_bottom = 43.0
+minimum_size = Vector2( 100, 0 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -104,10 +104,10 @@ flat = true
 align = 0
 
 [node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
-margin_top = 47.0
-margin_right = 150.0
-margin_bottom = 78.0
-rect_min_size = Vector2( 100, 0 )
+offset_top = 47.0
+offset_right = 150.0
+offset_bottom = 78.0
+minimum_size = Vector2( 100, 0 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -118,10 +118,10 @@ flat = true
 align = 0
 
 [node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer"]
-margin_top = 82.0
-margin_right = 150.0
-margin_bottom = 113.0
-rect_min_size = Vector2( 100, 0 )
+offset_top = 82.0
+offset_right = 150.0
+offset_bottom = 113.0
+minimum_size = Vector2( 100, 0 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -132,10 +132,10 @@ flat = true
 align = 0
 
 [node name="Button3" type="Button" parent="UI/MainMenu/VBoxContainer"]
-margin_top = 117.0
-margin_right = 150.0
-margin_bottom = 148.0
-rect_min_size = Vector2( 100, 0 )
+offset_top = 117.0
+offset_right = 150.0
+offset_bottom = 148.0
+minimum_size = Vector2( 100, 0 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -149,14 +149,14 @@ align = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -40.0
+offset_top = -40.0
 
 [node name="Label" type="Label" parent="UI/Bottombar"]
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -115.0
+offset_left = -115.0
 custom_fonts/font = SubResource( 2 )
 text = "sunaba"
 align = 1
@@ -164,52 +164,52 @@ valign = 1
 
 [node name="RoomControls" type="Control" parent="UI/Bottombar"]
 anchor_bottom = 1.0
-margin_right = 612.0
+offset_right = 612.0
 
 [node name="ChatEntry" type="LineEdit" parent="UI/Bottombar/RoomControls"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 4.0
-margin_top = -17.0
-margin_right = 276.0
-margin_bottom = 16.0
+offset_left = 4.0
+offset_top = -17.0
+offset_right = 276.0
+offset_bottom = 16.0
 placeholder_text = "chatbox"
 
-[node name="NewRoomDialog" type="WindowDialog" parent="UI"]
+[node name="NewRoomDialog" type="Window" parent="UI"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -160.0
-margin_top = -129.0
-margin_right = 207.0
-margin_bottom = 52.0
-popup_exclusive = true
+offset_left = -160.0
+offset_top = -129.0
+offset_right = 207.0
+offset_bottom = 52.0
+exclusive = true
 window_title = "Create a room"
 
 [node name="RoomName" type="LineEdit" parent="UI/NewRoomDialog"]
 visible = false
 anchor_right = 1.0
-margin_left = 11.0
-margin_top = 15.0
-margin_right = -10.0
-margin_bottom = 44.0
-placeholder_text = "Room Name"
+offset_left = 11.0
+offset_top = 15.0
+offset_right = -10.0
+offset_bottom = 44.0
+placeholder_text = "Node3D Name"
 
 [node name="MapPath" type="LineEdit" parent="UI/NewRoomDialog"]
 anchor_right = 1.0
-margin_left = 11.5
-margin_top = 15.0
-margin_right = -9.5
-margin_bottom = 45.0
+offset_left = 11.5
+offset_top = 15.0
+offset_right = -9.5
+offset_bottom = 45.0
 editable = false
-placeholder_text = "Map Path"
+placeholder_text = "Map Path3D"
 
 [node name="Button" type="Button" parent="UI/NewRoomDialog/MapPath"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -46.0
+offset_left = -46.0
 icon = ExtResource( 8 )
 icon_align = 1
 
@@ -218,10 +218,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -66.0
-margin_top = -43.0
-margin_right = -9.0
-margin_bottom = -14.0
+offset_left = -66.0
+offset_top = -43.0
+offset_right = -9.0
+offset_bottom = -14.0
 text = "Create"
 icon_align = 1
 
@@ -230,63 +230,63 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -291.5
-margin_top = -186.5
-margin_right = 291.5
-margin_bottom = 186.5
-rect_min_size = Vector2( 300, 105 )
+offset_left = -291.5
+offset_top = -186.5
+offset_right = 291.5
+offset_bottom = 186.5
+minimum_size = Vector2( 300, 105 )
 window_title = "Open a File"
 mode = 0
 access = 2
-filters = PoolStringArray( "*.map" )
+filters = PackedStringArray( "*.map" )
 show_hidden_files = true
 
-[node name="ConnectDialog" type="WindowDialog" parent="UI"]
+[node name="ConnectDialog" type="Window" parent="UI"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -159.0
-margin_top = -129.0
-margin_right = 206.0
-margin_bottom = 129.0
-popup_exclusive = true
+offset_left = -159.0
+offset_top = -129.0
+offset_right = 206.0
+offset_bottom = 129.0
+exclusive = true
 window_title = "Connect to a room"
 script = ExtResource( 5 )
 netman_path = NodePath("../../NetworkManager")
 
-[node name="Tabs" type="Tabs" parent="UI/ConnectDialog"]
+[node name="TabBar" type="TabBar" parent="UI/ConnectDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TabContainer" type="TabContainer" parent="UI/ConnectDialog/Tabs"]
+[node name="TabContainer" type="TabContainer" parent="UI/ConnectDialog/TabBar"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Online" type="Control" parent="UI/ConnectDialog/Tabs/TabContainer"]
+[node name="Online" type="Control" parent="UI/ConnectDialog/TabBar/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 38.0
-margin_right = -4.0
-margin_bottom = -4.0
+offset_left = 4.0
+offset_top = 38.0
+offset_right = -4.0
+offset_bottom = -4.0
 
-[node name="LineEdit" type="LineEdit" parent="UI/ConnectDialog/Tabs/TabContainer/Online"]
+[node name="LineEdit" type="LineEdit" parent="UI/ConnectDialog/TabBar/TabContainer/Online"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -108.0
-margin_top = 5.0
-margin_right = 108.0
-margin_bottom = 35.0
+offset_left = -108.0
+offset_top = 5.0
+offset_right = 108.0
+offset_bottom = 35.0
 text = "127.0.0.1"
 
-[node name="Button" type="Button" parent="UI/ConnectDialog/Tabs/TabContainer/Online"]
+[node name="Button" type="Button" parent="UI/ConnectDialog/TabBar/TabContainer/Online"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 38.0
-margin_top = 41.0
-margin_right = 116.0
-margin_bottom = 71.0
+offset_left = 38.0
+offset_top = 41.0
+offset_right = 116.0
+offset_bottom = 71.0
 text = "Connect"
 
 [node name="SettingsDialog" parent="UI" instance=ExtResource( 11 )]
@@ -297,14 +297,14 @@ gui = NodePath("..")
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="_on_connect_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="quit"]
-[connection signal="mouse_entered" from="UI/Bottombar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Bottombar" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
-[connection signal="text_entered" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
-[connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
+[connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
+[connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
 [connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
 [connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]
-[connection signal="pressed" from="UI/ConnectDialog/Tabs/TabContainer/Online/Button" to="UI/ConnectDialog" method="_connect"]
-[connection signal="mouse_entered" from="UI/SettingsDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/SettingsDialog" to="UI/ViewportContainer/WorldViewport/World" method="on_mouse_exited"]
+[connection signal="pressed" from="UI/ConnectDialog/TabBar/TabContainer/Online/Button" to="UI/ConnectDialog" method="_connect"]
+[connection signal="mouse_entered" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]

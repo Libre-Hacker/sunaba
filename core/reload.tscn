@@ -5,7 +5,7 @@ script/source = "extends Node
 
 
 func _ready():
-	get_tree().change_scene(\"res://src/main.tscn\")
+	get_tree().change_scene_to_file(\"res://src/main.tscn\")
 "
 
 [node name="Reload" type="Node"]

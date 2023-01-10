@@ -1,10 +1,10 @@
 [gd_resource type="Theme" load_steps=16 format=2]
 
-[ext_resource path="res://assets/fonts/inter.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/inter.tres" type="FontFile" id=1]
 [ext_resource path="res://assets/ui/carbon_ui/blue.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/ui/carbon_ui/white.tres" type="StyleBox" id=3]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" type="Texture" id=4]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" type="Texture2D" id=4]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" type="Texture2D" id=5]
 [ext_resource path="res://assets/ui/carbon_ui/progressbar_blue.tres" type="StyleBox" id=6]
 [ext_resource path="res://assets/ui/carbon_ui/scroll.tres" type="StyleBox" id=7]
 [ext_resource path="res://assets/ui/carbon_ui/progressbar_white.tres" type="StyleBox" id=8]
@@ -27,7 +27,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StreamTexture" id=7]
+[sub_resource type="CompressedTexture2D" id=7]
 
 [sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 5.0
@@ -44,7 +44,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StreamTexture" id=10]
+[sub_resource type="CompressedTexture2D" id=10]
 
 [sub_resource type="StyleBoxFlat" id=6]
 content_margin_left = 5.0
@@ -113,7 +113,7 @@ MenuButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Panel/styles/panel = ExtResource( 3 )
-PopupDialog/styles/panel = ExtResource( 3 )
+Popup/styles/panel = ExtResource( 3 )
 PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_accel = Color( 0, 0, 0, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0, 0, 0, 0.8 )
@@ -137,12 +137,12 @@ TabContainer/styles/panel = SubResource( 2 )
 TabContainer/styles/tab_bg = ExtResource( 10 )
 TabContainer/styles/tab_disabled = ExtResource( 10 )
 TabContainer/styles/tab_fg = ExtResource( 9 )
-Tabs/colors/font_color_bg = Color( 0.211765, 0.211765, 0.211765, 1 )
-Tabs/colors/font_color_disabled = Color( 0.129412, 0.129412, 0.129412, 0.2 )
-Tabs/colors/font_color_fg = Color( 1, 1, 1, 1 )
-Tabs/styles/tab_bg = ExtResource( 10 )
-Tabs/styles/tab_disabled = ExtResource( 10 )
-Tabs/styles/tab_fg = ExtResource( 9 )
+TabBar/colors/font_color_bg = Color( 0.211765, 0.211765, 0.211765, 1 )
+TabBar/colors/font_color_disabled = Color( 0.129412, 0.129412, 0.129412, 0.2 )
+TabBar/colors/font_color_fg = Color( 1, 1, 1, 1 )
+TabBar/styles/tab_bg = ExtResource( 10 )
+TabBar/styles/tab_disabled = ExtResource( 10 )
+TabBar/styles/tab_fg = ExtResource( 9 )
 TextEdit/colors/background_color = Color( 1, 1, 1, 0 )
 TextEdit/colors/bookmark_color = Color( 0, 0.4, 1, 1 )
 TextEdit/colors/caret_background_color = Color( 1, 1, 1, 1 )
@@ -179,4 +179,4 @@ VSlider/icons/grabber_highlight = SubResource( 10 )
 VSlider/styles/grabber_area = ExtResource( 2 )
 VSlider/styles/grabber_area_highlight = ExtResource( 2 )
 VSlider/styles/slider = ExtResource( 3 )
-WindowDialog/styles/panel = SubResource( 6 )
+Window/styles/panel = SubResource( 6 )

@@ -2,10 +2,10 @@ extends Node
 
 var path = null
 
-onready var network_manager = $NetworkManager
-onready var chatbox = $UI/Chatbox
-onready var chat_entry = $UI/Bottombar/RoomControls/ChatEntry
-onready var world = $UI/ViewportContainer/WorldViewport/World
+@onready var network_manager = $NetworkManager
+@onready var chatbox = $UI/Chatbox
+@onready var chat_entry = $UI/Bottombar/RoomControls/ChatEntry
+@onready var world = $UI/SubViewportContainer/WorldViewport/World3D
 
 func _ready() -> void:
 	chat_entry.editable = false
@@ -28,7 +28,7 @@ func enable_chat() -> void:
 	chat_entry.editable = true
 
 func log_to_chat(logstring):
-	logstring = "Room : " + logstring
+	logstring = "Node3D : " + logstring
 	print(logstring)
 	chatbox.add_text(logstring)
 	chatbox.newline()
@@ -50,7 +50,7 @@ func import_world():
 
 
 func _on_chat_text_entered(new_text):
-	var id = var2str(get_tree().get_network_unique_id())
+	var id = var_to_str(get_tree().get_unique_id())
 	network_manager.rpc("chat", id, new_text)
 	chat(id, new_text)
 
@@ -59,6 +59,6 @@ func quit():
 	get_tree().quit()
 
 func _process(_delta):
-	if Input.is_key_pressed(KEY_CONTROL) and Input.is_key_pressed(KEY_R):
+	if Input.is_key_pressed(KEY_CTRL) and Input.is_key_pressed(KEY_R):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().change_scene("res://src/reload.tscn")
+		get_tree().change_scene_to_file("res://src/reload.tscn")

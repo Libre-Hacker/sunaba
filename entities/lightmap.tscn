@@ -3,6 +3,6 @@
 [ext_resource path="res://entities/lightmap.gd" type="Script" id=1]
 
 
-[node name="lightmap" type="BakedLightmap"]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+[node name="lightmap" type="LightmapGI"]
+transform = Transform3D( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 script = ExtResource( 1 )

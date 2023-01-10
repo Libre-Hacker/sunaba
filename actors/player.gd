@@ -1,14 +1,14 @@
-extends KinematicBody
+extends CharacterBody3D
 
-export var max_speed : int = 12
-export var acceleration : int = 60
-export var friction : int = 50
-export var air_friction : int = 10
-export var jump_impulse : int = 20
-export var gravity : int = -40
+@export var max_speed : int = 12
+@export var acceleration : int = 60
+@export var friction : int = 50
+@export var air_friction : int = 10
+@export var jump_impulse : int = 20
+@export var gravity : int = -40
 
-export var mouse_sensitivity : float = .1
-export var controller_sensitivity : int = 3
+@export var mouse_sensitivity : float = .1
+@export var controller_sensitivity : int = 3
 
 var velocity = Vector3.ZERO
 var snap_vector = Vector3.ZERO
@@ -26,43 +26,43 @@ var muzzle = null
 var ammo = 21
 var max_ammo = 25
 
-onready var head = $Head
-onready var fp_camera = $Head/Camera
-onready var tp_camera = $Head/SpringArm/SpringArm/TPCamera
-onready var model = $Himiko
-onready var hand = $Head/Hand
-onready var fp_reach = $Head/Camera/Reach
-onready var tp_reach = $Head/SpringArm/SpringArm/TPCamera/Reach
-onready var fp_aimcast = $Head/Camera/AimCast
-onready var tp_aimcast = $Head/SpringArm/SpringArm/TPCamera/AimCast
+@onready var head = $Head
+@onready var fp_camera = $Head/Camera3D
+@onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
+@onready var model = $Himiko
+@onready var hand = $Head/Hand
+@onready var fp_reach = $Head/Camera3D/Reach
+@onready var tp_reach = $Head/SpringArm3D/SpringArm3D/TPCamera/Reach
+@onready var fp_aimcast = $Head/Camera3D/AimCast
+@onready var tp_aimcast = $Head/SpringArm3D/SpringArm3D/TPCamera/AimCast
 
 # Hud Related Nodes
-onready var crosshair = $Hud/Crosshair
-onready var reload_label = $Hud/Crosshair/Label 
-onready var tool_label = $Hud/ToolPanel/Label
-onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
+@onready var crosshair = $Hud/Crosshair
+@onready var reload_label = $Hud/Crosshair/Label 
+@onready var tool_label = $Hud/ToolPanel/Label
+@onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
 
 
-onready var pb_gun_hr = preload("res://weapons/paintball_gun_hr.tscn")
-onready var pb_gun = preload("res://entities/wp_pbgun.tscn")
-onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
-onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
+@onready var pb_gun_hr = preload("res://weapons/paintball_gun_hr.tscn")
+@onready var pb_gun = preload("res://entities/wp_pbgun.tscn")
+@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
+@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
-onready var b_decal = preload("res://core/bullet_decal.tscn")
+@onready var b_decal = preload("res://core/bullet_decal.tscn")
 
 func _ready():
-	if is_network_master():
+	if is_multiplayer_authority():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	fp_camera.current = is_network_master()
+	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
-	model.visible = !is_network_master()
+	model.visible = !is_multiplayer_authority()
 	reach = fp_reach
 	aimcast = fp_aimcast
 	reload_label.hide()
 	$Hud/ToolPanel.hide()
 
 func _input(event):
-	if !is_network_master():
+	if !is_multiplayer_authority():
 		return
 	
 	#if event.is_action_pressed("action_button") && get_parent().mouse_over_ui == false: 
@@ -79,11 +79,11 @@ func _input(event):
 	
 	
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
-		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
+		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
+		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
 
 func _physics_process(delta):
-	if is_network_master():
+	if is_multiplayer_authority():
 		var input_vector = get_input_vector()
 		var direction = get_direction(input_vector)
 		apply_movement(direction, delta)
@@ -91,36 +91,43 @@ func _physics_process(delta):
 		apply_friction(direction, delta)
 		jump()
 		apply_controller_rotation()
-		head.rotation.x = clamp(head.rotation.x, deg2rad(-75), deg2rad(75))
+		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-75), deg_to_rad(75))
 	
-	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, true, 4, .7853)
+	set_velocity(velocity)
+	# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
+	set_up_direction(Vector3.UP)
+	set_floor_stop_on_slope_enabled(true)
+	set_max_slides(4)
+	set_floor_max_angle(.7853)
+	move_and_slide()
+	velocity = velocity
 	
 
 func _process(_delta): 
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
 	crosshair.theme = ThemeManager.theme
-	tool_ammo_bar.get_node("Label").text = var2str(ammo) + " / " + var2str(max_ammo)
+	tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
 			fp_camera.current = false
-			tp_camera.current = is_network_master()
+			tp_camera.current = is_multiplayer_authority()
 			model.visible = true
 			reach = tp_reach
 			aimcast = tp_aimcast
 		elif tp_camera.current == true:
-			fp_camera.current = is_network_master()
+			fp_camera.current = is_multiplayer_authority()
 			tp_camera.current = false
-			model.visible = !is_network_master()
+			model.visible = !is_multiplayer_authority()
 			reach = fp_reach
 			aimcast = fp_aimcast
 	
 	if reach.is_colliding():
 		if "wp_pbgun" in reach.get_collider().get_name():
-			tool_to_spawn = pb_gun_hr.instance()
+			tool_to_spawn = pb_gun_hr.instantiate()
 		elif "wp_pistol" in reach.get_collider().get_name():
-			tool_to_spawn = pb_pistol_hr.instance()
+			tool_to_spawn = pb_pistol_hr.instantiate()
 		else:
 			tool_to_spawn = null
 	else:
@@ -129,9 +136,9 @@ func _process(_delta):
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
 			if hand.get_child(0).get_name() == "Paintball Gun":
-				tool_to_drop = pb_gun.instance()
+				tool_to_drop = pb_gun.instantiate()
 			elif hand.get_child(0).get_name() == "Paintball Pistol":
-				tool_to_drop = pb_pistol.instance()
+				tool_to_drop = pb_pistol.instantiate()
 		else:
 			tool_to_drop = null
 	else:
@@ -223,12 +230,12 @@ func apply_controller_rotation():
 	axis_vector.y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
 	
 	if InputEventJoypadMotion:
-		rotate_y(deg2rad(-axis_vector.x * controller_sensitivity))
-		head.rotate_x(deg2rad(-axis_vector.y * controller_sensitivity))
+		rotate_y(deg_to_rad(-axis_vector.x * controller_sensitivity))
+		head.rotate_x(deg_to_rad(-axis_vector.y * controller_sensitivity))
 
 
 func _on_timeout():
-	if is_network_master():
+	if is_multiplayer_authority():
 		rpc_unreliable("update_state", global_transform.origin, velocity, Vector2(rotation.x, rotation.y))
 
 func _fire():
@@ -242,7 +249,7 @@ func _fire():
 				print("hit bot")
 				target.health -= damage
 			else:
-				var b = b_decal.instance()
+				var b = b_decal.instantiate()
 				target.add_child(b)
 				b.global_transform.origin = aimcast.get_collision_point()
 				b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal(), Vector3.UP)

@@ -1,8 +1,8 @@
-class_name EditorCamera extends Camera
+class_name EditorCamera extends Camera3D
 
 const voxel_size := 1
 
-export(float, 0.0, 1.0) var sensitivity = 0.25
+@export var sensitivity = 0.25 # (float, 0.0, 1.0)
 
 # Mouse state
 var _mouse_position = Vector2(0.0, 0.0)
@@ -38,12 +38,12 @@ func _input(event):
 	# Receives mouse button input
 	if event is InputEventMouseButton:
 		match event.button_index:
-			BUTTON_RIGHT: # Only allows rotation if right click down
+			MOUSE_BUTTON_RIGHT: # Only allows rotation if right click down
 				#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if event.pressed else Input.MOUSE_MODE_VISIBLE)
 				pass
-			BUTTON_WHEEL_UP: # Increases max velocity
+			MOUSE_BUTTON_WHEEL_UP: # Increases max velocity
 				_vel_multiplier = clamp(_vel_multiplier * 1.1, 0.2, 20)
-			BUTTON_WHEEL_DOWN: # Decereases max velocity
+			MOUSE_BUTTON_WHEEL_DOWN: # Decereases max velocity
 				_vel_multiplier = clamp(_vel_multiplier / 1.1, 0.2, 20)
 
 	# Receives key input
@@ -75,7 +75,7 @@ func _update_movement(delta):
 						 _s as float - _w as float)
 	
 	# Computes the change in velocity due to desired direction and "drag"
-	# The "drag" is a constant acceleration on the camera to bring it's velocity to 0
+	# The "drag" is a constant acceleration checked the camera to bring it's velocity to 0
 	var offset = _direction.normalized() * _acceleration * _vel_multiplier * delta \
 		+ _velocity.normalized() * _deceleration * _vel_multiplier * delta
 	
@@ -104,5 +104,5 @@ func _update_mouselook():
 		pitch = clamp(pitch, -90 - _total_pitch, 90 - _total_pitch)
 		_total_pitch += pitch
 	
-		rotate_y(deg2rad(-yaw))
-		rotate_object_local(Vector3(1,0,0), deg2rad(-pitch))
+		rotate_y(deg_to_rad(-yaw))
+		rotate_object_local(Vector3(1,0,0), deg_to_rad(-pitch))

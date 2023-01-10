@@ -2,18 +2,18 @@
 
 [ext_resource path="res://assets/ui/2kui/tab_fg.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/ui/2kui/tab_bg.tres" type="StyleBox" id=2]
-[ext_resource path="res://assets/ui/2kui/grey_button11.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/2kui/grey_button11.png" type="Texture2D" id=3]
 [ext_resource path="res://assets/ui/carbon_ui/white.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/fonts/fredoka.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/fonts/fredoka.tres" type="FontFile" id=5]
 [ext_resource path="res://assets/ui/2kui/empty.tres" type="StyleBox" id=6]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" type="Texture2D" id=9]
+[ext_resource path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" type="Texture2D" id=10]
 [ext_resource path="res://assets/ui/carbon_ui/scroll.tres" type="StyleBox" id=11]
 [ext_resource path="res://assets/ui/2kui/button_normal.tres" type="StyleBox" id=12]
 [ext_resource path="res://assets/ui/2kui/button_blue.tres" type="StyleBox" id=13]
 [ext_resource path="res://assets/ui/2kui/panel.tres" type="StyleBox" id=14]
-[ext_resource path="res://assets/ui/2kui/grey_panel.png" type="Texture" id=15]
-[ext_resource path="res://assets/ui/2kui/window.png" type="Texture" id=16]
+[ext_resource path="res://assets/ui/2kui/grey_panel.png" type="Texture2D" id=15]
+[ext_resource path="res://assets/ui/2kui/window.png" type="Texture2D" id=16]
 [ext_resource path="res://assets/ui/2kui/panel2.tres" type="StyleBox" id=17]
 
 [sub_resource type="StyleBoxTexture" id=11]
@@ -95,7 +95,7 @@ MenuButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
 MenuButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Panel/styles/panel = ExtResource( 17 )
-PopupDialog/styles/panel = ExtResource( 14 )
+Popup/styles/panel = ExtResource( 14 )
 PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
 PopupMenu/colors/font_color_accel = Color( 0, 0, 0, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0, 0, 0, 0.8 )
@@ -119,13 +119,13 @@ TabContainer/styles/panel = ExtResource( 14 )
 TabContainer/styles/tab_bg = ExtResource( 2 )
 TabContainer/styles/tab_disabled = ExtResource( 6 )
 TabContainer/styles/tab_fg = ExtResource( 1 )
-Tabs/colors/font_color_bg = Color( 0.211765, 0.211765, 0.211765, 1 )
-Tabs/colors/font_color_disabled = Color( 0.129412, 0.129412, 0.129412, 0.2 )
-Tabs/colors/font_color_fg = Color( 1, 1, 1, 1 )
-Tabs/styles/button_pressed = ExtResource( 4 )
-Tabs/styles/tab_bg = ExtResource( 2 )
-Tabs/styles/tab_disabled = ExtResource( 6 )
-Tabs/styles/tab_fg = ExtResource( 1 )
+TabBar/colors/font_color_bg = Color( 0.211765, 0.211765, 0.211765, 1 )
+TabBar/colors/font_color_disabled = Color( 0.129412, 0.129412, 0.129412, 0.2 )
+TabBar/colors/font_color_fg = Color( 1, 1, 1, 1 )
+TabBar/styles/button_pressed = ExtResource( 4 )
+TabBar/styles/tab_bg = ExtResource( 2 )
+TabBar/styles/tab_disabled = ExtResource( 6 )
+TabBar/styles/tab_fg = ExtResource( 1 )
 TextEdit/colors/background_color = Color( 1, 1, 1, 0 )
 TextEdit/colors/bookmark_color = Color( 0, 0.4, 1, 1 )
 TextEdit/colors/caret_background_color = Color( 1, 1, 1, 1 )
@@ -156,7 +156,7 @@ Tree/styles/custom_button_pressed = ExtResource( 13 )
 Tree/styles/selected = ExtResource( 13 )
 Tree/styles/selected_focus = ExtResource( 13 )
 VScrollBar/styles/scroll = ExtResource( 11 )
-WindowDialog/constants/close_h_ofs = 21
-WindowDialog/constants/close_v_ofs = 23
-WindowDialog/constants/title_height = 30
-WindowDialog/styles/panel = SubResource( 16 )
+Window/constants/close_h_ofs = 21
+Window/constants/close_v_ofs = 23
+Window/constants/title_height = 30
+Window/styles/panel = SubResource( 16 )

@@ -1,4 +1,4 @@
-extends WindowDialog
+extends Window
 
 var settings = {
 	# Theme
@@ -10,7 +10,7 @@ var settings = {
 
 
 # Theming-related variables
-export var gui : NodePath
+@export var gui : NodePath
 # Themes
 var carbon_dark = preload("res://assets/ui/carbon_ui/dark.tres")
 var carbon_light = preload("res://assets/ui/carbon_ui/carbon_ui.tres")
@@ -21,7 +21,7 @@ var sleek = preload("res://assets/ui/sl33k/sl33k.tres")
 var three_point_one = preload("res://assets/ui/classic311/Classic311.tres")
 
 # Graphics-related variables
-onready var fullscreen_toggle = $Tabs/TabContainer/Graphics/VBoxContainer/FullscreenToggle
+@onready var fullscreen_toggle = $TabBar/TabContainer/Graphics/VBoxContainer/FullscreenToggle
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,7 +39,10 @@ func _ready():
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_F11):
-		OS.window_fullscreen = !OS.window_fullscreen
+		if !OS.window_fullscreen:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+else:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		save()
 
 func change_theme(theme):
@@ -76,12 +79,15 @@ func _on_theme_selected(index):
 
 
 func _on_fullscreen_toggled(_button_pressed):
-	#OS.window_fullscreen = button_pressed
+	#if button_pressed:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+else:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	#save()
 	pass
 
 func save():
 	var file = File.new()
 	file.open("user://config.tres", File.WRITE)
-	file.store_string(var2str(settings))
+	file.store_string(var_to_str(settings))
 	file.close()

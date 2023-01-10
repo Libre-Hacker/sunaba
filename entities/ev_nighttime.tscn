@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/night_environment.tres" type="Environment" id=1]
 
-[node name="ev_night" type="Spatial"]
+[node name="ev_night" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )

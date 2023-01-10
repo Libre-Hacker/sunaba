@@ -1,6 +1,6 @@
-extends Spatial
+extends Node3D
 
-export var main_node_path : NodePath
+@export var main_node_path : NodePath
 
 var map = null
 
@@ -12,8 +12,8 @@ var can_rebuild = false
 var mouse_over_ui = false
 
 #onready var qodot_map = $QodotMap
-onready var main_node = get_node(main_node_path)
-onready var http_request = $HTTPRequest
+@onready var main_node = get_node(main_node_path)
+@onready var http_request = $HTTPRequest
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,7 +25,7 @@ func import_map(path):
 	var file = File.new()
 	file.open(path, File.READ)
 	var sbg_text = file.get_as_text()
-	map = str2var(sbg_text)
+	map = str_to_var(sbg_text)
 	file.close()
 
 func load_map(path):

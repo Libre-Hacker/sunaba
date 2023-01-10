@@ -1,4 +1,4 @@
-extends BakedLightmap
+extends LightmapGI
 
 
 

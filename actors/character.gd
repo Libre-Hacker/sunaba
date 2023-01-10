@@ -1,11 +1,11 @@
-extends Spatial
+extends Node3D
 
 
 var skin = null
 
 
-onready var body = $metarig/Skeleton/BaseCharacter
-onready var headwear = $metarig/Skeleton/HeadwearAttachment
+@onready var body = $metarig/Skeleton3D/BaseCharacter
+@onready var headwear = $metarig/Skeleton3D/HeadwearAttachment
 
 
 func hide_meshes():

@@ -4,71 +4,71 @@
 [ext_resource path="res://assets/ui/2kui/panel.tres" type="StyleBox" id=3]
 [ext_resource path="res://actors/player.gd" type="Script" id=4]
 [ext_resource path="res://actors/himiko.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" type="Texture" id=7]
-[ext_resource path="res://assets/ui/2kui/red_button09.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/crosshair.png" type="Texture" id=9]
-[ext_resource path="res://sunaba-icon2.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" type="Texture2D" id=7]
+[ext_resource path="res://assets/ui/2kui/red_button09.png" type="Texture2D" id=8]
+[ext_resource path="res://assets/ui/crosshair.png" type="Texture2D" id=9]
+[ext_resource path="res://sunaba-icon2.png" type="Texture2D" id=10]
 [ext_resource path="res://assets/audio/shoot.wav" type="AudioStream" id=11]
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape3D" id=3]
 radius = 0.293445
 height = 0.96792
 
 [sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 49, 45 )
-margin_left = 10.0
-margin_right = 10.0
-margin_top = 10.0
-margin_bottom = 10.0
+offset_left = 10.0
+offset_right = 10.0
+offset_top = 10.0
+offset_bottom = 10.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource( 4 )
 max_speed = 6
 jump_impulse = 10
 
 [node name="Himiko" parent="." instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+transform = Transform3D( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 visible = false
 
-[node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0 )
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0 )
 
-[node name="Camera" type="Camera" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head"]
 far = 200.0
 
-[node name="Reach" type="RayCast" parent="Head/Camera"]
+[node name="Reach" type="RayCast3D" parent="Head/Camera3D"]
 enabled = true
 cast_to = Vector3( 0, 0, -5 )
 
-[node name="AimCast" type="RayCast" parent="Head/Camera"]
+[node name="AimCast" type="RayCast3D" parent="Head/Camera3D"]
 enabled = true
 cast_to = Vector3( 0, -1, -1000 )
 
-[node name="SpringArm" type="SpringArm" parent="Head"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
+[node name="SpringArm3D" type="SpringArm3D" parent="Head"]
+transform = Transform3D( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0 )
 spring_length = 0.3
 
-[node name="SpringArm" type="SpringArm" parent="Head/SpringArm"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.32439e-08, 0, 0.302986 )
+[node name="SpringArm3D" type="SpringArm3D" parent="Head/SpringArm3D"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.32439e-08, 0, 0.302986 )
 spring_length = 2.0
 
-[node name="TPCamera" type="Camera" parent="Head/SpringArm/SpringArm"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413 )
+[node name="TPCamera" type="Camera3D" parent="Head/SpringArm3D/SpringArm3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413 )
 
-[node name="Reach" type="RayCast" parent="Head/SpringArm/SpringArm/TPCamera"]
+[node name="Reach" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
 enabled = true
 cast_to = Vector3( 0, 0, -7 )
 
-[node name="AimCast" type="RayCast" parent="Head/SpringArm/SpringArm/TPCamera"]
+[node name="AimCast" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
 enabled = true
 cast_to = Vector3( 0, -1, -1000 )
 
-[node name="Hand" type="Spatial" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.455246 )
+[node name="Hand" type="Node3D" parent="Head"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.455246 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.800358, 0 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.800358, 0 )
 shape = SubResource( 3 )
 
 [node name="NetworkTickRate" type="Timer" parent="."]
@@ -80,19 +80,19 @@ autostart = true
 [node name="Panel" type="Panel" parent="Hud"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 6.0
-margin_top = -89.0
-margin_right = 186.0
-margin_bottom = -8.0
+offset_left = 6.0
+offset_top = -89.0
+offset_right = 186.0
+offset_bottom = -8.0
 
 [node name="Icon" type="TextureRect" parent="Hud/Panel"]
 visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = -61.0
-margin_right = 61.0
-margin_bottom = -7.0
+offset_left = 8.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = -7.0
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5
@@ -102,32 +102,32 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -173.0
-margin_top = -48.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = -173.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_styles/fg = SubResource( 4 )
-custom_styles/bg = ExtResource( 3 )
+custom_styles/panel = ExtResource( 3 )
 value = 100.0
 
 [node name="TextureRect" type="TextureRect" parent="Hud/Panel/ProgressBar"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 8.0
-margin_top = -10.0
-margin_right = 30.0
-margin_bottom = 11.0
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 11.0
 texture = ExtResource( 7 )
 expand = true
 
 [node name="Label" type="Label" parent="Hud/Panel"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -170.0
-margin_top = 8.0
-margin_right = -5.0
-margin_bottom = 25.0
+offset_left = -170.0
+offset_top = 8.0
+offset_right = -5.0
+offset_bottom = 25.0
 text = "Player"
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
@@ -136,19 +136,19 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -188.0
-margin_top = -89.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = -188.0
+offset_top = -89.0
+offset_right = -8.0
+offset_bottom = -8.0
 
 [node name="Icon" type="TextureRect" parent="Hud/ToolPanel"]
 visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = -61.0
-margin_right = 61.0
-margin_bottom = -7.0
+offset_left = 8.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = -7.0
 texture = ExtResource( 10 )
 expand = true
 stretch_mode = 5
@@ -158,13 +158,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -173.0
-margin_top = -48.0
-margin_right = -8.0
-margin_bottom = -8.0
+offset_left = -173.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_styles/fg = ExtResource( 2 )
-custom_styles/bg = ExtResource( 3 )
+custom_styles/panel = ExtResource( 3 )
 value = 100.0
 percent_visible = false
 
@@ -181,10 +181,10 @@ valign = 1
 [node name="Label" type="Label" parent="Hud/ToolPanel"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -170.0
-margin_top = 8.0
-margin_right = -9.0
-margin_bottom = 25.0
+offset_left = -170.0
+offset_top = 8.0
+offset_right = -9.0
+offset_bottom = 25.0
 text = "Gun A"
 align = 2
 
@@ -193,10 +193,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -14.0
-margin_top = -14.0
-margin_right = 14.0
-margin_bottom = 14.0
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
 texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="Hud/Crosshair"]
@@ -205,10 +205,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1

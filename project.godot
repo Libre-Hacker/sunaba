@@ -66,7 +66,7 @@ singletons=[  ]
 
 [gui]
 
-theme/custom="res://assets/ui/sl33k/sl33k.tres"
+theme/custom="res://assets/ui/2kui/2kui.tres"
 
 [input]
 

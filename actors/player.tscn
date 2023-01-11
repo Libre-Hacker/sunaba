@@ -1,15 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwqwm01g0ddxx"]
+[gd_scene load_steps=12 format=3 uid="uid://cwqwm01g0ddxx"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
+[ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="4_vg2nh"]
+[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_01etg"]
 [ext_resource type="PackedScene" uid="uid://bunf532f5lei7" path="res://actors/himiko.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
+[ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="7_o05eg"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/shoot.wav" id="11"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ovs8g"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_momdr"]
 radius = 0.293445
 height = 1.4969
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0s8t"]
+texture = ExtResource("5_01etg")
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 5.0
+margin_bottom = 5.0
+region_rect = Rect2(0, 0, 49, 45)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("4")
@@ -49,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.45524
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_ovs8g")
+shape = SubResource("CapsuleShape3D_momdr")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -61,14 +72,15 @@ autostart = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 6.0
+offset_left = 8.0
 offset_top = -89.0
-offset_right = 186.0
+offset_right = 188.0
 offset_bottom = -8.0
 grow_vertical = 0
 
 [node name="Icon" type="TextureRect" parent="Hud/Panel"]
 visible = false
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -81,6 +93,7 @@ texture = ExtResource("10")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/Panel"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -92,9 +105,13 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/background = ExtResource("4_vg2nh")
+theme_override_styles/fill = SubResource("StyleBoxTexture_u0s8t")
 value = 100.0
+show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="Hud/Panel/ProgressBar"]
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -106,19 +123,35 @@ grow_vertical = 2
 texture = ExtResource("7")
 ignore_texture_size = true
 
+[node name="Label" type="Label" parent="Hud/Panel/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 21
+text = "100"
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="Hud/Panel"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -170.0
-offset_top = 8.0
+offset_top = 4.0
 offset_right = -5.0
-offset_bottom = 25.0
+offset_bottom = 30.0
 grow_horizontal = 0
 text = "Player"
+vertical_alignment = 1
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
-visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -133,6 +166,7 @@ grow_vertical = 0
 
 [node name="Icon" type="TextureRect" parent="Hud/ToolPanel"]
 visible = false
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -145,6 +179,7 @@ texture = ExtResource("10")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -156,26 +191,40 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/background = ExtResource("4_vg2nh")
+theme_override_styles/fill = ExtResource("7_o05eg")
 value = 100.0
+show_percentage = false
 
 [node name="Label" type="Label" parent="Hud/ToolPanel/ProgressBar"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 21
 text = "100 / 100"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Hud/ToolPanel"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -170.0
-offset_top = 8.0
-offset_right = -9.0
-offset_bottom = 25.0
+offset_top = 4.0
+offset_right = -16.0
+offset_bottom = 30.0
 grow_horizontal = 0
 text = "Gun A"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Crosshair" type="TextureRect" parent="Hud"]
 anchors_preset = 8
@@ -192,7 +241,7 @@ grow_vertical = 2
 texture = ExtResource("9")
 
 [node name="Label" type="Label" parent="Hud/Crosshair"]
-visible = false
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -204,7 +253,12 @@ offset_right = 50.0
 offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
 text = "Reloading"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 2.5

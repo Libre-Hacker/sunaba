@@ -2,6 +2,9 @@ extends Node
 
 @onready var room_controls = $Bottombar/RoomControls
 
+func  _ready():
+	$MainMenu.show()
+
 func _on_create_button_pressed():
 	$NewRoomDialog.popup_centered()
 

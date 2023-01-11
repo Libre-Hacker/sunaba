@@ -26,9 +26,9 @@ var three_point_one = preload("res://assets/ui/classic311/Classic311.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	OS.min_window_size = Vector2(640,480)
-	var file = File.new()
-	file.open("user://config.tres", File.READ)
+	#OS.min_window_size = Vector2(640,480)
+	#var file = File.new()
+	#file.open("user://config.tres", File.READ)
 	#if file.file_exists("user://config.tres"):
 		#settings = file.get_as_text()
 		#file.close()
@@ -39,17 +39,17 @@ func _ready():
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_F11):
-		if !OS.window_fullscreen:
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-else:
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		save()
+		#if !OS.window_fullscreen:
+			#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		#else:
+		#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		pass#save()
 
 func change_theme(theme):
 	theme = theme
 	get_node(gui).theme = theme
 	ThemeManager.theme = theme
-	save()
+	#save()
 
 
 
@@ -80,14 +80,9 @@ func _on_theme_selected(index):
 
 func _on_fullscreen_toggled(_button_pressed):
 	#if button_pressed:
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-else:
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	#else:
+	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	#save()
 	pass
 
-func save():
-	var file = File.new()
-	file.open("user://config.tres", File.WRITE)
-	file.store_string(var_to_str(settings))
-	file.close()

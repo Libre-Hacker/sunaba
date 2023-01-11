@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpdsh18u6mbnt"]
+[gd_scene load_steps=12 format=3 uid="uid://dpdsh18u6mbnt"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
 [ext_resource type="Script" path="res://core/enet_transport.gd" id="7"]
+[ext_resource type="FontFile" uid="uid://bevdxpypkmjw5" path="res://assets/fonts/fredoka_one.ttf" id="7_7i34v"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
 [ext_resource type="Texture2D" uid="uid://0yo2od878bfq" path="res://assets/textures/backdrop.png" id="10"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
@@ -32,10 +33,11 @@ grow_vertical = 2
 script = ExtResource("4")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="UI"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -40.0
+offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
@@ -43,13 +45,14 @@ stretch = true
 [node name="WorldViewport" type="SubViewport" parent="UI/SubViewportContainer"]
 handle_input_locally = false
 physics_object_picking = true
-size = Vector2i(1152, 608)
+size = Vector2i(640, 434)
 render_target_update_mode = 4
 
 [node name="World3D" parent="UI/SubViewportContainer/WorldViewport" instance=ExtResource("12")]
 main_node_path = NodePath("../../../..")
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -59,10 +62,14 @@ offset_right = -378.0
 offset_bottom = -335.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
 scroll_following = true
 
 [node name="MainMenu" type="Control" parent="UI"]
-layout_mode = 3
+visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -71,6 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="UI/MainMenu"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -82,6 +90,7 @@ ignore_texture_size = true
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -93,6 +102,7 @@ grow_vertical = 0
 alignment = 2
 
 [node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -104,6 +114,7 @@ flat = true
 alignment = 0
 
 [node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -115,6 +126,7 @@ flat = true
 alignment = 0
 
 [node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -126,6 +138,7 @@ flat = true
 alignment = 0
 
 [node name="Button3" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
@@ -137,6 +150,7 @@ flat = true
 alignment = 0
 
 [node name="Bottombar" type="Panel" parent="UI"]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -146,24 +160,29 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="UI/Bottombar"]
-visible = false
+layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -115.0
+offset_left = -132.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "sunaba"
+theme_override_fonts/font = ExtResource("7_7i34v")
+theme_override_font_sizes/font_size = 24
+text = "toonbox"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RoomControls" type="Control" parent="UI/Bottombar"]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 381.0
 grow_vertical = 2
 
 [node name="ChatEntry" type="LineEdit" parent="UI/Bottombar/RoomControls"]
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -176,7 +195,6 @@ placeholder_text = "chatbox"
 
 [node name="NewRoomDialog" type="Window" parent="UI"]
 size = Vector2i(435, 289)
-current_screen = -2
 visible = false
 extend_to_title = true
 min_size = Vector2i(435, 289)
@@ -185,15 +203,25 @@ max_size = Vector2i(435, 289)
 [node name="NewRoom" parent="UI/NewRoomDialog" instance=ExtResource("8_nlpex")]
 
 [node name="RoomName" parent="UI/NewRoomDialog/NewRoom" index="0"]
+layout_mode = 1
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 31.0
 
+[node name="MapPath" parent="UI/NewRoomDialog/NewRoom" index="1"]
+layout_mode = 1
+
+[node name="Button" parent="UI/NewRoomDialog/NewRoom/MapPath" index="0"]
+layout_mode = 1
+
+[node name="CreateRoomButton" parent="UI/NewRoomDialog/NewRoom" index="2"]
+layout_mode = 1
+
 [node name="FileDialog" type="FileDialog" parent="UI"]
 title = "Open a File"
-size = Vector2i(601, 455)
-min_size = Vector2i(601, 455)
+size = Vector2i(335, 300)
+min_size = Vector2i(335, 300)
 ok_button_text = "Open"
 file_mode = 0
 access = 2
@@ -202,7 +230,6 @@ show_hidden_files = true
 
 [node name="ConnectDialog" type="Window" parent="UI"]
 size = Vector2i(410, 287)
-current_screen = -2
 visible = false
 min_size = Vector2i(410, 287)
 max_size = Vector2i(410, 287)

@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c27t7nackvcim"]
+[gd_scene load_steps=2 format=3 uid="uid://d4m4kmx20mpnx"]
 
-[ext_resource type="Environment" uid="uid://dkddnx0i4a02y" path="res://night_environment.tres" id="1"]
+[ext_resource type="Environment" uid="uid://cc56h56xsu784" path="res://dreamy_environment.tres" id="1_y4eav"]
 
 [node name="ev_night" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1")
+environment = ExtResource("1_y4eav")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.752415, 0.65869, 0, -0.65869, -0.752415, 0, 0, 0)

@@ -64,8 +64,6 @@ _global_script_class_icons={
 
 config/name="Toonbox"
 run/main_scene="res://core/main.tscn"
-config/use_custom_user_dir=true
-config/custom_user_dir_name="Sunaba"
 config/features=PackedStringArray("4.0")
 run/max_fps=30
 boot_splash/show_image=false
@@ -90,10 +88,10 @@ multirun/other_window_args="join"
 
 [display]
 
-window/size/mode=3
+window/size/viewport_width=640
+window/size/viewport_height=480
 window/size/extend_to_title=true
 window/dpi/allow_hidpi=false
-window/stretch/mode="canvas_items"
 window/size/width=800
 
 [editor_plugins]
@@ -299,6 +297,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 misc/lossless_compression/force_png=true

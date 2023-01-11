@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnaheix8jti6"]
 
 [ext_resource type="Script" path="res://core/world.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://c27t7nackvcim" path="res://entities/ev_nighttime.tscn" id="2_mdk26"]
+[ext_resource type="PackedScene" uid="uid://c27t7nackvcim" path="res://entities/ev_night.tscn" id="5_n8xj7"]
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")
@@ -11,4 +11,4 @@ script = ExtResource("2")
 [node name="TBLoader" type="TBLoader" parent="."]
 lighting_unwrap_uv2 = true
 
-[node name="ev_night" parent="." instance=ExtResource("2_mdk26")]
+[node name="ev_night" parent="." instance=ExtResource("5_n8xj7")]

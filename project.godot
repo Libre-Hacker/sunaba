@@ -14,6 +14,31 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://core/build_flags.gd"
 }, {
+"base": "ColorRect",
+"class": &"LynxWindow",
+"language": &"GDScript",
+"path": "res://addons/panku_console/components/lynx_window2/lynx_window.gd"
+}, {
+"base": "LynxWindow",
+"class": &"MonitorWidget",
+"language": &"GDScript",
+"path": "res://addons/panku_console/components/widgets2/monitor_widget.gd"
+}, {
+"base": "RefCounted",
+"class": &"PankuConfig",
+"language": &"GDScript",
+"path": "res://addons/panku_console/components/config.gd"
+}, {
+"base": "CanvasLayer",
+"class": &"PankuConsole",
+"language": &"GDScript",
+"path": "res://addons/panku_console/console.gd"
+}, {
+"base": "RefCounted",
+"class": &"PankuUtils",
+"language": &"GDScript",
+"path": "res://addons/panku_console/components/utils.gd"
+}, {
 "base": "EditorPlugin",
 "class": &"TBPlugin",
 "language": &"GDScript",
@@ -26,13 +51,18 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "BuildFlags": "",
+"LynxWindow": "",
+"MonitorWidget": "",
+"PankuConfig": "",
+"PankuConsole": "",
+"PankuUtils": "",
 "TBPlugin": "",
 "ps_player": ""
 }
 
 [application]
 
-config/name="Sunaba"
+config/name="Toonbox"
 run/main_scene="res://core/main.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Sunaba"
@@ -60,13 +90,15 @@ multirun/other_window_args="join"
 
 [display]
 
+window/size/mode=3
 window/size/extend_to_title=true
-window/subwindows/embed_subwindows=false
+window/dpi/allow_hidpi=false
+window/stretch/mode="canvas_items"
 window/size/width=800
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/tbloader/plugin.cfg")
+enabled=PackedStringArray("res://addons/tbloader/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [gdnative]
 

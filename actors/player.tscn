@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/shoot.wav" id="11"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tk3l6"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ovs8g"]
 radius = 0.293445
 height = 1.4969
 
@@ -49,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.45524
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_tk3l6")
+shape = SubResource("CapsuleShape3D_ovs8g")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03

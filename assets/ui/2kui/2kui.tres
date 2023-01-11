@@ -12,6 +12,7 @@
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="13"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="14"]
 [ext_resource type="Texture2D" uid="uid://bc1ntxdls4x1m" path="res://assets/ui/2kui/grey_panel.png" id="15"]
+[ext_resource type="SystemFont" uid="uid://dvfv2f2hc7nu2" path="res://assets/fonts/ariel.tres" id="15_0ob4b"]
 [ext_resource type="Texture2D" uid="uid://dcqewlsh0ku1g" path="res://assets/ui/2kui/window.png" id="16"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel2.tres" id="17"]
 
@@ -51,11 +52,8 @@ expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 region_rect = Rect2(0, 0, 100, 100)
 
-[sub_resource type="SystemFont" id="SystemFont_y1ikf"]
-font_names = PackedStringArray("Arial")
-
 [resource]
-default_font = SubResource("SystemFont_y1ikf")
+default_font = ExtResource("15_0ob4b")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_color_disabled = Color(0, 0, 0, 0.486275)
 Button/styles/disabled = SubResource("11")

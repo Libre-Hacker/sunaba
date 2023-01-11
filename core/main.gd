@@ -10,6 +10,7 @@ var path : String
 func _ready() -> void:
 	chat_entry.editable = false
 	$UI.theme = ThemeManager.theme
+	Console.register_env("toonbox", self)
 
 func create_room() -> void:
 	if path != null:
@@ -58,5 +59,8 @@ func quit():
 
 func _process(_delta):
 	if Input.is_key_pressed(KEY_CTRL) and Input.is_key_pressed(KEY_R):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().change_scene_to_file("res://src/reload.tscn")
+		reload()
+
+func reload():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://core/reload.tscn")

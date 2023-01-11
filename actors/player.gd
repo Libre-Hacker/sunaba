@@ -33,7 +33,6 @@ var muzzle = null
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
 @onready var model = $Himiko
 @onready var ntr = $NetworkTickRate
-@onready var movetween = $MovementTween
 @onready var hand = $Head/Hand
 @onready var fp_reach = $Head/Camera3D/Reach
 @onready var tp_reach = $Head/SpringArm3D/SpringArm3D/TPCamera/Reach
@@ -57,6 +56,7 @@ var muzzle = null
 func _ready():
 	if is_multiplayer_authority():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		Console.register_env("player", self)
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
@@ -140,9 +140,9 @@ func _process(_delta):
 	
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
-			if hand.get_child(0).get_name() == "Paintball Gun HR":
+			if hand.get_child(0).get_name() == "Paintball Gun":
 				tool_to_drop = pb_gun.instantiate()
-			elif hand.get_child(0).get_name() == "Paintball Pistol HR":
+			elif hand.get_child(0).get_name() == "Paintball Pistol":
 				tool_to_drop = pb_pistol.instantiate()
 		else:
 			tool_to_drop = null
@@ -244,8 +244,8 @@ func apply_controller_rotation():
 	puppet_vel = p_vel
 	puppet_rot = p_rot
 	
-	movetween.interpolate_property(self, "global_transform", global_transform, Transform3D(global_transform.basis, puppet_pos), 0.1)
-	movetween.start()
+	#movetween.interpolate_property(self, "global_transform", global_transform, Transform3D(global_transform.basis, puppet_pos), 0.1)
+	#movetween.start()
 
 
 func _on_timeout():
@@ -282,3 +282,38 @@ func _on_reload_timer_timeout():
 func _on_fire_timer_timeout():
 	if weapon_type == "auto":
 		has_fired = false
+
+func add_tool(tool_name : String):
+	if tool_name == "pbgun":
+		tool_to_spawn = pb_gun_hr.instantiate()
+	elif tool_name == "pistol":
+		tool_to_spawn = pb_pistol_hr.instantiate()
+	else:
+		tool_to_spawn = null
+		return
+	if hand.get_child_count() > 0:
+		if hand.get_child(0) != null:
+			if hand.get_child(0).get_name() == "Paintball Gun":
+				tool_to_drop = pb_gun.instantiate()
+			elif hand.get_child(0).get_name() == "Paintball Pistol":
+				tool_to_drop = pb_pistol.instantiate()
+		else:
+			tool_to_drop = null
+	else:
+		tool_to_drop = null
+	if hand.get_child_count() > 0:
+		if hand.get_child(0) != null:
+			get_parent().add_child(tool_to_drop)
+			tool_to_drop.global_transform = hand.global_transform
+			tool_to_drop.dropped = true
+			hand.get_child(0).queue_free()
+	tool_ammo_bar.max_value = 100
+	tool_ammo_bar.value = 100
+	hand.add_child(tool_to_spawn)
+	tool_ammo_bar.value = tool_to_spawn.max_ammo
+	tool_ammo_bar.max_value = tool_to_spawn.max_ammo
+	damage = tool_to_spawn.damage
+	weapon_type = tool_to_spawn.weapon_type
+	tool_to_spawn.rotation = hand.rotation
+	muzzle = tool_to_spawn.get_node("Muzzle")
+	$Hud/ToolPanel.show()

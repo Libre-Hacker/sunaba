@@ -1,6 +1,6 @@
 extends Node
 
-var path = null
+var path : String
 
 @onready var network_manager = $NetworkManager
 @onready var chatbox = $UI/Chatbox
@@ -13,11 +13,9 @@ func _ready() -> void:
 
 func create_room() -> void:
 	if path != null:
-		#var dir = Directory.new()
-		#dir.open("user://")
-		#dir.make_dir("server")
-		#dir.copy(path, "user://server/index.map")
-		pass
+		var dir = DirAccess.open("user://")
+		dir.make_dir("server")
+		dir.copy(path, "user://server/index.map")
 	
 	
 	network_manager.create_room()
@@ -28,7 +26,7 @@ func enable_chat() -> void:
 	chat_entry.editable = true
 
 func log_to_chat(logstring):
-	logstring = "Node3D : " + logstring
+	logstring = "Room : " + logstring
 	print(logstring)
 	chatbox.add_text(logstring)
 	chatbox.newline()

@@ -1,5 +1,4 @@
 extends Node
 
 
-# Graphics related settings
-var shaded : bool = false
+var game_started : bool = false

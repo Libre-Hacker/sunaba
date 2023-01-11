@@ -10,11 +10,15 @@ extends CharacterBody3D
 @export var mouse_sensitivity : float = .1
 @export var controller_sensitivity : int = 3
 
-var velocity = Vector3.ZERO
+
 var snap_vector = Vector3.ZERO
 
 var tool_to_spawn
 var tool_to_drop
+
+var puppet_pos = Vector3()
+var puppet_vel = Vector3()
+var puppet_rot = Vector3()
 
 var reach = null
 var aimcast = null
@@ -23,13 +27,13 @@ var is_reloading : bool
 var has_fired : bool = false
 var weapon_type : String = ""
 var muzzle = null
-var ammo = 21
-var max_ammo = 25
 
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
 @onready var model = $Himiko
+@onready var ntr = $NetworkTickRate
+@onready var movetween = $MovementTween
 @onready var hand = $Head/Hand
 @onready var fp_reach = $Head/Camera3D/Reach
 @onready var tp_reach = $Head/SpringArm3D/SpringArm3D/TPCamera/Reach
@@ -92,22 +96,23 @@ func _physics_process(delta):
 		jump()
 		apply_controller_rotation()
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-75), deg_to_rad(75))
+		set_velocity(velocity)
+		# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
+		set_up_direction(Vector3.UP)
+		set_floor_stop_on_slope_enabled(true)
+		set_max_slides(4)
+		set_floor_max_angle(.7853)
+		move_and_slide()
+		velocity = velocity
 	
-	set_velocity(velocity)
-	# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
-	set_up_direction(Vector3.UP)
-	set_floor_stop_on_slope_enabled(true)
-	set_max_slides(4)
-	set_floor_max_angle(.7853)
-	move_and_slide()
-	velocity = velocity
-	
+	#for idx in get_slide_collision_count():
+		#var collision = get_slide_collision(idx)
 
 func _process(_delta): 
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
 	crosshair.theme = ThemeManager.theme
-	tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
+	tool_ammo_bar.get_node("Label").text = var_to_str(round(tool_ammo_bar.value)) + " / " + var_to_str(round(tool_ammo_bar.max_value))
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
@@ -135,9 +140,9 @@ func _process(_delta):
 	
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
-			if hand.get_child(0).get_name() == "Paintball Gun":
+			if hand.get_child(0).get_name() == "Paintball Gun HR":
 				tool_to_drop = pb_gun.instantiate()
-			elif hand.get_child(0).get_name() == "Paintball Pistol":
+			elif hand.get_child(0).get_name() == "Paintball Pistol HR":
 				tool_to_drop = pb_pistol.instantiate()
 		else:
 			tool_to_drop = null
@@ -152,17 +157,17 @@ func _process(_delta):
 					tool_to_drop.global_transform = hand.global_transform
 					tool_to_drop.dropped = true
 					hand.get_child(0).queue_free()
+			tool_label.text = reach.get_collider().get_name()
+			tool_ammo_bar.max_value = 100
+			tool_ammo_bar.value = 100
 			reach.get_collider().queue_free()
 			hand.add_child(tool_to_spawn)
-			ammo = tool_to_spawn.max_ammo
-			max_ammo = tool_to_spawn.max_ammo
 			tool_ammo_bar.value = tool_to_spawn.max_ammo
 			tool_ammo_bar.max_value = tool_to_spawn.max_ammo
 			damage = tool_to_spawn.damage
 			weapon_type = tool_to_spawn.weapon_type
 			tool_to_spawn.rotation = hand.rotation
 			muzzle = tool_to_spawn.get_node("Muzzle")
-			tool_label.text = tool_to_spawn.get_name()
 			$Hud/ToolPanel.show()
 	
 	if weapon_type == "semi":
@@ -188,8 +193,8 @@ func _process(_delta):
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
-	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_vector.z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
+	input_vector.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
+	input_vector.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
 	return input_vector if input_vector.length() > 1 else input_vector
 
 func get_direction(input_vector):
@@ -234,14 +239,23 @@ func apply_controller_rotation():
 		head.rotate_x(deg_to_rad(-axis_vector.y * controller_sensitivity))
 
 
+@rpc func update_state(p_pos, p_vel, p_rot):
+	puppet_pos = p_pos
+	puppet_vel = p_vel
+	puppet_rot = p_rot
+	
+	movetween.interpolate_property(self, "global_transform", global_transform, Transform3D(global_transform.basis, puppet_pos), 0.1)
+	movetween.start()
+
+
 func _on_timeout():
 	if is_multiplayer_authority():
-		rpc_unreliable("update_state", global_transform.origin, velocity, Vector2(rotation.x, rotation.y))
+		pass
+		#rpc_unreliable("update_state", global_transform.origin, velocity, Vector2(rotation.x, rotation.y))
 
 func _fire():
-	if ammo != 0:
-		ammo -= 1
-		tool_ammo_bar.value = ammo
+	tool_ammo_bar.value -= 1
+	if tool_ammo_bar.value != 0:
 		$WeaponSound.play()
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
@@ -259,7 +273,6 @@ func _fire():
 
 func _on_reload_timer_timeout():
 	$ReloadTimer.stop()
-	ammo = max_ammo
 	tool_ammo_bar.value = tool_ammo_bar.max_value
 	reload_label.hide()
 	is_reloading = false

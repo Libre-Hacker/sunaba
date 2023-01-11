@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://carnll727hg0x"]
 
-[ext_resource path="res://assets/fonts/fredoka.tres" type="FontFile" id=1]
+[ext_resource type="FontFile" uid="uid://c44oav7cjne0y" path="res://assets/fonts/fredoka/fredoka_regular.ttf" id="1_5w4c5"]
 
 [resource]
-default_font = ExtResource( 1 )
+default_font = ExtResource("1_5w4c5")

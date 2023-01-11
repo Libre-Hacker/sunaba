@@ -2,7 +2,7 @@ extends Window
 
 @export var netman_path : NodePath
 
-@onready var ip_address = $TabBar/TabContainer/Online/LineEdit.text
+@onready var ip_address = $Connect/TabBar/TabContainer/Online/LineEdit.text
 @onready var netman = get_node(netman_path)
 
 func _connect():

@@ -1,65 +1,68 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bx3s7vd3c6wc5"]
 
-[ext_resource path="res://assets/ui/carbon_ui/blue_dark.tres" type="StyleBox" id=1]
-[ext_resource path="res://assets/ui/carbon_ui/black.tres" type="StyleBox" id=2]
-[ext_resource path="res://assets/fonts/inter.tres" type="FontFile" id=3]
-[ext_resource path="res://assets/ui/carbon_ui/line_edit.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/ui/carbon_ui/disabled.tres" type="StyleBox" id=5]
-[ext_resource path="res://assets/ui/carbon_ui/dark_window.tres" type="StyleBox" id=6]
-[ext_resource path="res://assets/ui/carbon_ui/icon_close.png" type="Texture2D" id=7]
+[ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/blue_dark.tres" id="1"]
+[ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/black.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://dvabxqawxiomj" path="res://assets/fonts/Inter-Regular.ttf" id="3"]
+[ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/line_edit.tres" id="4"]
+[ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/disabled.tres" id="5"]
+[ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/dark_window.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://c0jduscwmkgl6" path="res://assets/ui/carbon_ui/icon_close.png" id="7"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 content_margin_left = 10.0
-content_margin_right = 10.0
 content_margin_top = 10.0
+content_margin_right = 10.0
 content_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id="2"]
 content_margin_left = 10.0
-content_margin_right = 10.0
 content_margin_top = 10.0
+content_margin_right = 10.0
 content_margin_bottom = 5.0
-bg_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+bg_color = Color(0.168627, 0.168627, 0.168627, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color( 0.501961, 0.501961, 0.501961, 1 )
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 expand_margin_bottom = 1.0
 
 [resource]
-default_font = ExtResource( 3 )
-Button/styles/disabled = ExtResource( 5 )
-Button/styles/focus = ExtResource( 1 )
-Button/styles/hover = ExtResource( 1 )
-Button/styles/normal = ExtResource( 2 )
-Button/styles/pressed = ExtResource( 1 )
-LineEdit/styles/focus = ExtResource( 4 )
-LineEdit/styles/normal = ExtResource( 4 )
-LineEdit/styles/read_only = ExtResource( 5 )
-Panel/styles/panel = ExtResource( 2 )
-Popup/styles/panel = ExtResource( 2 )
-PopupMenu/styles/hover = ExtResource( 1 )
-PopupMenu/styles/panel = ExtResource( 2 )
-PopupMenu/styles/panel_disabled = ExtResource( 2 )
-PopupPanel/styles/panel = ExtResource( 2 )
-TabContainer/styles/panel = ExtResource( 2 )
-TabContainer/styles/tab_bg = SubResource( 1 )
-TabContainer/styles/tab_disabled = SubResource( 1 )
-TabContainer/styles/tab_fg = SubResource( 2 )
-TextEdit/styles/focus = ExtResource( 4 )
-TextEdit/styles/normal = ExtResource( 4 )
-TextEdit/styles/read_only = ExtResource( 5 )
-Tree/styles/bg = ExtResource( 2 )
-Tree/styles/button_pressed = ExtResource( 1 )
-Tree/styles/selected = ExtResource( 1 )
-Tree/styles/selected_focus = ExtResource( 1 )
-Tree/styles/title_button_hover = ExtResource( 1 )
-Tree/styles/title_button_normal = ExtResource( 1 )
-Tree/styles/title_button_pressed = ExtResource( 1 )
-Window/colors/title_color = Color( 1, 1, 1, 1 )
-Window/icons/close = ExtResource( 7 )
-Window/icons/close_highlight = ExtResource( 7 )
-Window/styles/panel = ExtResource( 6 )
+default_font = ExtResource("3")
+Button/styles/disabled = ExtResource("5")
+Button/styles/focus = ExtResource("1")
+Button/styles/hover = ExtResource("1")
+Button/styles/normal = ExtResource("2")
+Button/styles/pressed = ExtResource("1")
+LineEdit/styles/focus = ExtResource("4")
+LineEdit/styles/normal = ExtResource("4")
+LineEdit/styles/read_only = ExtResource("5")
+Panel/styles/panel = ExtResource("2")
+Popup/styles/panel = ExtResource("2")
+PopupMenu/styles/hover = ExtResource("1")
+PopupMenu/styles/panel = ExtResource("2")
+PopupMenu/styles/panel_disabled = ExtResource("2")
+PopupPanel/styles/panel = ExtResource("2")
+TabContainer/styles/panel = ExtResource("2")
+TabContainer/styles/tab_bg = SubResource("1")
+TabContainer/styles/tab_disabled = SubResource("1")
+TabContainer/styles/tab_fg = SubResource("2")
+TabContainer/styles/tab_selected = SubResource("2")
+TabContainer/styles/tab_unselected = SubResource("1")
+TextEdit/styles/focus = ExtResource("4")
+TextEdit/styles/normal = ExtResource("4")
+TextEdit/styles/read_only = ExtResource("5")
+Tree/styles/bg = ExtResource("2")
+Tree/styles/button_pressed = ExtResource("1")
+Tree/styles/panel = ExtResource("2")
+Tree/styles/selected = ExtResource("1")
+Tree/styles/selected_focus = ExtResource("1")
+Tree/styles/title_button_hover = ExtResource("1")
+Tree/styles/title_button_normal = ExtResource("1")
+Tree/styles/title_button_pressed = ExtResource("1")
+Window/colors/title_color = Color(1, 1, 1, 1)
+Window/icons/close = ExtResource("7")
+Window/icons/close_highlight = ExtResource("7")
+Window/styles/panel = ExtResource("6")

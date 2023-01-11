@@ -14,7 +14,7 @@ func _on_file_button_pressed():
 
 func _on_file_selected(path):
 	get_parent().path = path
-	$NewRoomDialog/MapPath.text = path
+	$NewRoomDialog/NewRoom/MapPath.text = path
 
 func _on_NativeDialogOpenFile_files_selected(files: PackedStringArray):
 	var path = files[0]

@@ -1,12 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dpdsh18u6mbnt"]
+[gd_scene load_steps=11 format=3 uid="uid://dpdsh18u6mbnt"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
-[ext_resource type="Theme" uid="uid://cley63evv078y" path="res://assets/ui/2kui/2kui.tres" id="4_br6sb"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
 [ext_resource type="Script" path="res://core/enet_transport.gd" id="7"]
-[ext_resource type="Texture2D" uid="uid://sq52byrnn7ls" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://dlbsx8sd6lhhr" path="res://assets/textures/backdrop.png" id="10"]
+[ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
+[ext_resource type="Texture2D" uid="uid://0yo2od878bfq" path="res://assets/textures/backdrop.png" id="10"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
 [ext_resource type="PackedScene" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://bnaheix8jti6" path="res://core/world.tscn" id="12"]
@@ -30,7 +29,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_br6sb")
 script = ExtResource("4")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="UI"]
@@ -45,7 +43,6 @@ stretch = true
 
 [node name="WorldViewport" type="SubViewport" parent="UI/SubViewportContainer"]
 handle_input_locally = false
-debug_draw = 3
 physics_object_picking = true
 size = Vector2i(1152, 608)
 render_target_update_mode = 4
@@ -85,6 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10")
 ignore_texture_size = true
+stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 layout_mode = 1
@@ -100,24 +98,48 @@ alignment = 2
 
 [node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "New Game"
 flat = true
 alignment = 0
 
 [node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Connect"
 flat = true
 alignment = 0
 
 [node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Settings"
 flat = true
 alignment = 0
 
 [node name="Button3" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Quit"
 flat = true
 alignment = 0
@@ -128,7 +150,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
+offset_top = -46.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -148,7 +170,7 @@ text = "sunaba"
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 612.0
+offset_right = 381.0
 grow_vertical = 2
 
 [node name="ChatEntry" type="LineEdit" parent="UI/Bottombar/RoomControls"]
@@ -156,72 +178,55 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 4.0
-offset_top = -17.0
-offset_right = 276.0
-offset_bottom = 16.0
+offset_left = 7.0
+offset_top = -16.0
+offset_right = 279.0
+offset_bottom = 15.0
 grow_vertical = 2
 placeholder_text = "chatbox"
 
 [node name="NewRoomDialog" type="Window" parent="UI"]
-exclusive = true
-
-[node name="RoomName" type="LineEdit" parent="UI/NewRoomDialog"]
+size = Vector2i(435, 289)
+current_screen = -2
 visible = false
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 11.0
-offset_top = 15.0
-offset_right = -10.0
-offset_bottom = 44.0
-grow_horizontal = 2
-placeholder_text = "Node3D Name"
+extend_to_title = true
+min_size = Vector2i(435, 289)
+max_size = Vector2i(435, 289)
 
-[node name="MapPath" type="LineEdit" parent="UI/NewRoomDialog"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 11.5
-offset_top = 15.0
-offset_right = -9.5
-offset_bottom = 45.0
-grow_horizontal = 2
-placeholder_text = "Map Path3D"
-editable = false
+[node name="NewRoom" parent="UI/NewRoomDialog" instance=ExtResource("8_nlpex")]
 
-[node name="Button" type="Button" parent="UI/NewRoomDialog/MapPath"]
+[node name="RoomName" parent="UI/NewRoomDialog/NewRoom" index="0"]
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -46.0
-grow_horizontal = 0
-grow_vertical = 2
-icon = ExtResource("8")
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 31.0
 
-[node name="CreateRoomButton" type="Button" parent="UI/NewRoomDialog"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -43.0
-offset_right = -9.0
-offset_bottom = -14.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Create"
+[node name="MapPath" parent="UI/NewRoomDialog/NewRoom" index="1"]
+layout_mode = 1
+
+[node name="Button" parent="UI/NewRoomDialog/NewRoom/MapPath" index="0"]
+layout_mode = 1
+
+[node name="CreateRoomButton" parent="UI/NewRoomDialog/NewRoom" index="2"]
+layout_mode = 1
 
 [node name="FileDialog" type="FileDialog" parent="UI"]
+title = "Open a File"
+size = Vector2i(601, 455)
+min_size = Vector2i(601, 455)
+ok_button_text = "Open"
+file_mode = 0
 access = 2
 filters = PackedStringArray("*.map")
 show_hidden_files = true
 
 [node name="ConnectDialog" type="Window" parent="UI"]
 size = Vector2i(410, 287)
-exclusive = true
-unresizable = true
+current_screen = -2
+visible = false
+min_size = Vector2i(410, 287)
+max_size = Vector2i(410, 287)
 script = ExtResource("5")
 netman_path = NodePath("../../NetworkManager")
 
@@ -240,8 +245,10 @@ gui = NodePath("..")
 [connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
 [connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
-[connection signal="pressed" from="UI/NewRoomDialog/MapPath/Button" to="UI" method="_on_file_button_pressed"]
-[connection signal="pressed" from="UI/NewRoomDialog/CreateRoomButton" to="." method="create_room"]
+[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="_on_file_button_pressed"]
+[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="create_room"]
 [connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
+
+[editable path="UI/NewRoomDialog/NewRoom"]

@@ -44,7 +44,7 @@ func create_room():
 
 
 func join_room(address):
-	transport.join_room(address)
+	transport.join_room(address) 
 
 
 func _on_room_joined(id : String):

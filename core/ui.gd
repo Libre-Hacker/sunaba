@@ -30,4 +30,4 @@ func _on_play_button_pressed():
 
 
 func _on_connect_button_pressed():
-	$ConnectDialog.popup()
+	$ConnectDialog.popup_centered()

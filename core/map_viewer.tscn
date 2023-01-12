@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8i5nxc1e81sq"]
+
+[ext_resource type="Script" path="res://core/map_viewer.gd" id="1_rviey"]
+[ext_resource type="FontFile" uid="uid://bevdxpypkmjw5" path="res://assets/fonts/fredoka_one.ttf" id="1_unbgg"]
+[ext_resource type="Texture2D" uid="uid://c2guis3h74lep" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_voxel.png" id="2_3vroi"]
+[ext_resource type="Texture2D" uid="uid://c33fku4qngxj7" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_play.png" id="3_weifl"]
+[ext_resource type="Script" path="res://core/camera.gd" id="5_1d51q"]
+[ext_resource type="Texture2D" uid="uid://nxiceoxl4cv0" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" id="5_56eof"]
+[ext_resource type="PackedScene" uid="uid://buowo1g152een" path="res://entities/ev_daytime.tscn" id="7_32heh"]
+
+[node name="Map Viewer" type="Node3D"]
+script = ExtResource("1_rviey")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bottombar" type="Panel" parent="Control"]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Control/Bottombar"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_unbgg")
+theme_override_font_sizes/font_size = 24
+text = "sunaba"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls" type="Control" parent="Control/Bottombar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 455.0
+grow_vertical = 2
+
+[node name="MapFilePath" type="LineEdit" parent="Control/Bottombar/Controls"]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -16.0
+offset_right = 279.0
+offset_bottom = 15.0
+grow_vertical = 2
+placeholder_text = "Insert Map File Here"
+editable = false
+
+[node name="Button" type="Button" parent="Control/Bottombar/Controls"]
+layout_mode = 0
+anchor_bottom = 1.0
+offset_left = 288.0
+offset_top = 7.0
+offset_right = 335.0
+offset_bottom = -8.0
+grow_vertical = 2
+icon = ExtResource("2_3vroi")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Control/Bottombar/Controls"]
+layout_mode = 0
+anchor_bottom = 1.0
+offset_left = 343.0
+offset_top = 7.0
+offset_right = 390.0
+offset_bottom = -8.0
+grow_vertical = 2
+icon = ExtResource("3_weifl")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Control/Bottombar/Controls"]
+layout_mode = 0
+anchor_bottom = 1.0
+offset_left = 399.0
+offset_top = 7.0
+offset_right = 446.0
+offset_bottom = -8.0
+grow_vertical = 2
+icon = ExtResource("5_56eof")
+icon_alignment = 1
+
+[node name="FileDialog" type="FileDialog" parent="Control"]
+title = "Open a File"
+size = Vector2i(450, 350)
+min_size = Vector2i(450, 350)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.map")
+show_hidden_files = true
+
+[node name="TBLoader" type="TBLoader" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.957591, 0.288129, 0, -0.288129, 0.957591, 0, 8.49166, 9.91567)
+script = ExtResource("5_1d51q")
+
+[node name="ev_daytime" parent="." instance=ExtResource("7_32heh")]
+
+[connection signal="pressed" from="Control/Bottombar/Controls/Button" to="." method="open_file_dialog"]
+[connection signal="pressed" from="Control/Bottombar/Controls/Button2" to="." method="load_map"]
+[connection signal="pressed" from="Control/Bottombar/Controls/Button3" to="." method="exit"]
+[connection signal="file_selected" from="Control/FileDialog" to="." method="set_map_path"]

@@ -10,11 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/shoot.wav" id="11"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_momdr"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d3lfm"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u0s8t"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_46wa8"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -60,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.45524
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_momdr")
+shape = SubResource("CapsuleShape3D_d3lfm")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -69,7 +69,6 @@ autostart = true
 [node name="Hud" type="Node" parent="."]
 
 [node name="Panel" type="Panel" parent="Hud"]
-anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -80,8 +79,7 @@ grow_vertical = 0
 
 [node name="Icon" type="TextureRect" parent="Hud/Panel"]
 visible = false
-layout_mode = 1
-anchors_preset = 2
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -93,8 +91,7 @@ texture = ExtResource("10")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/Panel"]
-layout_mode = 1
-anchors_preset = 3
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -106,13 +103,12 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_u0s8t")
+theme_override_styles/fill = SubResource("StyleBoxTexture_46wa8")
 value = 100.0
 show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="Hud/Panel/ProgressBar"]
-layout_mode = 1
-anchors_preset = 4
+layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 8.0
@@ -124,8 +120,7 @@ texture = ExtResource("7")
 ignore_texture_size = true
 
 [node name="Label" type="Label" parent="Hud/Panel/ProgressBar"]
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 35.0
@@ -139,8 +134,7 @@ text = "100"
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Hud/Panel"]
-layout_mode = 1
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -170.0
@@ -152,7 +146,6 @@ text = "Player"
 vertical_alignment = 1
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
-anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -166,8 +159,7 @@ grow_vertical = 0
 
 [node name="Icon" type="TextureRect" parent="Hud/ToolPanel"]
 visible = false
-layout_mode = 1
-anchors_preset = 2
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -179,8 +171,7 @@ texture = ExtResource("10")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]
-layout_mode = 1
-anchors_preset = 3
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -197,8 +188,7 @@ value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="Hud/ToolPanel/ProgressBar"]
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -7.0
@@ -213,8 +203,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Hud/ToolPanel"]
-layout_mode = 1
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -170.0
@@ -227,7 +216,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Crosshair" type="TextureRect" parent="Hud"]
-anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -241,8 +229,7 @@ grow_vertical = 2
 texture = ExtResource("9")
 
 [node name="Label" type="Label" parent="Hud/Crosshair"]
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

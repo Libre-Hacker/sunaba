@@ -170,7 +170,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_7i34v")
 theme_override_font_sizes/font_size = 24
-text = "toonbox"
+text = "sunaba"
 horizontal_alignment = 1
 vertical_alignment = 1
 

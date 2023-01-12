@@ -14,6 +14,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://core/build_flags.gd"
 }, {
+"base": "Camera3D",
+"class": &"FreeLookCamera",
+"language": &"GDScript",
+"path": "res://core/camera.gd"
+}, {
 "base": "ColorRect",
 "class": &"LynxWindow",
 "language": &"GDScript",
@@ -51,6 +56,7 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "BuildFlags": "",
+"FreeLookCamera": "",
 "LynxWindow": "",
 "MonitorWidget": "",
 "PankuConfig": "",
@@ -62,7 +68,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Toonbox"
+config/name="Sunaba"
 run/main_scene="res://core/main.tscn"
 config/features=PackedStringArray("4.0")
 run/max_fps=30
@@ -92,6 +98,7 @@ window/size/viewport_width=640
 window/size/viewport_height=480
 window/size/extend_to_title=true
 window/dpi/allow_hidpi=false
+window/subwindows/embed_subwindows=false
 window/size/width=800
 
 [editor_plugins]
@@ -297,7 +304,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 misc/lossless_compression/force_png=true

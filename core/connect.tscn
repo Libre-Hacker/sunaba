@@ -1,22 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://yy6p84r16yur"]
-
-[ext_resource type="StyleBox" uid="uid://2rek11il7ly" path="res://assets/ui/2kui/panel3.tres" id="1_gtes6"]
+[gd_scene format=3 uid="uid://yy6p84r16yur"]
 
 [node name="Connect" type="Panel"]
-offset_right = 410.0
-offset_bottom = 287.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 411.0
+offset_bottom = 288.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/panel = ExtResource("1_gtes6")
 
 [node name="TabBar" type="TabBar" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TabContainer" type="TabContainer" parent="TabBar"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,15 +29,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Online" type="Control" parent="TabBar/TabContainer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 31.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="TabBar/TabContainer/Online"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -44,6 +44,7 @@ grow_horizontal = 2
 text = "127.0.0.1"
 
 [node name="Button" type="Button" parent="TabBar/TabContainer/Online"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

@@ -1,8 +1,10 @@
-class_name EditorCamera extends Camera3D
+class_name FreeLookCamera extends Camera3D
 
-const voxel_size := 1
+# Modifier keys' speed multiplier
+const SHIFT_MULTIPLIER = 2.5
+const ALT_MULTIPLIER = 1.0 / SHIFT_MULTIPLIER
 
-@export var sensitivity = 0.25 # (float, 0.0, 1.0)
+@export_range(0.0, 1.0) var sensitivity = 0.25
 
 # Mouse state
 var _mouse_position = Vector2(0.0, 0.0)
@@ -22,25 +24,19 @@ var _a = false
 var _d = false
 var _q = false
 var _e = false
-
-var holding_camera_button
+var _shift = false
+var _alt = false
 
 func _input(event):
 	# Receives mouse motion
 	if event is InputEventMouseMotion:
 		_mouse_position = event.relative
 	
-	if Input.is_action_just_pressed("secondary_button"):
-		holding_camera_button = true
-	if Input.is_action_just_released("secondary_button") or Input.is_action_just_released("shift_key"):
-		holding_camera_button = false
-	
 	# Receives mouse button input
 	if event is InputEventMouseButton:
 		match event.button_index:
 			MOUSE_BUTTON_RIGHT: # Only allows rotation if right click down
-				#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if event.pressed else Input.MOUSE_MODE_VISIBLE)
-				pass
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if event.pressed else Input.MOUSE_MODE_VISIBLE)
 			MOUSE_BUTTON_WHEEL_UP: # Increases max velocity
 				_vel_multiplier = clamp(_vel_multiplier * 1.1, 0.2, 20)
 			MOUSE_BUTTON_WHEEL_DOWN: # Decereases max velocity
@@ -48,7 +44,7 @@ func _input(event):
 
 	# Receives key input
 	if event is InputEventKey:
-		match event.scancode:
+		match event.keycode:
 			KEY_W:
 				_w = event.pressed
 			KEY_S:
@@ -70,14 +66,19 @@ func _process(delta):
 # Updates camera movement
 func _update_movement(delta):
 	# Computes desired direction from key states
-	_direction = Vector3(_d as float - _a as float, 
-						 _e as float - _q as float,
-						 _s as float - _w as float)
+	_direction = Vector3((_d as float) - (_a as float), 
+						(_e as float) - (_q as float), 
+						(_s as float) - (_w as float))
 	
 	# Computes the change in velocity due to desired direction and "drag"
-	# The "drag" is a constant acceleration checked the camera to bring it's velocity to 0
+	# The "drag" is a constant acceleration on the camera to bring it's velocity to 0
 	var offset = _direction.normalized() * _acceleration * _vel_multiplier * delta \
 		+ _velocity.normalized() * _deceleration * _vel_multiplier * delta
+	
+	# Compute modifiers' speed multiplier
+	var speed_multi = 1
+	if _shift: speed_multi *= SHIFT_MULTIPLIER
+	if _alt: speed_multi *= ALT_MULTIPLIER
 	
 	# Checks if we should bother translating the camera
 	if _direction == Vector3.ZERO and offset.length_squared() > _velocity.length_squared():
@@ -89,12 +90,12 @@ func _update_movement(delta):
 		_velocity.y = clamp(_velocity.y + offset.y, -_vel_multiplier, _vel_multiplier)
 		_velocity.z = clamp(_velocity.z + offset.z, -_vel_multiplier, _vel_multiplier)
 	
-		translate(_velocity * delta)
+		translate(_velocity * delta * speed_multi)
 
 # Updates mouse look 
 func _update_mouselook():
 	# Only rotates mouse if the mouse is captured
-	if holding_camera_button:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		_mouse_position *= sensitivity
 		var yaw = _mouse_position.x
 		var pitch = _mouse_position.y

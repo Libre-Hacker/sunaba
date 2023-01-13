@@ -10,11 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/shoot.wav" id="11"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d3lfm"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lu4xr"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_46wa8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fa8li"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -29,6 +29,7 @@ jump_impulse = 10
 
 [node name="Himiko" parent="." instance=ExtResource("6")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -37,8 +38,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
 far = 200.0
 
 [node name="Reach" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -2.5)
 
 [node name="AimCast" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -1000)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Head"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -52,15 +55,17 @@ spring_length = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413)
 
 [node name="Reach" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
+target_position = Vector3(0, 0, -5)
 
 [node name="AimCast" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
+target_position = Vector3(0, 0, -1000)
 
 [node name="Hand" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.455246)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_d3lfm")
+shape = SubResource("CapsuleShape3D_lu4xr")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -103,7 +108,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_46wa8")
+theme_override_styles/fill = SubResource("StyleBoxTexture_fa8li")
 value = 100.0
 show_percentage = false
 

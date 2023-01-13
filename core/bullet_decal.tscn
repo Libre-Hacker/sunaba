@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://dwfgw2n6vxjy1"]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id="GDScript_1wfbn"]
 script/source = "extends Node3D
 
 
@@ -9,21 +9,21 @@ func _on_timeout():
 	queue_free()
 "
 
-[sub_resource type="QuadMesh" id=1]
-size = Vector2( 0.3, 0.3 )
+[sub_resource type="QuadMesh" id="QuadMesh_umme0"]
+size = Vector2(0.3, 0.3)
 
-[sub_resource type="StandardMaterial3D" id=2]
-flags_transparent = true
-albedo_color = Color( 0.0823529, 0.482353, 1, 0.517647 )
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fgb0"]
+transparency = 1
+albedo_color = Color(0.211765, 0.658824, 0.996078, 0.501961)
 
 [node name="BulletDecal" type="Node3D"]
-script = SubResource( 3 )
+script = SubResource("GDScript_1wfbn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, -0.02 )
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, -0.02)
 cast_shadow = 0
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
+mesh = SubResource("QuadMesh_umme0")
+surface_material_override/0 = SubResource("StandardMaterial3D_7fgb0")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

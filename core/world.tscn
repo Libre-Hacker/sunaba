@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnaheix8jti6"]
+[gd_scene load_steps=2 format=3 uid="uid://bnaheix8jti6"]
 
 [ext_resource type="Script" path="res://core/world.gd" id="2"]
-[ext_resource type="PackedScene" uid="uid://buowo1g152een" path="res://entities/ev_daytime.tscn" id="2_w6mcf"]
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")
@@ -10,5 +9,5 @@ script = ExtResource("2")
 
 [node name="TBLoader" type="TBLoader" parent="."]
 lighting_unwrap_uv2 = true
-
-[node name="ev_daytime" parent="." instance=ExtResource("2_w6mcf")]
+option_clip_texture_name = "clip"
+option_skip_texture_name = "skip"

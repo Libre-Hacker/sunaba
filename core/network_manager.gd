@@ -15,7 +15,6 @@ func _ready():
 	#rpc_config("get_world_3d", 1)
 	multiplayer.multiplayer_peer = null
 	set_transport(transport_enet)
-	Console.register_env("netman", self)
 	#get_tree().connect("peer_connected",Callable(self,"_player_joined"))
 
 func set_transport(tp):

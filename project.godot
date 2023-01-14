@@ -19,31 +19,6 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://core/camera.gd"
 }, {
-"base": "ColorRect",
-"class": &"LynxWindow",
-"language": &"GDScript",
-"path": "res://addons/panku_console/components/lynx_window2/lynx_window.gd"
-}, {
-"base": "LynxWindow",
-"class": &"MonitorWidget",
-"language": &"GDScript",
-"path": "res://addons/panku_console/components/widgets2/monitor_widget.gd"
-}, {
-"base": "RefCounted",
-"class": &"PankuConfig",
-"language": &"GDScript",
-"path": "res://addons/panku_console/components/config.gd"
-}, {
-"base": "CanvasLayer",
-"class": &"PankuConsole",
-"language": &"GDScript",
-"path": "res://addons/panku_console/console.gd"
-}, {
-"base": "RefCounted",
-"class": &"PankuUtils",
-"language": &"GDScript",
-"path": "res://addons/panku_console/components/utils.gd"
-}, {
 "base": "EditorPlugin",
 "class": &"TBPlugin",
 "language": &"GDScript",
@@ -57,11 +32,6 @@ _global_script_classes=[{
 _global_script_class_icons={
 "BuildFlags": "",
 "FreeLookCamera": "",
-"LynxWindow": "",
-"MonitorWidget": "",
-"PankuConfig": "",
-"PankuConsole": "",
-"PankuUtils": "",
 "TBPlugin": "",
 "ps_player": ""
 }
@@ -103,7 +73,7 @@ window/size/width=800
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/tbloader/plugin.cfg", "res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/tbloader/plugin.cfg")
 
 [gdnative]
 
@@ -304,6 +274,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 misc/lossless_compression/force_png=true

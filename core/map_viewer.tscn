@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8i5nxc1e81sq"]
+[gd_scene load_steps=7 format=3 uid="uid://b8i5nxc1e81sq"]
 
 [ext_resource type="Script" path="res://core/map_viewer.gd" id="1_rviey"]
 [ext_resource type="FontFile" uid="uid://bevdxpypkmjw5" path="res://assets/fonts/fredoka_one.ttf" id="1_unbgg"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c33fku4qngxj7" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/arrow_play.png" id="3_weifl"]
 [ext_resource type="Script" path="res://core/camera.gd" id="5_1d51q"]
 [ext_resource type="Texture2D" uid="uid://nxiceoxl4cv0" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/exit.png" id="5_56eof"]
-[ext_resource type="PackedScene" uid="uid://buowo1g152een" path="res://entities/ev_daytime.tscn" id="7_32heh"]
 
 [node name="Map Viewer" type="Node3D"]
 script = ExtResource("1_rviey")
@@ -104,13 +103,14 @@ access = 2
 filters = PackedStringArray("*.map")
 show_hidden_files = true
 
-[node name="TBLoader" type="TBLoader" parent="."]
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.957591, 0.288129, 0, -0.288129, 0.957591, 0, 8.49166, 9.91567)
 script = ExtResource("5_1d51q")
 
-[node name="ev_daytime" parent="." instance=ExtResource("7_32heh")]
+[node name="TBLoader" type="TBLoader" parent="."]
+lighting_unwrap_uv2 = true
+option_clip_texture_name = "clip"
+option_skip_texture_name = "skip"
 
 [connection signal="pressed" from="Control/Bottombar/Controls/Button" to="." method="open_file_dialog"]
 [connection signal="pressed" from="Control/Bottombar/Controls/Button2" to="." method="load_map"]

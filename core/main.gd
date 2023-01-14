@@ -10,7 +10,6 @@ var path : String
 func _ready() -> void:
 	chat_entry.editable = false
 	$UI.theme = ThemeManager.theme
-	Console.register_env("tbx", self)
 
 func create_room() -> void:
 	if path != null:

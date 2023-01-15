@@ -1,0 +1,8 @@
+[gd_resource type="SystemFont" load_steps=3 format=3 uid="uid://cqat8ggu5yb4l"]
+
+[ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://assets/fonts/tahoma.tres" id="1_ya5d1"]
+[ext_resource type="FontFile" uid="uid://f0puv37mdh06" path="res://assets/fonts/Ubuntu-Light.ttf" id="2_eaalc"]
+
+[resource]
+font_names = PackedStringArray("Segoe UI")
+fallbacks = [ExtResource("1_ya5d1"), ExtResource("2_eaalc")]

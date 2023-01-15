@@ -42,7 +42,6 @@ config/name="Toonbox"
 run/main_scene="res://core/main.tscn"
 config/features=PackedStringArray("4.0")
 run/max_fps=30
-boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/show_image=false
 config/icon="res://icon.png"
 config/windows_native_icon="res://sb_icon2.ico"

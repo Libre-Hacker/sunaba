@@ -298,11 +298,11 @@ func _fire():
 				print("hit bot")
 				target.health -= damage
 			else:
-				var b_decal = hand.get_child(0).get_bullet_hole()
+				var b_decal = load("res://weapons/dart_bullet_decal.tscn")#hand.get_child(0).get_bullet_hole()
 				var b = b_decal.instantiate()
 				target.add_child(b)
 				b.global_transform.origin = aimcast.get_collision_point()
-				b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal(), Vector3.UP)
+				b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal())
 	has_fired = true
 	if weapon_type == "auto":
 		$FireTimer.start()

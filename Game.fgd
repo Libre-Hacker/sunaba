@@ -28,14 +28,14 @@
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_dartgun : "" [
-  weapon_path(string) : "Weapon Path" :  : "String"
+	weapon_path(string) : "Weapon Path" :  : "String"
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_pbgun : "" [
-  weapon_path(string) : "Weapon Path" :  : "String"
+	weapon_path(string) : "Weapon Path" :  : "String"
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_pistol : "" [
-  weapon_path(string) : "Weapon Path" :  : "String"
+	weapon_path(string) : "Weapon Path" :  : "String"
 ]
 

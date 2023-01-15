@@ -12,7 +12,7 @@
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="13"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="14"]
 [ext_resource type="Texture2D" uid="uid://bc1ntxdls4x1m" path="res://assets/ui/2kui/grey_panel.png" id="15"]
-[ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://assets/fonts/tahoma.tres" id="15_26uv1"]
+[ext_resource type="SystemFont" uid="uid://cqat8ggu5yb4l" path="res://assets/fonts/segoe_ui.tres" id="15_036lo"]
 [ext_resource type="Texture2D" uid="uid://dcqewlsh0ku1g" path="res://assets/ui/2kui/window.png" id="16"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel2.tres" id="17"]
 
@@ -53,9 +53,10 @@ expand_margin_bottom = 4.0
 region_rect = Rect2(0, 0, 100, 100)
 
 [resource]
-default_font = ExtResource("15_26uv1")
+default_font = ExtResource("15_036lo")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_color_disabled = Color(0, 0, 0, 0.486275)
+Button/colors/font_disabled_color = Color(0, 0, 0, 0.486275)
 Button/styles/disabled = SubResource("11")
 Button/styles/focus = ExtResource("13")
 Button/styles/hover = ExtResource("13")
@@ -96,13 +97,20 @@ MenuButton/colors/font_color = Color(0, 0, 0, 1)
 MenuButton/colors/font_color_focus = Color(0, 0, 0, 1)
 MenuButton/colors/font_color_hover = Color(0, 0, 0, 1)
 MenuButton/colors/font_color_pressed = Color(0, 0, 0, 1)
+MenuButton/colors/font_focus_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_hover_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_pressed_color = Color(0, 0, 0, 1)
 Panel/styles/panel = ExtResource("17")
 Popup/styles/panel = ExtResource("14")
+PopupMenu/colors/font_accelerator_color = Color(0, 0, 0, 0.8)
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
 PopupMenu/colors/font_color_accel = Color(0, 0, 0, 0.8)
 PopupMenu/colors/font_color_disabled = Color(0, 0, 0, 0.8)
 PopupMenu/colors/font_color_hover = Color(1, 1, 1, 1)
 PopupMenu/colors/font_color_separator = Color(0, 0, 0, 1)
+PopupMenu/colors/font_disabled_color = Color(0, 0, 0, 0.8)
+PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_separator_color = Color(0, 0, 0, 1)
 PopupMenu/styles/hover = ExtResource("13")
 PopupMenu/styles/panel = SubResource("15")
 PopupPanel/styles/panel = ExtResource("4")

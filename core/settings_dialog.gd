@@ -21,7 +21,6 @@ var sleek = preload("res://assets/ui/sl33k/sl33k.tres")
 var three_point_one = preload("res://assets/ui/classic311/Classic311.tres")
 
 # Graphics-related variables
-@onready var fullscreen_toggle = $TabBar/TabContainer/Graphics/VBoxContainer/FullscreenToggle
 
 
 # Called when the node enters the scene tree for the first time.
@@ -76,16 +75,6 @@ func _on_theme_selected(index):
 	elif index == 6:
 		settings[1] = "res://assets/ui/classic311/Classic311.tres"
 		change_theme(three_point_one)
-
-
-func _on_fullscreen_toggled(_button_pressed):
-	#if button_pressed:
-		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	#else:
-	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	#save()
-	pass
-
 
 
 func _on_close_requested():

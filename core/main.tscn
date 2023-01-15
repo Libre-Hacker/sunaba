@@ -45,7 +45,7 @@ stretch = true
 [node name="WorldViewport" type="SubViewport" parent="UI/SubViewportContainer"]
 handle_input_locally = false
 physics_object_picking = true
-size = Vector2i(640, 434)
+size = Vector2i(1024, 554)
 render_target_update_mode = 4
 
 [node name="World3D" parent="UI/SubViewportContainer/WorldViewport" instance=ExtResource("12")]
@@ -86,7 +86,6 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10")
-ignore_texture_size = true
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]

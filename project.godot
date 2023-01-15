@@ -42,8 +42,8 @@ config/name="Toonbox"
 run/main_scene="res://core/main.tscn"
 config/features=PackedStringArray("4.0")
 run/max_fps=30
-boot_splash/show_image=false
 boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
 config/icon="res://icon.png"
 config/windows_native_icon="res://sb_icon2.ico"
 
@@ -64,8 +64,8 @@ multirun/other_window_args="join"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=480
+window/size/viewport_width=1024
+window/size/viewport_height=600
 window/size/extend_to_title=true
 window/dpi/allow_hidpi=false
 window/subwindows/embed_subwindows=false
@@ -274,7 +274,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
 misc/lossless_compression/force_png=true

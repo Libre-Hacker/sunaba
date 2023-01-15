@@ -30,4 +30,7 @@ func _on_play_button_pressed():
 
 
 func _on_connect_button_pressed():
-	$ConnectDialog.popup_centered()
+	if Build.online_play_enabled:
+		$ConnectDialog.popup_centered()
+	else :
+		OS.alert("Online play is not supported in this build.")

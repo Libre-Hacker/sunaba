@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8y2wb4rvutm2"]
+
+[ext_resource type="PackedScene" uid="uid://bx2b34vf1mgct" path="res://assets/models/handprops/dartgun.gltf" id="1_0avqt"]
+
+[node name="dartgun" instance=ExtResource("1_0avqt")]

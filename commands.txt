@@ -1,3 +1,0 @@
-cockroach start-single-node --insecure --listen-addr=127.0.0.1
-
-nakama

@@ -20,8 +20,11 @@ var puppet_pos = Vector3()
 var puppet_vel = Vector3()
 var puppet_rot = Vector3()
 
+var health = 100
 var reach = null
 var aimcast = null
+var ammo = 13
+var max_ammo = 25
 var damage = 100
 var is_reloading : bool
 var has_fired : bool = false
@@ -44,14 +47,14 @@ var muzzle = null
 @onready var reload_label = $Hud/Crosshair/Label 
 @onready var tool_label = $Hud/ToolPanel/Label
 @onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
+@onready var health_bar = $Hud/Panel/HealthBar
+@onready var health_counter = $Hud/Panel/HealthBar/Label 
 
 
-@onready var pb_gun_hr = preload("res://weapons/paintball_gun_hr.tscn")
-@onready var pb_gun = preload("res://entities/wp_pbgun.tscn")
-@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
-@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
-
-@onready var b_decal = preload("res://core/bullet_decal.tscn")
+#@onready var pb_gun_hr = preload("res://weapons/paintball_gun_hr.tscn")
+#@onready var pb_gun = preload("res://entities/wp_pbgun.tscn")
+#@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
+#@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
 func _ready():
 	if is_multiplayer_authority():
@@ -111,7 +114,11 @@ func _process(_delta):
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
 	crosshair.theme = ThemeManager.theme
-	tool_ammo_bar.get_node("Label").text = var_to_str(round(tool_ammo_bar.value)) + " / " + var_to_str(round(tool_ammo_bar.max_value))
+	tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
+	tool_ammo_bar.value = ammo
+	tool_ammo_bar.max_value = max_ammo
+	health_bar.value = health
+	health_counter.text = var_to_str(health)
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
@@ -128,10 +135,8 @@ func _process(_delta):
 			aimcast = fp_aimcast
 	
 	if reach.is_colliding():
-		if "wp_pbgun" in reach.get_collider().get_name():
-			tool_to_spawn = pb_gun_hr.instantiate()
-		elif "wp_pistol" in reach.get_collider().get_name():
-			tool_to_spawn = pb_pistol_hr.instantiate()
+		if "wp" in reach.get_collider().get_name():
+			tool_to_spawn = reach.get_collider().get_weapon().instantiate()
 		else:
 			tool_to_spawn = null
 	else:
@@ -139,10 +144,11 @@ func _process(_delta):
 	
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
-			if hand.get_child(0).get_name() == "Paintball Gun":
-				tool_to_drop = pb_gun.instantiate()
-			elif hand.get_child(0).get_name() == "Paintball Pistol":
-				tool_to_drop = pb_pistol.instantiate()
+			#if hand.get_child(0).get_name() == "Paintball Gun":
+				#tool_to_drop = pb_gun.instantiate()
+			#elif hand.get_child(0).get_name() == "Paintball Pistol":
+				#tool_to_drop = pb_pistol.instantiate()
+			tool_to_drop = hand.get_child(0).get_weapon().instantiate()
 		else:
 			tool_to_drop = null
 	else:
@@ -157,12 +163,11 @@ func _process(_delta):
 					tool_to_drop.dropped = true
 					hand.get_child(0).queue_free()
 			tool_label.text = reach.get_collider().get_name()
-			tool_ammo_bar.max_value = 100
-			tool_ammo_bar.value = 100
 			reach.get_collider().queue_free()
 			hand.add_child(tool_to_spawn)
-			tool_ammo_bar.value = tool_to_spawn.max_ammo
-			tool_ammo_bar.max_value = tool_to_spawn.max_ammo
+			ammo = tool_to_spawn.max_ammo
+			max_ammo = tool_to_spawn.max_ammo
+			$FireTimer.wait_time = tool_to_spawn.cooldown_time
 			damage = tool_to_spawn.damage
 			weapon_type = tool_to_spawn.weapon_type
 			tool_to_spawn.rotation = hand.rotation
@@ -184,7 +189,7 @@ func _process(_delta):
 					if !has_fired:
 							_fire()
 	
-	if (Input.is_action_pressed("reload") and tool_ammo_bar.value < tool_ammo_bar.max_value ) or tool_ammo_bar.value == tool_ammo_bar.min_value:
+	if (Input.is_action_pressed("reload") and ammo < max_ammo ) or ammo == 0:
 		if is_reloading: return
 		is_reloading = true
 		$ReloadTimer.start()
@@ -253,15 +258,17 @@ func _on_timeout():
 		#rpc_unreliable("update_state", global_transform.origin, velocity, Vector2(rotation.x, rotation.y))
 
 func _fire():
-	tool_ammo_bar.value -= 1
-	if tool_ammo_bar.value != 0:
+	if !is_reloading and ammo != 0:
+		ammo -= 1
 		$WeaponSound.play()
+		hand.get_child(0).get_node("WeaponSound").play()
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
 			if target.is_in_group("bot"):
 				print("hit bot")
 				target.health -= damage
 			else:
+				var b_decal = hand.get_child(0).get_bullet_hole()
 				var b = b_decal.instantiate()
 				target.add_child(b)
 				b.global_transform.origin = aimcast.get_collision_point()
@@ -272,7 +279,7 @@ func _fire():
 
 func _on_reload_timer_timeout():
 	$ReloadTimer.stop()
-	tool_ammo_bar.value = tool_ammo_bar.max_value
+	ammo = max_ammo
 	reload_label.hide()
 	is_reloading = false
 	
@@ -284,18 +291,18 @@ func _on_fire_timer_timeout():
 
 func add_tool(tool_name : String):
 	if tool_name == "pbgun":
-		tool_to_spawn = pb_gun_hr.instantiate()
+		pass#tool_to_spawn = pb_gun_hr.instantiate()
 	elif tool_name == "pistol":
-		tool_to_spawn = pb_pistol_hr.instantiate()
+		pass#tool_to_spawn = pb_pistol_hr.instantiate()
 	else:
 		tool_to_spawn = null
 		return
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
 			if hand.get_child(0).get_name() == "Paintball Gun":
-				tool_to_drop = pb_gun.instantiate()
+				pass#tool_to_drop = pb_gun.instantiate()
 			elif hand.get_child(0).get_name() == "Paintball Pistol":
-				tool_to_drop = pb_pistol.instantiate()
+				pass#tool_to_drop = pb_pistol.instantiate()
 		else:
 			tool_to_drop = null
 	else:

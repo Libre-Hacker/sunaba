@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://jmh58bjr7u0i"]
+
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="1_0bv6p"]
+[ext_resource type="PackedScene" uid="uid://8y2wb4rvutm2" path="res://weapons/dartgun_mesh.tscn" id="2_00on8"]
+[ext_resource type="AudioStream" uid="uid://cpayvpvqnbvim" path="res://assets/audio/nail.wav" id="3_dvvv6"]
+
+[node name="Dart Gun" type="Node3D"]
+script = ExtResource("1_0bv6p")
+damage = 5
+cooldown_time = 0.065
+max_ammo = 40
+weapon_type = "auto"
+weapon_path = "res://entities/wp_dartgun.tscn"
+bullet_hole_path = "res://weapons/dart_bullet_decal.tscn"
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
+
+[node name="dartgun" parent="." instance=ExtResource("2_00on8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="WeaponSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dvvv6")

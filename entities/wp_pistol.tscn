@@ -1,27 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://un767v26k0na"]
 
+[ext_resource type="Script" path="res://weapons/tool.gd" id="1_7syvj"]
 [ext_resource type="PackedScene" uid="uid://cxpjwab4kep6w" path="res://weapons/pistol_mesh.tscn" id="1_rub0h"]
 
-[sub_resource type="GDScript" id="GDScript_c1thc"]
-script/source = "extends RigidBody3D
-
-var dropped = false
-
-func _process(_delta):
-	if dropped == true:
-		apply_impulse(-transform.basis.z * 10, transform.basis.z)
-		dropped = false
-"
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_plktq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_58kxc"]
 size = Vector3(0.047419, 0.179502, 0.261986)
 
 [node name="wp_pistol" type="RigidBody3D"]
-script = SubResource("GDScript_c1thc")
+script = ExtResource("1_7syvj")
+weapon_path = "res://weapons/paintball_pistol_hr.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999977, 0.00677183, 0, -0.00677183, 0.999977, 0, 0.00773278, 0.0889137)
-shape = SubResource("BoxShape3D_plktq")
+shape = SubResource("BoxShape3D_58kxc")
 
 [node name="PBPistol2" parent="." instance=ExtResource("1_rub0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

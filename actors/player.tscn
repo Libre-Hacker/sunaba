@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwqwm01g0ddxx"]
+[gd_scene load_steps=12 format=3 uid="uid://cb6e1l2fu08ys"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="4_vg2nh"]
@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="7_o05eg"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
+[ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/paintball.wav" id="9_nkjw4"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
-[ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/shoot.wav" id="11"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ncwfe"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dtdky"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyxbe"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cb48l"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -65,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.45524
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_ncwfe")
+shape = SubResource("CapsuleShape3D_dtdky")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -74,6 +74,7 @@ autostart = true
 [node name="Hud" type="Node" parent="."]
 
 [node name="Panel" type="Panel" parent="Hud"]
+anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -95,7 +96,7 @@ grow_vertical = 0
 texture = ExtResource("10")
 stretch_mode = 5
 
-[node name="ProgressBar" type="ProgressBar" parent="Hud/Panel"]
+[node name="HealthBar" type="ProgressBar" parent="Hud/Panel"]
 layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
@@ -108,11 +109,11 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_iyxbe")
+theme_override_styles/fill = SubResource("StyleBoxTexture_cb48l")
 value = 100.0
 show_percentage = false
 
-[node name="TextureRect" type="TextureRect" parent="Hud/Panel/ProgressBar"]
+[node name="TextureRect" type="TextureRect" parent="Hud/Panel/HealthBar"]
 layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -122,9 +123,9 @@ offset_right = 30.0
 offset_bottom = 11.0
 grow_vertical = 2
 texture = ExtResource("7")
-ignore_texture_size = true
+expand_mode = 1
 
-[node name="Label" type="Label" parent="Hud/Panel/ProgressBar"]
+[node name="Label" type="Label" parent="Hud/Panel/HealthBar"]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -151,6 +152,7 @@ text = "Player"
 vertical_alignment = 1
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -221,6 +223,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Crosshair" type="TextureRect" parent="Hud"]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -259,7 +262,7 @@ wait_time = 2.5
 wait_time = 0.1
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11")
+stream = ExtResource("9_nkjw4")
 
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

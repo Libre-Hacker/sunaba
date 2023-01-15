@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="7_o05eg"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
-[ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/paintball.wav" id="9_nkjw4"]
+[ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dtdky"]
@@ -24,7 +24,6 @@ region_rect = Rect2(0, 0, 49, 45)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("4")
-max_speed = 6
 jump_impulse = 10
 
 [node name="Himiko" parent="." instance=ExtResource("6")]
@@ -261,9 +260,16 @@ wait_time = 2.5
 [node name="FireTimer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="WeaponSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_nkjw4")
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_a1b3j")
+volume_db = -10.0
+
+[node name="WalkTimer" type="Timer" parent="."]
+wait_time = 0.35
 
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+
+[editable path="Himiko"]

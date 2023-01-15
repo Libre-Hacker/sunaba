@@ -1,11 +1,14 @@
 extends CharacterBody3D
 
-@export var max_speed : int = 12
+@export var default_speed : int = 5
+@export var sprint_speed : int = 14
 @export var acceleration : int = 60
 @export var friction : int = 50
 @export var air_friction : int = 10
 @export var jump_impulse : int = 20
 @export var gravity : int = -40
+@export var default_walk_sound_time : float = 0.35
+@export var sprint_walk_sound_time : float = 0.1
 
 @export var mouse_sensitivity : float = .1
 @export var controller_sensitivity : int = 3
@@ -20,6 +23,7 @@ var puppet_pos = Vector3()
 var puppet_vel = Vector3()
 var puppet_rot = Vector3()
 
+var max_speed
 var health = 100
 var reach = null
 var aimcast = null
@@ -30,17 +34,20 @@ var is_reloading : bool
 var has_fired : bool = false
 var weapon_type : String = ""
 var muzzle = null
+var can_play_walk_sound : bool = true
 
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
 @onready var model = $Himiko
+@onready var animation_player = $Himiko/AnimationPlayer
 @onready var ntr = $NetworkTickRate
 @onready var hand = $Head/Hand
 @onready var fp_reach = $Head/Camera3D/Reach
 @onready var tp_reach = $Head/SpringArm3D/SpringArm3D/TPCamera/Reach
 @onready var fp_aimcast = $Head/Camera3D/AimCast
 @onready var tp_aimcast = $Head/SpringArm3D/SpringArm3D/TPCamera/AimCast
+@onready var walk_timer = $WalkTimer
 
 # Hud Related Nodes
 @onready var crosshair = $Hud/Crosshair
@@ -66,6 +73,7 @@ func _ready():
 	aimcast = fp_aimcast
 	reload_label.hide()
 	$Hud/ToolPanel.hide()
+	max_speed = default_speed
 
 func _input(event):
 	if !is_multiplayer_authority():
@@ -111,6 +119,21 @@ func _physics_process(delta):
 		#var collision = get_slide_collision(idx)
 
 func _process(_delta): 
+	if velocity.length() == 0:
+		animation_player.play("Idle")
+	else:
+		if max_speed == default_speed:
+			animation_player.play("Walk")
+		else:
+			animation_player.play("Run")
+		if can_play_walk_sound:
+			can_play_walk_sound = false
+			$WalkSound.play()
+			walk_timer.start()
+	
+	if !is_multiplayer_authority():
+		return
+		
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
 	crosshair.theme = ThemeManager.theme
@@ -119,6 +142,10 @@ func _process(_delta):
 	tool_ammo_bar.max_value = max_ammo
 	health_bar.value = health
 	health_counter.text = var_to_str(health)
+	max_speed = default_speed
+	walk_timer.wait_time = default_walk_sound_time
+	
+	
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
@@ -194,6 +221,10 @@ func _process(_delta):
 		is_reloading = true
 		$ReloadTimer.start()
 		reload_label.show()
+	
+	if Input.is_action_pressed("sprint"):
+		max_speed = sprint_speed
+		walk_timer.wait_time = sprint_walk_sound_time
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
@@ -260,7 +291,6 @@ func _on_timeout():
 func _fire():
 	if !is_reloading and ammo != 0:
 		ammo -= 1
-		$WeaponSound.play()
 		hand.get_child(0).get_node("WeaponSound").play()
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
@@ -323,3 +353,7 @@ func add_tool(tool_name : String):
 	tool_to_spawn.rotation = hand.rotation
 	muzzle = tool_to_spawn.get_node("Muzzle")
 	$Hud/ToolPanel.show()
+
+
+func _on_walk_timer_timeout():
+	can_play_walk_sound = true

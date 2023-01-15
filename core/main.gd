@@ -70,3 +70,4 @@ func reload():
 func map_viewer():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://core/map_viewer.tscn")
+

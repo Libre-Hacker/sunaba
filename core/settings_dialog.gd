@@ -86,3 +86,7 @@ func _on_fullscreen_toggled(_button_pressed):
 	#save()
 	pass
 
+
+
+func _on_close_requested():
+	hide()

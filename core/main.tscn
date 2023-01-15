@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
 [ext_resource type="Texture2D" uid="uid://0yo2od878bfq" path="res://assets/textures/backdrop.png" id="10"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
-[ext_resource type="PackedScene" path="res://core/settings_dialog.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://bnaheix8jti6" path="res://core/world.tscn" id="12"]
 [ext_resource type="Script" path="res://core/main.gd" id="13"]
 
@@ -68,7 +68,6 @@ theme_override_constants/outline_size = 1
 scroll_following = true
 
 [node name="MainMenu" type="Control" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,6 +85,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
@@ -248,11 +248,14 @@ gui = NodePath("..")
 [connection signal="mouse_entered" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
 [connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
+[connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="_on_new_room_dialog_close_requested"]
 [connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="create_room"]
+[connection signal="close_requested" from="UI/FileDialog" to="UI" method="_on_file_dialog_close_requested"]
 [connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]
+[connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="_on_connect_dialog_close_requested"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
 

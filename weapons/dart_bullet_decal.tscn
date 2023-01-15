@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://hlyo4hip66b8"]
+
+[ext_resource type="Texture2D" uid="uid://ctnab8h43qnr7" path="res://assets/textures/dart_decal.png" id="1_6o7c2"]
+
+[sub_resource type="GDScript" id="GDScript_mv4u4"]
+script/source = "extends Decal
+
+
+
+func _on_timeout():
+	queue_free()
+"
+
+[node name="BulletDecal" type="Decal"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+extents = Vector3(0.1, 0.1, 0.1)
+texture_albedo = ExtResource("1_6o7c2")
+script = SubResource("GDScript_mv4u4")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timeout"]

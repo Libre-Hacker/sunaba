@@ -34,3 +34,15 @@ func _on_connect_button_pressed():
 		$ConnectDialog.popup_centered()
 	else :
 		OS.alert("Online play is not supported in this build.")
+
+
+func _on_connect_dialog_close_requested():
+	$ConnectDialog.hide()
+
+
+func _on_file_dialog_close_requested():
+	$FileDialog.hide()
+
+
+func _on_new_room_dialog_close_requested():
+	$NewRoomDialog.hide()

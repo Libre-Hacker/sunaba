@@ -7,7 +7,7 @@
 [node name="Dart Gun" type="Node3D"]
 script = ExtResource("1_0bv6p")
 damage = 5
-cooldown_time = 0.065
+cooldown_time = 0.07
 max_ammo = 40
 weapon_type = "auto"
 weapon_path = "res://entities/wp_dartgun.tscn"

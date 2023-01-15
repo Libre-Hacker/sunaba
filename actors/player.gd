@@ -27,7 +27,7 @@ var max_speed
 var health = 100
 var reach = null
 var aimcast = null
-var ammo = 13
+var ammo = 25
 var max_ammo = 25
 var damage = 100
 var is_reloading : bool
@@ -215,10 +215,13 @@ func _process(_delta):
 				if hand.get_child(0) != null:
 					if !has_fired:
 							_fire()
+	if Input.is_action_just_pressed("sprint"):
+		$SprintSound.play()
 	
-	if (Input.is_action_pressed("reload") and ammo < max_ammo ) or ammo == 0:
+	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:
 		if is_reloading: return
 		is_reloading = true
+		$ReloadSound.play()
 		$ReloadTimer.start()
 		reload_label.show()
 	

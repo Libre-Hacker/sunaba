@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb6e1l2fu08ys"]
+[gd_scene load_steps=14 format=3 uid="uid://cb6e1l2fu08ys"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="4_vg2nh"]
@@ -9,12 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
 [ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
+[ext_resource type="AudioStream" uid="uid://chklfqvc6bg31" path="res://assets/audio/reload.wav" id="10_p73lo"]
+[ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bac62"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gjbp1"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj3qp"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0h00"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -64,7 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.45524
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_bac62")
+shape = SubResource("CapsuleShape3D_gjbp1")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -108,7 +110,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_gj3qp")
+theme_override_styles/fill = SubResource("StyleBoxTexture_h0h00")
 value = 100.0
 show_percentage = false
 
@@ -255,7 +257,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="ReloadTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 0.96
 
 [node name="FireTimer" type="Timer" parent="."]
 wait_time = 0.1
@@ -266,6 +268,12 @@ volume_db = -10.0
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.35
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_p73lo")
+
+[node name="SprintSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_iosef")
 
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

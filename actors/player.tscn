@@ -12,11 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://chklfqvc6bg31" path="res://assets/audio/reload.wav" id="10_p73lo"]
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gjbp1"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_24q52"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0h00"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnh0y"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -66,7 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.45524
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_gjbp1")
+shape = SubResource("CapsuleShape3D_24q52")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -110,7 +110,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_h0h00")
+theme_override_styles/fill = SubResource("StyleBoxTexture_wnh0y")
 value = 100.0
 show_percentage = false
 

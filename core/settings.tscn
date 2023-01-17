@@ -1,6 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuanlqv1fq2px"]
 
-[sub_resource type="Shortcut" id="19"]
+[sub_resource type="GDScript" id="GDScript_qb0mn"]
+script/source = "extends RichTextLabel
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	newline()
+	add_text(\"Version \" + Build.version_number)
+	newline()
+	add_text(\"(C) 2022-2023 mintkat\")
+"
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(400, 300)
@@ -29,7 +39,7 @@ anchor_bottom = 1.0
 [node name="?" type="Control" parent="TabBar/TabContainer"]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TabBar/TabContainer/?"]
+[node name="Label2" type="RichTextLabel" parent="TabBar/TabContainer/?"]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -37,9 +47,8 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = -8.0
 offset_bottom = -8.0
-text = "Toonbox
-Version 0.2.0
-(C) 2022-2023 mintkat"
+text = "Sunaba"
+script = SubResource("GDScript_qb0mn")
 
 [node name="Theme" type="Control" parent="TabBar/TabContainer"]
 visible = false
@@ -68,6 +77,7 @@ offset_left = -146.0
 offset_top = -12.0
 offset_bottom = 12.0
 item_count = 7
+selected = 0
 popup/item_0/text = "2kUI"
 popup/item_0/id = 0
 popup/item_1/text = "Carbon Light"
@@ -83,57 +93,45 @@ popup/item_5/id = 5
 popup/item_6/text = "Windows 3.1"
 popup/item_6/id = 6
 
-[node name="Graphics" type="Control" parent="TabBar/TabContainer"]
+[node name="Label4" type="Label" parent="TabBar/TabContainer/Theme/VBoxContainer"]
 visible = false
 layout_mode = 2
+text = "Ui Scale"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabBar/TabContainer/Graphics"]
+[node name="OptionButton" type="OptionButton" parent="TabBar/TabContainer/Theme/VBoxContainer/Label4"]
 layout_mode = 0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -12.0
+offset_bottom = 12.0
+
+[node name="TBWO" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Display" type="Control" parent="TBWO"]
+layout_mode = 2
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -5.0
+offset_left = 1.0
+offset_top = 32.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="FullscreenToggle" type="CheckButton" parent="TabBar/TabContainer/Graphics/VBoxContainer"]
-layout_mode = 2
-shortcut = SubResource("19")
-text = "Fullscreen Mode"
-flat = true
-
-[node name="Label3" type="Label" parent="TabBar/TabContainer/Graphics/VBoxContainer"]
-layout_mode = 2
-text = "Resolution"
-
-[node name="OptionButton" type="OptionButton" parent="TabBar/TabContainer/Graphics/VBoxContainer/Label3"]
-layout_mode = 0
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -12.0
-offset_bottom = 12.0
-
-[node name="Label4" type="Label" parent="TabBar/TabContainer/Graphics/VBoxContainer"]
-layout_mode = 2
-text = "Resolution"
-
-[node name="OptionButton" type="OptionButton" parent="TabBar/TabContainer/Graphics/VBoxContainer/Label4"]
-layout_mode = 0
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -12.0
-offset_bottom = 12.0
-
-[node name="Audio" type="Control" parent="TabBar/TabContainer"]
+[node name="Audio" type="Control" parent="TBWO"]
 visible = false
-layout_mode = 2
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Controls" type="Control" parent="TabBar/TabContainer"]
+[node name="Controls" type="Control" parent="TBWO"]
 visible = false
-layout_mode = 2
+layout_mode = 3
+anchors_preset = 0

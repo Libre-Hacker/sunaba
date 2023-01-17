@@ -4,6 +4,7 @@ extends Node
 
 func  _ready():
 	$MainMenu.show()
+	$PauseMenu.hide()
 
 func _on_create_button_pressed():
 	$NewRoomDialog.popup_centered()
@@ -46,3 +47,14 @@ func _on_file_dialog_close_requested():
 
 func _on_new_room_dialog_close_requested():
 	$NewRoomDialog.hide()
+
+func _process(delta):
+	if Global.game_started:
+		if Global.game_paused:
+			$PauseMenu.show()
+		else: 
+			$PauseMenu.hide()
+
+func unpause():
+	$PauseMenu.hide()
+	Global.game_paused = false

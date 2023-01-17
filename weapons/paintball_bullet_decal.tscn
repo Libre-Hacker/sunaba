@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwfgw2n6vxjy1"]
 
-[ext_resource type="Texture2D" uid="uid://ctnab8h43qnr7" path="res://assets/textures/dart_decal.png" id="1_pl444"]
+[ext_resource type="Texture2D" uid="uid://b44frx2c6poxt" path="res://assets/textures/pb_blue_decal.png" id="1_x0roo"]
 
 [sub_resource type="GDScript" id="GDScript_mv4u4"]
 script/source = "extends Decal
@@ -14,7 +14,7 @@ func _on_timeout():
 [node name="BulletDecal" type="Decal"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 extents = Vector3(0.1, 0.1, 0.1)
-texture_albedo = ExtResource("1_pl444")
+texture_albedo = ExtResource("1_x0roo")
 script = SubResource("GDScript_mv4u4")
 
 [node name="Timer" type="Timer" parent="."]

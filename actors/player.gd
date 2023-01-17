@@ -87,9 +87,11 @@ func _input(event):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			crosshair.hide()
+			Global.game_paused = true
 		else: 
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			crosshair.show()
+			Global.game_paused = false
 	
 	
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -131,9 +133,13 @@ func _process(_delta):
 			$WalkSound.play()
 			walk_timer.start()
 	
-	if !is_multiplayer_authority():
+	if !is_multiplayer_authority() or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		return
-		
+	
+	if !Global.game_paused:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		crosshair.show()
+	
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
 	crosshair.theme = ThemeManager.theme

@@ -13,8 +13,6 @@
 	gravity(integer) : "Gravity" : -40 : "int"
 	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
 	damage(integer) : "Damage" : 10 : "int"
-	can(bool) : "Can" : 
-	follow_target(bool) : "Follow Target" : 
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = ev_daytime : "" [
@@ -30,6 +28,12 @@
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = lightmap : "" [
+]
+
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = nextbot : "" [
+	gravity(integer) : "Gravity" : -40 : "int"
+	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
+	damage(integer) : "Damage" : 10 : "int"
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = player : "" [

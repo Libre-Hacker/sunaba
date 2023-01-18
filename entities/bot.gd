@@ -13,8 +13,6 @@ var has_fired = false
 @onready var aimcast = $Head/AimCast
 @onready var animation_player = $Himiko/AnimationPlayer
 
-var can : bool = false
-var follow_target : bool = false
 var target = null
 
 
@@ -45,7 +43,7 @@ func update_target_location(target_location):
 	navigation_agent.set_target_location(target_location)
 
 func _physics_process(_delta):
-	if !can:
+	if !$Timer.is_stopped():
 		return
 	
 	var current_location = global_transform.origin
@@ -58,7 +56,7 @@ func _physics_process(_delta):
 	
 
 func _on_timer_timeout():
-	can = true
+	pass
 
 func fire():
 	var target = $Head/AimCast.get_collider()

@@ -9,6 +9,14 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = an_spring : "" [
 ]
 
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = bot : "" [
+	gravity(integer) : "Gravity" : -40 : "int"
+	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
+	damage(integer) : "Damage" : 10 : "int"
+	can(bool) : "Can" : 
+	follow_target(bool) : "Follow Target" : 
+]
+
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = ev_daytime : "" [
 ]
 
@@ -24,18 +32,26 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = lightmap : "" [
 ]
 
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = nextbot : "" [
+	gravity(integer) : "Gravity" : -40 : "int"
+	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
+	damage(integer) : "Damage" : 10 : "int"
+	can(bool) : "Can" : 
+	follow_target(bool) : "Follow Target" : 
+]
+
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = player : "" [
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_dartgun : "" [
-  weapon_path(string) : "Weapon Path" :  : "String"
+	weapon_path(string) : "Weapon Path" :  : "String"
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_pbgun : "" [
-  weapon_path(string) : "Weapon Path" :  : "String"
+	weapon_path(string) : "Weapon Path" :  : "String"
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_pistol : "" [
-  weapon_path(string) : "Weapon Path" :  : "String"
+	weapon_path(string) : "Weapon Path" :  : "String"
 ]
 

@@ -634,57 +634,56 @@
 }
 // entity 20
 {
-"classname" "bot"
-"origin" "-108 348 20"
-"angle" "90"
+"classname" "light"
+"origin" "-140 340 60"
 }
 // entity 21
 {
 "classname" "light"
-"origin" "-140 340 60"
+"origin" "-92 340 60"
 }
 // entity 22
 {
 "classname" "light"
-"origin" "-92 340 60"
+"origin" "-92 388 60"
 }
 // entity 23
 {
 "classname" "light"
-"origin" "-92 388 60"
+"origin" "-140 388 60"
 }
 // entity 24
 {
 "classname" "light"
-"origin" "-140 388 60"
+"origin" "-252 228 60"
 }
 // entity 25
 {
 "classname" "light"
-"origin" "-252 228 60"
+"origin" "-220 228 60"
 }
 // entity 26
 {
 "classname" "light"
-"origin" "-220 228 60"
+"origin" "-188 228 60"
 }
 // entity 27
 {
 "classname" "light"
-"origin" "-188 228 60"
+"origin" "-156 228 60"
 }
 // entity 28
 {
 "classname" "light"
-"origin" "-156 228 60"
+"origin" "-124 228 60"
 }
 // entity 29
 {
 "classname" "light"
-"origin" "-124 228 60"
+"origin" "-92 228 60"
 }
 // entity 30
 {
-"classname" "light"
-"origin" "-92 228 60"
+"classname" "nextbot"
+"origin" "-116 348 20"
 }

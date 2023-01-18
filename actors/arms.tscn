@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d8olreee2un1"]
+
+[ext_resource type="PackedScene" uid="uid://cfe2fo3tmmyn4" path="res://assets/models/arms/arms.gltf" id="1_c1khr"]
+[ext_resource type="Texture2D" uid="uid://6r68rgb05su4" path="res://assets/textures/arms.png" id="2_0y0rd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whpk2"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0iab7"]
+transparency = 1
+albedo_texture = ExtResource("2_0y0rd")
+
+[node name="arms" instance=ExtResource("1_c1khr")]
+
+[node name="Base Mesh" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_whpk2")
+surface_material_override/1 = SubResource("StandardMaterial3D_whpk2")
+surface_material_override/2 = SubResource("StandardMaterial3D_whpk2")
+surface_material_override/3 = SubResource("StandardMaterial3D_0iab7")
+surface_material_override/4 = SubResource("StandardMaterial3D_0iab7")
+surface_material_override/5 = SubResource("StandardMaterial3D_whpk2")
+surface_material_override/6 = SubResource("StandardMaterial3D_whpk2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Armature/Skeleton3D" index="1"]

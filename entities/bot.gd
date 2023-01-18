@@ -11,6 +11,7 @@ var has_fired = false
 
 @onready var navigation_agent = $NavigationAgent3D
 @onready var aimcast = $Head/AimCast
+@onready var animation_player = $Himiko/AnimationPlayer
 
 var can : bool = false
 var follow_target : bool = false
@@ -28,6 +29,14 @@ func _process(_delta):
 	
 	if $Head/Reach.is_colliding()and !has_fired:
 		fire()
+	
+	if velocity.length() == 0:
+		animation_player.play("Idle")
+	else:
+		#if is_on_floor():
+		animation_player.play("Walk")
+		#elif !is_on_floor():
+			#animation_player.play("Fall")
 	
 	if health <= 0:
 		queue_free()

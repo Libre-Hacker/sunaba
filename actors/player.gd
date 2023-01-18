@@ -41,6 +41,7 @@ var b_decal
 @onready var fp_camera = $Head/Camera3D
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
 @onready var model = $Himiko
+@onready var arms_model = $Head/arms
 @onready var animation_player = $Himiko/AnimationPlayer
 @onready var ntr = $NetworkTickRate
 @onready var hand = $Head/Hand
@@ -70,6 +71,7 @@ func _ready():
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
+	#arms_model.visible = is_multiplayer_authority()
 	reach = fp_reach
 	aimcast = fp_aimcast
 	reload_label.hide()
@@ -171,12 +173,14 @@ func _process(_delta):
 			fp_camera.current = false
 			tp_camera.current = is_multiplayer_authority()
 			model.visible = true
+			arms_model.visible = false
 			reach = tp_reach
 			aimcast = tp_aimcast
 		elif tp_camera.current == true:
 			fp_camera.current = is_multiplayer_authority()
 			tp_camera.current = false
 			model.visible = !is_multiplayer_authority()
+			#arms_model.visible = is_multiplayer_authority()
 			reach = fp_reach
 			aimcast = fp_aimcast
 	

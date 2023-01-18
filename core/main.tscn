@@ -47,6 +47,7 @@ stretch = true
 
 [node name="WorldViewport" type="SubViewport" parent="UI/SubViewportContainer"]
 handle_input_locally = false
+mesh_lod_threshold = 0.0
 audio_listener_enable_3d = true
 physics_object_picking = true
 size = Vector2i(1024, 554)

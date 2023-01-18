@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://core/world.gd" id="2"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
-cell_height = 0.05
-agent_max_climb = 0.05
+cell_height = 0.01
+agent_max_climb = 0.01
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")

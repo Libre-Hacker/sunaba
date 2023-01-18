@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cb6e1l2fu08ys"]
+[gd_scene load_steps=21 format=3 uid="uid://cb6e1l2fu08ys"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://d8olreee2un1" path="res://actors/arms.tscn" id="4_dvh8j"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="4_vg2nh"]
 [ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_01etg"]
 [ext_resource type="PackedScene" uid="uid://bunf532f5lei7" path="res://actors/himiko.tscn" id="6"]
@@ -15,11 +16,28 @@
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 [ext_resource type="AudioStream" uid="uid://c15y24ipmu1da" path="res://assets/audio/ammo_pickup.wav" id="14_qvd4k"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eonoc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s7ou2"]
+
+[sub_resource type="Animation" id="Animation_ikcqx"]
+resource_name = "holding"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fk7od"]
+_data = {
+"holding": SubResource("Animation_ikcqx")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3twdj"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ab4c"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2e7c"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -32,6 +50,7 @@ script = ExtResource("4")
 jump_impulse = 10
 
 [node name="Himiko" parent="." instance=ExtResource("6")]
+visible = false
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -65,11 +84,49 @@ target_position = Vector3(0, 0, -5)
 target_position = Vector3(0, 0, -1000)
 
 [node name="Hand" type="Node3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.455246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.199886, -0.348759)
+
+[node name="arms" parent="Head" instance=ExtResource("4_dvh8j")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.1306, 0)
+visible = false
+
+[node name="Skeleton3D" parent="Head/arms/Armature" index="1"]
+bones/26/rotation = Quaternion(0.664566, -0.414346, -0.4365, -0.442873)
+bones/26/scale = Vector3(1, 1, 1)
+bones/27/rotation = Quaternion(-0.0119119, -0.0519365, 0.233921, 0.970794)
+bones/27/scale = Vector3(1, 1, 1)
+bones/30/position = Vector3(0.000315861, 0.0612169, 0.000349013)
+bones/30/rotation = Quaternion(-0.185996, 0.101676, 0.0203153, 0.977064)
+bones/30/scale = Vector3(1, 1, 1)
+bones/31/rotation = Quaternion(-0.563381, 0.16371, -0.0547666, 0.807961)
+bones/31/scale = Vector3(1, 0.999999, 1)
+bones/33/rotation = Quaternion(-0.614403, -0.197416, 0.292247, 0.705781)
+bones/33/scale = Vector3(1, 0.999999, 1)
+bones/34/rotation = Quaternion(0.148103, -0.0694197, -0.319961, 0.933205)
+bones/34/scale = Vector3(1, 1, 1)
+bones/35/rotation = Quaternion(0.148228, -0.0345154, -0.255691, 0.954704)
+bones/35/scale = Vector3(1, 1, 1)
+bones/37/rotation = Quaternion(-0.332213, 0.0737631, -0.00669207, 0.940292)
+bones/37/scale = Vector3(1, 1, 1)
+bones/38/rotation = Quaternion(-0.54978, 0.100467, -0.0496781, 0.827756)
+bones/38/scale = Vector3(1, 1, 1)
+bones/41/rotation = Quaternion(-0.403308, 0.0146707, 0.0109317, 0.914881)
+bones/41/scale = Vector3(1, 0.999999, 1)
+bones/42/rotation = Quaternion(-0.396092, 0.0629935, 0.0135213, 0.915948)
+bones/42/scale = Vector3(1, 0.999999, 1)
+
+[node name="Base Mesh" parent="Head/arms/Armature/Skeleton3D" index="0"]
+surface_material_override/3 = SubResource("StandardMaterial3D_s7ou2")
+surface_material_override/4 = SubResource("StandardMaterial3D_s7ou2")
+
+[node name="AnimationPlayer" parent="Head/arms/Armature/Skeleton3D" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_fk7od")
+}
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_eonoc")
+shape = SubResource("CapsuleShape3D_3twdj")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -113,7 +170,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_1ab4c")
+theme_override_styles/fill = SubResource("StyleBoxTexture_s2e7c")
 value = 100.0
 show_percentage = false
 
@@ -152,6 +209,7 @@ offset_left = -170.0
 offset_top = 4.0
 offset_right = -5.0
 offset_bottom = 30.0
+grow_horizontal = 0
 text = "Player"
 vertical_alignment = 1
 
@@ -301,3 +359,5 @@ stream = ExtResource("14_qvd4k")
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+
+[editable path="Head/arms"]

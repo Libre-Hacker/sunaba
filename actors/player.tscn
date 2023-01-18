@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cb6e1l2fu08ys"]
+[gd_scene load_steps=17 format=3 uid="uid://cb6e1l2fu08ys"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="4_vg2nh"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
 [ext_resource type="AudioStream" uid="uid://chklfqvc6bg31" path="res://assets/audio/reload.wav" id="10_p73lo"]
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
+[ext_resource type="AudioStream" uid="uid://c15y24ipmu1da" path="res://assets/audio/ammo_pickup.wav" id="14_qvd4k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eonoc"]
 radius = 0.293445
@@ -292,6 +293,9 @@ stream = ExtResource("10_p73lo")
 
 [node name="SprintSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_iosef")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_qvd4k")
 
 [connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

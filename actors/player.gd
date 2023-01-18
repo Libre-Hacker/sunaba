@@ -219,6 +219,7 @@ func _process(_delta):
 			tool_to_spawn.rotation = hand.rotation
 			muzzle = tool_to_spawn.get_node("Muzzle")
 			$Hud/ToolPanel.show()
+			$PickupSound.play()
 	
 	if weapon_type == "semi":
 		if Input.is_action_just_pressed("action_button"):

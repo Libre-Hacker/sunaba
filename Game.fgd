@@ -9,6 +9,9 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = an_spring : "" [
 ]
 
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = bot : "" [
+]
+
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = ev_daytime : "" [
 ]
 

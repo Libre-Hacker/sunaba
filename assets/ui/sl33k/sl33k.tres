@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://carnll727hg0x"]
 
-[ext_resource type="SystemFont" uid="uid://cqat8ggu5yb4l" path="res://assets/fonts/segoe_ui.tres" id="1_n46v2"]
+[ext_resource type="FontFile" uid="uid://ch5bh3cvor3od" path="res://assets/fonts/Roboto-Light.ttf" id="1_a3321"]
 
 [resource]
-default_font = ExtResource("1_n46v2")
+default_font = ExtResource("1_a3321")

@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"_tb_def" "external:tb-gameconfig/Game.fgd"
+"_tb_def" "external:Game.fgd"
 "_tb_textures" "textures;textures/blockout"
 // brush 0
 {
@@ -434,7 +434,7 @@
 ( -64 320 8 ) ( -64 320 9 ) ( -63 320 8 ) blockout/gray_check 0 0 0 0.125 0.125
 ( -64 320 8 ) ( -63 320 8 ) ( -64 321 8 ) blockout/gray_check 0 0 0 0.125 0.125
 ( -56 472 144 ) ( -56 473 144 ) ( -55 472 144 ) blockout/gray_check 0 0 0 0.125 0.125
-( -56 472 16 ) ( -55 472 16 ) ( -56 472 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( -56 368 16 ) ( -55 368 16 ) ( -56 368 17 ) blockout/gray_check 0 0 0 0.125 0.125
 ( -56 472 16 ) ( -56 472 17 ) ( -56 473 16 ) blockout/gray_check 0 0 0 0.125 0.125
 }
 // brush 48
@@ -472,6 +472,69 @@
 ( -232 216 48 ) ( -232 217 48 ) ( -231 216 48 ) blockout/gray_check 64 0 0 0.125 0.125
 ( -232 216 32 ) ( -231 216 32 ) ( -232 216 33 ) blockout/gray_check 64 0 0 0.125 0.125
 ( -232 216 32 ) ( -232 216 33 ) ( -232 217 32 ) blockout/gray_check 0 0 0 0.125 0.125
+}
+// brush 52
+{
+( -64 416 8 ) ( -64 417 8 ) ( -64 416 9 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 416 8 ) ( -64 416 9 ) ( -63 416 8 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 416 8 ) ( -63 416 8 ) ( -64 417 8 ) blockout/gray_check 0 0 0 0.125 0.125
+( -56 568 144 ) ( -56 569 144 ) ( -55 568 144 ) blockout/gray_check 0 0 0 0.125 0.125
+( -56 472 16 ) ( -55 472 16 ) ( -56 472 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( -56 568 16 ) ( -56 568 17 ) ( -56 569 16 ) blockout/gray_check 0 0 0 0.125 0.125
+}
+// brush 53
+{
+( -64 368 8 ) ( -64 369 8 ) ( -64 368 9 ) blockout/gray_check 128 0 0 0.125 0.125
+( -64 368 8 ) ( -64 368 9 ) ( -63 368 8 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 368 48 ) ( -63 368 48 ) ( -64 369 48 ) blockout/gray_check 0 -128 0 0.125 0.125
+( -56 520 144 ) ( -56 521 144 ) ( -55 520 144 ) blockout/gray_check 0 -128 0 0.125 0.125
+( -56 416 16 ) ( -55 416 16 ) ( -56 416 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( -56 520 16 ) ( -56 520 17 ) ( -56 521 16 ) blockout/gray_check 128 0 0 0.125 0.125
+}
+// brush 54
+{
+( -64 368 8 ) ( -64 369 8 ) ( -64 368 9 ) blockout/gray_check -128 0 0 0.125 0.125
+( -64 368 8 ) ( -64 368 9 ) ( -63 368 8 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 368 8 ) ( -63 368 8 ) ( -64 369 8 ) blockout/gray_check 0 128 0 0.125 0.125
+( -56 520 16 ) ( -56 521 16 ) ( -55 520 16 ) blockout/gray_check 0 128 0 0.125 0.125
+( -56 416 16 ) ( -55 416 16 ) ( -56 416 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( -56 520 16 ) ( -56 520 17 ) ( -56 521 16 ) blockout/gray_check -128 0 0 0.125 0.125
+}
+// brush 55
+{
+( -160 368 8 ) ( -160 369 8 ) ( -160 368 9 ) blockout/gray_check -128 0 0 0.125 0.125
+( -72 312 8 ) ( -72 312 9 ) ( -71 312 8 ) blockout/gray_check 64 0 0 0.125 0.125
+( -72 368 8 ) ( -71 368 8 ) ( -72 369 8 ) blockout/gray_check 64 128 0 0.125 0.125
+( -64 520 16 ) ( -64 521 16 ) ( -63 520 16 ) blockout/gray_check 64 128 0 0.125 0.125
+( -64 424 16 ) ( -63 424 16 ) ( -64 424 17 ) blockout/gray_check 64 0 0 0.125 0.125
+( -64 520 16 ) ( -64 520 17 ) ( -64 521 16 ) blockout/gray_check -128 0 0 0.125 0.125
+}
+// brush 56
+{
+( -160 376 8 ) ( -160 377 8 ) ( -160 376 9 ) blockout/gray_check -192 0 0 0.125 0.125
+( -72 424 8 ) ( -72 424 9 ) ( -71 424 8 ) blockout/gray_check 64 0 0 0.125 0.125
+( -72 376 8 ) ( -71 376 8 ) ( -72 377 8 ) blockout/gray_check 64 192 0 0.125 0.125
+( -64 528 64 ) ( -64 529 64 ) ( -63 528 64 ) blockout/gray_check 64 192 0 0.125 0.125
+( -64 432 16 ) ( -63 432 16 ) ( -64 432 17 ) blockout/gray_check 64 0 0 0.125 0.125
+( -64 528 16 ) ( -64 528 17 ) ( -64 529 16 ) blockout/gray_check -192 0 0 0.125 0.125
+}
+// brush 57
+{
+( -168 376 8 ) ( -168 377 8 ) ( -168 376 9 ) blockout/gray_check -192 0 0 0.125 0.125
+( -80 312 8 ) ( -80 312 9 ) ( -79 312 8 ) blockout/gray_check 128 0 0 0.125 0.125
+( -80 376 8 ) ( -79 376 8 ) ( -80 377 8 ) blockout/gray_check 128 192 0 0.125 0.125
+( -72 528 64 ) ( -72 529 64 ) ( -71 528 64 ) blockout/gray_check 128 192 0 0.125 0.125
+( -72 432 16 ) ( -71 432 16 ) ( -72 432 17 ) blockout/gray_check 128 0 0 0.125 0.125
+( -160 528 16 ) ( -160 528 17 ) ( -160 529 16 ) blockout/gray_check -192 0 0 0.125 0.125
+}
+// brush 58
+{
+( -168 376 16 ) ( -168 377 16 ) ( -168 376 17 ) blockout/gray_check -192 64 0 0.125 0.125
+( -80 312 16 ) ( -80 312 17 ) ( -79 312 16 ) blockout/gray_check 128 64 0 0.125 0.125
+( -80 376 64 ) ( -79 376 64 ) ( -80 377 64 ) blockout/gray_check 128 192 0 0.125 0.125
+( -72 528 72 ) ( -72 529 72 ) ( -71 528 72 ) blockout/gray_check 128 192 0 0.125 0.125
+( -72 432 24 ) ( -71 432 24 ) ( -72 432 25 ) blockout/gray_check 128 64 0 0.125 0.125
+( -64 528 24 ) ( -64 528 25 ) ( -64 529 24 ) blockout/gray_check -192 64 0 0.125 0.125
 }
 }
 // entity 1
@@ -568,4 +631,60 @@
 {
 "classname" "light"
 "origin" "-252 292 60"
+}
+// entity 20
+{
+"classname" "bot"
+"origin" "-108 348 20"
+"angle" "90"
+}
+// entity 21
+{
+"classname" "light"
+"origin" "-140 340 60"
+}
+// entity 22
+{
+"classname" "light"
+"origin" "-92 340 60"
+}
+// entity 23
+{
+"classname" "light"
+"origin" "-92 388 60"
+}
+// entity 24
+{
+"classname" "light"
+"origin" "-140 388 60"
+}
+// entity 25
+{
+"classname" "light"
+"origin" "-252 228 60"
+}
+// entity 26
+{
+"classname" "light"
+"origin" "-220 228 60"
+}
+// entity 27
+{
+"classname" "light"
+"origin" "-188 228 60"
+}
+// entity 28
+{
+"classname" "light"
+"origin" "-156 228 60"
+}
+// entity 29
+{
+"classname" "light"
+"origin" "-124 228 60"
+}
+// entity 30
+{
+"classname" "light"
+"origin" "-92 228 60"
 }

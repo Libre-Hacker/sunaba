@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://cley63evv078y"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://cley63evv078y"]
 
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/tab_fg.tres" id="1"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/tab_bg.tres" id="2"]
@@ -14,6 +14,7 @@
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="14"]
 [ext_resource type="Texture2D" uid="uid://bc1ntxdls4x1m" path="res://assets/ui/2kui/grey_panel.png" id="15"]
 [ext_resource type="SystemFont" uid="uid://cqat8ggu5yb4l" path="res://assets/fonts/segoe_ui.tres" id="15_036lo"]
+[ext_resource type="Texture2D" uid="uid://dkrwbo3vb38l4" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="15_t5tpv"]
 [ext_resource type="Texture2D" uid="uid://dcqewlsh0ku1g" path="res://assets/ui/2kui/window.png" id="16"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel2.tres" id="17"]
 
@@ -51,7 +52,7 @@ region_rect = Rect2(0, 0, 100, 100)
 
 [sub_resource type="StyleBoxTexture" id="16"]
 texture = ExtResource("16")
-margin_left = 10.0
+margin_left = 12.0
 margin_top = 31.0
 margin_right = 10.0
 margin_bottom = 10.0
@@ -196,8 +197,9 @@ VSlider/styles/grabber_area = ExtResource("13")
 VSlider/styles/grabber_area_highlight = ExtResource("13")
 Window/colors/title_color = Color(0, 0, 0, 1)
 Window/colors/title_outline_modulate = Color(0, 0, 0, 1)
-Window/constants/close_h_ofs = 21
-Window/constants/close_v_ofs = 23
-Window/constants/title_height = 30
+Window/constants/close_h_offset = 29
+Window/constants/close_v_offset = 27
+Window/constants/title_height = 34
+Window/icons/close = ExtResource("15_t5tpv")
 Window/styles/embedded_border = SubResource("16")
 Window/styles/panel = SubResource("16")

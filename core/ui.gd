@@ -48,7 +48,7 @@ func _on_file_dialog_close_requested():
 func _on_new_room_dialog_close_requested():
 	$NewRoomDialog.hide()
 
-func _process(delta):
+func _process(_delta):
 	if Global.game_started:
 		if Global.game_paused:
 			$PauseMenu.show()

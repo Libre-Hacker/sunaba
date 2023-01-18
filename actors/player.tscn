@@ -1,22 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://cb6e1l2fu08ys"]
+[gd_scene load_steps=16 format=3 uid="uid://cb6e1l2fu08ys"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="4_vg2nh"]
 [ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_01etg"]
 [ext_resource type="PackedScene" uid="uid://bunf532f5lei7" path="res://actors/himiko.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="7_o05eg"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
 [ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
+[ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
 [ext_resource type="AudioStream" uid="uid://chklfqvc6bg31" path="res://assets/audio/reload.wav" id="10_p73lo"]
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_24q52"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eonoc"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnh0y"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ab4c"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -24,18 +26,17 @@ margin_right = 5.0
 margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("4")
 jump_impulse = 10
 
 [node name="Himiko" parent="." instance=ExtResource("6")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-visible = false
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+cull_mask = 524285
 far = 200.0
 
 [node name="Reach" type="RayCast3D" parent="Head/Camera3D"]
@@ -54,6 +55,7 @@ spring_length = 2.0
 
 [node name="TPCamera" type="Camera3D" parent="Head/SpringArm3D/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413)
+cull_mask = 524287
 
 [node name="Reach" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
 target_position = Vector3(0, 0, -5)
@@ -66,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.45524
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_24q52")
+shape = SubResource("CapsuleShape3D_eonoc")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -110,7 +112,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_wnh0y")
+theme_override_styles/fill = SubResource("StyleBoxTexture_1ab4c")
 value = 100.0
 show_percentage = false
 
@@ -141,16 +143,28 @@ text = "100"
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Hud/Panel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -170.0
 offset_top = 4.0
 offset_right = -5.0
 offset_bottom = 30.0
-grow_horizontal = 0
 text = "Player"
 vertical_alignment = 1
+
+[node name="SprintingIcon" type="TextureRect" parent="Hud/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -37.0
+offset_top = 5.0
+offset_right = -13.0
+offset_bottom = 29.0
+grow_horizontal = 0
+texture = ExtResource("7_aigaw")
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
 anchors_preset = 3
@@ -266,6 +280,10 @@ wait_time = 0.1
 stream = ExtResource("9_a1b3j")
 volume_db = -10.0
 
+[node name="RunSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_gg78m")
+volume_db = -10.0
+
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.35
 
@@ -279,5 +297,3 @@ stream = ExtResource("11_iosef")
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
-
-[editable path="Himiko"]

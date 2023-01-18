@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var jump_impulse : int = 20
 @export var gravity : int = -40
 @export var default_walk_sound_time : float = 0.35
-@export var sprint_walk_sound_time : float = 0.1
+@export var sprint_walk_sound_time : float = 0.24
 
 @export var mouse_sensitivity : float = .1
 @export var controller_sensitivity : int = 3
@@ -35,6 +35,7 @@ var has_fired : bool = false
 var weapon_type : String = ""
 var muzzle = null
 var can_play_walk_sound : bool = true
+var b_decal
 
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
@@ -124,14 +125,21 @@ func _process(_delta):
 	if velocity.length() == 0:
 		animation_player.play("Idle")
 	else:
-		if max_speed == default_speed:
+		if max_speed == default_speed and is_on_floor():
 			animation_player.play("Walk")
-		else:
+			if can_play_walk_sound:
+				can_play_walk_sound = false
+				$WalkSound.play()
+				walk_timer.start()
+		elif is_on_floor():
 			animation_player.play("Run")
-		if can_play_walk_sound:
-			can_play_walk_sound = false
-			$WalkSound.play()
-			walk_timer.start()
+			if can_play_walk_sound:
+				can_play_walk_sound = false
+				$RunSound.play()
+				walk_timer.start()
+		elif !is_on_floor():
+			animation_player.play("Fall")
+		
 	
 	if !is_multiplayer_authority() or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		return
@@ -139,6 +147,10 @@ func _process(_delta):
 	if !Global.game_paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		crosshair.show()
+	
+	$Hud/Panel/HealthBar.value = health
+	if health == 0:
+		die()
 	
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
@@ -150,6 +162,7 @@ func _process(_delta):
 	health_counter.text = var_to_str(health)
 	max_speed = default_speed
 	walk_timer.wait_time = default_walk_sound_time
+	$Hud/Panel/SprintingIcon.hide()
 	
 	
 	
@@ -195,7 +208,7 @@ func _process(_delta):
 					tool_to_drop.global_transform = hand.global_transform
 					tool_to_drop.dropped = true
 					hand.get_child(0).queue_free()
-			tool_label.text = reach.get_collider().get_name()
+			tool_label.text = tool_to_spawn.get_name()
 			reach.get_collider().queue_free()
 			hand.add_child(tool_to_spawn)
 			ammo = tool_to_spawn.max_ammo
@@ -234,11 +247,12 @@ func _process(_delta):
 	if Input.is_action_pressed("sprint"):
 		max_speed = sprint_speed
 		walk_timer.wait_time = sprint_walk_sound_time
+		$Hud/Panel/SprintingIcon.show()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
-	input_vector.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
-	input_vector.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
+	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	input_vector.z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
 	return input_vector if input_vector.length() > 1 else input_vector
 
 func get_direction(input_vector):
@@ -275,8 +289,8 @@ func jump():
 
 func apply_controller_rotation():
 	var axis_vector = Vector2.ZERO
-	axis_vector.x = Input.get_action_strength("look_right") - Input.get_action_strength("look_left")
-	axis_vector.y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
+	axis_vector.x = Input.get_action_strength("look_left") - Input.get_action_strength("look_right")
+	axis_vector.y = Input.get_action_strength("look_up") - Input.get_action_strength("look_down")
 	
 	if InputEventJoypadMotion:
 		rotate_y(deg_to_rad(-axis_vector.x * controller_sensitivity))
@@ -290,6 +304,11 @@ func apply_controller_rotation():
 	
 	#movetween.interpolate_property(self, "global_transform", global_transform, Transform3D(global_transform.basis, puppet_pos), 0.1)
 	#movetween.start()
+
+
+func die():
+	get_parent().prep_for_respawn()
+	queue_free()
 
 
 func _on_timeout():
@@ -307,7 +326,7 @@ func _fire():
 				print("hit bot")
 				target.health -= damage
 			else:
-				var b_decal = load("res://weapons/dart_bullet_decal.tscn")#hand.get_child(0).get_bullet_hole()
+				var b_decal = hand.get_child(0).get_bullet_hole()
 				var b = b_decal.instantiate()
 				target.add_child(b)
 				b.global_transform.origin = aimcast.get_collision_point()

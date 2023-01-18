@@ -1,13 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnaheix8jti6"]
+[gd_scene load_steps=3 format=3 uid="uid://bnaheix8jti6"]
 
 [ext_resource type="Script" path="res://core/world.gd" id="2"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
+cell_height = 0.05
+agent_max_climb = 0.05
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[node name="TBLoader" type="TBLoader" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_pypmj")
+
+[node name="TBLoader" type="TBLoader" parent="NavigationRegion3D"]
 lighting_unwrap_uv2 = true
 option_clip_texture_name = "clip"
 option_skip_texture_name = "skip"
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://cdcoahvi3s7nc"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://cdcoahvi3s7nc"]
 
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/blue.tres" id="2"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/white.tres" id="3"]
@@ -10,6 +10,7 @@
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/tab_fg.tres" id="9"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/empty.tres" id="10"]
 [ext_resource type="FontFile" uid="uid://dvabxqawxiomj" path="res://assets/fonts/Inter-Regular.ttf" id="10_arpad"]
+[ext_resource type="Texture2D" uid="uid://dkrwbo3vb38l4" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="10_kroio"]
 
 [sub_resource type="StyleBoxFlat" id="1"]
 content_margin_left = 5.0
@@ -185,4 +186,10 @@ VSlider/icons/grabber_highlight = SubResource("10")
 VSlider/styles/grabber_area = ExtResource("2")
 VSlider/styles/grabber_area_highlight = ExtResource("2")
 VSlider/styles/slider = ExtResource("3")
+Window/colors/title_color = Color(0, 0, 0, 1)
+Window/colors/title_outline_modulate = Color(0, 0, 0, 1)
+Window/constants/title_height = 26
+Window/icons/close = ExtResource("10_kroio")
+Window/icons/close_pressed = ExtResource("10_kroio")
+Window/styles/embedded_border = SubResource("6")
 Window/styles/panel = SubResource("6")

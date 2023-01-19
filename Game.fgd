@@ -9,7 +9,7 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = an_spring : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = bot : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = enemy_bot : "" [
 	gravity(integer) : "Gravity" : -40 : "int"
 	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
 	damage(integer) : "Damage" : 10 : "int"

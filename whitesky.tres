@@ -12,3 +12,4 @@ sky_material = SubResource("ProceduralSkyMaterial_b8ucv")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_ph77k")
+ambient_light_sky_contribution = 0.0

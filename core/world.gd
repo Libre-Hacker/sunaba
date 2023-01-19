@@ -26,7 +26,7 @@ func _ready():
 
 func _physics_process(delta):
 	if !player == null:
-		get_tree().call_group("bot", "update_target_location", player.global_transform.origin)
+		pass#get_tree().call_group("bot", "update_target_location", player.global_transform.origin)
 
 
 func load_map(path):

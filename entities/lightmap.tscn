@@ -1,8 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dd2x8jnkvkefb"]
 
-[ext_resource path="res://entities/lightmap.gd" type="Script" id=1]
-
+[ext_resource type="Script" path="res://entities/lightmap.gd" id="1"]
 
 [node name="lightmap" type="LightmapGI"]
-transform = Transform3D( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
-script = ExtResource( 1 )
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+script = ExtResource("1")

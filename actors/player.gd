@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var default_speed : int = 5
-@export var sprint_speed : int = 14
+@export var sprint_speed : int = 10
 @export var acceleration : int = 60
 @export var friction : int = 50
 @export var air_friction : int = 10
@@ -23,7 +23,7 @@ var puppet_pos = Vector3()
 var puppet_vel = Vector3()
 var puppet_rot = Vector3()
 
-var max_speed
+var max_speed = default_speed
 var health = 100
 var reach = null
 var aimcast = null
@@ -35,7 +35,7 @@ var has_fired : bool = false
 var weapon_type : String = ""
 var muzzle = null
 var can_play_walk_sound : bool = true
-var b_decal
+var times_jumped = 0
 
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
@@ -120,10 +120,9 @@ func _physics_process(delta):
 		move_and_slide()
 		velocity = velocity
 	
-	#for idx in get_slide_collision_count():
-		#var collision = get_slide_collision(idx)
-
-func _process(_delta): 
+	if is_on_floor():
+		times_jumped = 0
+	
 	if velocity.length() == 0:
 		animation_player.play("Idle")
 	else:
@@ -162,8 +161,11 @@ func _process(_delta):
 	tool_ammo_bar.max_value = max_ammo
 	health_bar.value = health
 	health_counter.text = var_to_str(health)
-	max_speed = default_speed
-	walk_timer.wait_time = default_walk_sound_time
+	if is_on_floor():
+		max_speed = default_speed
+		walk_timer.wait_time = default_walk_sound_time
+	else:
+		max_speed += 0.1
 	$Hud/Panel/SprintingIcon.hide()
 	
 	
@@ -249,8 +251,12 @@ func _process(_delta):
 		$ReloadTimer.start()
 		reload_label.show()
 	
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") and is_on_floor():
 		max_speed = sprint_speed
+		walk_timer.wait_time = sprint_walk_sound_time
+		$Hud/Panel/SprintingIcon.show()
+	if Input.is_action_pressed("sprint") and !is_on_floor():
+		max_speed += 4
 		walk_timer.wait_time = sprint_walk_sound_time
 		$Hud/Panel/SprintingIcon.show()
 
@@ -285,12 +291,15 @@ func apply_gravity(delta):
 func update_snap_vector():
 	snap_vector = get_floor_normal() if is_on_floor() else Vector3.DOWN
 
+
+
 func jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if (Input.is_action_just_pressed("jump") and is_on_floor()) or Input.is_action_just_pressed("jump") and times_jumped == 1:
 		snap_vector = Vector3.ZERO
 		velocity.y = jump_impulse
-	if Input.is_action_just_released("jump") and velocity.y > jump_impulse / 2:
-		velocity.y = jump_impulse / 2
+		times_jumped += 1
+	if Input.is_action_just_released("jump") and velocity.y > jump_impulse / 2.0:
+		velocity.y = jump_impulse / 2.0
 
 func apply_controller_rotation():
 	var axis_vector = Vector2.ZERO
@@ -335,7 +344,7 @@ func _fire():
 				var b = b_decal.instantiate()
 				target.add_child(b)
 				b.global_transform.origin = aimcast.get_collision_point()
-				b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal())
+				#b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal())
 	has_fired = true
 	if weapon_type == "auto":
 		$FireTimer.start()

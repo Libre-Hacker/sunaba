@@ -24,10 +24,12 @@ func _ready():
 	http_request.use_threads = true
 	#QodotDependencies.check_dependencies(http_request)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if !player == null:
 		pass#get_tree().call_group("bot", "update_target_location", player.global_transform.origin)
 
+func chat(_name, msg):
+	main_node.chat(_name, msg)
 
 func load_map(path):
 	if path != null:

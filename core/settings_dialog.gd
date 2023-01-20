@@ -44,10 +44,10 @@ func _input(_event):
 		#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		pass#save()
 
-func change_theme(theme):
-	theme = theme
-	get_node(gui).theme = theme
-	ThemeManager.theme = theme
+func change_theme(_theme):
+	theme = _theme
+	get_node(gui).theme = _theme
+	ThemeManager.theme = _theme
 	#save()
 
 

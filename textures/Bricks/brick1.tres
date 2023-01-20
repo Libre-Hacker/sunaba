@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dc1mbph6ddpwl"]
+
+[ext_resource type="Texture2D" uid="uid://dfjnvp16negtc" path="res://pbr_textures/PavingStones129_1K-PNG/PavingStones129_1K_Color.png" id="1_pofit"]
+[ext_resource type="Texture2D" uid="uid://cyglsuq4ox8db" path="res://pbr_textures/PavingStones129_1K-PNG/PavingStones129_1K_AmbientOcclusion.png" id="2_rcxeu"]
+[ext_resource type="Texture2D" uid="uid://jkyv6tqc5xqv" path="res://pbr_textures/PavingStones129_1K-PNG/PavingStones129_1K_NormalGL.png" id="3_iqmat"]
+[ext_resource type="Texture2D" uid="uid://b4pluw6nq4g1j" path="res://pbr_textures/PavingStones129_1K-PNG/PavingStones129_1K_Roughness.png" id="4_od73s"]
+
+[resource]
+albedo_texture = ExtResource("1_pofit")
+roughness_texture = ExtResource("4_od73s")
+normal_enabled = true
+normal_texture = ExtResource("3_iqmat")
+ao_enabled = true
+ao_texture = ExtResource("2_rcxeu")
+detail_albedo = ExtResource("1_pofit")
+detail_normal = ExtResource("3_iqmat")
+uv1_scale = Vector3(0.125, 0.25, 0.25)
+uv1_triplanar = true
+uv2_scale = Vector3(0.5, 0.5, 0.5)
+uv2_triplanar = true

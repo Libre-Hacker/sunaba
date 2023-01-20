@@ -52,5 +52,5 @@ wait_time = 0.5
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_start"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

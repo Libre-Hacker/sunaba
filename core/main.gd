@@ -33,8 +33,8 @@ func log_to_chat(logstring):
 	chatbox.add_text(logstring)
 	chatbox.newline()
 
-func chat(id , chatstring):
-	chatstring = id + " : " + chatstring
+func chat(_name , chatstring):
+	chatstring = _name + " : " + chatstring
 	print(chatstring)
 	chatbox.add_text(chatstring)
 	chatbox.newline()
@@ -61,7 +61,7 @@ func quit():
 func _process(_delta):
 	if Input.is_key_pressed(KEY_CTRL) and Input.is_key_pressed(KEY_R):
 		reload()
-	if Input.is_key_pressed(KEY_ALT) and Input.is_key_pressed(KEY_Q):
+	if Input.is_key_pressed(KEY_TAB) and Input.is_key_pressed(KEY_Q):
 		map_viewer()
 	
 

@@ -285,8 +285,10 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="FileDialog" type="FileDialog" parent="UI"]
+initial_position = 1
 title = "Open a File"
 size = Vector2i(335, 300)
+current_screen = -2
 min_size = Vector2i(335, 300)
 ok_button_text = "Open"
 file_mode = 0
@@ -295,8 +297,10 @@ filters = PackedStringArray("*.map")
 show_hidden_files = true
 
 [node name="ConnectDialog" type="Window" parent="UI"]
+initial_position = 1
 title = "Connect"
 size = Vector2i(410, 287)
+current_screen = -2
 visible = false
 min_size = Vector2i(410, 287)
 max_size = Vector2i(410, 287)
@@ -306,7 +310,9 @@ netman_path = NodePath("../../NetworkManager")
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_cj05d")]
 
 [node name="SettingsDialog" parent="UI" instance=ExtResource("11")]
+initial_position = 1
 title = "Settings"
+current_screen = -2
 visible = false
 gui = NodePath("..")
 

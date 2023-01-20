@@ -23,7 +23,7 @@ func set_transport(tp):
 	peer = transport_enet.peer
 	
 	peer.peer_connected.connect(func(id): _player_joined(id))
-	peer.peer_disconnected.connect(func(id): print("Player disconnected"))
+	#peer.peer_disconnected.connect(func(id): print("Player disconnected"))
 	
 	#peer.connection_succeeded.connect(func(id): print("success"))
 	#peer.connection_failed.connect(func(id): print("fail"))

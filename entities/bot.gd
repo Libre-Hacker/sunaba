@@ -15,10 +15,35 @@ var has_fired = false
 
 var target = null
 
+@export var custom_script : String = ""
+
+@export var fgd_block = ["lua", "lua_thread"] 
+
+#var lua : LuaAPI
+#var lua_thread : LuaThread
+
+
+func _start():
+	#lua = LuaAPI.new()
+	if custom_script != "":
+		print(custom_script)
+		
+		#lua.expose_constructor("Bot", Bot)
+		
+		#var scrpt = lua.do_string(custom_script)
+		#if scrpt != null:
+			#print(scrpt)
+		
+		#lua.call_function("Start", [])
+		
+		
+	else :
+		printerr("Script is null")
+
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func speak(string):
+	get_parent().get_parent().get_parent().chat("Bot", string)
 
 func _process(_delta):
 	$Label3D.text = name + "  " + var_to_str(health) + " / 100"
@@ -49,7 +74,7 @@ func _physics_process(_delta):
 	var current_location = global_transform.origin
 	var next_location = navigation_agent.get_next_location()
 	var new_velocity = (next_location - current_location).normalized() * SPEED
-	look_at(next_location)
+	#look_at(next_location)
 	
 	navigation_agent.set_velocity(new_velocity)
 	
@@ -59,7 +84,7 @@ func _on_timer_timeout():
 	pass
 
 func fire():
-	var target = $Head/AimCast.get_collider()
+	target = $Head/AimCast.get_collider()
 	if target.is_in_group("player"):
 		target.health -= damage
 	has_fired = true

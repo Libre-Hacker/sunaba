@@ -9,12 +9,10 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = an_spring : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = bot : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = enemy_bot : "" [
 	gravity(integer) : "Gravity" : -40 : "int"
 	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
 	damage(integer) : "Damage" : 10 : "int"
-	can(bool) : "Can" : 
-	follow_target(bool) : "Follow Target" : 
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = ev_daytime : "" [
@@ -36,11 +34,16 @@
 	gravity(integer) : "Gravity" : -40 : "int"
 	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
 	damage(integer) : "Damage" : 10 : "int"
-	can(bool) : "Can" : 
-	follow_target(bool) : "Follow Target" : 
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = player : "" [
+]
+
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = scripable_entitie : "" [
+	custom_script(string) : "Custom Script" : 
+]
+
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = scripable_entitie : "" [
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_dartgun : "" [

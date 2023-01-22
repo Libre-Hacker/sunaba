@@ -19,6 +19,11 @@ var target = null
 
 @export var fgd_block = ["lua", "lua_thread"] 
 
+@export var fgd_model = {
+  "path": "assets/models/toonroid.gltf",
+  "scale": 28
+}
+
 #var lua : LuaAPI
 #var lua_thread : LuaThread
 

@@ -16,9 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 [ext_resource type="AudioStream" uid="uid://c15y24ipmu1da" path="res://assets/audio/ammo_pickup.wav" id="14_qvd4k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_on600"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wwm5"]
 
-[sub_resource type="Animation" id="Animation_ltc8e"]
+[sub_resource type="Animation" id="Animation_7leuc"]
 resource_name = "holding"
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -28,16 +28,16 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array()
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nnok6"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0i21c"]
 _data = {
-"holding": SubResource("Animation_ltc8e")
+"holding": SubResource("Animation_7leuc")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sv7ul"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cf7vp"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o46s6"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04vsg"]
 texture = ExtResource("5_01etg")
 margin_left = 5.0
 margin_top = 5.0
@@ -86,6 +86,9 @@ target_position = Vector3(0, 0, -1000)
 [node name="Hand" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.199886, -0.348759)
 
+[node name="HandLoc" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.199886, -0.348759)
+
 [node name="arms" parent="Head" instance=ExtResource("4_dvh8j")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.1306, 0)
 visible = false
@@ -115,17 +118,17 @@ bones/42/rotation = Quaternion(-0.396092, 0.0629935, 0.0135213, 0.915948)
 bones/42/scale = Vector3(1, 0.999999, 1)
 
 [node name="Base Mesh" parent="Head/arms/Armature/Skeleton3D" index="0"]
-surface_material_override/3 = SubResource("StandardMaterial3D_on600")
-surface_material_override/4 = SubResource("StandardMaterial3D_on600")
+surface_material_override/3 = SubResource("StandardMaterial3D_5wwm5")
+surface_material_override/4 = SubResource("StandardMaterial3D_5wwm5")
 
 [node name="AnimationPlayer" parent="Head/arms/Armature/Skeleton3D" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_nnok6")
+"": SubResource("AnimationLibrary_0i21c")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_sv7ul")
+shape = SubResource("CapsuleShape3D_cf7vp")
 
 [node name="NetworkTickRate" type="Timer" parent="."]
 wait_time = 0.03
@@ -169,7 +172,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_o46s6")
+theme_override_styles/fill = SubResource("StyleBoxTexture_04vsg")
 value = 100.0
 show_percentage = false
 

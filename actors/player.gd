@@ -36,6 +36,9 @@ var weapon_type : String = ""
 var muzzle = null
 var can_play_walk_sound : bool = true
 var times_jumped = 0
+const SWAY = 30
+const VSWAY = 45
+var view_mode : bool = false
 
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
@@ -44,6 +47,7 @@ var times_jumped = 0
 @onready var arms_model = $Head/arms
 @onready var animation_player = $Himiko/AnimationPlayer
 @onready var ntr = $NetworkTickRate
+@onready var hand_loc = $Head/HandLoc
 @onready var hand = $Head/Hand
 @onready var fp_reach = $Head/Camera3D/Reach
 @onready var tp_reach = $Head/SpringArm3D/SpringArm3D/TPCamera/Reach
@@ -77,6 +81,7 @@ func _ready():
 	reload_label.hide()
 	$Hud/ToolPanel.hide()
 	max_speed = default_speed
+	hand.top_level = true
 
 func _input(event):
 	if !is_multiplayer_authority():
@@ -96,10 +101,73 @@ func _input(event):
 			crosshair.show()
 			Global.game_paused = false
 	
+	if Input.is_action_just_pressed("view") and tp_camera.current == true:
+		if !view_mode:
+			view_mode = true
+		else:
+			view_mode = false
+			head.global_rotation = Vector3.ZERO
+	
 	
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
-		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
+		if view_mode:
+			head.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
+			head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
+			head.global_rotation.z = 0
+		else:
+			rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
+			head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
+			head.global_rotation.z = 0
+	
+	if Input.is_action_just_pressed("camera_toggle"):
+		if fp_camera.current == true:
+			fp_camera.current = false
+			tp_camera.current = is_multiplayer_authority()
+			model.visible = true
+			arms_model.visible = false
+			reach = tp_reach
+			aimcast = tp_aimcast
+		elif tp_camera.current == true:
+			fp_camera.current = is_multiplayer_authority()
+			tp_camera.current = false
+			model.visible = !is_multiplayer_authority()
+			#arms_model.visible = is_multiplayer_authority()
+			reach = fp_reach
+			aimcast = fp_aimcast
+	
+	if Input.is_action_just_pressed("interact"):
+		if tool_to_spawn != null:
+			if hand.get_child_count() > 0:
+				if hand.get_child(0) != null:
+					get_parent().add_child(tool_to_drop)
+					tool_to_drop.global_transform = hand.global_transform
+					tool_to_drop.dropped = true
+					hand.get_child(0).queue_free()
+			tool_label.text = tool_to_spawn.get_name()
+			reach.get_collider().queue_free()
+			hand.add_child(tool_to_spawn)
+			ammo = tool_to_spawn.max_ammo
+			max_ammo = tool_to_spawn.max_ammo
+			$FireTimer.wait_time = tool_to_spawn.cooldown_time
+			damage = tool_to_spawn.damage
+			weapon_type = tool_to_spawn.weapon_type
+			tool_to_spawn.rotation = hand_loc.rotation
+			muzzle = tool_to_spawn.get_node("Muzzle")
+			$Hud/ToolPanel.show()
+			$PickupSound.play()
+	
+	
+	if Input.is_action_just_pressed("sprint"):
+		$SprintSound.play()
+	
+	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:
+		if is_reloading: return
+		is_reloading = true
+		$ReloadSound.play()
+		$ReloadTimer.start()
+		reload_label.show()
+	
+	
 
 func _physics_process(delta):
 	if is_multiplayer_authority():
@@ -142,6 +210,10 @@ func _physics_process(delta):
 			animation_player.play("Fall")
 		
 	
+	hand.global_transform.origin = hand_loc.global_transform.origin
+	hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
+	hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
+	
 	if !is_multiplayer_authority() or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		return
 	
@@ -170,21 +242,6 @@ func _physics_process(delta):
 	
 	
 	
-	if Input.is_action_just_pressed("camera_toggle"):
-		if fp_camera.current == true:
-			fp_camera.current = false
-			tp_camera.current = is_multiplayer_authority()
-			model.visible = true
-			arms_model.visible = false
-			reach = tp_reach
-			aimcast = tp_aimcast
-		elif tp_camera.current == true:
-			fp_camera.current = is_multiplayer_authority()
-			tp_camera.current = false
-			model.visible = !is_multiplayer_authority()
-			#arms_model.visible = is_multiplayer_authority()
-			reach = fp_reach
-			aimcast = fp_aimcast
 	
 	if reach.is_colliding():
 		if "wp" in reach.get_collider().get_name():
@@ -206,27 +263,6 @@ func _physics_process(delta):
 	else:
 		tool_to_drop = null
 	
-	if Input.is_action_just_pressed("interact"):
-		if tool_to_spawn != null:
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					get_parent().add_child(tool_to_drop)
-					tool_to_drop.global_transform = hand.global_transform
-					tool_to_drop.dropped = true
-					hand.get_child(0).queue_free()
-			tool_label.text = tool_to_spawn.get_name()
-			reach.get_collider().queue_free()
-			hand.add_child(tool_to_spawn)
-			ammo = tool_to_spawn.max_ammo
-			max_ammo = tool_to_spawn.max_ammo
-			$FireTimer.wait_time = tool_to_spawn.cooldown_time
-			damage = tool_to_spawn.damage
-			weapon_type = tool_to_spawn.weapon_type
-			tool_to_spawn.rotation = hand.rotation
-			muzzle = tool_to_spawn.get_node("Muzzle")
-			$Hud/ToolPanel.show()
-			$PickupSound.play()
-	
 	if weapon_type == "semi":
 		if Input.is_action_just_pressed("action_button"):
 			if hand.get_child_count() > 0:
@@ -241,24 +277,16 @@ func _physics_process(delta):
 				if hand.get_child(0) != null:
 					if !has_fired:
 							_fire()
-	if Input.is_action_just_pressed("sprint"):
-		$SprintSound.play()
 	
-	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:
-		if is_reloading: return
-		is_reloading = true
-		$ReloadSound.play()
-		$ReloadTimer.start()
-		reload_label.show()
-	
-	if Input.is_action_pressed("sprint") and is_on_floor():
+	if Input.is_action_pressed("sprint"): #and is_on_floor():
 		max_speed = sprint_speed
 		walk_timer.wait_time = sprint_walk_sound_time
 		$Hud/Panel/SprintingIcon.show()
-	if Input.is_action_pressed("sprint") and !is_on_floor():
-		max_speed += 4
-		walk_timer.wait_time = sprint_walk_sound_time
-		$Hud/Panel/SprintingIcon.show()
+	
+	#if Input.is_action_pressed("sprint") and !is_on_floor():
+		#max_speed += 4
+		#walk_timer.wait_time = sprint_walk_sound_time
+		#$Hud/Panel/SprintingIcon.show()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
@@ -294,7 +322,7 @@ func update_snap_vector():
 
 
 func jump():
-	if (Input.is_action_just_pressed("jump") and is_on_floor()) or Input.is_action_just_pressed("jump") and times_jumped == 1:
+	if (Input.is_action_just_pressed("jump") and is_on_floor()) or (Input.is_action_just_pressed("jump") and times_jumped == 1): #or (Input.is_action_just_pressed("jump") and is_on_wall()):
 		snap_vector = Vector3.ZERO
 		velocity.y = jump_impulse
 		times_jumped += 1
@@ -303,8 +331,8 @@ func jump():
 
 func apply_controller_rotation():
 	var axis_vector = Vector2.ZERO
-	axis_vector.x = Input.get_action_strength("look_left") - Input.get_action_strength("look_right")
-	axis_vector.y = Input.get_action_strength("look_up") - Input.get_action_strength("look_down")
+	axis_vector.x = Input.get_action_strength("look_right") - Input.get_action_strength("look_left")
+	axis_vector.y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
 	
 	if InputEventJoypadMotion:
 		rotate_y(deg_to_rad(-axis_vector.x * controller_sensitivity))

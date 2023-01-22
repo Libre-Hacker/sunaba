@@ -3,6 +3,11 @@ class_name ps_player
 
 var player = preload("res://actors/player.tscn")
 
+@export var fgd_model = {
+  "path": "assets/models/toonroid.gltf",
+  "scale": 28
+}
+
 func _ready():
 	if Global.game_started:
 		var id = multiplayer.get_unique_id()

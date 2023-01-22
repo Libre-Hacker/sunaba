@@ -9,7 +9,7 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = an_spring : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = bot : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/toonroid.gltf","scale":28}) = bot : "" [
 	gravity(integer) : "Gravity" : -40 : "int"
 	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
 	damage(integer) : "Damage" : 10 : "int"
@@ -31,29 +31,32 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = lightmap : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = nextbot : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/toonroid.gltf","scale":28}) = nextbot : "" [
 	gravity(integer) : "Gravity" : -40 : "int"
 	jump_impulse(integer) : "Jump Impulse" : 20 : "int"
 	damage(integer) : "Damage" : 10 : "int"
 	custom_script(string) : "Custom Script" :  : "String"
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = player : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/toonroid.gltf","scale":28}) = player : "" [
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = scripable_entitie : "" [
 	custom_script(string) : "Custom Script" :  : "String"
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_dartgun : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/handprops/paintball_gun.gltf","scale":28}) = wp_dartgun : "" [
 	weapon_path(string) : "Weapon Path" :  : "String"
+	model_path(string) : "Model Path" : "assets/models/handprops/paintball_gun.gltf" : "String"
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_pbgun : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/handprops/paintball_gun.gltf","scale":28}) = wp_pbgun : "" [
 	weapon_path(string) : "Weapon Path" :  : "String"
+	model_path(string) : "Model Path" : "assets/models/handprops/paintball_gun.gltf" : "String"
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_pistol : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/handprops/paintball_gun.gltf","scale":28}) = wp_pistol : "" [
 	weapon_path(string) : "Weapon Path" :  : "String"
+	model_path(string) : "Model Path" : "assets/models/handprops/paintball_gun.gltf" : "String"
 ]
 

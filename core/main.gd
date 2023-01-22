@@ -1,6 +1,7 @@
 extends Node
 
 var path : String
+var address = "localhost"
 
 @onready var network_manager = $NetworkManager
 @onready var chatbox = $UI/Chatbox
@@ -15,14 +16,9 @@ func _ready() -> void:
 
 func create_room() -> void:
 	if path != null:
-		var dir = DirAccess.open("user://")
-		dir.make_dir("server")
-		dir.copy(path, "user://server/index.map")
-	
-	
-	network_manager.create_room()
-	$UI/NewRoomDialog.hide()
-	$UI/MainMenu.hide()
+		network_manager.create_room()
+		$UI/NewRoomDialog.hide()
+		$UI/MainMenu.hide()
 
 func enable_chat() -> void:
 	chat_entry.editable = true
@@ -41,12 +37,12 @@ func chat(_name , chatstring):
 	chat_entry.clear()
 	#chat_entry.focus_mode = false
 
-func import_world():
+func import_world(id):
 	if path == null:
 		log_to_chat("No Map File Selected, Defaulting to preloaded map")
 	else:
 		log_to_chat("Importing world from File - " + path)
-	world.load_map(path)
+	world.load_map(id, path)
 
 
 func _on_chat_text_entered(new_text):
@@ -73,3 +69,13 @@ func map_viewer():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://core/map_viewer.tscn")
 
+
+
+func _connect():
+	network_manager.join_room(address)
+	$UI/ConnectDialog.hide()
+	$UI/MainMenu.hide()
+
+
+func _on_address_changed(new_text):
+	address = new_text

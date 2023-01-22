@@ -34,7 +34,7 @@ func _on_connect_button_pressed():
 	if Build.online_play_enabled:
 		$ConnectDialog.popup_centered()
 	else :
-		OS.alert("Online play is not supported in this build.")
+		OS.alert("Multiplayer is not supported in this build.")
 
 
 func _on_connect_dialog_close_requested():

@@ -86,8 +86,12 @@ var worldspawn_layer_collision_shapes := []
 
 var unshaded := false
 
+
+func _enter_tree(): set_multiplayer_authority(1)
+
 # Overrides
 func _ready() -> void:
+	
 	if not DEBUG:
 		return
 	

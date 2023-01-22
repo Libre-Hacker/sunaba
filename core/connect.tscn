@@ -43,7 +43,7 @@ offset_bottom = 35.0
 grow_horizontal = 2
 text = "127.0.0.1"
 
-[node name="Button" type="Button" parent="TabBar/TabContainer/Online"]
+[node name="ConnectButton" type="Button" parent="TabBar/TabContainer/Online"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

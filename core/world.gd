@@ -11,6 +11,8 @@ var can_rebuild = false
 
 var mouse_over_ui = false
 
+var qodot_map_instance = null
+
 @onready var qodot_map = $NavigationRegion3D/QodotMap
 @onready var navregion = $NavigationRegion3D
 @onready var main_node = get_node(main_node_path)
@@ -31,9 +33,15 @@ func _physics_process(_delta):
 func chat(_name, msg):
 	main_node.chat(_name, msg)
 
+func load_map_path(path):
+		var mappath = load("res://core/map_holder.tscn").instantiate()
+		add_child(mappath)
+		mappath.map = path
+
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
+		navregion.add_child(qodot_map_instance)
 		qodot_map.map_file = path
 		qodot_map.verify_and_build()
 
@@ -66,6 +74,6 @@ func instance_player(id):
 
 
 func _on_qodot_map_build_complete():
-	qodot_map.unwrap_uv2()
+	qodot_map_instance.unwrap_uv2()
 	navregion.bake_navigation_mesh()
 

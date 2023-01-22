@@ -201,5 +201,6 @@ Window/constants/close_h_offset = 29
 Window/constants/close_v_offset = 27
 Window/constants/title_height = 34
 Window/icons/close = ExtResource("15_t5tpv")
+Window/icons/close_pressed = ExtResource("15_t5tpv")
 Window/styles/embedded_border = SubResource("16")
 Window/styles/panel = SubResource("16")

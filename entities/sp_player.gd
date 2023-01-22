@@ -9,9 +9,10 @@ var player = preload("res://actors/player.tscn")
 }
 
 func _ready():
-	if Global.game_started:
-		var id = multiplayer.get_unique_id()
-		instance_player(id)
+	#if Global.game_started:
+		#var id = multiplayer.get_unique_id()
+		#instance_player(id)
+	pass
 	
 func instance_player(id):
 	var player_instance = player.instantiate()

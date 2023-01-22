@@ -8,10 +8,14 @@
 cell_height = 0.01
 agent_max_climb = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ocv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j22il"]
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://actors/player.tscn", "res://core/map_holder.tscn")
+spawn_path = NodePath("..")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -32,7 +36,7 @@ texture_wads = []
 material_file_extension = "tres"
 unshaded = false
 default_material_albedo_uniform = ""
-default_material = SubResource("StandardMaterial3D_x6ocv")
+default_material = SubResource("StandardMaterial3D_j22il")
 uv_unwrap_texel_size = 1.0
 print_profiling_data = false
 use_trenchbroom_group_hierarchy = false
@@ -42,6 +46,9 @@ set_owner_batch_size = 1000
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.963303, 0.268415, 0, -0.268415, 0.963303, 0, 10.4708, 18.5674)
 
 [connection signal="build_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_build_complete"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

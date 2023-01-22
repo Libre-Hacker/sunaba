@@ -15,35 +15,13 @@ var has_fired = false
 
 var target = null
 
-@export var custom_script : String = ""
-
-@export var fgd_block = ["lua", "lua_thread"] 
-
-@export var fgd_model = {
-  "path": "assets/models/toonroid.gltf",
-  "scale": 28
-}
 
 #var lua : LuaAPI
 #var lua_thread : LuaThread
 
 
 func _start():
-	#lua = LuaAPI.new()
-	if custom_script != "":
-		print(custom_script)
-		
-		#lua.expose_constructor("Bot", Bot)
-		
-		#var scrpt = lua.do_string(custom_script)
-		#if scrpt != null:
-			#print(scrpt)
-		
-		#lua.call_function("Start", [])
-		
-		
-	else :
-		printerr("Script is null")
+	pass
 
 
 # Called when the node enters the scene tree for the first time.

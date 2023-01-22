@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnaheix8jti6"]
+[gd_scene load_steps=6 format=3 uid="uid://bnaheix8jti6"]
 
 [ext_resource type="Script" path="res://core/world.gd" id="2"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_bntab"]
+[ext_resource type="Resource" uid="uid://cwkhcm4yps6w3" path="res://trenchbroom/toonbox_fgd.tres" id="3_5tfqn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
 cell_height = 0.01
 agent_max_climb = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ocv"]
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")
@@ -14,13 +18,30 @@ script = ExtResource("2")
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_pypmj")
 
-[node name="TBLoader" type="TBLoader" parent="NavigationRegion3D"]
-lighting_unwrap_uv2 = true
-option_clip_texture_name = "clip"
-option_skip_texture_name = "skip"
+[node name="QodotMap" type="Node3D" parent="NavigationRegion3D"]
+script = ExtResource("2_bntab")
+map_file = "C:/sunaba/maps/test.map"
+inverse_scale_factor = 16.0
+entity_fgd = ExtResource("3_5tfqn")
+base_texture_dir = "res://textures"
+texture_file_extensions = PackedStringArray("png")
+worldspawn_layers = []
+brush_clip_texture = "special/clip"
+face_skip_texture = "special/skip"
+texture_wads = []
+material_file_extension = "tres"
+unshaded = false
+default_material_albedo_uniform = ""
+default_material = SubResource("StandardMaterial3D_x6ocv")
+uv_unwrap_texel_size = 1.0
+print_profiling_data = false
+use_trenchbroom_group_hierarchy = false
+tree_attach_batch_size = null
+set_owner_batch_size = 1000
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 
+[connection signal="build_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_build_complete"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

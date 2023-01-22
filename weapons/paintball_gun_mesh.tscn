@@ -125,9 +125,8 @@ metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qqgr"]
 albedo_color = Color(0, 0.960784, 0.623529, 1)
-metallic = 0.25
 metallic_specular = 1.0
-roughness = 0.0
+roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l51xl"]
 metallic = 0.25

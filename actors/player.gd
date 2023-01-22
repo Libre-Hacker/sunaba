@@ -10,8 +10,8 @@ extends CharacterBody3D
 @export var default_walk_sound_time : float = 0.35
 @export var sprint_walk_sound_time : float = 0.24
 
-@export var mouse_sensitivity : float = .1
-@export var controller_sensitivity : int = 3
+@export var mouse_sensitivity : float = 1
+@export var controller_sensitivity : int = 20
 
 
 var snap_vector = Vector3.ZERO
@@ -110,14 +110,10 @@ func _input(event):
 	
 	
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if view_mode:
-			head.rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
-			head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
-			head.global_rotation.z = 0
-		else:
-			rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
-			head.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
-			head.global_rotation.z = 0
+		var mouse_axis : Vector2 = event.relative if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED else Vector2.ZERO
+		rotation.y -= mouse_axis.x * mouse_sensitivity * .001
+		head.rotation.x = clamp(head.rotation.x - mouse_axis.y * mouse_sensitivity * .001, -1.5, 1.5)
+			
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
@@ -178,7 +174,6 @@ func _physics_process(delta):
 		apply_friction(direction, delta)
 		jump()
 		apply_controller_rotation()
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-75), deg_to_rad(75))
 		set_velocity(velocity)
 		# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
 		set_up_direction(Vector3.UP)
@@ -335,8 +330,8 @@ func apply_controller_rotation():
 	axis_vector.y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
 	
 	if InputEventJoypadMotion:
-		rotate_y(deg_to_rad(-axis_vector.x * controller_sensitivity))
-		head.rotate_x(deg_to_rad(-axis_vector.y * controller_sensitivity))
+		rotation.y -= axis_vector.x * controller_sensitivity * .001
+		head.rotation.x = clamp(head.rotation.x - axis_vector.y * controller_sensitivity * .001, -1.5, 1.5)
 
 
 @rpc func update_state(p_pos, p_vel, p_rot):

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dx01rn24gm35d"]
+
+[ext_resource type="PackedScene" path="res://entities/sp_player.tscn" id="1_cyecn"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_myirt"]
+
+[resource]
+script = ExtResource("2_myirt")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_cyecn")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "sp_player"
+description = "Spawnpoint for the player"
+qodot_internal = false
+base_classes = []
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

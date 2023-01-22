@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var tb_loader = $TBLoader
+@onready var qodot_map = $QodotMap
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,11 +8,13 @@ func _ready():
 
 func set_map_path(path):
 	if path != null:
-		tb_loader.map_resource = path
+		qodot_map.map_file = path
 		$Control/Bottombar/Controls/MapFilePath.text = path
 
 func load_map():
-	tb_loader.build_meshes()
+	qodot_map.verify_and_build()
+	qodot_map.unwrap_uv2()
+	#qodot_map
 
 
 func open_file_dialog():
@@ -21,3 +23,4 @@ func open_file_dialog():
 
 func exit():
 	get_tree().change_scene_to_file("res://core/main.tscn")
+

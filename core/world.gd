@@ -11,7 +11,7 @@ var can_rebuild = false
 
 var mouse_over_ui = false
 
-@onready var tb_loader = $NavigationRegion3D/TBLoader
+@onready var qodot_map = $NavigationRegion3D/QodotMap
 @onready var navregion = $NavigationRegion3D
 @onready var main_node = get_node(main_node_path)
 @onready var http_request = $HTTPRequest
@@ -34,9 +34,8 @@ func chat(_name, msg):
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
-		tb_loader.map_resource = path
-		tb_loader.build_meshes()
-		navregion.bake_navigation_mesh()
+		qodot_map.map_file = path
+		qodot_map.verify_and_build()
 
 func prep_for_respawn():
 	$RespawnTimer.start()
@@ -64,3 +63,9 @@ func instance_player(id):
 	if id == multiplayer.get_unique_id():
 		player = player_instance
 	player_instance.global_transform.origin = spawnpoint
+
+
+func _on_qodot_map_build_complete():
+	qodot_map.unwrap_uv2()
+	navregion.bake_navigation_mesh()
+

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=21 format=3 uid="uid://cwkhcm4yps6w3"]
+[gd_resource type="Resource" load_steps=20 format=3 uid="uid://cwkhcm4yps6w3"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_gyj8k"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
@@ -16,7 +16,6 @@
 [ext_resource type="Resource" uid="uid://cv4yjq4r2oy0g" path="res://entities/ev_dreamy.tres" id="13_7fjv3"]
 [ext_resource type="Resource" uid="uid://b30vjnu67j4t6" path="res://entities/ev_night.tres" id="14_unjc1"]
 [ext_resource type="Resource" uid="uid://c38kabkqmfcbl" path="res://entities/ev_void.tres" id="15_oylio"]
-[ext_resource type="Resource" uid="uid://dx01rn24gm35d" path="res://entities/sp_player.tres" id="16_d4cgt"]
 [ext_resource type="Resource" uid="uid://bg8gk2pq7nvq7" path="res://entities/wp_dartgun.tres" id="17_2mjsk"]
 [ext_resource type="Resource" uid="uid://bxxhf3xj2h2g1" path="res://entities/wp_pbgun.tres" id="18_c4pdy"]
 [ext_resource type="Resource" uid="uid://bmt1txjn5p74f" path="res://entities/wp_pistol.tres" id="19_4y8q4"]
@@ -27,4 +26,4 @@ export_file = false
 target_folder = "C:/QuakeDev/TrenchBroom/games/Toonbox"
 fgd_name = "Toonbox"
 base_fgd_files = []
-entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_edurh"), ExtResource("8_j88xy"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("16_d4cgt"), ExtResource("17_2mjsk"), ExtResource("18_c4pdy"), ExtResource("19_4y8q4")]
+entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_edurh"), ExtResource("8_j88xy"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), null, ExtResource("17_2mjsk"), ExtResource("18_c4pdy"), ExtResource("19_4y8q4")]

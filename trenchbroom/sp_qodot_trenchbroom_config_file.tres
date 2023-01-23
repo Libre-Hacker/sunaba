@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bxaop578hj4f2"]
+
+[ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/brush_tags/trigger_tag.tres" id="1_wb03k"]
+[ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/brush_tags/detail_tag.tres" id="2_j3ha8"]
+[ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/face_tags/clip_tag.tres" id="3_rnp02"]
+[ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/face_tags/skip_tag.tres" id="4_wc3dl"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_game_config_file.gd" id="5_vv1qn"]
+
+[resource]
+script = ExtResource("5_vv1qn")
+export_file = false
+target_file = "C:/QuakeDev/TrenchBroom/games/Toonbox_sp/GameConfig.cfg"
+game_name = "Toonbox (Singleplayer)"
+brush_tags = [ExtResource("1_wb03k"), ExtResource("2_j3ha8")]
+face_tags = [ExtResource("3_rnp02"), ExtResource("4_wc3dl")]
+face_attrib_surface_flags = []
+face_attrib_content_flags = []
+fgd_filenames = ["Toonbox.fgd"]

@@ -67,7 +67,7 @@ func _on_respawn_timer_timeout():
 	instance_player(multiplayer.get_unique_id())
 
 func instance_player(id):
-	var player_instance = load("res://actors/player.tscn").instantiate()
+	var player_instance = load("res://actors/mp_player.tscn").instantiate()
 	player_instance.name = str(id)
 	add_child(player_instance)
 	if id == multiplayer.get_unique_id():

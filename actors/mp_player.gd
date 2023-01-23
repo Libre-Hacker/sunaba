@@ -65,13 +65,16 @@ var view_mode : bool = false
 #@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
 #@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
+func _enter_tree(): set_multiplayer_authority(str(name).to_int())
+
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	reach = fp_reach
-	aimcast = fp_aimcast
-	fp_camera.current = true
+	if is_multiplayer_authority():
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		reach = fp_reach
+		aimcast = fp_aimcast
+	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
-	model.visible = false
+	model.visible = !is_multiplayer_authority()
 	#arms_model.visible = is_multiplayer_authority()
 	
 	reload_label.hide()
@@ -80,6 +83,8 @@ func _ready():
 	hand.top_level = true
 
 func _input(event):
+	if !is_multiplayer_authority():
+		return
 	
 	#if event.is_action_pressed("action_button") && get_parent().mouse_over_ui == false: 
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -160,21 +165,22 @@ func _input(event):
 	
 
 func _physics_process(delta):
-	var input_vector = get_input_vector()
-	var direction = get_direction(input_vector)
-	apply_movement(direction, delta)
-	apply_gravity(delta)
-	apply_friction(direction, delta)
-	jump()
-	apply_controller_rotation()
-	set_velocity(velocity)
-	# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
-	set_up_direction(Vector3.UP)
-	set_floor_stop_on_slope_enabled(true)
-	set_max_slides(4)
-	set_floor_max_angle(.7853)
-	move_and_slide()
-	velocity = velocity
+	if is_multiplayer_authority():
+		var input_vector = get_input_vector()
+		var direction = get_direction(input_vector)
+		apply_movement(direction, delta)
+		apply_gravity(delta)
+		apply_friction(direction, delta)
+		jump()
+		apply_controller_rotation()
+		set_velocity(velocity)
+		# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
+		set_up_direction(Vector3.UP)
+		set_floor_stop_on_slope_enabled(true)
+		set_max_slides(4)
+		set_floor_max_angle(.7853)
+		move_and_slide()
+		velocity = velocity
 	
 	if is_on_floor():
 		times_jumped = 0
@@ -201,6 +207,9 @@ func _physics_process(delta):
 	hand.global_transform.origin = hand_loc.global_transform.origin
 	hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
 	hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
+	
+	if !is_multiplayer_authority() or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		return
 	
 	if !Global.game_paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

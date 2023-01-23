@@ -80,6 +80,8 @@ func _ready():
 	hand.top_level = true
 
 func _input(event):
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		return
 	
 	#if event.is_action_pressed("action_button") && get_parent().mouse_over_ui == false: 
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -160,6 +162,9 @@ func _input(event):
 	
 
 func _physics_process(delta):
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		return
+	
 	var input_vector = get_input_vector()
 	var direction = get_direction(input_vector)
 	apply_movement(direction, delta)

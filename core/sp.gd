@@ -9,6 +9,22 @@ func _ready() -> void:
 	Global.game_started = false
 	Global.game_paused = false
 	Console.register_env("sp", self)
+	
+	Console.notify(" ")
+	Console.notify("Sunaba")
+	Console.notify("Version " + Build.version_number)
+	Console.notify("Compiled on " + Build.build_date)
+	Console.notify("(C) 2022-2023 mintkat")
+	Console.notify(" ")
+	Console.notify("Be sure go to Options and turn off \"Pause When Active\" or else the map file browser won't work")
+	Console.notify(" ")
+	
+	print("")
+	print("Sunaba")
+	print("Version " + Build.version_number)
+	print("Compiled on " + Build.build_date)
+	print("(C) 2022-2023 mintkat")
+	print("")
 
 func quit():
 	get_tree().quit()
@@ -32,9 +48,9 @@ func map_viewer():
 func _on_map_file_selected(path):
 	map_path = path
 	Console.notify("Map selected - " + map_path)
-	
-func play(map : String):
-	if map_path == "" and !map == "":
+
+func play(map = null):
+	if map_path == "" and !map == null:
 		map_path = "res://maps/tbx_" + map + ".map"
 	if FileAccess.file_exists(map_path):
 		Global.game_started = true
@@ -46,3 +62,21 @@ func play(map : String):
 
 func set_map_file():
 	$UI/FileDialog.popup_centered()
+
+func get_maps():
+	var list = []
+	var dir = DirAccess.open("res://maps")
+	
+	dir.list_dir_begin()
+	
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif (not file.begins_with(".")) and file.begins_with("tbx_") and (not file.ends_with(".import")):
+			list.append(file)
+	
+	dir.list_dir_end()
+	
+	return list
+	

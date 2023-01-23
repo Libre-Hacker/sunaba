@@ -9,6 +9,8 @@ func _ready():
 	newline()
 	add_text(\"Version \" + Build.version_number)
 	newline()
+	add_text(\"Compiled on \" + Build.build_date)
+	newline()
 	add_text(\"(C) 2022-2023 mintkat\")
 "
 

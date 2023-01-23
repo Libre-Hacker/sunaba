@@ -19,10 +19,6 @@ var snap_vector = Vector3.ZERO
 var tool_to_spawn
 var tool_to_drop
 
-var puppet_pos = Vector3()
-var puppet_vel = Vector3()
-var puppet_rot = Vector3()
-
 var max_speed = default_speed
 var health = 100
 var reach = null
@@ -69,15 +65,18 @@ var view_mode : bool = false
 #@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
 #@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
+func _enter_tree(): set_multiplayer_authority(str(name).to_int())
+
 func _ready():
 	if is_multiplayer_authority():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		reach = fp_reach
+		aimcast = fp_aimcast
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
 	#arms_model.visible = is_multiplayer_authority()
-	reach = fp_reach
-	aimcast = fp_aimcast
+	
 	reload_label.hide()
 	$Hud/ToolPanel.hide()
 	max_speed = default_speed
@@ -334,24 +333,10 @@ func apply_controller_rotation():
 		head.rotation.x = clamp(head.rotation.x - axis_vector.y * controller_sensitivity * .001, -1.5, 1.5)
 
 
-@rpc func update_state(p_pos, p_vel, p_rot):
-	puppet_pos = p_pos
-	puppet_vel = p_vel
-	puppet_rot = p_rot
-	
-	#movetween.interpolate_property(self, "global_transform", global_transform, Transform3D(global_transform.basis, puppet_pos), 0.1)
-	#movetween.start()
-
-
 func die():
 	get_parent().prep_for_respawn()
 	queue_free()
 
-
-func _on_timeout():
-	if is_multiplayer_authority():
-		pass
-		#rpc_unreliable("update_state", global_transform.origin, velocity, Vector2(rotation.x, rotation.y))
 
 func _fire():
 	if !is_reloading and ammo != 0:

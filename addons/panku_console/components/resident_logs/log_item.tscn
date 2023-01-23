@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c708ijd74a17d"]
+
+[ext_resource type="Script" path="res://addons/panku_console/components/resident_logs/log_item.gd" id="1_ddump"]
+
+[node name="LogItem" type="HBoxContainer"]
+offset_top = 487.0
+offset_right = 320.0
+offset_bottom = 511.0
+script = ExtResource("1_ddump")
+metadata/content_label = NodePath("Content/MarginContainer/RichTextLabel")
+metadata/amount_label = NodePath("Amount/MarginContainer/Label")
+metadata/amount_panel = NodePath("Amount")
+
+[node name="Content" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Content/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="Amount" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Amount"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="Label" type="Label" parent="Amount/MarginContainer"]
+layout_mode = 2
+text = "x6"
+metadata/amount = 1

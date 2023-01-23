@@ -17,8 +17,6 @@ script = ExtResource("2")
 _spawnable_scenes = PackedStringArray("res://actors/player.tscn", "res://core/map_holder.tscn")
 spawn_path = NodePath("..")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_pypmj")
 

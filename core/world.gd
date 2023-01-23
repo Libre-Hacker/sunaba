@@ -16,14 +16,13 @@ var qodot_map_instance = null
 @onready var qodot_map = $NavigationRegion3D/QodotMap
 @onready var navregion = $NavigationRegion3D
 @onready var main_node = get_node(main_node_path)
-@onready var http_request = $HTTPRequest
 
 var player = null
 var spawnpoint : Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	http_request.use_threads = true
+	Console.register_env("world", self)
 	#QodotDependencies.check_dependencies(http_request)
 
 func _physics_process(_delta):
@@ -53,6 +52,10 @@ func on_mouse_entered():
 	mouse_over_ui = true
 
 
+func load_map_remote():
+	load_map(get_node("map_holder").map)
+
+
 func on_mouse_exited():
 	mouse_over_ui = false
 
@@ -65,7 +68,6 @@ func _on_respawn_timer_timeout():
 
 func instance_player(id):
 	var player_instance = load("res://actors/player.tscn").instantiate()
-	player_instance.set_multiplayer_authority(id)
 	player_instance.name = str(id)
 	add_child(player_instance)
 	if id == multiplayer.get_unique_id():
@@ -74,6 +76,6 @@ func instance_player(id):
 
 
 func _on_qodot_map_build_complete():
-	qodot_map_instance.unwrap_uv2()
+	qodot_map.unwrap_uv2()
 	navregion.bake_navigation_mesh()
 

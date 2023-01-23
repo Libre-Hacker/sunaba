@@ -13,6 +13,7 @@ func _ready() -> void:
 	$UI.theme = ThemeManager.theme
 	Global.game_started = false
 	Global.game_paused = false
+	Console.register_env("tbx", self)
 
 func create_room() -> void:
 	if path != null:
@@ -37,12 +38,13 @@ func chat(_name , chatstring):
 	chat_entry.clear()
 	#chat_entry.focus_mode = false
 
-func import_world(id):
+func import_world():
 	if path == null:
 		log_to_chat("No Map File Selected, Defaulting to preloaded map")
 	else:
 		log_to_chat("Importing world from File - " + path)
-	world.load_map(id, path)
+	world.load_map_path(path)
+	world.load_map(path)
 
 
 func _on_chat_text_entered(new_text):

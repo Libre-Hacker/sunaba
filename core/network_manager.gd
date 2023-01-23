@@ -9,16 +9,8 @@ var enet_peer = ENetMultiplayerPeer.new()
 
 
 func _ready():
-	#rpc_config("get_world_3d", 1)
 	multiplayer.multiplayer_peer = null
-	#get_tree().connect("peer_connected",Callable(self,"_player_joined"))
-
-
-	#peer.peer_connected.connect(func(id): _player_joined(id))
-	#peer.peer_disconnected.connect(func(id): print("Player disconnected"))
-	
-	#peer.connection_succeeded.connect(func(id): print("success"))
-	#peer.connection_failed.connect(func(id): print("fail"))
+	Console.register_env("netman", self)
 
 func connect_to_server() -> void:
 	join_room("127.0.0.1")
@@ -33,7 +25,7 @@ func create_room():
 	
 	get_parent().log_to_chat("Room created")
 	get_parent().enable_chat()
-	get_parent().import_world(multiplayer.get_unique_id())
+	get_parent().import_world()
 
 
 func join_room(address):

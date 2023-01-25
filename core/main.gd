@@ -14,6 +14,20 @@ func _ready() -> void:
 	Global.game_started = false
 	Global.game_paused = false
 	Console.register_env("tbx", self)
+	
+	Console.notify(" ")
+	Console.notify("Sunaba")
+	Console.notify("Version " + Build.version_number)
+	Console.notify("Compiled on " + Build.build_date)
+	Console.notify("(C) 2022-2023 mintkat")
+	Console.notify(" ")
+	
+	print("")
+	print("Sunaba")
+	print("Version " + Build.version_number)
+	print("Compiled on " + Build.build_date)
+	print("(C) 2022-2023 mintkat")
+	print("")
 
 func create_room() -> void:
 	if path != null:

@@ -11,7 +11,7 @@ extends CharacterBody3D
 @export var sprint_walk_sound_time : float = 0.24
 
 @export var mouse_sensitivity : float = 1
-@export var controller_sensitivity : int = 20
+@export var controller_sensitivity : int = 25
 
 
 var snap_vector = Vector3.ZERO

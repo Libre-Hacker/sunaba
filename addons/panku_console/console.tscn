@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://8bhilcmjci5i"]
+[gd_scene load_steps=13 format=3 uid="uid://8bhilcmjci5i"]
 
 [ext_resource type="Script" path="res://addons/panku_console/console.gd" id="1_dohs1"]
 [ext_resource type="PackedScene" path="res://addons/panku_console/components/resident_logs/resident_logs.tscn" id="2_th8we"]
 [ext_resource type="Script" path="res://addons/panku_console/components/lynx_window2/lynx_windows.gd" id="3_7pj6w"]
+[ext_resource type="Theme" uid="uid://dbu7c46eki45f" path="res://addons/panku_console/res/breeze_dark_theme.tres" id="3_xa0bo"]
 [ext_resource type="PackedScene" uid="uid://c8yh1l5qboc2v" path="res://addons/panku_console/components/lynx_window2/lynx_window.tscn" id="4_x6krx"]
 [ext_resource type="Shader" path="res://addons/panku_console/res/shader/frosted_glass.gdshader" id="5_daswg"]
 [ext_resource type="PackedScene" uid="uid://bqfm16y5vcgl3" path="res://addons/panku_console/components/console_ui/panku_console_ui.tscn" id="5_vpp3o"]
@@ -13,10 +14,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_adv20"]
 shader = ExtResource("5_daswg")
-shader_parameter/amount = 2.0
-shader_parameter/noise = 0.1
-shader_parameter/sz = 0.25
-shader_parameter/fancy = null
 
 [node name="Console" type="CanvasLayer"]
 process_mode = 3
@@ -30,14 +27,17 @@ offset_top = 115.0
 offset_right = 267.0
 offset_bottom = -154.0
 grow_vertical = 2
+theme = ExtResource("3_xa0bo")
 
 [node name="Widgets" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("3_xa0bo")
 
 [node name="LynxWindows" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("3_xa0bo")
 script = ExtResource("3_7pj6w")
 
 [node name="ConsoleWindow" parent="LynxWindows" instance=ExtResource("4_x6krx")]
@@ -63,6 +63,9 @@ text = "Panku REPL"
 
 [node name="PankuConsoleUI" parent="LynxWindows/ConsoleWindow/Body/Content" index="0" instance=ExtResource("5_vpp3o")]
 layout_mode = 1
+
+[node name="TextureRect" parent="LynxWindows/ConsoleWindow/ResizeButton" index="0"]
+expand_mode = 1
 
 [node name="BaseInstance" type="Node" parent="."]
 script = ExtResource("6_lo6t5")

@@ -14,7 +14,7 @@ agent_max_climb = 0.01
 script = ExtResource("2")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://actors/player.tscn", "res://core/map_holder.tscn")
+_spawnable_scenes = PackedStringArray("res://actors/mp_player.tscn", "res://core/map_holder.tscn")
 spawn_path = NodePath("..")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -22,7 +22,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="QodotMap" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("2_bntab")
-map_file = "C:/sunaba/maps/test.map"
+map_file = "C:/sunaba/maps/sb_test.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("3_5tfqn")
 base_texture_dir = "res://textures"

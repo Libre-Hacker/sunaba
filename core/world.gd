@@ -51,7 +51,7 @@ func prep_for_respawn():
 func on_mouse_entered():
 	mouse_over_ui = true
 
-
+@rpc(call_local)
 func load_map_remote():
 	load_map(get_node("map_holder").map)
 
@@ -74,6 +74,9 @@ func instance_player(id):
 		player = player_instance
 	player_instance.global_transform.origin = spawnpoint
 
+func player_joined(id):
+	load_map_remote().rpc_id(id)
+	instance_player(id)
 
 func _on_qodot_map_build_complete():
 	qodot_map.unwrap_uv2()

@@ -1,14 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://40m0y3b30m4i"]
+[gd_scene load_steps=20 format=3 uid="uid://40m0y3b30m4i"]
 
 [ext_resource type="Script" path="res://actors/mp_player.gd" id="1_3r2f4"]
 [ext_resource type="PackedScene" uid="uid://bunf532f5lei7" path="res://actors/himiko.tscn" id="2_6g4h6"]
 [ext_resource type="PackedScene" uid="uid://d8olreee2un1" path="res://actors/arms.tscn" id="3_e1a12"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="4_akw30"]
-[ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="5_4d0nk"]
-[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="6_117tp"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7_2hylx"]
 [ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="8_ogesh"]
-[ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="9_x2twp"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="10_kawwr"]
 [ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="11_7kjxt"]
 [ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="12_ygok1"]
@@ -37,20 +34,33 @@ _data = {
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s4bi1"]
-texture = ExtResource("6_117tp")
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 5.0
-margin_bottom = 5.0
-region_rect = Rect2(0, 0, 49, 45)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74pni"]
+bg_color = Color(0.87451, 0.305882, 0.027451, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45aog"]
+bg_color = Color(0.0470588, 0.65098, 0.898039, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sl8mc"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/sync = true
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_3r2f4")
 jump_impulse = 10
 
 [node name="Himiko" parent="." instance=ExtResource("2_6g4h6")]
-visible = false
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -130,10 +140,6 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
 shape = SubResource("CapsuleShape3D_45yey")
 
-[node name="NetworkTickRate" type="Timer" parent="."]
-wait_time = 0.03
-autostart = true
-
 [node name="Hud" type="Node" parent="."]
 
 [node name="Panel" type="Panel" parent="Hud"]
@@ -171,8 +177,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("5_4d0nk")
-theme_override_styles/fill = SubResource("StyleBoxTexture_s4bi1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_74pni")
 value = 100.0
 show_percentage = false
 
@@ -254,7 +259,8 @@ texture = ExtResource("4_akw30")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -265,8 +271,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("5_4d0nk")
-theme_override_styles/fill = ExtResource("9_x2twp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_45aog")
 value = 100.0
 show_percentage = false
 
@@ -357,7 +362,9 @@ stream = ExtResource("14_whvoo")
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_e0qbc")
 
-[connection signal="timeout" from="NetworkTickRate" to="." method="_on_timeout"]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_sl8mc")
+
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

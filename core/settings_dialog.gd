@@ -34,7 +34,7 @@ func _ready():
 	
 		#change_theme(load(settings[1]))
 	#else:
-	change_theme(two_k_ui)
+	change_theme(sleek)
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_F11):
@@ -54,7 +54,7 @@ func change_theme(_theme):
 
 func _on_theme_selected(index):
 	print(index)
-	if index == 0:
+	if index == 3:
 		settings[1] = "res://assets/ui/2kui/2kui.tres"
 		change_theme(two_k_ui)
 	elif index == 1:
@@ -63,7 +63,7 @@ func _on_theme_selected(index):
 	elif index == 2:
 		settings[1] = "res://assets/ui/carbon_ui/dark.tres"
 		change_theme(carbon_dark)
-	elif index == 3:
+	elif index == 1:
 		settings[1] = "res://assets/ui/sl33k/sl33k.tres"
 		change_theme(sleek)
 	elif index == 4:

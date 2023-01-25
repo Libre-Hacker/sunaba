@@ -4,9 +4,9 @@ var match_id : String
 
 var enet_peer = ENetMultiplayerPeer.new()
 
-@export var world : NodePath
+@export var world_path : NodePath
 @export var ui_node : NodePath
-
+@onready var world = get_node(world_path)
 
 func _ready():
 	multiplayer.multiplayer_peer = null
@@ -26,6 +26,7 @@ func create_room():
 	get_parent().log_to_chat("Room created")
 	get_parent().enable_chat()
 	get_parent().import_world()
+	#world.instance_player(multiplayer.get_unique_id())
 
 
 func join_room(address):

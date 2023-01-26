@@ -1,13 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://b5nuf4h4ran7h"]
+[gd_scene load_steps=19 format=3 uid="uid://b5nuf4h4ran7h"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="PackedScene" uid="uid://d8olreee2un1" path="res://actors/arms.tscn" id="4_dvh8j"]
-[ext_resource type="StyleBox" path="res://assets/ui/2kui/panel.tres" id="4_vg2nh"]
-[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_01etg"]
 [ext_resource type="PackedScene" uid="uid://bunf532f5lei7" path="res://actors/himiko.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
-[ext_resource type="StyleBox" path="res://assets/ui/2kui/button_blue.tres" id="7_o05eg"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
 [ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
@@ -16,9 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 [ext_resource type="AudioStream" uid="uid://c15y24ipmu1da" path="res://assets/audio/ammo_pickup.wav" id="14_qvd4k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qggu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdp5g"]
 
-[sub_resource type="Animation" id="Animation_p1o5t"]
+[sub_resource type="Animation" id="Animation_om0vo"]
 resource_name = "holding"
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -28,22 +25,28 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array()
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ugi0o"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_812on"]
 _data = {
-"holding": SubResource("Animation_p1o5t")
+"holding": SubResource("Animation_om0vo")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6pkqm"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s3nff"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dk5ot"]
-texture = ExtResource("5_01etg")
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 5.0
-margin_bottom = 5.0
-region_rect = Rect2(0, 0, 49, 45)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8slfl"]
+bg_color = Color(0.87451, 0.305882, 0.027451, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uqmf"]
+bg_color = Color(0.0470588, 0.65098, 0.898039, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("4")
@@ -118,17 +121,17 @@ bones/42/rotation = Quaternion(-0.396092, 0.0629935, 0.0135213, 0.915948)
 bones/42/scale = Vector3(1, 0.999999, 1)
 
 [node name="Base Mesh" parent="Head/arms/Armature/Skeleton3D" index="0"]
-surface_material_override/3 = SubResource("StandardMaterial3D_2qggu")
-surface_material_override/4 = SubResource("StandardMaterial3D_2qggu")
+surface_material_override/3 = SubResource("StandardMaterial3D_fdp5g")
+surface_material_override/4 = SubResource("StandardMaterial3D_fdp5g")
 
 [node name="AnimationPlayer" parent="Head/arms/Armature/Skeleton3D" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_ugi0o")
+"": SubResource("AnimationLibrary_812on")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_6pkqm")
+shape = SubResource("CapsuleShape3D_s3nff")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -167,8 +170,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = SubResource("StyleBoxTexture_dk5ot")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8slfl")
 value = 100.0
 show_percentage = false
 
@@ -261,8 +263,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("4_vg2nh")
-theme_override_styles/fill = ExtResource("7_o05eg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0uqmf")
 value = 100.0
 show_percentage = false
 

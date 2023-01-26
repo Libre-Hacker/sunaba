@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bxaop578hj4f2"]
+[gd_resource type="Resource" script_class="TrenchBroomGameConfigFile" load_steps=6 format=3 uid="uid://bxaop578hj4f2"]
 
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/brush_tags/trigger_tag.tres" id="1_wb03k"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/brush_tags/detail_tag.tres" id="2_j3ha8"]
@@ -9,10 +9,10 @@
 [resource]
 script = ExtResource("5_vv1qn")
 export_file = false
-target_file = "C:/QuakeDev/TrenchBroom/games/Toonbox_sp/GameConfig.cfg"
-game_name = "Toonbox (Singleplayer)"
+target_file = "C:/QuakeDev/TrenchBroom/games/Sunaba_sp/GameConfig.cfg"
+game_name = "Sunaba (Singleplayer)"
 brush_tags = [ExtResource("1_wb03k"), ExtResource("2_j3ha8")]
 face_tags = [ExtResource("3_rnp02"), ExtResource("4_wc3dl")]
 face_attrib_surface_flags = []
 face_attrib_content_flags = []
-fgd_filenames = ["Toonbox.fgd"]
+fgd_filenames = ["Sunaba.fgd"]

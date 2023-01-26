@@ -1,4 +1,4 @@
-// Game: Sunaba
+// Game: Sunaba (Singleplayer)
 // Format: Standard
 // entity 0
 {
@@ -799,9 +799,9 @@
 }
 // entity 1
 {
-"classname" "pl_vanilla"
+"classname" "sp_player"
 "origin" "0 0 -4"
-"angle" "270"
+"angle" "90"
 }
 // entity 2
 {

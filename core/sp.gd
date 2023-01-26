@@ -63,6 +63,9 @@ func play(map = null):
 func set_map_file():
 	$UI/FileDialog.popup_centered()
 
+func play_multiplayer():
+	get_tree().change_scene_to_file("res://core/main.tscn")
+
 func get_maps():
 	var list = []
 	var dir = DirAccess.open("res://maps")

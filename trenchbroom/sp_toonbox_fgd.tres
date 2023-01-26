@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=21 format=3 uid="uid://bvp7y10gkqixm"]
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=21 format=3 uid="uid://bvp7y10gkqixm"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_qn1c2"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_p4wpb"]

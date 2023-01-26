@@ -3,11 +3,6 @@ extends RigidBody3D
 @export var weapon_path : String
 @export var model_path : String = "assets/models/handprops/paintball_gun.gltf"
 
-@export var fgd_model = {
-  "path": model_path,
-  "scale": 28
-}
-
 var dropped = false
 
 func _process(_delta):

@@ -89,7 +89,7 @@ handle_input_locally = false
 mesh_lod_threshold = 0.0
 audio_listener_enable_3d = true
 physics_object_picking = true
-size = Vector2i(800, 600)
+size = Vector2i(640, 480)
 render_target_update_mode = 4
 
 [node name="World3D" parent="UI/SubViewportContainer/WorldViewport" instance=ExtResource("12")]

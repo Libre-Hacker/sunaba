@@ -22,11 +22,11 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="QodotMap" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("2_bntab")
-map_file = "C:/sunaba/maps/sb_test.map"
+map_file = "C:/sunaba/maps/sb_city.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("3_5tfqn")
 base_texture_dir = "res://textures"
-texture_file_extensions = PackedStringArray("png")
+texture_file_extensions = PackedStringArray("png", "jpg")
 worldspawn_layers = []
 brush_clip_texture = "special/clip"
 face_skip_texture = "special/skip"
@@ -49,4 +49,5 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 0.963303, 0.268415, 0, -0.268415, 0.963303, 0, 10.4708, 18.5674)
 
 [connection signal="build_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_build_complete"]
+[connection signal="unwrap_uv2_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_unwrap_uv_2_complete"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://o5mmhrb5hokd"]
+
+[node name="OmniLight3D" type="OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)

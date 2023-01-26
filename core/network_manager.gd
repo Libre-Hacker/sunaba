@@ -22,6 +22,7 @@ func create_room():
 	enet_peer.create_server(8070)
 	multiplayer.multiplayer_peer = enet_peer
 	multiplayer.peer_connected.connect(_player_joined)
+	Global.game_started = true
 	
 	get_parent().log_to_chat("Room created")
 	get_parent().enable_chat()

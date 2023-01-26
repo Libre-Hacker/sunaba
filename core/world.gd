@@ -82,3 +82,10 @@ func _on_qodot_map_build_complete():
 	qodot_map.unwrap_uv2()
 	navregion.bake_navigation_mesh()
 
+
+
+func _on_qodot_map_unwrap_uv_2_complete():
+	pass
+
+func ultra():
+	Environment.sdfgi_enabled = true

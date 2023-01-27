@@ -13,9 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 [ext_resource type="AudioStream" uid="uid://c15y24ipmu1da" path="res://assets/audio/ammo_pickup.wav" id="14_qvd4k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdp5g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmmrm"]
 
-[sub_resource type="Animation" id="Animation_om0vo"]
+[sub_resource type="Animation" id="Animation_7hdgm"]
 resource_name = "holding"
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -25,23 +25,23 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array()
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_812on"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbkqd"]
 _data = {
-"holding": SubResource("Animation_om0vo")
+"holding": SubResource("Animation_7hdgm")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s3nff"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fv2lp"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8slfl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6wl0"]
 bg_color = Color(0.87451, 0.305882, 0.027451, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uqmf"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0e2i"]
 bg_color = Color(0.0470588, 0.65098, 0.898039, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
@@ -121,17 +121,17 @@ bones/42/rotation = Quaternion(-0.396092, 0.0629935, 0.0135213, 0.915948)
 bones/42/scale = Vector3(1, 0.999999, 1)
 
 [node name="Base Mesh" parent="Head/arms/Armature/Skeleton3D" index="0"]
-surface_material_override/3 = SubResource("StandardMaterial3D_fdp5g")
-surface_material_override/4 = SubResource("StandardMaterial3D_fdp5g")
+surface_material_override/3 = SubResource("StandardMaterial3D_jmmrm")
+surface_material_override/4 = SubResource("StandardMaterial3D_jmmrm")
 
 [node name="AnimationPlayer" parent="Head/arms/Armature/Skeleton3D" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_812on")
+"": SubResource("AnimationLibrary_pbkqd")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_s3nff")
+shape = SubResource("CapsuleShape3D_fv2lp")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -170,7 +170,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_8slfl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j6wl0")
 value = 100.0
 show_percentage = false
 
@@ -263,7 +263,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_0uqmf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a0e2i")
 value = 100.0
 show_percentage = false
 

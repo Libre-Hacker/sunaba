@@ -28,6 +28,11 @@ func _ready() -> void:
 	print("Compiled on " + Build.build_date)
 	print("(C) 2022-2023 mintkat")
 	print("")
+	
+	var args = OS.get_cmdline_args()
+	var file = args[0]
+	if ".map" in file:
+		play(file)
 
 func create_room() -> void:
 	if path != null:
@@ -95,3 +100,12 @@ func _connect():
 
 func _on_address_changed(new_text):
 	address = new_text
+
+func play(map):
+	if map != null:
+		path = map
+		create_room()
+
+func test(args : String):
+	var map = args.left(6) #- "--map="
+	return map

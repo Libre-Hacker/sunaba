@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://byq50pq3tgyl0"]
+
+[ext_resource type="Script" path="res://entities/gm_deathmatch.gd" id="1_5wswr"]
+
+[node name="Deathmatch" type="Node3D"]
+script = ExtResource("1_5wswr")

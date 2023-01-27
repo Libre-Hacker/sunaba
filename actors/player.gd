@@ -272,11 +272,10 @@ func _physics_process(delta):
 		max_speed = sprint_speed
 		walk_timer.wait_time = sprint_walk_sound_time
 		$Hud/Panel/SprintingIcon.show()
-	
-	#if Input.is_action_pressed("sprint") and !is_on_floor():
-		#max_speed += 4
-		#walk_timer.wait_time = sprint_walk_sound_time
-		#$Hud/Panel/SprintingIcon.show()
+	elif Input.is_action_pressed("sprint") and !is_on_floor():
+		max_speed += 1
+		walk_timer.wait_time = sprint_walk_sound_time
+		$Hud/Panel/SprintingIcon.show()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

@@ -25,6 +25,11 @@ func _ready() -> void:
 	print("Compiled on " + Build.build_date)
 	print("(C) 2022-2023 mintkat")
 	print("")
+	
+	var args = OS.get_cmdline_args()
+	var file = args[0]
+	if ".map" in file:
+		play(file)
 
 func quit():
 	get_tree().quit()

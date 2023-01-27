@@ -1,0 +1,82 @@
+// Game: Toonbox (Singleplayer)
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/blockout"
+// brush 0
+{
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) blockout/gray_check 0 0 0 0.125 0.125
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) blockout/gray_check 0 0 0 0.125 0.125
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) blockout/gray_check 0 0 0 0.125 0.125
+}
+// brush 1
+{
+( -80 -64 16 ) ( -80 -63 16 ) ( -80 -64 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( -80 -64 16 ) ( -80 -64 17 ) ( -79 -64 16 ) blockout/gray_check 0 0 0 0.125 0.125
+( -80 -64 16 ) ( -79 -64 16 ) ( -80 -63 16 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 64 144 ) ( -64 65 144 ) ( -63 64 144 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 64 32 ) ( -63 64 32 ) ( -64 64 33 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 64 32 ) ( -64 64 33 ) ( -64 65 32 ) blockout/gray_check 0 0 0 0.125 0.125
+}
+// brush 2
+{
+( 64 -64 16 ) ( 64 -63 16 ) ( 64 -64 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( 64 -64 16 ) ( 64 -64 17 ) ( 65 -64 16 ) blockout/gray_check -128 0 0 0.125 0.125
+( 64 -64 16 ) ( 65 -64 16 ) ( 64 -63 16 ) blockout/gray_check -128 0 0 0.125 0.125
+( 80 64 144 ) ( 80 65 144 ) ( 81 64 144 ) blockout/gray_check -128 0 0 0.125 0.125
+( 80 64 32 ) ( 81 64 32 ) ( 80 64 33 ) blockout/gray_check -128 0 0 0.125 0.125
+( 80 64 32 ) ( 80 64 33 ) ( 80 65 32 ) blockout/gray_check 0 0 0 0.125 0.125
+}
+// brush 3
+{
+( -64 -64 16 ) ( -64 -64 17 ) ( -64 -65 16 ) blockout/gray_check -128 0 180 0.125 -0.125
+( 64 -80 32 ) ( 64 -80 33 ) ( 65 -80 32 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 -64 16 ) ( -64 -65 16 ) ( -63 -64 16 ) blockout/gray_check -128 0 270 0.125 0.125
+( 64 -80 144 ) ( 65 -80 144 ) ( 64 -81 144 ) blockout/gray_check -128 0 270 0.125 0.125
+( -64 -64 16 ) ( -63 -64 16 ) ( -64 -64 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( 64 -80 32 ) ( 64 -81 32 ) ( 64 -80 33 ) blockout/gray_check -128 0 180 0.125 -0.125
+}
+// brush 4
+{
+( -64 80 16 ) ( -64 80 17 ) ( -64 79 16 ) blockout/gray_check 0 0 180 0.125 -0.125
+( 64 64 32 ) ( 64 64 33 ) ( 65 64 32 ) blockout/gray_check 0 0 0 0.125 0.125
+( -64 80 16 ) ( -64 79 16 ) ( -63 80 16 ) blockout/gray_check 0 0 270 0.125 0.125
+( 64 64 144 ) ( 65 64 144 ) ( 64 63 144 ) blockout/gray_check 0 0 270 0.125 0.125
+( -64 80 16 ) ( -63 80 16 ) ( -64 80 17 ) blockout/gray_check 0 0 0 0.125 0.125
+( 64 64 32 ) ( 64 63 32 ) ( 64 64 33 ) blockout/gray_check 0 0 180 0.125 -0.125
+}
+}
+// entity 1
+{
+"classname" "sp_player"
+"origin" "-40 40 24"
+}
+// entity 2
+{
+"classname" "wp_dartgun"
+"origin" "-8 8 24"
+}
+// entity 3
+{
+"classname" "wp_pistol"
+"origin" "-8 24 24"
+}
+// entity 4
+{
+"classname" "wp_pbgun"
+"origin" "-8 -8 24"
+}
+// entity 5
+{
+"classname" "ev_day"
+"origin" "-56 -56 24"
+}
+// entity 6
+{
+"classname" "ai_imagebot"
+"origin" "40 -40 24"
+}

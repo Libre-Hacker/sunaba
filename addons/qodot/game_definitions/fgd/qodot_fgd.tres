@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=20 format=3 uid="uid://7h57nuq1xmoi"]
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=20 format=3 uid="uid://7h57nuq1xmoi"]
 
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/base_classes/target_base_class.tres" id="1"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/func_group_solid_class.tres" id="2"]

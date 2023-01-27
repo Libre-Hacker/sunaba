@@ -56,7 +56,7 @@ func _on_map_file_selected(path):
 
 func play(map = null):
 	if map_path == "" and !map == null:
-		map_path = "res://maps/tbx_" + map + ".map"
+		map_path = map
 	if FileAccess.file_exists(map_path):
 		Global.game_started = true
 		world.load_map(map_path)

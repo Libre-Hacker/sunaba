@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dpdsh18u6mbnt"]
+[gd_scene load_steps=13 format=3 uid="uid://dpdsh18u6mbnt"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
 [ext_resource type="Script" path="res://core/label.gd" id="6_hf4ex"]
+[ext_resource type="FontFile" uid="uid://bevdxpypkmjw5" path="res://assets/fonts/fredoka_one.ttf" id="7_a6y7c"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
 [ext_resource type="Texture2D" uid="uid://0yo2od878bfq" path="res://assets/textures/backdrop.png" id="10"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
@@ -120,15 +121,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n63q7")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/PauseMenu"]
 layout_mode = 1
-offset_left = 23.0
-offset_top = 24.0
-offset_right = 173.0
-offset_bottom = 160.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -314.0
+offset_right = 213.0
+offset_bottom = -69.0
+grow_vertical = 0
 alignment = 2
 
-[node name="Button4" type="Button" parent="UI/PauseMenu/VBoxContainer"]
+[node name="Button1" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -140,7 +145,7 @@ text = "Resume Game"
 flat = true
 alignment = 0
 
-[node name="Button1" type="Button" parent="UI/PauseMenu/VBoxContainer"]
+[node name="Button2" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -152,7 +157,7 @@ text = "Disconnect"
 flat = true
 alignment = 0
 
-[node name="Button2" type="Button" parent="UI/PauseMenu/VBoxContainer"]
+[node name="Button3" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -164,7 +169,7 @@ text = "Settings"
 flat = true
 alignment = 0
 
-[node name="Button3" type="Button" parent="UI/PauseMenu/VBoxContainer"]
+[node name="Button4" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -175,6 +180,19 @@ theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Quit"
 flat = true
 alignment = 0
+
+[node name="Logo" type="Label" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -62.0
+offset_right = 199.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_a6y7c")
+theme_override_font_sizes/font_size = 30
+text = "sunaba"
 
 [node name="MainMenu" type="Control" parent="UI"]
 visible = false
@@ -198,10 +216,14 @@ stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 layout_mode = 1
-offset_left = 23.0
-offset_top = 21.0
-offset_right = 173.0
-offset_bottom = 157.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -197.0
+offset_right = 213.0
+offset_bottom = -69.0
+grow_vertical = 0
 alignment = 2
 
 [node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
@@ -251,6 +273,19 @@ theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Quit"
 flat = true
 alignment = 0
+
+[node name="Logo" type="Label" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -62.0
+offset_right = 199.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("7_a6y7c")
+theme_override_font_sizes/font_size = 30
+text = "sunaba"
 
 [node name="NewRoomDialog" type="Window" parent="UI"]
 title = "New Room"
@@ -310,10 +345,10 @@ gui = NodePath("..")
 [connection signal="mouse_entered" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
 [connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button4" to="UI" method="unpause"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button1" to="." method="reload"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button3" to="." method="quit"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="unpause"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="reload"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button3" to="UI" method="_on_sb_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button4" to="." method="quit"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="_on_create_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="_on_connect_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]

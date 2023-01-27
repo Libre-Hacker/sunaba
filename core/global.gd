@@ -5,6 +5,8 @@ var game_started : bool = false
 
 var game_paused : bool = false
 
+var is_networked_game = false
+
 var spawnpoints : Array
 
 var game_mode : String = ""

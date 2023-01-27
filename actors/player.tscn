@@ -13,9 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
 [ext_resource type="AudioStream" uid="uid://c15y24ipmu1da" path="res://assets/audio/ammo_pickup.wav" id="14_qvd4k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmmrm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f3lw"]
 
-[sub_resource type="Animation" id="Animation_7hdgm"]
+[sub_resource type="Animation" id="Animation_joxh4"]
 resource_name = "holding"
 tracks/0/type = "position_3d"
 tracks/0/imported = false
@@ -25,23 +25,23 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array()
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbkqd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_evwgg"]
 _data = {
-"holding": SubResource("Animation_7hdgm")
+"holding": SubResource("Animation_joxh4")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fv2lp"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dehkx"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6wl0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogc31"]
 bg_color = Color(0.87451, 0.305882, 0.027451, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0e2i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmd0f"]
 bg_color = Color(0.0470588, 0.65098, 0.898039, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
@@ -121,17 +121,17 @@ bones/42/rotation = Quaternion(-0.396092, 0.0629935, 0.0135213, 0.915948)
 bones/42/scale = Vector3(1, 0.999999, 1)
 
 [node name="Base Mesh" parent="Head/arms/Armature/Skeleton3D" index="0"]
-surface_material_override/3 = SubResource("StandardMaterial3D_jmmrm")
-surface_material_override/4 = SubResource("StandardMaterial3D_jmmrm")
+surface_material_override/3 = SubResource("StandardMaterial3D_0f3lw")
+surface_material_override/4 = SubResource("StandardMaterial3D_0f3lw")
 
 [node name="AnimationPlayer" parent="Head/arms/Armature/Skeleton3D" index="1"]
 libraries = {
-"": SubResource("AnimationLibrary_pbkqd")
+"": SubResource("AnimationLibrary_evwgg")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_fv2lp")
+shape = SubResource("CapsuleShape3D_dehkx")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -155,6 +155,7 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
+mouse_filter = 0
 texture = ExtResource("10")
 stretch_mode = 5
 
@@ -170,7 +171,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_j6wl0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ogc31")
 value = 100.0
 show_percentage = false
 
@@ -183,6 +184,7 @@ offset_top = -10.0
 offset_right = 30.0
 offset_bottom = 11.0
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("7")
 expand_mode = 1
 
@@ -193,6 +195,7 @@ anchor_bottom = 1.0
 offset_left = 35.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -210,6 +213,7 @@ offset_top = 4.0
 offset_right = -5.0
 offset_bottom = 30.0
 grow_horizontal = 0
+mouse_filter = 0
 text = "Player"
 vertical_alignment = 1
 
@@ -223,6 +227,7 @@ offset_top = 5.0
 offset_right = -13.0
 offset_bottom = 29.0
 grow_horizontal = 0
+mouse_filter = 0
 texture = ExtResource("7_aigaw")
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
@@ -248,6 +253,7 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
+mouse_filter = 0
 texture = ExtResource("10")
 stretch_mode = 5
 
@@ -263,7 +269,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_a0e2i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lmd0f")
 value = 100.0
 show_percentage = false
 
@@ -274,6 +280,7 @@ anchor_bottom = 1.0
 offset_right = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -291,6 +298,7 @@ offset_top = 4.0
 offset_right = -16.0
 offset_bottom = 30.0
 grow_horizontal = 0
+mouse_filter = 0
 text = "Gun A"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -307,6 +315,7 @@ offset_right = 14.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 texture = ExtResource("9")
 
 [node name="Label" type="Label" parent="Hud/Crosshair"]

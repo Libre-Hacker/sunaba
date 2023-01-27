@@ -182,6 +182,6 @@
 }
 // entity 9
 {
-"classname" "ev_void"
+"classname" "ev_day"
 "origin" "-8 8 72"
 }

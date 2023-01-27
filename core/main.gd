@@ -13,7 +13,7 @@ func _ready() -> void:
 	$UI.theme = ThemeManager.theme
 	Global.game_started = false
 	Global.game_paused = false
-	Console.register_env("tbx", self)
+	Console.register_env("sb", self)
 	
 	Console.notify(" ")
 	Console.notify("Sunaba")
@@ -101,11 +101,10 @@ func _connect():
 func _on_address_changed(new_text):
 	address = new_text
 
-func play(map):
+func play(map = null):
 	if map != null:
 		path = map
-		create_room()
+	create_room()
 
-func test(args : String):
-	var map = args.left(6) #- "--map="
-	return map
+func set_map_file():
+	$UI/FileDialog.popup_centered()

@@ -40,7 +40,6 @@ func load_map_path(path):
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
-		navregion.add_child(qodot_map_instance)
 		qodot_map.map_file = path
 		qodot_map.verify_and_build()
 

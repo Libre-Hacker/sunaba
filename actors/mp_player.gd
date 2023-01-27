@@ -42,7 +42,6 @@ var view_mode : bool = false
 @onready var model = $Himiko
 @onready var arms_model = $Head/arms
 @onready var animation_player = $Himiko/AnimationPlayer
-@onready var ntr = $NetworkTickRate
 @onready var hand_loc = $Head/HandLoc
 @onready var hand = $Head/Hand
 @onready var fp_reach = $Head/Camera3D/Reach
@@ -68,7 +67,7 @@ var view_mode : bool = false
 func _enter_tree(): set_multiplayer_authority(str(name).to_int())
 
 func _ready():
-	if is_multiplayer_authority():
+	if is_multiplayer_authority() or !Global.is_networked_game:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		reach = fp_reach
 		aimcast = fp_aimcast
@@ -83,7 +82,7 @@ func _ready():
 	hand.top_level = true
 
 func _input(event):
-	if !is_multiplayer_authority():
+	if !is_multiplayer_authority() and Global.is_networked_game:
 		return
 	
 	#if event.is_action_pressed("action_button") && get_parent().mouse_over_ui == false: 
@@ -117,15 +116,15 @@ func _input(event):
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
 			fp_camera.current = false
-			tp_camera.current = is_multiplayer_authority()
+			tp_camera.current = true
 			model.visible = true
 			arms_model.visible = false
 			reach = tp_reach
 			aimcast = tp_aimcast
 		elif tp_camera.current == true:
-			fp_camera.current = is_multiplayer_authority()
+			fp_camera.current = true
 			tp_camera.current = false
-			model.visible = !is_multiplayer_authority()
+			model.visible = false
 			#arms_model.visible = is_multiplayer_authority()
 			reach = fp_reach
 			aimcast = fp_aimcast
@@ -165,7 +164,7 @@ func _input(event):
 	
 
 func _physics_process(delta):
-	if is_multiplayer_authority():
+	if is_multiplayer_authority() or !Global.is_networked_game:
 		var input_vector = get_input_vector()
 		var direction = get_direction(input_vector)
 		apply_movement(direction, delta)
@@ -208,7 +207,7 @@ func _physics_process(delta):
 	hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
 	hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
 	
-	if !is_multiplayer_authority() or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+	if (!is_multiplayer_authority() and Global.is_networked_game) or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		return
 	
 	if !Global.game_paused:

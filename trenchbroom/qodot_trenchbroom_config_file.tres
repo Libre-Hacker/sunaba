@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://drs2qwlkyiceg"]
+[gd_resource type="Resource" script_class="TrenchBroomGameConfigFile" load_steps=6 format=3 uid="uid://drs2qwlkyiceg"]
 
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/brush_tags/trigger_tag.tres" id="1_gboiy"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/trenchbroom/brush_tags/detail_tag.tres" id="2_ev82p"]

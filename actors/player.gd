@@ -11,7 +11,7 @@ extends CharacterBody3D
 @export var sprint_walk_sound_time : float = 0.24
 
 @export var mouse_sensitivity : float = 1
-@export var controller_sensitivity : int = 20
+@export var controller_sensitivity : int = 25
 
 
 var snap_vector = Vector3.ZERO
@@ -32,17 +32,17 @@ var weapon_type : String = ""
 var muzzle = null
 var can_play_walk_sound : bool = true
 var times_jumped = 0
-const SWAY = 30
+const SWAY = 50
 const VSWAY = 45
 var view_mode : bool = false
 
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
-@onready var model = $Himiko
+@onready var model = $akari
 @onready var arms_model = $Head/arms
-@onready var animation_player = $Himiko/AnimationPlayer
-@onready var ntr = $NetworkTickRate
+@onready var animation_player = $akari/anim
+@onready var gun_ap = $Head/AnimationPlayer
 @onready var hand_loc = $Head/HandLoc
 @onready var hand = $Head/Hand
 @onready var fp_reach = $Head/Camera3D/Reach
@@ -65,13 +65,16 @@ var view_mode : bool = false
 #@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
 #@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
+func _enter_tree(): if Global.is_networked_game: set_multiplayer_authority(str(name).to_int())
+
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	reach = fp_reach
-	aimcast = fp_aimcast
-	fp_camera.current = true
+	if is_multiplayer_authority() or !Global.is_networked_game:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		reach = fp_reach
+		aimcast = fp_aimcast
+	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
-	model.visible = false
+	model.visible = !is_multiplayer_authority()
 	#arms_model.visible = is_multiplayer_authority()
 	
 	reload_label.hide()
@@ -80,7 +83,7 @@ func _ready():
 	hand.top_level = true
 
 func _input(event):
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+	if !is_multiplayer_authority() and Global.is_networked_game:
 		return
 	
 	#if event.is_action_pressed("action_button") && get_parent().mouse_over_ui == false: 
@@ -106,23 +109,28 @@ func _input(event):
 	
 	
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		var mouse_axis : Vector2 = event.relative if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED else Vector2.ZERO
-		rotation.y -= mouse_axis.x * mouse_sensitivity * .001
-		head.rotation.x = clamp(head.rotation.x - mouse_axis.y * mouse_sensitivity * .001, -1.5, 1.5)
+		if !view_mode:
+			var mouse_axis : Vector2 = event.relative if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED else Vector2.ZERO
+			rotation.y -= mouse_axis.x * mouse_sensitivity * .001
+			head.rotation.x = clamp(head.rotation.x - mouse_axis.y * mouse_sensitivity * .001, -1.5, 1.5)
+		else :
+			var mouse_axis : Vector2 = event.relative if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED else Vector2.ZERO
+			head.rotation.y -= mouse_axis.x * mouse_sensitivity * .001
+			head.rotation.x = clamp(head.rotation.x - mouse_axis.y * mouse_sensitivity * .001, -1.5, 1.5)
 			
 	
 	if Input.is_action_just_pressed("camera_toggle"):
 		if fp_camera.current == true:
 			fp_camera.current = false
-			tp_camera.current = is_multiplayer_authority()
+			tp_camera.current = true
 			model.visible = true
-			arms_model.visible = false
+			#arms_model.visibtle = false
 			reach = tp_reach
 			aimcast = tp_aimcast
 		elif tp_camera.current == true:
-			fp_camera.current = is_multiplayer_authority()
+			fp_camera.current = true
 			tp_camera.current = false
-			model.visible = !is_multiplayer_authority()
+			model.visible = false
 			#arms_model.visible = is_multiplayer_authority()
 			reach = fp_reach
 			aimcast = fp_aimcast
@@ -132,7 +140,7 @@ func _input(event):
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
 					get_parent().add_child(tool_to_drop)
-					tool_to_drop.global_transform = hand.global_transform
+					tool_to_drop.global_transform = hand_loc.global_transform
 					tool_to_drop.dropped = true
 					hand.get_child(0).queue_free()
 			tool_label.text = tool_to_spawn.get_name()
@@ -149,8 +157,6 @@ func _input(event):
 			$PickupSound.play()
 	
 	
-	if Input.is_action_just_pressed("sprint"):
-		$SprintSound.play()
 	
 	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:
 		if is_reloading: return
@@ -158,54 +164,64 @@ func _input(event):
 		$ReloadSound.play()
 		$ReloadTimer.start()
 		reload_label.show()
+		gun_ap.play("reload")
 	
 	
 
 func _physics_process(delta):
-	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-		return
-	
-	var input_vector = get_input_vector()
-	var direction = get_direction(input_vector)
-	apply_movement(direction, delta)
-	apply_gravity(delta)
-	apply_friction(direction, delta)
-	jump()
-	apply_controller_rotation()
-	set_velocity(velocity)
-	# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
-	set_up_direction(Vector3.UP)
-	set_floor_stop_on_slope_enabled(true)
-	set_max_slides(4)
-	set_floor_max_angle(.7853)
-	move_and_slide()
-	velocity = velocity
+	if is_multiplayer_authority() or !Global.is_networked_game:
+		var input_vector = get_input_vector()
+		var direction = get_direction(input_vector)
+		apply_movement(direction, delta)
+		apply_gravity(delta)
+		apply_friction(direction, delta)
+		jump()
+		apply_controller_rotation()
+		set_velocity(velocity)
+		# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
+		set_up_direction(Vector3.UP)
+		set_floor_stop_on_slope_enabled(true)
+		set_max_slides(4)
+		set_floor_max_angle(.7853)
+		move_and_slide()
+		velocity = velocity
 	
 	if is_on_floor():
 		times_jumped = 0
 	
 	if velocity.length() == 0:
-		animation_player.play("Idle")
+		animation_player.play("idle")
+		if !is_reloading:
+			gun_ap.play("idle")
 	else:
 		if max_speed == default_speed and is_on_floor():
-			animation_player.play("Walk")
+			animation_player.play("walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
 				$WalkSound.play()
 				walk_timer.start()
+			if !is_reloading:
+				gun_ap.play("walk")
 		elif is_on_floor():
-			animation_player.play("Run")
+			animation_player.play("walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
 				$RunSound.play()
 				walk_timer.start()
+			if !is_reloading:
+				gun_ap.play("walk")
 		elif !is_on_floor():
-			animation_player.play("Fall")
+			animation_player.play("jump")
+			if !is_reloading:
+				gun_ap.play("idle")
 		
 	
 	hand.global_transform.origin = hand_loc.global_transform.origin
 	hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
 	hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
+	
+	if (!is_multiplayer_authority() and Global.is_networked_game) or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		return
 	
 	if !Global.game_paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

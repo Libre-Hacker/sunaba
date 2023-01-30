@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="QodotFGDFile" load_steps=22 format=3 uid="uid://bvp7y10gkqixm"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_qn1c2"]
-[ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_p4wpb"]
+[ext_resource type="Resource" uid="uid://cyv7m0ppysxi1" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_p4wpb"]
 [ext_resource type="Resource" uid="uid://b8aisardk4k4u" path="res://addons/qodot/game_definitions/fgd/solid_classes/detail_solid_class.tres" id="3_ca0ap"]
-[ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres" id="4_kyola"]
+[ext_resource type="Resource" uid="uid://bgw7j83e2ts10" path="res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres" id="4_kyola"]
 [ext_resource type="Resource" uid="uid://c5o31v30rw7v5" path="res://addons/qodot/game_definitions/fgd/base_classes/light_base_class.tres" id="5_dox0e"]
 [ext_resource type="Resource" uid="uid://ccwosedfa8v8d" path="res://addons/qodot/game_definitions/fgd/point_classes/light_point_class.tres" id="6_yd4fr"]
 [ext_resource type="Resource" uid="uid://cdxunnbtsh1gf" path="res://entities/ai_bot.tres" id="7_7b7tg"]
-[ext_resource type="Resource" uid="uid://cbteturfda87g" path="res://entities/ai_imagebot.tres" id="8_atel0"]
+[ext_resource type="Resource" uid="uid://woddqisumc1u" path="res://entities/ai_enemy.tres" id="8_aj8bx"]
 [ext_resource type="Resource" uid="uid://dlivmlucfbrxk" path="res://entities/an_day.tres" id="9_dnqfc"]
 [ext_resource type="Resource" uid="uid://ryx74i67bcv2" path="res://entities/an_night.tres" id="10_ql2os"]
 [ext_resource type="Resource" uid="uid://b42j6fcrbbl2h" path="res://entities/an_spring.tres" id="11_md5b1"]
@@ -28,4 +28,4 @@ export_file = false
 target_folder = "C:/QuakeDev/TrenchBroom/games/Sunaba_sp"
 fgd_name = "Sunaba"
 base_fgd_files = []
-entity_definitions = [ExtResource("1_qn1c2"), ExtResource("2_p4wpb"), ExtResource("3_ca0ap"), ExtResource("4_kyola"), ExtResource("1_qn1c2"), ExtResource("5_dox0e"), ExtResource("6_yd4fr"), ExtResource("7_7b7tg"), ExtResource("8_atel0"), ExtResource("9_dnqfc"), ExtResource("10_ql2os"), ExtResource("11_md5b1"), ExtResource("12_yu0ev"), ExtResource("13_spmfr"), ExtResource("14_qqik6"), ExtResource("15_8g6n7"), ExtResource("16_ots11"), ExtResource("17_rk8x8"), ExtResource("18_2gw68"), ExtResource("19_kcyfd"), ExtResource("20_h2f7l")]
+entity_definitions = [ExtResource("1_qn1c2"), ExtResource("2_p4wpb"), ExtResource("3_ca0ap"), ExtResource("4_kyola"), ExtResource("1_qn1c2"), ExtResource("5_dox0e"), ExtResource("6_yd4fr"), ExtResource("7_7b7tg"), ExtResource("8_aj8bx"), ExtResource("9_dnqfc"), ExtResource("10_ql2os"), ExtResource("11_md5b1"), ExtResource("12_yu0ev"), ExtResource("13_spmfr"), ExtResource("14_qqik6"), ExtResource("15_8g6n7"), ExtResource("16_ots11"), ExtResource("17_rk8x8"), ExtResource("18_2gw68"), ExtResource("19_kcyfd"), ExtResource("20_h2f7l"), ExtResource("8_aj8bx")]

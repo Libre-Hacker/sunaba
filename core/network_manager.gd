@@ -47,7 +47,8 @@ func _player_joined(id):
 func _on_player_status_changed():
 	pass
 
-@rpc(any_peer) func chat(id , chatstring):
+#@rpc(any_peer) 
+func chat(id , chatstring):
 	get_parent().chat(id, chatstring)
 
 func get_address():

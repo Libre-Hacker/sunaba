@@ -5,10 +5,13 @@ extends Node
 var map_path = ""
 
 func _ready() -> void:
+	$MenuMusic.play()
+	
 	$UI.theme = ThemeManager.theme
 	Global.game_started = false
 	Global.game_paused = false
-	Console.register_env("sp", self)
+	Global.is_networked_game = false
+	Console.register_env("sb", self)
 	
 	Console.notify(" ")
 	Console.notify("Sunaba")
@@ -56,10 +59,12 @@ func _on_map_file_selected(path):
 
 func play(map = null):
 	if map_path == "" and !map == null:
-		map_path = "res://maps/tbx_" + map + ".map"
+		map_path = + map
 	if FileAccess.file_exists(map_path):
 		Global.game_started = true
 		world.load_map(map_path)
+		$UI/MainMenu.hide()
+		$MenuMusic.stop()
 	else: 
 		var i = map_path
 		map_path = ""

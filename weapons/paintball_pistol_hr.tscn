@@ -6,6 +6,8 @@
 
 [node name="Paintball Pistol" type="Node3D"]
 script = ExtResource("1")
+damage = 8
+max_ammo = 18
 weapon_path = "res://entities/wp_pistol.tscn"
 bullet_hole_path = "res://weapons/paintball_bullet_decal.tscn"
 

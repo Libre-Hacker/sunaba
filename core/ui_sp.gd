@@ -3,7 +3,7 @@ extends Node
 @onready var room_controls = $Bottombar/RoomControls
 
 func  _ready():
-	$MainMenu.hide()
+	$MainMenu.show()
 	$PauseMenu.hide()
 
 func _on_create_button_pressed():

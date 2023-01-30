@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://b06wa3ta6uoul"]
+
+[ext_resource type="Script" path="res://entities/ai_enemy.gd" id="1_8l7q4"]
+[ext_resource type="PackedScene" uid="uid://bunf532f5lei7" path="res://actors/himiko.tscn" id="2_18o5r"]
+[ext_resource type="SystemFont" uid="uid://cqat8ggu5yb4l" path="res://assets/fonts/segoe_ui.tres" id="3_ih8tv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t432i"]
+radius = 0.28
+height = 1.508
+
+[sub_resource type="SphereMesh" id="SphereMesh_o1tlp"]
+
+[sub_resource type="CapsuleShape3D" id="1"]
+radius = 0.280286
+height = 1.50758
+
+[node name="Bot" type="CharacterBody3D" groups=["bot", "enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.595865, 0)
+script = ExtResource("1_8l7q4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756, 0)
+mesh = SubResource("CapsuleMesh_t432i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.354531, -0.263701)
+mesh = SubResource("SphereMesh_o1tlp")
+
+[node name="Himiko" parent="." instance=ExtResource("2_18o5r")]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756158, 0)
+shape = SubResource("1")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+avoidance_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
+
+[node name="Hand" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.455246)
+
+[node name="Reach" type="RayCast3D" parent="Head"]
+target_position = Vector3(0, 0, -2.5)
+
+[node name="AimCast" type="RayCast3D" parent="Head"]
+visible = false
+target_position = Vector3(0, 0, -1000)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93488, 0)
+billboard = 1
+text = "Bot  100 / 100"
+font = ExtResource("3_ih8tv")
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="Timer" to="." method="_start"]
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

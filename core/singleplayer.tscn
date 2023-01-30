@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxg2rd6ljotc5"]
+[gd_scene load_steps=14 format=3 uid="uid://cxg2rd6ljotc5"]
 
 [ext_resource type="Script" path="res://core/sp.gd" id="1_i3kni"]
 [ext_resource type="Script" path="res://core/ui_sp.gd" id="1_tsa20"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bevdxpypkmjw5" path="res://assets/fonts/fredoka_one.ttf" id="6_7henw"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="7_da63q"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="10_7btxg"]
+[ext_resource type="AudioStream" uid="uid://ddrwdmru5rf72" path="res://assets/audio/music/Blown Away.mp3" id="10_gcvsi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
 cell_height = 0.01
@@ -36,7 +37,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
@@ -46,7 +46,7 @@ handle_input_locally = false
 mesh_lod_threshold = 0.0
 audio_listener_enable_3d = true
 physics_object_picking = true
-size = Vector2i(640, 434)
+size = Vector2i(640, 480)
 render_target_update_mode = 4
 
 [node name="World3D" type="Node3D" parent="UI/SubViewportContainer/WorldViewport"]
@@ -66,7 +66,7 @@ map_file = "C:/sunaba/maps/test.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("4_n5q3i")
 base_texture_dir = "res://textures"
-texture_file_extensions = PackedStringArray("png")
+texture_file_extensions = PackedStringArray("png", "jpg")
 worldspawn_layers = []
 brush_clip_texture = "special/clip"
 face_skip_texture = "special/skip"
@@ -91,7 +91,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n63q7")
@@ -153,12 +152,10 @@ flat = true
 alignment = 0
 
 [node name="MainMenu" type="Control" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -175,13 +172,18 @@ stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 layout_mode = 1
-offset_left = 23.0
-offset_top = 21.0
-offset_right = 173.0
-offset_bottom = 157.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -197.0
+offset_right = 213.0
+offset_bottom = -69.0
+grow_vertical = 0
 alignment = 2
 
 [node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -194,6 +196,7 @@ flat = true
 alignment = 0
 
 [node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -201,7 +204,7 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Load"
+text = "Connect"
 flat = true
 alignment = 0
 
@@ -229,37 +232,18 @@ text = "Quit"
 flat = true
 alignment = 0
 
-[node name="Bottombar" type="Panel" parent="UI"]
+[node name="Logo" type="Label" parent="UI/MainMenu"]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -46.0
-grow_horizontal = 2
+offset_left = 39.0
+offset_top = -62.0
+offset_right = 199.0
 grow_vertical = 0
-
-[node name="Label" type="Label" parent="UI/Bottombar"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -132.0
-grow_horizontal = 0
-grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_7henw")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 30
 text = "sunaba"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RoomControls" type="Control" parent="UI/Bottombar"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 381.0
-grow_vertical = 2
 
 [node name="NewRoomDialog" type="Window" parent="UI"]
 title = "New Room"
@@ -304,18 +288,15 @@ title = "Settings"
 visible = false
 gui = NodePath("..")
 
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_gcvsi")
+
 [connection signal="build_complete" from="UI/SubViewportContainer/WorldViewport/World3D/NavigationRegion3D/QodotMap" to="UI/SubViewportContainer/WorldViewport/World3D" method="_on_qodot_map_build_complete" flags=18]
 [connection signal="timeout" from="UI/SubViewportContainer/WorldViewport/World3D/RespawnTimer" to="UI/SubViewportContainer/WorldViewport/World3D" method="_on_respawn_timer_timeout" flags=18]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button4" to="UI" method="unpause"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button1" to="." method="reload"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button3" to="." method="quit"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="_on_create_button_pressed"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="_on_load_game_button_pressed"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="quit"]
-[connection signal="mouse_entered" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Bottombar" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
 [connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="_on_new_room_dialog_close_requested"]
 [connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]

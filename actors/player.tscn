@@ -1,58 +1,139 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5nuf4h4ran7h"]
+[gd_scene load_steps=22 format=3 uid="uid://dyssdc8jlqn0n"]
 
+[ext_resource type="PackedScene" uid="uid://c17ttacko1pda" path="res://actors/akari.tscn" id="2_4smke"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
-[ext_resource type="PackedScene" uid="uid://d8olreee2un1" path="res://actors/arms.tscn" id="4_dvh8j"]
-[ext_resource type="PackedScene" uid="uid://bunf532f5lei7" path="res://actors/himiko.tscn" id="6"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
 [ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
-[ext_resource type="AudioStream" uid="uid://chklfqvc6bg31" path="res://assets/audio/reload.wav" id="10_p73lo"]
-[ext_resource type="AudioStream" uid="uid://b3wingefaqimg" path="res://assets/audio/sprint.wav" id="11_iosef"]
-[ext_resource type="AudioStream" uid="uid://c15y24ipmu1da" path="res://assets/audio/ammo_pickup.wav" id="14_qvd4k"]
+[ext_resource type="AudioStream" uid="uid://dhowolwhhtbay" path="res://assets/audio/reload.mp3" id="10_huo2t"]
+[ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f3lw"]
-
-[sub_resource type="Animation" id="Animation_joxh4"]
-resource_name = "holding"
-tracks/0/type = "position_3d"
+[sub_resource type="Animation" id="Animation_ay0jg"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("HandLoc:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array()
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_evwgg"]
-_data = {
-"holding": SubResource("Animation_joxh4")
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dehkx"]
+[sub_resource type="Animation" id="Animation_0084n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759)]
+}
+
+[sub_resource type="Animation" id="Animation_2xox5"]
+resource_name = "walk"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
+}
+
+[sub_resource type="Animation" id="Animation_euarl"]
+resource_name = "reload"
+length = 2.38
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 2, 2.37838),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3icu1"]
+_data = {
+"RESET": SubResource("Animation_0084n"),
+"idle": SubResource("Animation_ay0jg"),
+"reload": SubResource("Animation_euarl"),
+"walk": SubResource("Animation_2xox5")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8fju8"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogc31"]
-bg_color = Color(0.87451, 0.305882, 0.027451, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5voi"]
+bg_color = Color(1, 1, 1, 0.501961)
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmd0f"]
-bg_color = Color(0.0470588, 0.65098, 0.898039, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rihgh"]
+bg_color = Color(0.87451, 0.305882, 0.027451, 0.501961)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyroj"]
+bg_color = Color(1, 1, 1, 0.501961)
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e1x"]
+bg_color = Color(0.0470588, 0.65098, 0.898039, 0.501961)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6g0bk"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/sync = true
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("4")
+default_speed = 4
 jump_impulse = 10
 
-[node name="Himiko" parent="." instance=ExtResource("6")]
+[node name="akari" parent="." instance=ExtResource("2_4smke")]
 visible = false
 
 [node name="Head" type="Node3D" parent="."]
@@ -90,48 +171,18 @@ target_position = Vector3(0, 0, -1000)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.199886, -0.348759)
 
 [node name="HandLoc" type="Node3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.199886, -0.348759)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.348759)
 
-[node name="arms" parent="Head" instance=ExtResource("4_dvh8j")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.1306, 0)
-visible = false
-
-[node name="Skeleton3D" parent="Head/arms/Armature" index="1"]
-bones/26/rotation = Quaternion(0.664566, -0.414346, -0.4365, -0.442873)
-bones/26/scale = Vector3(1, 1, 1)
-bones/27/rotation = Quaternion(-0.0119119, -0.0519365, 0.233921, 0.970794)
-bones/27/scale = Vector3(1, 1, 1)
-bones/30/position = Vector3(0.000315861, 0.0612169, 0.000349013)
-bones/30/rotation = Quaternion(-0.185996, 0.101676, 0.0203153, 0.977064)
-bones/30/scale = Vector3(1, 1, 1)
-bones/31/rotation = Quaternion(-0.563381, 0.16371, -0.0547666, 0.807961)
-bones/31/scale = Vector3(1, 0.999999, 1)
-bones/33/rotation = Quaternion(-0.614403, -0.197416, 0.292247, 0.705781)
-bones/33/scale = Vector3(1, 0.999999, 1)
-bones/34/rotation = Quaternion(0.148103, -0.0694197, -0.319961, 0.933205)
-bones/34/scale = Vector3(1, 1, 1)
-bones/35/rotation = Quaternion(0.148228, -0.0345154, -0.255691, 0.954704)
-bones/37/rotation = Quaternion(-0.332213, 0.0737631, -0.00669207, 0.940292)
-bones/37/scale = Vector3(1, 1, 1)
-bones/38/rotation = Quaternion(-0.54978, 0.100467, -0.0496781, 0.827756)
-bones/38/scale = Vector3(1, 1, 1)
-bones/41/rotation = Quaternion(-0.403308, 0.0146707, 0.0109317, 0.914881)
-bones/41/scale = Vector3(1, 0.999999, 1)
-bones/42/rotation = Quaternion(-0.396092, 0.0629935, 0.0135213, 0.915948)
-bones/42/scale = Vector3(1, 0.999999, 1)
-
-[node name="Base Mesh" parent="Head/arms/Armature/Skeleton3D" index="0"]
-surface_material_override/3 = SubResource("StandardMaterial3D_0f3lw")
-surface_material_override/4 = SubResource("StandardMaterial3D_0f3lw")
-
-[node name="AnimationPlayer" parent="Head/arms/Armature/Skeleton3D" index="1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head"]
+autoplay = "idle"
+playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_evwgg")
+"": SubResource("AnimationLibrary_3icu1")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_dehkx")
+shape = SubResource("CapsuleShape3D_8fju8")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -155,7 +206,6 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
-mouse_filter = 0
 texture = ExtResource("10")
 stretch_mode = 5
 
@@ -171,7 +221,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_ogc31")
+theme_override_styles/background = SubResource("StyleBoxFlat_c5voi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rihgh")
 value = 100.0
 show_percentage = false
 
@@ -184,7 +235,6 @@ offset_top = -10.0
 offset_right = 30.0
 offset_bottom = 11.0
 grow_vertical = 2
-mouse_filter = 0
 texture = ExtResource("7")
 expand_mode = 1
 
@@ -195,7 +245,6 @@ anchor_bottom = 1.0
 offset_left = 35.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -213,7 +262,6 @@ offset_top = 4.0
 offset_right = -5.0
 offset_bottom = 30.0
 grow_horizontal = 0
-mouse_filter = 0
 text = "Player"
 vertical_alignment = 1
 
@@ -227,7 +275,6 @@ offset_top = 5.0
 offset_right = -13.0
 offset_bottom = 29.0
 grow_horizontal = 0
-mouse_filter = 0
 texture = ExtResource("7_aigaw")
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
@@ -253,12 +300,12 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
-mouse_filter = 0
 texture = ExtResource("10")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -269,7 +316,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_lmd0f")
+theme_override_styles/background = SubResource("StyleBoxFlat_yyroj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_62e1x")
 value = 100.0
 show_percentage = false
 
@@ -280,7 +328,6 @@ anchor_bottom = 1.0
 offset_right = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -298,7 +345,6 @@ offset_top = 4.0
 offset_right = -16.0
 offset_bottom = 30.0
 grow_horizontal = 0
-mouse_filter = 0
 text = "Gun A"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -315,7 +361,6 @@ offset_right = 14.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
 texture = ExtResource("9")
 
 [node name="Label" type="Label" parent="Hud/Crosshair"]
@@ -338,33 +383,29 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="ReloadTimer" type="Timer" parent="."]
-wait_time = 0.96
+wait_time = 2.38
 
 [node name="FireTimer" type="Timer" parent="."]
 wait_time = 0.1
 
 [node name="WalkSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_a1b3j")
-volume_db = -10.0
 
 [node name="RunSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_gg78m")
-volume_db = -10.0
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.35
 
 [node name="ReloadSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_p73lo")
-
-[node name="SprintSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_iosef")
+stream = ExtResource("10_huo2t")
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_qvd4k")
+stream = ExtResource("11_yir2u")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_6g0bk")
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
-
-[editable path="Head/arms"]

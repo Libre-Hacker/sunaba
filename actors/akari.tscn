@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://c17ttacko1pda"]
 
 [ext_resource type="PackedScene" uid="uid://c6v5mr235dqt4" path="res://assets/models/akari/akari.vrm" id="1_5ud86"]
-[ext_resource type="Texture2D" path="res://assets/textures/pale.png" id="2_fij3e"]
+[ext_resource type="Texture2D" uid="uid://dm1vjmabeln7i" path="res://assets/textures/pale.png" id="2_fij3e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a5xf"]
 albedo_texture = ExtResource("2_fij3e")

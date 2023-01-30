@@ -1,4 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuanlqv1fq2px"]
+[gd_scene load_steps=5 format=3 uid="uid://cuanlqv1fq2px"]
+
+[ext_resource type="Texture2D" uid="uid://dguim8nsrbj3m" path="res://assets/ui/88x31.png" id="1_k3fy5"]
+[ext_resource type="Texture2D" uid="uid://c6hxsv83fbt0d" path="res://assets/ui/mit_icon.png" id="2_rxxbx"]
+[ext_resource type="Texture2D" uid="uid://cfe3kie0blqn3" path="res://assets/ui/gpl3.png" id="3_mwd5d"]
 
 [sub_resource type="GDScript" id="GDScript_qb0mn"]
 script/source = "extends RichTextLabel
@@ -51,6 +55,56 @@ offset_right = -8.0
 offset_bottom = -8.0
 text = "Sunaba"
 script = SubResource("GDScript_qb0mn")
+
+[node name="TextureRect" type="TextureRect" parent="TabBar/TabContainer/?"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -40.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_k3fy5")
+
+[node name="TextureRect2" type="TextureRect" parent="TabBar/TabContainer/?"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -67.0
+offset_top = -100.0
+offset_right = -13.0
+offset_bottom = -46.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_rxxbx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="TabBar/TabContainer/?"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -189.0
+offset_top = -40.0
+offset_right = -107.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_mwd5d")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Theme" type="Control" parent="TabBar/TabContainer"]
 visible = false

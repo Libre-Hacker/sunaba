@@ -14,7 +14,7 @@ agent_max_climb = 0.01
 script = ExtResource("2")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://actors/mp_player.tscn", "res://core/map_holder.tscn")
+_spawnable_scenes = PackedStringArray("res://core/map_holder.tscn", "res://actors/player.tscn")
 spawn_path = NodePath("..")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]

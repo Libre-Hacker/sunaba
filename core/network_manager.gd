@@ -23,6 +23,7 @@ func create_room():
 	multiplayer.multiplayer_peer = enet_peer
 	multiplayer.peer_connected.connect(_player_joined)
 	Global.game_started = true
+	Global.is_networked_game = true
 	
 	get_parent().log_to_chat("Room created")
 	get_parent().enable_chat()
@@ -33,6 +34,8 @@ func create_room():
 func join_room(address):
 	enet_peer.create_client(address, 8070)
 	multiplayer.multiplayer_peer = enet_peer
+	Global.is_networked_game = true
+	Global.game_started = true
 
 
 func _on_room_joined(id : String):
@@ -42,6 +45,7 @@ func _player_joined(id):
 	Global.game_started = true
 	get_parent().log_to_chat(var_to_str(id) + " has joined")
 	get_parent().enable_chat()
+	world.player_joined(id)
 
 
 func _on_player_status_changed():

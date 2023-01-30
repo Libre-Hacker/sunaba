@@ -305,25 +305,25 @@ namespace Qodot
 			float df = Mathf.Abs(face.planeNormal.Dot(FORWARD_VECTOR));
 
 			if (du >= dr && du >= df)
-				uvOut = new Vector2(vertex.X, -vertex.Y);
+				uvOut = new Vector2(vertex.x, -vertex.y);
 			else if (dr >= du && dr >= df)
-				uvOut = new Vector2(vertex.X, -vertex.Z);
+				uvOut = new Vector2(vertex.x, -vertex.z);
 			else if (df >= du && df >= dr)
-				uvOut = new Vector2(vertex.Y, -vertex.Z);
+				uvOut = new Vector2(vertex.y, -vertex.z);
 
 			float angle = Mathf.DegToRad(face.uvExtra.rot);
 			uvOut = new Vector2(
-				uvOut.X * Mathf.Cos(angle) - uvOut.Y * Mathf.Sin(angle),
-				uvOut.X * Mathf.Sin(angle) + uvOut.Y * Mathf.Cos(angle));
+				uvOut.x * Mathf.Cos(angle) - uvOut.y * Mathf.Sin(angle),
+				uvOut.x * Mathf.Sin(angle) + uvOut.y * Mathf.Cos(angle));
 
-			uvOut.X /= texW;
-			uvOut.Y /= texH;
+			uvOut.x /= texW;
+			uvOut.y /= texH;
 
-			uvOut.X /= face.uvExtra.scaleX;
-			uvOut.Y /= face.uvExtra.scaleY;
+			uvOut.x /= face.uvExtra.scaleX;
+			uvOut.y /= face.uvExtra.scaleY;
 
-			uvOut.X += face.uvStandard.X / texW;
-			uvOut.Y += face.uvStandard.Y / texH;
+			uvOut.x += face.uvStandard.x / texW;
+			uvOut.y += face.uvStandard.y / texH;
 
 			return uvOut;
 		}
@@ -336,17 +336,17 @@ namespace Qodot
 			float uShift = face.uvValve.u.offset;
 			float vShift = face.uvValve.v.offset;
 	
-			uvOut.X = uAxis.Dot(vertex);
-			uvOut.Y = vAxis.Dot(vertex);
+			uvOut.x = uAxis.Dot(vertex);
+			uvOut.y = vAxis.Dot(vertex);
 	
-			uvOut.X /= texW;
-			uvOut.Y /= texH;
+			uvOut.x /= texW;
+			uvOut.y /= texH;
 	
-			uvOut.X /= face.uvExtra.scaleX;
-			uvOut.Y /= face.uvExtra.scaleY;
+			uvOut.x /= face.uvExtra.scaleX;
+			uvOut.y /= face.uvExtra.scaleY;
 	
-			uvOut.X += uShift / texW;
-			uvOut.Y += vShift / texH;
+			uvOut.x += uShift / texW;
+			uvOut.y += vShift / texH;
 
 			return uvOut;
 		}
@@ -382,7 +382,7 @@ namespace Qodot
 			vSign *= Mathf.Sign(face.uvExtra.scaleY);
 			uAxis = uAxis.Rotated(face.planeNormal, Mathf.DegToRad(-face.uvExtra.rot) * vSign);
 
-			return new Vector4(uAxis.X, uAxis.Y, uAxis.Z, vSign);
+			return new Vector4(uAxis.x, uAxis.y, uAxis.z, vSign);
 		}
 
 		private Vector4 GetValveTangent(ref Face face)
@@ -391,7 +391,7 @@ namespace Qodot
 			Vector3 vAxis = face.uvValve.v.axis.Normalized();
 			float vSign = -Mathf.Sign(face.planeNormal.Cross(uAxis).Dot(vAxis));
 
-			return new Vector4(uAxis.X, uAxis.Y, uAxis.Z, vSign);
+			return new Vector4(uAxis.x, uAxis.y, uAxis.z, vSign);
 		}
 
 		private int GetBrushVertexCount(int entityIdx, int brushIdx)

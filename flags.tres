@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1")
 use_native_fd = false
-online_play_enabled = false
-version_number = "0.2.8"
+online_play_enabled = true
+version_number = "0.2.9"
 build_date = "January 30th 2023"

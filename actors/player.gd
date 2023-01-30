@@ -40,7 +40,7 @@ var view_mode : bool = false
 @onready var fp_camera = $Head/Camera3D
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
 @onready var model = $akari
-@onready var arms_model = $Head/arms
+#@onready var arms_model = $Head/arms
 @onready var animation_player = $akari/anim
 @onready var gun_ap = $Head/AnimationPlayer
 @onready var hand_loc = $Head/HandLoc
@@ -72,6 +72,11 @@ func _ready():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		reach = fp_reach
 		aimcast = fp_aimcast
+		if str(name) == var_to_str(multiplayer.get_unique_id()):
+			$Hud/Panel/Label.text = "Player " + str(name)
+		$Hud/Crosshair.show()
+		$Hud/Panel.show()
+		$Hud/ToolPanel.show()
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
@@ -356,6 +361,9 @@ func _fire():
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
 			if target.is_in_group("bot"):
+				print("hit bot")
+				target.health -= damage
+			elif target.is_in_group("player"):
 				print("hit bot")
 				target.health -= damage
 			else:

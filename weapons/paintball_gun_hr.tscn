@@ -6,7 +6,8 @@
 
 [node name="AutoGun" type="Node3D"]
 script = ExtResource("11")
-max_ammo = 25
+damage = 10
+max_ammo = 30
 weapon_type = "auto"
 weapon_path = "res://entities/wp_pbgun.tscn"
 bullet_hole_path = "res://weapons/paintball_bullet_decal.tscn"

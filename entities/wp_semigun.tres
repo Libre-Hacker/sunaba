@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://bxxhf3xj2h2g1"]
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://dvhvn45g310nk"]
 
-[ext_resource type="PackedScene" uid="uid://5yo1xlba4gpk" path="res://entities/wp_pbgun.tscn" id="1_urs3a"]
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_sihto"]
+[ext_resource type="PackedScene" uid="uid://fes56iisosr1" path="res://entities/wp_semigun.tscn" id="1_ak2n4"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_hesm6"]
 
 [resource]
-script = ExtResource("2_sihto")
+script = ExtResource("2_hesm6")
 scene = "----------------------------------------------------------------"
-scene_file = ExtResource("1_urs3a")
+scene_file = ExtResource("1_ak2n4")
 scripting = "----------------------------------------------------------------"
 class_options = "----------------------------------------------------------------"
-classname = "wp_autogun"
+classname = "wp_semigun"
 description = "Paintball Gun"
 qodot_internal = false
 base_classes = []

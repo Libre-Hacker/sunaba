@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx5n6raunehj2"]
+
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="1_odk7j"]
+[ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/paintball.wav" id="3_141vi"]
+[ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://weapons/semi_gun_mesh.tscn" id="3_xmdrg"]
+
+[node name="SemiGun" type="Node3D"]
+script = ExtResource("1_odk7j")
+damage = 10
+max_ammo = 25
+weapon_path = "res://entities/wp_semigun.tscn"
+bullet_hole_path = "res://weapons/paintball_bullet_decal.tscn"
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
+
+[node name="WeaponSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_141vi")
+
+[node name="GunMesh" parent="." instance=ExtResource("3_xmdrg")]

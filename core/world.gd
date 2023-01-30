@@ -50,7 +50,7 @@ func prep_for_respawn():
 func on_mouse_entered():
 	mouse_over_ui = true
 
-#@rpc(call_local)
+@rpc(call_local)
 func load_map_remote():
 	load_map(get_node("map_holder").map)
 
@@ -65,7 +65,9 @@ func _on_respawn_timer_timeout():
 	log_to_chat("Respawning Player")
 	instance_player(multiplayer.get_unique_id())
 
+@rpc(any_peer)
 func instance_player(id):
+	print(var_to_str(id))
 	var player_instance = load("res://actors/player.tscn").instantiate()
 	player_instance.name = str(id)
 	add_child(player_instance)
@@ -77,12 +79,16 @@ func instance_player(id):
 		player_instance.global_transform.origin = Global.spawnpoints.pick_random()
 
 func player_joined(id):
-	load_map_remote().rpc_id(id)
-	instance_player(id)
+	rpc_id(id, "load_map_remote")
 
 func _on_qodot_map_build_complete():
 	qodot_map.unwrap_uv2()
 	navregion.bake_navigation_mesh()
+	var id = multiplayer.get_unique_id()
+	if id != 1:
+		rpc_id(1, "instance_player", id)
+	else:
+		instance_player(id)
 
 
 

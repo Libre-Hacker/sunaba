@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnaheix8jti6"]
+[gd_scene load_steps=7 format=3 uid="uid://bnaheix8jti6"]
 
 [ext_resource type="Script" path="res://core/world.gd" id="2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_bntab"]
 [ext_resource type="Resource" uid="uid://cwkhcm4yps6w3" path="res://trenchbroom/toonbox_fgd.tres" id="3_5tfqn"]
+[ext_resource type="PackedScene" uid="uid://buowo1g152een" path="res://entities/ev_daytime.tscn" id="4_a8ctp"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
 cell_height = 0.01
 agent_max_climb = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yj4oq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jikin"]
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")
@@ -22,7 +23,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="QodotMap" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("2_bntab")
-map_file = "C:/sunaba/maps/dm_test.map"
+map_file = "C:/sunaba/maps/sb_city.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("3_5tfqn")
 base_texture_dir = "res://textures"
@@ -34,7 +35,7 @@ texture_wads = []
 material_file_extension = "tres"
 unshaded = true
 default_material_albedo_uniform = ""
-default_material = SubResource("StandardMaterial3D_yj4oq")
+default_material = SubResource("StandardMaterial3D_jikin")
 uv_unwrap_texel_size = 1.0
 print_profiling_data = false
 use_trenchbroom_group_hierarchy = false
@@ -47,6 +48,8 @@ one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.963303, 0.268415, 0, -0.268415, 0.963303, 0, 10.4708, 18.5674)
+
+[node name="ev_daytime" parent="." instance=ExtResource("4_a8ctp")]
 
 [connection signal="build_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_build_complete"]
 [connection signal="unwrap_uv2_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_unwrap_uv_2_complete"]

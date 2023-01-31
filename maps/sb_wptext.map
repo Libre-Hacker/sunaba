@@ -80,3 +80,8 @@
 "classname" "wp_semigun"
 "origin" "40 -40 24"
 }
+// entity 7
+{
+"classname" "wp_sniper"
+"origin" "0 -40 24"
+}

@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Sunaba"
-#define MyAppVersion "0.2.9"
+#define MyAppVersion "0.2.10"
 #define MyAppPublisher "Sunaba"
 #define MyAppURL "https://www.example.com/"
 #define MyAppExeName "Sunaba.exe"

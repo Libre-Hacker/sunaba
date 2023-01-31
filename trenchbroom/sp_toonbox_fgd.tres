@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=22 format=3 uid="uid://bvp7y10gkqixm"]
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=24 format=3 uid="uid://bvp7y10gkqixm"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_qn1c2"]
 [ext_resource type="Resource" uid="uid://cyv7m0ppysxi1" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_p4wpb"]
@@ -15,12 +15,14 @@
 [ext_resource type="Resource" uid="uid://cv4yjq4r2oy0g" path="res://entities/ev_dreamy.tres" id="13_spmfr"]
 [ext_resource type="Resource" uid="uid://b30vjnu67j4t6" path="res://entities/ev_night.tres" id="14_qqik6"]
 [ext_resource type="Resource" uid="uid://c38kabkqmfcbl" path="res://entities/ev_void.tres" id="15_8g6n7"]
-[ext_resource type="Resource" uid="uid://dx01rn24gm35d" path="res://entities/sp_player.tres" id="16_ots11"]
+[ext_resource type="Resource" uid="uid://is7qtbrfk2tj" path="res://entities/pl_vanilla.tres" id="16_pckt8"]
 [ext_resource type="Resource" uid="uid://bg8gk2pq7nvq7" path="res://entities/wp_dartgun.tres" id="17_rk8x8"]
 [ext_resource type="Resource" uid="uid://bxxhf3xj2h2g1" path="res://entities/wp_pbgun.tres" id="18_2gw68"]
 [ext_resource type="Resource" uid="uid://bmt1txjn5p74f" path="res://entities/wp_pistol.tres" id="19_kcyfd"]
 [ext_resource type="Resource" uid="uid://dt8oawl1vnqx6" path="res://entities/lt_omni.tres" id="20_h2f7l"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="20_il0kg"]
+[ext_resource type="Resource" uid="uid://dvhvn45g310nk" path="res://entities/wp_semigun.tres" id="21_ksoed"]
+[ext_resource type="Resource" uid="uid://de3revmmi5yvk" path="res://entities/wp_sniper.tres" id="22_ix2nu"]
 
 [resource]
 script = ExtResource("20_il0kg")
@@ -28,4 +30,4 @@ export_file = false
 target_folder = "C:/QuakeDev/TrenchBroom/games/Sunaba_sp"
 fgd_name = "Sunaba"
 base_fgd_files = []
-entity_definitions = [ExtResource("1_qn1c2"), ExtResource("2_p4wpb"), ExtResource("3_ca0ap"), ExtResource("4_kyola"), ExtResource("1_qn1c2"), ExtResource("5_dox0e"), ExtResource("6_yd4fr"), ExtResource("7_7b7tg"), ExtResource("8_aj8bx"), ExtResource("9_dnqfc"), ExtResource("10_ql2os"), ExtResource("11_md5b1"), ExtResource("12_yu0ev"), ExtResource("13_spmfr"), ExtResource("14_qqik6"), ExtResource("15_8g6n7"), ExtResource("16_ots11"), ExtResource("17_rk8x8"), ExtResource("18_2gw68"), ExtResource("19_kcyfd"), ExtResource("20_h2f7l"), ExtResource("8_aj8bx")]
+entity_definitions = [ExtResource("1_qn1c2"), ExtResource("2_p4wpb"), ExtResource("3_ca0ap"), ExtResource("4_kyola"), ExtResource("1_qn1c2"), ExtResource("5_dox0e"), ExtResource("6_yd4fr"), ExtResource("7_7b7tg"), ExtResource("8_aj8bx"), ExtResource("9_dnqfc"), ExtResource("10_ql2os"), ExtResource("11_md5b1"), ExtResource("12_yu0ev"), ExtResource("13_spmfr"), ExtResource("14_qqik6"), ExtResource("15_8g6n7"), ExtResource("16_pckt8"), ExtResource("17_rk8x8"), ExtResource("18_2gw68"), ExtResource("19_kcyfd"), ExtResource("20_h2f7l"), ExtResource("8_aj8bx"), ExtResource("21_ksoed"), ExtResource("22_ix2nu")]

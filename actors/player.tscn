@@ -127,6 +127,21 @@ properties/0/sync = true
 properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
 properties/1/sync = true
+properties/2/path = NodePath("Head:position")
+properties/2/spawn = true
+properties/2/sync = true
+properties/3/path = NodePath("Head:rotation")
+properties/3/spawn = true
+properties/3/sync = true
+properties/4/path = NodePath(".:vel")
+properties/4/spawn = true
+properties/4/sync = true
+properties/5/path = NodePath("Head/AnimationPlayer:current_animation")
+properties/5/spawn = true
+properties/5/sync = true
+properties/6/path = NodePath("akari/anim:current_animation")
+properties/6/spawn = true
+properties/6/sync = true
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("4")
@@ -134,6 +149,7 @@ default_speed = 4
 jump_impulse = 10
 
 [node name="akari" parent="." instance=ExtResource("2_4smke")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 visible = false
 
 [node name="Head" type="Node3D" parent="."]
@@ -412,3 +428,5 @@ replication_config = SubResource("SceneReplicationConfig_6g0bk")
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+
+[editable path="akari"]

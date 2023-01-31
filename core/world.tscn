@@ -9,7 +9,7 @@
 cell_height = 0.01
 agent_max_climb = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jikin"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qffr7"]
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("2")
@@ -33,9 +33,9 @@ brush_clip_texture = "special/clip"
 face_skip_texture = "special/skip"
 texture_wads = []
 material_file_extension = "tres"
-unshaded = true
+unshaded = false
 default_material_albedo_uniform = ""
-default_material = SubResource("StandardMaterial3D_jikin")
+default_material = SubResource("StandardMaterial3D_qffr7")
 uv_unwrap_texel_size = 1.0
 print_profiling_data = false
 use_trenchbroom_group_hierarchy = false
@@ -52,5 +52,4 @@ transform = Transform3D(1, 0, 0, 0, 0.963303, 0.268415, 0, -0.268415, 0.963303, 
 [node name="ev_daytime" parent="." instance=ExtResource("4_a8ctp")]
 
 [connection signal="build_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_build_complete"]
-[connection signal="unwrap_uv2_complete" from="NavigationRegion3D/QodotMap" to="." method="_on_qodot_map_unwrap_uv_2_complete"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

@@ -1,6 +1,6 @@
 extends Node
 
-@onready var world = $UI/SubViewportContainer/WorldViewport/World3D
+@onready var world = $World3D
 
 var map_path = ""
 
@@ -58,6 +58,7 @@ func _on_map_file_selected(path):
 	Console.notify("Map selected - " + map_path)
 
 func play(map = null):
+	Global.is_networked_game = false
 	if map_path == "" and !map == null:
 		map_path = + map
 	if FileAccess.file_exists(map_path):

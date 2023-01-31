@@ -9,7 +9,7 @@ extends CharacterBody3D
 @export var gravity : int = -40
 @export var default_walk_sound_time : float = 0.35
 @export var sprint_walk_sound_time : float = 0.24
-
+@export var vel : Vector3 = velocity
 @export var mouse_sensitivity : float = 1
 @export var controller_sensitivity : int = 25
 
@@ -113,7 +113,7 @@ func _input(event):
 			head.global_rotation = Vector3.ZERO
 	
 	
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+	if (event is InputEventMouseMotion) and (Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED):
 		if !view_mode:
 			var mouse_axis : Vector2 = event.relative if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED else Vector2.ZERO
 			rotation.y -= mouse_axis.x * mouse_sensitivity * .001
@@ -144,22 +144,11 @@ func _input(event):
 		if tool_to_spawn != null:
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
-					get_parent().add_child(tool_to_drop)
-					tool_to_drop.global_transform = hand_loc.global_transform
-					tool_to_drop.dropped = true
-					hand.get_child(0).queue_free()
-			tool_label.text = tool_to_spawn.get_name()
-			reach.get_collider().queue_free()
-			hand.add_child(tool_to_spawn)
-			ammo = tool_to_spawn.max_ammo
-			max_ammo = tool_to_spawn.max_ammo
-			$FireTimer.wait_time = tool_to_spawn.cooldown_time
-			damage = tool_to_spawn.damage
-			weapon_type = tool_to_spawn.weapon_type
-			tool_to_spawn.rotation = hand_loc.rotation
-			muzzle = tool_to_spawn.get_node("Muzzle")
-			$Hud/ToolPanel.show()
-			$PickupSound.play()
+					equip(tool_to_spawn, tool_to_drop)
+					rpc("equip", tool_to_spawn, tool_to_drop)
+			else:
+				equip(tool_to_spawn)
+				rpc("equip", tool_to_spawn)
 	
 	
 	
@@ -167,11 +156,38 @@ func _input(event):
 		if is_reloading: return
 		is_reloading = true
 		$ReloadSound.play()
+		#$ReloadSound.rpc("play")
 		$ReloadTimer.start()
 		reload_label.show()
 		gun_ap.play("reload")
+		#gun_ap.rpc("play", "reload")
 	
-	
+@rpc("any_peer")
+func equip(tool2, tool1 = null):
+	var ttd
+	if tool1 != null:
+		ttd = load(tool1).instantiate()
+	var tts = load(tool2).instantiate()
+	if hand.get_child_count() > 0:
+		if hand.get_child(0) != null:
+			get_parent().add_child(ttd)
+			ttd.global_transform = hand_loc.global_transform
+			ttd.dropped = true
+			hand.get_child(0).queue_free()
+	tool_label.text = tts.get_name()
+	if is_multiplayer_authority() or !Global.is_networked_game:
+		fp_reach.get_collider().queue_free()
+	hand.add_child(tts)
+	ammo = tts.max_ammo
+	max_ammo = tts.max_ammo
+	$FireTimer.wait_time = tts.cooldown_time
+	damage = tts.damage
+	weapon_type = tts.weapon_type
+	tts.rotation = hand_loc.rotation
+	muzzle = tts.get_node("Muzzle")
+	if is_multiplayer_authority() or !Global.is_networked_game:
+		$Hud/ToolPanel.show()
+	$PickupSound.play()
 
 func _physics_process(delta):
 	if is_multiplayer_authority() or !Global.is_networked_game:
@@ -190,40 +206,61 @@ func _physics_process(delta):
 		set_floor_max_angle(.7853)
 		move_and_slide()
 		velocity = velocity
+		vel = velocity
 	
 	if is_on_floor():
 		times_jumped = 0
 	
-	if velocity.length() == 0:
+	if (velocity.length() == 0) or (vel.length() == 0):
 		animation_player.play("idle")
+		#animation_player.rpc("play", "idle")
 		if !is_reloading:
 			gun_ap.play("idle")
+			#gun_ap.rpc("play", "idle")
 	else:
 		if max_speed == default_speed and is_on_floor():
 			animation_player.play("walk")
+			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
 				$WalkSound.play()
 				walk_timer.start()
 			if !is_reloading:
 				gun_ap.play("walk")
+				#gun_ap.rpc("play", "walk")
 		elif is_on_floor():
 			animation_player.play("walk")
+			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
 				$RunSound.play()
 				walk_timer.start()
 			if !is_reloading:
 				gun_ap.play("walk")
+				#gun_ap.rpc("play", "walk")
 		elif !is_on_floor():
 			animation_player.play("jump")
+			#animation_player.rpc("play", "jump")
 			if !is_reloading:
 				gun_ap.play("idle")
+				#gun_ap.rpc("play", "idle")
 		
 	
 	hand.global_transform.origin = hand_loc.global_transform.origin
 	hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
 	hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
+	
+	if hand.get_child_count() > 0:
+		if hand.get_child(0) != null:
+			#if hand.get_child(0).get_name() == "Paintball Gun":
+				#tool_to_drop = pb_gun.instantiate()
+			#elif hand.get_child(0).get_name() == "Paintball Pistol":
+				#tool_to_drop = pb_pistol.instantiate()
+			tool_to_drop = hand.get_child(0).weapon_path
+		else:
+			tool_to_drop = null
+	else:
+		tool_to_drop = null
 	
 	if (!is_multiplayer_authority() and Global.is_networked_game) or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		return
@@ -233,8 +270,6 @@ func _physics_process(delta):
 		crosshair.show()
 	
 	$Hud/Panel/HealthBar.value = health
-	if health == 0:
-		die()
 	
 	$Hud/Panel.theme = ThemeManager.theme
 	$Hud/ToolPanel.theme = ThemeManager.theme
@@ -242,8 +277,6 @@ func _physics_process(delta):
 	tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
 	tool_ammo_bar.value = ammo
 	tool_ammo_bar.max_value = max_ammo
-	health_bar.value = health
-	health_counter.text = var_to_str(health)
 	if is_on_floor():
 		max_speed = default_speed
 		walk_timer.wait_time = default_walk_sound_time
@@ -256,23 +289,13 @@ func _physics_process(delta):
 	
 	if reach.is_colliding():
 		if "wp" in reach.get_collider().get_name():
-			tool_to_spawn = reach.get_collider().get_weapon().instantiate()
+			tool_to_spawn = reach.get_collider().weapon_path
 		else:
 			tool_to_spawn = null
 	else:
 		tool_to_spawn = null
 	
-	if hand.get_child_count() > 0:
-		if hand.get_child(0) != null:
-			#if hand.get_child(0).get_name() == "Paintball Gun":
-				#tool_to_drop = pb_gun.instantiate()
-			#elif hand.get_child(0).get_name() == "Paintball Pistol":
-				#tool_to_drop = pb_pistol.instantiate()
-			tool_to_drop = hand.get_child(0).get_weapon().instantiate()
-		else:
-			tool_to_drop = null
-	else:
-		tool_to_drop = null
+	
 	
 	if weapon_type == "semi":
 		if Input.is_action_just_pressed("action_button"):
@@ -351,8 +374,22 @@ func apply_controller_rotation():
 
 func die():
 	get_parent().prep_for_respawn()
-	queue_free()
+	if (str_to_var(name) == 1) or !Global.is_networked_game:
+		drop()
+	else: 
+		drop()
+		rpc_id(1, "drop")
+	print("dead")
 
+func drop():
+	if hand.get_child_count() > 0:
+		if hand.get_child(0) != null:
+			var ttd = load(tool_to_drop).instantiate()
+			get_parent().add_child(ttd)
+			ttd.global_transform = hand_loc.global_transform
+			ttd.dropped = true
+			hand.get_child(0).queue_free()
+	queue_free()
 
 func _fire():
 	if !is_reloading and ammo != 0:
@@ -364,17 +401,33 @@ func _fire():
 				print("hit bot")
 				target.health -= damage
 			elif target.is_in_group("player"):
-				print("hit bot")
-				target.health -= damage
+				#print("hit player")
+				var id = target.name
+				target.rpc_id(str_to_var(id), "take_damage", damage)
 			else:
-				var b_decal = hand.get_child(0).get_bullet_hole()
-				var b = b_decal.instantiate()
-				target.add_child(b)
-				b.global_transform.origin = aimcast.get_collision_point()
-				#b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal())
+				var b_decal = hand.get_child(0).bullet_hole_path
+				add_bullet_hole(b_decal)
+				rpc("add_bullet_hole", b_decal)
 	has_fired = true
 	if weapon_type == "auto":
 		$FireTimer.start()
+
+@rpc("any_peer")
+func take_damage(dmg):
+	health -= dmg
+	health_bar.value = health
+	health_counter.text = var_to_str(health)
+	if health == 0:
+		die()
+
+@rpc("any_peer")
+func add_bullet_hole(b_dec_path):
+	var target = fp_aimcast.get_collider()
+	var b_decal = load(b_dec_path)
+	var b = b_decal.instantiate()
+	target.add_child(b)
+	b.global_transform.origin = fp_aimcast.get_collision_point()
+	#b.look_at(aimcast.get_collision_point() + aimcast.get_collision_normal())
 
 func _on_reload_timer_timeout():
 	$ReloadTimer.stop()

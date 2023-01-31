@@ -6,7 +6,7 @@ var address = "localhost"
 @onready var network_manager = $NetworkManager
 @onready var chatbox = $UI/Chatbox
 @onready var chat_entry = $UI/Bottombar/RoomControls/ChatEntry
-@onready var world = $UI/SubViewportContainer/WorldViewport/World3D
+@onready var world = $World3D
 
 func _ready() -> void:
 	chat_entry.editable = false
@@ -105,6 +105,9 @@ func play(map = null):
 	if map != null:
 		path = map
 	create_room()
+
+func play_sp():
+	get_tree().change_scene_to_file("res://core/singleplayer.tscn")
 
 func set_map_file():
 	$UI/FileDialog.popup_centered()

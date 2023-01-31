@@ -27,9 +27,6 @@ func _on_NativeDialogOpenFile_files_selected(files: PackedStringArray):
 		_on_file_selected(path)
 
 
-func _on_play_button_pressed():
-	$SubViewportContainer/WorldViewport/World3D.load_map("user://server/index.map")
-
 
 func _on_connect_button_pressed():
 	if Build.online_play_enabled:

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0skvnxvqoonc"]
+
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="1_vk80n"]
+[ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/paintball.wav" id="2_hs7rh"]
+[ext_resource type="PackedScene" uid="uid://l776p0iwvjy4" path="res://weapons/sniper_mesh.tscn" id="3_dtfb7"]
+
+[node name="Sniper" type="Node3D"]
+script = ExtResource("1_vk80n")
+damage = 100
+max_ammo = 1
+weapon_path = "res://entities/wp_semigun.tscn"
+bullet_hole_path = "res://weapons/paintball_bullet_decal.tscn"
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
+
+[node name="WeaponSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hs7rh")
+
+[node name="GunMesh" parent="." instance=ExtResource("3_dtfb7")]

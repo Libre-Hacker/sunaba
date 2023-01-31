@@ -1,6 +1,5 @@
 extends Node3D
 
-@export var main_node_path : NodePath
 
 var map = null
 
@@ -15,7 +14,7 @@ var qodot_map_instance = null
 
 @onready var qodot_map = $NavigationRegion3D/QodotMap
 @onready var navregion = $NavigationRegion3D
-@onready var main_node = get_node(main_node_path)
+@onready var main_node = get_parent()
 
 var player = null
 var spawnpoint : Vector3
@@ -50,7 +49,7 @@ func prep_for_respawn():
 func on_mouse_entered():
 	mouse_over_ui = true
 
-@rpc(call_local)
+@rpc("call_local")
 func load_map_remote():
 	load_map(get_node("map_holder").map)
 
@@ -63,9 +62,13 @@ func log_to_chat(msg):
 
 func _on_respawn_timer_timeout():
 	log_to_chat("Respawning Player")
-	instance_player(multiplayer.get_unique_id())
+	var id = multiplayer.get_unique_id()
+	if id != 1:
+		rpc_id(1, "instance_player", id)
+	else:
+		instance_player(id)
 
-@rpc(any_peer)
+@rpc("any_peer")
 func instance_player(id):
 	print(var_to_str(id))
 	var player_instance = load("res://actors/player.tscn").instantiate()

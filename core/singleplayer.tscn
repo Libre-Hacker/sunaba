@@ -23,6 +23,42 @@ bg_color = Color(0, 0, 0, 0.607843)
 [node name="Main" type="Node"]
 script = ExtResource("1_i3kni")
 
+[node name="World3D" type="Node3D" parent="."]
+script = ExtResource("3_6pipj")
+main_node_path = NodePath("..")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="World3D"]
+_spawnable_scenes = PackedStringArray("res://actors/player.tscn", "res://core/map_holder.tscn")
+spawn_path = NodePath("..")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="World3D"]
+navigation_mesh = SubResource("NavigationMesh_pypmj")
+
+[node name="QodotMap" type="Node3D" parent="World3D/NavigationRegion3D"]
+script = ExtResource("4_5f6rt")
+map_file = "C:/sunaba/maps/test.map"
+inverse_scale_factor = 16.0
+entity_fgd = ExtResource("4_n5q3i")
+base_texture_dir = "res://textures"
+texture_file_extensions = PackedStringArray("png", "jpg")
+worldspawn_layers = []
+brush_clip_texture = "special/clip"
+face_skip_texture = "special/skip"
+texture_wads = []
+material_file_extension = "tres"
+unshaded = false
+default_material_albedo_uniform = ""
+default_material = SubResource("StandardMaterial3D_j22il")
+uv_unwrap_texel_size = 1.0
+print_profiling_data = false
+use_trenchbroom_group_hierarchy = false
+tree_attach_batch_size = null
+set_owner_batch_size = 1000
+
+[node name="RespawnTimer" type="Timer" parent="World3D"]
+wait_time = 5.0
+one_shot = true
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -48,42 +84,6 @@ audio_listener_enable_3d = true
 physics_object_picking = true
 size = Vector2i(640, 480)
 render_target_update_mode = 4
-
-[node name="World3D" type="Node3D" parent="UI/SubViewportContainer/WorldViewport"]
-script = ExtResource("3_6pipj")
-main_node_path = NodePath("../../../..")
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="UI/SubViewportContainer/WorldViewport/World3D"]
-_spawnable_scenes = PackedStringArray("res://actors/player.tscn", "res://core/map_holder.tscn")
-spawn_path = NodePath("..")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="UI/SubViewportContainer/WorldViewport/World3D"]
-navigation_mesh = SubResource("NavigationMesh_pypmj")
-
-[node name="QodotMap" type="Node3D" parent="UI/SubViewportContainer/WorldViewport/World3D/NavigationRegion3D"]
-script = ExtResource("4_5f6rt")
-map_file = "C:/sunaba/maps/test.map"
-inverse_scale_factor = 16.0
-entity_fgd = ExtResource("4_n5q3i")
-base_texture_dir = "res://textures"
-texture_file_extensions = PackedStringArray("png", "jpg")
-worldspawn_layers = []
-brush_clip_texture = "special/clip"
-face_skip_texture = "special/skip"
-texture_wads = []
-material_file_extension = "tres"
-unshaded = false
-default_material_albedo_uniform = ""
-default_material = SubResource("StandardMaterial3D_j22il")
-uv_unwrap_texel_size = 1.0
-print_profiling_data = false
-use_trenchbroom_group_hierarchy = false
-tree_attach_batch_size = null
-set_owner_batch_size = 1000
-
-[node name="RespawnTimer" type="Timer" parent="UI/SubViewportContainer/WorldViewport/World3D"]
-wait_time = 5.0
-one_shot = true
 
 [node name="PauseMenu" type="Panel" parent="UI"]
 visible = false
@@ -291,20 +291,20 @@ gui = NodePath("..")
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_gcvsi")
 
-[connection signal="build_complete" from="UI/SubViewportContainer/WorldViewport/World3D/NavigationRegion3D/QodotMap" to="UI/SubViewportContainer/WorldViewport/World3D" method="_on_qodot_map_build_complete" flags=18]
-[connection signal="timeout" from="UI/SubViewportContainer/WorldViewport/World3D/RespawnTimer" to="UI/SubViewportContainer/WorldViewport/World3D" method="_on_respawn_timer_timeout" flags=18]
+[connection signal="build_complete" from="World3D/NavigationRegion3D/QodotMap" to="World3D" method="_on_qodot_map_build_complete" flags=18]
+[connection signal="timeout" from="World3D/RespawnTimer" to="World3D" method="_on_respawn_timer_timeout" flags=18]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button4" to="UI" method="unpause"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button1" to="." method="reload"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer/Button3" to="." method="quit"]
 [connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="_on_new_room_dialog_close_requested"]
-[connection signal="mouse_entered" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/NewRoomDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/NewRoomDialog" to="World3D" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/NewRoomDialog" to="World3D" method="on_mouse_exited"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="create_room"]
 [connection signal="close_requested" from="UI/FileDialog" to="UI" method="_on_file_dialog_close_requested"]
 [connection signal="file_selected" from="UI/FileDialog" to="." method="_on_map_file_selected"]
-[connection signal="mouse_entered" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/SettingsDialog" to="UI/SubViewportContainer/WorldViewport/World3D" method="on_mouse_exited"]
+[connection signal="mouse_entered" from="UI/SettingsDialog" to="World3D" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/SettingsDialog" to="World3D" method="on_mouse_exited"]
 
 [editable path="UI/NewRoomDialog/NewRoom"]

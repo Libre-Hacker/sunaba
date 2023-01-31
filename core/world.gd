@@ -25,7 +25,7 @@ func _ready():
 	#QodotDependencies.check_dependencies(http_request)
 
 func _physics_process(_delta):
-	if !player == null:
+	if !Global.player == null:
 		pass#get_tree().call_group("bot", "update_target_location", player.global_transform.origin)
 
 func chat(_name, msg):
@@ -75,7 +75,7 @@ func instance_player(id):
 	player_instance.name = str(id)
 	add_child(player_instance)
 	if id == multiplayer.get_unique_id():
-		player = player_instance
+		Global.player = player_instance
 	if Global.game_mode == "":
 		player_instance.global_transform.origin = spawnpoint
 	elif Global.game_mode == "Deathmatch":

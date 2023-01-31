@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dhowolwhhtbay" path="res://assets/audio/reload.mp3" id="10_huo2t"]
 [ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="Animation" id="Animation_0084n"]
+[sub_resource type="Animation" id="Animation_3t26l"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_ay0jg"]
+[sub_resource type="Animation" id="Animation_caijy"]
 resource_name = "idle"
 length = 5.0
 loop_mode = 1
@@ -43,7 +43,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_euarl"]
+[sub_resource type="Animation" id="Animation_55lj4"]
 resource_name = "reload"
 length = 2.38
 tracks/0/type = "value"
@@ -59,7 +59,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
 }
 
-[sub_resource type="Animation" id="Animation_2xox5"]
+[sub_resource type="Animation" id="Animation_dv10w"]
 resource_name = "walk"
 length = 3.0
 loop_mode = 1
@@ -76,19 +76,19 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3icu1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5r6qd"]
 _data = {
-"RESET": SubResource("Animation_0084n"),
-"idle": SubResource("Animation_ay0jg"),
-"reload": SubResource("Animation_euarl"),
-"walk": SubResource("Animation_2xox5")
+"RESET": SubResource("Animation_3t26l"),
+"idle": SubResource("Animation_caijy"),
+"reload": SubResource("Animation_55lj4"),
+"walk": SubResource("Animation_dv10w")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8fju8"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqnhu"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5voi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmoe8"]
 bg_color = Color(1, 1, 1, 0.501961)
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
@@ -97,14 +97,14 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rihgh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pgkt"]
 bg_color = Color(0.87451, 0.305882, 0.027451, 0.501961)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyroj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30kb1"]
 bg_color = Color(1, 1, 1, 0.501961)
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
@@ -113,14 +113,14 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e1x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rofoj"]
 bg_color = Color(0.0470588, 0.65098, 0.898039, 0.501961)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6g0bk"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bl4ui"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -193,12 +193,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.34875
 autoplay = "idle"
 playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_3icu1")
+"": SubResource("AnimationLibrary_5r6qd")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_8fju8")
+shape = SubResource("CapsuleShape3D_hqnhu")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -238,8 +238,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_c5voi")
-theme_override_styles/fill = SubResource("StyleBoxFlat_rihgh")
+theme_override_styles/background = SubResource("StyleBoxFlat_cmoe8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4pgkt")
 value = 100.0
 show_percentage = false
 
@@ -334,8 +334,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_yyroj")
-theme_override_styles/fill = SubResource("StyleBoxFlat_62e1x")
+theme_override_styles/background = SubResource("StyleBoxFlat_30kb1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rofoj")
 value = 100.0
 show_percentage = false
 
@@ -423,7 +423,7 @@ stream = ExtResource("10_huo2t")
 stream = ExtResource("11_yir2u")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_6g0bk")
+replication_config = SubResource("SceneReplicationConfig_bl4ui")
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

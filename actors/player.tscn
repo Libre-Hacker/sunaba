@@ -150,7 +150,6 @@ jump_impulse = 10
 
 [node name="akari" parent="." instance=ExtResource("2_4smke")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
-visible = false
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)

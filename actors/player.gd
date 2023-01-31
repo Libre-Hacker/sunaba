@@ -41,7 +41,7 @@ var view_mode : bool = false
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
 @onready var model = $akari
 #@onready var arms_model = $Head/arms
-@onready var animation_player = $akari/anim
+@onready var animation_player = $akari/AnimationPlayer
 @onready var gun_ap = $Head/AnimationPlayer
 @onready var hand_loc = $Head/HandLoc
 @onready var hand = $Head/Hand
@@ -212,14 +212,14 @@ func _physics_process(delta):
 		times_jumped = 0
 	
 	if (velocity.length() == 0) or (vel.length() == 0):
-		animation_player.play("idle")
+		animation_player.play("Locomotion-Library/idle1")
 		#animation_player.rpc("play", "idle")
 		if !is_reloading:
 			gun_ap.play("idle")
 			#gun_ap.rpc("play", "idle")
 	else:
 		if max_speed == default_speed and is_on_floor():
-			animation_player.play("walk")
+			animation_player.play("Locomotion-Library/walk")
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -229,7 +229,7 @@ func _physics_process(delta):
 				gun_ap.play("walk")
 				#gun_ap.rpc("play", "walk")
 		elif is_on_floor():
-			animation_player.play("walk")
+			animation_player.play("Locomotion-Library/walk")
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -239,7 +239,7 @@ func _physics_process(delta):
 				gun_ap.play("walk")
 				#gun_ap.rpc("play", "walk")
 		elif !is_on_floor():
-			animation_player.play("jump")
+			animation_player.play("Locomotion-Library/jump")
 			#animation_player.rpc("play", "jump")
 			if !is_reloading:
 				gun_ap.play("idle")
@@ -281,7 +281,7 @@ func _physics_process(delta):
 		max_speed = default_speed
 		walk_timer.wait_time = default_walk_sound_time
 	else:
-		max_speed += 0.1
+		max_speed += 0.25
 	$Hud/Panel/SprintingIcon.hide()
 	
 	
@@ -312,14 +312,14 @@ func _physics_process(delta):
 					if !has_fired:
 							_fire()
 	
-	if Input.is_action_pressed("sprint"): #and is_on_floor():
-		max_speed = sprint_speed
-		walk_timer.wait_time = sprint_walk_sound_time
-		$Hud/Panel/SprintingIcon.show()
-	elif Input.is_action_pressed("sprint") and !is_on_floor():
-		max_speed += 1
-		walk_timer.wait_time = sprint_walk_sound_time
-		$Hud/Panel/SprintingIcon.show()
+	#if Input.is_action_pressed("sprint"): #and is_on_floor():
+		#max_speed = sprint_speed
+		#walk_timer.wait_time = sprint_walk_sound_time
+		#$Hud/Panel/SprintingIcon.show()
+	#elif Input.is_action_pressed("sprint") and !is_on_floor():
+		#max_speed += 1
+		#walk_timer.wait_time = sprint_walk_sound_time
+		#$Hud/Panel/SprintingIcon.show()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

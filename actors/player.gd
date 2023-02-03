@@ -77,10 +77,12 @@ func _ready():
 		$Hud/Crosshair.show()
 		$Hud/Panel.show()
 		$Hud/ToolPanel.show()
+		Console.register_env("player", self)
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
 	#arms_model.visible = is_multiplayer_authority()
+	get_parent().get_node("OutOfBounds").connect("body_entered", Callable(self, "out_of_bounds"))
 	
 	reload_label.hide()
 	$Hud/ToolPanel.hide()
@@ -412,8 +414,11 @@ func _fire():
 	if weapon_type == "auto":
 		$FireTimer.start()
 
+func out_of_bounds(_area):
+	take_damage(100)
+
 @rpc("any_peer")
-func take_damage(dmg):
+func take_damage(dmg : int):
 	health -= dmg
 	health_bar.value = health
 	health_counter.text = var_to_str(health)

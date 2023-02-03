@@ -74,6 +74,7 @@ func instance_player(id):
 	var player_instance = load("res://actors/player.tscn").instantiate()
 	player_instance.name = str(id)
 	add_child(player_instance)
+	#$OutOfBounds.connect("body_entered", Callable(player_instance, "out_of_bounds"))
 	if id == multiplayer.get_unique_id():
 		Global.player = player_instance
 	if Global.game_mode == "":

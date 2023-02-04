@@ -69,6 +69,7 @@ surface_material_override/6 = SubResource("StandardMaterial3D_0yxbb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 autoplay = "Locomotion-Library/Tpose"
+playback_default_blend_time = 1.0
 libraries = {
 "Locomotion-Library": ExtResource("2_okp2a")
 }

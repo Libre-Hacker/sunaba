@@ -168,20 +168,30 @@
 // entity 6
 {
 "classname" "wp_pistol"
-"origin" "40 40 72"
+"origin" "40 -40 72"
 }
 // entity 7
 {
-"classname" "wp_pbgun"
-"origin" "-40 40 72"
+"classname" "wp_dartgun"
+"origin" "40 40 72"
 }
 // entity 8
 {
-"classname" "wp_dartgun"
-"origin" "-40 -40 72"
+"classname" "ev_day"
+"origin" "-8 8 72"
 }
 // entity 9
 {
-"classname" "ev_day"
-"origin" "-8 8 72"
+"classname" "wp_autogun"
+"origin" "-40 40 72"
+}
+// entity 10
+{
+"classname" "wp_semigun"
+"origin" "-40 -40 72"
+}
+// entity 11
+{
+"classname" "wp_sniper"
+"origin" "-40 0 72"
 }

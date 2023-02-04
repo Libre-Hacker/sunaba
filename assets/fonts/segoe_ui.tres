@@ -5,4 +5,4 @@
 
 [resource]
 font_names = PackedStringArray("Segoe UI")
-fallbacks = [ExtResource("1_ya5d1"), ExtResource("2_eaalc")]
+fallbacks = Array[Font]([ExtResource("1_ya5d1"), ExtResource("2_eaalc")])

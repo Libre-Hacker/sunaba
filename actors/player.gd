@@ -69,6 +69,9 @@ func _enter_tree(): if Global.is_networked_game: set_multiplayer_authority(str(n
 
 func _ready():
 	if is_multiplayer_authority() or !Global.is_networked_game:
+		if Global.game_mode == "Deathmatch":
+			global_transform.origin = Global.spawnpoints.pick_random()
+		
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		reach = fp_reach
 		aimcast = fp_aimcast
@@ -231,7 +234,7 @@ func _physics_process(delta):
 				gun_ap.play("walk")
 				#gun_ap.rpc("play", "walk")
 		elif is_on_floor():
-			animation_player.play("Locomotion-Library/walk")
+			animation_player.play("Locomotion-Library/run")
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -314,14 +317,14 @@ func _physics_process(delta):
 					if !has_fired:
 							_fire()
 	
-	#if Input.is_action_pressed("sprint"): #and is_on_floor():
-		#max_speed = sprint_speed
-		#walk_timer.wait_time = sprint_walk_sound_time
-		#$Hud/Panel/SprintingIcon.show()
-	#elif Input.is_action_pressed("sprint") and !is_on_floor():
-		#max_speed += 1
-		#walk_timer.wait_time = sprint_walk_sound_time
-		#$Hud/Panel/SprintingIcon.show()
+	if Input.is_action_pressed("sprint"): #and is_on_floor():
+		max_speed = sprint_speed
+		walk_timer.wait_time = sprint_walk_sound_time
+		$Hud/Panel/SprintingIcon.show()
+	elif Input.is_action_pressed("sprint") and !is_on_floor():
+		max_speed += 1
+		walk_timer.wait_time = sprint_walk_sound_time
+		$Hud/Panel/SprintingIcon.show()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
@@ -358,6 +361,7 @@ func update_snap_vector():
 
 func jump():
 	if (Input.is_action_just_pressed("jump") and is_on_floor()) or (Input.is_action_just_pressed("jump") and times_jumped == 1): #or (Input.is_action_just_pressed("jump") and is_on_wall()):
+		$JumpSound.play()
 		snap_vector = Vector3.ZERO
 		velocity.y = jump_impulse
 		times_jumped += 1

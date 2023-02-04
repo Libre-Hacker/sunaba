@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=23 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="PackedScene" uid="uid://c17ttacko1pda" path="res://actors/akari.tscn" id="2_4smke"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
@@ -9,9 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
 [ext_resource type="AudioStream" uid="uid://dhowolwhhtbay" path="res://assets/audio/reload.mp3" id="10_huo2t"]
+[ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
 [ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="Animation" id="Animation_3t26l"]
+[sub_resource type="Animation" id="Animation_vh0u1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -26,7 +27,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_caijy"]
+[sub_resource type="Animation" id="Animation_yot1b"]
 resource_name = "idle"
 length = 5.0
 loop_mode = 1
@@ -43,7 +44,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_55lj4"]
+[sub_resource type="Animation" id="Animation_riav5"]
 resource_name = "reload"
 length = 2.38
 tracks/0/type = "value"
@@ -59,7 +60,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
 }
 
-[sub_resource type="Animation" id="Animation_dv10w"]
+[sub_resource type="Animation" id="Animation_jblnb"]
 resource_name = "walk"
 length = 3.0
 loop_mode = 1
@@ -76,19 +77,19 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5r6qd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4pxc0"]
 _data = {
-"RESET": SubResource("Animation_3t26l"),
-"idle": SubResource("Animation_caijy"),
-"reload": SubResource("Animation_55lj4"),
-"walk": SubResource("Animation_dv10w")
+"RESET": SubResource("Animation_vh0u1"),
+"idle": SubResource("Animation_yot1b"),
+"reload": SubResource("Animation_riav5"),
+"walk": SubResource("Animation_jblnb")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqnhu"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a7rm8"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmoe8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqdus"]
 bg_color = Color(1, 1, 1, 0.501961)
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
@@ -97,14 +98,14 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pgkt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko3ac"]
 bg_color = Color(0.87451, 0.305882, 0.027451, 0.501961)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30kb1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7fc4"]
 bg_color = Color(1, 1, 1, 0.501961)
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
@@ -113,14 +114,14 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rofoj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvu7x"]
 bg_color = Color(0.0470588, 0.65098, 0.898039, 0.501961)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bl4ui"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2eaja"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -139,7 +140,7 @@ properties/4/sync = true
 properties/5/path = NodePath("Head/AnimationPlayer:current_animation")
 properties/5/spawn = true
 properties/5/sync = true
-properties/6/path = NodePath("akari/anim:current_animation")
+properties/6/path = NodePath("akari/AnimationPlayer:current_animation")
 properties/6/spawn = true
 properties/6/sync = true
 
@@ -192,12 +193,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.34875
 autoplay = "idle"
 playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_5r6qd")
+"": SubResource("AnimationLibrary_4pxc0")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_hqnhu")
+shape = SubResource("CapsuleShape3D_a7rm8")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -237,8 +238,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_cmoe8")
-theme_override_styles/fill = SubResource("StyleBoxFlat_4pgkt")
+theme_override_styles/background = SubResource("StyleBoxFlat_oqdus")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ko3ac")
 value = 100.0
 show_percentage = false
 
@@ -333,8 +334,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_30kb1")
-theme_override_styles/fill = SubResource("StyleBoxFlat_rofoj")
+theme_override_styles/background = SubResource("StyleBoxFlat_n7fc4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pvu7x")
 value = 100.0
 show_percentage = false
 
@@ -422,7 +423,10 @@ stream = ExtResource("10_huo2t")
 stream = ExtResource("11_yir2u")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_bl4ui")
+replication_config = SubResource("SceneReplicationConfig_2eaja")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_w8a3j")
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

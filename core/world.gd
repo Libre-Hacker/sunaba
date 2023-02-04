@@ -79,8 +79,6 @@ func instance_player(id):
 		Global.player = player_instance
 	if Global.game_mode == "":
 		player_instance.global_transform.origin = spawnpoint
-	elif Global.game_mode == "Deathmatch":
-		player_instance.global_transform.origin = Global.spawnpoints.pick_random()
 
 func player_joined(id):
 	rpc_id(id, "load_map_remote")

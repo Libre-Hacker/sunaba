@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c4vp8f1okx1ab" path="res://assets/ui/godwaita/textures/arrow.png" id="20"]
 
 [sub_resource type="FontFile" id="7"]
-fallbacks = [ExtResource("9")]
+fallbacks = Array[Font]([ExtResource("9")])
 face_index = null
 embolden = null
 transform = null
@@ -245,7 +245,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="FontFile" id="4"]
-fallbacks = [ExtResource("2")]
+fallbacks = Array[Font]([ExtResource("2")])
 face_index = null
 embolden = null
 transform = null
@@ -365,7 +365,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [sub_resource type="FontFile" id="5"]
-fallbacks = [ExtResource("4")]
+fallbacks = Array[Font]([ExtResource("4")])
 face_index = null
 embolden = null
 transform = null
@@ -377,7 +377,7 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [sub_resource type="FontFile" id="6"]
-fallbacks = [ExtResource("3")]
+fallbacks = Array[Font]([ExtResource("3")])
 face_index = null
 embolden = null
 transform = null
@@ -540,7 +540,7 @@ expand_margin_left = 2.0
 expand_margin_right = 2.0
 
 [sub_resource type="FontFile" id="13"]
-fallbacks = [ExtResource("2")]
+fallbacks = Array[Font]([ExtResource("2")])
 face_index = null
 embolden = null
 transform = null

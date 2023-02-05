@@ -90,7 +90,6 @@ theme_override_constants/outline_size = 2
 scroll_following = true
 
 [node name="PauseMenu" type="Panel" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -168,6 +167,7 @@ offset_left = 39.0
 offset_top = -62.0
 offset_right = 199.0
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6y7c")
 theme_override_font_sizes/font_size = 30
 text = "sunaba"
@@ -261,6 +261,7 @@ offset_left = 39.0
 offset_top = -62.0
 offset_right = 199.0
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6y7c")
 theme_override_font_sizes/font_size = 30
 text = "sunaba"

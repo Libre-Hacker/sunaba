@@ -106,8 +106,8 @@ func play(map = null):
 		path = map
 	create_room()
 
-func play_sp():
-	get_tree().change_scene_to_file("res://core/singleplayer.tscn")
+#func play_sp():
+	#get_tree().change_scene_to_file("res://core/singleplayer.tscn")
 
 func set_map_file():
 	$UI/FileDialog.popup_centered()

@@ -2,18 +2,18 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Sunaba"
-#define MyAppVersion "0.2.10"
-#define MyAppPublisher "Sunaba"
-#define MyAppURL "https://www.example.com/"
+#define MyAppVersion "0.2.11"
+#define MyAppPublisher "mintkat"
+#define MyAppURL "https://mintkat.itch.io/sunaba"
 #define MyAppExeName "Sunaba.exe"
-#define MyAppAssocName MyAppName + " Map"
+#define MyAppAssocName MyAppName + " Map File"
 #define MyAppAssocExt ".map"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{2965CA67-E676-4B54-BA14-6D7468C092BC}
+AppId={{7C9432BE-08FD-4A77-AAA9-056D5B91870C}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -24,12 +24,11 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\sunaba\licenses.txt
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
-PrivilegesRequiredOverridesAllowed=commandline
+PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\sbinstaller
-OutputBaseFilename=SunabaInstaller
+OutputBaseFilename=Sunaba Win32
 SetupIconFile=C:\sunaba\icon.ico
 Compression=lzma
 SolidCompression=yes

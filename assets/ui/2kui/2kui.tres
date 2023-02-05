@@ -1,10 +1,9 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://cley63evv078y"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://cley63evv078y"]
 
 [ext_resource type="StyleBox" uid="uid://de1k7xu0s8ba2" path="res://assets/ui/2kui/tab_fg.tres" id="1"]
 [ext_resource type="StyleBox" uid="uid://vsre08ftarbp" path="res://assets/ui/2kui/tab_bg.tres" id="2"]
 [ext_resource type="Texture2D" uid="uid://rvl0qw1mg8sy" path="res://assets/ui/2kui/grey_button11.png" id="3"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/white.tres" id="4"]
-[ext_resource type="Texture2D" uid="uid://cqlmfqjusqb6a" path="res://assets/ui/2kui/blue_button12.png" id="5_my1vj"]
 [ext_resource type="StyleBox" uid="uid://nlmo78inhosd" path="res://assets/ui/2kui/empty.tres" id="6"]
 [ext_resource type="Texture2D" uid="uid://b8rk0dajdo304" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/collapse.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://cyfg0sjey63go" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/expand.png" id="10"]
@@ -12,7 +11,6 @@
 [ext_resource type="StyleBox" uid="uid://bbpf05uctqoiu" path="res://assets/ui/2kui/button_normal.tres" id="12"]
 [ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="13"]
 [ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="14"]
-[ext_resource type="Texture2D" uid="uid://bc1ntxdls4x1m" path="res://assets/ui/2kui/grey_panel.png" id="15"]
 [ext_resource type="Texture2D" uid="uid://dkrwbo3vb38l4" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="15_t5tpv"]
 [ext_resource type="Texture2D" uid="uid://dcqewlsh0ku1g" path="res://assets/ui/2kui/window.png" id="16"]
 [ext_resource type="StyleBox" path="res://assets/ui/2kui/panel2.tres" id="17"]
@@ -20,26 +18,46 @@
 
 [sub_resource type="StyleBoxTexture" id="11"]
 texture = ExtResource("3")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdjmt"]
-texture = ExtResource("5_my1vj")
-region_rect = Rect2(0, 0, 49, 45)
+[sub_resource type="Image" id="Image_adcho"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 186, 255, 255, 255, 57, 255, 255, 255, 142, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 189, 255, 255, 255, 58, 255, 255, 255, 0, 255, 255, 255, 6, 255, 255, 255, 133, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 190, 255, 255, 255, 68, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 4, 255, 255, 255, 124, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 78, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 2, 255, 255, 255, 113, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 90, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 1, 255, 255, 255, 102, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_n81ij"]
+image = SubResource("Image_adcho")
 
 [sub_resource type="StyleBoxTexture" id="12"]
 texture = ExtResource("3")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[sub_resource type="StyleBoxTexture" id="15"]
-texture = ExtResource("15")
-region_rect = Rect2(0, 0, 100, 100)
-
 [sub_resource type="StyleBoxTexture" id="16"]
+content_margin_left = 4.0
+content_margin_top = 30.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
 texture = ExtResource("16")
-expand_margin_left = 4.0
+texture_margin_left = 10.0
+texture_margin_top = 40.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 2.0
 expand_margin_top = 30.0
-expand_margin_right = 4.0
-expand_margin_bottom = 4.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 region_rect = Rect2(0, 0, 100, 100)
 
 [resource]
@@ -75,16 +93,26 @@ HScrollBar/styles/grabber_highlight = ExtResource("13")
 HScrollBar/styles/grabber_pressed = ExtResource("13")
 HScrollBar/styles/scroll = ExtResource("11")
 HScrollBar/styles/scroll_focus = ExtResource("11")
-HSlider/styles/grabber_area = SubResource("StyleBoxTexture_wdjmt")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_wdjmt")
+HSlider/styles/grabber_area = ExtResource("13")
+HSlider/styles/grabber_area_highlight = ExtResource("13")
 Label/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/caret_color = Color(0.95, 0.95, 0.95, 1)
+LineEdit/colors/clear_button_color = Color(0.875, 0.875, 0.875, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
 LineEdit/colors/cursor_color = Color(0, 0, 0, 1)
 LineEdit/colors/font_color = Color(0, 0, 0, 1)
 LineEdit/colors/font_color_selected = Color(1, 1, 1, 1)
 LineEdit/colors/font_color_uneditable = Color(0.462745, 0.462745, 0.462745, 0.901961)
+LineEdit/colors/font_outline_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_placeholder_color = Color(0.32549, 0.32549, 0.32549, 0.643137)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
 LineEdit/colors/font_uneditable_color = Color(0.32549, 0.32549, 0.32549, 0.643137)
 LineEdit/colors/selection_color = Color(0, 0.4, 1, 1)
+LineEdit/constants/caret_width = 1
+LineEdit/constants/minimum_character_width = 4
+LineEdit/constants/outline_size = 0
+LineEdit/font_sizes/font_size = 16
+LineEdit/icons/clear = SubResource("ImageTexture_n81ij")
 LineEdit/styles/focus = SubResource("12")
 LineEdit/styles/normal = SubResource("12")
 LineEdit/styles/read_only = SubResource("12")
@@ -107,7 +135,7 @@ PopupMenu/colors/font_disabled_color = Color(0, 0, 0, 0.8)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_separator_color = Color(0, 0, 0, 1)
 PopupMenu/styles/hover = ExtResource("13")
-PopupMenu/styles/panel = SubResource("15")
+PopupMenu/styles/panel = ExtResource("14")
 PopupPanel/styles/panel = ExtResource("4")
 ProgressBar/colors/font_color = Color(0, 0, 0, 1)
 ProgressBar/colors/font_color_shadow = Color(1, 1, 1, 1)

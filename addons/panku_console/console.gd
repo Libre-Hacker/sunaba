@@ -13,30 +13,70 @@
 class_name PankuConsole extends CanvasLayer
 
 ## Emitted when the visibility (hidden/visible) of console window changes.
-signal console_window_visibility_changed(is_visible:bool)
+signal repl_visible_about_to_change(is_visible:bool)
+signal repl_visible_changed(is_visible:bool)
+
+#Static helper classes
+const Config = preload("res://addons/panku_console/components/config.gd")
+const Utils = preload("res://addons/panku_console/components/utils.gd")
+
+#Other classes, define classes here instead of using keyword `class_name` so that the global namespace will not be affected.
+const ExporterRowUI = preload("res://addons/panku_console/components/exporter/row_ui.gd")
+const JoystickButton = preload("res://addons/panku_console/components/exporter/joystick_button.gd")
+const LynxWindow2 = preload("res://addons/panku_console/components/lynx_window2/lynx_window_2.gd")
+const lynx_window_prefab = preload("res://addons/panku_console/components/lynx_window2/lynx_window_2.tscn")
+const exp_key_mapper_prefab = preload("res://addons/panku_console/components/input_mapping/exp_key_mapper_2.tscn")
+const monitor_prefab = preload("res://addons/panku_console/components/monitor/monitor_2.tscn")
+const exporter_prefab = preload("res://addons/panku_console/components/exporter/exporter_2.tscn")
 
 ## The input action used to toggle console. By default it is KEY_QUOTELEFT.
 var toggle_console_action:String
 
 ## If [code]true[/code], pause the game when the console window is active.
-var pause_when_active:bool
+var pause_when_active:bool:
+	set(v):
+		pause_when_active = v
+		is_repl_window_opened = is_repl_window_opened
 
-@onready var _resident_logs = $ResidentLogs
-@onready var _console_window = $LynxWindows/ConsoleWindow
-@onready var _console_ui = $LynxWindows/ConsoleWindow/Body/Content/PankuConsoleUI
-@onready var _base_instance = $BaseInstance
-@onready var _windows = $LynxWindows
+var init_expression:String = ""
 
-const _monitor_widget_pck = preload("res://addons/panku_console/components/widgets2/monitor_widget.tscn")
-const _export_widget_pck = preload("res://addons/panku_console/components/widgets2/export_widget.tscn")
+var mini_repl_mode = false:
+	set(v):
+		mini_repl_mode = v
+		if is_repl_window_opened:
+			_mini_repl.visible = v
+			_full_repl.visible = !v
+
+var is_repl_window_opened := false:
+	set(v):
+		repl_visible_about_to_change.emit(v)
+		await get_tree().process_frame
+		is_repl_window_opened = v
+		if mini_repl_mode:
+			_mini_repl.visible = v
+		else:
+			_full_repl.visible = v
+		if pause_when_active:
+			_full_repl._title_btn.text = "</> Panku REPL (Paused)"
+		else:
+			_full_repl._title_btn.text = "</> Panku REPL"
+		get_tree().paused = pause_when_active and v
+		repl_visible_changed.emit(v)
+
+@export var _resident_logs:Node
+@export var _base_instance:Node
+@export var _mini_repl:Node
+@export var _full_repl:Node
+@export var godot_log_monitor:Node
+@export var output_overlay:Node
+@export var w_manager:Node
+@export var options:Node
+@export var exp_key_mapper:Node
+@export var exp_history_window:Node
 
 var _envs = {}
 var _envs_info = {}
 var _expression = Expression.new()
-
-## Returns whether the console window is opened.
-func is_console_window_opened():
-	return _console_window.visible
 
 ## Register an environment that run expressions.
 ## [br][code]env_name[/code]: the name of the environment
@@ -49,7 +89,7 @@ func register_env(env_name:String, env:Object):
 			func(): remove_env(env_name)
 		)
 	if env.get_script():
-		var env_info = PankuUtils.extract_info_from_script(env.get_script())
+		var env_info = Utils.extract_info_from_script(env.get_script())
 		for k in env_info:
 			var keyword = "%s.%s" % [env_name, k]
 			_envs_info[keyword] = env_info[k]
@@ -74,54 +114,11 @@ func notify(any) -> void:
 	output(text)
 
 func output(any) -> void:
-	_console_ui.output(any)
+	_full_repl.get_content().output(any)
 
-#This only return the expression result
+#Execute an expression in a preset environment.
 func execute(exp:String) -> Dictionary:
-#	print(exp)
-	var failed := false
-	var result
-	var error = _expression.parse(exp, _envs.keys())
-	if error != OK:
-		failed = true
-		result = _expression.get_error_text()
-	else:
-		result = _expression.execute(_envs.values(), _base_instance, true)
-		if _expression.has_execute_failed():
-			failed = true
-			result = _expression.get_error_text()
-	return {
-		"failed": failed,
-		"result": result
-	}
-
-func add_widget2(exp:String, update_period:= 999999.0, position:Vector2 = Vector2(0, 0), size:Vector2 = Vector2(160, 60), title_text := ""):
-	if title_text == "": title_text = exp
-	var w = _monitor_widget_pck.instantiate()
-	w.position = position
-	w.size = size
-	w.update_exp = exp
-	w.update_period = update_period
-	w.title_text = title_text
-	_windows.add_child(w)
-
-func add_export_widget(obj:Object):
-	var obj_name = _envs.find_key(obj)
-	if obj_name == null:
-		return
-	if !obj.get_script():
-		return
-	var export_properties = PankuUtils.get_export_properties_from_script(obj.get_script())
-	if export_properties.is_empty():
-		return
-	var w = _export_widget_pck.instantiate()
-	_windows.add_child(w)
-	w.setup(obj, export_properties)
-	w.position = Vector2(0, 0)
-	w.size = Vector2(160, 60)
-	w.title_label.text = "Export Properties (%s)"%str(obj)
-	w.set_meta("obj_name", obj_name)
-	return w
+	return Utils.execute_exp(exp, _expression, _base_instance, _envs)
 
 func get_available_export_objs() -> Array:
 	var result = []
@@ -129,90 +126,158 @@ func get_available_export_objs() -> Array:
 		var obj = _envs[obj_name]
 		if !obj.get_script():
 			continue
-		var export_properties = PankuUtils.get_export_properties_from_script(obj.get_script())
+		var export_properties = Utils.get_export_properties_from_script(obj.get_script())
 		if export_properties.is_empty():
 			continue
 		result.push_back(obj_name)
 	return result
 
+func add_exporter_window(obj:Object, window_title := ""):
+	if !obj.get_script():
+		return
+
+	var new_window:LynxWindow2 = lynx_window_prefab.instantiate()
+	if window_title == "":
+		new_window._title_btn.text = "Exporter (%s)" % str(obj)
+	else:
+		new_window._title_btn.text = window_title
+	new_window._options_btn.hide()
+	w_manager.add_child(new_window)
+	var content = exporter_prefab.instantiate()
+	new_window.set_content(content)
+	content.setup(obj)
+	new_window.centered()
+
+func add_monitor_window(exp:String, update_period:= 999999.0, position:Vector2 = Vector2(0, 0), size:Vector2 = Vector2(160, 60), title_text := ""):
+	var new_window:LynxWindow2 = lynx_window_prefab.instantiate()
+	if title_text == "": title_text = exp
+	new_window._title_btn.text = title_text
+	var content = monitor_prefab.instantiate()
+	content._update_exp = exp
+	content._update_period = update_period
+	content.change_window_title_text.connect(
+		func(text:String):
+			new_window._title_btn.text = text
+	)
+	new_window._options_btn.pressed.connect(
+		func():
+			add_exporter_window(content, "Monitor Settings")
+	)
+	new_window._title_btn.pressed.connect(content.update_exp_i)
+	w_manager.add_child(new_window)
+	new_window.set_content(content)
+	new_window.position = position
+	new_window.size = size
+	new_window.set_meta("monitor", true)
+	return new_window
+
 func show_intro():
+	output("[center][b][color=#478cbf][ Panku Console ][/color][/b][/center]")
 	output("[center][img=96]res://addons/panku_console/logo.svg[/img][/center]")
-	output("[b][color=burlywood][ Panku Console ][/color][/b]")
-	output("[color=burlywood][b][color=burlywood]Version 1.2.31[/color][/b][/color]")
-	output("[color=burlywood][b]Check [color=green]repl_console_env.gd[/color] or simply type [color=green]help[/color] to see what you can do now![/b][/color]")
-	output("[color=burlywood][b]For more info, please visit: [color=green][url=https://github.com/Ark2000/PankuConsole]project github page[/url][/color][/b][/color]")
+	output("[color=#f5f5f5][b]V1.3.61[/b][/color]\n")
+	output("Type [color=#478cbf]help[/color] to see all registered objects. For more information, please visit: [color=#478cbf][url=https://github.com/Ark2000/PankuConsole]project github page[/url][/color].")
 	output("")
+
+func open_expression_key_mapper():
+	exp_key_mapper.centered()
+	exp_key_mapper.move_to_front()
+	exp_key_mapper.show()
+
+func open_expression_history():
+	exp_history_window.centered()
+	exp_history_window.move_to_front()
+	exp_history_window.show()
 
 func _input(_e):
 	if Input.is_action_just_pressed(toggle_console_action):
-		_console_ui._input_area.input.editable = !_console_window.visible
-		await get_tree().process_frame
-		_console_window.visible = !_console_window.visible
+		is_repl_window_opened = !is_repl_window_opened
 
 func _ready():
 	assert(get_tree().current_scene != self, "Do not run this directly")
 
 	show_intro()
-
-	pause_when_active = ProjectSettings.get("panku/pause_when_active")
 	toggle_console_action = ProjectSettings.get("panku/toggle_console_action")
 	
-	print(PankuConfig.get_config())
-	_console_window.hide()
-	_console_window.visibility_changed.connect(
+#	print(Config.get_config())
+	_full_repl.hide()
+	_mini_repl.hide()
+	
+	_full_repl._options_btn.pressed.connect(
 		func():
-			console_window_visibility_changed.emit(_console_window.visible)
-			if pause_when_active:
-				get_tree().paused = _console_window.visible
-				_console_window.title_label.text = "> Panku REPL (Paused)"
-			else:
-				_console_window.title_label.text = "> Panku REPL"
+			add_exporter_window(options, "Settings")
 	)
+	
+	_full_repl.window_closed.connect(
+		func():
+			is_repl_window_opened = false
+	)
+
 	#check the action key
 	#the open console action can be change in the export options of panku.tscn
 	assert(InputMap.has_action(toggle_console_action), "Please specify an action to open the console!")
 
 	#add info of base instance
-	var env_info = PankuUtils.extract_info_from_script(_base_instance.get_script())
+	var env_info = Utils.extract_info_from_script(_base_instance.get_script())
 	for k in env_info: _envs_info[k] = env_info[k]
-	
-	#load configs
-	var cfg = PankuConfig.get_config()
 
-	if cfg.has("widgets_data"):
-		var w_data = cfg["widgets_data"]
-		for w in w_data:
-			add_widget2(w["exp"], w["period"], w["position"], w["size"], w["title"])
-		cfg["widgets_data"] = []
-	
-	await get_tree().process_frame
-	
-	if cfg.has("init_exp"):
-		var init_exp = cfg["init_exp"]
-		for e in init_exp:
-			_console_ui.execute(e)
-		cfg["init_exp"] = []
-		
-	await get_tree().process_frame
-	
-	if cfg.has("repl"):
-		_console_window.visible = cfg.repl.visible
-		_console_window.position = cfg.repl.position
-		_console_window.size = cfg.repl.size
-
-	PankuConfig.set_config(cfg)
+	load_data()
 
 func _notification(what):
 	#quit event
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		var cfg = PankuConfig.get_config()
-		if !cfg.has("repl"):
-			cfg["repl"] = {
-				"visible":false,
-				"position":Vector2(0, 0),
-				"size":Vector2(200, 200)
-			}
-		cfg.repl.visible = _console_window.visible
-		cfg.repl.position = _console_window.position
-		cfg.repl.size = _console_window.size
-		PankuConfig.set_config(cfg)
+		save_data()
+
+func load_data():
+	#load configs
+	var cfg = Config.get_config()
+	
+	init_expression = cfg.get(Utils.CFG_INIT_EXP, "")
+	execute(init_expression)
+	pause_when_active = cfg.get(Utils.CFG_PAUSE_WHEN_POPUP, false)
+	mini_repl_mode = cfg.get(Utils.CFG_MINI_REPL_MODE, false)
+	output_overlay.visible = cfg.get(Utils.CFG_OUTPUT_OVERLAY, true)
+	output_overlay.modulate.a = cfg.get(Utils.CFG_OUTPUT_OVERLAY_ALPHA, 0.5)
+	output_overlay.theme.default_font_size= cfg.get(Utils.CFG_OUTPUT_OVERLAY_FONT_SIZE, 14)
+	_full_repl.position = cfg.get(Utils.CFG_FREPL_POSITION, _full_repl.position)
+	_full_repl.size = cfg.get(Utils.CFG_FREPL_SIZE, _full_repl.size)
+
+	var blur_effect = cfg.get(Utils.CFG_WINDOW_BLUR_EFFECT, true)
+	Console._full_repl.material.set("shader_parameter/lod", 4.0 if blur_effect else 0.0)
+
+	var base_color = cfg.get(Utils.CFG_WINDOW_BASE_COLOR, Color(0, 0, 0, 0.1))
+	Console._full_repl.material.set("shader_parameter/modulate", base_color)
+
+	var shadow = cfg.get(Utils.CFG_OUTPUT_OVERLAY_FONT_SHADOW, false)
+	output_overlay.set("theme_override_colors/font_shadow_color", Color.BLACK if shadow else null)
+
+	var monitor_array = cfg.get(Utils.CFG_MONITOR_ARRAY, [])
+	for data in monitor_array:
+		callv("add_monitor_window", data)	
+
+func save_data():
+	var cfg = Config.get_config()
+	cfg[Utils.CFG_INIT_EXP] = init_expression
+	cfg[Utils.CFG_PAUSE_WHEN_POPUP] = pause_when_active
+	cfg[Utils.CFG_MINI_REPL_MODE] = mini_repl_mode
+	cfg[Utils.CFG_WINDOW_BLUR_EFFECT] = _full_repl.material.get("shader_parameter/lod") > 0.0
+	cfg[Utils.CFG_WINDOW_BASE_COLOR] = _full_repl.material.get("shader_parameter/modulate")
+	cfg[Utils.CFG_OUTPUT_OVERLAY] = output_overlay.visible
+	cfg[Utils.CFG_OUTPUT_OVERLAY_ALPHA] = output_overlay.modulate.a
+	cfg[Utils.CFG_OUTPUT_OVERLAY_FONT_SIZE] = output_overlay.theme.default_font_size
+	cfg[Utils.CFG_OUTPUT_OVERLAY_FONT_SHADOW] = output_overlay.get("theme_override_colors/font_shadow_color") != null
+	cfg[Utils.CFG_FREPL_POSITION] = _full_repl.position
+	cfg[Utils.CFG_FREPL_SIZE] = _full_repl.size
+
+	var monitor_array = []
+	for w in w_manager.get_children():
+		if w.has_meta("monitor"):
+			monitor_array.append([
+				w.get_content()._update_exp,
+				w.get_content()._update_period,
+				w.position,
+				w.size,
+				w._title_btn.text
+			])
+	cfg[Utils.CFG_MONITOR_ARRAY] = monitor_array
+
+	Config.set_config(cfg)

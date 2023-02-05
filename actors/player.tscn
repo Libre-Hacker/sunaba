@@ -2,8 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://c17ttacko1pda" path="res://actors/akari.tscn" id="2_4smke"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
+[ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="4_nrqwa"]
+[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
+[ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="8_65326"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
 [ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
@@ -12,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
 [ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="Animation" id="Animation_vh0u1"]
+[sub_resource type="Animation" id="Animation_skwct"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -27,7 +30,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_yot1b"]
+[sub_resource type="Animation" id="Animation_n4vfa"]
 resource_name = "idle"
 length = 5.0
 loop_mode = 1
@@ -44,7 +47,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_riav5"]
+[sub_resource type="Animation" id="Animation_m7bfy"]
 resource_name = "reload"
 length = 2.38
 tracks/0/type = "value"
@@ -60,7 +63,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
 }
 
-[sub_resource type="Animation" id="Animation_jblnb"]
+[sub_resource type="Animation" id="Animation_grson"]
 resource_name = "walk"
 length = 3.0
 loop_mode = 1
@@ -77,51 +80,27 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4pxc0"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4qerx"]
 _data = {
-"RESET": SubResource("Animation_vh0u1"),
-"idle": SubResource("Animation_yot1b"),
-"reload": SubResource("Animation_riav5"),
-"walk": SubResource("Animation_jblnb")
+"RESET": SubResource("Animation_skwct"),
+"idle": SubResource("Animation_n4vfa"),
+"reload": SubResource("Animation_m7bfy"),
+"walk": SubResource("Animation_grson")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a7rm8"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v6eyr"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqdus"]
-bg_color = Color(1, 1, 1, 0.501961)
-border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksi12"]
+texture = ExtResource("5_aw5sg")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 49, 45)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ko3ac"]
-bg_color = Color(0.87451, 0.305882, 0.027451, 0.501961)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7fc4"]
-bg_color = Color(1, 1, 1, 0.501961)
-border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvu7x"]
-bg_color = Color(0.0470588, 0.65098, 0.898039, 0.501961)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2eaja"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6ysex"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -151,6 +130,9 @@ jump_impulse = 10
 
 [node name="akari" parent="." instance=ExtResource("2_4smke")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+
+[node name="Hair" parent="akari/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -193,17 +175,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.34875
 autoplay = "idle"
 playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_4pxc0")
+"": SubResource("AnimationLibrary_4qerx")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_a7rm8")
+shape = SubResource("CapsuleShape3D_v6eyr")
 
 [node name="Hud" type="Node" parent="."]
 
 [node name="Panel" type="Panel" parent="Hud"]
-visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -238,8 +219,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_oqdus")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ko3ac")
+theme_override_styles/background = ExtResource("4_nrqwa")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ksi12")
 value = 100.0
 show_percentage = false
 
@@ -295,7 +276,6 @@ grow_horizontal = 0
 texture = ExtResource("7_aigaw")
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
-visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -334,8 +314,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_n7fc4")
-theme_override_styles/fill = SubResource("StyleBoxFlat_pvu7x")
+theme_override_styles/background = ExtResource("4_nrqwa")
+theme_override_styles/fill = ExtResource("8_65326")
 value = 100.0
 show_percentage = false
 
@@ -423,7 +403,7 @@ stream = ExtResource("10_huo2t")
 stream = ExtResource("11_yir2u")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_2eaja")
+replication_config = SubResource("SceneReplicationConfig_6ysex")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_w8a3j")

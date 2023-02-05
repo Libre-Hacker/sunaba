@@ -32,7 +32,7 @@ var selected:int = 0:
 			if b + c < r: b = r - c
 			bar.value = b
 
-func set_hints(texts:Array, icons:Array):
+func set_hints(texts:Array):
 	hints_count = texts.size()
 	for i in range(texts.size()):
 		var h
@@ -45,10 +45,6 @@ func set_hints(texts:Array, icons:Array):
 			h.set_meta("idx", i)
 			h.button_down.connect(func(): _on_btn_clicked(i))
 		h.label.text = texts[i]
-		if i < icons.size():
-			h.icon2.texture = icons[i]
-		else:
-			h.icon2.texture = null
 		h.set_highlight(false)
 	if texts.size() < container.get_child_count():
 		for i in range(texts.size(), container.get_child_count()):

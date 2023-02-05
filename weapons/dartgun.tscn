@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://8y2wb4rvutm2" path="res://weapons/dartgun_mesh.tscn" id="2_00on8"]
 [ext_resource type="AudioStream" uid="uid://cpayvpvqnbvim" path="res://assets/audio/nail.wav" id="3_dvvv6"]
 
-[node name="Dart Gun" type="Node3D"]
+[node name="Nail Gun" type="Node3D"]
 script = ExtResource("1_0bv6p")
 damage = 5
 cooldown_time = 0.07

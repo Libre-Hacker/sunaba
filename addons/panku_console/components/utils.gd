@@ -1,10 +1,5 @@
 #@tool
-class_name PankuUtils
 #extends EditorScript
-
-const icon_method = preload("res://addons/panku_console/res/pics/icons8-formula-fx-32.png")
-const icon_const = preload("res://addons/panku_console/res/pics/icons8-pi-32.png")
-const icon_prop = preload("res://addons/panku_console/res/pics/icons8-object-32.png")
 
 const type_names = {
 	TYPE_NIL: "null",
@@ -46,6 +41,41 @@ const type_names = {
 	TYPE_PACKED_VECTOR3_ARRAY: "PackedVector3Array",
 	TYPE_PACKED_COLOR_ARRAY: "PackedColorArray",
 }
+
+#config dictionary keys
+const CFG_INIT_EXP = "init_exp"
+const CFG_PAUSE_WHEN_POPUP = "pause_when_popup"
+const CFG_MINI_REPL_MODE = "mini_repl_mode"
+const CFG_WINDOW_BLUR_EFFECT = "window_blur_effect"
+const CFG_WINDOW_BASE_COLOR = "window_base_color"
+const CFG_OUTPUT_OVERLAY = "output_overlay"
+const CFG_OUTPUT_OVERLAY_ALPHA = "output_overlay_alpha"
+const CFG_OUTPUT_OVERLAY_FONT_SIZE = "output_overlay_font_size"
+const CFG_OUTPUT_OVERLAY_FONT_SHADOW = "output_overlay_font_shadow"
+const CFG_EXP_MAPPING_DATA = "exp_mapping_data"
+const CFG_MONITOR_ARRAY = "monitor_array"
+const CFG_FREPL_POSITION = "frepl_position"
+const CFG_FREPL_SIZE = "frepl_size"
+const CFG_EXP_HISTORY = "exp_history"
+
+static func execute_exp(exp_str:String, expression:Expression, base_instance:Object, env:Dictionary):
+	var failed := false
+	var result = null
+
+	var error = expression.parse(exp_str, env.keys())
+	if error != OK:
+		failed = true
+		result = expression.get_error_text()
+	else:
+		result = expression.execute(env.values(), base_instance, true)
+		if expression.has_execute_failed():
+			failed = true
+			result = expression.get_error_text()
+
+	return {
+		"failed": failed,
+		"result": result
+	}
 
 static func generate_help_text_from_script(script:Script):
 	var result = ["[color=cyan][b]User script defined identifiers[/b][/color]: "]
@@ -101,28 +131,36 @@ static func extract_info_from_script(script:Script):
 	#keyword -> {type, bbcode_postfix, help}
 	return result
 
-static func parse_exp(env_info:Dictionary, exp:String):
-	var result = search_and_sort_and_highlight(exp, env_info.keys())
+#TODO: refactor all those mess
+static func parse_exp(env_info:Dictionary, exp:String, allow_empty:=false):
+	var result:Array
+	var empty_flag = allow_empty and exp.is_empty()
+
+	if empty_flag:
+		result = env_info.keys()
+	else:
+		result = search_and_sort_and_highlight(exp, env_info.keys())
+
 	var hints_bbcode = []
-	var hints_icon = []
 	var hints_value = []
+	
 	for r in result:
-		var keyword = r["keyword"]
-		var bbcode_main = r["bbcode"]
+		var keyword:String
+		var bbcode_main:String
+		
+		if empty_flag:
+			keyword = r
+			bbcode_main = r
+		else:
+			keyword = r["keyword"]
+			bbcode_main = r["bbcode"]
+
 		var bbcode_postfix = env_info[keyword]["bbcode_postfix"]
 		var keyword_type = env_info[keyword]["type"]
 		hints_value.push_back(keyword)
 		hints_bbcode.push_back(bbcode_main + bbcode_postfix)
-		if keyword_type == "constant":
-			hints_icon.push_back(icon_const)
-		elif keyword_type == "method":
-			hints_icon.push_back(icon_method)
-		elif keyword_type == "property":
-			hints_icon.push_back(icon_prop)
-		else: assert(false)
 	return {
 		"hints_bbcode": hints_bbcode,
-		"hints_icon": hints_icon,
 		"hints_value": hints_value
 	}
 
@@ -131,21 +169,14 @@ static func search_and_sort_and_highlight(s:String, li:Array):
 	var matched = []
 	if s == "": return matched
 	for k in li:
-		if s.is_empty():
-			matched.append({ 
-				"keyword": k,
-				"similarity": 0,
-				"start": -1
-			})
-			continue
-
 		var start = k.find(s)
 		if start >= 0:
 			var similarity = 1.0 * s.length() / k.length()
 			matched.append({
 				"keyword": k,
 				"similarity": similarity,
-				"start": start
+				"start": start,
+				"bbcode": ""
 			})
 
 	matched.sort_custom(

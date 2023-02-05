@@ -2,19 +2,19 @@
 
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/blue_dark.tres" id="1"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/black.tres" id="2"]
-[ext_resource type="FontFile" uid="uid://dvabxqawxiomj" path="res://assets/fonts/Inter-Regular.ttf" id="3"]
+[ext_resource type="FontFile" uid="uid://ig36irsfyyym" path="res://assets/fonts/Inter-Regular.ttf" id="3"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/line_edit.tres" id="4"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/disabled.tres" id="5"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/dark_window.tres" id="6"]
 [ext_resource type="Texture2D" uid="uid://c0jduscwmkgl6" path="res://assets/ui/carbon_ui/icon_close.png" id="7"]
 
-[sub_resource type="StyleBoxEmpty" id="1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_db5sq"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 5.0
 
-[sub_resource type="StyleBoxFlat" id="2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7e1j"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
@@ -46,11 +46,11 @@ PopupMenu/styles/panel = ExtResource("2")
 PopupMenu/styles/panel_disabled = ExtResource("2")
 PopupPanel/styles/panel = ExtResource("2")
 TabContainer/styles/panel = ExtResource("2")
-TabContainer/styles/tab_bg = SubResource("1")
-TabContainer/styles/tab_disabled = SubResource("1")
-TabContainer/styles/tab_fg = SubResource("2")
-TabContainer/styles/tab_selected = SubResource("2")
-TabContainer/styles/tab_unselected = SubResource("1")
+TabContainer/styles/tab_bg = SubResource("StyleBoxEmpty_db5sq")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_db5sq")
+TabContainer/styles/tab_fg = SubResource("StyleBoxFlat_o7e1j")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_o7e1j")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxEmpty_db5sq")
 TextEdit/styles/focus = ExtResource("4")
 TextEdit/styles/normal = ExtResource("4")
 TextEdit/styles/read_only = ExtResource("5")

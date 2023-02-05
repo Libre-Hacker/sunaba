@@ -6,11 +6,11 @@
 profile = SubResource("SkeletonProfileHumanoid_mpsai")
 bonemap = null
 bone_map/Root = &""
-bone_map/Hips = &"spine"
-bone_map/Spine = &"spine.001"
-bone_map/Chest = &"spine.002"
-bone_map/UpperChest = &"spine.003"
-bone_map/Neck = &"spine.004"
+bone_map/Hips = &"hips"
+bone_map/Spine = &"waist"
+bone_map/Chest = &"chest"
+bone_map/UpperChest = &"upper_chest"
+bone_map/Neck = &"neck"
 bone_map/Head = &"face"
 bone_map/LeftEye = &"eye.L"
 bone_map/RightEye = &"eye.R"

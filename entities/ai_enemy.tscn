@@ -95,6 +95,9 @@ script = ExtResource("1_8l7q4")
 [node name="Female" parent="." instance=ExtResource("2_1d87l")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
+[node name="Hair" parent="Female/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 1.08665e-17, -2.66056e-19, -1.08665e-17, 0.998802, -0.0489386, -2.66053e-19, 0.0489386, 0.998802, -2.41742e-15, 0.936866, -0.0121887)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756, 0)
 visible = false

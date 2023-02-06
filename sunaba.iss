@@ -4,7 +4,7 @@
 #define MyAppName "Sunaba"
 #define MyAppVersion "0.2.13"
 #define MyAppPublisher "mintkat"
-#define MyAppURL "https://m1ntkat.github.io/sunaba-site/"
+#define MyAppURL "https://mintkat.itch.io/sunaba"
 #define MyAppExeName "Sunaba.exe"
 #define MyAppAssocName MyAppName + " Map File"
 #define MyAppAssocExt ".map"
@@ -29,7 +29,7 @@ PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\sbinstaller
 OutputBaseFilename=Sunaba Win32
-SetupIconFile=C:\toonbox\icon.ico
+SetupIconFile=C:\sunaba\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -41,7 +41,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\toonbox\builds\win32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\sunaba\builds\win32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\sbres\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

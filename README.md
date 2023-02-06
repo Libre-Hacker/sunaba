@@ -1,8 +1,6 @@
-#Toonbox
+# Toonbox
 
 Toonbox is a 3D sandbox game with user-generated map support. Powered by Godot 4
-
-[Download Now](downloads.md)
 
 ## Features
 

@@ -36,12 +36,16 @@ const SWAY = 50
 const VSWAY = 45
 var view_mode : bool = false
 
+var player_model : String
+
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
-@onready var model = $akari
+@onready var model = $Female
+@onready var model2 = $Male
 #@onready var arms_model = $Head/arms
-@onready var animation_player = $akari/AnimationPlayer
+@onready var animation_player = $Female/AnimationPlayer
+@onready var animation_player2 = $Male/AnimationPlayer
 @onready var gun_ap = $Head/AnimationPlayer
 @onready var hand_loc = $Head/HandLoc
 @onready var hand = $Head/Hand
@@ -84,6 +88,7 @@ func _ready():
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
+	model2.visible = !is_multiplayer_authority()
 	#arms_model.visible = is_multiplayer_authority()
 	get_parent().get_node("OutOfBounds").connect("body_entered", Callable(self, "out_of_bounds"))
 	
@@ -133,14 +138,24 @@ func _input(event):
 		if fp_camera.current == true:
 			fp_camera.current = false
 			tp_camera.current = true
-			model.visible = true
+			if Global.player_model == "male":
+				model.visible = false
+				model2.visible = true
+			elif Global.player_model == "female":
+				model.visible = true
+				model2.visible = false
 			#arms_model.visibtle = false
 			reach = tp_reach
 			aimcast = tp_aimcast
 		elif tp_camera.current == true:
 			fp_camera.current = true
 			tp_camera.current = false
-			model.visible = false
+			if Global.player_model == "male":
+				model.visible = false
+				model2.visible = !is_multiplayer_authority()
+			elif Global.player_model == "female":
+				model.visible = !is_multiplayer_authority()
+				model2.visible = false
 			#arms_model.visible = is_multiplayer_authority()
 			reach = fp_reach
 			aimcast = fp_aimcast
@@ -194,6 +209,10 @@ func equip(tool2, tool1 = null):
 		$Hud/ToolPanel.show()
 	$PickupSound.play()
 
+func _process(delta):
+	if is_multiplayer_authority() or !Global.is_networked_game:
+		player_model = Global.player_model
+
 func _physics_process(delta):
 	if is_multiplayer_authority() or !Global.is_networked_game:
 		var input_vector = get_input_vector()
@@ -218,6 +237,7 @@ func _physics_process(delta):
 	
 	if (velocity.length() == 0) or (vel.length() == 0):
 		animation_player.play("Locomotion-Library/idle1")
+		animation_player2.play("Locomotion-Library/idle1")
 		#animation_player.rpc("play", "idle")
 		if !is_reloading:
 			gun_ap.play("idle")
@@ -225,6 +245,7 @@ func _physics_process(delta):
 	else:
 		if max_speed == default_speed and is_on_floor():
 			animation_player.play("Locomotion-Library/walk")
+			animation_player2.play("Locomotion-Library/walk")
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -235,6 +256,7 @@ func _physics_process(delta):
 				#gun_ap.rpc("play", "walk")
 		elif is_on_floor():
 			animation_player.play("Locomotion-Library/run")
+			animation_player2.play("Locomotion-Library/run")
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -245,6 +267,7 @@ func _physics_process(delta):
 				#gun_ap.rpc("play", "walk")
 		elif !is_on_floor():
 			animation_player.play("Locomotion-Library/jump")
+			animation_player2.play("Locomotion-Library/jump")
 			#animation_player.rpc("play", "jump")
 			if !is_reloading:
 				gun_ap.play("idle")

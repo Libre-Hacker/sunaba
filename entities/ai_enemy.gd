@@ -11,7 +11,7 @@ var has_fired = false
 
 @onready var navigation_agent = $NavigationAgent3D
 @onready var aimcast = $Head/AimCast
-@onready var animation_player = $Himiko/AnimationPlayer
+@onready var animation_player = $Female/AnimationPlayer
 
 var target = null
 
@@ -36,11 +36,13 @@ func _process(_delta):
 	if $Head/Reach.is_colliding()and !has_fired:
 		fire()
 	
+	
+	
 	if velocity.length() == 0:
-		animation_player.play("Idle")
+		animation_player.play("Locomotion-Library/idle1")
 	else:
 		#if is_on_floor():
-		animation_player.play("Walk")
+		animation_player.play("Locomotion-Library/walk")
 		#elif !is_on_floor():
 			#animation_player.play("Fall")
 	
@@ -68,8 +70,16 @@ func _on_timer_timeout():
 
 func fire():
 	target = $Head/AimCast.get_collider()
-	if target.is_in_group("player"):
+	if target.is_in_group("bot"):
+		print("hit bot")
 		target.health -= damage
+	elif target.is_in_group("player"):
+		#print("hit player")
+		var id = target.name
+		if multiplayer.get_unique_id() == str_to_var(id):
+			target.take_damage(damage)
+		else :
+			target.rpc_id(str_to_var(id), "take_damage", damage)
 	has_fired = true
 	$FireTimer.start()
 

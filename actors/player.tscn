@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=24 format=3 uid="uid://dyssdc8jlqn0n"]
 
-[ext_resource type="PackedScene" uid="uid://c17ttacko1pda" path="res://actors/akari.tscn" id="2_4smke"]
+[ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
+[ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="2_rdd8b"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="4_nrqwa"]
 [ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
@@ -15,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
 [ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="Animation" id="Animation_hlgk0"]
+[sub_resource type="Animation" id="Animation_76bdr"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -30,7 +31,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_ogg2r"]
+[sub_resource type="Animation" id="Animation_3osyg"]
 resource_name = "idle"
 length = 5.0
 loop_mode = 1
@@ -47,7 +48,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_ecn47"]
+[sub_resource type="Animation" id="Animation_ffcwq"]
 resource_name = "reload"
 length = 2.38
 tracks/0/type = "value"
@@ -63,7 +64,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
 }
 
-[sub_resource type="Animation" id="Animation_ik4ib"]
+[sub_resource type="Animation" id="Animation_5v0wi"]
 resource_name = "walk"
 length = 3.0
 loop_mode = 1
@@ -80,19 +81,19 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctsic"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pquci"]
 _data = {
-"RESET": SubResource("Animation_hlgk0"),
-"idle": SubResource("Animation_ogg2r"),
-"reload": SubResource("Animation_ecn47"),
-"walk": SubResource("Animation_ik4ib")
+"RESET": SubResource("Animation_76bdr"),
+"idle": SubResource("Animation_3osyg"),
+"reload": SubResource("Animation_ffcwq"),
+"walk": SubResource("Animation_5v0wi")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w3wix"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yqbcx"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o6l5"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3srjm"]
 texture = ExtResource("5_aw5sg")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
@@ -100,7 +101,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_o1e4a"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_u806y"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -128,11 +129,15 @@ script = ExtResource("4")
 default_speed = 4
 jump_impulse = 10
 
-[node name="akari" parent="." instance=ExtResource("2_4smke")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+[node name="Male" parent="." instance=ExtResource("2_rdd8b")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
 
-[node name="Hair" parent="akari/Akari/GeneralSkeleton" index="0"]
+[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+
+[node name="Female" parent="." instance=ExtResource("2_od7wf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -175,12 +180,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.34875
 autoplay = "idle"
 playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_ctsic")
+"": SubResource("AnimationLibrary_pquci")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_w3wix")
+shape = SubResource("CapsuleShape3D_yqbcx")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -220,7 +225,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_nrqwa")
-theme_override_styles/fill = SubResource("StyleBoxTexture_3o6l5")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3srjm")
 value = 100.0
 show_percentage = false
 
@@ -403,7 +408,7 @@ stream = ExtResource("10_huo2t")
 stream = ExtResource("11_yir2u")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_o1e4a")
+replication_config = SubResource("SceneReplicationConfig_u806y")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_w8a3j")
@@ -412,4 +417,5 @@ stream = ExtResource("11_w8a3j")
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
 
-[editable path="akari"]
+[editable path="Male"]
+[editable path="Female"]

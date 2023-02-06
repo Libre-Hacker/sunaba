@@ -11,6 +11,8 @@ var spawnpoints : Array
 
 var game_mode : String = ""
 
+var player_model : String = "male"
+
 var player = null
 
 func _ready():

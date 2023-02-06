@@ -50,7 +50,11 @@ func change_theme(_theme):
 	ThemeManager.theme = _theme
 	#save()
 
-
+func _on_model_selected(index):
+	if index == 0:
+		Global.player_model = "male"
+	elif index == 1:
+		Global.player_model = "female"
 
 func _on_theme_selected(index):
 	print(index)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dpdsh18u6mbnt"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
-[ext_resource type="Theme" uid="uid://cley63evv078y" path="res://assets/ui/2kui/2kui.tres" id="4_qofgx"]
+[ext_resource type="Theme" uid="uid://l77ckodjfb54" path="res://assets/ui/2kui/2kui.tres" id="4_qofgx"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
 [ext_resource type="Script" path="res://core/label.gd" id="6_hf4ex"]

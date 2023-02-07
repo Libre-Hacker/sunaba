@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
 [ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="Animation" id="Animation_ugr2f"]
+[sub_resource type="Animation" id="Animation_fex2h"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_324gp"]
+[sub_resource type="Animation" id="Animation_5ag5e"]
 resource_name = "idle"
 length = 5.0
 loop_mode = 1
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_gw1te"]
+[sub_resource type="Animation" id="Animation_nsn0b"]
 resource_name = "reload"
 length = 2.38
 tracks/0/type = "value"
@@ -64,7 +64,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
 }
 
-[sub_resource type="Animation" id="Animation_g847v"]
+[sub_resource type="Animation" id="Animation_f7536"]
 resource_name = "walk"
 length = 3.0
 loop_mode = 1
@@ -81,19 +81,19 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4msjs"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbvct"]
 _data = {
-"RESET": SubResource("Animation_ugr2f"),
-"idle": SubResource("Animation_324gp"),
-"reload": SubResource("Animation_gw1te"),
-"walk": SubResource("Animation_g847v")
+"RESET": SubResource("Animation_fex2h"),
+"idle": SubResource("Animation_5ag5e"),
+"reload": SubResource("Animation_nsn0b"),
+"walk": SubResource("Animation_f7536")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kfh5x"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a8oim"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu151"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuxcq"]
 texture = ExtResource("5_aw5sg")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
@@ -101,7 +101,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_78ysf"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_lbgmc"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -133,8 +133,14 @@ jump_impulse = 10
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
+[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+
 [node name="Female" parent="." instance=ExtResource("2_od7wf")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Hair" parent="Female/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -177,12 +183,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.34875
 autoplay = "idle"
 playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_4msjs")
+"": SubResource("AnimationLibrary_qbvct")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_kfh5x")
+shape = SubResource("CapsuleShape3D_a8oim")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -222,7 +228,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_nrqwa")
-theme_override_styles/fill = SubResource("StyleBoxTexture_tu151")
+theme_override_styles/fill = SubResource("StyleBoxTexture_yuxcq")
 value = 100.0
 show_percentage = false
 
@@ -405,7 +411,7 @@ stream = ExtResource("10_huo2t")
 stream = ExtResource("11_yir2u")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_78ysf")
+replication_config = SubResource("SceneReplicationConfig_lbgmc")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_w8a3j")

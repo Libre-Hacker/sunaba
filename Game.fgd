@@ -58,12 +58,12 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = pl_vanilla : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_dartgun : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_autogun : "" [
 	weapon_path(string) : "Weapon Path" : "" : "String"
 	model_path(string) : "Model Path" : "assets/models/handprops/paintball_gun.gltf" : "String"
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_pbgun : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = wp_dartgun : "" [
 	weapon_path(string) : "Weapon Path" : "" : "String"
 	model_path(string) : "Model Path" : "assets/models/handprops/paintball_gun.gltf" : "String"
 ]

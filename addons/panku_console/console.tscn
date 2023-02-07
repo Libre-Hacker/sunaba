@@ -33,6 +33,7 @@ exp_history_window = NodePath("LynxWindowsManager2/ExpHistory")
 [node name="GodotLogMonitor" parent="." instance=ExtResource("14_jxci2")]
 
 [node name="LogOverlay" parent="." instance=ExtResource("3_30t2o")]
+visible = false
 
 [node name="ResidentLogs" parent="." instance=ExtResource("2_th8we")]
 anchors_preset = 9

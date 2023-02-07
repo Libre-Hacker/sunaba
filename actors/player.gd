@@ -16,6 +16,10 @@ extends CharacterBody3D
 
 var snap_vector = Vector3.ZERO
 
+var tool1
+var tool2
+var tool3
+var tool4
 var tool_to_spawn
 var tool_to_drop
 
@@ -164,14 +168,53 @@ func _input(event):
 	
 	if Input.is_action_just_pressed("interact"):
 		if tool_to_spawn != null:
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					equip(tool_to_spawn, tool_to_drop)
-					rpc("equip", tool_to_spawn, tool_to_drop)
-			else:
-				equip(tool_to_spawn)
-				rpc("equip", tool_to_spawn)
-	
+			if tool1 == null:
+				tool1 = tool_to_spawn
+				tool_to_spawn = null
+				print(tool1)
+			elif tool2 == null:
+				tool2 = tool_to_spawn
+				tool_to_spawn = null
+				print(tool2)
+			elif tool3 == null:
+				tool3 = tool_to_spawn
+				tool_to_spawn = null
+				print(tool3)
+			elif tool4 == null:
+				tool4 = tool_to_spawn
+				tool_to_spawn = null
+				print(tool4)
+			reach.get_collider().queue_free()
+			#if hand.get_child_count() > 0:
+				#if hand.get_child(0) != null:
+					#equip(tool_to_spawn, tool_to_drop)
+					#rpc("equip", tool_to_spawn, tool_to_drop)
+			#else:
+				#equip(tool_to_spawn)
+				#rpc("equip", tool_to_spawn)
+	if Input.is_action_just_pressed("hands"):
+		if hand.get_child_count() > 0:
+			if hand.get_child(0) != null:
+				hand.get_child(0).queue_free()
+				if is_multiplayer_authority() or !Global.is_networked_game:
+					$Hud/ToolPanel.hide()
+				$PickupSound.play()
+				ammo = 1
+				max_ammo = 1
+				damage = 0
+				weapon_type = ""
+	elif Input.is_action_just_pressed("tool1"):
+		equip(tool1)
+		rpc("equip", tool1)
+	elif Input.is_action_just_pressed("tool2"):
+		equip(tool2)
+		rpc("equip", tool2)
+	elif Input.is_action_just_pressed("tool3"):
+		equip(tool3)
+		rpc("equip", tool3)
+	elif Input.is_action_just_pressed("tool4"):
+		equip(tool4)
+		rpc("equip", tool4)
 	
 	
 	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:
@@ -192,13 +235,12 @@ func equip(tool2, tool1 = null):
 	var tts = load(tool2).instantiate()
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
-			get_parent().add_child(ttd)
-			ttd.global_transform = hand_loc.global_transform
-			ttd.dropped = true
+			if tool1 != null:
+				get_parent().add_child(ttd)
+				ttd.global_transform = hand_loc.global_transform
+				ttd.dropped = true
 			hand.get_child(0).queue_free()
 	tool_label.text = tts.get_name()
-	if is_multiplayer_authority() or !Global.is_networked_game:
-		fp_reach.get_collider().queue_free()
 	hand.add_child(tts)
 	ammo = tts.max_ammo
 	max_ammo = tts.max_ammo

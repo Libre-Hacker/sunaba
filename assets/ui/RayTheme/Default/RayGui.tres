@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=71 format=3 uid="uid://2te2jljrj81d"]
+[gd_resource type="Theme" load_steps=71 format=3 uid="uid://b3mx8bkqcol6d"]
 
 [ext_resource type="StyleBox" path="res://assets/ui/RayTheme/Default/Button/flatDisabledButton.stylebox" id="1"]
 [ext_resource type="StyleBox" path="res://assets/ui/RayTheme/Default/Button/flatPressedButton.stylebox" id="2"]
@@ -6,7 +6,7 @@
 [ext_resource type="StyleBox" path="res://assets/ui/RayTheme/Default/Button/flatFocusedButton.stylebox" id="5"]
 [ext_resource type="StyleBox" path="res://assets/ui/RayTheme/Default/popups.stylebox" id="6"]
 [ext_resource type="FontFile" uid="uid://f0puv37mdh06" path="res://assets/fonts/Ubuntu-Light.ttf" id="7"]
-[ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://assets/fonts/tahoma.tres" id="7_j5tsi"]
+[ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://assets/fonts/system.tres" id="7_ev2jh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psvhh"]
 bg_color = Color(0.9009, 0.91, 0.91, 1)
@@ -672,7 +672,7 @@ expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
 [resource]
-default_font = ExtResource("7_j5tsi")
+default_font = ExtResource("7_ev2jh")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_color_disabled = Color(0.682353, 0.717647, 0.721569, 1)
 Button/colors/font_color_hover = Color(0.2, 0.545098, 0.686275, 1)

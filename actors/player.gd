@@ -75,6 +75,8 @@ func _ready():
 	if is_multiplayer_authority() or !Global.is_networked_game:
 		if Global.game_mode == "Deathmatch":
 			global_transform.origin = Global.spawnpoints.pick_random()
+		else:
+			global_transform.origin = Global.spawnpoint
 		
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		reach = fp_reach
@@ -209,7 +211,7 @@ func equip(tool2, tool1 = null):
 		$Hud/ToolPanel.show()
 	$PickupSound.play()
 
-func _process(delta):
+func _process(_delta):
 	if is_multiplayer_authority() or !Global.is_networked_game:
 		player_model = Global.player_model
 

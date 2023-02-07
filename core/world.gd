@@ -12,7 +12,8 @@ var mouse_over_ui = false
 
 var qodot_map_instance = null
 
-@onready var qodot_map = $NavigationRegion3D/QodotMap
+#@onready var qodot_map = $NavigationRegion3D/QodotMap
+@onready var tb_loader = $NavigationRegion3D/TBLoader
 @onready var navregion = $NavigationRegion3D
 @onready var main_node = get_parent()
 
@@ -39,8 +40,16 @@ func load_map_path(path):
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
-		qodot_map.map_file = path
-		qodot_map.verify_and_build()
+		#qodot_map.map_file = path
+		#qodot_map.verify_and_build()
+		tb_loader.map_resource = path
+		tb_loader.build_meshes()
+		navregion.bake_navigation_mesh()
+		var id = multiplayer.get_unique_id()
+		if id != 1:
+			rpc_id(1, "instance_player", id)
+		else:
+			instance_player(id)
 
 func prep_for_respawn():
 	$RespawnTimer.start()
@@ -78,19 +87,11 @@ func instance_player(id):
 	if id == multiplayer.get_unique_id():
 		Global.player = player_instance
 	if Global.game_mode == "":
-		player_instance.global_transform.origin = spawnpoint
+		player_instance.global_transform.origin = Global.spawnpoint
 
 func player_joined(id):
 	rpc_id(id, "load_map_remote")
 
-func _on_qodot_map_build_complete():
-	qodot_map.unwrap_uv2()
-	navregion.bake_navigation_mesh()
-	var id = multiplayer.get_unique_id()
-	if id != 1:
-		rpc_id(1, "instance_player", id)
-	else:
-		instance_player(id)
 
 
 

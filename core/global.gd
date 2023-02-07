@@ -7,6 +7,8 @@ var game_paused : bool = false
 
 var is_networked_game = false
 
+var spawnpoint : Vector3
+
 var spawnpoints : Array
 
 var game_mode : String = ""

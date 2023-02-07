@@ -90,8 +90,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a8oim"]
-radius = 0.293445
-height = 1.4969
+radius = 0.28
+height = 0.8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yuxcq"]
 texture = ExtResource("5_aw5sg")

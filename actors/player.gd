@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 @export var default_speed : int = 5
 @export var sprint_speed : int = 10
+@export var crouch_move_speed : int = 3
+@export var crouch_speed : int = 20
 @export var acceleration : int = 60
 @export var friction : int = 50
 @export var air_friction : int = 10
@@ -23,6 +25,8 @@ var tool4
 var tool_to_spawn
 var tool_to_drop
 
+var default_height = 1.497
+var crouch_height = 0.8
 var max_speed = default_speed
 var health = 100
 var reach = null
@@ -47,6 +51,7 @@ var player_model : String
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
 @onready var model = $Female
 @onready var model2 = $Male
+@onready var coll_shape = $CollisionShape3D
 #@onready var arms_model = $Head/arms
 @onready var animation_player = $Female/AnimationPlayer
 @onready var animation_player2 = $Male/AnimationPlayer
@@ -172,18 +177,28 @@ func _input(event):
 				tool1 = tool_to_spawn
 				tool_to_spawn = null
 				print(tool1)
+				equip(tool1)
+				rpc("equip", tool1)
 			elif tool2 == null:
 				tool2 = tool_to_spawn
 				tool_to_spawn = null
 				print(tool2)
+				equip(tool2)
+				rpc("equip", tool2)
 			elif tool3 == null:
 				tool3 = tool_to_spawn
 				tool_to_spawn = null
 				print(tool3)
+				equip(tool3)
+				rpc("equip", tool3)
 			elif tool4 == null:
 				tool4 = tool_to_spawn
 				tool_to_spawn = null
 				print(tool4)
+				equip(tool4)
+				rpc("equip", tool4)
+			else:
+				return
 			reach.get_collider().queue_free()
 			#if hand.get_child_count() > 0:
 				#if hand.get_child(0) != null:
@@ -259,12 +274,35 @@ func _process(_delta):
 
 func _physics_process(delta):
 	if is_multiplayer_authority() or !Global.is_networked_game:
+		if is_on_floor():
+			max_speed = default_speed
+			walk_timer.wait_time = default_walk_sound_time
+		else:
+			max_speed += 0.25
 		var input_vector = get_input_vector()
 		var direction = get_direction(input_vector)
+		jump()
+		
+		if Input.is_action_pressed("sprint"): #and is_on_floor():
+			max_speed = sprint_speed
+			walk_timer.wait_time = sprint_walk_sound_time
+			$Hud/Panel/SprintingIcon.show()
+		elif Input.is_action_pressed("sprint") and !is_on_floor():
+			max_speed += 1
+			walk_timer.wait_time = sprint_walk_sound_time
+			$Hud/Panel/SprintingIcon.show()
+		
+		if Input.is_action_pressed("crouch"):
+			coll_shape.shape.height = 0.8 #-= crouch_speed * delta
+			max_speed = crouch_move_speed
+		else:
+			coll_shape.shape.height = 1.497#crouch_speed * delta 
+		
+		#coll_shape.shape.height = clamp(coll_shape.shape.height, 0.8, 1.497)
+		
 		apply_movement(direction, delta)
 		apply_gravity(delta)
 		apply_friction(direction, delta)
-		jump()
 		apply_controller_rotation()
 		set_velocity(velocity)
 		# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
@@ -349,11 +387,7 @@ func _physics_process(delta):
 	tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
 	tool_ammo_bar.value = ammo
 	tool_ammo_bar.max_value = max_ammo
-	if is_on_floor():
-		max_speed = default_speed
-		walk_timer.wait_time = default_walk_sound_time
-	else:
-		max_speed += 0.25
+	
 	$Hud/Panel/SprintingIcon.hide()
 	
 	
@@ -383,15 +417,6 @@ func _physics_process(delta):
 				if hand.get_child(0) != null:
 					if !has_fired:
 							_fire()
-	
-	if Input.is_action_pressed("sprint"): #and is_on_floor():
-		max_speed = sprint_speed
-		walk_timer.wait_time = sprint_walk_sound_time
-		$Hud/Panel/SprintingIcon.show()
-	elif Input.is_action_pressed("sprint") and !is_on_floor():
-		max_speed += 1
-		walk_timer.wait_time = sprint_walk_sound_time
-		$Hud/Panel/SprintingIcon.show()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

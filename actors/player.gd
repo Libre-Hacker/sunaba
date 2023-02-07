@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var default_speed : int = 5
 @export var sprint_speed : int = 10
-@export var crouch_move_speed : int = 3
+@export var crouch_move_speed : int = 2
 @export var crouch_speed : int = 20
 @export var acceleration : int = 60
 @export var friction : int = 50
@@ -27,6 +27,8 @@ var tool_to_drop
 
 var default_height = 1.497
 var crouch_height = 0.8
+var head_height = 1.111
+var head_crouch_height = 0.866
 var max_speed = default_speed
 var health = 100
 var reach = null
@@ -283,6 +285,16 @@ func _physics_process(delta):
 		var direction = get_direction(input_vector)
 		jump()
 		
+		$Hud/Panel/HealthBar.value = health
+		$Hud/Panel.theme = ThemeManager.theme
+		$Hud/ToolPanel.theme = ThemeManager.theme
+		crosshair.theme = ThemeManager.theme
+		tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
+		tool_ammo_bar.value = ammo
+		tool_ammo_bar.max_value = max_ammo
+		
+		$Hud/Panel/SprintingIcon.hide()
+		
 		if Input.is_action_pressed("sprint"): #and is_on_floor():
 			max_speed = sprint_speed
 			walk_timer.wait_time = sprint_walk_sound_time
@@ -293,10 +305,21 @@ func _physics_process(delta):
 			$Hud/Panel/SprintingIcon.show()
 		
 		if Input.is_action_pressed("crouch"):
-			coll_shape.shape.height = 0.8 #-= crouch_speed * delta
+			coll_shape.shape.height = crouch_height #-= crouch_speed * delta
+			head.position.y = head_crouch_height
 			max_speed = crouch_move_speed
+			walk_timer.wait_time = 0.8
+			model.position.y = 0.175
+			model2.position.y = 0.175
 		else:
-			coll_shape.shape.height = 1.497#crouch_speed * delta 
+			coll_shape.shape.height = default_height#crouch_speed * delta 
+			head.position.y = head_height
+			model.position.y = 0
+			model2.position.y = 0
+			$Female/Akari.position = Vector3.ZERO
+			$Female/Akari.rotation = Vector3.ZERO
+			$Male/Akari.position = Vector3.ZERO
+			$Male/Akari.rotation = Vector3.ZERO
 		
 		#coll_shape.shape.height = clamp(coll_shape.shape.height, 0.8, 1.497)
 		
@@ -317,9 +340,24 @@ func _physics_process(delta):
 	if is_on_floor():
 		times_jumped = 0
 	
-	if (velocity.length() == 0) or (vel.length() == 0):
+	if ((velocity.length() == 0) or (vel.length() == 0)) and !Input.is_action_pressed("crouch"):
 		animation_player.play("Locomotion-Library/idle1")
 		animation_player2.play("Locomotion-Library/idle1")
+		model.position.y = 0
+		model2.position.y = 0
+		$Female/Akari.position = Vector3.ZERO
+		$Female/Akari.rotation = Vector3.ZERO
+		$Male/Akari.position = Vector3.ZERO
+		$Male/Akari.rotation = Vector3.ZERO
+		#animation_player.rpc("play", "idle")
+		if !is_reloading:
+			gun_ap.play("idle")
+			#gun_ap.rpc("play", "idle")
+	elif ((velocity.length() == 0) or (vel.length() == 0)) and Input.is_action_pressed("crouch"):
+		animation_player.play("crouch_library/crouch_idle")
+		animation_player2.play("crouch_library/crouch_idle")
+		model.position.y = 0.175
+		model2.position.y = 0.175
 		#animation_player.rpc("play", "idle")
 		if !is_reloading:
 			gun_ap.play("idle")
@@ -328,6 +366,12 @@ func _physics_process(delta):
 		if max_speed == default_speed and is_on_floor():
 			animation_player.play("Locomotion-Library/walk")
 			animation_player2.play("Locomotion-Library/walk")
+			model.position.y = 0
+			model2.position.y = 0
+			$Female/Akari.position = Vector3.ZERO
+			$Female/Akari.rotation = Vector3.ZERO
+			$Male/Akari.position = Vector3.ZERO
+			$Male/Akari.rotation = Vector3.ZERO
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -336,9 +380,28 @@ func _physics_process(delta):
 			if !is_reloading:
 				gun_ap.play("walk")
 				#gun_ap.rpc("play", "walk")
-		elif is_on_floor():
+		elif max_speed == crouch_move_speed and is_on_floor():
+			animation_player.play("crouch_library/crouch_walk")
+			animation_player2.play("crouch_library/crouch_walk")
+			model.position.y = 0.175
+			model2.position.y = 0.175
+			#animation_player.rpc("play", "walk")
+			if can_play_walk_sound:
+				can_play_walk_sound = false
+				$WalkSound.play()
+				walk_timer.start()
+			if !is_reloading:
+				gun_ap.play("walk")
+				#gun_ap.rpc("play", "walk")
+		elif max_speed == sprint_speed and is_on_floor():
 			animation_player.play("Locomotion-Library/run")
 			animation_player2.play("Locomotion-Library/run")
+			model.position.y = 0
+			model2.position.y = 0
+			$Female/Akari.position = Vector3.ZERO
+			$Female/Akari.rotation = Vector3.ZERO
+			$Male/Akari.position = Vector3.ZERO
+			$Male/Akari.rotation = Vector3.ZERO
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -350,6 +413,12 @@ func _physics_process(delta):
 		elif !is_on_floor():
 			animation_player.play("Locomotion-Library/jump")
 			animation_player2.play("Locomotion-Library/jump")
+			model.position.y = 0
+			model2.position.y = 0
+			$Female/Akari.position = Vector3.ZERO
+			$Female/Akari.rotation = Vector3.ZERO
+			$Male/Akari.position = Vector3.ZERO
+			$Male/Akari.rotation = Vector3.ZERO
 			#animation_player.rpc("play", "jump")
 			if !is_reloading:
 				gun_ap.play("idle")
@@ -379,16 +448,7 @@ func _physics_process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		crosshair.show()
 	
-	$Hud/Panel/HealthBar.value = health
 	
-	$Hud/Panel.theme = ThemeManager.theme
-	$Hud/ToolPanel.theme = ThemeManager.theme
-	crosshair.theme = ThemeManager.theme
-	tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
-	tool_ammo_bar.value = ammo
-	tool_ammo_bar.max_value = max_ammo
-	
-	$Hud/Panel/SprintingIcon.hide()
 	
 	
 	

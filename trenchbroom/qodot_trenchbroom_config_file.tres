@@ -9,10 +9,10 @@
 [resource]
 script = ExtResource("5_olhvb")
 export_file = false
-target_file = "C:/QuakeDev/TrenchBroom/games/Sunaba/GameConfig.cfg"
-game_name = "Sunaba"
-brush_tags = [ExtResource("1_gboiy"), ExtResource("2_ev82p")]
-face_tags = [ExtResource("3_5cxfk"), ExtResource("4_lt45f")]
-face_attrib_surface_flags = []
-face_attrib_content_flags = []
-fgd_filenames = ["Sunaba.fgd"]
+target_file = "C:/QuakeDev/TrenchBroom/games/Toonbox/GameConfig.cfg"
+game_name = "Toonbox"
+brush_tags = Array[Resource]([ExtResource("1_gboiy"), ExtResource("2_ev82p")])
+face_tags = Array[Resource]([ExtResource("3_5cxfk"), ExtResource("4_lt45f")])
+face_attrib_surface_flags = Array[Resource]([])
+face_attrib_content_flags = Array[Resource]([])
+fgd_filenames = ["Toonbox.fgd"]

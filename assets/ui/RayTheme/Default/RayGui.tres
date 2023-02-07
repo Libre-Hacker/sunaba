@@ -5,7 +5,7 @@
 [ext_resource type="StyleBox" path="res://assets/ui/RayTheme/Default/Button/flatNormalButton.stylebox" id="3"]
 [ext_resource type="StyleBox" path="res://assets/ui/RayTheme/Default/Button/flatFocusedButton.stylebox" id="5"]
 [ext_resource type="StyleBox" path="res://assets/ui/RayTheme/Default/popups.stylebox" id="6"]
-[ext_resource type="FontFile" uid="uid://u6y4lq1kvcxa" path="res://assets/fonts/Ubuntu-Light.ttf" id="7"]
+[ext_resource type="FontFile" uid="uid://f0puv37mdh06" path="res://assets/fonts/Ubuntu-Light.ttf" id="7"]
 [ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://assets/fonts/tahoma.tres" id="7_j5tsi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psvhh"]

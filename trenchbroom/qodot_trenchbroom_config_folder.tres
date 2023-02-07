@@ -9,7 +9,7 @@
 script = ExtResource("4_abrc7")
 export_file = false
 trenchbroom_games_folder = "C:\\QuakeDev\\TrenchBroom\\games"
-game_name = "Sunaba"
+game_name = "Toonbox"
 icon = ExtResource("3_acgf8")
 game_config_file = ExtResource("2_aj5a0")
-fgd_files = [ExtResource("1_7ejqi")]
+fgd_files = Array[Resource]([ExtResource("1_7ejqi")])

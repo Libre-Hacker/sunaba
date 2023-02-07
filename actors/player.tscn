@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
 [ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="Animation" id="Animation_skwct"]
+[sub_resource type="Animation" id="Animation_hlgk0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_n4vfa"]
+[sub_resource type="Animation" id="Animation_ogg2r"]
 resource_name = "idle"
 length = 5.0
 loop_mode = 1
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_m7bfy"]
+[sub_resource type="Animation" id="Animation_ecn47"]
 resource_name = "reload"
 length = 2.38
 tracks/0/type = "value"
@@ -63,7 +63,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
 }
 
-[sub_resource type="Animation" id="Animation_grson"]
+[sub_resource type="Animation" id="Animation_ik4ib"]
 resource_name = "walk"
 length = 3.0
 loop_mode = 1
@@ -80,19 +80,19 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4qerx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctsic"]
 _data = {
-"RESET": SubResource("Animation_skwct"),
-"idle": SubResource("Animation_n4vfa"),
-"reload": SubResource("Animation_m7bfy"),
-"walk": SubResource("Animation_grson")
+"RESET": SubResource("Animation_hlgk0"),
+"idle": SubResource("Animation_ogg2r"),
+"reload": SubResource("Animation_ecn47"),
+"walk": SubResource("Animation_ik4ib")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v6eyr"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w3wix"]
 radius = 0.293445
 height = 1.4969
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksi12"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3o6l5"]
 texture = ExtResource("5_aw5sg")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
@@ -100,7 +100,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_6ysex"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_o1e4a"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -175,12 +175,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.34875
 autoplay = "idle"
 playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_4qerx")
+"": SubResource("AnimationLibrary_ctsic")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_v6eyr")
+shape = SubResource("CapsuleShape3D_w3wix")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -220,7 +220,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_nrqwa")
-theme_override_styles/fill = SubResource("StyleBoxTexture_ksi12")
+theme_override_styles/fill = SubResource("StyleBoxTexture_3o6l5")
 value = 100.0
 show_percentage = false
 
@@ -403,7 +403,7 @@ stream = ExtResource("10_huo2t")
 stream = ExtResource("11_yir2u")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_6ysex")
+replication_config = SubResource("SceneReplicationConfig_o1e4a")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_w8a3j")

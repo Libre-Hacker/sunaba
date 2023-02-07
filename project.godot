@@ -14,7 +14,7 @@ config/name="Toonbox"
 run/main_scene="res://core/main.tscn"
 run/disable_stdout=true
 run/disable_stderr=true
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.0", "C#")
 run/max_fps=30
 boot_splash/show_image=false
 config/icon="res://icon.png"
@@ -43,7 +43,7 @@ window/size/width=800
 
 [dotnet]
 
-project/assembly_name="Sunaba"
+project/assembly_name="Toonbox"
 
 [editor_plugins]
 

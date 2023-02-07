@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=21 format=3 uid="uid://dfi811ysrbg23"]
 
-[ext_resource type="Texture2D" uid="uid://ckribtu1pdnq2" path="res://addons/panku_console/res/icons2/checkbox_checked.svg" id="1_pq2ss"]
-[ext_resource type="Texture2D" uid="uid://bypxnsonh2i2f" path="res://addons/panku_console/res/icons2/checkbox_unchecked.svg" id="2_svie5"]
+[ext_resource type="Texture2D" uid="uid://bua84a0uv8ntw" path="res://addons/panku_console/res/icons2/checkbox_checked.svg" id="1_pq2ss"]
+[ext_resource type="Texture2D" uid="uid://dkiyle8rjahmw" path="res://addons/panku_console/res/icons2/checkbox_unchecked.svg" id="2_svie5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1q17k"]
 

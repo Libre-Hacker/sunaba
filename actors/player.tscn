@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
 [ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
-[sub_resource type="Animation" id="Animation_xo6m4"]
+[sub_resource type="Animation" id="Animation_2i1y8"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_nyct3"]
+[sub_resource type="Animation" id="Animation_1css2"]
 resource_name = "idle"
 length = 5.0
 loop_mode = 1
@@ -48,7 +48,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="Animation" id="Animation_13aev"]
+[sub_resource type="Animation" id="Animation_ff5wx"]
 resource_name = "reload"
 length = 2.38
 tracks/0/type = "value"
@@ -64,7 +64,7 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
 }
 
-[sub_resource type="Animation" id="Animation_nlxga"]
+[sub_resource type="Animation" id="Animation_nu55l"]
 resource_name = "walk"
 length = 3.0
 loop_mode = 1
@@ -81,19 +81,19 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmqa7"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x3kg1"]
 _data = {
-"RESET": SubResource("Animation_xo6m4"),
-"idle": SubResource("Animation_nyct3"),
-"reload": SubResource("Animation_13aev"),
-"walk": SubResource("Animation_nlxga")
+"RESET": SubResource("Animation_2i1y8"),
+"idle": SubResource("Animation_1css2"),
+"reload": SubResource("Animation_ff5wx"),
+"walk": SubResource("Animation_nu55l")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0gnvj"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vhxj"]
 radius = 0.28
 height = 0.8
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iowug"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8xw2b"]
 texture = ExtResource("5_aw5sg")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
@@ -101,7 +101,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4yyru"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ebxqf"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/sync = true
@@ -228,12 +228,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.34875
 autoplay = "idle"
 playback_default_blend_time = 0.25
 libraries = {
-"": SubResource("AnimationLibrary_jmqa7")
+"": SubResource("AnimationLibrary_x3kg1")
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
-shape = SubResource("CapsuleShape3D_0gnvj")
+shape = SubResource("CapsuleShape3D_0vhxj")
 
 [node name="Hud" type="Node" parent="."]
 
@@ -273,7 +273,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/background = ExtResource("4_nrqwa")
-theme_override_styles/fill = SubResource("StyleBoxTexture_iowug")
+theme_override_styles/fill = SubResource("StyleBoxTexture_8xw2b")
 value = 100.0
 show_percentage = false
 
@@ -456,7 +456,7 @@ stream = ExtResource("10_huo2t")
 stream = ExtResource("11_yir2u")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_4yyru")
+replication_config = SubResource("SceneReplicationConfig_ebxqf")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_w8a3j")

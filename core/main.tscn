@@ -81,6 +81,7 @@ grow_vertical = 2
 placeholder_text = "chatbox"
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
+visible = false
 layout_mode = 1
 offset_left = 11.0
 offset_top = 10.0

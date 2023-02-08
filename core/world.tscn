@@ -21,6 +21,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="TBLoader" type="TBLoader" parent="NavigationRegion3D"]
 lighting_unwrap_uv2 = true
+option_clip_texture_name = "special/clip"
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 5.0

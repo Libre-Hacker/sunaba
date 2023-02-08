@@ -23,6 +23,7 @@ GameManager="*res://core/game_manager.gd"
 Build="*res://core/build.gd"
 ThemeManager="*res://core/theme_manager.gd"
 Global="*res://core/global.gd"
+Console="*res://addons/panku_console/console.tscn"
 
 [debug]
 
@@ -246,6 +247,11 @@ crouch={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+toggle_console={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
 
 [locale]
 
@@ -257,6 +263,10 @@ translations=PackedStringArray()
 export/aot/enabled=true
 export/aot/full_aot=true
 export/aot/use_interpreter=false
+
+[panku]
+
+toggle_console_action="toggle_console"
 
 [physics]
 

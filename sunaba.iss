@@ -2,10 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Sunaba"
-#define MyAppVersion "0.2.14-dev"
+#define MyAppVersion "0.2.14"
 #define MyAppPublisher "mintkat"
 #define MyAppURL "https://m1ntkat.github.io/sunaba-site/"
-#define MyAppExeName "MyProg.exe"
+#define MyAppExeName "Sunaba.exe"
 #define MyAppAssocName MyAppName + " Map"
 #define MyAppAssocExt ".map"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
@@ -13,7 +13,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{80F5D711-07CD-48BC-8ECA-65DF764C0530}
+AppId={{61B86731-94B4-4B21-A5D8-AFA3D78939A4}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -28,8 +28,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\sbinstaller
-OutputBaseFilename=Sunaba_Windows_x86_64
-SetupIconFile=C:\toonbox\icon.ico
+OutputBaseFilename=Sunaba-Win64
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -41,8 +40,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Program Files (x86)\Inno Setup 6\Examples\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\toonbox\builds\win32\Sunaba.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\toonbox\builds\win32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\toonbox\builds\win32\tbloader.windows.x86_64.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\toonbox\maps\*"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\sbres\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs

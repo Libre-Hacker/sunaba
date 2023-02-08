@@ -29,6 +29,7 @@ PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\sbinstaller
 OutputBaseFilename=Sunaba-Win64
+SetupIconFile=C:\toonbox\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern

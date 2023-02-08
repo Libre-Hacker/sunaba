@@ -1,4 +1,4 @@
-[gd_resource type="SystemFont" load_steps=3 format=3]
+[gd_resource type="SystemFont" load_steps=3 format=3 uid="uid://dca7seoyu4mff"]
 
 [ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://assets/fonts/system.tres" id="1_ya5d1"]
 [ext_resource type="FontFile" uid="uid://f0puv37mdh06" path="res://assets/fonts/Ubuntu-Light.ttf" id="2_eaalc"]

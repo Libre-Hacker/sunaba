@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://dt8oawl1vnqx6"]
+
+[ext_resource type="PackedScene" uid="uid://o5mmhrb5hokd" path="res://entities/lt_omni.tscn" id="1_mc4jg"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_cc7k4"]
+
+[resource]
+script = ExtResource("2_cc7k4")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_mc4jg")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "lt_omni"
+description = ""
+qodot_internal = false
+base_classes = []
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

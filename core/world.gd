@@ -10,10 +10,10 @@ var can_rebuild = false
 
 var mouse_over_ui = false
 
-var qodot_map_instance = null
+var map_manager_instance = null
 
-#@onready var qodot_map = $NavigationRegion3D/QodotMap
-@onready var tb_loader = $NavigationRegion3D/TBLoader
+@onready var map_manager = $NavigationRegion3D/MapManager
+#@onready var tb_loader = $NavigationRegion3D/TBLoader
 @onready var navregion = $NavigationRegion3D
 @onready var main_node = get_parent()
 
@@ -40,16 +40,10 @@ func load_map_path(path):
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
-		#qodot_map.map_file = path
-		#qodot_map.verify_and_build()
-		tb_loader.map_resource = path
-		tb_loader.build_meshes()
-		navregion.bake_navigation_mesh()
-		var id = multiplayer.get_unique_id()
-		if id != 1:
-			rpc_id(1, "instance_player", id)
-		else:
-			instance_player(id)
+		map_manager.map_file = path
+		map_manager.verify_and_build()
+		#map_manager.
+		
 
 func prep_for_respawn():
 	$RespawnTimer.start()
@@ -79,7 +73,6 @@ func _on_respawn_timer_timeout():
 
 @rpc("any_peer")
 func instance_player(id):
-	print(var_to_str(id))
 	var player_instance = load("res://actors/player.tscn").instantiate()
 	player_instance.name = str(id)
 	add_child(player_instance)
@@ -95,8 +88,18 @@ func player_joined(id):
 
 
 
-func _on_qodot_map_unwrap_uv_2_complete():
+func _on_map_manager_unwrap_uv_2_complete():
 	pass
 
 func ultra():
 	Environment.sdfgi_enabled = true
+
+
+func _on_map_manager_build_complete():
+	map_manager.unwrap_uv2()
+	navregion.bake_navigation_mesh()
+	var id = multiplayer.get_unique_id()
+	if id != 1:
+		rpc_id(1, "instance_player", id)
+	else:
+		instance_player(id)

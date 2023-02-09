@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/Brick_Version;textures/Bricks;textures/BrushedAluminum;textures/Building;textures/Colors;textures/Concrete;textures/Grass;textures/Metal;textures/Misc;textures/Road_Texture;textures/Stone;textures/Tile;textures/Wood;textures/special"
-"_tb_def" "builtin:Game.fgd"
+"_tb_def" "builtin:Sunaba.fgd"
 // brush 0
 {
 ( -124 -64 -16 ) ( -124 -63 -16 ) ( -124 -64 -15 ) Wood/Wood_06-256x256 0 0 0 0.125 0.125
@@ -2460,6 +2460,6 @@
 }
 // entity 25
 {
-"classname" "ev_daytime"
-"origin" "100 36 -4"
+"classname" "ev_day"
+"origin" "104 40 -4"
 }

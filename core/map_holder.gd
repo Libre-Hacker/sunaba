@@ -4,7 +4,7 @@ extends Node
 
 func _enter_tree(): set_multiplayer_authority(1)
 
-func _ready(): Console.register_env("map_holder", self)
+func _ready(): pass#Console.register_env("map_holder", self)
 
 func get_map():
 	return map

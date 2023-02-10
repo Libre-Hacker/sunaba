@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://nslhdrua5bb"]
 
-[ext_resource type="PackedScene" uid="uid://tuhigsn6cewj" path="res://actors/ragdoll.tscn" id="1_a03ux"]
 [ext_resource type="Script" path="res://core/camera.gd" id="2_5s31a"]
-[ext_resource type="Environment" uid="uid://dx2o1w4ixn5re" path="res://new_environment.tres" id="2_lwqfk"]
+[ext_resource type="PackedScene" uid="uid://dfiockhewtyhy" path="res://actors/ragdoll_male.tscn" id="3_033ul"]
+[ext_resource type="PackedScene" uid="uid://conkab1hyq7r8" path="res://actors/ragdoll_female.tscn" id="3_i8dp1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qpo2g"]
 
@@ -20,11 +20,12 @@ mesh = SubResource("BoxMesh_qpo2g")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xg04t")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_lwqfk")
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.891647, 0.45273, 0, -0.45273, 0.891647, 0, 5.84529, 8.72779)
 script = ExtResource("2_5s31a")
 
-[node name="toonroid" parent="." instance=ExtResource("1_a03ux")]
+[node name="Male" parent="." instance=ExtResource("3_033ul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493507, 0)
+
+[node name="Female" parent="." instance=ExtResource("3_i8dp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88426, 0.436489, 0)

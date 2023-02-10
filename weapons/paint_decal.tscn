@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk1062566oxhw"]
+
+[ext_resource type="Texture2D" uid="uid://b44frx2c6poxt" path="res://assets/textures/pb_blue_decal.png" id="1_qm63p"]
+
+[node name="BulletDecal" type="Decal"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+size = Vector3(0.5, 0.5, 0.5)
+texture_albedo = ExtResource("1_qm63p")

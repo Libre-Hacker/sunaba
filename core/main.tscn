@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpdsh18u6mbnt"]
+[gd_scene load_steps=15 format=3 uid="uid://dpdsh18u6mbnt"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
 [ext_resource type="Theme" uid="uid://l77ckodjfb54" path="res://assets/ui/2kui/2kui.tres" id="4_qofgx"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://bnaheix8jti6" path="res://core/world.tscn" id="12"]
 [ext_resource type="Script" path="res://core/main.gd" id="13"]
+[ext_resource type="PackedScene" uid="uid://cyubcjm35due2" path="res://core/game_start.tscn" id="13_m1dby"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
@@ -25,6 +26,7 @@ world_path = NodePath("../World3D")
 ui_node = NodePath("../UI")
 
 [node name="World3D" parent="." instance=ExtResource("12")]
+game_start_window_path = NodePath("../UI/GameStartWindow")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -81,7 +83,6 @@ grow_vertical = 2
 placeholder_text = "chatbox"
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
-visible = false
 layout_mode = 1
 offset_left = 11.0
 offset_top = 10.0
@@ -324,6 +325,14 @@ title = "Settings"
 visible = false
 gui = NodePath("..")
 
+[node name="GameStartWindow" type="Window" parent="UI"]
+size = Vector2i(246, 184)
+visible = false
+unresizable = true
+min_size = Vector2i(246, 184)
+
+[node name="GameStart" parent="UI/GameStartWindow" instance=ExtResource("13_m1dby")]
+
 [connection signal="mouse_entered" from="UI/Bottombar" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Bottombar" to="World3D" method="on_mouse_exited"]
 [connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
@@ -347,6 +356,8 @@ gui = NodePath("..")
 [connection signal="pressed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/ConnectButton" to="." method="_connect"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="World3D" method="on_mouse_exited"]
+[connection signal="pressed" from="UI/GameStartWindow/GameStart/Button" to="World3D" method="play"]
 
 [editable path="UI/NewRoomDialog/NewRoom"]
 [editable path="UI/ConnectDialog/Connect"]
+[editable path="UI/GameStartWindow/GameStart"]

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cyubcjm35due2"]
+
+[node name="GameStart" type="Panel"]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 247.0
+offset_bottom = 185.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 7.0
+offset_bottom = 32.0
+grow_horizontal = 2
+text = "Wellcome to Sunaba"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -37.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Play"

@@ -97,7 +97,7 @@ func _ready():
 		$Hud/Crosshair.show()
 		$Hud/Panel.show()
 		$Hud/ToolPanel.show()
-		Console.register_env("player", self)
+		#Console.register_env("player", self)
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
@@ -245,11 +245,11 @@ func _input(event):
 		#gun_ap.rpc("play", "reload")
 	
 @rpc("any_peer")
-func equip(tool2, tool1 = null):
+func equip(t2, t1 = null):
 	var ttd
-	if tool1 != null:
-		ttd = load(tool1).instantiate()
-	var tts = load(tool2).instantiate()
+	if t1 != null:
+		ttd = load(t1).instantiate()
+	var tts = load(t2).instantiate()
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
 			if tool1 != null:
@@ -454,7 +454,7 @@ func _physics_process(delta):
 	
 	
 	if reach.is_colliding():
-		if "wp" in reach.get_collider().get_name():
+		if "wp" in reach.get_collider().get_name() or "tl" in reach.get_collider().get_name():
 			tool_to_spawn = reach.get_collider().weapon_path
 		else:
 			tool_to_spawn = null
@@ -477,6 +477,12 @@ func _physics_process(delta):
 				if hand.get_child(0) != null:
 					if !has_fired:
 							_fire()
+	elif weapon_type == "spray":
+		if Input.is_action_pressed("action_button"):
+			if hand.get_child_count() > 0:
+				if hand.get_child(0) != null:
+					if !has_fired:
+							_spray()
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
@@ -555,10 +561,10 @@ func _fire():
 		hand.get_child(0).get_node("WeaponSound").play()
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
-			if target.is_in_group("bot"):
+			if target.is_in_group("bot") and !hand.get_child(0).name == "SprayGun":
 				print("hit bot")
 				target.health -= damage
-			elif target.is_in_group("player"):
+			elif target.is_in_group("player") and !hand.get_child(0).name == "SprayGun":
 				#print("hit player")
 				var id = target.name
 				target.rpc_id(str_to_var(id), "take_damage", damage)
@@ -566,6 +572,18 @@ func _fire():
 				var b_decal = hand.get_child(0).bullet_hole_path
 				add_bullet_hole(b_decal)
 				rpc("add_bullet_hole", b_decal)
+	has_fired = true
+	if weapon_type == "auto":
+		$FireTimer.start()
+
+func _spray():
+	if !is_reloading and ammo != 0:
+		ammo -= 1
+		hand.get_child(0).get_node("WeaponSound").play()
+		if aimcast.is_colliding():
+			var b_decal = hand.get_child(0).bullet_hole_path
+			add_bullet_hole(b_decal)
+			rpc("add_bullet_hole", b_decal)
 	has_fired = true
 	if weapon_type == "auto":
 		$FireTimer.start()

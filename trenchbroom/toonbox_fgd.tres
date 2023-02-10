@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://dekeotstn463l" path="res://entities/ev_void.tres" id="15_oylio"]
 [ext_resource type="Resource" path="res://entities/pl_vanilla.tres" id="16_pytj5"]
 [ext_resource type="Resource" path="res://entities/wp_dartgun.tres" id="17_2mjsk"]
-[ext_resource type="Resource" path="res://entities/wp_pbgun.tres" id="18_c4pdy"]
+[ext_resource type="Resource" uid="uid://d1cywbw47btdi" path="res://entities/tl_sparygun.tres" id="18_0q27l"]
 [ext_resource type="Resource" path="res://entities/wp_pistol.tres" id="19_4y8q4"]
 [ext_resource type="Resource" path="res://entities/pl_dmatch.tres" id="20_jvtr6"]
 [ext_resource type="Resource" path="res://entities/gm_deathmatch.tres" id="21_qde4r"]
@@ -32,4 +32,4 @@ export_file = false
 target_folder = "C:/QuakeDev/TrenchBroom/games/Sunaba"
 fgd_name = "Sunaba"
 base_fgd_files = Array[Resource]([])
-entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_ksys4"), ExtResource("8_j88xy"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("16_pytj5"), ExtResource("17_2mjsk"), ExtResource("18_c4pdy"), ExtResource("19_4y8q4"), ExtResource("7_ksys4"), ExtResource("20_jvtr6"), ExtResource("21_qde4r"), ExtResource("22_6yv6f"), ExtResource("23_q85ih"), ExtResource("24_vfn6q")]
+entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_ksys4"), ExtResource("8_j88xy"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("16_pytj5"), ExtResource("17_2mjsk"), ExtResource("18_0q27l"), ExtResource("19_4y8q4"), ExtResource("7_ksys4"), ExtResource("20_jvtr6"), ExtResource("21_qde4r"), ExtResource("22_6yv6f"), ExtResource("23_q85ih"), ExtResource("24_vfn6q"), ExtResource("18_0q27l")]

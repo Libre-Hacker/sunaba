@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var game_start_window_path : NodePath
 
 var map = null
 
@@ -16,13 +17,15 @@ var map_manager_instance = null
 #@onready var tb_loader = $NavigationRegion3D/TBLoader
 @onready var navregion = $NavigationRegion3D
 @onready var main_node = get_parent()
+@onready var game_start_window : Window = get_node(game_start_window_path)
 
 var player = null
 var spawnpoint : Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Console.register_env("world", self)
+	pass
+	#Console.register_env("world", self)
 	#QodotDependencies.check_dependencies(http_request)
 
 func _physics_process(_delta):
@@ -98,6 +101,10 @@ func ultra():
 func _on_map_manager_build_complete():
 	map_manager.unwrap_uv2()
 	navregion.bake_navigation_mesh()
+	game_start_window.popup_centered()
+
+func play():
+	game_start_window.hide()
 	var id = multiplayer.get_unique_id()
 	if id != 1:
 		rpc_id(1, "instance_player", id)

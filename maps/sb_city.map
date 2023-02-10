@@ -2445,3 +2445,8 @@
 "classname" "ev_day"
 "origin" "600 264 50"
 }
+// entity 26
+{
+"classname" "an_city"
+"origin" "696 -40 -38"
+}

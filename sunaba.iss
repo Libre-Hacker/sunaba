@@ -2,9 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Sunaba"
-#define MyAppVersion "0.2.14"
+#define MyAppVersion "0.2.15"
 #define MyAppPublisher "mintkat"
-#define MyAppURL "https://m1ntkat.github.io/sunaba-site/"
+#define MyAppURL "https://mintkat.itch.io/sunaba"
 #define MyAppExeName "Sunaba.exe"
 #define MyAppAssocName MyAppName + " Map"
 #define MyAppAssocExt ".map"
@@ -13,7 +13,7 @@
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{61B86731-94B4-4B21-A5D8-AFA3D78939A4}
+AppId={{6475BDE9-175A-4E57-9B50-CA89974661AB}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -28,7 +28,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\sbinstaller
-OutputBaseFilename=Sunaba-Win64
+OutputBaseFilename=Sunaba_win32
 SetupIconFile=C:\toonbox\icon.ico
 Compression=lzma
 SolidCompression=yes
@@ -42,9 +42,10 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\toonbox\builds\win32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\toonbox\builds\win32\tbloader.windows.x86_64.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\toonbox\builds\win32\Sunaba.console.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\toonbox\builds\win32\Sunaba.pck"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\toonbox\builds\win32\data_folder\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "C:\toonbox\maps\*"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\sbres\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

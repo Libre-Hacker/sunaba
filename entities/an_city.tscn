@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtlsm1cko1ugj"]
+
+[ext_resource type="AudioStream" uid="uid://dqdixvvyy8cm4" path="res://assets/audio/ambience-city.wav" id="1_cm6wy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_cm6wy")
+autoplay = true

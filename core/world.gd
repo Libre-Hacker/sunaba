@@ -42,9 +42,10 @@ func load_map_path(path):
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
-		map_manager.map_resource = path
-		map_manager.build_meshes()
-		$StartTimer.start()
+		map_manager.map_file = path
+		map_manager.verify_and_build()
+		#map_manager.
+		
 
 func prep_for_respawn():
 	$RespawnTimer.start()
@@ -82,7 +83,6 @@ func instance_player(id):
 		Global.player = player_instance
 	if Global.game_mode == "":
 		player_instance.global_transform.origin = Global.spawnpoint
-		print(Global.spawnpoint)
 
 func player_joined(id):
 	rpc_id(id, "load_map_remote")
@@ -97,7 +97,8 @@ func ultra():
 	Environment.sdfgi_enabled = true
 
 
-func _on_start_timer_timeout():
+func _on_map_manager_build_complete():
+	map_manager.unwrap_uv2()
 	navregion.bake_navigation_mesh()
 	var id = multiplayer.get_unique_id()
 	if id != 1:

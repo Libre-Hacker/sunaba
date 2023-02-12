@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/group_edit.png-43d616f289f2ef30b2bc73d038a308
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

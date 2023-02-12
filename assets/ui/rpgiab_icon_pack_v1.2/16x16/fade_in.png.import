@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/fade_in.png-17ecd367bcd89d06c3d841ad8f012861.
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

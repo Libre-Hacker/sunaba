@@ -1,32 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c17ttacko1pda"]
+[gd_scene load_steps=2 format=3 uid="uid://c17ttacko1pda"]
 
-[ext_resource type="PackedScene" uid="uid://bsqx6fi8oksal" path="res://assets/models/akari/akari.gltf" id="1_iciww"]
-[ext_resource type="Texture2D" uid="uid://dm1vjmabeln7i" path="res://assets/textures/pale.png" id="2_umigt"]
-[ext_resource type="Texture2D" uid="uid://beti5rcar0jbi" path="res://assets/textures/faces/face_purple_xl.png" id="3_8r2k5"]
-[ext_resource type="Texture2D" uid="uid://x543mfcig4xh" path="res://assets/textures/clothes/akari2.png" id="4_ctwup"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msy5d"]
-albedo_texture = ExtResource("2_umigt")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0nyp"]
-albedo_texture = ExtResource("3_8r2k5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l2vj"]
-albedo_texture = ExtResource("4_ctwup")
+[ext_resource type="PackedScene" uid="uid://brvx8np7o1d0q" path="res://assets/models/akari/akari.gltf" id="1_iciww"]
 
 [node name="akari" instance=ExtResource("1_iciww")]
 
-[node name="BoneAttachment3D" parent="Akari/GeneralSkeleton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63048e-17, 1.01557, -0.00120926)
-bone_idx = 4
-
-[node name="Hair" parent="Akari/GeneralSkeleton/BoneAttachment3D" index="0"]
-transform = Transform3D(1.075, 1.59458e-08, -2.55803e-07, 5.72875e-15, 1.07292, 0.0668814, 2.563e-07, -0.0668814, 1.07292, -2.99592e-08, 0.207049, -0.0200987)
-
-[node name="Base Mesh" parent="Akari/GeneralSkeleton" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_msy5d")
-surface_material_override/1 = SubResource("StandardMaterial3D_m0nyp")
-surface_material_override/2 = SubResource("StandardMaterial3D_3l2vj")
-surface_material_override/3 = SubResource("StandardMaterial3D_3l2vj")
-surface_material_override/5 = SubResource("StandardMaterial3D_3l2vj")
-surface_material_override/6 = SubResource("StandardMaterial3D_3l2vj")
+[node name="Hair" parent="Akari/Skeleton3D" index="0"]
+transform = Transform3D(1.74022, -1.06581e-14, 0, 1.59872e-14, 1.74022, -1.49012e-08, -8.52651e-14, 7.45058e-09, 1.74022, -3.47511e-08, 2.12413, 6.56582e-08)
+bone_idx = 6

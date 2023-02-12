@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/party_add.png-f89401e186c5681d107419be0a54d5a
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

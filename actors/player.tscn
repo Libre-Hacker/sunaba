@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="2_rdd8b"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="4_nrqwa"]
-[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
-[ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
+[ext_resource type="Texture2D" uid="uid://becymyc03ymk7" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
+[ext_resource type="Texture2D" uid="uid://dxhagf55nnhfj" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b2ajdpevbyjp3" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
 [ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="8_65326"]
-[ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
-[ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
+[ext_resource type="Texture2D" uid="uid://vmyffwrwaqs5" path="res://assets/ui/crosshair.png" id="9"]
+[ext_resource type="AudioStream" uid="uid://cfci0qxao2lf7" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
-[ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
-[ext_resource type="AudioStream" uid="uid://dhowolwhhtbay" path="res://assets/audio/reload.mp3" id="10_huo2t"]
-[ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
-[ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
+[ext_resource type="AudioStream" uid="uid://ciqcq4oflkwui" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
+[ext_resource type="AudioStream" uid="uid://ci3awwjcj3brt" path="res://assets/audio/reload.mp3" id="10_huo2t"]
+[ext_resource type="AudioStream" uid="uid://bhww2cj575dyp" path="res://assets/audio/jump.wav" id="11_w8a3j"]
+[ext_resource type="AudioStream" uid="uid://dek02uwu621r2" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
 [sub_resource type="Animation" id="Animation_pux5j"]
 length = 0.001
@@ -133,14 +133,8 @@ jump_impulse = 10
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
-[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
-
 [node name="Female" parent="." instance=ExtResource("2_od7wf")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="Hair" parent="Female/Akari/GeneralSkeleton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)

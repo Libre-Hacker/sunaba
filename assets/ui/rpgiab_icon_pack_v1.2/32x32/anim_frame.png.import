@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/anim_frame.png-04ea4d2eabbece2dac4b133e2da37a
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

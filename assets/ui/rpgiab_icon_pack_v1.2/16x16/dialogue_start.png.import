@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/dialogue_start.png-a829805321c120f7c4fe5533df
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/sunaba-icon2.png-c7372d4ba765d1ba0d1abd1e0c20
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

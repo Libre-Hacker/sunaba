@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/tag_blue.png-0a30acaaed9340b5a9e957069a75e4f7
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

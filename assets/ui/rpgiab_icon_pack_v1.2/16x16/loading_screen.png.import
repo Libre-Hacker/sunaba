@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/loading_screen.png-718acf8961a3b83ea11028026d
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

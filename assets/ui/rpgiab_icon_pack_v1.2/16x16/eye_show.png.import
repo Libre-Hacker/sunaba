@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/eye_show.png-c660b123073442454e54a5d6c0f5f632
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

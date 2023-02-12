@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Toonbox"
+config/name="Sunaba"
 run/main_scene="res://core/main.tscn"
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.0", "C#")
 run/max_fps=30
 boot_splash/show_image=false
 config/icon="res://icon.png"
@@ -45,7 +45,7 @@ project/assembly_name="Sunaba"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg")
+enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/qodot/plugin.cfg")
 
 [gdnative]
 

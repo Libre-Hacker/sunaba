@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/redo.png-7b48a82e9443c37cbe71c7a14a3b699f.cte
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

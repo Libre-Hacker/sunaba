@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/blue_dark.tres" id="1"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/black.tres" id="2"]
-[ext_resource type="FontFile" uid="uid://dvabxqawxiomj" path="res://assets/fonts/Inter-Regular.ttf" id="3"]
+[ext_resource type="FontFile" uid="uid://b1nycdbgsw3ks" path="res://assets/fonts/Inter-Regular.ttf" id="3"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/line_edit.tres" id="4"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/disabled.tres" id="5"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/dark_window.tres" id="6"]

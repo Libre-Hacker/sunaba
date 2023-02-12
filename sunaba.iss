@@ -45,7 +45,6 @@ Source: "C:\toonbox\builds\win32\{#MyAppExeName}"; DestDir: "{app}"; Flags: igno
 Source: "C:\toonbox\builds\win32\Sunaba.console.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\toonbox\builds\win32\Sunaba.pck"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\toonbox\builds\win32\data_folder\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\toonbox\maps\*"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

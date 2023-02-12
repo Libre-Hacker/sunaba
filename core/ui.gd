@@ -5,6 +5,7 @@ extends Node
 func  _ready():
 	$MainMenu.show()
 	$PauseMenu.hide()
+	$NewRoomDialog/NewRoom/MapPath/Button.get_popup().id_pressed.connect(_on_file_menu_pressed)
 
 func _on_create_button_pressed():
 	$NewRoomDialog.popup_centered()
@@ -13,8 +14,11 @@ func _on_sb_pressed():
 	$SettingsDialog.popup_centered()
 
 
-func _on_file_button_pressed():
-	$FileDialog.popup_centered()
+func _on_file_menu_pressed(id):
+	if id == 0:
+		$MapDialog.popup_centered()
+	elif id == 1:
+		$UserFileDialog.popup_centered()
 
 func _on_file_selected(path):
 	get_parent().path = path
@@ -40,7 +44,7 @@ func _on_connect_dialog_close_requested():
 
 
 func _on_file_dialog_close_requested():
-	$FileDialog.hide()
+	$MapDialog.hide()
 
 
 func _on_new_room_dialog_close_requested():
@@ -55,4 +59,12 @@ func _process(_delta):
 
 func unpause():
 	$PauseMenu.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Global.game_paused = false
+
+
+func _on_map_selected():
+	var map = $MapDialog/StandardMapPicker/OptionButton.text
+	var map_path = "res://maps/" + map
+	$MapDialog.hide()
+	_on_file_selected(map_path)

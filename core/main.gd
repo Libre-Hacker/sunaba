@@ -22,12 +22,11 @@ func _ready() -> void:
 	#Console.notify("(C) 2022-2023 mintkat")
 	#Console.notify(" ")
 	
-	#print("")
-	#print("Sunaba")
-	#print("Version " + Build.version_number)
-	#print("Compiled on " + Build.build_date)
-	#print("(C) 2022-2023 mintkat")
-	#print("")
+	print("Toonbox")
+	print("Version " + Build.version_number)
+	print("Compiled on " + Build.build_date)
+	print("(C) 2022-2023 mintkat")
+	print("")
 	
 	var args = OS.get_cmdline_args()
 	var file = args[0]
@@ -111,3 +110,4 @@ func play(map = null):
 
 func set_map_file():
 	$UI/FileDialog.popup_centered()
+

@@ -29,10 +29,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = -1.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -41,10 +37,10 @@ layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="?" type="Control" parent="TabBar/TabContainer"]
+[node name="About" type="Control" parent="TabBar/TabContainer"]
 layout_mode = 2
 
-[node name="Label2" type="RichTextLabel" parent="TabBar/TabContainer/?"]
+[node name="Label2" type="RichTextLabel" parent="TabBar/TabContainer/About"]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,10 +48,10 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = -8.0
 offset_bottom = -8.0
-text = "Sunaba"
+text = "Toonbox"
 script = SubResource("GDScript_qb0mn")
 
-[node name="TextureRect" type="TextureRect" parent="TabBar/TabContainer/?"]
+[node name="TextureRect" type="TextureRect" parent="TabBar/TabContainer/About"]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -71,7 +67,7 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("1_k3fy5")
 
-[node name="TextureRect2" type="TextureRect" parent="TabBar/TabContainer/?"]
+[node name="TextureRect2" type="TextureRect" parent="TabBar/TabContainer/About"]
 visible = false
 layout_mode = 1
 anchors_preset = 3

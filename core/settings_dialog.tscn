@@ -12,7 +12,12 @@ script = ExtResource("1")
 
 [node name="Panel" parent="." instance=ExtResource("2_lyet8")]
 
+[node name="ThemingOptionButton" parent="Panel/TabBar/TabContainer/UI/VBoxContainer/Label2" index="0"]
+item_count = 5
+popup/item_4/text = "Metro"
+
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="item_selected" from="Panel/TabBar/TabContainer/Client/VBoxContainer/Label2/ModelOptionButton" to="." method="_on_model_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/UI/VBoxContainer/Label2/ThemingOptionButton" to="." method="_on_theme_selected"]
 
 [editable path="Panel"]

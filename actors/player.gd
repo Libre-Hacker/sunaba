@@ -220,16 +220,16 @@ func _input(event):
 				max_ammo = 1
 				damage = 0
 				weapon_type = ""
-	elif Input.is_action_just_pressed("tool1"):
+	elif Input.is_action_just_pressed("tool1") and tool1 != null:
 		equip(tool1)
 		rpc("equip", tool1)
-	elif Input.is_action_just_pressed("tool2"):
+	elif Input.is_action_just_pressed("tool2") and tool2 != null:
 		equip(tool2)
 		rpc("equip", tool2)
-	elif Input.is_action_just_pressed("tool3"):
+	elif Input.is_action_just_pressed("tool3") and tool3 != null:
 		equip(tool3)
 		rpc("equip", tool3)
-	elif Input.is_action_just_pressed("tool4"):
+	elif Input.is_action_just_pressed("tool4") and tool4 != null:
 		equip(tool4)
 		rpc("equip", tool4)
 	
@@ -252,7 +252,7 @@ func equip(t2, t1 = null):
 	var tts = load(t2).instantiate()
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
-			if tool1 != null:
+			if t1 != null:
 				get_parent().add_child(ttd)
 				ttd.global_transform = hand_loc.global_transform
 				ttd.dropped = true
@@ -273,6 +273,24 @@ func equip(t2, t1 = null):
 func _process(_delta):
 	if is_multiplayer_authority() or !Global.is_networked_game:
 		player_model = Global.player_model
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
+			crosshair.show()
+		else: 
+			crosshair.hide()
+	if tp_camera.current == true:
+		if Global.player_model == "male":
+			model.visible = false
+			model2.visible = true
+		elif Global.player_model == "female":
+			model.visible = true
+			model2.visible = false
+	elif fp_camera.current == true:
+		if Global.player_model == "male":
+			model.visible = false
+			model2.visible = !is_multiplayer_authority()
+		elif Global.player_model == "female":
+			model.visible = !is_multiplayer_authority()
+			model2.visible = false
 
 func _physics_process(delta):
 	if is_multiplayer_authority() or !Global.is_networked_game:

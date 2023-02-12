@@ -19,6 +19,7 @@ var libadwaita = preload("res://assets/ui/godwaita/theme.tres")
 var raygui = preload("res://assets/ui/RayTheme/Default/RayGui.tres")
 var sleek = preload("res://assets/ui/sl33k/sl33k.tres")
 var three_point_one = preload("res://assets/ui/classic311/Classic311.tres")
+var metro = preload("res://assets/ui/metro/metro.tres")
 
 # Graphics-related variables
 
@@ -72,7 +73,7 @@ func _on_theme_selected(index):
 		change_theme(sleek)
 	elif index == 4:
 		settings[1] = "res://assets/ui/godwaita/theme.tres"
-		change_theme(libadwaita)
+		change_theme(metro)
 	elif index == 5:
 		settings[1] = "res://assets/ui/RayTheme/Default/RayGui.tres"
 		change_theme(raygui)

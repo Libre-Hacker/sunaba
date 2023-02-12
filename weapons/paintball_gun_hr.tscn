@@ -19,3 +19,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_0da1j")
+bus = &"Sound"

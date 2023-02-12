@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
 [ext_resource type="Texture2D" uid="uid://0yo2od878bfq" path="res://assets/textures/backdrop.png" id="10"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
+[ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://bnaheix8jti6" path="res://core/world.tscn" id="12"]
 [ext_resource type="Script" path="res://core/main.gd" id="13"]
-[ext_resource type="PackedScene" uid="uid://cyubcjm35due2" path="res://core/game_start.tscn" id="13_m1dby"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
@@ -26,7 +26,6 @@ world_path = NodePath("../World3D")
 ui_node = NodePath("../UI")
 
 [node name="World3D" parent="." instance=ExtResource("12")]
-game_start_window_path = NodePath("../UI/GameStartWindow")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -174,7 +173,7 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6y7c")
 theme_override_font_sizes/font_size = 30
-text = "sunaba"
+text = "toonbox"
 
 [node name="MainMenu" type="Control" parent="UI"]
 visible = false
@@ -268,9 +267,10 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_a6y7c")
 theme_override_font_sizes/font_size = 30
-text = "sunaba"
+text = "toonbox"
 
 [node name="NewRoomDialog" type="Window" parent="UI"]
+initial_position = 2
 title = "New Room"
 size = Vector2i(435, 289)
 visible = false
@@ -280,24 +280,17 @@ max_size = Vector2i(435, 289)
 
 [node name="NewRoom" parent="UI/NewRoomDialog" instance=ExtResource("8_nlpex")]
 
-[node name="RoomName" parent="UI/NewRoomDialog/NewRoom" index="0"]
-layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 31.0
+[node name="MapDialog" type="Window" parent="UI"]
+initial_position = 2
+title = "Open a File"
+size = Vector2i(260, 90)
+visible = false
+min_size = Vector2i(260, 90)
 
-[node name="MapPath" parent="UI/NewRoomDialog/NewRoom" index="1"]
-layout_mode = 1
+[node name="StandardMapPicker" parent="UI/MapDialog" instance=ExtResource("10_wye3g")]
 
-[node name="Button" parent="UI/NewRoomDialog/NewRoom/MapPath" index="0"]
-layout_mode = 1
-
-[node name="CreateRoomButton" parent="UI/NewRoomDialog/NewRoom" index="2"]
-layout_mode = 1
-
-[node name="FileDialog" type="FileDialog" parent="UI"]
-initial_position = 1
+[node name="UserFileDialog" type="FileDialog" parent="UI"]
+initial_position = 2
 title = "Open a File"
 size = Vector2i(335, 300)
 min_size = Vector2i(335, 300)
@@ -308,7 +301,7 @@ filters = PackedStringArray("*.map")
 show_hidden_files = true
 
 [node name="ConnectDialog" type="Window" parent="UI"]
-initial_position = 1
+initial_position = 2
 title = "Connect"
 size = Vector2i(410, 287)
 visible = false
@@ -325,14 +318,6 @@ title = "Settings"
 visible = false
 gui = NodePath("..")
 
-[node name="GameStartWindow" type="Window" parent="UI"]
-size = Vector2i(246, 184)
-visible = false
-unresizable = true
-min_size = Vector2i(246, 184)
-
-[node name="GameStart" parent="UI/GameStartWindow" instance=ExtResource("13_m1dby")]
-
 [connection signal="mouse_entered" from="UI/Bottombar" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Bottombar" to="World3D" method="on_mouse_exited"]
 [connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
@@ -347,17 +332,16 @@ min_size = Vector2i(246, 184)
 [connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="_on_new_room_dialog_close_requested"]
 [connection signal="mouse_entered" from="UI/NewRoomDialog" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/NewRoomDialog" to="World3D" method="on_mouse_exited"]
-[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="_on_file_button_pressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="create_room"]
-[connection signal="close_requested" from="UI/FileDialog" to="UI" method="_on_file_dialog_close_requested"]
-[connection signal="file_selected" from="UI/FileDialog" to="UI" method="_on_file_selected"]
+[connection signal="close_requested" from="UI/MapDialog" to="UI" method="_on_file_dialog_close_requested"]
+[connection signal="pressed" from="UI/MapDialog/StandardMapPicker/Button" to="UI" method="_on_map_selected"]
+[connection signal="close_requested" from="UI/UserFileDialog" to="UI" method="_on_file_dialog_close_requested"]
+[connection signal="file_selected" from="UI/UserFileDialog" to="UI" method="_on_file_selected"]
 [connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="_on_connect_dialog_close_requested"]
 [connection signal="text_changed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/LineEdit" to="." method="_on_address_changed"]
-[connection signal="pressed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/ConnectButton" to="." method="_connect"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="World3D" method="on_mouse_exited"]
-[connection signal="pressed" from="UI/GameStartWindow/GameStart/Button" to="World3D" method="play"]
 
 [editable path="UI/NewRoomDialog/NewRoom"]
+[editable path="UI/MapDialog/StandardMapPicker"]
 [editable path="UI/ConnectDialog/Connect"]
-[editable path="UI/GameStartWindow/GameStart"]

@@ -17,5 +17,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ubsga")
+bus = &"Sound"
 
 [node name="GunMesh" parent="." instance=ExtResource("3_hjvei")]

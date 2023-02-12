@@ -2,11 +2,11 @@ extends Node3D
 
 var player = preload("res://actors/player.tscn")
 
-func _ready():
+func _process(_delta):
 	if Global.is_networked_game:
 		Global.spawnpoint = global_transform.origin + Vector3(0,1,0)
 	else :
-		instance_player()
+		pass#instance_player()
 
 func instance_player():
 	var player_instance = player.instantiate()

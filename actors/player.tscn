@@ -236,6 +236,23 @@ target_position = Vector3(0, 0, -2.5)
 [node name="AimCast" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -1000)
 
+[node name="RayContainer" type="Node3D" parent="Head/Camera3D"]
+
+[node name="AimCast" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast2" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast3" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast4" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast5" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
 [node name="SpringArm3D" type="SpringArm3D" parent="Head"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 spring_length = 0.5

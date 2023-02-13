@@ -81,7 +81,7 @@
 // entity 3
 {
 "classname" "ev_day"
-"origin" "-56 8 24"
+"origin" "-24 24 24"
 }
 // entity 4
 {
@@ -107,4 +107,9 @@
 {
 "classname" "ai_enemy"
 "origin" "-168 168 24"
+}
+// entity 9
+{
+"classname" "wp_shotgun"
+"origin" "40 0 24"
 }

@@ -51,10 +51,6 @@ enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MTo
 
 singletons=[]
 
-[gui]
-
-theme/custom_font="res://assets/fonts/system.tres"
-
 [input]
 
 ui_accept={

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl4xbycextpbd"]
+
+[ext_resource type="Script" path="res://weapons/tool.gd" id="1_l4poo"]
+[ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://weapons/semi_gun_mesh.tscn" id="2_j8ohy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ibqw"]
+size = Vector3(0.115858, 0.381274, 0.640468)
+
+[node name="wp_pbgun" type="RigidBody3D"]
+script = ExtResource("1_l4poo")
+weapon_path = "res://weapons/shot_gun_hr.tscn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00143194, 0.0767221, -0.14901)
+shape = SubResource("BoxShape3D_8ibqw")
+
+[node name="GunMesh" parent="." instance=ExtResource("2_j8ohy")]

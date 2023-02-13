@@ -41,7 +41,7 @@ window/size/width=800
 
 [dotnet]
 
-project/assembly_name="Sunaba"
+project/assembly_name="Toonbox"
 
 [editor_plugins]
 

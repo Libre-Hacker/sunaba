@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bh50imnqtgwfk"]
+
+[ext_resource type="Texture2D" uid="uid://doagxgjp7ssab" path="res://assets/textures/clothes/generic_female_pale.png" id="1_7pi3m"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_7pi3m")

@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bw35cb7rqmi8i" path="res://assets/models/long_hair.gltf" id="1_3m730"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_na72m"]
+diffuse_mode = 3
+specular_mode = 1
 albedo_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
 [node name="long_hair" instance=ExtResource("1_3m730")]

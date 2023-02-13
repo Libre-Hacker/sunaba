@@ -9,8 +9,8 @@
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/progressbar_white.tres" id="8"]
 [ext_resource type="StyleBox" path="res://assets/ui/carbon_ui/tab_fg.tres" id="9"]
 [ext_resource type="StyleBox" uid="uid://nlmo78inhosd" path="res://assets/ui/2kui/empty.tres" id="10"]
-[ext_resource type="FontFile" uid="uid://b1nycdbgsw3ks" path="res://assets/fonts/Inter-Regular.ttf" id="10_arpad"]
-[ext_resource type="Texture2D" uid="uid://dxy358e43njgp" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="10_kroio"]
+[ext_resource type="FontFile" uid="uid://dvabxqawxiomj" path="res://assets/fonts/Inter-Regular.ttf" id="10_arpad"]
+[ext_resource type="Texture2D" uid="uid://dkrwbo3vb38l4" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="10_kroio"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_addck"]
 content_margin_left = 5.0

@@ -108,7 +108,7 @@ func _ready():
 	reload_label.hide()
 	$Hud/ToolPanel.hide()
 	max_speed = default_speed
-	hand.top_level = true
+	#hand.top_level = true
 
 func _input(event):
 	if !is_multiplayer_authority() and Global.is_networked_game:
@@ -294,11 +294,8 @@ func _process(_delta):
 
 func _physics_process(delta):
 	if is_multiplayer_authority() or !Global.is_networked_game:
-		if is_on_floor():
-			max_speed = default_speed
-			walk_timer.wait_time = default_walk_sound_time
-		else:
-			max_speed += 0.25
+		max_speed = default_speed
+		walk_timer.wait_time = default_walk_sound_time
 		var input_vector = get_input_vector()
 		var direction = get_direction(input_vector)
 		jump()
@@ -315,10 +312,6 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("sprint"): #and is_on_floor():
 			max_speed = sprint_speed
-			walk_timer.wait_time = sprint_walk_sound_time
-			$Hud/Panel/SprintingIcon.show()
-		elif Input.is_action_pressed("sprint") and !is_on_floor():
-			max_speed += 1
 			walk_timer.wait_time = sprint_walk_sound_time
 			$Hud/Panel/SprintingIcon.show()
 		
@@ -368,7 +361,7 @@ func _physics_process(delta):
 		$Male/Akari.position = Vector3.ZERO
 		$Male/Akari.rotation = Vector3.ZERO
 		#animation_player.rpc("play", "idle")
-		if !is_reloading:
+		if !is_reloading and !gun_ap.current_animation == "fire":
 			gun_ap.play("idle")
 			#gun_ap.rpc("play", "idle")
 	elif ((velocity.length() == 0) or (vel.length() == 0)) and Input.is_action_pressed("crouch"):
@@ -377,7 +370,7 @@ func _physics_process(delta):
 		model.position.y = 0.175
 		model2.position.y = 0.175
 		#animation_player.rpc("play", "idle")
-		if !is_reloading:
+		if !is_reloading and !gun_ap.current_animation == "fire":
 			gun_ap.play("idle")
 			#gun_ap.rpc("play", "idle")
 	else:
@@ -395,7 +388,7 @@ func _physics_process(delta):
 				can_play_walk_sound = false
 				$WalkSound.play()
 				walk_timer.start()
-			if !is_reloading:
+			if !is_reloading and !gun_ap.current_animation == "fire":
 				gun_ap.play("walk")
 				#gun_ap.rpc("play", "walk")
 		elif max_speed == crouch_move_speed and is_on_floor():
@@ -408,7 +401,7 @@ func _physics_process(delta):
 				can_play_walk_sound = false
 				$WalkSound.play()
 				walk_timer.start()
-			if !is_reloading:
+			if !is_reloading and !gun_ap.current_animation == "fire":
 				gun_ap.play("walk")
 				#gun_ap.rpc("play", "walk")
 		elif max_speed == sprint_speed and is_on_floor():
@@ -425,8 +418,8 @@ func _physics_process(delta):
 				can_play_walk_sound = false
 				$RunSound.play()
 				walk_timer.start()
-			if !is_reloading:
-				gun_ap.play("walk")
+			if !is_reloading and !gun_ap.current_animation == "fire":
+				gun_ap.play("run")
 				#gun_ap.rpc("play", "walk")
 		elif !is_on_floor():
 			animation_player.play("Locomotion-Library/jump")
@@ -438,14 +431,15 @@ func _physics_process(delta):
 			$Male/Akari.position = Vector3.ZERO
 			$Male/Akari.rotation = Vector3.ZERO
 			#animation_player.rpc("play", "jump")
-			if !is_reloading:
+			if !is_reloading and !gun_ap.current_animation == "fire":
 				gun_ap.play("idle")
 				#gun_ap.rpc("play", "idle")
 		
 	
 	hand.global_transform.origin = hand_loc.global_transform.origin
-	hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
-	hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
+	hand.global_rotation = hand_loc.global_rotation
+	#hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
+	#hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
 	
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:
@@ -577,6 +571,8 @@ func _fire():
 	if !is_reloading and ammo != 0:
 		ammo -= 1
 		hand.get_child(0).get_node("WeaponSound").play()
+		gun_ap.stop()
+		gun_ap.play("fire")
 		if aimcast.is_colliding():
 			var target = aimcast.get_collider()
 			if target.is_in_group("bot") and !hand.get_child(0).name == "SprayGun":

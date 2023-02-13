@@ -1,5 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmemscralfmbr"]
+[gd_scene load_steps=3 format=3 uid="uid://bmemscralfmbr"]
 
 [ext_resource type="PackedScene" uid="uid://4a8vw70shuwk" path="res://assets/models/hair.gltf" id="1_nw4um"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05qb8"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
 [node name="hair" instance=ExtResource("1_nw4um")]
+
+[node name="Hair" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_05qb8")

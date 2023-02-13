@@ -1,6 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://50d4vi014djd"]
 
-[ext_resource type="Texture2D" uid="uid://cs8vly8s6665n" path="res://assets/textures/clothes/generic_male_pale.png" id="1_me5wi"]
+[ext_resource type="Texture2D" uid="uid://v73nldlrfjvy" path="res://assets/textures/clothes/generic_male_pale.png" id="1_me5wi"]
 
 [resource]
+diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("1_me5wi")

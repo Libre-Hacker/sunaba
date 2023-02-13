@@ -1,20 +1,21 @@
-[gd_scene load_steps=24 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=27 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
 [ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="2_rdd8b"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://jmh58bjr7u0i" path="res://weapons/dartgun.tscn" id="4_ma1ps"]
 [ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="4_nrqwa"]
-[ext_resource type="Texture2D" uid="uid://becymyc03ymk7" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
-[ext_resource type="Texture2D" uid="uid://dxhagf55nnhfj" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://b2ajdpevbyjp3" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
+[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
+[ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
 [ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="8_65326"]
-[ext_resource type="Texture2D" uid="uid://vmyffwrwaqs5" path="res://assets/ui/crosshair.png" id="9"]
-[ext_resource type="AudioStream" uid="uid://cfci0qxao2lf7" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
+[ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
+[ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
-[ext_resource type="AudioStream" uid="uid://ciqcq4oflkwui" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
-[ext_resource type="AudioStream" uid="uid://ci3awwjcj3brt" path="res://assets/audio/reload.mp3" id="10_huo2t"]
-[ext_resource type="AudioStream" uid="uid://bhww2cj575dyp" path="res://assets/audio/jump.wav" id="11_w8a3j"]
-[ext_resource type="AudioStream" uid="uid://dek02uwu621r2" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
+[ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
+[ext_resource type="AudioStream" uid="uid://dhowolwhhtbay" path="res://assets/audio/reload.mp3" id="10_huo2t"]
+[ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
+[ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
 
 [sub_resource type="Animation" id="Animation_pux5j"]
 length = 0.001
@@ -30,44 +31,52 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0.185186, -0.168901, -0.348759)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
-[sub_resource type="Animation" id="Animation_b2tcl"]
+[sub_resource type="Animation" id="Animation_l3djw"]
+resource_name = "fire"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.159229, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0966913, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j3tqp"]
 resource_name = "idle"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HandLoc:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.227813, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
-}
-
-[sub_resource type="Animation" id="Animation_w52v3"]
-resource_name = "reload"
-length = 2.38
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HandLoc:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 2, 2.37838),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.185186, -0.168901, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.560507, -0.338006), Vector3(0.185186, -0.168901, -0.338006)]
-}
-
-[sub_resource type="Animation" id="Animation_ewl2c"]
-resource_name = "walk"
 length = 3.0
 loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -78,15 +87,91 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1, 2, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.168901, -0.391376), Vector3(0.185186, -0.168901, -0.310407), Vector3(0.185186, -0.168901, -0.348759)]
+"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.12452, -0.348759), Vector3(0.185186, -0.193877, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0610691, 0, 0), Vector3(-0.0431969, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rmhp7"]
+resource_name = "reload"
+length = 2.38
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.519391, -0.255023), Vector3(0.185186, -0.519391, -0.255023), Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.782344, 0, 0), Vector3(-0.782344, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fpt3l"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.252234, -0.348759), Vector3(0.305189, -0.17009, -0.348759), Vector3(0.185186, -0.252234, -0.348759), Vector3(0.067556, -0.17, -0.349), Vector3(0.185186, -0.252234, -0.348759)]
+}
+
+[sub_resource type="Animation" id="Animation_xtm0a"]
+resource_name = "walk"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.252234, -0.348759), Vector3(0.305189, -0.17009, -0.348759), Vector3(0.185186, -0.252234, -0.348759), Vector3(0.067556, -0.17, -0.349), Vector3(0.185186, -0.252234, -0.348759)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ik67g"]
 _data = {
 "RESET": SubResource("Animation_pux5j"),
-"idle": SubResource("Animation_b2tcl"),
-"reload": SubResource("Animation_w52v3"),
-"walk": SubResource("Animation_ewl2c")
+"fire": SubResource("Animation_l3djw"),
+"idle": SubResource("Animation_j3tqp"),
+"reload": SubResource("Animation_rmhp7"),
+"run": SubResource("Animation_fpt3l"),
+"walk": SubResource("Animation_xtm0a")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ehqc2"]
@@ -134,7 +219,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 visible = false
 
 [node name="Female" parent="." instance=ExtResource("2_od7wf")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -173,6 +259,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.199886, -0.34875
 
 [node name="HandLoc" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.348759)
+
+[node name="Nail Gun" parent="Head/HandLoc" instance=ExtResource("4_ma1ps")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Head"]
 autoplay = "idle"
@@ -419,6 +508,3 @@ bus = &"Sound"
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
-
-[editable path="Male"]
-[editable path="Female"]

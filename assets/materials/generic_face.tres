@@ -1,6 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://58qwk3nbc2m0"]
 
-[ext_resource type="Texture2D" uid="uid://byh7r1p3d4sye" path="res://assets/textures/faces/face_grey_xl.png" id="1_dkopo"]
+[ext_resource type="Texture2D" uid="uid://c053y3vtehklu" path="res://assets/textures/faces/face_grey_xl.png" id="1_dkopo"]
 
 [resource]
+diffuse_mode = 3
+specular_mode = 1
 albedo_texture = ExtResource("1_dkopo")

@@ -2,10 +2,10 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Sunaba"
-#define MyAppVersion "0.2.15"
+#define MyAppVersion "0.3.0"
 #define MyAppPublisher "mintkat"
 #define MyAppURL "https://mintkat.itch.io/sunaba"
-#define MyAppExeName "Sunaba.exe"
+#define MyAppExeName "sunaba.exe"
 #define MyAppAssocName MyAppName + " Map"
 #define MyAppAssocExt ".map"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
@@ -42,8 +42,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\toonbox\builds\win32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\toonbox\builds\win32\Sunaba.console.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\toonbox\builds\win32\Sunaba.pck"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\toonbox\builds\win32\sunaba.console.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\toonbox\builds\win32\sunaba.pck"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\toonbox\builds\win32\data_folder\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 

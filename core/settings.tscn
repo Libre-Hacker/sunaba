@@ -48,7 +48,7 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = -8.0
 offset_bottom = -8.0
-text = "Toonbox"
+text = "Sunaba"
 script = SubResource("GDScript_qb0mn")
 
 [node name="TextureRect" type="TextureRect" parent="TabBar/TabContainer/About"]

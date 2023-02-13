@@ -22,7 +22,7 @@ func _ready() -> void:
 	#Console.notify("(C) 2022-2023 mintkat")
 	#Console.notify(" ")
 	
-	print("Toonbox")
+	print("Sunaba")
 	print("Version " + Build.version_number)
 	print("Compiled on " + Build.build_date)
 	print("(C) 2022-2023 mintkat")

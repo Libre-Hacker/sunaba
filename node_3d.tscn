@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca2lcyhqj8bpl"]
+
+[ext_resource type="PackedScene" uid="uid://5yo1xlba4gpk" path="res://entities/wp_autogun.tscn" id="1_28fvo"]
+[ext_resource type="PackedScene" uid="uid://c1j0nhj7jc0qn" path="res://entities/wp_dartgun.tscn" id="2_dshth"]
+[ext_resource type="PackedScene" uid="uid://fes56iisosr1" path="res://entities/wp_semigun.tscn" id="3_g1qfa"]
+[ext_resource type="PackedScene" uid="uid://cl4xbycextpbd" path="res://entities/wp_shotgun.tscn" id="4_ocx35"]
+[ext_resource type="PackedScene" uid="uid://du7jbdq2xbapo" path="res://entities/wp_sniper.tscn" id="5_3bbvx"]
+[ext_resource type="PackedScene" uid="uid://cq4ur31at880g" path="res://entities/ev_void.tscn" id="6_1detd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_45844"]
+size = Vector3(5.36924, 0.066805, 2.97328)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="wp_pbgun" parent="." instance=ExtResource("1_28fvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000990868, 0, 0)
+
+[node name="wp_dartgun" parent="." instance=ExtResource("2_dshth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260757, 0, 0)
+
+[node name="wp_pbgun2" parent="." instance=ExtResource("3_g1qfa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213083, 0, 0)
+
+[node name="wp_pbgun3" parent="." instance=ExtResource("4_ocx35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.409145, 0, 0)
+
+[node name="wp_pbgun4" parent="." instance=ExtResource("5_3bbvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58738, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.27402)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.171774, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_45844")
+
+[node name="ev_white" parent="." instance=ExtResource("6_1detd")]

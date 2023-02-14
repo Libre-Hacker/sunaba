@@ -10,12 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Sunaba"
+config/name="Toonbox"
 run/main_scene="res://core/main.tscn"
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.0", "C#")
 run/max_fps=30
-boot_splash/show_image=false
+boot_splash/bg_color=Color(0.4, 0.4, 0.4, 1)
+boot_splash/image="res://splashscreen.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.png"
+boot_splash/minimum_display_time=10000
 
 [autoload]
 
@@ -23,9 +27,11 @@ GameManager="*res://core/game_manager.gd"
 Build="*res://core/build.gd"
 ThemeManager="*res://core/theme_manager.gd"
 Global="*res://core/global.gd"
+Console="*res://addons/panku_console/console.tscn"
 
 [debug]
 
+file_logging/enable_file_logging.pc=false
 multirun/number_of_windows=2
 multirun/window_distance=1270
 multirun/add_custom_args=true
@@ -36,6 +42,7 @@ multirun/other_window_args="join"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/size/mode=3
 window/dpi/allow_hidpi=false
 window/size/width=800
 
@@ -45,7 +52,7 @@ project/assembly_name="Sunaba"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/qodot/plugin.cfg")
+enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [gdnative]
 
@@ -246,6 +253,11 @@ crouch={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+toggle_console={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
 
 [locale]
 
@@ -257,6 +269,10 @@ translations=PackedStringArray()
 export/aot/enabled=true
 export/aot/full_aot=true
 export/aot/use_interpreter=false
+
+[panku]
+
+toggle_console_action="toggle_console"
 
 [physics]
 

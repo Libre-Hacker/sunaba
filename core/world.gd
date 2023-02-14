@@ -24,7 +24,7 @@ var spawnpoint : Vector3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	#Console.register_env("world", self)
+	Console.register_env("world", self)
 	#QodotDependencies.check_dependencies(http_request)
 
 func _physics_process(_delta):
@@ -46,6 +46,11 @@ func load_map(path):
 		map_manager.verify_and_build()
 		#map_manager.
 		
+
+@rpc("any_peer")
+func set_map(path):
+	if multiplayer.get_unique_id() == 1:
+		set_map(path).rpc()
 
 func prep_for_respawn():
 	$RespawnTimer.start()

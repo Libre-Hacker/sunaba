@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dpdsh18u6mbnt"]
+[gd_scene load_steps=18 format=3 uid="uid://dpdsh18u6mbnt"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
 [ext_resource type="Theme" uid="uid://l77ckodjfb54" path="res://assets/ui/2kui/2kui.tres" id="4_qofgx"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
 [ext_resource type="Script" path="res://core/label.gd" id="6_hf4ex"]
 [ext_resource type="FontFile" uid="uid://bevdxpypkmjw5" path="res://assets/fonts/fredoka_one.ttf" id="7_a6y7c"]
+[ext_resource type="Script" path="res://core/v_label.gd" id="7_k028f"]
+[ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://bg.jpg" id="8_cw4da"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
-[ext_resource type="Texture2D" uid="uid://0yo2od878bfq" path="res://assets/textures/backdrop.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://sbgirl2.png" id="9_ydr20"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
 [ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
@@ -16,6 +18,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
+
+[sub_resource type="SystemFont" id="SystemFont_f1xnx"]
+font_names = PackedStringArray("Trebuchet MS", "Sans-Serif")
+font_weight = 675
 
 [node name="Main" type="Node"]
 script = ExtResource("13")
@@ -93,7 +99,6 @@ theme_override_constants/outline_size = 2
 scroll_following = true
 
 [node name="PauseMenu" type="Panel" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,6 +106,71 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n63q7")
+
+[node name="Control" type="Control" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/PauseMenu/Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_f1xnx")
+text = "v0.3.0dev"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_k028f")
+
+[node name="TextureRect" type="TextureRect" parent="UI/PauseMenu/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -339.0
+offset_right = 217.0
+offset_bottom = 53.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("9_ydr20")
+expand_mode = 1
+flip_h = true
+
+[node name="Logo" type="Label" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -73.0
+offset_right = 199.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_a6y7c")
+theme_override_font_sizes/font_size = 30
+text = "sunaba"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/PauseMenu"]
 layout_mode = 1
@@ -162,22 +232,7 @@ text = "Quit"
 flat = true
 alignment = 0
 
-[node name="Logo" type="Label" parent="UI/PauseMenu"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 39.0
-offset_top = -62.0
-offset_right = 199.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6y7c")
-theme_override_font_sizes/font_size = 30
-text = "sunaba"
-
 [node name="MainMenu" type="Control" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -192,9 +247,74 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10")
+texture = ExtResource("8_cw4da")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="Control" type="Control" parent="UI/MainMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/MainMenu/TextureRect/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/MainMenu/TextureRect/Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_f1xnx")
+text = "v0.3.0dev"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("7_k028f")
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu/TextureRect/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -339.0
+offset_right = 217.0
+offset_bottom = 53.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("9_ydr20")
+expand_mode = 1
+flip_h = true
+
+[node name="Logo" type="Label" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -73.0
+offset_right = 199.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_a6y7c")
+theme_override_font_sizes/font_size = 30
+text = "sunaba"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 layout_mode = 1
@@ -255,20 +375,6 @@ theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Quit"
 flat = true
 alignment = 0
-
-[node name="Logo" type="Label" parent="UI/MainMenu"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 39.0
-offset_top = -62.0
-offset_right = 199.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6y7c")
-theme_override_font_sizes/font_size = 30
-text = "sunaba"
 
 [node name="NewRoomDialog" type="Window" parent="UI"]
 initial_position = 2

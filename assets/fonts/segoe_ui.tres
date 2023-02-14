@@ -4,5 +4,5 @@
 [ext_resource type="FontFile" uid="uid://f0puv37mdh06" path="res://assets/fonts/Ubuntu-Light.ttf" id="2_eaalc"]
 
 [resource]
-font_names = PackedStringArray("Segoe UI")
+font_names = PackedStringArray("Segoe UI", "Lucida Sans", "DejaVu Sans", "Tahoma", "Sans-Serif")
 fallbacks = Array[Font]([ExtResource("1_ya5d1"), ExtResource("2_eaalc")])

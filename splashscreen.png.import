@@ -2,23 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch7edfibdgufv"
-path="res://.godot/imported/icons8-pi-32.png-05b9be2a980ebe9edc6ee36270e33fa8.ctex"
+uid="uid://cjgheqbux4p2w"
+path="res://.godot/imported/splashscreen.png-642ebbdb6d608345041a31aaeea20ca5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/panku_console/res/pics/icons8-pi-32.png"
-dest_files=["res://.godot/imported/icons8-pi-32.png-05b9be2a980ebe9edc6ee36270e33fa8.ctex"]
+source_file="res://splashscreen.png"
+dest_files=["res://.godot/imported/splashscreen.png-642ebbdb6d608345041a31aaeea20ca5.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

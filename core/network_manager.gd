@@ -10,7 +10,7 @@ var enet_peer = ENetMultiplayerPeer.new()
 
 func _ready():
 	multiplayer.multiplayer_peer = null
-	#Console.register_env("netman", self)
+	Console.register_env("netman", self)
 
 func connect_to_server() -> void:
 	join_room("127.0.0.1")

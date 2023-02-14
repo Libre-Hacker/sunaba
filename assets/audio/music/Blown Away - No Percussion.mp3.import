@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yufia0ykq44j"
+path="res://.godot/imported/Blown Away - No Percussion.mp3-2f1b981bd7df4d62875421d0638e8176.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Blown Away - No Percussion.mp3"
+dest_files=["res://.godot/imported/Blown Away - No Percussion.mp3-2f1b981bd7df4d62875421d0638e8176.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

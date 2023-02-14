@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv215m1emsbqf"
+path="res://.godot/imported/Stringed Disco.mp3-40074421aaf6a3c83ada7bde6eff172e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Stringed Disco.mp3"
+dest_files=["res://.godot/imported/Stringed Disco.mp3-40074421aaf6a3c83ada7bde6eff172e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

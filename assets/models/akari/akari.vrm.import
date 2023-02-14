@@ -1,0 +1,37 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://baml78lqg2pmb"
+path="res://.godot/imported/akari.vrm-05f178e541e93471cff71e38a3595206.scn"
+
+[deps]
+
+source_file="res://assets/models/akari/akari.vrm"
+dest_files=["res://.godot/imported/akari.vrm-05f178e541e93471cff71e38a3595206.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Skeleton3D": {
+"retarget/bone_map": Resource("res://assets/BoneMaps/OpenBot-BoneMap.tres")
+}
+}
+}
+meshes/handle_gltf_embedded_images=1

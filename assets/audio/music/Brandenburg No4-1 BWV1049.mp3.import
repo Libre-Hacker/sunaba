@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0vlhqi015he2"
+path="res://.godot/imported/Brandenburg No4-1 BWV1049.mp3-6b8d141a0687ff3699c6065bb054cdca.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Brandenburg No4-1 BWV1049.mp3"
+dest_files=["res://.godot/imported/Brandenburg No4-1 BWV1049.mp3-6b8d141a0687ff3699c6065bb054cdca.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

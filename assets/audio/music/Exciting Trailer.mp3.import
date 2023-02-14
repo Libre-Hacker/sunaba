@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8vh2hsddmc58"
+path="res://.godot/imported/Exciting Trailer.mp3-710c4de9ac23295708cdb5626c74b92f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/Exciting Trailer.mp3"
+dest_files=["res://.godot/imported/Exciting Trailer.mp3-710c4de9ac23295708cdb5626c74b92f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

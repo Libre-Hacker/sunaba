@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bm8bselfgeive"
+path="res://.godot/imported/dm_test.map-c492352da8bf0ef80b368e7be85ddd4d.tres"
+
+[deps]
+
+source_file="res://maps/dm_test.map"
+dest_files=["res://.godot/imported/dm_test.map-c492352da8bf0ef80b368e7be85ddd4d.tres"]
+
+[params]
+

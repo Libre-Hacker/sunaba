@@ -17,6 +17,10 @@ var player_model : String = "male"
 
 var player = null
 
+var bots_enabled : bool = false
+
+var bot_amount = 0
+
 func _ready():
 	set_to_default()
 

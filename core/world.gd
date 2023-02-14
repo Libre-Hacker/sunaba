@@ -83,11 +83,27 @@ func instance_player(id):
 		Global.player = player_instance
 	if Global.game_mode == "":
 		player_instance.global_transform.origin = Global.spawnpoint
+	elif Global.game_mode == "Deathmatch":
+		player_instance.global_transform.origin = Global.spawnpoints.pick_random()
 
 func player_joined(id):
 	rpc_id(id, "load_map_remote")
 
+func add_bots():
+	if Global.bots_enabled == false or Global.bot_amount == 0 or Global.game_mode == "":
+		return
+	add_bot()
 
+func add_bot():
+	var bot_instance = load("res://actors/dm_bot.tscn").instantiate()
+	bot_instance.name = "Bot " + var_to_str(Global.bot_amount)
+	add_child(bot_instance)
+	#$OutOfBounds.connect("body_entered", Callable(player_instance, "out_of_bounds"))
+	if Global.game_mode == "Deathmatch":
+		bot_instance.global_transform.origin = Global.spawnpoints.pick_random()
+	Global.bot_amount -= 1
+	if Global.bot_amount != 0:
+		add_bot()
 
 
 func _on_map_manager_unwrap_uv_2_complete():
@@ -105,3 +121,4 @@ func _on_map_manager_build_complete():
 		rpc_id(1, "instance_player", id)
 	else:
 		instance_player(id)
+	add_bots()

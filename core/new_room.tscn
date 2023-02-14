@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://du621tdl15o4v"]
+[gd_scene load_steps=3 format=3 uid="uid://du621tdl15o4v"]
 
 [ext_resource type="Texture2D" uid="uid://sq52byrnn7ls" path="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/folder_page.png" id="1_27q1k"]
+[ext_resource type="Script" path="res://core/new_room.gd" id="1_xihdi"]
 
 [node name="NewRoom" type="Panel"]
 offset_left = -1.0
 offset_top = -1.0
 offset_right = 436.0
 offset_bottom = 290.0
+script = ExtResource("1_xihdi")
 
 [node name="RoomName" type="LineEdit" parent="."]
 visible = false
@@ -60,3 +62,26 @@ offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Create"
+
+[node name="Bots" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 58.0
+offset_right = 414.0
+offset_bottom = 88.0
+text = "Bots"
+
+[node name="BotAmount" type="SpinBox" parent="Bots"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_right = -2.6875
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 12.0
+
+[connection signal="toggled" from="Bots" to="." method="_on_bots_toggled"]
+[connection signal="value_changed" from="Bots/BotAmount" to="." method="_on_bot_amount_changed"]

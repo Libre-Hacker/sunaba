@@ -42,8 +42,9 @@ func load_map_path(path):
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
-		map_manager.map_file = path
-		map_manager.verify_and_build()
+		map_manager.map_resource = path
+		map_manager.build_meshes()
+		$StartTimer.start()
 		#map_manager.
 		
 
@@ -120,6 +121,10 @@ func ultra():
 
 func _on_map_manager_build_complete():
 	map_manager.unwrap_uv2()
+	
+
+
+func _on_start_timer_timeout():
 	navregion.bake_navigation_mesh()
 	var id = multiplayer.get_unique_id()
 	if id != 1:

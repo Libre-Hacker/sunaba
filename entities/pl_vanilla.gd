@@ -2,6 +2,13 @@ extends Node3D
 
 var player = preload("res://actors/player.tscn")
 
+@export var fgd_block = ["player"] 
+
+@export var fgd_model = {
+  "path": "assets/models/tbmodels/playermodel.gltf",
+  "scale": 28
+}
+
 func _ready():
 	if Global.is_networked_game:
 		Global.spawnpoint = global_transform.origin + Vector3(0,1,0)

@@ -278,10 +278,15 @@
 // entity 1
 {
 "classname" "pl_vanilla"
-"origin" "-8 -24 24"
+"origin" "-8 -24 18"
 }
 // entity 2
 {
 "classname" "ev_daytime"
 "origin" "-28 4 20"
+}
+// entity 3
+{
+"classname" "gm_sandbox"
+"origin" "-36 36 20"
 }

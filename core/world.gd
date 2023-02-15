@@ -87,7 +87,7 @@ func instance_player(id):
 	#$OutOfBounds.connect("body_entered", Callable(player_instance, "out_of_bounds"))
 	if id == multiplayer.get_unique_id():
 		Global.player = player_instance
-	if Global.game_mode == "":
+	if Global.game_mode == "" or Global.game_mode == "Sandbox":
 		player_instance.global_transform.origin = Global.spawnpoint
 	elif Global.game_mode == "Deathmatch":
 		player_instance.global_transform.origin = Global.spawnpoints.pick_random()

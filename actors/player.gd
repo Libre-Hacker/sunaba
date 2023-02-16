@@ -86,11 +86,6 @@ func _enter_tree(): if Global.is_networked_game: set_multiplayer_authority(str(n
 
 func _ready():
 	if is_multiplayer_authority() or !Global.is_networked_game:
-		if Global.game_mode == "Deathmatch":
-			global_transform.origin = Global.spawnpoints.pick_random()
-		else:
-			global_transform.origin = Global.spawnpoint
-		
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		reach = fp_reach
 		aimcast = fp_aimcast
@@ -642,7 +637,9 @@ func _spray():
 		$FireTimer.start()
 
 func out_of_bounds(_area):
-	take_damage(100)
+	if global_position.y < -250:
+		print("out of bounds")
+		take_damage(100)
 
 @rpc("any_peer")
 func take_damage(dmg : int):

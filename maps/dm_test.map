@@ -4,6 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/blockout"
+"_tb_def" "builtin:Game.fgd"
 // brush 0
 {
 ( -256 -64 -16 ) ( -256 -63 -16 ) ( -256 -64 -15 ) blockout/gray_check 0 0 0 0.125 0.125
@@ -177,21 +178,21 @@
 }
 // entity 8
 {
-"classname" "ev_day"
-"origin" "-8 8 72"
-}
-// entity 9
-{
 "classname" "wp_autogun"
 "origin" "-40 40 72"
 }
-// entity 10
+// entity 9
 {
 "classname" "wp_semigun"
 "origin" "-40 -40 72"
 }
-// entity 11
+// entity 10
 {
 "classname" "wp_sniper"
 "origin" "-40 0 72"
+}
+// entity 11
+{
+"classname" "ev_daytime"
+"origin" "-12 4 68"
 }

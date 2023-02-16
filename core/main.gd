@@ -9,6 +9,8 @@ var address = "localhost"
 @onready var world = $World3D
 
 func _ready() -> void:
+	#if OS.get_name() == "Android":
+	ProjectSettings.set("display/window/stretch/scale", 2)
 	chat_entry.editable = false
 	$UI.theme = ThemeManager.theme
 	Global.game_started = false

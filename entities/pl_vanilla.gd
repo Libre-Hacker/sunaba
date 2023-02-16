@@ -9,7 +9,7 @@ var player = preload("res://actors/player.tscn")
   "scale": 28
 }
 
-func _ready():
+func _process(delta):
 	if Global.is_networked_game:
 		Global.spawnpoint = global_transform.origin + Vector3(0,1,0)
 	else :

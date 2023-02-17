@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqkr73tbbfydb"]
 
-[ext_resource type="AudioStream" uid="uid://bycn173l2djr4" path="res://assets/audio/ambiance_day.wav" id="1"]
+[ext_resource type="AudioStream" uid="uid://dhmvgshcds6fp" path="res://assets/audio/ambiance_day.ogg" id="1_tkfkr"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1")
+stream = ExtResource("1_tkfkr")
 autoplay = true

@@ -7,13 +7,10 @@
 .mono/
 data_*/
 
-builds/
+bin/
 webrtc/
 webrtc_debug/
 
-*.dll
-*.dylib
-*.so
 
 /maps/autosave/
 

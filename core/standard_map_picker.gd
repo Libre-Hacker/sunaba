@@ -20,7 +20,8 @@ func get_maps():
 		if file == "":
 			break
 		elif (not file.ends_with(".import")) and file.ends_with(".map"):
-			$OptionButton.add_item(file)
+			var map_name = file.left(-4)
+			$OptionButton.add_item(map_name)
 	
 	dir.list_dir_end()
 	

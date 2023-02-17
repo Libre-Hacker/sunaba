@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://lohq3xly0ep4"]
+[gd_scene load_steps=6 format=3 uid="uid://cy66gpr7pewy6"]
 
-[ext_resource type="Script" path="res://entities/bot.gd" id="2"]
-[ext_resource type="SystemFont" uid="uid://dca7seoyu4mff" path="res://assets/fonts/segoe_ui.tres" id="3_73qsh"]
+[ext_resource type="Script" path="res://entities/bot.gd" id="1_n22hr"]
+[ext_resource type="SystemFont" uid="uid://dca7seoyu4mff" path="res://assets/fonts/segoe_ui.tres" id="3_qfxjr"]
+[ext_resource type="Texture2D" uid="uid://bquvcefq7cjne" path="res://icon.svg" id="4_b5xej"]
+[ext_resource type="AudioStream" uid="uid://6keiy280y5jk" path="res://assets/audio/elevator.ogg" id="5_mpdqb"]
 
 [sub_resource type="CapsuleShape3D" id="1"]
 radius = 0.280286
 height = 1.50758
 
-[node name="Bot" type="CharacterBody3D" groups=["bot"]]
+[node name="Nextbot" type="CharacterBody3D" groups=["bot"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.595865, 0)
-script = ExtResource("2")
-damage = 0
+script = ExtResource("1_n22hr")
+damage = 100
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756158, 0)
@@ -32,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263053, -0.219438, -0.455246)
 
 [node name="Reach" type="RayCast3D" parent="Head"]
-target_position = Vector3(0, 0, -2.5)
+target_position = Vector3(0, 0, -0.5)
 
 [node name="AimCast" type="RayCast3D" parent="Head"]
 visible = false
@@ -40,14 +42,26 @@ target_position = Vector3(0, 0, -1000)
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93488, 0)
+visible = false
 billboard = 1
 text = "Bot  100 / 100"
-font = ExtResource("3_73qsh")
+font = ExtResource("3_qfxjr")
 
 [node name="FireTimer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756, 0)
+billboard = 1
+texture = ExtResource("4_b5xej")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756, 0)
+stream = ExtResource("5_mpdqb")
+autoplay = true
+max_distance = 10.0
+
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
-[connection signal="timeout" from="Timer" to="." method="_start"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]

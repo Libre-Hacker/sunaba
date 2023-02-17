@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://d2fud4lvqtq0q"]
 
-[ext_resource path="res://assets/audio/ambience-spring.wav" type="AudioStream" id=1]
+[ext_resource type="AudioStream" uid="uid://s321q31pbhfd" path="res://assets/audio/ambience-spring.ogg" id="1_0t8sr"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource("1_0t8sr")
 autoplay = true

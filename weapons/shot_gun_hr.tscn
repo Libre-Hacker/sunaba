@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dswuc2ta6jt8k"]
 
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="1_0jn4e"]
-[ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/paintball.wav" id="2_d1f2q"]
+[ext_resource type="AudioStream" uid="uid://bbc84qkmlxduf" path="res://assets/audio/paintball.ogg" id="2_xccde"]
 [ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://weapons/semi_gun_mesh.tscn" id="3_o1epd"]
 [ext_resource type="PackedScene" uid="uid://cnnovmjscs5fd" path="res://weapons/shotgun_mesh.tscn" id="4_opnmh"]
 
@@ -19,7 +19,7 @@ bullet_hole_path = "res://weapons/paintball_bullet_decal.tscn"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_d1f2q")
+stream = ExtResource("2_xccde")
 bus = &"Sound"
 
 [node name="GunMesh" parent="." instance=ExtResource("3_o1epd")]

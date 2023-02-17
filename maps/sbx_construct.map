@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"_tb_textures" "textures/Brick;textures/Building;textures/Grass;textures/Sand;textures/Stone;textures/Tile;textures/Water"
+"_tb_textures" "textures/Brick;textures/Building;textures/Grass;textures/Sand;textures/Stone;textures/Tile;textures/Water;textures/special"
 "_tb_def" "builtin:Game.fgd"
 // brush 0
 {
@@ -154,7 +154,7 @@
 ( -256 -304 16 ) ( -256 -303 16 ) ( -256 -304 17 ) Building/building_15 -96 0 0 0.061 0.0625
 ( -256 -320 16 ) ( -256 -320 17 ) ( -255 -320 16 ) Building/building_15 -96 0 0 0.061 0.0625
 ( -256 -304 16 ) ( -255 -304 16 ) ( -256 -303 16 ) Building/building_15 -96 0 0 0.061 0.0625
-( -160 -192 352 ) ( -160 -191 352 ) ( -159 -192 352 ) Building/building_15 -96 0 0 0.061 0.0625
+( -160 -192 352 ) ( -160 -191 352 ) ( -159 -192 352 ) special/skip -96 0 0 0.061 0.0625
 ( -160 -192 32 ) ( -159 -192 32 ) ( -160 -192 33 ) Building/building_15 -96 0 0 0.061 0.0625
 ( -128 -192 32 ) ( -128 -192 33 ) ( -128 -191 32 ) Building/building_15 -96 0 0 0.061 0.0625
 }

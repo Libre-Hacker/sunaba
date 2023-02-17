@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
 [ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="8_65326"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
-[ext_resource type="AudioStream" uid="uid://fhjjcheyyaqx" path="res://assets/audio/walk/playerfoot_09.wav" id="9_a1b3j"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
-[ext_resource type="AudioStream" uid="uid://b0yh00m17auy0" path="res://assets/audio/walk/run.wav" id="10_gg78m"]
-[ext_resource type="AudioStream" uid="uid://dhowolwhhtbay" path="res://assets/audio/reload.mp3" id="10_huo2t"]
-[ext_resource type="AudioStream" uid="uid://5wdmgokytd60" path="res://assets/audio/jump.wav" id="11_w8a3j"]
-[ext_resource type="AudioStream" uid="uid://c1qcdxbgxonho" path="res://assets/audio/pickup1.wav" id="11_yir2u"]
+[ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
+[ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="13_xlyhy"]
+[ext_resource type="AudioStream" uid="uid://boy6burcg46sc" path="res://assets/audio/reload.ogg" id="14_hvgws"]
+[ext_resource type="AudioStream" uid="uid://us3l5m6ksqpi" path="res://assets/audio/pickup1.ogg" id="15_6o4pc"]
+[ext_resource type="AudioStream" uid="uid://by8biiykns88" path="res://assets/audio/jump.ogg" id="16_c33kq"]
 
 [sub_resource type="Animation" id="Animation_pux5j"]
 length = 0.001
@@ -497,29 +497,29 @@ wait_time = 2.38
 wait_time = 0.1
 
 [node name="WalkSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_a1b3j")
+stream = ExtResource("12_dicte")
 bus = &"Sound"
 
 [node name="RunSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_gg78m")
+stream = ExtResource("13_xlyhy")
 bus = &"Sound"
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.35
 
 [node name="ReloadSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_huo2t")
+stream = ExtResource("14_hvgws")
 bus = &"Sound"
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_yir2u")
+stream = ExtResource("15_6o4pc")
 bus = &"Sound"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_rs28k")
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_w8a3j")
+stream = ExtResource("16_c33kq")
 bus = &"Sound"
 
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

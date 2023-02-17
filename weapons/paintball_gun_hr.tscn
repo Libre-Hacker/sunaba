@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bb3u0m6nrpp6a"]
 
 [ext_resource type="PackedScene" uid="uid://dua45vbx6dbk" path="res://weapons/paintball_gun_mesh.tscn" id="2_oybf6"]
-[ext_resource type="AudioStream" uid="uid://bbcu687jyvjbd" path="res://assets/audio/paintball.wav" id="3_0da1j"]
+[ext_resource type="AudioStream" uid="uid://bbc84qkmlxduf" path="res://assets/audio/paintball.ogg" id="3_yt417"]
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="11"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dguy5"]
@@ -149,5 +149,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
 mesh = SubResource("ArrayMesh_ocw68")
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_0da1j")
+stream = ExtResource("3_yt417")
 bus = &"Sound"

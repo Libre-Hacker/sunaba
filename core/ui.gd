@@ -64,7 +64,7 @@ func unpause():
 
 
 func _on_map_selected():
-	var map = $MapDialog/StandardMapPicker/OptionButton.text
+	var map = $MapDialog/StandardMapPicker/OptionButton.text + ".map"
 	var map_path = "res://maps/" + map
 	$MapDialog.hide()
 	_on_file_selected(map_path)

@@ -8,6 +8,9 @@ func _enter_tree(): if Global.is_networked_game: set_multiplayer_authority(1)
 func _ready():
 	Global.game_mode = "Deathmatch"
 	
+
+
+func _process(delta):
 	if is_multiplayer_authority():
 		spawnpoints = Global.spawnpoints
 	else:

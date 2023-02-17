@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="1_0bv6p"]
 [ext_resource type="PackedScene" uid="uid://8y2wb4rvutm2" path="res://weapons/dartgun_mesh.tscn" id="2_00on8"]
-[ext_resource type="AudioStream" uid="uid://cpayvpvqnbvim" path="res://assets/audio/nail.wav" id="3_dvvv6"]
+[ext_resource type="AudioStream" uid="uid://bu7pxkybvq1fo" path="res://assets/audio/nail.ogg" id="3_1lc3j"]
 
 [node name="Nail Gun" type="Node3D"]
 script = ExtResource("1_0bv6p")
@@ -20,5 +20,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_dvvv6")
+stream = ExtResource("3_1lc3j")
 bus = &"Sound"

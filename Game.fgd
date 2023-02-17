@@ -37,6 +37,7 @@
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = gm_deathmatch : "" [
+  spawnpoints(choices) : "Spawnpoints" : 
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = gm_sandbox : "" [

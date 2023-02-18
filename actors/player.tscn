@@ -493,6 +493,9 @@ visible = false
 
 [node name="SBMenu" parent="Hud/SBMenuWindow" instance=ExtResource("12_7t0uy")]
 
+[node name="Entities" parent="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer" index="1"]
+visible = true
+
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 2.38
 
@@ -529,3 +532,5 @@ bus = &"Sound"
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+
+[editable path="Hud/SBMenuWindow/SBMenu"]

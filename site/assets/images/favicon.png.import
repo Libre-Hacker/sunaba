@@ -2,23 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvyu23i1c11e"
-path="res://.godot/imported/icon.png-71fadfbb2f4d79371e56da0318dfdbbc.ctex"
+uid="uid://63e0sravs8xo"
+path="res://.godot/imported/favicon.png-f238f3fc79d4a6b1530f0fe7a825757c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://website/icon.png"
-dest_files=["res://.godot/imported/icon.png-71fadfbb2f4d79371e56da0318dfdbbc.ctex"]
+source_file="res://site/assets/images/favicon.png"
+dest_files=["res://.godot/imported/favicon.png-f238f3fc79d4a6b1530f0fe7a825757c.ctex"]
 
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

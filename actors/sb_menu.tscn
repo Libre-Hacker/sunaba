@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://1cjoiev0sjur"]
+[gd_scene load_steps=2 format=3 uid="uid://1cjoiev0sjur"]
+
+[ext_resource type="Script" path="res://actors/sb_menu.gd" id="1_l0ri3"]
 
 [node name="SBMenu" type="Panel"]
 offset_left = -3.0
 offset_top = -3.0
 offset_right = 434.0
 offset_bottom = 279.0
+script = ExtResource("1_l0ri3")
 
 [node name="TabBar" type="TabBar" parent="."]
 layout_mode = 1
@@ -31,8 +34,16 @@ visible = false
 layout_mode = 2
 
 [node name="Tools" type="Control" parent="TabBar/TabContainer"]
-visible = false
 layout_mode = 2
+
+[node name="Tree" type="Tree" parent="TabBar/TabContainer/Tools"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+hide_root = true
 
 [node name="Misc" type="Control" parent="TabBar/TabContainer"]
 visible = false

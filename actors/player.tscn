@@ -1,15 +1,24 @@
-[gd_scene load_steps=27 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=36 format=3 uid="uid://dyssdc8jlqn0n"]
 
+[ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
 [ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="2_rdd8b"]
+[ext_resource type="AudioStream" uid="uid://ol7ob3feddtx" path="res://assets/audio/walk/playerfoot_02.ogg" id="3_h85wq"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="4_nrqwa"]
+[ext_resource type="AudioStream" uid="uid://cpco3qorfi2hu" path="res://assets/audio/walk/playerfoot_03.ogg" id="4_qyfso"]
 [ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
+[ext_resource type="AudioStream" uid="uid://bnq3c31t46c8n" path="res://assets/audio/walk/playerfoot_04.ogg" id="5_ltvl1"]
+[ext_resource type="AudioStream" uid="uid://cj1xsufyc422m" path="res://assets/audio/walk/playerfoot_05.ogg" id="6_jjx6x"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
+[ext_resource type="AudioStream" uid="uid://ciuhjf4lq1uxb" path="res://assets/audio/walk/playerfoot_06.ogg" id="7_qd3hu"]
 [ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="8_65326"]
+[ext_resource type="AudioStream" uid="uid://b2alrpik37gsg" path="res://assets/audio/walk/playerfoot_07.ogg" id="8_ragwt"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
+[ext_resource type="AudioStream" uid="uid://xsn4y0xr76bc" path="res://assets/audio/walk/playerfoot_08.ogg" id="9_ci5of"]
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
+[ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_4145y"]
 [ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="12_7t0uy"]
 [ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
 [ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="13_xlyhy"]
@@ -213,10 +222,22 @@ properties/6/sync = true
 script = ExtResource("4")
 default_speed = 4
 jump_impulse = 10
+foot_sounds = [ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")]
 
 [node name="Male" parent="." instance=ExtResource("2_rdd8b")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
+
+[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+
+[node name="Head" type="BoneAttachment3D" parent="Male/Akari/GeneralSkeleton" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+bone_name = "Head"
+bone_idx = 5
+
+[node name="HeadPos" type="Node3D" parent="Male/Akari/GeneralSkeleton/Head"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.163123, -6.0536e-09)
 
 [node name="Female" parent="." instance=ExtResource("2_od7wf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -496,6 +517,9 @@ visible = false
 [node name="Entities" parent="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer" index="1"]
 visible = true
 
+[node name="Tools" parent="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer" index="2"]
+visible = false
+
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 2.38
 
@@ -533,4 +557,5 @@ bus = &"Sound"
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
 
+[editable path="Male"]
 [editable path="Hud/SBMenuWindow/SBMenu"]

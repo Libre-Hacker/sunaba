@@ -15,6 +15,7 @@ extends CharacterBody3D
 @export var mouse_sensitivity : float = 1
 @export var controller_sensitivity : int = 25
 
+@export var foot_sounds : Array
 
 var snap_vector = Vector3.ZERO
 
@@ -297,6 +298,14 @@ func _process(_delta):
 			model2.visible = false
 
 func _physics_process(delta):
+	head.global_position = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_position
+	head.global_rotation.y = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_rotation.y
+	head.global_rotation.z = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_rotation.z
+	#$Male/Akari/GeneralSkeleton.get_bone_pose_rotation($Male/Akari/GeneralSkeleton.find_bone("Head")).x = head.global_rotation.x
+	#$Female/Akari/GeneralSkeleton.get_bone_pose_rotation($Female/Akari/GeneralSkeleton.find_bone("Head")).x = head.global_rotation.x
+	
+	
+	
 	if is_multiplayer_authority() or !Global.is_networked_game:
 		max_speed = default_speed
 		walk_timer.wait_time = default_walk_sound_time
@@ -322,14 +331,14 @@ func _physics_process(delta):
 		
 		if Input.is_action_pressed("crouch"):
 			coll_shape.shape.height = crouch_height #-= crouch_speed * delta
-			head.position.y = head_crouch_height
+			#head.position.y = head_crouch_height
 			max_speed = crouch_move_speed
 			walk_timer.wait_time = 0.8
 			model.position.y = 0.175
 			model2.position.y = 0.175
 		else:
 			coll_shape.shape.height = default_height#crouch_speed * delta 
-			head.position.y = head_height
+			#head.position.y = head_height
 			model.position.y = 0
 			model2.position.y = 0
 			$Female/Akari.position = Vector3.ZERO
@@ -391,6 +400,7 @@ func _physics_process(delta):
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
+				$WalkSound.stream = foot_sounds.pick_random()
 				$WalkSound.play()
 				walk_timer.start()
 			if !is_reloading and !gun_ap.current_animation == "fire":
@@ -404,6 +414,7 @@ func _physics_process(delta):
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
+				$WalkSound.stream = foot_sounds.pick_random()
 				$WalkSound.play()
 				walk_timer.start()
 			if !is_reloading and !gun_ap.current_animation == "fire":
@@ -421,7 +432,8 @@ func _physics_process(delta):
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
-				$RunSound.play()
+				$WalkSound.stream = foot_sounds.pick_random()
+				$WalkSound.play()
 				walk_timer.start()
 			if !is_reloading and !gun_ap.current_animation == "fire":
 				gun_ap.play("run")

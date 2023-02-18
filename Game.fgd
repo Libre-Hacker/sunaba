@@ -37,7 +37,6 @@
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = gm_deathmatch : "" [
-  spawnpoints(choices) : "Spawnpoints" : 
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = gm_sandbox : "" [
@@ -59,7 +58,7 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = lt_omni : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/tbmodels/playermodel.gltf","scale":28}) = player : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/tbmodels/playermodel.gltf","scale":15}) = player : "" [
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = pl_dmatch : "" [

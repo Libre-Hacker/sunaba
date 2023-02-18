@@ -1,4 +1,4 @@
-// Game: Toonbox
+// Game: Sunaba
 // Format: Standard
 // entity 0
 {
@@ -277,16 +277,16 @@
 }
 // entity 1
 {
-"classname" "pl_vanilla"
-"origin" "-8 -24 18"
-}
-// entity 2
-{
 "classname" "ev_daytime"
 "origin" "-28 4 20"
 }
-// entity 3
+// entity 2
 {
 "classname" "gm_sandbox"
 "origin" "-36 36 20"
+}
+// entity 3
+{
+"classname" "player"
+"origin" "-164 -116 20"
 }

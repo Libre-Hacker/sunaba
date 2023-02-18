@@ -1,9 +1,9 @@
-// Game: Toonbox
+// Game: Sunaba
 // Format: Standard
 // entity 0
 {
 "classname" "worldspawn"
-"_tb_def" "builtin:Toonbox.fgd"
+"_tb_def" "builtin:Sunaba.fgd"
 "_tb_textures" "textures/blockout"
 // brush 0
 {

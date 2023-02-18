@@ -6,7 +6,7 @@ var player = preload("res://actors/player.tscn")
 
 @export var fgd_model = {
   "path": "assets/models/tbmodels/playermodel.gltf",
-  "scale": 28
+  "scale": 15
 }
 
 func _process(delta):

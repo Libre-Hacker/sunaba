@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://1cjoiev0sjur"]
+
+[node name="SBMenu" type="Panel"]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 434.0
+offset_bottom = 279.0
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="TabBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Entities" type="Control" parent="TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tools" type="Control" parent="TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Misc" type="Control" parent="TabBar/TabContainer"]
+visible = false
+layout_mode = 2

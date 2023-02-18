@@ -18,14 +18,14 @@ func _ready() -> void:
 	Console.register_env("sb", self)
 	
 	Console.notify(" ")
-	Console.notify("Sunaba")
+	Console.notify("Toonbox")
 	Console.notify("Version " + Build.version_number)
 	Console.notify("Compiled on " + Build.build_date)
 	Console.notify("(C) 2022-2023 mintkat")
 	Console.notify(" ")
 	
 	print("Sunaba")
-	print("Version " + Build.version_number)
+	print("Toonbox " + Build.version_number)
 	print("Compiled on " + Build.build_date)
 	print("(C) 2022-2023 mintkat")
 	print("")

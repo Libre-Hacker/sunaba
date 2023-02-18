@@ -43,26 +43,26 @@
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = gm_sandbox : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = lt_omni : "" [
-]
-
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = nextbot : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = imagebot : "" [
   gravity(integer) : "Gravity" : -40 : "int"
   jump_impulse(integer) : "Jump Impulse" : 20 : "int"
   damage(integer) : "Damage" : 10 : "int"
   custom_script(string) : "Custom Script" :  : "String"
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = nextbot : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = imagebot : "" [
   gravity(integer) : "Gravity" : -40 : "int"
   jump_impulse(integer) : "Jump Impulse" : 20 : "int"
   damage(integer) : "Damage" : 10 : "int"
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = pl_dmatch : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = lt_omni : "" [
 ]
 
-@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/tbmodels/playermodel.gltf","scale":28}) = pl_vanilla : "" [
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) model({"path":"assets/models/tbmodels/playermodel.gltf","scale":28}) = player : "" [
+]
+
+@PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = pl_dmatch : "" [
 ]
 
 @PointClass size(-4 -4 -4, 4 4 4) color(0 255 0) = tl_spraygun : "" [

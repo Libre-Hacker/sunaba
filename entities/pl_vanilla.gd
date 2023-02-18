@@ -12,6 +12,7 @@ var player = preload("res://actors/player.tscn")
 func _process(delta):
 	if Global.is_networked_game:
 		Global.spawnpoint = global_transform.origin + Vector3(0,1,0)
+		Global.spawnpoints.append(global_transform.origin + Vector3(0,1,0))
 	else :
 		instance_player()
 

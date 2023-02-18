@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
 [ext_resource type="Script" path="res://core/label.gd" id="6_hf4ex"]
-[ext_resource type="FontFile" uid="uid://bevdxpypkmjw5" path="res://assets/fonts/fredoka_one.ttf" id="7_a6y7c"]
 [ext_resource type="Script" path="res://core/v_label.gd" id="7_k028f"]
 [ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://bg.jpg" id="8_cw4da"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
@@ -21,6 +20,10 @@ bg_color = Color(0, 0, 0, 0.607843)
 [sub_resource type="SystemFont" id="SystemFont_f1xnx"]
 font_names = PackedStringArray("Trebuchet MS", "Sans-Serif")
 font_weight = 675
+
+[sub_resource type="SystemFont" id="SystemFont_f0axk"]
+font_names = PackedStringArray("Trebuchet MS")
+font_weight = 999
 
 [node name="Main" type="Node"]
 script = ExtResource("13")
@@ -166,9 +169,9 @@ offset_top = -73.0
 offset_right = 199.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6y7c")
+theme_override_fonts/font = SubResource("SystemFont_f0axk")
 theme_override_font_sizes/font_size = 30
-text = "sunaba"
+text = "toonbox"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/PauseMenu"]
 layout_mode = 1
@@ -310,9 +313,9 @@ offset_top = -73.0
 offset_right = 199.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_a6y7c")
+theme_override_fonts/font = SubResource("SystemFont_f0axk")
 theme_override_font_sizes/font_size = 30
-text = "sunaba"
+text = "toonbox"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 layout_mode = 1

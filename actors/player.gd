@@ -75,6 +75,8 @@ var player_model : String
 @onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
 @onready var health_bar = $Hud/Panel/HealthBar
 @onready var health_counter = $Hud/Panel/HealthBar/Label 
+@onready var sb_menu_window = $Hud/SBMenuWindow
+@onready var sb_menu = $Hud/SBMenuWindow/SBMenu
 
 
 #@onready var pb_gun_hr = preload("res://weapons/paintball_gun_hr.tscn")
@@ -306,6 +308,7 @@ func _physics_process(delta):
 		$Hud/Panel.theme = ThemeManager.theme
 		$Hud/ToolPanel.theme = ThemeManager.theme
 		crosshair.theme = ThemeManager.theme
+		sb_menu_window.theme = ThemeManager.theme
 		tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
 		tool_ammo_bar.value = ammo
 		tool_ammo_bar.max_value = max_ammo
@@ -503,6 +506,18 @@ func _physics_process(delta):
 				if hand.get_child(0) != null:
 					if !has_fired:
 							_spray()
+	
+	if Global.game_mode == "Sandbox":
+		if Input.is_action_just_pressed("menu2") and !sb_menu_window.visible:
+			sb_menu_window.popup_centered()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		elif Input.is_action_just_pressed("menu2"):
+			hide_sb_menu()
+			
+
+func hide_sb_menu():
+	sb_menu_window.hide()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

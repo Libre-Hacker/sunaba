@@ -549,6 +549,7 @@ stream = ExtResource("16_c33kq")
 bus = &"Sound"
 
 [connection signal="close_requested" from="Hud/SBMenuWindow" to="." method="hide_sb_menu"]
+[connection signal="item_activated" from="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree" to="." method="_on_tool_tree_item_activated"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

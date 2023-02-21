@@ -1,18 +1,18 @@
-[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://bxxhf3xj2h2g1"]
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://bu8xj1bg8fil5"]
 
-[ext_resource type="PackedScene" uid="uid://5yo1xlba4gpk" path="res://entities/wp_pbgun.tscn" id="1_urs3a"]
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_sihto"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_11g87"]
+[ext_resource type="PackedScene" uid="uid://4ylkv1hgv84r" path="res://entities/wp_autogun.tscn" id="1_ehv4q"]
 
 [resource]
-script = ExtResource("2_sihto")
+script = ExtResource("1_11g87")
 scene = "----------------------------------------------------------------"
-scene_file = ExtResource("1_urs3a")
+scene_file = ExtResource("1_ehv4q")
 scripting = "----------------------------------------------------------------"
 class_options = "----------------------------------------------------------------"
 classname = "wp_autogun"
-description = "Paintball Gun"
+description = ""
 qodot_internal = false
-base_classes = []
+base_classes = Array[Resource]([])
 class_properties = {}
 class_property_descriptions = {}
 meta_properties = {

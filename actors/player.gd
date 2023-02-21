@@ -176,36 +176,8 @@ func _input(event):
 	
 	if Input.is_action_just_pressed("interact"):
 		if tool_to_spawn != null:
-			if tool1 == null:
-				tool1 = tool_to_spawn
-				tool_to_spawn = null
-				print(tool1)
-				equip(tool1)
-				rpc("equip", tool1)
-				current_tool = 1
-			elif tool2 == null:
-				tool2 = tool_to_spawn
-				tool_to_spawn = null
-				print(tool2)
-				equip(tool2)
-				rpc("equip", tool2)
-				current_tool = 2
-			elif tool3 == null:
-				tool3 = tool_to_spawn
-				tool_to_spawn = null
-				print(tool3)
-				equip(tool3)
-				rpc("equip", tool3)
-				current_tool = 3
-			elif tool4 == null:
-				tool4 = tool_to_spawn
-				tool_to_spawn = null
-				print(tool4)
-				equip(tool4)
-				rpc("equip", tool4)
-				current_tool = 4
-			else:
-				return
+			add_tool(tool_to_spawn)
+			tool_to_spawn = null
 			reach.get_collider().queue_free()
 			#if hand.get_child_count() > 0:
 				#if hand.get_child(0) != null:
@@ -758,40 +730,6 @@ func _on_reload_timer_timeout():
 func _on_fire_timer_timeout():
 	has_fired = false
 
-func add_tool(tool_name : String):
-	if tool_name == "pbgun":
-		pass#tool_to_spawn = pb_gun_hr.instantiate()
-	elif tool_name == "pistol":
-		pass#tool_to_spawn = pb_pistol_hr.instantiate()
-	else:
-		tool_to_spawn = null
-		return
-	if hand.get_child_count() > 0:
-		if hand.get_child(0) != null:
-			if hand.get_child(0).get_name() == "Paintball Gun":
-				pass#tool_to_drop = pb_gun.instantiate()
-			elif hand.get_child(0).get_name() == "Paintball Pistol":
-				pass#tool_to_drop = pb_pistol.instantiate()
-		else:
-			tool_to_drop = null
-	else:
-		tool_to_drop = null
-	if hand.get_child_count() > 0:
-		if hand.get_child(0) != null:
-			get_parent().add_child(tool_to_drop)
-			tool_to_drop.global_transform = hand.global_transform
-			tool_to_drop.dropped = true
-			hand.get_child(0).queue_free()
-	tool_ammo_bar.max_value = 100
-	tool_ammo_bar.value = 100
-	hand.add_child(tool_to_spawn)
-	tool_ammo_bar.value = tool_to_spawn.max_ammo
-	tool_ammo_bar.max_value = tool_to_spawn.max_ammo
-	damage = tool_to_spawn.damage
-	weapon_type = tool_to_spawn.weapon_type
-	tool_to_spawn.rotation = hand.rotation
-	muzzle = tool_to_spawn.get_node("Muzzle")
-	$Hud/ToolPanel.show()
 
 
 func _on_walk_timer_timeout():
@@ -799,4 +737,35 @@ func _on_walk_timer_timeout():
 
 
 func _on_tool_tree_item_activated():
-	pass # Replace with function body.
+	var tool_name = $Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree.get_selected().get_text(0)
+	var tool = "res://tools/" + tool_name + ".tscn"
+	hide_sb_menu()
+	add_tool(tool)
+
+func add_tool(tool):
+	if tool1 == null:
+		tool1 = tool
+		print(tool1)
+		equip(tool1)
+		rpc("equip", tool1)
+		current_tool = 1
+	elif tool2 == null:
+		tool2 = tool
+		print(tool2)
+		equip(tool2)
+		rpc("equip", tool2)
+		current_tool = 2
+	elif tool3 == null:
+		tool3 = tool
+		print(tool3)
+		equip(tool3)
+		rpc("equip", tool3)
+		current_tool = 3
+	elif tool4 == null:
+		tool4 = tool
+		print(tool4)
+		equip(tool4)
+		rpc("equip", tool4)
+		current_tool = 4
+	else:
+		return

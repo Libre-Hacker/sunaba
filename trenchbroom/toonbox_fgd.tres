@@ -19,7 +19,7 @@
 [ext_resource type="Resource" uid="uid://is7qtbrfk2tj" path="res://entities/player.tres" id="16_gf8kb"]
 [ext_resource type="Resource" uid="uid://bg8gk2pq7nvq7" path="res://entities/wp_dartgun.tres" id="17_2mjsk"]
 [ext_resource type="Resource" uid="uid://d1cywbw47btdi" path="res://entities/tl_sparygun.tres" id="18_0q27l"]
-[ext_resource type="Resource" uid="uid://bxxhf3xj2h2g1" path="res://entities/wp_pbgun.tres" id="18_85oad"]
+[ext_resource type="Resource" uid="uid://bu8xj1bg8fil5" path="res://entities/wp_autogun.tres" id="18_85oad"]
 [ext_resource type="Resource" uid="uid://bmt1txjn5p74f" path="res://entities/wp_pistol.tres" id="19_4y8q4"]
 [ext_resource type="Resource" uid="uid://du8i8c1bv22h" path="res://entities/pl_dmatch.tres" id="20_jvtr6"]
 [ext_resource type="Resource" uid="uid://dyaux2o5rbxaq" path="res://entities/gm_deathmatch.tres" id="21_qde4r"]

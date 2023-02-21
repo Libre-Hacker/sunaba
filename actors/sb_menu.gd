@@ -11,8 +11,6 @@ func _ready():
 	tt_root = tool_tree.create_item()
 	tt_root.set_text(0, "tools")
 	get_tools()
-	
-	
 
 func get_tools():
 	var dir = DirAccess.open("res://tools/")
@@ -38,3 +36,7 @@ func add_tool_to_tree(tool_name):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_tool_tree_item_activated():
+	pass # Replace with function body.

@@ -54,7 +54,7 @@ project/assembly_name="Sunaba"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/tbloader/plugin.cfg")
+enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/qodot/plugin.cfg")
 
 [gdnative]
 

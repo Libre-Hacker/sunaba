@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/Brick;textures/Elements;textures/Grass;textures/Metal;textures/Roofs;textures/Sand;textures/Tile;textures/Tile2;textures/Water;textures/Wood"
-"_tb_def" "builtin:Game.fgd"
+"_tb_def" "builtin:Sunaba.fgd"
 // brush 0
 {
 ( -28544 2096 -16 ) ( -28544 2097 -16 ) ( -28544 2096 -15 ) Water/water 0 0 0 0.0625 0.0625
@@ -660,6 +660,6 @@
 }
 // entity 4
 {
-"classname" "ev_daytime"
-"origin" "180 -348 12"
+"classname" "ev_day"
+"origin" "184 -344 16"
 }

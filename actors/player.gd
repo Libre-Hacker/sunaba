@@ -19,6 +19,7 @@ extends CharacterBody3D
 
 var snap_vector = Vector3.ZERO
 
+var current_tool : int
 var tool1
 var tool2
 var tool3
@@ -181,24 +182,28 @@ func _input(event):
 				print(tool1)
 				equip(tool1)
 				rpc("equip", tool1)
+				current_tool = 1
 			elif tool2 == null:
 				tool2 = tool_to_spawn
 				tool_to_spawn = null
 				print(tool2)
 				equip(tool2)
 				rpc("equip", tool2)
+				current_tool = 2
 			elif tool3 == null:
 				tool3 = tool_to_spawn
 				tool_to_spawn = null
 				print(tool3)
 				equip(tool3)
 				rpc("equip", tool3)
+				current_tool = 3
 			elif tool4 == null:
 				tool4 = tool_to_spawn
 				tool_to_spawn = null
 				print(tool4)
 				equip(tool4)
 				rpc("equip", tool4)
+				current_tool = 4
 			else:
 				return
 			reach.get_collider().queue_free()
@@ -220,18 +225,75 @@ func _input(event):
 				max_ammo = 1
 				damage = 0
 				weapon_type = ""
+				current_tool = 0
 	elif Input.is_action_just_pressed("tool1") and tool1 != null:
 		equip(tool1)
 		rpc("equip", tool1)
+		current_tool = 1
 	elif Input.is_action_just_pressed("tool2") and tool2 != null:
 		equip(tool2)
 		rpc("equip", tool2)
+		current_tool = 2
 	elif Input.is_action_just_pressed("tool3") and tool3 != null:
 		equip(tool3)
 		rpc("equip", tool3)
+		current_tool = 3
 	elif Input.is_action_just_pressed("tool4") and tool4 != null:
 		equip(tool4)
 		rpc("equip", tool4)
+		current_tool = 4
+	
+	if Input.is_action_just_pressed("last_tool") and current_tool != 0:
+		current_tool - 1
+		if current_tool == 0:
+			if hand.get_child_count() > 0:
+				if hand.get_child(0) != null:
+					hand.get_child(0).queue_free()
+					if is_multiplayer_authority() or !Global.is_networked_game:
+						$Hud/ToolPanel.hide()
+					$PickupSound.play()
+					ammo = 1
+					max_ammo = 1
+					damage = 0
+					weapon_type = ""
+		elif current_tool == 1 and tool1 != null:
+			equip(tool1)
+			rpc("equip", tool1)
+		elif current_tool == 2 and tool2 != null:
+			equip(tool2)
+			rpc("equip", tool2)
+		elif current_tool == 3 and tool3 != null:
+			equip(tool3)
+			rpc("equip", tool3)
+		elif current_tool == 4 and tool4 != null:
+			equip(tool4)
+			rpc("equip", tool4)
+	if Input.is_action_just_pressed("next_tool") and current_tool != 4:
+		current_tool + 1
+		if current_tool == 0:
+			if hand.get_child_count() > 0:
+				if hand.get_child(0) != null:
+					hand.get_child(0).queue_free()
+					if is_multiplayer_authority() or !Global.is_networked_game:
+						$Hud/ToolPanel.hide()
+					$PickupSound.play()
+					ammo = 1
+					max_ammo = 1
+					damage = 0
+					weapon_type = ""
+		elif current_tool == 1 and tool1 != null:
+			equip(tool1)
+			rpc("equip", tool1)
+		elif current_tool == 2 and tool2 != null:
+			equip(tool2)
+			rpc("equip", tool2)
+		elif current_tool == 3 and tool3 != null:
+			equip(tool3)
+			rpc("equip", tool3)
+		elif current_tool == 4 and tool4 != null:
+			equip(tool4)
+			rpc("equip", tool4)
+		
 	
 	
 	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:

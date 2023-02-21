@@ -509,16 +509,11 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="SBMenuWindow" type="Window" parent="Hud"]
+title = "Spawn Menu"
 size = Vector2i(432, 277)
 visible = false
 
 [node name="SBMenu" parent="Hud/SBMenuWindow" instance=ExtResource("12_7t0uy")]
-
-[node name="Entities" parent="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer" index="1"]
-visible = true
-
-[node name="Tools" parent="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer" index="2"]
-visible = false
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 2.38

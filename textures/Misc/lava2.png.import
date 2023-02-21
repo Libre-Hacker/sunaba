@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/lava2.png-68819b289472df34f4fec3734bbbef51.ct
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/pavement.png-b5f48f6add755318093c9fd331234369
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

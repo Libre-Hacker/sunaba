@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1j0nhj7jc0qn"]
+[gd_scene load_steps=4 format=3 uid="uid://c3js6hk2tgu5b"]
 
-[ext_resource type="Script" path="res://weapons/tool.gd" id="1_4vmg7"]
-[ext_resource type="PackedScene" uid="uid://8y2wb4rvutm2" path="res://weapons/dartgun_mesh.tscn" id="2_hb771"]
+[ext_resource type="Script" path="res://tools/tool.gd" id="1_4vmg7"]
+[ext_resource type="PackedScene" uid="uid://8y2wb4rvutm2" path="res://tools/meshes/dartgun_mesh.tscn" id="2_hb771"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ibqw"]
 size = Vector3(0.115858, 0.347368, 0.524065)
 
 [node name="wp_dartgun" type="RigidBody3D"]
 script = ExtResource("1_4vmg7")
-weapon_path = "res://weapons/dartgun.tscn"
+weapon_path = "res://tools/dartgun.tscn"
 model_path = "assets/models/handprops/dartgun.gltf"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

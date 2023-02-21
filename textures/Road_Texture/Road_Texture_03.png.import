@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/Road_Texture_03.png-dbdb341c33999eb4052d3ecbd
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

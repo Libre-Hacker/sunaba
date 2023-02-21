@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://treeh4gymux7"
+path="res://.godot/imported/palette.2505c338.min.css.map-36b2b63c4a3e7f573bbf89f6d722f3fc.tres"
+
+[deps]
+
+source_file="res://site/assets/stylesheets/palette.2505c338.min.css.map"
+dest_files=["res://.godot/imported/palette.2505c338.min.css.map-36b2b63c4a3e7f573bbf89f6d722f3fc.tres"]
+
+[params]
+

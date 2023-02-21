@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://cl4vko31m0efv"
+path="res://.godot/imported/snb_scaletest.map-35dc80c83643a3ddf6ef3cd3719ed25b.tres"
+
+[deps]
+
+source_file="res://maps/snb_scaletest.map"
+dest_files=["res://.godot/imported/snb_scaletest.map-35dc80c83643a3ddf6ef3cd3719ed25b.tres"]
+
+[params]
+

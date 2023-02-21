@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/net.png-72f6451717633f6a56668e09af6d0075.ctex
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

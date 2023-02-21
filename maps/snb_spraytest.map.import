@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://c2rlt04n0n16a"
+path="res://.godot/imported/snb_spraytest.map-fac66d5809e47ca20344c1a9fe90b2ba.tres"
+
+[deps]
+
+source_file="res://maps/snb_spraytest.map"
+dest_files=["res://.godot/imported/snb_spraytest.map-fac66d5809e47ca20344c1a9fe90b2ba.tres"]
+
+[params]
+

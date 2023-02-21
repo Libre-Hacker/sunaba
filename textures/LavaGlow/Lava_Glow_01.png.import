@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/Lava_Glow_01.png-879bdf54caad4af2805bd7d61f25
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

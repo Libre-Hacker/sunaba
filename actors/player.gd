@@ -796,3 +796,7 @@ func add_tool(tool_name : String):
 
 func _on_walk_timer_timeout():
 	can_play_walk_sound = true
+
+
+func _on_tool_tree_item_activated():
+	pass # Replace with function body.

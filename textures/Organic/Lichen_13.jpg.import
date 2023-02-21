@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/Lichen_13.jpg-945a1e2b8dd6f313c2fa72aad44ac4c
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

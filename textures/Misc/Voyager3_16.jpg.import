@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/Voyager3_16.jpg-6ce1e09e172eb8a1479d177a6b7ed
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

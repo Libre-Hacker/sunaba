@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/Metal_01.png-9ac8669fc2de954b4ae7226ca839df0b
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

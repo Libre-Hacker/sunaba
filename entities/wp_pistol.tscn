@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://un767v26k0na"]
+[gd_scene load_steps=4 format=3 uid="uid://wsjawg2skf8t"]
 
-[ext_resource type="Script" path="res://weapons/tool.gd" id="1_7syvj"]
-[ext_resource type="PackedScene" uid="uid://cxpjwab4kep6w" path="res://weapons/pistol_mesh.tscn" id="1_rub0h"]
+[ext_resource type="Script" path="res://tools/tool.gd" id="1_7syvj"]
+[ext_resource type="PackedScene" uid="uid://cxpjwab4kep6w" path="res://tools/meshes/pistol_mesh.tscn" id="1_rub0h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58kxc"]
 size = Vector3(0.047419, 0.179502, 0.261986)
 
 [node name="wp_pistol" type="RigidBody3D"]
 script = ExtResource("1_7syvj")
-weapon_path = "res://weapons/paintball_pistol_hr.tscn"
+weapon_path = "res://tools/pistol.tscn"
 model_path = "assets/models/handprops/pistol.gltf"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

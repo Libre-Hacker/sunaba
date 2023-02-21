@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/Brick_Version_03.png-68e1e02fb40b0cc5591e425d
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

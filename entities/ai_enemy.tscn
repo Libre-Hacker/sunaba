@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b06wa3ta6uoul"]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://entities/ai_enemy.gd" id="1_8l7q4"]
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_1d87l"]
-[ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://weapons/semi_gun_mesh.tscn" id="3_2xvxe"]
-[ext_resource type="SystemFont" uid="uid://cqat8ggu5yb4l" path="res://assets/fonts/segoe_ui.tres" id="3_ih8tv"]
+[ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://tools/meshes/semi_gun_mesh.tscn" id="3_2xvxe"]
+[ext_resource type="SystemFont" uid="uid://dca7seoyu4mff" path="res://assets/fonts/segoe_ui.tres" id="3_ih8tv"]
+
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t432i"]
 radius = 0.28

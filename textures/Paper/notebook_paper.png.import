@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/notebook_paper.png-8f84be5848bffcd96c92f02b08
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

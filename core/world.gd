@@ -21,6 +21,8 @@ var map_manager_instance = null
 var player = null
 var spawnpoint : Vector3
 
+var spectator_mode : bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -118,9 +120,13 @@ func ultra():
 func _on_map_manager_build_complete():
 	map_manager.unwrap_uv2()
 	navregion.bake_navigation_mesh()
-	var id = multiplayer.get_unique_id()
-	if id != 1:
-		rpc_id(1, "instance_player", id)
-	else:
-		instance_player(id)
+	if !spectator_mode:
+		var id = multiplayer.get_unique_id()
+		if id != 1:
+			rpc_id(1, "instance_player", id)
+		else:
+			instance_player(id)
 	add_bots()
+
+func set_spectator_mode(bl : bool):
+	spectator_mode = bl

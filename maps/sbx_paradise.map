@@ -3,8 +3,8 @@
 // entity 0
 {
 "classname" "worldspawn"
-"_tb_textures" "textures/Brick;textures/Building;textures/Elements;textures/Grass;textures/Metal;textures/Roofs;textures/Sand;textures/Tile;textures/Tile2;textures/Water;textures/Wood"
-"_tb_def" "builtin:Game.fgd"
+"_tb_textures" "textures/Brick;textures/Elements;textures/Grass;textures/Metal;textures/Roofs;textures/Sand;textures/Tile;textures/Tile2;textures/Water;textures/Wood"
+"_tb_def" "builtin:Sunaba.fgd"
 // brush 0
 {
 ( -28544 2096 -16 ) ( -28544 2097 -16 ) ( -28544 2096 -15 ) Water/water 0 0 0 0.0625 0.0625
@@ -642,33 +642,24 @@
 ( -42 -352 44 ) ( -41 -352 44 ) ( -42 -352 45 ) Brick/Brick_02-512x512 0 0 0 0.0625 0.0625
 ( -42 -352 44 ) ( -42 -352 45 ) ( -42 -351 44 ) Brick/Brick_02-512x512 0 0 0 0.0625 0.0625
 }
-// brush 72
-{
-( 112 -208 80 ) ( 112 -207 80 ) ( 112 -208 81 ) Building/indoor_wall 0 0 0 0.0625 0.0625
-( 156 -208 80 ) ( 156 -208 81 ) ( 157 -208 80 ) Building/indoor_wall 0 0 0 0.0625 0.0625
-( 156 -208 80 ) ( 157 -208 80 ) ( 156 -207 80 ) Building/indoor_wall 0 0 0 0.0625 0.0625
-( 184 -188 84 ) ( 184 -187 84 ) ( 185 -188 84 ) Building/indoor_wall 0 0 0 0.0625 0.0625
-( 184 -128 84 ) ( 185 -128 84 ) ( 184 -128 85 ) Building/indoor_wall 0 0 0 0.0625 0.0625
-( 184 -188 84 ) ( 184 -188 85 ) ( 184 -187 84 ) Building/indoor_wall 0 0 0 0.0625 0.0625
-}
 }
 // entity 1
+{
+"classname" "an_day"
+"origin" "168 -328 16"
+}
+// entity 2
 {
 "classname" "gm_sandbox"
 "origin" "204 -364 12"
 }
-// entity 2
+// entity 3
 {
 "classname" "player"
 "origin" "12 -396 12"
 }
-// entity 3
-{
-"classname" "ev_daytime"
-"origin" "180 -348 12"
-}
 // entity 4
 {
-"classname" "an_day"
-"origin" "164 -332 12"
+"classname" "ev_day"
+"origin" "184 -344 16"
 }

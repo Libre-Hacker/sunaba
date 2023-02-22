@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/Brick;textures/Building;textures/Grass;textures/Sand;textures/Stone;textures/Tile;textures/Water;textures/special"
-"_tb_def" "builtin:Game.fgd"
+"_tb_def" "builtin:Sunaba.fgd"
 // brush 0
 {
 ( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) Grass/Grass16-512x512 0 0 0 0.0625 0.0625
@@ -277,21 +277,21 @@
 }
 // entity 1
 {
-"classname" "player"
-"origin" "-164 -116 36"
+"classname" "gm_sandbox"
+"origin" "-36 36 36"
 }
 // entity 2
 {
-"classname" "ev_daytime"
-"origin" "-32 0 20"
+"classname" "player"
+"origin" "-164 -116 36"
 }
 // entity 3
 {
 "classname" "an_day"
-"origin" "-32 -16 20"
+"origin" "-24 -24 24"
 }
 // entity 4
 {
-"classname" "gm_sandbox"
-"origin" "-32 16 20"
+"classname" "ev_day"
+"origin" "-24 8 24"
 }

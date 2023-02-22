@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Sunaba"
 run/main_scene="res://core/main.tscn"
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.0", "C#")
 run/max_fps=30
 boot_splash/bg_color=Color(0.4, 0.4, 0.4, 1)
 boot_splash/image="res://splashscreen.png"
@@ -54,7 +54,7 @@ project/assembly_name="Sunaba"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/tbloader/plugin.cfg")
+enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/qodot/plugin.cfg")
 
 [gdnative]
 

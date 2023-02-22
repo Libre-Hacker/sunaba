@@ -32,7 +32,7 @@ grow_horizontal = 2
 placeholder_text = "Map Path"
 editable = false
 
-[node name="Button" type="MenuButton" parent="MapPath"]
+[node name="Button" type="Button" parent="MapPath"]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
@@ -41,13 +41,7 @@ offset_left = -46.0
 grow_horizontal = 0
 grow_vertical = 2
 icon = ExtResource("1_27q1k")
-flat = false
 icon_alignment = 1
-item_count = 2
-popup/item_0/text = "Standard Maps"
-popup/item_0/id = 0
-popup/item_1/text = "Custom Maps"
-popup/item_1/id = 1
 
 [node name="CreateRoomButton" type="Button" parent="."]
 layout_mode = 0

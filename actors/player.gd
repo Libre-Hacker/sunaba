@@ -332,9 +332,10 @@ func _process(_delta):
 			model2.visible = false
 
 func _physics_process(delta):
-	head.global_position = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_position
-	head.global_rotation.y = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_rotation.y
-	head.global_rotation.z = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_rotation.z
+	if !view_mode:
+		head.global_position = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_position
+		head.global_rotation.y = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_rotation.y
+		head.global_rotation.z = $Male/Akari/GeneralSkeleton/Head/HeadPos.global_rotation.z
 	#$Male/Akari/GeneralSkeleton.get_bone_pose_rotation($Male/Akari/GeneralSkeleton.find_bone("Head")).x = head.global_rotation.x
 	#$Female/Akari/GeneralSkeleton.get_bone_pose_rotation($Female/Akari/GeneralSkeleton.find_bone("Head")).x = head.global_rotation.x
 	

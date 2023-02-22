@@ -5,13 +5,16 @@ extends Node
 func  _ready():
 	$MainMenu.show()
 	$PauseMenu.hide()
-	$NewRoomDialog/NewRoom/MapPath/Button.get_popup().id_pressed.connect(_on_file_menu_pressed)
+	#$NewRoomDialog/NewRoom/MapPath/Button.get_popup().id_pressed.connect(_on_file_menu_pressed)
 
 func _on_create_button_pressed():
 	$NewRoomDialog.popup_centered()
 
 func _on_sb_pressed():
 	$SettingsDialog.popup_centered()
+
+func _on_file_button_pressed():
+	$UserFileDialog.popup_centered()
 
 
 func _on_file_menu_pressed(id):

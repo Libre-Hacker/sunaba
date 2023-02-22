@@ -37,6 +37,9 @@ func _ready():
 			
 			var theme_name = file.left(-5)
 			theme_dropdown.add_item(theme_name)
+		elif file.ends_with(".tres.remap") and !file == "Default.tres.remap":
+			var theme_name = file.left(-11)
+			theme_dropdown.add_item(theme_name)
 	
 	dir.list_dir_end()
 		#change_theme(load(settings[1]))

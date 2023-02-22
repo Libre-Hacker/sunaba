@@ -43,8 +43,6 @@ func load_map(path):
 		log_to_chat("Loading Map")
 		map_manager.map_file = path
 		map_manager.verify_and_build()
-		#map_manager.
-		
 
 @rpc("any_peer")
 func set_map(path):

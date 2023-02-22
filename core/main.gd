@@ -113,3 +113,17 @@ func play(map = null):
 func set_map_file():
 	$UI/FileDialog.popup_centered()
 
+func check_dir(dirname : String):
+	var dir = DirAccess.open("res://" + dirname)
+	
+	dir.list_dir_begin()
+	
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		else :
+			Console.notify(file)
+			
+	dir.list_dir_end()
+

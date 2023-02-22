@@ -1,15 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnaheix8jti6"]
+[gd_scene load_steps=5 format=3 uid="uid://bnaheix8jti6"]
 
 [ext_resource type="Script" path="res://core/world.gd" id="2"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
-[ext_resource type="Resource" uid="uid://ouvk0v6hs22" path="res://trenchbroom/toonbox_fgd.tres" id="3_0xdm3"]
 [ext_resource type="Script" path="res://core/camera.gd" id="4_4sk0p"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
 cell_height = 0.01
 agent_max_climb = 0.01
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j5um"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b46la"]
 size = Vector3(10000, 1, 10000)
@@ -24,29 +20,17 @@ spawn_path = NodePath("..")
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_pypmj")
 
-[node name="MapManager" type="Node3D" parent="NavigationRegion3D"]
-script = ExtResource("2_vkw6t")
-map_file = ""
-inverse_scale_factor = 16.0
-entity_fgd = ExtResource("3_0xdm3")
-base_texture_dir = "res://textures"
-texture_file_extensions = PackedStringArray("png", "jpg")
-worldspawn_layers = []
-brush_clip_texture = "special/clip"
-face_skip_texture = "special/skip"
-texture_wads = []
-material_file_extension = "tres"
-unshaded = false
-default_material_albedo_uniform = ""
-default_material = SubResource("StandardMaterial3D_6j5um")
-uv_unwrap_texel_size = 1.0
-print_profiling_data = false
-use_trenchbroom_group_hierarchy = false
-tree_attach_batch_size = null
-set_owner_batch_size = 1000
+[node name="MapManager" type="TBLoader" parent="NavigationRegion3D"]
+lighting_unwrap_uv2 = true
+option_clip_texture_name = "special/clip"
+option_skip_texture_name = "special/skip"
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 5.0
+one_shot = true
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.5
 one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -60,5 +44,5 @@ priority = 4.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OutOfBounds"]
 shape = SubResource("BoxShape3D_b46la")
 
-[connection signal="build_complete" from="NavigationRegion3D/MapManager" to="." method="_on_map_manager_build_complete"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

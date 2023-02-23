@@ -43,9 +43,8 @@ func load_map_path(path):
 func load_map(path):
 	if path != null:
 		log_to_chat("Loading Map")
-		map_manager.map_resource = path
-		map_manager.build_meshes()
-		$StartTimer.start()
+		map_manager.map_file = path
+		map_manager.verify_and_build()
 
 @rpc("any_peer")
 func set_map(path):
@@ -131,14 +130,3 @@ func _on_map_manager_build_complete():
 
 func set_spectator_mode(bl : bool):
 	spectator_mode = bl
-
-
-func _on_start_timer_timeout():
-	navregion.bake_navigation_mesh()
-	if !spectator_mode:
-		var id = multiplayer.get_unique_id()
-		if id != 1:
-			rpc_id(1, "instance_player", id)
-		else:
-			instance_player(id)
-	add_bots()

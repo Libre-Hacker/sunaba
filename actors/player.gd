@@ -54,11 +54,13 @@ var player_model : String
 @onready var head = $Head
 @onready var fp_camera = $Head/Camera3D
 @onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
-@onready var model = $Female
+@onready var model = $PlayerModel
+@onready var model1 = $Female
 @onready var model2 = $Male
 @onready var coll_shape = $CollisionShape3D
 #@onready var arms_model = $Head/arms
-@onready var animation_player = $Female/AnimationPlayer
+@onready var animation_player = $PlayerModel/AnimationPlayer
+@onready var animation_player1 = $Female/AnimationPlayer
 @onready var animation_player2 = $Male/AnimationPlayer
 @onready var gun_ap = $Head/AnimationPlayer
 @onready var hand_loc = $Head/HandLoc
@@ -102,6 +104,7 @@ func _ready():
 	fp_camera.current = is_multiplayer_authority()
 	tp_camera.current = false
 	model.visible = !is_multiplayer_authority()
+	model1.visible = !is_multiplayer_authority()
 	model2.visible = !is_multiplayer_authority()
 	#arms_model.visible = is_multiplayer_authority()
 	get_parent().get_node("OutOfBounds").connect("body_entered", Callable(self, "out_of_bounds"))
@@ -152,24 +155,12 @@ func _input(event):
 		if fp_camera.current == true:
 			fp_camera.current = false
 			tp_camera.current = true
-			if Global.player_model == "male":
-				model.visible = false
-				model2.visible = true
-			elif Global.player_model == "female":
-				model.visible = true
-				model2.visible = false
 			#arms_model.visibtle = false
 			reach = tp_reach
 			aimcast = tp_aimcast
 		elif tp_camera.current == true:
 			fp_camera.current = true
 			tp_camera.current = false
-			if Global.player_model == "male":
-				model.visible = false
-				model2.visible = !is_multiplayer_authority()
-			elif Global.player_model == "female":
-				model.visible = !is_multiplayer_authority()
-				model2.visible = false
 			#arms_model.visible = is_multiplayer_authority()
 			reach = fp_reach
 			aimcast = fp_aimcast
@@ -319,17 +310,30 @@ func _process(_delta):
 	if tp_camera.current == true:
 		if Global.player_model == "male":
 			model.visible = false
+			model1.visible = false
 			model2.visible = true
 		elif Global.player_model == "female":
+			model.visible = false
+			model1.visible = true
+			model2.visible = false
+		elif Global.player_model == "custom":
 			model.visible = true
+			model1.visible = false
 			model2.visible = false
 	elif fp_camera.current == true:
 		if Global.player_model == "male":
 			model.visible = false
+			model1.visible = false
 			model2.visible = !is_multiplayer_authority()
 		elif Global.player_model == "female":
-			model.visible = !is_multiplayer_authority()
+			model.visible = false
+			model1.visible = !is_multiplayer_authority()
 			model2.visible = false
+		elif Global.player_model == "custom":
+			model.visible = !is_multiplayer_authority()
+			model1.visible = false
+			model2.visible = false
+		
 
 func _physics_process(delta):
 	if !view_mode:
@@ -370,16 +374,20 @@ func _physics_process(delta):
 			max_speed = crouch_move_speed
 			walk_timer.wait_time = 0.8
 			model.position.y = 0.175
+			model1.position.y = 0.175
 			model2.position.y = 0.175
 		else:
 			coll_shape.shape.height = default_height#crouch_speed * delta 
 			#head.position.y = head_height
 			model.position.y = 0
+			model1.position.y = 0
 			model2.position.y = 0
 			$Female/Akari.position = Vector3.ZERO
 			$Female/Akari.rotation = Vector3.ZERO
 			$Male/Akari.position = Vector3.ZERO
 			$Male/Akari.rotation = Vector3.ZERO
+			$PlayerModel/Akari.position = Vector3.ZERO
+			$PlayerModel/Akari.rotation = Vector3.ZERO
 		
 		#coll_shape.shape.height = clamp(coll_shape.shape.height, 0.8, 1.497)
 		
@@ -402,21 +410,27 @@ func _physics_process(delta):
 	
 	if ((velocity.length() == 0) or (vel.length() == 0)) and !Input.is_action_pressed("crouch"):
 		animation_player.play("Locomotion-Library/idle1")
+		animation_player1.play("Locomotion-Library/idle1")
 		animation_player2.play("Locomotion-Library/idle1")
 		model.position.y = 0
+		model1.position.y = 0
 		model2.position.y = 0
 		$Female/Akari.position = Vector3.ZERO
 		$Female/Akari.rotation = Vector3.ZERO
 		$Male/Akari.position = Vector3.ZERO
 		$Male/Akari.rotation = Vector3.ZERO
+		$PlayerModel/Akari.position = Vector3.ZERO
+		$PlayerModel/Akari.rotation = Vector3.ZERO
 		#animation_player.rpc("play", "idle")
 		if !is_reloading and !gun_ap.current_animation == "fire":
 			gun_ap.play("idle")
 			#gun_ap.rpc("play", "idle")
 	elif ((velocity.length() == 0) or (vel.length() == 0)) and Input.is_action_pressed("crouch"):
 		animation_player.play("crouch_library/crouch_idle")
+		animation_player1.play("crouch_library/crouch_idle")
 		animation_player2.play("crouch_library/crouch_idle")
 		model.position.y = 0.175
+		model1.position.y = 0.175
 		model2.position.y = 0.175
 		#animation_player.rpc("play", "idle")
 		if !is_reloading and !gun_ap.current_animation == "fire":
@@ -425,13 +439,17 @@ func _physics_process(delta):
 	else:
 		if max_speed == default_speed and is_on_floor():
 			animation_player.play("Locomotion-Library/walk")
+			animation_player1.play("Locomotion-Library/walk")
 			animation_player2.play("Locomotion-Library/walk")
 			model.position.y = 0
+			model1.position.y = 0
 			model2.position.y = 0
 			$Female/Akari.position = Vector3.ZERO
 			$Female/Akari.rotation = Vector3.ZERO
 			$Male/Akari.position = Vector3.ZERO
 			$Male/Akari.rotation = Vector3.ZERO
+			$PlayerModel/Akari.position = Vector3.ZERO
+			$PlayerModel/Akari.rotation = Vector3.ZERO
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -443,6 +461,7 @@ func _physics_process(delta):
 				#gun_ap.rpc("play", "walk")
 		elif max_speed == crouch_move_speed and is_on_floor():
 			animation_player.play("crouch_library/crouch_walk")
+			animation_player1.play("crouch_library/crouch_walk")
 			animation_player2.play("crouch_library/crouch_walk")
 			model.position.y = 0.175
 			model2.position.y = 0.175
@@ -457,13 +476,17 @@ func _physics_process(delta):
 				#gun_ap.rpc("play", "walk")
 		elif max_speed == sprint_speed and is_on_floor():
 			animation_player.play("Locomotion-Library/run")
+			animation_player1.play("Locomotion-Library/run")
 			animation_player2.play("Locomotion-Library/run")
 			model.position.y = 0
+			model1.position.y = 0
 			model2.position.y = 0
 			$Female/Akari.position = Vector3.ZERO
 			$Female/Akari.rotation = Vector3.ZERO
 			$Male/Akari.position = Vector3.ZERO
 			$Male/Akari.rotation = Vector3.ZERO
+			$PlayerModel/Akari.position = Vector3.ZERO
+			$PlayerModel/Akari.rotation = Vector3.ZERO
 			#animation_player.rpc("play", "walk")
 			if can_play_walk_sound:
 				can_play_walk_sound = false
@@ -475,13 +498,17 @@ func _physics_process(delta):
 				#gun_ap.rpc("play", "walk")
 		elif !is_on_floor():
 			animation_player.play("Locomotion-Library/jump")
+			animation_player1.play("Locomotion-Library/jump")
 			animation_player2.play("Locomotion-Library/jump")
 			model.position.y = 0
+			model1.position.y = 0
 			model2.position.y = 0
 			$Female/Akari.position = Vector3.ZERO
 			$Female/Akari.rotation = Vector3.ZERO
 			$Male/Akari.position = Vector3.ZERO
 			$Male/Akari.rotation = Vector3.ZERO
+			$PlayerModel/Akari.position = Vector3.ZERO
+			$PlayerModel/Akari.rotation = Vector3.ZERO
 			#animation_player.rpc("play", "jump")
 			if !is_reloading and !gun_ap.current_animation == "fire":
 				gun_ap.play("idle")
@@ -492,6 +519,8 @@ func _physics_process(delta):
 	hand.global_rotation = hand_loc.global_rotation
 	#hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
 	#hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
+	$ReloadSound.global_transform.origin = hand_loc.global_transform.origin
+	$PickupSound.global_transform.origin = hand_loc.global_transform.origin
 	
 	if hand.get_child_count() > 0:
 		if hand.get_child(0) != null:

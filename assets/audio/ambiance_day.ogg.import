@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/ambiance_day.ogg-15403ac5f35a7183cc117904fbdd
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

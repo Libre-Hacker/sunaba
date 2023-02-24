@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmemscralfmbr"]
+[gd_scene load_steps=5 format=3 uid="uid://bmemscralfmbr"]
 
 [ext_resource type="PackedScene" uid="uid://4a8vw70shuwk" path="res://assets/models/hair.gltf" id="1_nw4um"]
+[ext_resource type="Shader" uid="uid://dgfavmb1ad2sx" path="res://assets/shaders/hair.tres" id="2_duh4k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ogn3j"]
+render_priority = 0
+shader = ExtResource("2_duh4k")
+shader_parameter/highlight_color = Color(1, 1, 1, 0.072)
+shader_parameter/highlight_shift = 0.32
+shader_parameter/highlight_size = 28.0
+shader_parameter/highlight_wave_oscillator1 = -18.6
+shader_parameter/highlight_wave_size1 = 0.5
+shader_parameter/highlight_wave_oscillator2 = 3.0
+shader_parameter/highlight_wave_size2 = 0.013
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05qb8"]
+next_pass = SubResource("ShaderMaterial_ogn3j")
 diffuse_mode = 3
 specular_mode = 1
 albedo_color = Color(0.0980392, 0.0980392, 0.0980392, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=37 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_4145y"]
 [ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="12_7t0uy"]
 [ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
+[ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_ehkwf"]
 [ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="13_xlyhy"]
 [ext_resource type="AudioStream" uid="uid://boy6burcg46sc" path="res://assets/audio/reload.ogg" id="14_hvgws"]
 [ext_resource type="AudioStream" uid="uid://us3l5m6ksqpi" path="res://assets/audio/pickup1.ogg" id="15_6o4pc"]
@@ -228,16 +229,23 @@ foot_sounds = [ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qy
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
-[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
-bone_name = "face"
-
 [node name="Head" type="BoneAttachment3D" parent="Male/Akari/GeneralSkeleton" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
 bone_name = "Head"
 bone_idx = 5
 
 [node name="HeadPos" type="Node3D" parent="Male/Akari/GeneralSkeleton/Head"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.163123, -6.0536e-09)
+
+[node name="PlayerModel" parent="." instance=ExtResource("13_ehkwf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Head" parent="PlayerModel/Akari/GeneralSkeleton" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+bone_name = "Head"
+bone_idx = 5
+
+[node name="HeadPos" parent="PlayerModel/Akari/GeneralSkeleton/Head" index="0"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.163123, -6.0536e-09)
 
 [node name="Female" parent="." instance=ExtResource("2_od7wf")]
@@ -522,29 +530,29 @@ wait_time = 2.38
 [node name="FireTimer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("12_dicte")
 bus = &"Sound"
 
-[node name="RunSound" type="AudioStreamPlayer" parent="."]
+[node name="RunSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("13_xlyhy")
 bus = &"Sound"
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.35
 
-[node name="ReloadSound" type="AudioStreamPlayer" parent="."]
+[node name="ReloadSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("14_hvgws")
 bus = &"Sound"
 
-[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+[node name="PickupSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("15_6o4pc")
 bus = &"Sound"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_rs28k")
 
-[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("16_c33kq")
 bus = &"Sound"
 
@@ -555,4 +563,5 @@ bus = &"Sound"
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
 
 [editable path="Male"]
+[editable path="PlayerModel"]
 [editable path="Hud/SBMenuWindow/SBMenu"]

@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/ambience-city.ogg-d17ff0c77612f6471154a4322ae
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

@@ -1,0 +1,64 @@
+[gd_resource type="Shader" format=3 uid="uid://dgfavmb1ad2sx"]
+
+[resource]
+code = "/*
+	髪ハイライト 天使の輪 シェーダー by あるる（きのもと 結衣）
+	Hair Hailight Shader by Yui Kinomoto @arlez80
+
+	MIT License
+*/
+
+shader_type spatial;
+
+uniform vec4 highlight_color : source_color = vec4( 1.0, 1.0, 1.0, 0.072 );
+uniform float highlight_shift = 0.32;
+uniform float highlight_size = 28.0;
+
+uniform float highlight_wave_oscillator1 = -18.6;
+uniform float highlight_wave_size1 = 0.5;
+
+uniform float highlight_wave_oscillator2 = 3.0;
+uniform float highlight_wave_size2 = 0.013;
+
+varying vec3 local_vertex;
+
+vec2 env_map_equirent( vec3 dir )
+{
+	float phi = acos( -dir.y );
+	float theta = atan( - 1.0 * dir.x, dir.z ) * PI;
+	return vec2( theta / TAU, phi / PI );
+}
+
+float highlight( vec2 uv )
+{
+	float c = (
+		cos(
+			sin( uv.x * TAU * highlight_wave_oscillator1 ) * highlight_wave_size1
+		+	uv.x * TAU * highlight_wave_oscillator2
+		) * highlight_wave_size2
+	);
+
+	return clamp( ( 1.0 - abs( 0.5 - ( uv.y + c ) ) * highlight_size ) * 1.1, 0.0, 1.0 );
+}
+
+void vertex( )
+{
+	local_vertex = VERTEX;
+}
+
+void fragment( )
+{
+	vec3 camera_front = ( INV_VIEW_MATRIX * vec4( 0, 0, 1, 0 ) ).xyz;
+
+	float hl = highlight(
+		// ハイライトを出す位置を決める
+		env_map_equirent( normalize( -local_vertex ) )
+		// 上下させる
+	+	vec2( 0.0, dot( camera_front, vec3( 0, 1, 0 ) ) * 0.075 + highlight_shift )
+	) * float( FRONT_FACING );
+
+	ALBEDO = highlight_color.rgb;
+	EMISSION = highlight_color.rgb;
+	ALPHA = hl * hl * highlight_color.a;
+}
+"

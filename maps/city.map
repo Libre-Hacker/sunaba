@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/Brick;textures/Brick_Version;textures/Bricks;textures/Building;textures/Colors;textures/Concrete;textures/Grass;textures/Metal;textures/Misc;textures/Road_Texture;textures/Stone;textures/Tile;textures/Wood;textures/Wood2;textures/special"
-"_tb_def" "builtin:Game.fgd"
+"_tb_def" "builtin:Sunaba.fgd"
 // brush 0
 {
 ( 100 160 -26 ) ( 100 161 -26 ) ( 100 160 -25 ) special/skip 0 0 0 0.0625 0.0625
@@ -161,7 +161,7 @@
 // brush 17
 {
 ( 192 -100 98 ) ( 192 -99 98 ) ( 192 -100 99 ) special/skip 0 0 0 0.25 0.25
-( 192 -32 98 ) ( 192 -32 99 ) ( 193 -32 98 ) Road_Texture/Road_Texture_01 0 0 0 0.25 0.25
+( 192 -32 98 ) ( 192 -32 99 ) ( 193 -32 98 ) special/skip 0 0 0 0.25 0.25
 ( 192 -100 98 ) ( 193 -100 98 ) ( 192 -99 98 ) special/skip 0 0 0 0.25 0.25
 ( 448 -20 102 ) ( 448 -19 102 ) ( 449 -20 102 ) Road_Texture/Road_Texture_01 0 0 0 0.25 0.25
 ( 448 156 114 ) ( 449 156 114 ) ( 448 156 115 ) special/skip 0 0 0 0.25 0.25
@@ -170,7 +170,7 @@
 // brush 18
 {
 ( 256 104 98 ) ( 256 105 98 ) ( 256 104 99 ) special/skip 0 0 0 0.5 0.5
-( 24 -32 98 ) ( 24 -32 99 ) ( 25 -32 98 ) Tile/Floor_Tiles 32 -128 0 0.5 0.5
+( 24 -32 98 ) ( 24 -32 99 ) ( 25 -32 98 ) special/skip 32 -128 0 0.5 0.5
 ( 24 104 98 ) ( 25 104 98 ) ( 24 105 98 ) special/skip 0 0 0 0.5 0.5
 ( 280 156 102 ) ( 280 157 102 ) ( 281 156 102 ) Tile/Floor_Tiles 32 0 0 0.5 0.5
 ( 280 156 102 ) ( 281 156 102 ) ( 280 156 103 ) special/skip 0 0 0 0.5 0.5
@@ -179,7 +179,7 @@
 // brush 19
 {
 ( 160 104 98 ) ( 160 105 98 ) ( 160 104 99 ) Tile/Floor_Tiles 0 -128 0 0.5 0.5
-( -72 -32 98 ) ( -72 -32 99 ) ( -71 -32 98 ) Tile/Floor_Tiles 32 -128 0 0.5 0.5
+( -72 -32 98 ) ( -72 -32 99 ) ( -71 -32 98 ) special/skip 32 -128 0 0.5 0.5
 ( -72 104 98 ) ( -71 104 98 ) ( -72 105 98 ) special/skip 0 0 0 0.5 0.5
 ( 184 156 102 ) ( 184 157 102 ) ( 185 156 102 ) Tile/Floor_Tiles 32 0 0 0.5 0.5
 ( 184 156 102 ) ( 185 156 102 ) ( 184 156 103 ) special/skip 0 0 0 0.5 0.5
@@ -197,7 +197,7 @@
 // brush 21
 {
 ( 284 -100 94 ) ( 284 -99 94 ) ( 284 -100 95 ) Tile/Floor_Tiles 0 -128 0 0.5 0.5
-( 276 -32 94 ) ( 276 -32 95 ) ( 277 -32 94 ) Tile/Floor_Tiles 32 -128 0 0.5 0.5
+( 276 -32 94 ) ( 276 -32 95 ) ( 277 -32 94 ) special/skip 32 -128 0 0.5 0.5
 ( 276 -100 58 ) ( 277 -100 58 ) ( 276 -99 58 ) Tile/Floor_Tiles 32 0 0 0.5 0.5
 ( 288 156 98 ) ( 288 157 98 ) ( 289 156 98 ) special/skip 0 0 0 0.5 0.5
 ( 288 156 98 ) ( 289 156 98 ) ( 288 156 99 ) special/skip 0 0 0 0.5 0.5
@@ -206,7 +206,7 @@
 // brush 22
 {
 ( 160 -100 94 ) ( 160 -99 94 ) ( 160 -100 95 ) Tile/Floor_Tiles 0 -128 0 0.5 0.5
-( 152 -32 94 ) ( 152 -32 95 ) ( 153 -32 94 ) Tile/Floor_Tiles 32 -128 0 0.5 0.5
+( 152 -32 94 ) ( 152 -32 95 ) ( 153 -32 94 ) special/skip 32 -128 0 0.5 0.5
 ( 152 -100 58 ) ( 153 -100 58 ) ( 152 -99 58 ) Tile/Floor_Tiles 32 0 0 0.5 0.5
 ( 164 156 98 ) ( 164 157 98 ) ( 165 156 98 ) special/skip 0 0 0 0.5 0.5
 ( 164 156 98 ) ( 165 156 98 ) ( 164 156 99 ) special/skip 0 0 0 0.5 0.5
@@ -514,7 +514,7 @@
 ( 196 -152 -66 ) ( 196 -151 -66 ) ( 196 -152 -65 ) special/skip 0 0 0 0.0625 0.0625
 ( 128 -252 -66 ) ( 128 -252 -65 ) ( 129 -252 -66 ) special/skip 0 0 0 0.0625 0.0625
 ( 128 -152 -70 ) ( 129 -152 -70 ) ( 128 -151 -70 ) special/skip 0 0 0 0.0625 0.0625
-( 132 -116 -22 ) ( 132 -115 -22 ) ( 133 -116 -22 ) Bricks/Brick7 256 0 0 0.0625 0.0625
+( 132 -116 -22 ) ( 132 -115 -22 ) ( 133 -116 -22 ) special/skip 256 0 0 0.0625 0.0625
 ( 132 -36 -62 ) ( 133 -36 -62 ) ( 132 -36 -61 ) special/skip 0 0 0 0.0625 0.0625
 ( 200 -116 -62 ) ( 200 -116 -61 ) ( 200 -115 -62 ) Bricks/Brick7 0 0 0 0.0625 0.0625
 }
@@ -586,9 +586,9 @@
 ( 248 -164 -30 ) ( 248 -163 -30 ) ( 248 -164 -29 ) Bricks/Brick7 0 0 0 0.0625 0.0625
 ( 132 -252 -30 ) ( 132 -252 -29 ) ( 133 -252 -30 ) special/skip 256 0 0 0.0625 0.0625
 ( 132 -164 -30 ) ( 133 -164 -30 ) ( 132 -163 -30 ) Bricks/Brick7 256 0 0 0.0625 0.0625
-( 204 -48 -22 ) ( 204 -47 -22 ) ( 205 -48 -22 ) Bricks/Brick7 256 0 0 0.0625 0.0625
-( 204 -172 -26 ) ( 205 -172 -26 ) ( 204 -172 -25 ) Bricks/Brick7 256 0 0 0.0625 0.0625
-( 252 -48 -26 ) ( 252 -48 -25 ) ( 252 -47 -26 ) Bricks/Brick7 0 0 0 0.0625 0.0625
+( 204 -48 -22 ) ( 204 -47 -22 ) ( 205 -48 -22 ) special/skip 256 0 0 0.0625 0.0625
+( 204 -172 -26 ) ( 205 -172 -26 ) ( 204 -172 -25 ) special/skip 256 0 0 0.0625 0.0625
+( 252 -48 -26 ) ( 252 -48 -25 ) ( 252 -47 -26 ) special/skip 0 0 0 0.0625 0.0625
 }
 // brush 65
 {
@@ -2241,7 +2241,7 @@
 {
 ( -144 -48 -38 ) ( -144 -47 -38 ) ( -144 -48 -37 ) special/skip 0 0 0 1 1
 ( -128 -32 -38 ) ( -128 -32 -37 ) ( -127 -32 -38 ) special/skip 0 0 0 1 1
-( -128 -48 -22 ) ( -127 -48 -22 ) ( -128 -47 -22 ) special/clip 0 0 0 1 1
+( -128 -48 -22 ) ( -127 -48 -22 ) ( -128 -47 -22 ) special/skip 0 0 0 1 1
 ( -112 96 74 ) ( -112 97 74 ) ( -111 96 74 ) special/skip 0 0 0 1 1
 ( -112 96 -22 ) ( -111 96 -22 ) ( -112 96 -21 ) special/skip 0 0 0 1 1
 ( -112 96 -22 ) ( -112 96 -21 ) ( -112 97 -22 ) special/clip 0 0 0 1 1
@@ -2294,132 +2294,17 @@
 }
 // entity 1
 {
-"classname" "lt_omni"
-"origin" "224 224 46"
-}
-// entity 2
-{
-"classname" "lt_omni"
-"origin" "304 224 46"
-}
-// entity 3
-{
-"classname" "lt_omni"
-"origin" "144 224 46"
-}
-// entity 4
-{
-"classname" "lt_omni"
-"origin" "224 124 54"
-}
-// entity 5
-{
-"classname" "lt_omni"
-"origin" "224 64 54"
-}
-// entity 6
-{
-"classname" "lt_omni"
-"origin" "224 0 54"
-}
-// entity 7
-{
-"classname" "lt_omni"
-"origin" "224 -58 -2"
-}
-// entity 8
-{
-"classname" "lt_omni"
-"origin" "224 -116 -2"
-}
-// entity 9
-{
-"classname" "lt_omni"
-"origin" "224 -168 -2"
-}
-// entity 10
-{
-"classname" "lt_omni"
-"origin" "224 -214 -2"
-}
-// entity 11
-{
-"classname" "lt_omni"
-"origin" "276 -214 -38"
-}
-// entity 12
-{
-"classname" "lt_omni"
-"origin" "312 -214 -38"
-}
-// entity 13
-{
-"classname" "lt_omni"
-"origin" "410 -214 -38"
-}
-// entity 14
-{
-"classname" "lt_omni"
-"origin" "356 -214 -38"
-}
-// entity 15
-{
-"classname" "lt_omni"
-"origin" "356 -156 -38"
-}
-// entity 16
-{
-"classname" "lt_omni"
-"origin" "410 -156 -38"
-}
-// entity 17
-{
-"classname" "lt_omni"
-"origin" "356 -102 -38"
-}
-// entity 18
-{
-"classname" "lt_omni"
-"origin" "410 -102 -38"
-}
-// entity 19
-{
-"classname" "lt_omni"
-"origin" "356 -66 -38"
-}
-// entity 20
-{
-"classname" "lt_omni"
-"origin" "410 -66 -38"
-}
-// entity 21
-{
-"classname" "lt_omni"
-"origin" "384 4 -82"
-}
-// entity 22
-{
-"classname" "lt_omni"
-"origin" "484 4 -82"
-}
-// entity 23
-{
-"classname" "lt_omni"
-"origin" "284 4 -82"
-}
-// entity 24
-{
 "classname" "an_city"
 "origin" "424 -40 -102"
 }
-// entity 25
-{
-"classname" "ev_daytime"
-"origin" "324 260 -18"
-}
-// entity 26
+// entity 2
 {
 "classname" "player"
-"origin" "356 4 -110"
+"origin" "356 4 -102"
 "angle" "270"
+}
+// entity 3
+{
+"classname" "ev_day"
+"origin" "328 264 -14"
 }

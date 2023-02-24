@@ -1,0 +1,21 @@
+[gd_scene load_steps=9 format=3 uid="uid://caxuvvqpx5l3d"]
+
+[ext_resource type="PackedScene" uid="uid://n5usra8t1lt0" path="res://addons/toonroid/base.gltf" id="1_7jbcy"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/head.tres" id="2_euv28"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/face.tres" id="3_opf54"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/torso.tres" id="4_ywgxs"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/arms.tres" id="5_uhy6r"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/hands.tres" id="6_o164c"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/pants.tres" id="7_liobt"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/shoes.tres" id="8_nqlhl"]
+
+[node name="base" instance=ExtResource("1_7jbcy")]
+
+[node name="Base Mesh" parent="metarig/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_euv28")
+surface_material_override/1 = ExtResource("3_opf54")
+surface_material_override/2 = ExtResource("4_ywgxs")
+surface_material_override/3 = ExtResource("5_uhy6r")
+surface_material_override/4 = ExtResource("6_o164c")
+surface_material_override/5 = ExtResource("7_liobt")
+surface_material_override/6 = ExtResource("8_nqlhl")

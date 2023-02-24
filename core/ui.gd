@@ -71,3 +71,11 @@ func _on_map_selected():
 	var map_path = "res://maps/" + map
 	$MapDialog.hide()
 	_on_file_selected(map_path)
+
+
+func _on_customize_button_pressed():
+	$CharacterWindow.popup_centered()
+
+
+func _on_character_window_close_requested():
+	$CharacterWindow.hide()

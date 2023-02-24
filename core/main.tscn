@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b0n6d3ydjk8ht"]
+[gd_scene load_steps=18 format=3 uid="uid://b0n6d3ydjk8ht"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://bnaheix8jti6" path="res://core/world.tscn" id="12"]
 [ext_resource type="Script" path="res://core/main.gd" id="13"]
+[ext_resource type="PackedScene" uid="uid://5fr0sgvpfvrw" path="res://addons/toonroid/src/main.tscn" id="14_mxn15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
@@ -210,6 +211,18 @@ text = "Disconnect"
 flat = true
 alignment = 0
 
+[node name="Button5" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Customize"
+flat = true
+alignment = 0
+
 [node name="Button3" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -354,6 +367,18 @@ text = "Connect"
 flat = true
 alignment = 0
 
+[node name="Button5" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Customize"
+flat = true
+alignment = 0
+
 [node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -427,15 +452,25 @@ title = "Settings"
 visible = false
 gui = NodePath("..")
 
+[node name="CharacterWindow" type="Window" parent="UI"]
+own_world_3d = true
+size = Vector2i(475, 275)
+visible = false
+min_size = Vector2i(475, 275)
+
+[node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("14_mxn15")]
+
 [connection signal="mouse_entered" from="UI/Bottombar" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/Bottombar" to="World3D" method="on_mouse_exited"]
 [connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="unpause"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="reload"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button5" to="UI" method="_on_customize_button_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button3" to="UI" method="_on_sb_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button4" to="." method="quit"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="_on_create_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="_on_connect_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button5" to="UI" method="_on_customize_button_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="quit"]
 [connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="_on_new_room_dialog_close_requested"]
@@ -451,6 +486,7 @@ gui = NodePath("..")
 [connection signal="text_changed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/LineEdit" to="." method="_on_address_changed"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="World3D" method="on_mouse_exited"]
+[connection signal="close_requested" from="UI/CharacterWindow" to="UI" method="_on_character_window_close_requested"]
 
 [editable path="UI/NewRoomDialog/NewRoom"]
 [editable path="UI/MapDialog/StandardMapPicker"]

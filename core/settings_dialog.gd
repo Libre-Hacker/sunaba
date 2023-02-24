@@ -65,6 +65,8 @@ func _on_model_selected(index):
 		Global.player_model = "male"
 	elif index == 1:
 		Global.player_model = "female"
+	elif index == 2:
+		Global.player_model = "custom"
 
 func _on_theme_selected(index):
 	print(index)

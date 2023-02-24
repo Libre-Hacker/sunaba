@@ -21,6 +21,15 @@ var bots_enabled : bool = false
 
 var bot_amount = 0
 
+var headwear : String = "black_long_hair"
+var skin_color : String = "pale"
+var face_texture : String = "face_lightblue"
+var torso_texture : String = "lunar_blue"
+var arms_texture : String = "lunar_blue"
+var hands_texture : String = "lunar_blue"
+var pants_texture : String = "lunar_blue"
+var shoes_texture : String = "lunar_blue"
+
 func _ready():
 	set_to_default()
 

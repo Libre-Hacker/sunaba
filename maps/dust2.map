@@ -1239,3 +1239,8 @@
 "classname" "ev_day"
 "origin" "-280 8 24"
 }
+// entity 3
+{
+"classname" "gm_sandbox"
+"origin" "-216 8 24"
+}

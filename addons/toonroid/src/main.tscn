@@ -1,0 +1,229 @@
+[gd_scene load_steps=16 format=3 uid="uid://5fr0sgvpfvrw"]
+
+[ext_resource type="Script" path="res://addons/toonroid/src/main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bxmjpscsh2mrx" path="res://addons/toonroid/basemodel.gltf" id="2_0a511"]
+[ext_resource type="Environment" uid="uid://d1dog1q31qplv" path="res://whitesky.tres" id="3_5isfp"]
+[ext_resource type="PackedScene" uid="uid://bq8v2dhpm2cvk" path="res://addons/toonroid/headwear/himiko.tscn" id="3_sq4mh"]
+[ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://addons/toonroid/materials/head.tres" id="4_egmt1"]
+[ext_resource type="Script" path="res://addons/toonroid/src/SpringArm3D.gd" id="4_llurn"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/face.tres" id="5_ftq12"]
+[ext_resource type="Material" uid="uid://c8h7ap1l3xhtr" path="res://addons/toonroid/materials/torso.tres" id="6_fngud"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/arms.tres" id="7_htnf3"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/hands.tres" id="8_qqg0i"]
+[ext_resource type="Material" uid="uid://bgadwol0pm2lm" path="res://addons/toonroid/materials/pants.tres" id="9_tk4rn"]
+[ext_resource type="Material" path="res://addons/toonroid/materials/shoes.tres" id="10_u7nhw"]
+[ext_resource type="Texture2D" uid="uid://ctt7ow3arrmln" path="res://addons/toonroid/textures/floor.png" id="12_x53tl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_byq7u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iy0q3"]
+shading_mode = 0
+albedo_texture = ExtResource("12_x53tl")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="CharacterCreator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.631
+anchor_bottom = 1.0
+offset_right = 0.159973
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(403, 480)
+render_target_update_mode = 4
+
+[node name="basemodel" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_0a511")]
+
+[node name="HeadwearAttachment" type="BoneAttachment3D" parent="SubViewportContainer/SubViewport/basemodel/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14752e-08, 0.945755, -0.00785541)
+bone_name = "face"
+bone_idx = 5
+
+[node name="himiko" parent="SubViewportContainer/SubViewport/basemodel/Akari/GeneralSkeleton/HeadwearAttachment" instance=ExtResource("3_sq4mh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.273985, 0.00936514)
+visible = false
+
+[node name="Base Mesh" parent="SubViewportContainer/SubViewport/basemodel/Akari/GeneralSkeleton" index="1"]
+surface_material_override/0 = ExtResource("4_egmt1")
+surface_material_override/1 = ExtResource("5_ftq12")
+surface_material_override/2 = ExtResource("6_fngud")
+surface_material_override/3 = ExtResource("7_htnf3")
+surface_material_override/4 = ExtResource("8_qqg0i")
+surface_material_override/5 = ExtResource("9_tk4rn")
+surface_material_override/6 = ExtResource("10_u7nhw")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SubViewportContainer/SubViewport/basemodel/Akari" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.761155, 0)
+spring_length = 1.5
+script = ExtResource("4_llurn")
+mouse_sensitivity = 0.75
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/basemodel/Akari/SpringArm3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = ExtResource("3_5isfp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(2000, 0, 0, 0, 10, 0, 0, 0, 2000, 0, -5.006, 0)
+mesh = SubResource("BoxMesh_byq7u")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_iy0q3")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.631
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.159973
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Panel/TabBar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Skin" type="Control" parent="Panel/TabBar/TabContainer"]
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Skin"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Headwear" type="Control" parent="Panel/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Headwear"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Face" type="Control" parent="Panel/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Face"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Torso" type="Control" parent="Panel/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Torso"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Arms" type="Control" parent="Panel/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Arms"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Hands" type="Control" parent="Panel/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Hands"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Pants" type="Control" parent="Panel/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Pants"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Shoes" type="Control" parent="Panel/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="Panel/TabBar/TabContainer/Shoes"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -554.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Panel2/TabBar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Properties" type="Control" parent="Panel2/TabBar/TabContainer"]
+layout_mode = 2
+
+[node name="Costumes" type="Control" parent="Panel2/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Skin/Tree" to="." method="_on_skin_tree_item_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Headwear/Tree" to="." method="_on_headwear_tree_item_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Face/Tree" to="." method="_on_face_tree_item_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Torso/Tree" to="." method="_on_torso_tree_item_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Arms/Tree" to="." method="_on_arms_tree_item_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Hands/Tree" to="." method="_on_hands_tree_item_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Pants/Tree" to="." method="_on_pants_tree_item_selected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Shoes/Tree" to="." method="_on_shoes_tree_item_selected"]
+
+[editable path="SubViewportContainer/SubViewport/basemodel"]
+[editable path="SubViewportContainer/SubViewport/basemodel/Akari/GeneralSkeleton/HeadwearAttachment/himiko"]

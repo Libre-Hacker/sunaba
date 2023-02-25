@@ -14,7 +14,7 @@ func _on_sb_pressed():
 	$SettingsDialog.popup_centered()
 
 func _on_file_button_pressed():
-	$UserFileDialog.popup_centered()
+	$MapDialog.popup_centered()
 
 
 func _on_file_menu_pressed(id):

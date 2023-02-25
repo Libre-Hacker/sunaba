@@ -3,17 +3,14 @@
 
 #define MyAppName "Sunaba"
 #define MyAppVersion "0.3.0dev"
-#define MyAppPublisher "mintkat"
-#define MyAppURL "https://mintkat.itch.io/sunaba"
+#define MyAppPublisher "Sunaba"
+#define MyAppURL "https://www.example.com/"
 #define MyAppExeName "Sunaba.exe"
-#define MyAppAssocName MyAppName + " Map"
-#define MyAppAssocExt ".map"
-#define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{6475BDE9-175A-4E57-9B50-CA89974661AB}
+AppId={{7859E33B-0F81-4348-A859-86A465579891}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -22,13 +19,12 @@ AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
-ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\sbinstaller
-OutputBaseFilename=Sunaba_win32
+OutputDir=C:\sunaba\bin
+OutputBaseFilename=sunaba-win32
 SetupIconFile=C:\sunaba\icon.ico
 Compression=lzma
 SolidCompression=yes
@@ -45,15 +41,7 @@ Source: "C:\sunaba\bin\win32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreve
 Source: "C:\sunaba\bin\win32\Sunaba.console.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\sunaba\bin\win32\Sunaba.pck"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\sunaba\bin\win32\data_folder\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\sunaba\maps\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-
-[Registry]
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocExt}\OpenWithProgids"; ValueType: string; ValueName: "{#MyAppAssocKey}"; ValueData: ""; Flags: uninsdeletevalue
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}"; ValueType: string; ValueName: ""; ValueData: "{#MyAppAssocName}"; Flags: uninsdeletekey
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: "{app}\{#MyAppExeName},0"
-Root: HKA; Subkey: "Software\Classes\{#MyAppAssocKey}\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""
-Root: HKA; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".myp"; ValueData: ""
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

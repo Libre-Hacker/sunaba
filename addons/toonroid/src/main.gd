@@ -71,9 +71,10 @@ func _ready():
 		var file = dir_faces.get_next()
 		if file == "":
 			break
-		elif (not file.ends_with(".import")) and file.ends_with(".png"):
-			print(file.left(-7))
+		elif OS.has_feature("editor") and ((not file.ends_with(".import")) and file.ends_with(".png")):
 			create_item(face_tree, file.left(-7))
+		elif (!OS.has_feature("editor")) and (file.ends_with(".png.import")):
+			create_item(face_tree, file.left(-14))
 	
 	dir_faces.list_dir_end()
 	
@@ -89,9 +90,10 @@ func _ready():
 		var file = dir.get_next()
 		if file == "":
 			break
-		elif (not file.ends_with(".import")) and file.ends_with(".tscn"):
-			print(file.left(-5))
+		elif  OS.has_feature("editor") and (file.ends_with(".tscn")):
 			add_headwear(file.left(-5))
+		elif  !OS.has_feature("editor") and (file.ends_with(".tscn.remap")):
+			add_headwear(file.left(-11))
 	
 	dir.list_dir_end()
 	
@@ -104,9 +106,10 @@ func _ready():
 		var file = dir_clothes.get_next()
 		if file == "":
 			break
-		elif (not file.ends_with(".import")) and file.ends_with(".png"):
-			print(file.left(-4))
+		elif OS.has_feature("editor") and ((not file.ends_with(".import")) and file.ends_with(".png")):
 			add_item(file.left(-4))
+		elif (!OS.has_feature("editor")) and (file.ends_with(".png.import")):
+			add_item(file.left(-11))
 	
 	dir_clothes.list_dir_end()
 	
@@ -176,14 +179,12 @@ func change_face_texture(name):
 
 func _on_face_tree_item_selected():
 	var item = face_tree.get_selected().get_text(0)
-	print(item)
 	if item != "face":
 		change_face_texture(item)
 
 
 func _on_torso_tree_item_selected():
 	var item = torso_tree.get_selected().get_text(0)
-	print(item)
 	if item != "torso":
 		torso_texture = item
 		change_texture(torso_material, get_clothing_texture(torso_texture))
@@ -191,7 +192,6 @@ func _on_torso_tree_item_selected():
 
 func _on_arms_tree_item_selected():
 	var item = arms_tree.get_selected().get_text(0)
-	print(item)
 	if item != "torso":
 		arms_texture = item
 		change_texture(arms_material, get_clothing_texture(arms_texture))
@@ -199,7 +199,6 @@ func _on_arms_tree_item_selected():
 
 func _on_hands_tree_item_selected():
 	var item = hands_tree.get_selected().get_text(0)
-	print(item)
 	if item != "hands":
 		hands_texture = item
 		change_texture(hands_material, get_clothing_texture(hands_texture))
@@ -207,7 +206,6 @@ func _on_hands_tree_item_selected():
 
 func _on_pants_tree_item_selected():
 	var item = pants_tree.get_selected().get_text(0)
-	print(item)
 	if item != "pants":
 		pants_texture = item
 		change_texture(pants_material, get_clothing_texture(pants_texture))
@@ -215,7 +213,6 @@ func _on_pants_tree_item_selected():
 
 func _on_shoes_tree_item_selected():
 	var item = shoes_tree.get_selected().get_text(0)
-	print(item)
 	if item != "pants":
 		shoes_texture = item
 		change_texture(foot_material, get_clothing_texture(shoes_texture))
@@ -223,7 +220,6 @@ func _on_shoes_tree_item_selected():
 
 func _on_skin_tree_item_selected():
 	var item = skin_tree.get_selected().get_text(0)
-	print(item)
 	if item != "skin":
 		skin_color = item
 		change_texture(head_material, "res://addons/toonroid/textures/" + skin_color + ".png")
@@ -246,7 +242,6 @@ func change_headwear(headwear_name):
 
 func _on_headwear_tree_item_selected():
 	var item = hw_tree.get_selected().get_text(0)
-	print(item)
 	if item != "headwear":
 		headwear = item
 		change_headwear(item)

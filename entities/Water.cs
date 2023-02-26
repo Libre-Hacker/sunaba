@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
-public partial class Water : Node3D
+namespace Sunaba.Entities
 {
+    public partial class Water : Node3D
+    {
+    }
 }

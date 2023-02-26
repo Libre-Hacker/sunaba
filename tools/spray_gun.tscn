@@ -1,22 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkuo7n8bqx5vc"]
 
-[ext_resource type="Script" path="res://tools/weapon.gd" id="1_qy3dv"]
+[ext_resource type="Script" path="res://tools/Tool.cs" id="1_ri0us"]
 [ext_resource type="AudioStream" uid="uid://bbc84qkmlxduf" path="res://assets/audio/paintball.ogg" id="2_fyyco"]
 [ext_resource type="PackedScene" uid="uid://c726b88n6akyi" path="res://tools/meshes/spray_gun_mesh.tscn" id="3_hjvei"]
 
 [node name="SprayGun" type="Node3D"]
-script = ExtResource("1_qy3dv")
+script = ExtResource("1_ri0us")
 damage = 0
-max_ammo = 9999
-weapon_type = "auto"
-weapon_path = "res://entities/wp_pbgun.tscn"
-bullet_hole_path = "res://tools/decals/paint_decal.tscn"
-
-[node name="Muzzle" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
+maxAmmo = 9999
+toolType = "Auto"
+toolObjectPath = "res://entities/tl_spraygun.tscn"
+decalPath = "res://tools/decals/paint_decal.tscn"
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fyyco")
 bus = &"Sound"
 
 [node name="GunMesh" parent="." instance=ExtResource("3_hjvei")]
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)

@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfrjp04s8bhmn"]
 
-[ext_resource type="Script" path="res://tools/weapon.gd" id="1_0bv6p"]
+[ext_resource type="Script" path="res://tools/Tool.cs" id="1_i0u1p"]
 [ext_resource type="PackedScene" uid="uid://8y2wb4rvutm2" path="res://tools/meshes/dartgun_mesh.tscn" id="2_00on8"]
 [ext_resource type="AudioStream" uid="uid://bu7pxkybvq1fo" path="res://assets/audio/nail.ogg" id="3_1lc3j"]
 
 [node name="Nail Gun" type="Node3D"]
-script = ExtResource("1_0bv6p")
+script = ExtResource("1_i0u1p")
 damage = 5
-cooldown_time = 0.07
-max_ammo = 40
-weapon_type = "auto"
-weapon_path = "res://entities/wp_dartgun.tscn"
-bullet_hole_path = "res://tools/decals/dart_bullet_decal.tscn"
+cooldownTime = 0.07
+maxAmmo = 40
+toolType = "Auto"
+toolObjectPath = "res://entities/wp_dartgun.tscn"
+decalPath = "res://tools/decals/dart_bullet_decal.tscn"
 
 [node name="Muzzle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)

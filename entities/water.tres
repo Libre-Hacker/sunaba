@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://dv85707rjgemw"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1_8q84f"]
-[ext_resource type="Script" path="res://entities/water.gd" id="2_0dow7"]
+[ext_resource type="Script" path="res://entities/Water.cs" id="2_7tip6"]
 
 [resource]
 script = ExtResource("1_8q84f")
@@ -12,7 +12,7 @@ build_visuals = true
 collision_build = "----------------------------------------------------------------"
 collision_shape_type = 1
 scripting = "----------------------------------------------------------------"
-script_class = ExtResource("2_0dow7")
+script_class = ExtResource("2_7tip6")
 class_options = "----------------------------------------------------------------"
 classname = "water"
 description = ""

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cdpiwel3dv86n"]
 
+[ext_resource type="Script" path="res://tools/Tool.cs" id="1_6vdun"]
 [ext_resource type="PackedScene" uid="uid://dua45vbx6dbk" path="res://tools/meshes/paintball_gun_mesh.tscn" id="2_oybf6"]
 [ext_resource type="AudioStream" uid="uid://bbc84qkmlxduf" path="res://assets/audio/paintball.ogg" id="3_yt417"]
-[ext_resource type="Script" path="res://tools/weapon.gd" id="11"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dguy5"]
 albedo_color = Color(0.215686, 0.215686, 0.215686, 1)
@@ -135,12 +135,12 @@ _surfaces = [{
 }]
 
 [node name="AutoGun" type="Node3D"]
-script = ExtResource("11")
+script = ExtResource("1_6vdun")
 damage = 10
-max_ammo = 30
-weapon_type = "auto"
-weapon_path = "res://entities/wp_pbgun.tscn"
-bullet_hole_path = "res://tools/decals/paintball_bullet_decal.tscn"
+maxAmmo = 30
+toolType = "Auto"
+toolObjectPath = "res://entities/wp_pbgun.tscn"
+decalPath = "res://tools/decals/paintball_bullet_decal.tscn"
 
 [node name="Muzzle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)

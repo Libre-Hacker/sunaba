@@ -1,10 +1,10 @@
 using Godot;
 using System;
 
-public partial class toolObject : RigidBody3D
+public partial class ToolObject : RigidBody3D
 {
 	[Export]
-	public String weaponPath = "";
+	public String toolPath = "";
 
 	public bool dropped = false;
 
@@ -17,6 +17,5 @@ public partial class toolObject : RigidBody3D
 			dropped = false;
 		}
 	}
-
 
 }

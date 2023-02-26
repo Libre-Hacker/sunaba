@@ -1,15 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://wsjawg2skf8t"]
 
-[ext_resource type="Script" path="res://tools/tool.gd" id="1_7syvj"]
 [ext_resource type="PackedScene" uid="uid://cxpjwab4kep6w" path="res://tools/meshes/pistol_mesh.tscn" id="1_rub0h"]
+[ext_resource type="Script" path="res://tools/ToolObject.cs" id="1_up3tt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58kxc"]
 size = Vector3(0.047419, 0.179502, 0.261986)
 
 [node name="wp_pistol" type="RigidBody3D"]
-script = ExtResource("1_7syvj")
-weapon_path = "res://tools/pistol.tscn"
-model_path = "assets/models/handprops/pistol.gltf"
+script = ExtResource("1_up3tt")
+toolPath = "res://tools/pistol.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999977, 0.00677183, 0, -0.00677183, 0.999977, 0, 0.00773278, 0.0889137)

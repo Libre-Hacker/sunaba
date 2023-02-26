@@ -548,7 +548,7 @@ func _physics_process(delta):
 	
 	if reach.is_colliding():
 		if "wp" in reach.get_collider().get_name() or "tl" in reach.get_collider().get_name():
-			tool_to_spawn = reach.get_collider().weapon_path
+			tool_to_spawn = reach.get_collider().toolPath
 		else:
 			tool_to_spawn = null
 	else:

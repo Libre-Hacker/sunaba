@@ -1,0 +1,186 @@
+Godot Engine v4.0.rc2.mono.official.d2699dc7a - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Text-to-Speech: SAPI initialized.
+Vulkan devices:
+  #0: NVIDIA NVIDIA GeForce RTX 3070 Laptop GPU - Supported, Discrete
+  #1: Intel Intel(R) UHD Graphics - Supported, Integrated
+  #2: Intel Intel(R) UHD Graphics - Supported, Integrated
+Vulkan API 1.3.224 - Forward Mobile - Using Vulkan Device #0: NVIDIA - NVIDIA GeForce RTX 3070 Laptop GPU
+Optional extension VK_KHR_incremental_present not found
+Optional extension VK_GOOGLE_display_timing not found
+- Vulkan Variable Rate Shading supported:
+  Pipeline fragment shading rate
+  Primitive fragment shading rate
+  Attachment fragment shading rate, min texel size: (16, 16), max texel size: (16, 16)
+- Vulkan multiview supported:
+  max view count: 32
+  max instances: 134217727
+- Vulkan subgroup:
+  size: 32
+  stages: STAGE_VERTEX, STAGE_TESSELLATION_CONTROL, STAGE_TESSELLATION_EVALUATION, STAGE_GEOMETRY, STAGE_FRAGMENT, STAGE_COMPUTE, STAGE_RAYGEN_KHR, STAGE_ANY_HIT_KHR, STAGE_CLOSEST_HIT_KHR, STAGE_MISS_KHR, STAGE_INTERSECTION_KHR, STAGE_CALLABLE_KHR, STAGE_TASK_NV, STAGE_MESH_NV
+  supported ops: FEATURE_BASIC, FEATURE_VOTE, FEATURE_ARITHMETIC, FEATURE_BALLOT, FEATURE_SHUFFLE, FEATURE_SHUFFLE_RELATIVE, FEATURE_CLUSTERED, FEATURE_QUAD, FEATURE_PARTITIONED_NV
+  quad operations in all stages
+Using "wintab" pen tablet driver...
+Creating VMA small objects pool for memory type index 1
+Shader 'CanvasSdfShaderRD' SHA256: e2ba5edaee8490296f8569b3a55f9a991b22d07025576947e3e216ecff0e5833
+Shader 'SkeletonShaderRD' SHA256: dd35611f636dd996c11819e35f8c8edfdc550182ec84ce3ecb195034f0ad1fec
+Shader 'ParticlesShaderRD' SHA256: 1a13e3c89d30dadf09d000db2ce35fdc2c2257324db860dfb0b02a40ecf5c1fd
+Shader 'ParticlesCopyShaderRD' SHA256: 6a151203c264e70900bee368a938aa4ae0aebd5946913fbc230749ea67c44188
+Shader 'CanvasShaderRD' SHA256: 046bda79674b78204c4dfe28358e07080f2f1cb95a7ce47b5fc8b3d589c68623
+Shader 'CanvasOcclusionShaderRD' SHA256: 4ad435339379d3c694f9bbb8e2132dcca6a66d3d2397586222bd5279d3880f0b
+Shader 'SceneForwardMobileShaderRD' SHA256: cb7f1e8cb664247a61e583824efa930b359f9fcbbc23b23307afc006eabc12aa
+Shader 'SkyShaderRD' SHA256: a72828e6df23dc1394e076eb066552e65bf4c789abe82775ae731a858922ca30
+Shader 'BokehDofRasterShaderRD' SHA256: b2e6f31265074c5e4892443f670aef601710f86e070a3d987435103f7921fb30
+Shader 'BlurRasterShaderRD' SHA256: 0eba7cbc957bc94fee5bc7c665da34546babfc128ddbe948586b897a6ed55624
+Shader 'CopyToFbShaderRD' SHA256: 94fb61d554fa0c891d0eba52b0f803689ebb898bb2dd68b96b79121645063b68
+Shader 'CubeToDpShaderRD' SHA256: c18d36bdc73b0519fe420d55500a88a8b7cc327e2762b1ec2f00056b8d458950
+Shader 'CubemapDownsamplerRasterShaderRD' SHA256: 8d8a37364ffe6c938bfdc99010498dcc18dc676b4636e677985e4324767a2467
+Shader 'CubemapFilterRasterShaderRD' SHA256: 70cfa9455a2b03dcca02aec98102bdae56a069771a9852cab0282c5c4dc7511a
+Shader 'CubemapRoughnessRasterShaderRD' SHA256: 9b2b4bb223536d8d561f06b90cf6c602f6fa33a3144751989d23fc248adfbf19
+Shader 'SpecularMergeShaderRD' SHA256: dc5bedf002816fb850a384045a48b65fdd721ce6ef9be70c79ebef38e5c18a35
+Shader 'LuminanceReduceRasterShaderRD' SHA256: 7d6d1d5f28781960076fe206d38e084cf128dc7951e058339864ddefbd044b21
+Shader 'TonemapShaderRD' SHA256: 4055df1ae301a963c33eb96c7db97a91b5e40d286991a170f960ffcd4305aa7d
+Shader 'VrsShaderRD' SHA256: 5323e9811e24ac73ebf98a923d7964cb07b32d92360c41e1f501d56a0a0a1462
+Shader 'SortShaderRD' SHA256: d01bffed17b37d11bd9e247dfffced2a44313d37450f761f5b29d4878536ef29
+Shader 'BlitShaderRD' SHA256: 5492530488feafc177b29e123cdadcb9338c63972d86ebb4d4826da50dbac56d
+WASAPI: Activated output_device using IAudioClient3 interface
+WASAPI: wFormatTag = 65534
+WASAPI: nChannels = 2
+WASAPI: nSamplesPerSec = 48000
+WASAPI: nAvgBytesPerSec = 384000
+WASAPI: nBlockAlign = 8
+WASAPI: wBitsPerSample = 32
+WASAPI: cbSize = 22
+WASAPI: mix_rate = 48000
+WASAPI: fundamental_period_frames = 480
+WASAPI: min_period_frames = 480
+WASAPI: max_period_frames = 480
+WASAPI: selected a period frame size of 480
+WASAPI: detected 2 channels
+WASAPI: audio buffer frames: 480 calculated latency: 10ms
+ 
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+.NET: Initializing module...
+Found hostfxr: C:\Program Files\dotnet\host/fxr/7.0.3/hostfxr.dll
+.NET: hostfxr initialized
+.NET: GodotPlugins initialized
+CORE API HASH: 1179781424
+EDITOR API HASH: 584638136
+Loading resource: res://addons/panku_console/console.tscn
+Loading resource: res://addons/panku_console/components/lynx_window2/lynx_window_2.tscn
+Loading resource: res://addons/panku_console/components/input_mapping/exp_key_mapper_2.tscn
+Loading resource: res://addons/panku_console/components/input_mapping/exp_key_item.tscn
+Loading resource: res://addons/panku_console/components/monitor/monitor_2.tscn
+Loading resource: res://addons/panku_console/components/exporter/exporter_2.tscn
+Loading resource: res://addons/panku_console/components/resident_logs/log_item.tscn
+Loading resource: res://addons/panku_console/components/hints_list/hint.tscn
+Loading resource: res://addons/panku_console/components/exp_history/exp_history_item.tscn
+Loaded builtin certs
+Loading resource: res://actors/player.tscn
+Sunaba
+Version 0.4.0dev
+Compiled on Febuary 26, 2023
+(C) 2022-2023 mintkat
+
+Room : Room created
+Room : Importing world from File - res://maps/city.map
+Room : Loading Map
+Building res://maps/city.map
+
+Map parsed: entities 4
+TEXLI ["special/skip", "Wood/Wood18-512x512", "Building/indoor_wall", "Tile/Floor_Tiles", "Road_Texture/Road_Texture_01", "Brick/Brick_02-512x512", "Wood/Photoreal_Wood_01-512x512", "Concrete/Photoreal_Concrete_07-512x512", "Tile/Photoreal_Tile_06-512x512", "Bricks/Brick7", "Brick/Brick_01-512x512", "Stone/Carrara_marble_01", "Tile/Tile_5_-_512x512", "Stone/Stone_12-512x512", "Colors/black", "Metal/Metal_18-512x512", "Metal/Metal_06-512x512", "Misc/Leather011", "Metal/Metal_17-512x512", "Metal/Metal_05-512x512", "Wood/Wood_25-256x256", "Metal/Metal_02-512x512", "Building/door_07", "special/clip"]
+
+
+Build complete
+
+Unwrapping mesh UV2s
+Creating VMA small objects pool for memory type index 3
+Mesh: Gen indices: 6810
+Unwrap complete
+Unloading: Disposing tracked instances...
+Unloading: Finished disposing tracked instances.
+XR: Clearing primary interface
+XR: Removed interfaceNative mobile
+XR: Removed interfaceOpenXR
+Orphan StringName: Vector2
+Orphan StringName: Vector3
+Orphan StringName: Vector4
+Orphan StringName: RID
+Orphan StringName: Color
+Orphan StringName: SceneMultiplayer
+Orphan StringName: PackedByteArray
+Orphan StringName: process_frame
+Orphan StringName: Vector2i
+Orphan StringName: Callable
+Orphan StringName: Vector3i
+Orphan StringName: Vector4i
+Orphan StringName: PackedStringArray
+Orphan StringName: Basis
+Orphan StringName: int
+Orphan StringName: PackedFloat32Array
+Orphan StringName: Plane
+Orphan StringName: PackedFloat64Array
+Orphan StringName: NodePath
+Orphan StringName: Signal
+Orphan StringName: StringName
+Orphan StringName: String
+Orphan StringName: Transform2D
+Orphan StringName: Transform3D
+Orphan StringName: Array
+Orphan StringName: Quaternion
+Orphan StringName: bool
+Orphan StringName: PackedColorArray
+Orphan StringName: PackedVector2Array
+Orphan StringName: Object
+Orphan StringName: AABB
+Orphan StringName: float
+Orphan StringName: Dictionary
+Orphan StringName: Projection
+Orphan StringName: Rect2
+Orphan StringName: PackedVector3Array
+Orphan StringName: PackedInt32Array
+Orphan StringName: Rect2i
+Orphan StringName: PackedInt64Array
+StringName: 39 unclaimed string names at exit.
+WARNING: GENERAL - Message Id Number: 0 | Message Id Name: Loader Message
+	windows_read_data_files_in_registry: Registry lookup failed to get layer manifest files.
+	Objects - 1
+		Object[0] - VK_OBJECT_TYPE_INSTANCE, Handle 1270435002752
+     at: _debug_messenger_callback (drivers/vulkan/vulkan_context.cpp:259)
+WARNING: res://entities/wp_dartgun.tres:3 - ext_resource, invalid UID: uid://c1j0nhj7jc0qn - using text path instead: res://entities/wp_dartgun.tscn
+     at: load (scene/resources/resource_format_text.cpp:448)
+WARNING: res://entities/tl_sparygun.tres:3 - ext_resource, invalid UID: uid://c3cctftfq8txf - using text path instead: res://entities/tl_spraygun.tscn
+     at: load (scene/resources/resource_format_text.cpp:448)
+WARNING: res://entities/wp_pistol.tres:3 - ext_resource, invalid UID: uid://un767v26k0na - using text path instead: res://entities/wp_pistol.tscn
+     at: load (scene/resources/resource_format_text.cpp:448)
+WARNING: res://entities/wp_semigun.tres:3 - ext_resource, invalid UID: uid://fes56iisosr1 - using text path instead: res://entities/wp_semigun.tscn
+     at: load (scene/resources/resource_format_text.cpp:448)
+WARNING: res://entities/wp_sniper.tres:3 - ext_resource, invalid UID: uid://du7jbdq2xbapo - using text path instead: res://entities/wp_sniper.tscn
+     at: load (scene/resources/resource_format_text.cpp:448)
+WARNING: res://entities/wp_shotgun.tres:3 - ext_resource, invalid UID: uid://cl4xbycextpbd - using text path instead: res://entities/wp_shotgun.tscn
+     at: load (scene/resources/resource_format_text.cpp:448)
+WARNING: You have to enable file logging in order to use engine log monitor!
+     at: push_warning (core/variant/variant_utility.cpp:900)
+SCRIPT ERROR: Invalid get index '0' (on base: 'PackedStringArray').
+          at: _ready (res://core/main.gd:32)
+WARNING: Node 'PlayerModel/Akari/GeneralSkeleton/Head' was modified from inside an instance, but it has vanished.
+     at: instantiate (scene/resources/packed_scene.cpp:178)
+WARNING: Parent path './PlayerModel/Akari/GeneralSkeleton/Head' for node 'HeadPos' has vanished when instantiating: 'res://actors/player.tscn'.
+     at: instantiate (scene/resources/packed_scene.cpp:125)
+WARNING: Node './HeadPos' was modified from inside an instance, but it has vanished.
+     at: instantiate (scene/resources/packed_scene.cpp:178)
+ERROR: Attempted to free invalid ID: 0
+   at: _free_internal (drivers/vulkan/rendering_device_vulkan.cpp:8394)
+ERROR: Attempted to free invalid ID: 0
+   at: _free_internal (drivers/vulkan/rendering_device_vulkan.cpp:8394)
+ERROR: Attempted to free invalid ID: 0
+   at: _free_internal (drivers/vulkan/rendering_device_vulkan.cpp:8394)
+ERROR: Attempted to free invalid ID: 0
+   at: _free_internal (drivers/vulkan/rendering_device_vulkan.cpp:8394)
+ERROR: Attempted to free invalid ID: 0
+   at: _free_internal (drivers/vulkan/rendering_device_vulkan.cpp:8394)
+ERROR: Condition "!shader" is true.
+   at: shader_free (servers/rendering/renderer_rd/storage_rd/material_storage.cpp:2453)
+ERROR: Condition "!material" is true.
+   at: material_free (servers/rendering/renderer_rd/storage_rd/material_storage.cpp:2686)

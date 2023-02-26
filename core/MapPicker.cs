@@ -8,11 +8,24 @@ namespace Sunaba.Runtime
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
-		}
+			var dir = DirAccess.Open("res://maps");
 
-		// Called every frame. 'delta' is the elapsed time since the previous frame.
-		public override void _Process(double delta)
-		{
+			dir.ListDirBegin();
+
+			while (true)
+			{
+				var file = dir.GetNext();
+				if (file == null)
+				{
+					break;
+				}
+				else if ((!file.EndsWith(".import")) && (file.EndsWith(".map")))
+				{
+					var mapName = file.Left(-4);
+					var optButton = GetNode<OptionButton>("OptionButton");
+					optButton.AddItem(mapName);
+				}
+			}
 		}
 	}
 }

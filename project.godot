@@ -19,15 +19,14 @@ boot_splash/image="res://splashscreen.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
-boot_splash/minimum_display_time=10000
 
 [autoload]
 
 GameManager="*res://core/game_manager.gd"
-Build="*res://core/build.gd"
 ThemeManager="*res://core/theme_manager.gd"
 Global="*res://core/global.gd"
 ScaleManager="*res://core/scale_manager.gd"
+Build="*res://core/build.gd"
 Console="*res://addons/panku_console/console.tscn"
 
 [debug]

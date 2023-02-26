@@ -1,6 +1,5 @@
 extends Node
 
-@onready var room_controls = $Bottombar/RoomControls
 
 func  _ready():
 	$MainMenu.show()

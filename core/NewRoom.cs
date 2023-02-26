@@ -5,16 +5,22 @@ namespace Sunaba.Runtime
 {
 	public partial class NewRoom : Node
 	{
-		// Called when the node enters the scene tree for the first time.
-		public override void _Ready()
+        public void OnBotsToggled(bool buttonPressed)
 		{
-		}
+            var global = GetNode("/root/Global");
 
-		// Called every frame. 'delta' is the elapsed time since the previous frame.
-		public override void _Process(double delta)
-		{
-		}
-	}
+            global.Set("bots_enabled", buttonPressed);
+            //global.bots_enabled = buttonPressed;
+        }
+
+        public void OnBotAmountChanged(double value)
+        {
+            var global = GetNode("/root/Global");
+
+            global.Set("bot_amount", value);
+            //global.bots_enabled = buttonPressed;
+        }
+    }
 }
 
 /*

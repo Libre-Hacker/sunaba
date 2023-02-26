@@ -8,7 +8,7 @@
 script = ExtResource("1_ri0us")
 damage = 0
 maxAmmo = 9999
-toolType = "Auto"
+toolType = "Spray"
 toolObjectPath = "res://entities/tl_spraygun.tscn"
 decalPath = "res://tools/decals/paint_decal.tscn"
 

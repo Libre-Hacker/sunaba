@@ -5,13 +5,11 @@ var address = "localhost"
 
 @onready var network_manager = $NetworkManager
 @onready var chatbox = $UI/Chatbox
-@onready var chat_entry = $UI/Bottombar/RoomControls/ChatEntry
 @onready var world = $World3D
 
 func _ready() -> void:
 	#if OS.get_name() == "Android":
 	ProjectSettings.set("display/window/stretch/scale", 2)
-	chat_entry.editable = false
 	$UI.theme = ThemeManager.theme
 	Global.game_started = false
 	Global.game_paused = false
@@ -41,8 +39,6 @@ func create_room() -> void:
 		$UI/NewRoomDialog.hide()
 		$UI/MainMenu.hide()
 
-func enable_chat() -> void:
-	chat_entry.editable = true
 
 func log_to_chat(logstring):
 	logstring = "Room : " + logstring
@@ -55,7 +51,6 @@ func chat(_name , chatstring):
 	print(chatstring)
 	chatbox.add_text(chatstring)
 	chatbox.newline()
-	chat_entry.clear()
 	#chat_entry.focus_mode = false
 
 func import_world():

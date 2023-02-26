@@ -9,6 +9,9 @@ namespace Sunaba.Runtime
 
 		private ENetMultiplayerPeer enetPeer = new ENetMultiplayerPeer();
 
+		[Export]
+		public NodePath world;
+
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
 		{

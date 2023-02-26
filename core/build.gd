@@ -2,8 +2,8 @@ extends Node
 
 var use_native_fd : bool
 var online_play_enabled : bool
-var version_number : String
-var build_date : String
+var version_number : String = "0.4.0dev"
+var build_date : String = "Febuary 26, 2023"
 
 #var flags = preload("res://flags.tres")
 

@@ -6,7 +6,7 @@ namespace Sunaba.Runtime
 	public partial class Build : Node
 	{
 		public bool multiplayerEnabled = false;
-		public String versionNumber = "0.3.0";
+		public String versionNumber = "0.4.0dev";
 		public String buildDate = "Febuary 26, 2023";
 
 		private Resource flags = null;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=36 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
@@ -17,10 +17,8 @@
 [ext_resource type="AudioStream" uid="uid://b2alrpik37gsg" path="res://assets/audio/walk/playerfoot_07.ogg" id="8_ragwt"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
 [ext_resource type="AudioStream" uid="uid://xsn4y0xr76bc" path="res://assets/audio/walk/playerfoot_08.ogg" id="9_ci5of"]
-[ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_4145y"]
 [ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="12_7t0uy"]
-[ext_resource type="Script" path="res://actors/ToolSystem.cs" id="12_524va"]
 [ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
 [ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_ehkwf"]
 [ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="13_xlyhy"]
@@ -226,11 +224,6 @@ default_speed = 4
 jump_impulse = 10
 foot_sounds = [ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")]
 
-[node name="StateMachines" type="Node3D" parent="."]
-
-[node name="ToolSystem" type="Node3D" parent="StateMachines"]
-script = ExtResource("12_524va")
-
 [node name="Male" parent="." instance=ExtResource("2_rdd8b")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
@@ -334,19 +327,6 @@ offset_right = 188.0
 offset_bottom = -8.0
 grow_vertical = 0
 
-[node name="Icon" type="TextureRect" parent="Hud/Panel"]
-visible = false
-layout_mode = 0
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -61.0
-offset_right = 61.0
-offset_bottom = -7.0
-grow_vertical = 0
-texture = ExtResource("10")
-stretch_mode = 5
-
 [node name="HealthBar" type="ProgressBar" parent="Hud/Panel"]
 layout_mode = 0
 anchor_left = 1.0
@@ -438,7 +418,6 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
-texture = ExtResource("10")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]

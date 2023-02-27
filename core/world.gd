@@ -61,7 +61,7 @@ func _on_respawn_timer_timeout():
 
 @rpc("any_peer")
 func instance_player(id):
-	var player_instance = load("res://actors/player.tscn").instantiate()
+	var player_instance = load("res://actors/playerold.tscn").instantiate()
 	player_instance.name = str(id)
 	add_child(player_instance)
 	#$OutOfBounds.connect("body_entered", Callable(player_instance, "out_of_bounds"))

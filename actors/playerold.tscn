@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dwt4krg2b1rkr"]
+[gd_scene load_steps=36 format=3 uid="uid://dwt4krg2b1rkr"]
 
 [ext_resource type="Script" path="res://actors/player.gd" id="1_tcn01"]
 [ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_pxso0"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="12_1ktvr"]
 [ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_tk65q"]
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="14_475fu"]
-[ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="15_df8aq"]
 [ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="16_5ptf5"]
 [ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="17_m533k"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="18_l1rvh"]
@@ -328,19 +327,6 @@ offset_right = 188.0
 offset_bottom = -8.0
 grow_vertical = 0
 
-[node name="Icon" type="TextureRect" parent="Hud/Panel"]
-visible = false
-layout_mode = 0
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -61.0
-offset_right = 61.0
-offset_bottom = -7.0
-grow_vertical = 0
-texture = ExtResource("15_df8aq")
-stretch_mode = 5
-
 [node name="HealthBar" type="ProgressBar" parent="Hud/Panel"]
 layout_mode = 0
 anchor_left = 1.0
@@ -432,7 +418,6 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
-texture = ExtResource("15_df8aq")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]

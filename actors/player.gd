@@ -686,7 +686,7 @@ func _fire():
 				add_bullet_hole(b_decal, aimcast)
 				rpc("add_bullet_hole", b_decal)
 	has_fired = true
-	if weapon_type == "auto":
+	if weapon_type == "Auto":
 		$FireTimer.start()
 
 func _fire_shotgun():

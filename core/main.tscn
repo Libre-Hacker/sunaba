@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://cec4c5t31w0xk"]
 
-[ext_resource type="Script" path="res://core/ui.gd" id="4"]
 [ext_resource type="Script" path="res://core/world.gd" id="4_va6j8"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
+[ext_resource type="Script" path="res://core/UI.cs" id="5_lswxf"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="7_iyyxn"]
 [ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="8_47m63"]
@@ -45,7 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4")
+script = ExtResource("5_lswxf")
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
 layout_mode = 1
@@ -418,30 +418,28 @@ min_size = Vector2i(475, 275)
 
 [node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("14_mxn15")]
 
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="unpause"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="Unpause"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="reload"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button5" to="UI" method="_on_customize_button_pressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button3" to="UI" method="_on_sb_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button5" to="UI" method="OnCustomizeButtonPressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button3" to="UI" method="OnSettingsButtonPressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button4" to="." method="quit"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="_on_create_button_pressed"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="_on_connect_button_pressed"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button5" to="UI" method="_on_customize_button_pressed"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="_on_sb_pressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="OnCreateButtonPressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="OnConnectButtonPressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button5" to="UI" method="OnCustomizeButtonPressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="OnSettingsButtonPressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="quit"]
-[connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="_on_new_room_dialog_close_requested"]
-[connection signal="mouse_entered" from="UI/NewRoomDialog" to="World3D" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/NewRoomDialog" to="World3D" method="on_mouse_exited"]
-[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="_on_file_button_pressed"]
+[connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="OnNewRoomDialogCloseRequested"]
+[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="OnFileButtonPressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="create_room"]
-[connection signal="close_requested" from="UI/MapDialog" to="UI" method="_on_file_dialog_close_requested"]
-[connection signal="pressed" from="UI/MapDialog/StandardMapPicker/Button" to="UI" method="_on_map_selected"]
+[connection signal="close_requested" from="UI/MapDialog" to="UI" method="OnMapDialogCloseRequested"]
+[connection signal="pressed" from="UI/MapDialog/StandardMapPicker/Button" to="UI" method="OnMapSelected"]
 [connection signal="close_requested" from="UI/UserFileDialog" to="UI" method="_on_file_dialog_close_requested"]
-[connection signal="file_selected" from="UI/UserFileDialog" to="UI" method="_on_file_selected"]
-[connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="_on_connect_dialog_close_requested"]
+[connection signal="file_selected" from="UI/UserFileDialog" to="UI" method="OnFileSelected"]
+[connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="OnConnectDialogCloseRequested"]
 [connection signal="text_changed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/LineEdit" to="." method="_on_address_changed"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="World3D" method="on_mouse_exited"]
-[connection signal="close_requested" from="UI/CharacterWindow" to="UI" method="_on_character_window_close_requested"]
+[connection signal="close_requested" from="UI/CharacterWindow" to="UI" method="OnCharacterWindowCloseRequested"]
 
 [editable path="UI/NewRoomDialog/NewRoom"]
 [editable path="UI/MapDialog/StandardMapPicker"]

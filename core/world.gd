@@ -23,10 +23,11 @@ func _physics_process(_delta):
 func chat(_name, msg):
 	main_node.chat(_name, msg)
 
-func load_map_path(path):
-		var mappath = load("res://core/map_holder.tscn").instantiate()
-		add_child(mappath)
-		mappath.map = path
+func load_map_path(path : String):
+	var mappath = load("res://core/map_holder.tscn").instantiate()
+	add_child(mappath)
+	
+	get_node("MapHolder").set("map", path)
 
 func load_map(path):
 	if path != null:

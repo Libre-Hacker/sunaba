@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://woddqisumc1u"]
 
-[ext_resource type="PackedScene" uid="uid://b06wa3ta6uoul" path="res://entities/ai_enemy.tscn" id="1_a5rbu"]
+[ext_resource type="PackedScene" path="res://entities/ai_enemy.tscn" id="1_a5rbu"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_0hsh6"]
 
 [resource]
@@ -12,7 +12,7 @@ class_options = "---------------------------------------------------------------
 classname = "ai_enemy"
 description = ""
 qodot_internal = false
-base_classes = []
+base_classes = Array[Resource]([])
 class_properties = {}
 class_property_descriptions = {}
 meta_properties = {

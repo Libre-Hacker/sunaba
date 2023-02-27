@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=38 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
 [ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_4145y"]
 [ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="12_7t0uy"]
+[ext_resource type="Script" path="res://actors/ToolSystem.cs" id="12_524va"]
 [ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
 [ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_ehkwf"]
 [ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="13_xlyhy"]
@@ -225,9 +226,17 @@ default_speed = 4
 jump_impulse = 10
 foot_sounds = [ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")]
 
+[node name="StateMachines" type="Node3D" parent="."]
+
+[node name="ToolSystem" type="Node3D" parent="StateMachines"]
+script = ExtResource("12_524va")
+
 [node name="Male" parent="." instance=ExtResource("2_rdd8b")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
+
+[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
 
 [node name="Head" type="BoneAttachment3D" parent="Male/Akari/GeneralSkeleton" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
@@ -240,13 +249,8 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.1
 [node name="PlayerModel" parent="." instance=ExtResource("13_ehkwf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
-[node name="Head" parent="PlayerModel/Akari/GeneralSkeleton" index="2"]
+[node name="Hair" parent="PlayerModel/Akari/GeneralSkeleton" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
-bone_name = "Head"
-bone_idx = 5
-
-[node name="HeadPos" parent="PlayerModel/Akari/GeneralSkeleton/Head" index="0"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.163123, -6.0536e-09)
 
 [node name="Female" parent="." instance=ExtResource("2_od7wf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

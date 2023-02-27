@@ -3,16 +3,16 @@ using System;
 
 namespace Sunaba.Runtime
 {
-	public partial class ConnectDialog : Node
+	public partial class ConnectDialog : Window
 	{
-		// Called when the node enters the scene tree for the first time.
-		public override void _Ready()
-		{
-		}
+		[Export]
+		public NodePath netman_path;
 
-		// Called every frame. 'delta' is the elapsed time since the previous frame.
-		public override void _Process(double delta)
+		public void Connect()
 		{
+			var netman = GetNode(netman_path);
+			var address = GetNode("TabBar").GetNode("TabContainer").GetNode("Online").GetNode("LineEdit").Get("text");
+			GD.Print(address);
 		}
 	}
 }

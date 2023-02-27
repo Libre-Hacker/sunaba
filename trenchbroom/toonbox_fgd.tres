@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="QodotFGDFile" load_steps=30 format=3 uid="uid://b7wbkk67gh1yf"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_gyj8k"]
-[ext_resource type="Resource" uid="uid://dbgtix8f27v2l" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
+[ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
 [ext_resource type="Resource" uid="uid://b8aisardk4k4u" path="res://addons/qodot/game_definitions/fgd/solid_classes/detail_solid_class.tres" id="3_cs25y"]
-[ext_resource type="Resource" uid="uid://cas04fw71aved" path="res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres" id="4_4enci"]
+[ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres" id="4_4enci"]
 [ext_resource type="Resource" uid="uid://c5o31v30rw7v5" path="res://addons/qodot/game_definitions/fgd/base_classes/light_base_class.tres" id="5_5yf0g"]
 [ext_resource type="Resource" uid="uid://ccwosedfa8v8d" path="res://addons/qodot/game_definitions/fgd/point_classes/light_point_class.tres" id="6_0rqv5"]
 [ext_resource type="Resource" uid="uid://dt8oawl1vnqx6" path="res://entities/lt_omni.tres" id="7_ksys4"]

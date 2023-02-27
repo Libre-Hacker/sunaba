@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 
-namespace Sunaba.Entities
+namespace Toonbox.Entities
 {
 	public partial class PlayerStart : Node
 	{

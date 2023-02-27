@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Actors
+namespace Toonbox.Actors
 {
 	public partial class SBMenu : Node
 	{

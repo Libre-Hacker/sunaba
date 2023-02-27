@@ -88,8 +88,6 @@ var player_model : String
 #@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
 #@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
-#Compoments
-@onready var tool_system = $Compoments/ToolSystem
 
 func _enter_tree(): if Global.is_networked_game: set_multiplayer_authority(str(name).to_int())
 

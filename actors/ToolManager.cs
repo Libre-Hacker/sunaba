@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-namespace Sunaba.Actors
+namespace Toonbox.Actors
 {
-    public partial class ToolSystem : Node3D
+    public partial class ToolManager : Node3D
     {
         public int currentTool;
         public String toolToSpawn;
@@ -30,21 +30,25 @@ namespace Sunaba.Actors
             {
                 tool1 = tool;
                 currentTool = 1;
+                GD.Print(tool1);
             }
             else if (tool2 == null)
             {
                 tool2 = tool;
                 currentTool = 2;
+                GD.Print(tool2);
             }
             else if (tool3 == null)
             {
                 tool3 = tool;
                 currentTool = 3;
+                GD.Print(tool1);
             }
             else if (tool4 == null)
             {
                 tool4 = tool;
                 currentTool = 4;
+                GD.Print(tool1);
             }
         }
     }

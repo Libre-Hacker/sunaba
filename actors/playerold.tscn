@@ -1,31 +1,31 @@
-[gd_scene load_steps=37 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=37 format=3 uid="uid://dwt4krg2b1rkr"]
 
-[ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
-[ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
-[ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="2_rdd8b"]
-[ext_resource type="AudioStream" uid="uid://ol7ob3feddtx" path="res://assets/audio/walk/playerfoot_02.ogg" id="3_h85wq"]
-[ext_resource type="Script" path="res://actors/player.gd" id="4"]
-[ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="4_nrqwa"]
-[ext_resource type="AudioStream" uid="uid://cpco3qorfi2hu" path="res://assets/audio/walk/playerfoot_03.ogg" id="4_qyfso"]
-[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="5_aw5sg"]
-[ext_resource type="AudioStream" uid="uid://bnq3c31t46c8n" path="res://assets/audio/walk/playerfoot_04.ogg" id="5_ltvl1"]
-[ext_resource type="AudioStream" uid="uid://cj1xsufyc422m" path="res://assets/audio/walk/playerfoot_05.ogg" id="6_jjx6x"]
-[ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
-[ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
-[ext_resource type="AudioStream" uid="uid://ciuhjf4lq1uxb" path="res://assets/audio/walk/playerfoot_06.ogg" id="7_qd3hu"]
-[ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="8_65326"]
-[ext_resource type="AudioStream" uid="uid://b2alrpik37gsg" path="res://assets/audio/walk/playerfoot_07.ogg" id="8_ragwt"]
-[ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
-[ext_resource type="AudioStream" uid="uid://xsn4y0xr76bc" path="res://assets/audio/walk/playerfoot_08.ogg" id="9_ci5of"]
-[ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="10"]
-[ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_4145y"]
-[ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="12_7t0uy"]
-[ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
-[ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_ehkwf"]
-[ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="13_xlyhy"]
-[ext_resource type="AudioStream" uid="uid://boy6burcg46sc" path="res://assets/audio/reload.ogg" id="14_hvgws"]
-[ext_resource type="AudioStream" uid="uid://us3l5m6ksqpi" path="res://assets/audio/pickup1.ogg" id="15_6o4pc"]
-[ext_resource type="AudioStream" uid="uid://by8biiykns88" path="res://assets/audio/jump.ogg" id="16_c33kq"]
+[ext_resource type="Script" path="res://actors/player.gd" id="1_tcn01"]
+[ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_pxso0"]
+[ext_resource type="AudioStream" uid="uid://ol7ob3feddtx" path="res://assets/audio/walk/playerfoot_02.ogg" id="3_26oqv"]
+[ext_resource type="AudioStream" uid="uid://cpco3qorfi2hu" path="res://assets/audio/walk/playerfoot_03.ogg" id="4_a1yr0"]
+[ext_resource type="AudioStream" uid="uid://bnq3c31t46c8n" path="res://assets/audio/walk/playerfoot_04.ogg" id="5_k8kyl"]
+[ext_resource type="AudioStream" uid="uid://cj1xsufyc422m" path="res://assets/audio/walk/playerfoot_05.ogg" id="6_qovwn"]
+[ext_resource type="AudioStream" uid="uid://ciuhjf4lq1uxb" path="res://assets/audio/walk/playerfoot_06.ogg" id="7_ubqwf"]
+[ext_resource type="AudioStream" uid="uid://b2alrpik37gsg" path="res://assets/audio/walk/playerfoot_07.ogg" id="8_1qfh1"]
+[ext_resource type="AudioStream" uid="uid://xsn4y0xr76bc" path="res://assets/audio/walk/playerfoot_08.ogg" id="9_jitqe"]
+[ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="10_ptq0n"]
+[ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_gaxjp"]
+[ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="12_1ktvr"]
+[ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_tk65q"]
+[ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="14_475fu"]
+[ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="15_df8aq"]
+[ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="16_5ptf5"]
+[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="17_m533k"]
+[ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="18_l1rvh"]
+[ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="19_a2ga0"]
+[ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="20_imbnt"]
+[ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="21_v5ywo"]
+[ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="22_eidnq"]
+[ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="23_40y3u"]
+[ext_resource type="AudioStream" uid="uid://boy6burcg46sc" path="res://assets/audio/reload.ogg" id="24_blqyw"]
+[ext_resource type="AudioStream" uid="uid://us3l5m6ksqpi" path="res://assets/audio/pickup1.ogg" id="25_5ogra"]
+[ext_resource type="AudioStream" uid="uid://by8biiykns88" path="res://assets/audio/jump.ogg" id="26_8yxon"]
 
 [sub_resource type="Animation" id="Animation_pux5j"]
 length = 0.001
@@ -189,7 +189,7 @@ radius = 0.28
 height = 1.497
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvp67"]
-texture = ExtResource("5_aw5sg")
+texture = ExtResource("17_m533k")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
@@ -220,12 +220,12 @@ properties/6/spawn = true
 properties/6/sync = true
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
-script = ExtResource("4")
+script = ExtResource("1_tcn01")
 default_speed = 4
 jump_impulse = 10
-foot_sounds = [ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")]
+foot_sounds = [ExtResource("2_pxso0"), ExtResource("3_26oqv"), ExtResource("4_a1yr0"), ExtResource("5_k8kyl"), ExtResource("6_qovwn"), ExtResource("7_ubqwf"), ExtResource("8_1qfh1"), ExtResource("9_jitqe"), ExtResource("10_ptq0n"), ExtResource("11_gaxjp")]
 
-[node name="Male" parent="." instance=ExtResource("2_rdd8b")]
+[node name="Male" parent="." instance=ExtResource("12_1ktvr")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
@@ -240,13 +240,13 @@ bone_idx = 5
 [node name="HeadPos" type="Node3D" parent="Male/Akari/GeneralSkeleton/Head"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.163123, -6.0536e-09)
 
-[node name="PlayerModel" parent="." instance=ExtResource("13_ehkwf")]
+[node name="PlayerModel" parent="." instance=ExtResource("13_tk65q")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Hair" parent="PlayerModel/Akari/GeneralSkeleton" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
 
-[node name="Female" parent="." instance=ExtResource("2_od7wf")]
+[node name="Female" parent="." instance=ExtResource("14_475fu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 visible = false
 
@@ -338,7 +338,7 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
-texture = ExtResource("10")
+texture = ExtResource("15_df8aq")
 stretch_mode = 5
 
 [node name="HealthBar" type="ProgressBar" parent="Hud/Panel"]
@@ -353,7 +353,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("4_nrqwa")
+theme_override_styles/background = ExtResource("16_5ptf5")
 theme_override_styles/fill = SubResource("StyleBoxTexture_xvp67")
 value = 100.0
 show_percentage = false
@@ -367,7 +367,7 @@ offset_top = -10.0
 offset_right = 30.0
 offset_bottom = 11.0
 grow_vertical = 2
-texture = ExtResource("7")
+texture = ExtResource("18_l1rvh")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Hud/Panel/HealthBar"]
@@ -407,7 +407,7 @@ offset_top = 5.0
 offset_right = -13.0
 offset_bottom = 29.0
 grow_horizontal = 0
-texture = ExtResource("7_aigaw")
+texture = ExtResource("19_a2ga0")
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
 anchors_preset = 3
@@ -432,7 +432,7 @@ offset_top = -61.0
 offset_right = 61.0
 offset_bottom = -7.0
 grow_vertical = 0
-texture = ExtResource("10")
+texture = ExtResource("15_df8aq")
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]
@@ -448,8 +448,8 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("4_nrqwa")
-theme_override_styles/fill = ExtResource("8_65326")
+theme_override_styles/background = ExtResource("16_5ptf5")
+theme_override_styles/fill = ExtResource("20_imbnt")
 value = 100.0
 show_percentage = false
 
@@ -494,7 +494,7 @@ offset_right = 14.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9")
+texture = ExtResource("21_v5ywo")
 
 [node name="Label" type="Label" parent="Hud/Crosshair"]
 layout_mode = 0
@@ -520,7 +520,7 @@ title = "Spawn Menu"
 size = Vector2i(432, 277)
 visible = false
 
-[node name="SBMenu" parent="Hud/SBMenuWindow" instance=ExtResource("12_7t0uy")]
+[node name="SBMenu" parent="Hud/SBMenuWindow" instance=ExtResource("22_eidnq")]
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 2.38
@@ -529,29 +529,29 @@ wait_time = 2.38
 wait_time = 0.1
 
 [node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("12_dicte")
+stream = ExtResource("10_ptq0n")
 bus = &"Sound"
 
 [node name="RunSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("13_xlyhy")
+stream = ExtResource("23_40y3u")
 bus = &"Sound"
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.35
 
 [node name="ReloadSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("14_hvgws")
+stream = ExtResource("24_blqyw")
 bus = &"Sound"
 
 [node name="PickupSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("15_6o4pc")
+stream = ExtResource("25_5ogra")
 bus = &"Sound"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_rs28k")
 
 [node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("16_c33kq")
+stream = ExtResource("26_8yxon")
 bus = &"Sound"
 
 [connection signal="close_requested" from="Hud/SBMenuWindow" to="." method="hide_sb_menu"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0n6d3ydjk8ht"]
+[gd_scene load_steps=19 format=3 uid="uid://b0n6d3ydjk8ht"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
+[ext_resource type="Script" path="res://core/world.gd" id="4_va6j8"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
@@ -35,6 +36,7 @@ world_path = NodePath("../World3D")
 ui_node = NodePath("../UI")
 
 [node name="World3D" parent="." instance=ExtResource("12")]
+script = ExtResource("4_va6j8")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

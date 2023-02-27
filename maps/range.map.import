@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://b8vfy7ry4jmu0"
+path="res://.godot/imported/range.map-b862717f512794d263350f1199a065d7.tres"
+
+[deps]
+
+source_file="res://maps/range.map"
+dest_files=["res://.godot/imported/range.map-b862717f512794d263350f1199a065d7.tres"]
+
+[params]
+

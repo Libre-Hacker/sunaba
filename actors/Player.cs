@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Toonbox.Actors
+namespace Sunaba.Actors
 {
 	public partial class Player : Node
 	{

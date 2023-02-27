@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 
-namespace Toonbox.Entities
+namespace Sunaba.Entities
 {
 	public partial class AIEnemy : Node3D
 	{

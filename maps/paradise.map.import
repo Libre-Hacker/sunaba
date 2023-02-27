@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://c6kdm40nefbb2"
+path="res://.godot/imported/paradise.map-dbc4011cecf712eda65fca304b12e979.tres"
+
+[deps]
+
+source_file="res://maps/paradise.map"
+dest_files=["res://.godot/imported/paradise.map-dbc4011cecf712eda65fca304b12e979.tres"]
+
+[params]
+

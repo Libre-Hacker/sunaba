@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://ctnr7sy4ru3og"
+path="res://.godot/imported/dust2.map-74fbec41becdc85ef754746bfbc44343.tres"
+
+[deps]
+
+source_file="res://maps/dust2.map"
+dest_files=["res://.godot/imported/dust2.map-74fbec41becdc85ef754746bfbc44343.tres"]
+
+[params]
+

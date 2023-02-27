@@ -1,14 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0n6d3ydjk8ht"]
+[gd_scene load_steps=19 format=3 uid="uid://b0n6d3ydjk8ht"]
 
 [ext_resource type="Script" path="res://core/ui.gd" id="4"]
+[ext_resource type="Script" path="res://core/world.gd" id="4_va6j8"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
+[ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
 [ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
-[ext_resource type="Script" path="res://core/label.gd" id="6_hf4ex"]
-[ext_resource type="Script" path="res://core/v_label.gd" id="7_k028f"]
 [ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://bg.jpg" id="8_cw4da"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://sbgirl2.png" id="9_ydr20"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
+[ext_resource type="Script" path="res://core/standard_map_picker.gd" id="10_p8hay"]
 [ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://bnaheix8jti6" path="res://core/world.tscn" id="12"]
@@ -35,6 +36,7 @@ world_path = NodePath("../World3D")
 ui_node = NodePath("../UI")
 
 [node name="World3D" parent="." instance=ExtResource("12")]
+script = ExtResource("4_va6j8")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -44,50 +46,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4")
-
-[node name="Bottombar" type="Panel" parent="UI"]
-visible = false
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -46.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="UI/Bottombar"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -132.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "sunaba"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("6_hf4ex")
-
-[node name="RoomControls" type="Control" parent="UI/Bottombar"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 381.0
-grow_vertical = 2
-
-[node name="ChatEntry" type="LineEdit" parent="UI/Bottombar/RoomControls"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 7.0
-offset_top = -16.0
-offset_right = 279.0
-offset_bottom = 15.0
-grow_vertical = 2
-placeholder_text = "chatbox"
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
 layout_mode = 1
@@ -141,7 +99,7 @@ theme_override_fonts/font = SubResource("SystemFont_f1xnx")
 text = "v0.3.0dev"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_k028f")
+script = ExtResource("5_4cpvj")
 
 [node name="TextureRect" type="TextureRect" parent="UI/PauseMenu/Control"]
 layout_mode = 1
@@ -298,7 +256,7 @@ theme_override_fonts/font = SubResource("SystemFont_f1xnx")
 text = "v0.3.0dev"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_k028f")
+script = ExtResource("5_4cpvj")
 
 [node name="TextureRect" type="TextureRect" parent="UI/MainMenu/TextureRect/Control"]
 layout_mode = 1
@@ -422,6 +380,7 @@ visible = false
 min_size = Vector2i(260, 90)
 
 [node name="StandardMapPicker" parent="UI/MapDialog" instance=ExtResource("10_wye3g")]
+script = ExtResource("10_p8hay")
 
 [node name="UserFileDialog" type="FileDialog" parent="UI"]
 initial_position = 2
@@ -460,9 +419,6 @@ min_size = Vector2i(475, 275)
 
 [node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("14_mxn15")]
 
-[connection signal="mouse_entered" from="UI/Bottombar" to="World3D" method="on_mouse_entered"]
-[connection signal="mouse_exited" from="UI/Bottombar" to="World3D" method="on_mouse_exited"]
-[connection signal="text_submitted" from="UI/Bottombar/RoomControls/ChatEntry" to="." method="_on_chat_text_entered"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="unpause"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="reload"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button5" to="UI" method="_on_customize_button_pressed"]

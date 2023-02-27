@@ -1,7 +1,20 @@
 [gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://dv85707rjgemw"]
 
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1_8q84f"]
-[ext_resource type="Script" path="res://entities/water.gd" id="2_0dow7"]
+
+[sub_resource type="GDScript" id="GDScript_iwiok"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [resource]
 script = ExtResource("1_8q84f")
@@ -12,7 +25,7 @@ build_visuals = true
 collision_build = "----------------------------------------------------------------"
 collision_shape_type = 1
 scripting = "----------------------------------------------------------------"
-script_class = ExtResource("2_0dow7")
+script_class = SubResource("GDScript_iwiok")
 class_options = "----------------------------------------------------------------"
 classname = "water"
 description = ""

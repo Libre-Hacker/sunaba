@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://cvqkuwgbcpaf0"
+path="res://.godot/imported/construct.map-979444d835e3fc1e3a671b061e6d4a50.tres"
+
+[deps]
+
+source_file="res://maps/construct.map"
+dest_files=["res://.godot/imported/construct.map-979444d835e3fc1e3a671b061e6d4a50.tres"]
+
+[params]
+

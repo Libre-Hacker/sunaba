@@ -26,7 +26,6 @@ func create_room():
 	Global.is_networked_game = true
 	
 	get_parent().log_to_chat("Room created")
-	get_parent().enable_chat()
 	get_parent().import_world()
 	#world.instance_player(multiplayer.get_unique_id())
 

@@ -88,6 +88,7 @@ var player_model : String
 #@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
 #@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
+
 func _enter_tree(): if Global.is_networked_game: set_multiplayer_authority(str(name).to_int())
 
 func _ready():
@@ -284,16 +285,16 @@ func equip(t2, t1 = null):
 			hand.get_child(0).queue_free()
 	tool_label.text = tts.get_name()
 	hand.add_child(tts)
-	ammo = tts.max_ammo
-	max_ammo = tts.max_ammo
+	ammo = tts.maxAmmo
+	max_ammo = tts.maxAmmo
 	spread = tts.spread
 	randomize()
 	for r in fp_ray_container.get_children():
 		r.target_position.x = randi_range(spread, -spread)
 		r.target_position.y = randi_range(spread, -spread)
-	$FireTimer.wait_time = tts.cooldown_time
+	$FireTimer.wait_time = tts.cooldownTime
 	damage = tts.damage
-	weapon_type = tts.weapon_type
+	weapon_type = tts.toolType
 	tts.rotation = hand_loc.rotation
 	muzzle = tts.get_node("Muzzle")
 	if is_multiplayer_authority() or !Global.is_networked_game:
@@ -528,7 +529,7 @@ func _physics_process(delta):
 				#tool_to_drop = pb_gun.instantiate()
 			#elif hand.get_child(0).get_name() == "Paintball Pistol":
 				#tool_to_drop = pb_pistol.instantiate()
-			tool_to_drop = hand.get_child(0).weapon_path
+			tool_to_drop = hand.get_child(0).toolObjectPath
 		else:
 			tool_to_drop = null
 	else:
@@ -548,7 +549,7 @@ func _physics_process(delta):
 	
 	if reach.is_colliding():
 		if "wp" in reach.get_collider().get_name() or "tl" in reach.get_collider().get_name():
-			tool_to_spawn = reach.get_collider().weapon_path
+			tool_to_spawn = reach.get_collider().toolPath
 		else:
 			tool_to_spawn = null
 	else:
@@ -556,7 +557,7 @@ func _physics_process(delta):
 	
 	
 	
-	if weapon_type == "semi":
+	if weapon_type == "Semi":
 		if Input.is_action_just_pressed("action_button"):
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
@@ -564,19 +565,19 @@ func _physics_process(delta):
 							_fire()
 		elif Input.is_action_just_released("action_button"):
 			has_fired = false
-	elif weapon_type == "auto":
+	elif weapon_type == "Auto":
 		if Input.is_action_pressed("action_button"):
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
 					if !has_fired:
 							_fire()
-	elif weapon_type == "shotgun":
+	elif weapon_type == "Shotgun":
 		if Input.is_action_just_pressed("action_button"):
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
 					if !has_fired:
 							_fire_shotgun()
-	elif weapon_type == "spray":
+	elif weapon_type == "Spray":
 		if Input.is_action_pressed("action_button"):
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
@@ -682,11 +683,11 @@ func _fire():
 				var id = target.name
 				target.rpc_id(str_to_var(id), "take_damage", damage)
 			else:
-				var b_decal = hand.get_child(0).bullet_hole_path
+				var b_decal = hand.get_child(0).decalPath
 				add_bullet_hole(b_decal, aimcast)
 				rpc("add_bullet_hole", b_decal)
 	has_fired = true
-	if weapon_type == "auto":
+	if weapon_type == "Auto":
 		$FireTimer.start()
 
 func _fire_shotgun():
@@ -709,7 +710,7 @@ func _fire_shotgun():
 					var id = target.name
 					target.rpc_id(str_to_var(id), "take_damage", damage)
 				else:
-					var b_decal = hand.get_child(0).bullet_hole_path
+					var b_decal = hand.get_child(0).decalPath
 					add_bullet_hole(b_decal, r)
 					rpc("add_bullet_hole", b_decal)
 	has_fired = true
@@ -720,7 +721,7 @@ func _spray():
 		ammo -= 1
 		hand.get_child(0).get_node("WeaponSound").play()
 		if aimcast.is_colliding():
-			var b_decal = hand.get_child(0).bullet_hole_path
+			var b_decal = hand.get_child(0).decalPath
 			add_bullet_hole(b_decal, aimcast)
 			rpc("add_bullet_hole", b_decal)
 	has_fired = true

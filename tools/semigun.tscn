@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bdn2yn8jpcquu"]
 
-[ext_resource type="Script" path="res://tools/weapon.gd" id="1_odk7j"]
+[ext_resource type="Script" path="res://tools/Tool.cs" id="1_aa3s1"]
 [ext_resource type="AudioStream" uid="uid://bbc84qkmlxduf" path="res://assets/audio/paintball.ogg" id="2_v0s6n"]
 [ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://tools/meshes/semi_gun_mesh.tscn" id="3_xmdrg"]
 
@@ -135,11 +135,11 @@ _surfaces = [{
 }]
 
 [node name="SemiGun" type="Node3D"]
-script = ExtResource("1_odk7j")
+script = ExtResource("1_aa3s1")
 damage = 10
-max_ammo = 25
-weapon_path = "res://entities/wp_semigun.tscn"
-bullet_hole_path = "res://tools/decals/paintball_bullet_decal.tscn"
+maxAmmo = 25
+toolObjectPath = "res://entities/wp_semigun.tscn"
+decalPath = "res://tools/decals/paintball_bullet_decal.tscn"
 
 [node name="Muzzle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)

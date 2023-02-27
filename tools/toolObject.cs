@@ -1,22 +1,24 @@
 using Godot;
 using System;
 
-public partial class toolObject : RigidBody3D
+namespace Sunaba.Tools
 {
-	[Export]
-	public String weaponPath = "";
-
-	public bool dropped = false;
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public partial class ToolObject : RigidBody3D
 	{
-		if (dropped == true)
+		[Export]
+		public String toolPath = "";
+
+		public bool dropped = false;
+
+		// Called every frame. 'delta' is the elapsed time since the previous frame.
+		public override void _Process(double delta)
 		{
-			ApplyImpulse(-Transform.Basis.Z * 10, Transform.Basis.Z);
-			dropped = false;
+			if (dropped == true)
+			{
+				ApplyImpulse(-Transform.Basis.Z * 10, Transform.Basis.Z);
+				dropped = false;
+			}
 		}
+
 	}
-
-
 }

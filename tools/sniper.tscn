@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://lkt7bhgkq0ja"]
 
-[ext_resource type="Script" path="res://tools/weapon.gd" id="1_vk80n"]
+[ext_resource type="Script" path="res://tools/Tool.cs" id="1_4pxwe"]
 [ext_resource type="AudioStream" uid="uid://bbc84qkmlxduf" path="res://assets/audio/paintball.ogg" id="2_uyuxy"]
 [ext_resource type="PackedScene" uid="uid://l776p0iwvjy4" path="res://tools/meshes/sniper_mesh.tscn" id="3_dtfb7"]
 
@@ -140,11 +140,11 @@ _surfaces = [{
 }]
 
 [node name="Sniper" type="Node3D"]
-script = ExtResource("1_vk80n")
+script = ExtResource("1_4pxwe")
 damage = 100
-max_ammo = 1
-weapon_path = "res://entities/wp_semigun.tscn"
-bullet_hole_path = "res://tools/decals/paintball_bullet_decal.tscn"
+maxAmmo = 1
+toolObjectPath = "res://entites/wp_sniper.tscn"
+decalPath = "res://tools/decals/paintball_bullet_decal.tscn"
 
 [node name="Muzzle" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)

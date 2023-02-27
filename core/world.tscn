@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bnaheix8jti6"]
 
-[ext_resource type="Script" path="res://core/world.gd" id="2"]
+[ext_resource type="Script" path="res://core/World.cs" id="1_3aha2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
-[ext_resource type="Resource" uid="uid://ouvk0v6hs22" path="res://trenchbroom/toonbox_fgd.tres" id="3_0xdm3"]
+[ext_resource type="Resource" uid="uid://b7wbkk67gh1yf" path="res://trenchbroom/toonbox_fgd.tres" id="3_0xdm3"]
 [ext_resource type="Script" path="res://core/camera.gd" id="4_4sk0p"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
@@ -15,7 +15,7 @@ agent_max_climb = 0.01
 size = Vector3(10000, 1, 10000)
 
 [node name="World3D" type="Node3D"]
-script = ExtResource("2")
+script = ExtResource("1_3aha2")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://core/map_holder.tscn", "res://actors/player.tscn")

@@ -1,0 +1,565 @@
+[gd_scene load_steps=37 format=3 uid="uid://dwt4krg2b1rkr"]
+
+[ext_resource type="Script" path="res://actors/player.gd" id="1_tcn01"]
+[ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_pxso0"]
+[ext_resource type="AudioStream" uid="uid://ol7ob3feddtx" path="res://assets/audio/walk/playerfoot_02.ogg" id="3_26oqv"]
+[ext_resource type="AudioStream" uid="uid://cpco3qorfi2hu" path="res://assets/audio/walk/playerfoot_03.ogg" id="4_a1yr0"]
+[ext_resource type="AudioStream" uid="uid://bnq3c31t46c8n" path="res://assets/audio/walk/playerfoot_04.ogg" id="5_k8kyl"]
+[ext_resource type="AudioStream" uid="uid://cj1xsufyc422m" path="res://assets/audio/walk/playerfoot_05.ogg" id="6_qovwn"]
+[ext_resource type="AudioStream" uid="uid://ciuhjf4lq1uxb" path="res://assets/audio/walk/playerfoot_06.ogg" id="7_ubqwf"]
+[ext_resource type="AudioStream" uid="uid://b2alrpik37gsg" path="res://assets/audio/walk/playerfoot_07.ogg" id="8_1qfh1"]
+[ext_resource type="AudioStream" uid="uid://xsn4y0xr76bc" path="res://assets/audio/walk/playerfoot_08.ogg" id="9_jitqe"]
+[ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="10_ptq0n"]
+[ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_gaxjp"]
+[ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="12_1ktvr"]
+[ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_tk65q"]
+[ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="14_475fu"]
+[ext_resource type="Texture2D" uid="uid://bkaqnbwdbj2sa" path="res://sunaba-icon2.png" id="15_df8aq"]
+[ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="16_5ptf5"]
+[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="17_m533k"]
+[ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="18_l1rvh"]
+[ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="19_a2ga0"]
+[ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="20_imbnt"]
+[ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="21_v5ywo"]
+[ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="22_eidnq"]
+[ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="23_40y3u"]
+[ext_resource type="AudioStream" uid="uid://boy6burcg46sc" path="res://assets/audio/reload.ogg" id="24_blqyw"]
+[ext_resource type="AudioStream" uid="uid://us3l5m6ksqpi" path="res://assets/audio/pickup1.ogg" id="25_5ogra"]
+[ext_resource type="AudioStream" uid="uid://by8biiykns88" path="res://assets/audio/jump.ogg" id="26_8yxon"]
+
+[sub_resource type="Animation" id="Animation_pux5j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l3djw"]
+resource_name = "fire"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.159229, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0966913, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j3tqp"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.12452, -0.348759), Vector3(0.185186, -0.193877, -0.348759), Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0610691, 0, 0), Vector3(-0.0431969, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rmhp7"]
+resource_name = "reload"
+length = 2.38
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.519391, -0.255023), Vector3(0.185186, -0.519391, -0.255023), Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.782344, 0, 0), Vector3(-0.782344, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fpt3l"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.252234, -0.348759), Vector3(0.305189, -0.17009, -0.348759), Vector3(0.185186, -0.252234, -0.348759), Vector3(0.067556, -0.17, -0.349), Vector3(0.185186, -0.252234, -0.348759)]
+}
+
+[sub_resource type="Animation" id="Animation_xtm0a"]
+resource_name = "walk"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.252234, -0.348759), Vector3(0.305189, -0.17009, -0.348759), Vector3(0.185186, -0.252234, -0.348759), Vector3(0.067556, -0.17, -0.349), Vector3(0.185186, -0.252234, -0.348759)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ik67g"]
+_data = {
+"RESET": SubResource("Animation_pux5j"),
+"fire": SubResource("Animation_l3djw"),
+"idle": SubResource("Animation_j3tqp"),
+"reload": SubResource("Animation_rmhp7"),
+"run": SubResource("Animation_fpt3l"),
+"walk": SubResource("Animation_xtm0a")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ehqc2"]
+radius = 0.28
+height = 1.497
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvp67"]
+texture = ExtResource("17_m533k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 49, 45)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rs28k"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/sync = true
+properties/2/path = NodePath("Head:position")
+properties/2/spawn = true
+properties/2/sync = true
+properties/3/path = NodePath("Head:rotation")
+properties/3/spawn = true
+properties/3/sync = true
+properties/4/path = NodePath(".:vel")
+properties/4/spawn = true
+properties/4/sync = true
+properties/5/path = NodePath("Head/AnimationPlayer:current_animation")
+properties/5/spawn = true
+properties/5/sync = true
+properties/6/path = NodePath("akari/AnimationPlayer:current_animation")
+properties/6/spawn = true
+properties/6/sync = true
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_tcn01")
+default_speed = 4
+jump_impulse = 10
+foot_sounds = [ExtResource("2_pxso0"), ExtResource("3_26oqv"), ExtResource("4_a1yr0"), ExtResource("5_k8kyl"), ExtResource("6_qovwn"), ExtResource("7_ubqwf"), ExtResource("8_1qfh1"), ExtResource("9_jitqe"), ExtResource("10_ptq0n"), ExtResource("11_gaxjp")]
+
+[node name="Male" parent="." instance=ExtResource("12_1ktvr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+
+[node name="Head" type="BoneAttachment3D" parent="Male/Akari/GeneralSkeleton" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+bone_name = "Head"
+bone_idx = 5
+
+[node name="HeadPos" type="Node3D" parent="Male/Akari/GeneralSkeleton/Head"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.163123, -6.0536e-09)
+
+[node name="PlayerModel" parent="." instance=ExtResource("13_tk65q")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Hair" parent="PlayerModel/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+
+[node name="Female" parent="." instance=ExtResource("14_475fu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+cull_mask = 524285
+current = true
+far = 200.0
+
+[node name="Reach" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -2.5)
+
+[node name="AimCast" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="RayContainer" type="Node3D" parent="Head/Camera3D"]
+
+[node name="AimCast" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast2" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast3" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast4" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="AimCast5" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Head"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+spring_length = 0.5
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Head/SpringArm3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.2166e-08, 0, 0.507101)
+spring_length = 2.0
+
+[node name="TPCamera" type="Camera3D" parent="Head/SpringArm3D/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.98413)
+cull_mask = 524287
+
+[node name="Reach" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
+target_position = Vector3(0, 0, -5)
+
+[node name="AimCast" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
+target_position = Vector3(0, 0, -1000)
+
+[node name="Hand" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.199886, -0.348759)
+
+[node name="HandLoc" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.185186, -0.168901, -0.348759)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head"]
+autoplay = "idle"
+playback_default_blend_time = 0.25
+libraries = {
+"": SubResource("AnimationLibrary_ik67g")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
+shape = SubResource("CapsuleShape3D_ehqc2")
+
+[node name="Hud" type="Node" parent="."]
+
+[node name="Panel" type="Panel" parent="Hud"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -89.0
+offset_right = 188.0
+offset_bottom = -8.0
+grow_vertical = 0
+
+[node name="Icon" type="TextureRect" parent="Hud/Panel"]
+visible = false
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = -7.0
+grow_vertical = 0
+texture = ExtResource("15_df8aq")
+stretch_mode = 5
+
+[node name="HealthBar" type="ProgressBar" parent="Hud/Panel"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = ExtResource("16_5ptf5")
+theme_override_styles/fill = SubResource("StyleBoxTexture_xvp67")
+value = 100.0
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="Hud/Panel/HealthBar"]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 11.0
+grow_vertical = 2
+texture = ExtResource("18_l1rvh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Hud/Panel/HealthBar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 21
+text = "100"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Hud/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = 30.0
+grow_horizontal = 0
+text = "Player"
+vertical_alignment = 1
+
+[node name="SprintingIcon" type="TextureRect" parent="Hud/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -37.0
+offset_top = 5.0
+offset_right = -13.0
+offset_bottom = 29.0
+grow_horizontal = 0
+texture = ExtResource("19_a2ga0")
+
+[node name="ToolPanel" type="Panel" parent="Hud"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -89.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Icon" type="TextureRect" parent="Hud/ToolPanel"]
+visible = false
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -61.0
+offset_right = 61.0
+offset_bottom = -7.0
+grow_vertical = 0
+texture = ExtResource("15_df8aq")
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="Hud/ToolPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = ExtResource("16_5ptf5")
+theme_override_styles/fill = ExtResource("20_imbnt")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Hud/ToolPanel/ProgressBar"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 21
+text = "100 / 100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Hud/ToolPanel"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 4.0
+offset_right = -16.0
+offset_bottom = 30.0
+grow_horizontal = 0
+text = "Gun A"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Crosshair" type="TextureRect" parent="Hud"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_v5ywo")
+
+[node name="Label" type="Label" parent="Hud/Crosshair"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "Reloading"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SBMenuWindow" type="Window" parent="Hud"]
+title = "Spawn Menu"
+size = Vector2i(432, 277)
+visible = false
+
+[node name="SBMenu" parent="Hud/SBMenuWindow" instance=ExtResource("22_eidnq")]
+
+[node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 2.38
+
+[node name="FireTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_ptq0n")
+bus = &"Sound"
+
+[node name="RunSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("23_40y3u")
+bus = &"Sound"
+
+[node name="WalkTimer" type="Timer" parent="."]
+wait_time = 0.35
+
+[node name="ReloadSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("24_blqyw")
+bus = &"Sound"
+
+[node name="PickupSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("25_5ogra")
+bus = &"Sound"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_rs28k")
+
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("26_8yxon")
+bus = &"Sound"
+
+[connection signal="close_requested" from="Hud/SBMenuWindow" to="." method="hide_sb_menu"]
+[connection signal="item_activated" from="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree" to="." method="_on_tool_tree_item_activated"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+
+[editable path="Male"]
+[editable path="PlayerModel"]
+[editable path="Hud/SBMenuWindow/SBMenu"]

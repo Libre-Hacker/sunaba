@@ -1,17 +1,5 @@
 extends Node3D
 
-@export var game_start_window_path : NodePath
-
-var map = null
-
-var prop_num : int = 1
-var prop_name : String
-
-var can_rebuild = false
-
-var mouse_over_ui = false
-
-var map_manager_instance = null
 
 @onready var map_manager = $NavigationRegion3D/MapManager
 #@onready var tb_loader = $NavigationRegion3D/TBLoader
@@ -55,16 +43,10 @@ func prep_for_respawn():
 	$RespawnTimer.start()
 	log_to_chat("Respawning in 5 seconds")
 
-func on_mouse_entered():
-	mouse_over_ui = true
-
 @rpc("call_local")
 func load_map_remote():
 	load_map(get_node("map_holder").map)
 
-
-func on_mouse_exited():
-	mouse_over_ui = false
 
 func log_to_chat(msg):
 	main_node.log_to_chat(msg)

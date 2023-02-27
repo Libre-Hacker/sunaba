@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de8g3dv3c7qx6"
-path="res://.godot/imported/sunaba_logo.png-8899ae9b26cb6a70353795b935499cea.ctex"
+uid="uid://dpw2b1w4yqeon"
+path="res://.godot/imported/bg.jpg-fd17eeede633c0b14296fbdda0ab8221.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sunaba_logo.png"
-dest_files=["res://.godot/imported/sunaba_logo.png-8899ae9b26cb6a70353795b935499cea.ctex"]
+source_file="res://assets/bg.jpg"
+dest_files=["res://.godot/imported/bg.jpg-fd17eeede633c0b14296fbdda0ab8221.ctex"]
 
 [params]
 

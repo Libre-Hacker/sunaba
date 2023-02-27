@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c27t7nackvcim"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Environment" uid="uid://dkddnx0i4a02y" path="res://night_environment.tres" id="1"]
+[ext_resource type="Environment" uid="uid://dkddnx0i4a02y" path="res://assets/night_environment.tres" id="1"]
+
 
 [node name="ev_night" type="Node3D"]
 

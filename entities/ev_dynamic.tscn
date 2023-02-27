@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqo6nemybpmff"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Environment" uid="uid://fn3tw1ldfer1" path="res://dynamic_environment.tres" id="1_aur8w"]
+[ext_resource type="Environment" uid="uid://fn3tw1ldfer1" path="res://assets/dynamic_environment.tres" id="1_aur8w"]
 
 [node name="ev_white" type="Node3D"]
 

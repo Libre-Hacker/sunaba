@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4m4kmx20mpnx"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Environment" uid="uid://cc56h56xsu784" path="res://dreamy_environment.tres" id="1_y4eav"]
+[ext_resource type="Environment" uid="uid://cc56h56xsu784" path="res://assets/dreamy_environment.tres" id="1_y4eav"]
+
 
 [node name="ev_night" type="Node3D"]
 

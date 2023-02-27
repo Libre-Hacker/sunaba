@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://5fr0sgvpfvrw"]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://addons/toonroid/src/main.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bxmjpscsh2mrx" path="res://addons/toonroid/basemodel.gltf" id="2_0a511"]
-[ext_resource type="Environment" uid="uid://d1dog1q31qplv" path="res://whitesky.tres" id="3_5isfp"]
+[ext_resource type="Environment" uid="uid://d1dog1q31qplv" path="res://assets/whitesky.tres" id="3_5isfp"]
 [ext_resource type="PackedScene" uid="uid://bq8v2dhpm2cvk" path="res://addons/toonroid/headwear/himiko.tscn" id="3_sq4mh"]
 [ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://addons/toonroid/materials/head.tres" id="4_egmt1"]
 [ext_resource type="Script" path="res://addons/toonroid/src/SpringArm3D.gd" id="4_llurn"]

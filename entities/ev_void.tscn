@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq4ur31at880g"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Environment" uid="uid://d1dog1q31qplv" path="res://whitesky.tres" id="1"]
+[ext_resource type="Environment" uid="uid://d1dog1q31qplv" path="res://assets/whitesky.tres" id="1"]
+
 
 [node name="ev_white" type="Node3D"]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://buowo1g152een"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Environment" uid="uid://dx2o1w4ixn5re" path="res://new_environment.tres" id="1"]
+[ext_resource type="Environment" uid="uid://dx2o1w4ixn5re" path="res://assets/new_environment.tres" id="1"]
+
 
 [node name="ev_daytime" type="Node3D"]
 

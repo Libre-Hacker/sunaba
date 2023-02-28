@@ -41,3 +41,8 @@ func set_to_default():
 func _physics_process(_delta):
 	if !player == null:
 		get_tree().call_group("enemy", "update_target_location", player.global_transform.origin)
+
+
+func get_spawnpoint():
+	var sp = spawnpoints.pick_random()
+	return sp

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://d1uw2dqr0f682"]
 
 [ext_resource type="Environment" uid="uid://fn3tw1ldfer1" path="res://assets/dynamic_environment.tres" id="1_aur8w"]
+[ext_resource type="Script" path="res://entities/ev_dynamic.cs" id="2_yd50y"]
 
 [node name="ev_white" type="Node3D"]
 
@@ -8,5 +9,11 @@
 environment = ExtResource("1_aur8w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.752415, 0.65869, 0, -0.65869, -0.752415, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -0.642788, 0.766045, 0, -0.766045, -0.642788, 0, 0, 0)
 shadow_enabled = true
+script = ExtResource("2_yd50y")
+
+[node name="Timer" type="Timer" parent="DirectionalLight3D"]
+wait_time = 0.25
+
+[connection signal="timeout" from="DirectionalLight3D/Timer" to="DirectionalLight3D" method="OnTimerTimeout"]

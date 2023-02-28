@@ -24,10 +24,10 @@ func chat(_name, msg):
 	main_node.chat(_name, msg)
 
 func load_map_path(path : String):
-	var mappath = load("res://core/map_holder.tscn").instantiate()
-	add_child(mappath)
+	pass#var mappath = load("res://core/map_holder.tscn").instantiate()
+	#add_child(mappath)
 	
-	get_node("MapHolder").set("map", path)
+	#get_node("MapHolder").set("map", path)
 
 func load_map(path):
 	if path != null:
@@ -62,7 +62,7 @@ func _on_respawn_timer_timeout():
 
 @rpc("any_peer")
 func instance_player(id):
-	var player_instance = load("res://actors/playerold.tscn").instantiate()
+	var player_instance = load("res://actors/player.tscn").instantiate()
 	player_instance.name = str(id)
 	add_child(player_instance)
 	#$OutOfBounds.connect("body_entered", Callable(player_instance, "out_of_bounds"))

@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/blockout"
-"_tb_def" "builtin:Sunaba.fgd"
+"_tb_def" "builtin:OpenSBX.fgd"
 // brush 0
 {
 ( -256 -64 -16 ) ( -256 -63 -16 ) ( -256 -64 -15 ) blockout/gray_check 0 0 0 0.125 0.125

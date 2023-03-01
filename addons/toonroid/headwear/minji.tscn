@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://fn0ux3sxm38f"]
+
+[ext_resource type="PackedScene" uid="uid://c1mv8pg12lcit" path="res://addons/toonroid/models/minji.gltf" id="1_vku0w"]
+
+[node name="minji" instance=ExtResource("1_vku0w")]
+
+[node name="Sphere" parent="." index="0"]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)

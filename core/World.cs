@@ -1,7 +1,27 @@
+/*
+
+This is a C# script that is used in the Sunaba game engine. The script represents the World class and contains methods that handle loading maps, respawning players, and adding bots to the game.
+
+The World class inherits from the Node3D class, which is a built-in class in the Godot game engine. The script initializes some member variables, such as mapManager, navRegion, and mainNode, in the _Ready method, which is called when the node enters the scene tree for the first time.
+
+The LoadMap method takes a path to a map file and sets the map_file property of the mapManager node to that path. It then calls the verify_and_build method of the mapManager node to load and build the map.
+
+The SetMap method is an RPC method that is called on the server by a client to set the map. It checks if the calling client has a unique ID of 1, which indicates that it is the server. If the calling client is not the server, it calls the SetMap method on the server via RPC.
+
+The PrepForRespawn method starts a timer that counts down from 5 seconds and then calls the OnRespawnTimerTimeout method.
+
+The OnRespawnTimerTimeout method is called when the timer started in PrepForRespawn expires. It either calls the InstancePlayer method on the server (if the local client has a unique ID of 1) or sends an RPC to the server to call the InstancePlayer method.
+
+The InstancePlayer method instantiates a CharacterBody3D node from a packed scene and adds it as a child of the World node. It also sets the GlobalPosition of the node based on the game mode and spawn point settings.
+
+The AddBots and AddBot methods are not fully implemented and are left as exercises for the reader.
+
+ */
+
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace OpenSBX.Runtime
 {
 	public partial class World : Node3D
 	{
@@ -24,10 +44,10 @@ namespace Sunaba.Runtime
 
 		public void LoadMapPath(string path)
 		{
-			PackedScene mapHolderPath = GD.Load<PackedScene>("res://core/map_holder.tscn");
-			MapHolder mapHolder = mapHolderPath.Instantiate<MapHolder>();
-			AddChild(mapHolder);
-			mapHolder.map = path;
+			//PackedScene mapHolderPath = GD.Load<PackedScene>("res://core/map_holder.tscn");
+			//MapHolder mapHolder = mapHolderPath.Instantiate<MapHolder>();
+			//AddChild(mapHolder);
+			//mapHolder.map = path;
 		}
 
 		public void LoadMap(string path)
@@ -66,12 +86,15 @@ namespace Sunaba.Runtime
             LoadMap(GetNode<Node>("map_holder").Get("map").ToString());
         }
 
-		public void LogToChat(string msg)
-		{
-			mainNode.Call("log_to_chat", msg);
-		}
+        public void LogToChat(string msg)
+        {
+            if (mainNode != null)
+            {
+                mainNode.Call("log_to_chat", msg);
+            }
+        }
 
-		public void OnRespawnTimerTimeout()
+        public void OnRespawnTimerTimeout()
 		{
 			LogToChat("Respawning Player");
 			int id = Multiplayer.GetUniqueId(); 
@@ -88,7 +111,7 @@ namespace Sunaba.Runtime
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
 		public void InstancePlayer(int id)
 		{
-			PackedScene player = GD.Load<PackedScene>("res://actors/playerold.tscn");
+			PackedScene player = GD.Load<PackedScene>("res://actors/player.tscn");
 			CharacterBody3D playerInstance = player.Instantiate<CharacterBody3D>();
 			playerInstance.Name = GD.VarToStr(id);
 			AddChild(playerInstance);

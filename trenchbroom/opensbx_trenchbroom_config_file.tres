@@ -9,8 +9,8 @@
 [resource]
 script = ExtResource("5_olhvb")
 export_file = false
-target_file = "C:/QuakeDev/TrenchBroom/games/Sunaba/GameConfig.cfg"
-game_name = "Sunaba"
+target_file = "C:/QuakeDev/TrenchBroom/games/OpenSBX/GameConfig.cfg"
+game_name = "OpenSBX"
 brush_tags = Array[Resource]([ExtResource("1_gboiy"), ExtResource("2_ev82p")])
 face_tags = Array[Resource]([ExtResource("3_5cxfk"), ExtResource("4_lt45f")])
 face_attrib_surface_flags = Array[Resource]([])

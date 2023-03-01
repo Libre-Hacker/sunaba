@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace OpenTBX.Runtime
 {
 	public partial class Main : Node
 	{

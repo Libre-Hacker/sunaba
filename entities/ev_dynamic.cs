@@ -13,9 +13,4 @@ public partial class ev_dynamic : DirectionalLight3D
         RotateX(Mathf.DegToRad(rotationSpeed * (float)delta));
     }
 
-    public void OnTimerTimeout()
-    {
-        RotateX(Mathf.DegToRad(rotationSpeed));
-    }
-
 }

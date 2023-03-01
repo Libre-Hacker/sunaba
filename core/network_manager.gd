@@ -27,7 +27,6 @@ func create_room():
 	
 	get_parent().log_to_chat("Room created")
 	get_parent().import_world()
-	#world.instance_player(multiplayer.get_unique_id())
 
 
 func join_room(address):
@@ -44,7 +43,7 @@ func _player_joined(id):
 	Global.game_started = true
 	get_parent().log_to_chat(var_to_str(id) + " has joined")
 	get_parent().enable_chat()
-	world.player_joined(id)
+	world.PlayerJoined(id)
 
 
 func _on_player_status_changed():

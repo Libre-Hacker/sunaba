@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Entities
+namespace OpenSBX.Entities
 {
 	public partial class GMDeathmatch : Node
 	{

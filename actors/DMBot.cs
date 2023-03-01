@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Actors
+namespace OpenSBX.Actors
 {
 	public partial class DMBot : Node
 	{

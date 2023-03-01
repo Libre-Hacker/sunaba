@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace OpenSBX.Runtime
 {
 	public partial class MapHolder : Node
 	{

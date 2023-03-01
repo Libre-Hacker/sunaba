@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnaheix8jti6"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://core/World.cs" id="1_3aha2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
-[ext_resource type="Resource" uid="uid://b7wbkk67gh1yf" path="res://trenchbroom/toonbox_fgd.tres" id="3_0xdm3"]
+[ext_resource type="Resource" uid="uid://b7wbkk67gh1yf" path="res://trenchbroom/opensbx_fgd.tres" id="3_0xdm3"]
 [ext_resource type="Script" path="res://core/camera.gd" id="4_4sk0p"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
@@ -60,5 +60,5 @@ priority = 4.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OutOfBounds"]
 shape = SubResource("BoxShape3D_b46la")
 
-[connection signal="build_complete" from="NavigationRegion3D/MapManager" to="." method="_on_map_manager_build_complete"]
-[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="build_complete" from="NavigationRegion3D/MapManager" to="." method="OnMapManagerBuildComplete"]
+[connection signal="timeout" from="RespawnTimer" to="." method="OnRespawnTimerTimeout"]

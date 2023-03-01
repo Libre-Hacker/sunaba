@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Tools
+namespace OpenSBX.Tools
 {
 	public partial class ToolObject : RigidBody3D
 	{

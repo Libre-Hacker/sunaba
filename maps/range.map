@@ -1,9 +1,9 @@
-// Game: Sunaba
+// Game: OpenSBX
 // Format: Standard
 // entity 0
 {
 "classname" "worldspawn"
-"_tb_def" "builtin:Sunaba.fgd"
+"_tb_def" "builtin:OpenSBX.fgd"
 "_tb_textures" "textures/blockout"
 // brush 0
 {

@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-namespace Sunaba.Actors
+namespace OpenSBX.Actors
 {
-	public partial class Player : Node
+	public partial class Player : CharacterBody3D
 	{
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()

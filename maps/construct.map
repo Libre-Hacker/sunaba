@@ -1,10 +1,10 @@
-// Game: Sunaba
+// Game: OpenSBX
 // Format: Standard
 // entity 0
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/Brick;textures/Building;textures/Grass;textures/Sand;textures/Stone;textures/Tile;textures/Water;textures/special"
-"_tb_def" "builtin:Sunaba.fgd"
+"_tb_def" "builtin:OpenSBX.fgd"
 // brush 0
 {
 ( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) Grass/Grass16-512x512 0 0 0 0.0625 0.0625
@@ -278,11 +278,6 @@
 }
 // entity 3
 {
-"classname" "ev_day"
-"origin" "-24 -8 24"
-}
-// entity 4
-{
 "classname" "water"
 // brush 0
 {
@@ -294,108 +289,113 @@
 ( 224 192 16 ) ( 224 192 17 ) ( 224 193 16 ) Water/water 0 0 0 0.0625 0.0625
 }
 }
-// entity 5
+// entity 4
 {
 "classname" "player"
 "origin" "-176 -104 24"
 }
+// entity 5
+{
+"classname" "lt_omni"
+"origin" "-216 8 72"
+}
 // entity 6
 {
 "classname" "lt_omni"
-"origin" "-216 8 120"
+"origin" "-136 8 72"
 }
 // entity 7
 {
 "classname" "lt_omni"
-"origin" "-136 8 120"
+"origin" "-136 72 72"
 }
 // entity 8
 {
 "classname" "lt_omni"
-"origin" "-136 72 120"
+"origin" "-216 72 72"
 }
 // entity 9
 {
 "classname" "lt_omni"
-"origin" "-216 72 120"
+"origin" "-136 136 72"
 }
 // entity 10
 {
 "classname" "lt_omni"
-"origin" "-136 136 120"
+"origin" "-216 136 72"
 }
 // entity 11
 {
 "classname" "lt_omni"
-"origin" "-216 136 120"
+"origin" "-136 200 72"
 }
 // entity 12
 {
 "classname" "lt_omni"
-"origin" "-136 200 120"
+"origin" "-216 200 72"
 }
 // entity 13
 {
 "classname" "lt_omni"
-"origin" "-216 200 120"
+"origin" "-88 -216 68"
 }
 // entity 14
 {
 "classname" "lt_omni"
-"origin" "-88 -216 116"
+"origin" "-88 -296 68"
 }
 // entity 15
 {
 "classname" "lt_omni"
-"origin" "-88 -296 116"
+"origin" "-24 -216 68"
 }
 // entity 16
 {
 "classname" "lt_omni"
-"origin" "-24 -216 116"
+"origin" "-24 -296 68"
 }
 // entity 17
 {
 "classname" "lt_omni"
-"origin" "-24 -296 116"
+"origin" "40 -216 68"
 }
 // entity 18
 {
 "classname" "lt_omni"
-"origin" "40 -216 116"
+"origin" "40 -296 68"
 }
 // entity 19
 {
 "classname" "lt_omni"
-"origin" "40 -296 116"
+"origin" "104 -216 68"
 }
 // entity 20
 {
 "classname" "lt_omni"
-"origin" "104 -216 116"
+"origin" "104 -296 68"
 }
 // entity 21
 {
 "classname" "lt_omni"
-"origin" "104 -296 116"
+"origin" "168 -216 68"
 }
 // entity 22
 {
 "classname" "lt_omni"
-"origin" "168 -216 116"
+"origin" "168 -296 68"
 }
 // entity 23
 {
 "classname" "lt_omni"
-"origin" "168 -296 116"
+"origin" "232 -216 68"
 }
 // entity 24
 {
 "classname" "lt_omni"
-"origin" "232 -216 116"
+"origin" "232 -296 68"
 }
 // entity 25
 {
-"classname" "lt_omni"
-"origin" "232 -296 116"
+"classname" "ev_dynamic"
+"origin" "-24 -8 24"
 }

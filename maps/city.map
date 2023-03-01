@@ -1,10 +1,10 @@
-// Game: Sunaba
+// Game: OpenSBX
 // Format: Standard
 // entity 0
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/Brick;textures/Brick_Version;textures/Bricks;textures/Building;textures/Colors;textures/Concrete;textures/Grass;textures/Metal;textures/Misc;textures/Road_Texture;textures/Stone;textures/Tile;textures/Wood;textures/Wood2;textures/special"
-"_tb_def" "builtin:Sunaba.fgd"
+"_tb_def" "builtin:OpenSBX.fgd"
 // brush 0
 {
 ( 100 160 -26 ) ( 100 161 -26 ) ( 100 160 -25 ) special/skip 0 0 0 0.0625 0.0625

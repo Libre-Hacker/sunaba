@@ -7,15 +7,8 @@ namespace OpenSBX.Runtime
 	{
 		public bool multiplayerEnabled = false;
 		public String versionNumber = "0.4.0dev";
-		public String buildDate = "Febuary 26, 2023";
+		public String buildDate = "March 2, 2023";
 
-		private Resource flags = null;
-
-		// Called when the node enters the scene tree for the first time.
-		public override void _Ready()
-		{
-			flags = GD.Load<Resource>("res://flags.tres");
-		}
 	}
 }
 

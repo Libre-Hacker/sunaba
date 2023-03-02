@@ -39,9 +39,6 @@ namespace Toonbox.Runtime
 
 			mainNode = GetParent<Node>();
 
-            var console = GetNode("/root/Console");
-
-			console.Call("register_env", "world", this);
         }
 
 		public void LoadMapPath(string path)

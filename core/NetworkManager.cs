@@ -22,9 +22,6 @@ namespace Toonbox.Runtime
 		{
             mainNode = GetParent<Node>();
 
-            var console = GetNode("/root/Console");
-            console.Call("register_env", "netman", this);
-			
 			Multiplayer.MultiplayerPeer = null;
         }
 

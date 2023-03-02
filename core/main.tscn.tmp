@@ -1,0 +1,434 @@
+[gd_scene load_steps=17 format=3 uid="uid://cec4c5t31w0xk"]
+
+[ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_3gh8e"]
+[ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
+[ext_resource type="Script" path="res://core/UI.cs" id="5_lswxf"]
+[ext_resource type="Texture2D" uid="uid://bm8qno0qyeav1" path="res://assets/toonboxLogoWhite.png" id="6_6bcnv"]
+[ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="7_iyyxn"]
+[ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="8_47m63"]
+[ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
+[ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
+[ext_resource type="Script" path="res://core/standard_map_picker.gd" id="10_p8hay"]
+[ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
+[ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://c88ijpr8qobb" path="res://core/world.tscn" id="12"]
+[ext_resource type="Script" path="res://core/ConnectDialog.cs" id="12_e4k0p"]
+[ext_resource type="Script" path="res://core/main.gd" id="13"]
+[ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="14_mxn15"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
+bg_color = Color(0, 0, 0, 0.607843)
+
+[node name="Main" type="Node"]
+script = ExtResource("13")
+
+[node name="NetworkManager" type="Node" parent="." node_paths=PackedStringArray("world", "ui")]
+script = ExtResource("2_3gh8e")
+world = NodePath("../World3D")
+ui = NodePath("../UI")
+
+[node name="World3D" parent="." instance=ExtResource("12")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_lswxf")
+
+[node name="Chatbox" type="RichTextLabel" parent="UI"]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 323.0
+offset_bottom = 347.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+scroll_following = true
+
+[node name="PauseMenu" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n63q7")
+
+[node name="Control" type="Control" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/PauseMenu/Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "v0.3.0dev"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_4cpvj")
+
+[node name="TextureRect" type="TextureRect" parent="UI/PauseMenu/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -339.0
+offset_right = 217.0
+offset_bottom = 53.0
+grow_horizontal = 0
+grow_vertical = 0
+expand_mode = 1
+flip_h = true
+
+[node name="Logo" type="TextureRect" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -67.0
+offset_right = 146.0
+offset_bottom = -33.0
+grow_vertical = 0
+texture = ExtResource("6_6bcnv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/PauseMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -314.0
+offset_right = 213.0
+offset_bottom = -69.0
+grow_vertical = 0
+alignment = 2
+
+[node name="Button1" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Resume Game"
+flat = true
+alignment = 0
+
+[node name="Button2" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Disconnect"
+flat = true
+alignment = 0
+
+[node name="Button5" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Customize"
+flat = true
+alignment = 0
+
+[node name="Button3" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Settings"
+flat = true
+alignment = 0
+
+[node name="Button4" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="MainMenu" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_47m63")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Control" type="Control" parent="UI/MainMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/MainMenu/TextureRect/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/MainMenu/TextureRect/Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "v0.3.0dev"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_4cpvj")
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu/TextureRect/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -460.0
+offset_top = -339.0
+offset_right = 217.0
+offset_bottom = 53.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("7_iyyxn")
+expand_mode = 1
+flip_h = true
+
+[node name="Logo" type="TextureRect" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -67.0
+offset_right = 146.0
+offset_bottom = -33.0
+grow_vertical = 0
+texture = ExtResource("6_6bcnv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -197.0
+offset_right = 213.0
+offset_bottom = -69.0
+grow_vertical = 0
+alignment = 2
+
+[node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "New Game"
+flat = true
+alignment = 0
+
+[node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Connect"
+flat = true
+alignment = 0
+
+[node name="Button5" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Customize"
+flat = true
+alignment = 0
+
+[node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Settings"
+flat = true
+alignment = 0
+
+[node name="Button3" type="Button" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="NewRoomDialog" type="Window" parent="UI"]
+initial_position = 2
+title = "New Room"
+size = Vector2i(435, 289)
+visible = false
+extend_to_title = true
+min_size = Vector2i(435, 289)
+max_size = Vector2i(435, 289)
+
+[node name="NewRoom" parent="UI/NewRoomDialog" instance=ExtResource("8_nlpex")]
+
+[node name="MapDialog" type="Window" parent="UI"]
+initial_position = 2
+title = "Open a File"
+size = Vector2i(260, 90)
+visible = false
+min_size = Vector2i(260, 90)
+
+[node name="StandardMapPicker" parent="UI/MapDialog" instance=ExtResource("10_wye3g")]
+script = ExtResource("10_p8hay")
+
+[node name="UserFileDialog" type="FileDialog" parent="UI"]
+initial_position = 2
+title = "Open a File"
+size = Vector2i(335, 300)
+min_size = Vector2i(335, 300)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.map")
+show_hidden_files = true
+
+[node name="ConnectDialog" type="Window" parent="UI"]
+initial_position = 2
+title = "Connect"
+size = Vector2i(410, 287)
+visible = false
+min_size = Vector2i(410, 287)
+max_size = Vector2i(410, 287)
+script = ExtResource("12_e4k0p")
+
+[node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_cj05d")]
+
+[node name="SettingsDialog" parent="UI" instance=ExtResource("11")]
+initial_position = 1
+title = "Settings"
+visible = false
+gui = NodePath("..")
+
+[node name="CharacterWindow" type="Window" parent="UI"]
+own_world_3d = true
+size = Vector2i(475, 275)
+visible = false
+min_size = Vector2i(475, 275)
+
+[node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("14_mxn15")]
+
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="Unpause"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="reload"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button5" to="UI" method="OnCustomizeButtonPressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button3" to="UI" method="OnSettingsButtonPressed"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button4" to="." method="quit"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="OnCreateButtonPressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="OnConnectButtonPressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button5" to="UI" method="OnCustomizeButtonPressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="OnSettingsButtonPressed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="quit"]
+[connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="OnNewRoomDialogCloseRequested"]
+[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="OnFileButtonPressed"]
+[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="create_room"]
+[connection signal="close_requested" from="UI/MapDialog" to="UI" method="OnMapDialogCloseRequested"]
+[connection signal="pressed" from="UI/MapDialog/StandardMapPicker/Button" to="UI" method="OnMapSelected"]
+[connection signal="close_requested" from="UI/UserFileDialog" to="UI" method="_on_file_dialog_close_requested"]
+[connection signal="file_selected" from="UI/UserFileDialog" to="UI" method="OnFileSelected"]
+[connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="OnConnectDialogCloseRequested"]
+[connection signal="text_changed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/LineEdit" to="." method="_on_address_changed"]
+[connection signal="pressed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/ConnectButton" to="UI/ConnectDialog" method="Connect"]
+[connection signal="mouse_entered" from="UI/SettingsDialog" to="World3D" method="on_mouse_entered"]
+[connection signal="mouse_exited" from="UI/SettingsDialog" to="World3D" method="on_mouse_exited"]
+[connection signal="close_requested" from="UI/CharacterWindow" to="UI" method="OnCharacterWindowCloseRequested"]
+
+[editable path="UI/NewRoomDialog/NewRoom"]
+[editable path="UI/MapDialog/StandardMapPicker"]
+[editable path="UI/ConnectDialog/Connect"]

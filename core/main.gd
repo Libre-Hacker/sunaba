@@ -13,18 +13,10 @@ func _ready() -> void:
 	$UI.theme = ThemeManager.theme
 	Global.gameStarted = false
 	Global.gamePaused = false
-	Console.register_env("sb", self)
-	
-	Console.notify(" ")
-	Console.notify("Toonbox")
-	Console.notify("Version " + Build.version_number)
-	Console.notify("Compiled on " + Build.build_date)
-	Console.notify("(C) 2022-2023 mintkat")
-	Console.notify(" ")
 	
 	print("Toonbox")
-	print("Version " + Build.version_number)
-	print("Compiled on " + Build.build_date)
+	print("Version " + Build.versionNumber)
+	print("Compiled on " + Build.buildDate)
 	print("(C) 2022-2023 mintkat")
 	print("")
 	
@@ -112,7 +104,7 @@ func check_dir(dirname : String):
 		if file == "":
 			break
 		else :
-			Console.notify(file)
+			print(file)
 			
 	dir.list_dir_end()
 

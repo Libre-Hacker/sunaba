@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=13 format=3 uid="uid://b31auppaanqsn"]
 
 [ext_resource type="Script" path="res://entities/ai_enemy.gd" id="1_8l7q4"]
 [ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_1d87l"]
 [ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://tools/meshes/semi_gun_mesh.tscn" id="3_2xvxe"]
 [ext_resource type="SystemFont" uid="uid://dca7seoyu4mff" path="res://assets/fonts/segoe_ui.tres" id="3_ih8tv"]
-
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t432i"]
 radius = 0.28
@@ -97,7 +96,8 @@ script = ExtResource("1_8l7q4")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Hair" parent="Female/Akari/GeneralSkeleton" index="0"]
-transform = Transform3D(1, 1.08665e-17, -2.66056e-19, -1.08665e-17, 0.998802, -0.0489386, -2.66053e-19, 0.0489386, 0.998802, -2.41742e-15, 0.936866, -0.0121887)
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+bone_name = "face"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.756, 0)

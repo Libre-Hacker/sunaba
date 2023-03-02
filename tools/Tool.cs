@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace OpenSBX.Tools
+namespace Toonbox.Tools
 {
 	public partial class Tool : Node3D
 	{

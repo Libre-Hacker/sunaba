@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace OpenTBX.Runtime
+namespace Toonbox.Runtime
 {
 	public partial class Main : Node
 	{

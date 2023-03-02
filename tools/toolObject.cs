@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace OpenSBX.Tools
+namespace Toonbox.Tools
 {
 	public partial class ToolObject : RigidBody3D
 	{

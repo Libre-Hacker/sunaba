@@ -35,7 +35,7 @@ func _ready() -> void:
 
 func create_room() -> void:
 	if path != null:
-		network_manager.create_room()
+		network_manager.CreateRoom()
 		$UI/NewRoomDialog.hide()
 		$UI/MainMenu.hide()
 
@@ -62,12 +62,6 @@ func import_world():
 	world.LoadMap(path)
 
 
-func _on_chat_text_entered(new_text):
-	var id = var_to_str(get_tree().get_unique_id())
-	network_manager.rpc("chat", id, new_text)
-	chat(id, new_text)
-
-
 func quit():
 	get_tree().quit()
 
@@ -89,7 +83,7 @@ func map_viewer():
 
 
 func _connect():
-	network_manager.join_room(address)
+	network_manager.JoinRoom(address)
 	$UI/ConnectDialog.hide()
 	$UI/MainMenu.hide()
 

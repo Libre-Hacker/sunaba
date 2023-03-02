@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace OpenSBX.Entities
+namespace Toonbox.Entities
 {
 	public partial class GMSandbox : Node
 	{

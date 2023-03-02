@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace OpenSBX.Actors
+namespace Toonbox.Actors
 {
 	public partial class Player : CharacterBody3D
 	{

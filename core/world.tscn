@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://c88ijpr8qobb"]
 
 [ext_resource type="Script" path="res://core/World.cs" id="1_3aha2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
@@ -13,6 +13,10 @@ agent_max_climb = 0.01
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b46la"]
 size = Vector3(10000, 1, 10000)
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_q5rjg"]
+
+[sub_resource type="VoxelGIData" id="VoxelGIData_prmsx"]
 
 [node name="World3D" type="Node3D"]
 script = ExtResource("1_3aha2")
@@ -59,6 +63,12 @@ priority = 4.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OutOfBounds"]
 shape = SubResource("BoxShape3D_b46la")
+
+[node name="VoxelGI" type="VoxelGI" parent="."]
+subdiv = 3
+size = Vector3(256, 256, 256)
+camera_attributes = SubResource("CameraAttributesPhysical_q5rjg")
+data = SubResource("VoxelGIData_prmsx")
 
 [connection signal="build_complete" from="NavigationRegion3D/MapManager" to="." method="OnMapManagerBuildComplete"]
 [connection signal="timeout" from="RespawnTimer" to="." method="OnRespawnTimerTimeout"]

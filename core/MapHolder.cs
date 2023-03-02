@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace OpenSBX.Runtime
+namespace Toonbox.Runtime
 {
 	public partial class MapHolder : Node
 	{

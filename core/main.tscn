@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://cec4c5t31w0xk"]
 
+[ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_3gh8e"]
 [ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
 [ext_resource type="Script" path="res://core/UI.cs" id="5_lswxf"]
-[ext_resource type="Script" path="res://core/network_manager.gd" id="6"]
-[ext_resource type="Texture2D" uid="uid://db2fjjjc60215" path="res://assets/OpenSBXlogoWhite.png" id="6_n348y"]
+[ext_resource type="Texture2D" uid="uid://bm8qno0qyeav1" path="res://assets/toonboxLogoWhite.png" id="6_6bcnv"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="7_iyyxn"]
 [ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="8_47m63"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://core/standard_map_picker.gd" id="10_p8hay"]
 [ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
-[ext_resource type="PackedScene" uid="uid://bnaheix8jti6" path="res://core/world.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://c88ijpr8qobb" path="res://core/world.tscn" id="12"]
 [ext_resource type="Script" path="res://core/main.gd" id="13"]
 [ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="14_mxn15"]
 
@@ -22,10 +22,10 @@ bg_color = Color(0, 0, 0, 0.607843)
 [node name="Main" type="Node"]
 script = ExtResource("13")
 
-[node name="NetworkManager" type="Node" parent="."]
-script = ExtResource("6")
-world_path = NodePath("../World3D")
-ui_node = NodePath("../UI")
+[node name="NetworkManager" type="Node" parent="." node_paths=PackedStringArray("world", "ui")]
+script = ExtResource("2_3gh8e")
+world = NodePath("../World3D")
+ui = NodePath("../UI")
 
 [node name="World3D" parent="." instance=ExtResource("12")]
 
@@ -117,7 +117,7 @@ offset_top = -67.0
 offset_right = 146.0
 offset_bottom = -33.0
 grow_vertical = 0
-texture = ExtResource("6_n348y")
+texture = ExtResource("6_6bcnv")
 expand_mode = 1
 stretch_mode = 4
 
@@ -272,7 +272,7 @@ offset_top = -67.0
 offset_right = 146.0
 offset_bottom = -33.0
 grow_vertical = 0
-texture = ExtResource("6_n348y")
+texture = ExtResource("6_6bcnv")
 expand_mode = 1
 stretch_mode = 4
 

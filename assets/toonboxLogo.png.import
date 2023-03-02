@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8a2nasydrbqd"
-path="res://.godot/imported/Grass001_2K_Color.jpg-80b05e279a1a270297a92fcbe5fea8c9.ctex"
+uid="uid://bnjkqctgir1a6"
+path="res://.godot/imported/toonboxLogo.png-ecbb260df6b018dc474420dc426dcc7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/GrassPBR/Grass001_2K_Color.jpg"
-dest_files=["res://.godot/imported/Grass001_2K_Color.jpg-80b05e279a1a270297a92fcbe5fea8c9.ctex"]
+source_file="res://assets/toonboxLogo.png"
+dest_files=["res://.godot/imported/toonboxLogo.png-ecbb260df6b018dc474420dc426dcc7c.ctex"]
 
 [params]
 

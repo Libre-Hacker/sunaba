@@ -8,7 +8,7 @@ namespace Toonbox.Runtime
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
-			var dir = DirAccess.Open("res://maps");
+			DirAccess dir = DirAccess.Open("res://maps");
 
 			dir.ListDirBegin();
 
@@ -26,6 +26,8 @@ namespace Toonbox.Runtime
 					optButton.AddItem(mapName);
 				}
 			}
+
+			dir.ListDirEnd();
 		}
 	}
 }

@@ -6,17 +6,14 @@ namespace Toonbox.Runtime
 	public partial class ConnectDialog : Window
 	{
 		[Export]
-		public NodePath netman_path;
+		public NetworkManager netman;
 
 		public void Connect()
 		{
-			var netman = GetNode(netman_path);
-			var address = GetNode("TabBar").GetNode("TabContainer").GetNode("Online").GetNode("LineEdit").Get("text");
-			GD.Print(address);
+			String address = GetNode<TabBar>("TabBar").GetNode<TabContainer>("TabContainer").GetNode<Control>("Online").GetNode<LineEdit>("LineEdit").Text;
+			netman.JoinRoom(address);
+			GetParent<UI>().GetNode<Control>("MainMenu").Hide();
+			Hide();
 		}
 	}
 }
-
-/*
-
-*/

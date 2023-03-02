@@ -1,7 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cec4c5t31w0xk"]
 
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_3gh8e"]
-[ext_resource type="Script" path="res://core/connect_dialog.gd" id="5"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
 [ext_resource type="Script" path="res://core/UI.cs" id="5_lswxf"]
 [ext_resource type="Texture2D" uid="uid://bm8qno0qyeav1" path="res://assets/toonboxLogoWhite.png" id="6_6bcnv"]
@@ -13,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://c88ijpr8qobb" path="res://core/world.tscn" id="12"]
+[ext_resource type="Script" path="res://core/ConnectDialog.cs" id="12_e4k0p"]
 [ext_resource type="Script" path="res://core/main.gd" id="13"]
 [ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="14_mxn15"]
 
@@ -387,8 +387,7 @@ size = Vector2i(410, 287)
 visible = false
 min_size = Vector2i(410, 287)
 max_size = Vector2i(410, 287)
-script = ExtResource("5")
-netman_path = NodePath("../../NetworkManager")
+script = ExtResource("12_e4k0p")
 
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_cj05d")]
 
@@ -425,6 +424,7 @@ min_size = Vector2i(475, 275)
 [connection signal="file_selected" from="UI/UserFileDialog" to="UI" method="OnFileSelected"]
 [connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="OnConnectDialogCloseRequested"]
 [connection signal="text_changed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/LineEdit" to="." method="_on_address_changed"]
+[connection signal="pressed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/ConnectButton" to="UI/ConnectDialog" method="Connect"]
 [connection signal="mouse_entered" from="UI/SettingsDialog" to="World3D" method="on_mouse_entered"]
 [connection signal="mouse_exited" from="UI/SettingsDialog" to="World3D" method="on_mouse_exited"]
 [connection signal="close_requested" from="UI/CharacterWindow" to="UI" method="OnCharacterWindowCloseRequested"]

@@ -11,7 +11,6 @@ namespace Toonbox.Entities
         public override void _Process(double delta)
         {
             // Update rotation
-            //RotateX(Mathf.Deg2Rad(rotationSpeed * delta));
             RotateX(Mathf.DegToRad(rotationSpeed * (float)delta));
         }
 

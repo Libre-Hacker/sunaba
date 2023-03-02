@@ -67,7 +67,7 @@ namespace Toonbox.Runtime
             var global = GetNode("/root/Global");
 			GetNode<Panel>("PauseMenu").Hide();
 			Input.MouseMode = Input.MouseModeEnum.Captured;
-			global.Set("game_paused", false);
+			global.Set("gamePaused", false);
         }
 
 		public void OnMapSelected()
@@ -97,8 +97,8 @@ namespace Toonbox.Runtime
         public override void _Process(double delta)
 		{
             var global = GetNode("/root/Global");
-			var gameStarted = global.Get("game_started");
-            var gamePaused = global.Get("game_paused");
+			var gameStarted = global.Get("gameStarted");
+            var gamePaused = global.Get("gamePaused");
 
 
 

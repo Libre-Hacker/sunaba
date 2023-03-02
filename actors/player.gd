@@ -89,10 +89,10 @@ var player_model : String
 #@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
 
 
-func _enter_tree(): if Global.is_networked_game: set_multiplayer_authority(str(name).to_int())
+func _enter_tree(): if Global.isNetworkedGame: set_multiplayer_authority(str(name).to_int())
 
 func _ready():
-	if is_multiplayer_authority() or !Global.is_networked_game:
+	if is_multiplayer_authority() or !Global.isNetworkedGame:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		reach = fp_reach
 		aimcast = fp_aimcast
@@ -116,7 +116,7 @@ func _ready():
 	#hand.top_level = true
 
 func _input(event):
-	if !is_multiplayer_authority() and Global.is_networked_game:
+	if !is_multiplayer_authority() and Global.isNetworkedGame:
 		return
 	
 	#if event.is_action_pressed("action_button") && get_parent().mouse_over_ui == false: 
@@ -127,11 +127,11 @@ func _input(event):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			crosshair.hide()
-			Global.game_paused = true
+			Global.gamePaused = true
 		else: 
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			crosshair.show()
-			Global.game_paused = false
+			Global.gamePaused = false
 	
 	if Input.is_action_just_pressed("view") and tp_camera.current == true:
 		if !view_mode:
@@ -182,7 +182,7 @@ func _input(event):
 		if hand.get_child_count() > 0:
 			if hand.get_child(0) != null:
 				hand.get_child(0).queue_free()
-				if is_multiplayer_authority() or !Global.is_networked_game:
+				if is_multiplayer_authority() or !Global.isNetworkedGame:
 					$Hud/ToolPanel.hide()
 				$PickupSound.play()
 				ammo = 1
@@ -213,7 +213,7 @@ func _input(event):
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
 					hand.get_child(0).queue_free()
-					if is_multiplayer_authority() or !Global.is_networked_game:
+					if is_multiplayer_authority() or !Global.isNetworkedGame:
 						$Hud/ToolPanel.hide()
 					$PickupSound.play()
 					ammo = 1
@@ -238,7 +238,7 @@ func _input(event):
 			if hand.get_child_count() > 0:
 				if hand.get_child(0) != null:
 					hand.get_child(0).queue_free()
-					if is_multiplayer_authority() or !Global.is_networked_game:
+					if is_multiplayer_authority() or !Global.isNetworkedGame:
 						$Hud/ToolPanel.hide()
 					$PickupSound.play()
 					ammo = 1
@@ -297,40 +297,40 @@ func equip(t2, t1 = null):
 	weapon_type = tts.toolType
 	tts.rotation = hand_loc.rotation
 	muzzle = tts.get_node("Muzzle")
-	if is_multiplayer_authority() or !Global.is_networked_game:
+	if is_multiplayer_authority() or !Global.isNetworkedGame:
 		$Hud/ToolPanel.show()
 	$PickupSound.play()
 
 func _process(_delta):
-	if is_multiplayer_authority() or !Global.is_networked_game:
-		player_model = Global.player_model
+	if is_multiplayer_authority() or !Global.isNetworkedGame:
+		player_model = Global.playerModel
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
 			crosshair.show()
 		else: 
 			crosshair.hide()
 	if tp_camera.current == true:
-		if Global.player_model == "male":
+		if Global.playerModel == "male":
 			model.visible = false
 			model1.visible = false
 			model2.visible = true
-		elif Global.player_model == "female":
+		elif Global.playerModel == "female":
 			model.visible = false
 			model1.visible = true
 			model2.visible = false
-		elif Global.player_model == "custom":
+		elif Global.playerModel == "custom":
 			model.visible = true
 			model1.visible = false
 			model2.visible = false
 	elif fp_camera.current == true:
-		if Global.player_model == "male":
+		if Global.playerModel == "male":
 			model.visible = false
 			model1.visible = false
 			model2.visible = !is_multiplayer_authority()
-		elif Global.player_model == "female":
+		elif Global.playerModel == "female":
 			model.visible = false
 			model1.visible = !is_multiplayer_authority()
 			model2.visible = false
-		elif Global.player_model == "custom":
+		elif Global.playerModel == "custom":
 			model.visible = !is_multiplayer_authority()
 			model1.visible = false
 			model2.visible = false
@@ -346,7 +346,7 @@ func _physics_process(delta):
 	
 	
 	
-	if is_multiplayer_authority() or !Global.is_networked_game:
+	if is_multiplayer_authority() or !Global.isNetworkedGame:
 		max_speed = default_speed
 		walk_timer.wait_time = default_walk_sound_time
 		var input_vector = get_input_vector()
@@ -535,10 +535,10 @@ func _physics_process(delta):
 	else:
 		tool_to_drop = null
 	
-	if (!is_multiplayer_authority() and Global.is_networked_game) or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+	if (!is_multiplayer_authority() and Global.isNetworkedGame) or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 		return
 	
-	if !Global.game_paused:
+	if !Global.gamePaused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		crosshair.show()
 	
@@ -584,7 +584,7 @@ func _physics_process(delta):
 					if !has_fired:
 							_spray()
 	
-	if Global.game_mode == "Sandbox":
+	if Global.gameMode == "Sandbox":
 		if Input.is_action_just_pressed("menu2") and !sb_menu_window.visible:
 			sb_menu_window.popup_centered()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -650,7 +650,7 @@ func apply_controller_rotation():
 
 func die():
 	get_parent().prep_for_respawn()
-	if (str_to_var(name) == 1) or !Global.is_networked_game:
+	if (str_to_var(name) == 1) or !Global.isNetworkedGame:
 		drop()
 	else: 
 		drop()

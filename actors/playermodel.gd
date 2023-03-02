@@ -13,26 +13,26 @@ var head_material = 0
 
 func _process(delta):
 	change_headwear(Global.headwear)
-	change_texture(head_material, "res://addons/toonroid/textures/" + Global.skin_color + ".png")
-	change_face_texture(Global.face_texture)
-	change_texture(torso_material, get_clothing_texture(Global.torso_texture))
-	change_texture(arms_material, get_clothing_texture(Global.arms_texture))
-	change_texture(hands_material, get_clothing_texture(Global.hands_texture))
-	change_texture(pants_material, get_clothing_texture(Global.pants_texture))
-	change_texture(foot_material, get_clothing_texture(Global.shoes_texture))
+	change_texture(head_material, "res://addons/toonroid/textures/" + Global.skinColor + ".png")
+	change_face_texture(Global.faceTexture)
+	change_texture(torso_material, get_clothing_texture(Global.torsoTexture))
+	change_texture(arms_material, get_clothing_texture(Global.armsTexture))
+	change_texture(hands_material, get_clothing_texture(Global.handsTexture))
+	change_texture(pants_material, get_clothing_texture(Global.pantsTexture))
+	change_texture(foot_material, get_clothing_texture(Global.shoesTexture))
 
 func get_headwear_model(model_name : String):
 	var path = "res://addons/toonroid/headwear/" + model_name + ".tscn"
 	return path
 
 func get_face_texture(texture_name : String):
-	var path = "res://addons/toonroid/textures/face/" + Global.skin_color + "/" + texture_name + ".png"
+	var path = "res://addons/toonroid/textures/face/" + Global.skinColor + "/" + texture_name + ".png"
 	return path
 
 func get_clothing_texture(texture_name : String):
-	var path = "res://addons/toonroid/textures/clothes/" + Global.skin_color + "/" + texture_name + ".png"
+	var path = "res://addons/toonroid/textures/clothes/" + Global.skinColor + "/" + texture_name + ".png"
 	if texture_name == "skin":
-		path = "res://addons/toonroid/textures/" + Global.skin_color + ".png"
+		path = "res://addons/toonroid/textures/" + Global.skinColor + ".png"
 	return path
 
 func change_texture(material, texture_path):

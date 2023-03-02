@@ -37,6 +37,8 @@ namespace Toonbox.Runtime
 			navRegion = GetNode<NavigationRegion3D>("NavigationRegion3D");
 			mapManager = navRegion.GetNode<Node3D>("MapManager");
 
+			mainNode = GetParent<Node>();
+
             var console = GetNode("/root/Console");
 
 			console.Call("register_env", "world", this);
@@ -83,7 +85,7 @@ namespace Toonbox.Runtime
         [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
         public void LoadMapRemote(String path)
         {
-            LoadMap(GetNode<Node>("map_holder").Get("map").ToString());
+            LoadMap(GetNode<Node>("MapHolder").Get("map").ToString());
         }
 
         public void LogToChat(string msg)

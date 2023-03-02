@@ -11,8 +11,8 @@ func _ready() -> void:
 	#if OS.get_name() == "Android":
 	ProjectSettings.set("display/window/stretch/scale", 2)
 	$UI.theme = ThemeManager.theme
-	Global.game_started = false
-	Global.game_paused = false
+	Global.gameStarted = false
+	Global.gamePaused = false
 	Console.register_env("sb", self)
 	
 	Console.notify(" ")

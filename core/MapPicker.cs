@@ -10,25 +10,26 @@ namespace Toonbox.Runtime
 		{
 			DirAccess dir = DirAccess.Open("res://maps");
 
-			dir.ListDirBegin();
+            dir.ListDirBegin();
 
-			while (true)
-			{
-				var file = dir.GetNext();
-				if (file == null)
-				{
-					break;
-				}
-				else if ((!file.EndsWith(".import")) && (file.EndsWith(".map")))
-				{
-					var mapName = file.Left(-4);
-					var optButton = GetNode<OptionButton>("OptionButton");
-					optButton.AddItem(mapName);
-				}
-			}
+            while (true)
+            {
+                String file = dir.GetNext();
+                if (string.IsNullOrEmpty(file))
+                {
+                    break;
+                }
+                else if ((!file.EndsWith(".import")) && (file.EndsWith(".map")))
+                {
+                    var mapName = file.GetBaseName();
+                    GD.Print(mapName);
+                    var optButton = GetNode<OptionButton>("OptionButton");
+                    optButton.AddItem(mapName);
+                }
+            }
 
-			dir.ListDirEnd();
-		}
+            dir.ListDirEnd();
+        }
 	}
 }
 

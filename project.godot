@@ -26,7 +26,7 @@ boot_splash/minimum_display_time=10000
 
 GameManager="*res://core/game_manager.gd"
 Build="*res://core/Build.cs"
-ThemeManager="*res://core/theme_manager.gd"
+ThemeManager="*res://core/ThemeManager.cs"
 Global="*res://core/Global.cs"
 ScaleManager="*res://core/ScaleManager.cs"
 Console="*res://addons/panku_console/console.tscn"

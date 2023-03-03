@@ -42,8 +42,8 @@ namespace Toonbox.Runtime
         }
 		public void OnFileSelected(String path)
 		{
-			var parent = GetParent<Node>();
-			parent.Set("path", path);
+			Main parent = GetParent<Main>();
+			parent.path = path;
 			GetNode<Window>("NewRoomDialog").GetNode<NewRoom>("NewRoom").GetNode<LineEdit>("MapPath").Text = path;
 		}
 
@@ -72,7 +72,7 @@ namespace Toonbox.Runtime
 
 		public void OnMapSelected()
 		{
-			String map = GetNode<Window>("MapDialog").GetNode<Panel>("StandardMapPicker").GetNode<OptionButton>("OptionButton").Text + ".map";
+			String map = GetNode<Window>("MapDialog").GetNode<MapPicker>("StandardMapPicker").GetNode<OptionButton>("OptionButton").Text + ".map";
 			String mapPath = "res://maps/" + map;
 
 			GetNode<Window>("MapDialog").Hide();

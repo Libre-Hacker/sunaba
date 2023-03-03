@@ -15,22 +15,17 @@ namespace Toonbox.Runtime
 		[Export]
 		public UI ui;
 
-        public Node mainNode;
+        public Main main;
 
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()
 		{
-            mainNode = GetParent<Node>();
+            main = GetParent<Main>();
 
 			Multiplayer.MultiplayerPeer = null;
-        }
 
-        public void LogToChat(string msg)
-        {
-            if (mainNode != null)
-            {
-                mainNode.Call("log_to_chat", msg);
-            }
+            var console = GetNode("/root/Console");
+            console.Call("register_env", "netman", this);
         }
 
         public void CreateRoom()
@@ -42,10 +37,10 @@ namespace Toonbox.Runtime
 			global.Set("gameStarted", true);
             global.Set("isNetworkedGame", true);
 
-			LogToChat("Room Created");
+			main.LogToChat("Room Created");
 			//get_parent().log_to_chat("Room created")
 
-			mainNode.Call("import_world");
+			main.ImportMap();
         }
 
         public void JoinRoom(string address)
@@ -61,7 +56,7 @@ namespace Toonbox.Runtime
 		{
             var global = GetNode("/root/Global");
             global.Set("gameStarted", true);
-			LogToChat($"Player {id} has joined");
+			main.LogToChat($"Player {id} has joined");
 			world.PlayerJoined(id);
         }
     }

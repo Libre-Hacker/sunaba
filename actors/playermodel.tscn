@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://b78wj858mu20l"]
 
 [ext_resource type="PackedScene" uid="uid://bsqx6fi8oksal" path="res://assets/models/akari/akari.gltf" id="1_ltyvj"]
-[ext_resource type="Script" path="res://actors/playermodel.gd" id="2_gjf6e"]
 [ext_resource type="AnimationLibrary" uid="uid://dwka0podvhgpc" path="res://Libraries/Humanoid/Locomotion-Library.res" id="2_i15ho"]
+[ext_resource type="Script" path="res://actors/PlayerModel.cs" id="2_jrqb6"]
 [ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://addons/toonroid/materials/head.tres" id="3_4dnek"]
 [ext_resource type="AnimationLibrary" uid="uid://bo3lcnw82bah5" path="res://assets/animations/crouch_library.res" id="3_q7xhc"]
 [ext_resource type="Material" path="res://addons/toonroid/materials/face.tres" id="4_4n1ve"]
@@ -13,7 +13,7 @@
 [ext_resource type="Material" path="res://addons/toonroid/materials/shoes.tres" id="9_jm7n5"]
 
 [node name="PlayerModel" instance=ExtResource("1_ltyvj")]
-script = ExtResource("2_gjf6e")
+script = ExtResource("2_jrqb6")
 
 [node name="GeneralSkeleton" parent="Akari" index="0"]
 bones/0/position = Vector3(0, 0.580329, -0.0267357)

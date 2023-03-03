@@ -27,7 +27,7 @@ namespace Toonbox.Runtime
 	{
 		public Node3D mapManager;
 		public NavigationRegion3D navRegion;
-		public Node mainNode;
+		public Main main;
 
 		public static bool spectatorMode = false;
 		
@@ -37,7 +37,10 @@ namespace Toonbox.Runtime
 			navRegion = GetNode<NavigationRegion3D>("NavigationRegion3D");
 			mapManager = navRegion.GetNode<Node3D>("MapManager");
 
-			mainNode = GetParent<Node>();
+			main = GetParent<Main>();
+
+            var console = GetNode("/root/Console");
+            console.Call("register_env", "world", this);
 
         }
 
@@ -53,7 +56,7 @@ namespace Toonbox.Runtime
 		{
 			if (path != null)
 			{
-				LogToChat("Loading Map");
+				main.LogToChat("Loading Map");
 				mapManager.Set("map_file", path);
 				mapManager.Call("verify_and_build");
 			}
@@ -71,7 +74,7 @@ namespace Toonbox.Runtime
 		public void PrepForRespawn()
 		{
 			GetNode<Timer>("RespawnTimer").Start();
-            LogToChat("Respawning in 5 seconds");
+            main.LogToChat("Respawning in 5 seconds");
         }
 
 		public void LoadMapRemote()
@@ -85,17 +88,9 @@ namespace Toonbox.Runtime
             LoadMap(GetNode<Node>("MapHolder").Get("map").ToString());
         }
 
-        public void LogToChat(string msg)
-        {
-            if (mainNode != null)
-            {
-                mainNode.Call("log_to_chat", msg);
-            }
-        }
-
         public void OnRespawnTimerTimeout()
 		{
-			LogToChat("Respawning Player");
+            main.LogToChat("Respawning Player");
 			int id = Multiplayer.GetUniqueId(); 
 			if (id != 1)
 			{

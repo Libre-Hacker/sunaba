@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://1cjoiev0sjur"]
 
-[ext_resource type="Script" path="res://actors/sb_menu.gd" id="1_l0ri3"]
+[ext_resource type="Script" path="res://actors/SBMenu.cs" id="1_hosvq"]
 
 [node name="SBMenu" type="Panel"]
 anchors_preset = 15
@@ -12,7 +12,7 @@ offset_right = 2.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l0ri3")
+script = ExtResource("1_hosvq")
 
 [node name="TabBar" type="TabBar" parent="."]
 layout_mode = 1

@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://cec4c5t31w0xk"]
+[gd_scene load_steps=16 format=3 uid="uid://cec4c5t31w0xk"]
 
+[ext_resource type="Script" path="res://core/Main.cs" id="1_v0323"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_3gh8e"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
 [ext_resource type="Script" path="res://core/UI.cs" id="5_lswxf"]
@@ -8,19 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="8_47m63"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
-[ext_resource type="Script" path="res://core/standard_map_picker.gd" id="10_p8hay"]
 [ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://c88ijpr8qobb" path="res://core/world.tscn" id="12"]
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="12_e4k0p"]
-[ext_resource type="Script" path="res://core/main.gd" id="13"]
 [ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="14_mxn15"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
 
 [node name="Main" type="Node"]
-script = ExtResource("13")
+script = ExtResource("1_v0323")
 
 [node name="NetworkManager" type="Node" parent="." node_paths=PackedStringArray("world", "ui")]
 script = ExtResource("2_3gh8e")
@@ -367,7 +366,6 @@ visible = false
 min_size = Vector2i(260, 90)
 
 [node name="StandardMapPicker" parent="UI/MapDialog" instance=ExtResource("10_wye3g")]
-script = ExtResource("10_p8hay")
 
 [node name="UserFileDialog" type="FileDialog" parent="UI"]
 initial_position = 2
@@ -391,11 +389,11 @@ script = ExtResource("12_e4k0p")
 
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_cj05d")]
 
-[node name="SettingsDialog" parent="UI" instance=ExtResource("11")]
+[node name="SettingsDialog" parent="UI" node_paths=PackedStringArray("ui") instance=ExtResource("11")]
 initial_position = 1
 title = "Settings"
 visible = false
-gui = NodePath("..")
+ui = NodePath("..")
 
 [node name="CharacterWindow" type="Window" parent="UI"]
 own_world_3d = true
@@ -406,18 +404,18 @@ min_size = Vector2i(475, 275)
 [node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("14_mxn15")]
 
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="Unpause"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="reload"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="Reload"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button5" to="UI" method="OnCustomizeButtonPressed"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button3" to="UI" method="OnSettingsButtonPressed"]
-[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button4" to="." method="quit"]
+[connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button4" to="." method="Quit"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button4" to="UI" method="OnCreateButtonPressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button1" to="UI" method="OnConnectButtonPressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button5" to="UI" method="OnCustomizeButtonPressed"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button2" to="UI" method="OnSettingsButtonPressed"]
-[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="quit"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/Button3" to="." method="Quit"]
 [connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="OnNewRoomDialogCloseRequested"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="OnFileButtonPressed"]
-[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="create_room"]
+[connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="CreateRoom"]
 [connection signal="close_requested" from="UI/MapDialog" to="UI" method="OnMapDialogCloseRequested"]
 [connection signal="pressed" from="UI/MapDialog/StandardMapPicker/Button" to="UI" method="OnMapSelected"]
 [connection signal="close_requested" from="UI/UserFileDialog" to="UI" method="_on_file_dialog_close_requested"]

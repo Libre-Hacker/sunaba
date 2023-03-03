@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gld5ww40xaln"]
 
-[ext_resource type="Script" path="res://core/settings_dialog.gd" id="1"]
+[ext_resource type="Script" path="res://core/SettingsDialog.cs" id="1_ixb6n"]
 [ext_resource type="PackedScene" uid="uid://cuanlqv1fq2px" path="res://core/settings.tscn" id="2_lyet8"]
 
 [node name="SettingsDialog" type="Window"]
@@ -8,21 +8,23 @@ size = Vector2i(400, 300)
 exclusive = true
 unresizable = true
 min_size = Vector2i(400, 300)
-script = ExtResource("1")
+script = ExtResource("1_ixb6n")
 
 [node name="Panel" parent="." instance=ExtResource("2_lyet8")]
 
 [node name="ModelOptionButton" parent="Panel/TabBar/TabContainer/Client/VBoxContainer/Label2" index="0"]
 item_count = 3
-popup/item_2/text = "Custom"
+popup/item_0/text = "Custom"
+popup/item_1/text = "Male"
+popup/item_2/text = "Female"
 popup/item_2/id = 2
 
 [node name="ThemingOptionButton" parent="Panel/TabBar/TabContainer/UI/VBoxContainer/Label2" index="0"]
 item_count = 1
 popup/item_0/text = "Default"
 
-[connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="item_selected" from="Panel/TabBar/TabContainer/Client/VBoxContainer/Label2/ModelOptionButton" to="." method="_on_model_selected"]
-[connection signal="item_selected" from="Panel/TabBar/TabContainer/UI/VBoxContainer/Label2/ThemingOptionButton" to="." method="_on_theme_selected"]
+[connection signal="close_requested" from="." to="." method="OnCloseRequested"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/Client/VBoxContainer/Label2/ModelOptionButton" to="." method="OnModelSelected"]
+[connection signal="item_selected" from="Panel/TabBar/TabContainer/UI/VBoxContainer/Label2/ThemingOptionButton" to="." method="OnThemeSelected"]
 
 [editable path="Panel"]

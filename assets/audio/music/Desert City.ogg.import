@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cooffoumkldpe"
+path="res://.godot/imported/Desert City.ogg-fa0d38e69fc802a8d16ea25911e4730c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Desert City.ogg"
+dest_files=["res://.godot/imported/Desert City.ogg-fa0d38e69fc802a8d16ea25911e4730c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

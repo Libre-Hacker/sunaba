@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bog74d4vqi3u2"
+path="res://.godot/imported/Clash Defiant.ogg-fce0c3158a2340eaf4d86fff54b7d87e.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Clash Defiant.ogg"
+dest_files=["res://.godot/imported/Clash Defiant.ogg-fce0c3158a2340eaf4d86fff54b7d87e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

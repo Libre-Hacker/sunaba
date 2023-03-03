@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cmrhehqvm3io4"
+path="res://.godot/imported/Heroic Age.ogg-207300f1c08dab2920ecadd0f20efff4.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Heroic Age.ogg"
+dest_files=["res://.godot/imported/Heroic Age.ogg-207300f1c08dab2920ecadd0f20efff4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b41fnj20qffll"
+path="res://.godot/imported/Adventure Meme.ogg-64ad07ef13d2ccf8a4195745fa2fc654.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Adventure Meme.ogg"
+dest_files=["res://.godot/imported/Adventure Meme.ogg-64ad07ef13d2ccf8a4195745fa2fc654.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

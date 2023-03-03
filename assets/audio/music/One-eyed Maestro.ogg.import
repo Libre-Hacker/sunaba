@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fdcw8ahhw6vs"
+path="res://.godot/imported/One-eyed Maestro.ogg-4ce13d61b2fabe4ab77f99542bf0041a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/One-eyed Maestro.ogg"
+dest_files=["res://.godot/imported/One-eyed Maestro.ogg-4ce13d61b2fabe4ab77f99542bf0041a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://byoqi0hljj43l"
+path="res://.godot/imported/Pinball Spring.ogg-d3415c8798401d53a46af3772242de22.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Pinball Spring.ogg"
+dest_files=["res://.godot/imported/Pinball Spring.ogg-d3415c8798401d53a46af3772242de22.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

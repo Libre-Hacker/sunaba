@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dre48x8ivr2qd"
+path="res://.godot/imported/Exciting Trailer.ogg-a9c135d78ade65085a0d362f6f161006.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Exciting Trailer.ogg"
+dest_files=["res://.godot/imported/Exciting Trailer.ogg-a9c135d78ade65085a0d362f6f161006.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

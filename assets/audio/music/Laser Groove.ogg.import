@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bstamflg4t56g"
+path="res://.godot/imported/Laser Groove.ogg-025e4d4c9673e521032b02b9b421fda2.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Laser Groove.ogg"
+dest_files=["res://.godot/imported/Laser Groove.ogg-025e4d4c9673e521032b02b9b421fda2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

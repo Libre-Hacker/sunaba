@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ujlkg3bc7a5m"
+path="res://.godot/imported/The Builder.ogg-2078ad85a9799c9f5f64ff0399bddc15.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/The Builder.ogg"
+dest_files=["res://.godot/imported/The Builder.ogg-2078ad85a9799c9f5f64ff0399bddc15.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

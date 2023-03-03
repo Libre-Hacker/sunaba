@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjy7vfnfkyg5r"
+path="res://.godot/imported/Second Coming - no percussion.ogg-898154fdd15bcfb4edf3fc08637b51f8.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Second Coming - no percussion.ogg"
+dest_files=["res://.godot/imported/Second Coming - no percussion.ogg-898154fdd15bcfb4edf3fc08637b51f8.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

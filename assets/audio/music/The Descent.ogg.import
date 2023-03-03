@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxq4iaayjaxv"
+path="res://.godot/imported/The Descent.ogg-bed448b6b27916a54c6e16d0272aee58.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/The Descent.ogg"
+dest_files=["res://.godot/imported/The Descent.ogg-bed448b6b27916a54c6e16d0272aee58.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

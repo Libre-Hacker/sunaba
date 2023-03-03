@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bofhva2cjwugk"
+path="res://.godot/imported/Crossing the Chasm.ogg-9472d8ba2f5e5855e4e03b0427d742d5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Crossing the Chasm.ogg"
+dest_files=["res://.godot/imported/Crossing the Chasm.ogg-9472d8ba2f5e5855e4e03b0427d742d5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

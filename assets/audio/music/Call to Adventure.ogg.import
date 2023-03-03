@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sh2pyojxccpx"
+path="res://.godot/imported/Call to Adventure.ogg-b7b52837e59c66e1108ce4f1142678af.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Call to Adventure.ogg"
+dest_files=["res://.godot/imported/Call to Adventure.ogg-b7b52837e59c66e1108ce4f1142678af.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

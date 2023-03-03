@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctll8m0qjryhu"
+path="res://.godot/imported/Stringed Disco.ogg-c73b26bd3c9f955ee1f30ed3a252d7cc.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Stringed Disco.ogg"
+dest_files=["res://.godot/imported/Stringed Disco.ogg-c73b26bd3c9f955ee1f30ed3a252d7cc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

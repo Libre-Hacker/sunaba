@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://uxktoeqvru41"
+path="res://.godot/imported/Blown Away - No Percussion.ogg-5026804169c8a6b64887bcd8a066d38c.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Blown Away - No Percussion.ogg"
+dest_files=["res://.godot/imported/Blown Away - No Percussion.ogg-5026804169c8a6b64887bcd8a066d38c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

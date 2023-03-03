@@ -29,6 +29,7 @@ Build="*res://core/Build.cs"
 ThemeManager="*res://core/theme_manager.gd"
 Global="*res://core/Global.cs"
 ScaleManager="*res://core/ScaleManager.cs"
+Console="*res://addons/panku_console/console.tscn"
 
 [debug]
 
@@ -50,9 +51,14 @@ window/size/width=800
 
 project/assembly_name="Toonbox"
 
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/vrm/plugin.cfg", "res://addons/Godot-MToon-Shader/plugin.cfg", "res://addons/SimpleTODO/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/qodot/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleTODO/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [gdnative]
 

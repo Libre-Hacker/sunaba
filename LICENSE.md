@@ -1,3 +1,5 @@
+#CC-BY 3.0 License
+
 Creative Commons Legal Code
 
 Attribution 3.0 Unported

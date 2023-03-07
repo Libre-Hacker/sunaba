@@ -14,6 +14,7 @@ namespace Toonbox.Entities
 			Vector3 spawnpoint  = GlobalPosition + new Vector3 (0, 1, 0);
 			
 			global.spawnpoint = spawnpoint;
+			GD.Print(spawnpoint);
 
 			global.AddSpawnpoint (spawnpoint);
 		}

@@ -32,9 +32,10 @@ namespace Toonbox.Runtime
             var console = GetNode("/root/Console");
             console.Call("register_env", "tbx", this);
 			Build build = GetNode<Build>("/root/Build");
+			
 
 			LogToConsole("Toonbox");
-            LogToConsole("Version" + build.versionNumber);
+            LogToConsole("Version " + build.versionNumber);
             LogToConsole("Compiled on " + build.buildDate);
 			LogToConsole("");
 			String[] args = OS.GetCmdlineArgs();

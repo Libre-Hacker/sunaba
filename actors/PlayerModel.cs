@@ -14,9 +14,41 @@ namespace Toonbox.Actors
 		int footMaterial = 6;
 		int headMaterial = 0;
 
-		MeshInstance3D baseMesh = null;
+        [Export]
+        public String headwear = "black_long_hair";
+        [Export]
+        public String skinColor = "pale";
+        [Export]
+        public String faceTexture = "face_lightblue";
+        [Export]
+        public String torsoTexture = "lunar_blue";
+        [Export]
+        public String armsTexture = "lunar_blue";
+        [Export]
+        public String handsTexture = "lunar_blue";
+        [Export]
+        public String pantsTexture = "lunar_blue";
+        [Export]
+        public String shoesTexture = "lunar_blue";
+
+        MeshInstance3D baseMesh = null;
 		BoneAttachment3D headwearAttachment = null;
 		Global global;
+
+		[Export]
+		public bool isPartOfActor = false;
+
+        public override void _EnterTree()
+        {
+            string nameString = GetParent<CharacterBody3D>().Name.ToString();
+            string networkID = Multiplayer.GetUniqueId().ToString();
+
+			if (nameString == networkID)
+			{
+				int nameInt = int.Parse(nameString);
+				SetMultiplayerAuthority(nameInt);
+			}
+        }
 
         public override void _Ready()
         {
@@ -25,7 +57,7 @@ namespace Toonbox.Actors
             global = GetNode<Global>("/root/Global");
         }
 
-        /*
+		/*
 		 func _process(delta):
 			change_headwear(Global.headwear)
 			change_texture(head_material, "res://addons/toonroid/textures/" + Global.skinColor + ".png")
@@ -37,17 +69,30 @@ namespace Toonbox.Actors
 			change_texture(foot_material, get_clothing_texture(Global.shoesTexture))
 		 */
 
-        // Called every frame. 'delta' is the elapsed time since the previous frame.
-        public override void _Process(double delta)
+		// Called every frame. 'delta' is the elapsed time since the previous frame.
+		public override void _Process(double delta)
 		{
-			ChangeHeadwear(global.headwear);
-            ChangeTexture(headMaterial, "res://addons/toonroid/textures/" + global.skinColor + ".png");
-            ChangeFaceTexture(global.faceTexture);
-			ChangeTexture(torsoMaterial, GetClothingTexture(global.torsoTexture));
-            ChangeTexture(armsMaterial, GetClothingTexture(global.armsTexture));
-            ChangeTexture(handsMaterial, GetClothingTexture(global.handsTexture));
-            ChangeTexture(pantsMaterial, GetClothingTexture(global.pantsTexture));
-            ChangeTexture(footMaterial, GetClothingTexture(global.shoesTexture));
+			if (IsMultiplayerAuthority())
+			{
+
+                headwear = global.headwear;
+				skinColor = global.skinColor;
+				faceTexture = global.faceTexture;
+				torsoTexture = global.torsoTexture;
+				armsTexture = global.armsTexture;
+				handsTexture = global.handsTexture;
+				pantsTexture = global.pantsTexture;
+				shoesTexture = global.shoesTexture;
+    }
+
+            ChangeHeadwear(headwear);
+            ChangeTexture(headMaterial, "res://addons/toonroid/textures/" + skinColor + ".png");
+            ChangeFaceTexture(faceTexture);
+            ChangeTexture(torsoMaterial, GetClothingTexture(torsoTexture));
+            ChangeTexture(armsMaterial, GetClothingTexture(armsTexture));
+            ChangeTexture(handsMaterial, GetClothingTexture(handsTexture));
+            ChangeTexture(pantsMaterial, GetClothingTexture(pantsTexture));
+            ChangeTexture(footMaterial, GetClothingTexture(shoesTexture));
         }
 
 		private String GetHeadwearModelPath(String name)
@@ -64,17 +109,17 @@ namespace Toonbox.Actors
 
         private String GetFaceTexture(String name)
         {
-            String path = "res://addons/toonroid/textures/face/" + global.skinColor + "/" + name + ".png";
+            String path = "res://addons/toonroid/textures/face/" + skinColor + "/" + name + ".png";
             return path;
         }
 
         private String GetClothingTexture(String name)
         {
-            String path = "res://addons/toonroid/textures/clothes/" + global.skinColor + "/" + name + ".png";
+            String path = "res://addons/toonroid/textures/clothes/" + skinColor + "/" + name + ".png";
 			if (name == "skin")
 			{
                 Global global = GetNode<Global>("/root/Global");
-                path = "res://addons/toonroid/textures/" + global.skinColor + ".png";
+                path = "res://addons/toonroid/textures/" + skinColor + ".png";
             }
             return path;
         }

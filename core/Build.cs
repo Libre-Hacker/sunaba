@@ -1,30 +1,56 @@
 using Godot;
 using System;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
 
 namespace Toonbox.Runtime
 {
 	public partial class Build : Node
 	{
 		public bool multiplayerEnabled = false;
-		public String versionNumber = "0.4.0dev";
+		public String versionNumber = "0";
 		public String buildDate = "March 2, 2023";
 
-	}
+		public BuildFlags buildFlags = new BuildFlags();
+
+        public override void _Ready()
+        {
+			multiplayerEnabled = buildFlags.multiplayerEnabled;
+			versionNumber = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            buildDate = GetCompDate();
+        }
+        
+
+
+        public String GetCompDate()
+        {
+            String compDate = GetBuildDate(Assembly.GetExecutingAssembly()).ToString();//Date.GetLinkerTimestampUtc(Assembly.GetExecutingAssembly()).ToString();
+
+            return compDate;
+        }
+
+        private static DateTime GetBuildDate(Assembly assembly)
+        {
+            const string BuildVersionMetadataPrefix = "+build";
+
+            var attribute = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+            if (attribute?.InformationalVersion != null)
+            {
+                var value = attribute.InformationalVersion;
+                var index = value.IndexOf(BuildVersionMetadataPrefix);
+                if (index > 0)
+                {
+                    value = value.Substring(index + BuildVersionMetadataPrefix.Length);
+                    if (DateTime.TryParseExact(value, "yyyyMMddHHmmss", CultureInfo.InvariantCulture, DateTimeStyles.None, out var result))
+                    {
+                        return result;
+                    }
+                }
+            }
+
+            return default;
+        }
+    }
 }
 
-
-// var use_native_fd : bool
-// var online_play_enabled : bool
-// var version_number : String
-// var build_date : String
-//
-// var flags = preload("res://flags.tres")
-//
-// func _ready():
-// use_native_fd = flags.use_native_fd
-//
-// online_play_enabled = flags.online_play_enabled
-//
-//version_number = flags.version_number
-//
- //   build_date = flags.build_date

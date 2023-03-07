@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c88ijpr8qobb"]
+[gd_scene load_steps=9 format=3 uid="uid://c88ijpr8qobb"]
 
 [ext_resource type="Script" path="res://core/World.cs" id="1_3aha2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
 [ext_resource type="Resource" uid="uid://b7wbkk67gh1yf" path="res://trenchbroom/opensbx_fgd.tres" id="3_0xdm3"]
-[ext_resource type="Script" path="res://core/camera.gd" id="4_4sk0p"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
 cell_height = 0.01
@@ -52,10 +51,6 @@ set_owner_batch_size = 1000
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.963303, 0.268415, 0, -0.268415, 0.963303, 0, 10.4708, 18.5674)
-script = ExtResource("4_4sk0p")
 
 [node name="OutOfBounds" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -250, 0)

@@ -1,8 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=34 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
-[ext_resource type="PackedScene" uid="uid://cuplyucs3jss4" path="res://actors/generic_female.tscn" id="2_od7wf"]
-[ext_resource type="PackedScene" uid="uid://5lxojp38qwi7" path="res://actors/generic_male.tscn" id="2_rdd8b"]
 [ext_resource type="AudioStream" uid="uid://ol7ob3feddtx" path="res://assets/audio/walk/playerfoot_02.ogg" id="3_h85wq"]
 [ext_resource type="Script" path="res://actors/player.gd" id="4"]
 [ext_resource type="AudioStream" uid="uid://cpco3qorfi2hu" path="res://assets/audio/walk/playerfoot_03.ogg" id="4_qyfso"]
@@ -23,6 +21,71 @@
 [ext_resource type="AudioStream" uid="uid://us3l5m6ksqpi" path="res://assets/audio/pickup1.ogg" id="15_6o4pc"]
 [ext_resource type="FontFile" uid="uid://bmqpn44cpqtt6" path="res://assets/fonts/Roboto-Light.ttf" id="16_6nhex"]
 [ext_resource type="AudioStream" uid="uid://by8biiykns88" path="res://assets/audio/jump.ogg" id="16_c33kq"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rs28k"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/sync = true
+properties/2/path = NodePath("Head:position")
+properties/2/spawn = true
+properties/2/sync = true
+properties/3/path = NodePath("Head:rotation")
+properties/3/spawn = true
+properties/3/sync = true
+properties/4/path = NodePath(".:vel")
+properties/4/spawn = true
+properties/4/sync = true
+properties/5/path = NodePath("Head/AnimationPlayer:current_animation")
+properties/5/spawn = true
+properties/5/sync = true
+properties/6/path = NodePath("PlayerModel:headwear")
+properties/6/spawn = true
+properties/6/sync = true
+properties/7/path = NodePath("PlayerModel:skinColor")
+properties/7/spawn = true
+properties/7/sync = true
+properties/8/path = NodePath("PlayerModel:faceTexture")
+properties/8/spawn = true
+properties/8/sync = true
+properties/9/path = NodePath("PlayerModel:torsoTexture")
+properties/9/spawn = true
+properties/9/sync = true
+properties/10/path = NodePath("PlayerModel:armsTexture")
+properties/10/spawn = true
+properties/10/sync = true
+properties/11/path = NodePath("PlayerModel:handsTexture")
+properties/11/spawn = true
+properties/11/sync = true
+properties/12/path = NodePath("PlayerModel:pantsTexture")
+properties/12/spawn = true
+properties/12/sync = true
+properties/13/path = NodePath("PlayerModel:shoesTexture")
+properties/13/spawn = true
+properties/13/sync = true
+properties/14/path = NodePath("PlayerModel/AnimationPlayer:current_animation")
+properties/14/spawn = false
+properties/14/sync = false
+properties/15/path = NodePath("CollisionShape3D:shape")
+properties/15/spawn = true
+properties/15/sync = true
+properties/16/path = NodePath("WalkSound:playing")
+properties/16/spawn = true
+properties/16/sync = true
+properties/17/path = NodePath("RunSound:playing")
+properties/17/spawn = true
+properties/17/sync = true
+properties/18/path = NodePath("ReloadSound:playing")
+properties/18/spawn = true
+properties/18/sync = true
+properties/19/path = NodePath("PickupSound:playing")
+properties/19/spawn = true
+properties/19/sync = true
+properties/20/path = NodePath("JumpSound:playing")
+properties/20/spawn = true
+properties/20/sync = true
 
 [sub_resource type="Animation" id="Animation_pux5j"]
 length = 0.001
@@ -212,59 +275,25 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rs28k"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/sync = true
-properties/1/path = NodePath(".:rotation")
-properties/1/spawn = true
-properties/1/sync = true
-properties/2/path = NodePath("Head:position")
-properties/2/spawn = true
-properties/2/sync = true
-properties/3/path = NodePath("Head:rotation")
-properties/3/spawn = true
-properties/3/sync = true
-properties/4/path = NodePath(".:vel")
-properties/4/spawn = true
-properties/4/sync = true
-properties/5/path = NodePath("Head/AnimationPlayer:current_animation")
-properties/5/spawn = true
-properties/5/sync = true
-properties/6/path = NodePath("akari/AnimationPlayer:current_animation")
-properties/6/spawn = true
-properties/6/sync = true
-
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("4")
 default_speed = 4
 jump_impulse = 10
 foot_sounds = [ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")]
 
-[node name="Male" parent="." instance=ExtResource("2_rdd8b")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-visible = false
-
-[node name="Hair" parent="Male/Akari/GeneralSkeleton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
-
-[node name="Head" type="BoneAttachment3D" parent="Male/Akari/GeneralSkeleton" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
-bone_name = "Head"
-bone_idx = 5
-
-[node name="HeadPos" type="Node3D" parent="Male/Akari/GeneralSkeleton/Head"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.163123, -6.0536e-09)
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_rs28k")
 
 [node name="PlayerModel" parent="." instance=ExtResource("13_ehkwf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+isPartOfActor = true
 
 [node name="Hair" parent="PlayerModel/Akari/GeneralSkeleton" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
 
-[node name="Female" parent="." instance=ExtResource("2_od7wf")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-visible = false
+[node name="Head" parent="PlayerModel/Akari/GeneralSkeleton" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+bone_name = "face"
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.111, 0)
@@ -557,9 +586,6 @@ bus = &"Sound"
 stream = ExtResource("15_6o4pc")
 bus = &"Sound"
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_rs28k")
-
 [node name="JumpSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("16_c33kq")
 bus = &"Sound"
@@ -570,6 +596,5 @@ bus = &"Sound"
 [connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
 
-[editable path="Male"]
 [editable path="PlayerModel"]
 [editable path="Hud/SBMenuWindow/SBMenu"]

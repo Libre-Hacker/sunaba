@@ -6,12 +6,14 @@ namespace Toonbox.Runtime
 	public partial class ConnectDialog : Window
 	{
 		[Export]
-		public NetworkManager netman;
+		public NetworkManager networkManager;
 
-		public void Connect()
+		String address = "127.0.0.1";
+
+
+        public void Connect()
 		{
-			String address = GetNode<TabBar>("TabBar").GetNode<TabContainer>("TabContainer").GetNode<Control>("Online").GetNode<LineEdit>("LineEdit").Text;
-			netman.JoinRoom(address);
+            networkManager.JoinRoom(address);
 			GetParent<UI>().GetNode<Control>("MainMenu").Hide();
 			Hide();
 		}

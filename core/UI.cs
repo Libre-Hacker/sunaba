@@ -49,7 +49,12 @@ namespace Toonbox.Runtime
 
 		public void OnConnectButtonPressed()
 		{
-			GetNode<Window>("ConnectDialog").PopupCentered();
+            Build build = GetNode<Build>("/root/Build");
+
+			if (build.multiplayerEnabled == true)
+			{
+				GetNode<Window>("ConnectDialog").PopupCentered();
+			}
 		}
 
 		public void OnConnectDialogCloseRequested()

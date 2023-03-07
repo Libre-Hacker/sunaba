@@ -5,7 +5,7 @@
     },
     "Godot": {
       "commandName": "Executable",
-      "executablePath": "C:\\Users\\mintkat\\Desktop\\Godot_v4.0-stable_mono_win64\\Godot_v4.0-stable_mono_win64.exe",
+      "executablePath": "C:\\Users\\mintkat\\scoop\\apps\\godot-mono\\4.0\\godot-mono.exe",
       "commandLineArgs": "--path . --verbose ",
       "workingDirectory": ".",
       "nativeDebugging": true

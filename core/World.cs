@@ -46,11 +46,17 @@ namespace Toonbox.Runtime
 
 		public void LoadMapPath(string path)
 		{
-			//PackedScene mapHolderPath = GD.Load<PackedScene>("res://core/map_holder.tscn");
-			//MapHolder mapHolder = mapHolderPath.Instantiate<MapHolder>();
-			//AddChild(mapHolder);
-			//mapHolder.map = path;
-		}
+			PackedScene mapHolderPath = GD.Load<PackedScene>("res://core/map_holder.tscn");
+			MapHolder mapHolder = mapHolderPath.Instantiate<MapHolder>();
+			AddChild(mapHolder);
+			mapHolder.map = path;
+			GD.Print(path);
+
+            //PackedScene player = GD.Load<PackedScene>("res://actors/player.tscn");
+            //CharacterBody3D playerInstance = player.Instantiate<CharacterBody3D>();
+            //playerInstance.Name = GD.VarToStr(id);
+            //AddChild(playerInstance);
+        }
 
 		public void LoadMap(string path)
 		{
@@ -77,16 +83,11 @@ namespace Toonbox.Runtime
             main.LogToChat("Respawning in 5 seconds");
         }
 
-		public void LoadMapRemote()
-		{
-			LoadMap(GetNode<MapHolder>("Map").map);
-		}
-
         [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
-        public void LoadMapRemote(String path)
-        {
-            LoadMap(GetNode<Node>("MapHolder").Get("map").ToString());
-        }
+        public void LoadMapRemote()
+		{
+			LoadMap(GetNode<MapHolder>("MapHolder").map);
+		}
 
         public void OnRespawnTimerTimeout()
 		{
@@ -105,37 +106,28 @@ namespace Toonbox.Runtime
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
 		public void InstancePlayer(int id)
 		{
+			//GetNode<Camera3D>("Camera3D").Current = false;
 			PackedScene player = GD.Load<PackedScene>("res://actors/player.tscn");
 			CharacterBody3D playerInstance = player.Instantiate<CharacterBody3D>();
 			playerInstance.Name = GD.VarToStr(id);
 			AddChild(playerInstance);
-            var global = GetNode("/root/Global");
+            Global global = GetNode<Global>("/root/Global/");
             if (id ==  Multiplayer.GetUniqueId())
 			{
-				global.Set("player", playerInstance);
+				global.player = playerInstance;
 			}
 
             String gameMode = global.Get("game_mode").As<string>();
 
-            if ((gameMode == "") || (gameMode == "Sandbox"))
-            {
-                var spawnpoint = global.Get("spawnpoint").As<Vector3>();
-                playerInstance.GlobalPosition = spawnpoint;
-            }
-			else if (gameMode == "Deathmatch")
-			{
-				var spVar = global.Call("get_spawnpoint");
-				
-				var spawnpoint = spVar.As<Vector3>();
-                playerInstance.GlobalPosition = spawnpoint;
-            }
+			Vector3 spawnpoint = global.GetSpawnpoints();
+            playerInstance.GlobalPosition = spawnpoint;
 
-
+            
         }
 
 		public void PlayerJoined(int id)
 		{
-			RpcId(id, "InstancePlayer", id);
+			RpcId(id, "LoadMapRemote");
 		}
 
 		public void AddBots()

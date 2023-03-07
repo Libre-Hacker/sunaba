@@ -378,7 +378,7 @@ access = 2
 filters = PackedStringArray("*.map")
 show_hidden_files = true
 
-[node name="ConnectDialog" type="Window" parent="UI"]
+[node name="ConnectDialog" type="Window" parent="UI" node_paths=PackedStringArray("networkManager")]
 initial_position = 2
 title = "Connect"
 size = Vector2i(410, 287)
@@ -386,6 +386,7 @@ visible = false
 min_size = Vector2i(410, 287)
 max_size = Vector2i(410, 287)
 script = ExtResource("12_e4k0p")
+networkManager = NodePath("../../NetworkManager")
 
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_cj05d")]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bn00ofwjjb67i"]
 
-[ext_resource type="Script" path="res://core/MapPicker.cs" id="1_hygvu"]
+[ext_resource type="Script" path="res://core/MapHolder.cs" id="1_j1qg1"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_itdc3"]
 properties/0/path = NodePath(".:map")
@@ -8,7 +8,7 @@ properties/0/spawn = true
 properties/0/sync = true
 
 [node name="MapHolder" type="Node"]
-script = ExtResource("1_hygvu")
+script = ExtResource("1_j1qg1")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_itdc3")

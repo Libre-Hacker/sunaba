@@ -1,10 +1,10 @@
-// Game: OpenSBX
+// Game: Sunaba
 // Format: Standard
 // entity 0
 {
 "classname" "worldspawn"
 "_tb_textures" "textures/Brick;textures/Building;textures/Grass;textures/Sand;textures/Stone;textures/Tile;textures/Water;textures/special"
-"_tb_def" "builtin:OpenSBX.fgd"
+"_tb_def" "builtin:Sunaba.fgd"
 // brush 0
 {
 ( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) Grass/Grass16-512x512 0 0 0 0.0625 0.0625

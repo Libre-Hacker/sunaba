@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 using System.Linq;
 
-namespace Toonbox.Runtime
+namespace Sunaba.Runtime
 {
 	public partial class Global : Node
 	{
@@ -48,7 +48,7 @@ namespace Toonbox.Runtime
 
 		public void AddSpawnpoint(Vector3 sp) 
 		{ 
-			spawnpoints.Append<Vector3>(sp); 
+			spawnpoints.Add(sp);
 		}
     }
 }

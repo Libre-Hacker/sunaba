@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 
-namespace Toonbox.Runtime
+namespace Sunaba.Runtime
 {
 	public partial class Build : Node
 	{
@@ -17,8 +17,8 @@ namespace Toonbox.Runtime
         public override void _Ready()
         {
 			multiplayerEnabled = buildFlags.multiplayerEnabled;
-			versionNumber = Assembly.GetEntryAssembly().GetName().Version.ToString();
-            buildDate = GetCompDate();
+			//versionNumber = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            //buildDate = GetCompDate();
         }
         
 

@@ -1,8 +1,8 @@
 using Godot;
 using System;
-using Toonbox.Runtime;
+using Sunaba.Runtime;
 
-namespace Toonbox.Actors
+namespace Sunaba.Actors
 {
 	public partial class PlayerModel : Node
 	{

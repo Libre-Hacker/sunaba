@@ -34,6 +34,6 @@
 script = ExtResource("7_n3wa5")
 export_file = false
 target_folder = "C:/QuakeDev/TrenchBroom/games/OpenSBX"
-fgd_name = "OpenSBX"
+fgd_name = "Sunaba"
 base_fgd_files = Array[Resource]([])
 entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_ksys4"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("15_hc8b5"), ExtResource("17_2mjsk"), ExtResource("18_85oad"), ExtResource("19_4y8q4"), ExtResource("7_ksys4"), ExtResource("21_qde4r"), ExtResource("22_6yv6f"), ExtResource("23_q85ih"), ExtResource("24_vfn6q"), ExtResource("18_0q27l"), ExtResource("26_k2o1r"), ExtResource("27_mm36p"), ExtResource("28_0pppj"), ExtResource("29_et5qv"), ExtResource("30_cs2v3")]

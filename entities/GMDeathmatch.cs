@@ -1,8 +1,8 @@
 using Godot;
 using System;
-using Toonbox.Runtime;
+using Sunaba.Runtime;
 
-namespace Toonbox.Entities
+namespace Sunaba.Entities
 {
 	public partial class GMDeathmatch : Node
 	{

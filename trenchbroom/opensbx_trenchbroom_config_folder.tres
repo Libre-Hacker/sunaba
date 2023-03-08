@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TrenchBroomGameConfigFolder" load_steps=5 format=3]
+[gd_resource type="Resource" script_class="TrenchBroomGameConfigFolder" load_steps=5 format=3 uid="uid://uj1bgvnls58e"]
 
 [ext_resource type="Resource" uid="uid://b7wbkk67gh1yf" path="res://trenchbroom/opensbx_fgd.tres" id="1_7ejqi"]
 [ext_resource type="Resource" uid="uid://drs2qwlkyiceg" path="res://trenchbroom/opensbx_trenchbroom_config_file.tres" id="2_aj5a0"]
@@ -9,7 +9,7 @@
 script = ExtResource("4_abrc7")
 export_file = false
 trenchbroom_games_folder = "C:/QuakeDev/TrenchBroom/games/"
-game_name = "OpenSBX"
+game_name = "Sunaba"
 icon = ExtResource("3_acgf8")
 game_config_file = ExtResource("2_aj5a0")
 fgd_files = Array[Resource]([ExtResource("1_7ejqi")])

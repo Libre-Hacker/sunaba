@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Sunaba"
 run/main_scene="res://core/main.tscn"
-config/features=PackedStringArray("4.0")
+config/features=PackedStringArray("4.0", "C#")
 run/max_fps=30
 boot_splash/bg_color=Color(0.4, 0.4, 0.4, 1)
 boot_splash/image="res://assets/splashscreen.png"
@@ -24,7 +24,6 @@ boot_splash/minimum_display_time=10000
 
 [autoload]
 
-GameManager="*res://core/game_manager.gd"
 Build="*res://core/Build.cs"
 ThemeManager="*res://core/ThemeManager.cs"
 Global="*res://core/Global.cs"
@@ -49,7 +48,7 @@ window/size/width=800
 
 [dotnet]
 
-project/assembly_name="Toonbox"
+project/assembly_name="Sunaba"
 
 [editor]
 

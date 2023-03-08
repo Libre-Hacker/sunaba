@@ -12,6 +12,9 @@ script = ExtResource("1_ixb6n")
 
 [node name="Panel" parent="." instance=ExtResource("2_lyet8")]
 
+[node name="Label2" parent="Panel/TabBar/TabContainer/About" index="0"]
+text = "Sunaba"
+
 [node name="ModelOptionButton" parent="Panel/TabBar/TabContainer/Client/VBoxContainer/Label2" index="0"]
 item_count = 3
 popup/item_0/text = "Custom"

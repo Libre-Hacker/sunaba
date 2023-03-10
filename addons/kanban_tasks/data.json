@@ -1,0 +1,118 @@
+{
+	"categories": [
+		{
+			"uuid": "2fa339f1-00f6-43ce-8555-d11999b55341",
+			"title": "Task",
+			"color": "87abe3"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "71e0d1d8-7b8f-4bac-a661-aba099fea42d",
+			"title": "Todo",
+			"tasks": [
+				"811a8cc4-ca6a-4944-a7be-e19933b4bce4",
+				"074bb370-dd9a-40e6-ad06-77c08afcc921",
+				"6016b2d7-9a2c-46e0-ac8f-c59630fb0443",
+				"255c64ef-bd1d-4120-b065-45753cfd7dfa"
+			]
+		},
+		{
+			"uuid": "8f26a0dd-d64e-4bae-81c7-d6d65633a271",
+			"title": "Doing",
+			"tasks": [
+				"fa3b47a7-47eb-4be5-8452-0e2e528e3210"
+			]
+		},
+		{
+			"uuid": "7045d55d-4295-4186-8c6c-3a3d2859bd52",
+			"title": "On Hold",
+			"tasks": [
+				"25b29a43-5c16-43f9-b730-78bea149d1e4",
+				"a16eaad1-1bb9-4fe6-afe6-cc0cd3cfb052"
+			]
+		},
+		{
+			"uuid": "23149de3-5ed0-4201-87e2-895014c84862",
+			"title": "Done",
+			"tasks": [
+				"589535f3-d74d-49ba-8ae6-19cbe68a1b99",
+				"4d5a1d74-2bb3-4320-921a-585be6f59789"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "47a9b48c-167c-43d3-8986-2e2f8fc87db7",
+			"title": "Sg",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "811a8cc4-ca6a-4944-a7be-e19933b4bce4",
+			"title": "Projectile-based weapons",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "074bb370-dd9a-40e6-ad06-77c08afcc921",
+			"title": "Supersuits",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "6016b2d7-9a2c-46e0-ac8f-c59630fb0443",
+			"title": "Physics Object Blaster",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "255c64ef-bd1d-4120-b065-45753cfd7dfa",
+			"title": "HL2-style Object",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "fa3b47a7-47eb-4be5-8452-0e2e528e3210",
+			"title": "C# Rewrite",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "589535f3-d74d-49ba-8ae6-19cbe68a1b99",
+			"title": "Shotgun",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "25b29a43-5c16-43f9-b730-78bea149d1e4",
+			"title": "Deathmatch Bots",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "4d5a1d74-2bb3-4320-921a-585be6f59789",
+			"title": "Spray Paint Gun",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		},
+		{
+			"uuid": "a16eaad1-1bb9-4fe6-afe6-cc0cd3cfb052",
+			"title": "Sandbox Mode",
+			"description": "",
+			"category": "2fa339f1-00f6-43ce-8555-d11999b55341"
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"71e0d1d8-7b8f-4bac-a661-aba099fea42d",
+				"7045d55d-4295-4186-8c6c-3a3d2859bd52"
+			],
+			[
+				"8f26a0dd-d64e-4bae-81c7-d6d65633a271",
+				"23149de3-5ed0-4201-87e2-895014c84862"
+			]
+		]
+	}
+}

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Sunaba"
+config/name="Toonbox"
 run/main_scene="res://core/main.tscn"
 config/features=PackedStringArray("4.0", "C#")
 run/max_fps=30
@@ -28,7 +28,6 @@ Build="*res://core/Build.cs"
 ThemeManager="*res://core/ThemeManager.cs"
 Global="*res://core/Global.cs"
 ScaleManager="*res://core/ScaleManager.cs"
-Console="*res://addons/panku_console/console.tscn"
 
 [debug]
 
@@ -48,7 +47,7 @@ window/size/width=800
 
 [dotnet]
 
-project/assembly_name="Sunaba"
+project/assembly_name="Toonbox"
 
 [editor]
 
@@ -57,7 +56,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SimpleTODO/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleTODO/plugin.cfg", "res://addons/qodot/plugin.cfg", "res://addons/native_dialogs/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/kanban_tasks/plugin.cfg")
 
 [gdnative]
 
@@ -274,11 +273,6 @@ menu2={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
-toggle_console={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":0,"echo":false,"script":null)
-]
-}
 
 [input_devices]
 
@@ -294,10 +288,6 @@ translations=PackedStringArray()
 export/aot/enabled=true
 export/aot/full_aot=true
 export/aot/use_interpreter=false
-
-[panku]
-
-toggle_console_action="toggle_console"
 
 [physics]
 

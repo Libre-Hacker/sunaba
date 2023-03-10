@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace Toonbox.Runtime
 {
 	public partial class Main : Node
 	{
@@ -30,11 +30,11 @@ namespace Sunaba.Runtime
 			global.gameStarted = false;
 			global.gamePaused = false;
             var console = GetNode("/root/Console");
-            console.Call("register_env", "sunaba", this);
+            console.Call("register_env", "Toonbox", this);
 			Build build = GetNode<Build>("/root/Build");
 			
 
-			LogToConsole("Sunaba");
+			LogToConsole("Toonbox");
             LogToConsole("Version " + build.versionNumber);
             LogToConsole("Compiled on " + build.buildDate);
 			LogToConsole("");

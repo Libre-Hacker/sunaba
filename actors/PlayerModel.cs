@@ -57,18 +57,6 @@ namespace Toonbox.Actors
             global = GetNode<Global>("/root/Global");
         }
 
-		/*
-		 func _process(delta):
-			change_headwear(Global.headwear)
-			change_texture(head_material, "res://addons/toonroid/textures/" + Global.skinColor + ".png")
-			change_face_texture(Global.faceTexture)
-			change_texture(torso_material, get_clothing_texture(Global.torsoTexture))
-			change_texture(arms_material, get_clothing_texture(Global.armsTexture))
-			change_texture(hands_material, get_clothing_texture(Global.handsTexture))
-			change_texture(pants_material, get_clothing_texture(Global.pantsTexture))
-			change_texture(foot_material, get_clothing_texture(Global.shoesTexture))
-		 */
-
 		// Called every frame. 'delta' is the elapsed time since the previous frame.
 		public override void _Process(double delta)
 		{

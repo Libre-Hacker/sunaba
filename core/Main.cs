@@ -24,19 +24,19 @@ namespace Toonbox.Runtime
 			{
 				ProjectSettings.SetSetting("display/window/stretch/scale", 2);
 			}
-            ThemeManager themeMan = GetNode<ThemeManager>("/root/ThemeManager/");
+			ThemeManager themeMan = GetNode<ThemeManager>("/root/ThemeManager/");
 			GetNode<Control>("UI").Theme = themeMan.theme;
 			Global global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
-            var console = GetNode("/root/Console");
-            console.Call("register_env", "Toonbox", this);
+			var console = GetNode("/root/Console");
+			console.Call("register_env", "Toonbox", this);
 			Build build = GetNode<Build>("/root/Build");
 			
 
 			LogToConsole("Toonbox");
-            LogToConsole("Version " + build.versionNumber);
-            LogToConsole("Compiled on " + build.buildDate);
+			LogToConsole("Version " + build.versionNumber);
+			LogToConsole("Compiled on " + build.buildDate);
 			LogToConsole("");
 			String[] args = OS.GetCmdlineArgs();
 			String arg1 = args[0];
@@ -44,14 +44,14 @@ namespace Toonbox.Runtime
 			{
 				Play(arg1);
 			}
-        }
+		}
 
 		public void LogToConsole(String msg)
 		{
-            var console = GetNode("/root/Console");
-            console.Call("notify", msg);
+			var console = GetNode("/root/Console");
+			console.Call("notify", msg);
 			GD.Print(msg);
-        }
+		}
 
 		public void CreateRoom()
 		{
@@ -61,7 +61,7 @@ namespace Toonbox.Runtime
 				GetNode<UI>("UI").GetNode<Window>("NewRoomDialog").Hide();
 				GetNode<UI>("UI").GetNode<Control>("MainMenu").Hide();
 
-            }
+			}
 		}
 
 		public void LogToChat(String msg)
@@ -69,13 +69,13 @@ namespace Toonbox.Runtime
 			Chat("Room", msg);
 		}
 
-        public void Chat(String name, String msg)
-        {
-            String chatmsg = name + " : " + msg;
-            LogToConsole(chatmsg);
-            chatbox.AddText(chatmsg);
-            chatbox.Newline();
-        }
+		public void Chat(String name, String msg)
+		{
+			String chatmsg = name + " : " + msg;
+			LogToConsole(chatmsg);
+			chatbox.AddText(chatmsg);
+			chatbox.Newline();
+		}
 
 		public void ImportMap()
 		{
@@ -96,29 +96,29 @@ namespace Toonbox.Runtime
 			GetTree().Quit();
 		}
 
-        public override void _Input(InputEvent @event)
-        {
-            if ((Input.IsKeyPressed(Key.Ctrl)) && (Input.IsKeyPressed(Key.R)))
+		public override void _Input(InputEvent @event)
+		{
+			if ((Input.IsKeyPressed(Key.Ctrl)) && (Input.IsKeyPressed(Key.R)))
 			{
 				Reload();
 			}
-        }
+		}
 
 		public void Reload()
 		{
-            Global global = GetNode<Global>("/root/Global/");
-            global.gameStarted = false;
-            global.gamePaused = false;
+			Global global = GetNode<Global>("/root/Global/");
+			global.gameStarted = false;
+			global.gamePaused = false;
 			global.player = null;
-            GetTree().ReloadCurrentScene();
+			GetTree().ReloadCurrentScene();
 		}
 
 		public void Connect()
 		{
 			networkManager.JoinRoom(address);
-            GetNode<UI>("UI").GetNode<Window>("NewRoomDialog").Hide();
-            GetNode<UI>("UI").GetNode<Control>("MainMenu").Hide();
-        }
+			GetNode<UI>("UI").GetNode<Window>("NewRoomDialog").Hide();
+			GetNode<UI>("UI").GetNode<Control>("MainMenu").Hide();
+		}
 
 		public void OnAddressChanged(String newText)
 		{
@@ -157,7 +157,7 @@ namespace Toonbox.Runtime
 
 			dir.ListDirEnd();
 		} 
-    }
+	}
 }
 
 /*

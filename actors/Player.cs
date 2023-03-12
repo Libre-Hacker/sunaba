@@ -47,6 +47,33 @@ namespace Toonbox.Actors
 		private String tool4;
 		private String toolToSpawn;
 		private String toolToDrop;
+        
+		
+		/*
+		
+		var default_height = 1.497
+		var crouch_height = 0.8
+		var head_height = 1.111
+		var head_crouch_height = 0.866
+		var max_speed = default_speed
+		var health = 100
+		var reach = null
+		var aimcast = null
+		var ammo = 25
+		var max_ammo = 25
+		var damage = 100
+		var spread = 25
+		var is_reloading : bool
+		var has_fired : bool = false
+		var weapon_type : String = ""
+		var muzzle = null
+		var can_play_walk_sound : bool = true
+		var times_jumped = 0
+		const SWAY = 50
+		const VSWAY = 45
+		var view_mode : bool = false
+		
+         */
 
         // Called when the node enters the scene tree for the first time.
         public override void _Ready()

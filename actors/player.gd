@@ -346,7 +346,7 @@ func _physics_process(delta):
 				$WalkSound.play()
 				walk_timer.start()
 			if !is_reloading and !gun_ap.current_animation == "fire":
-				gun_ap.play("walk")
+				gun_ap.play("idle")
 				#gun_ap.rpc("play", "walk")
 		elif max_speed == crouch_move_speed and is_on_floor():
 			animation_player.play("crouch_library/crouch_walk")
@@ -358,7 +358,7 @@ func _physics_process(delta):
 				$WalkSound.play()
 				walk_timer.start()
 			if !is_reloading and !gun_ap.current_animation == "fire":
-				gun_ap.play("walk")
+				gun_ap.play("idle")
 				#gun_ap.rpc("play", "walk")
 		elif max_speed == sprint_speed and is_on_floor():
 			animation_player.play("Locomotion-Library/run")
@@ -372,7 +372,7 @@ func _physics_process(delta):
 				$WalkSound.play()
 				walk_timer.start()
 			if !is_reloading and !gun_ap.current_animation == "fire":
-				gun_ap.play("run")
+				gun_ap.play("idle_2")
 				#gun_ap.rpc("play", "walk")
 		elif !is_on_floor():
 			animation_player.play("Locomotion-Library/jump")

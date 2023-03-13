@@ -29,7 +29,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="MapManager" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("2_vkw6t")
-map_file = ""
+map_file = "C:/sunaba/maps/base.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("3_0xdm3")
 base_texture_dir = "res://textures"
@@ -60,7 +60,6 @@ priority = 4.0
 shape = SubResource("BoxShape3D_b46la")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-visible = false
 subdiv = 3
 size = Vector3(256, 256, 256)
 camera_attributes = SubResource("CameraAttributesPhysical_q5rjg")

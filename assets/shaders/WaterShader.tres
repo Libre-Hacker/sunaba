@@ -164,7 +164,7 @@ void vertex() {
 
 
 // MultiplyAdd:5
-	vec3 n_out5p0 = fma(vec3(n_out2p0.xyz), n_out8p0, n_out3p0);
+	vec3 n_out5p0 = (vec3(n_out2p0.xyz) * n_out8p0) + n_out3p0;
 
 
 // Output:0
@@ -226,7 +226,7 @@ void fragment() {
 	float n_in14p0 = 0.50000;
 	{
 		float __depth_tex = texture(depth_tex_frg_14, SCREEN_UV).r;
-		vec4 __depth_world_pos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, __depth_tex, 1.0);
+		vec4 __depth_world_pos = INV_PROJECTION_MATRIX * vec4(vec3(SCREEN_UV, __depth_tex) * 2.0 - 1.0, 1.0);
 		__depth_world_pos.xyz /= __depth_world_pos.w;
 		n_out14p0 = clamp(1.0 - smoothstep(__depth_world_pos.z + n_in14p0, __depth_world_pos.z, VERTEX.z), 0.0, 1.0);
 	}
@@ -238,7 +238,7 @@ void fragment() {
 
 // MultiplyAdd:25
 	float n_in25p1 = 0.50000;
-	float n_out25p0 = fma(n_out18p0, n_in25p1, n_out15p0);
+	float n_out25p0 = (n_out18p0 * n_in25p1) + n_out15p0;
 
 
 // FloatOp:24

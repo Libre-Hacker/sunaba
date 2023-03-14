@@ -3,7 +3,7 @@ using System;
 
 namespace Toonbox.Actors
 {
-	public partial class SBMenu : Node
+	public partial class SBMenu : Panel
 	{
 		Tree toolTree;
 		

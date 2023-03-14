@@ -80,9 +80,9 @@ namespace Toonbox.Actors
 		public Camera3D fpCamera;
 		[Export]
 		public Camera3D tpCamera;
-		[Export]
-		public Node3D model;
-		[Export]
+        [Export]
+        public PlayerModel model;
+        [Export]
 		public Node3D headPos;
 		[Export]
 		public Node3D akari;
@@ -151,7 +151,7 @@ namespace Toonbox.Actors
 		[Export]
 		public Window sbMenuWindow;
 		[Export]
-		public Panel sbMenu;
+		public SBMenu sbMenu;
 		[Export]
 		public Tree toolTree;
 
@@ -185,7 +185,6 @@ namespace Toonbox.Actors
 			}
 			fpCamera.Current = IsMultiplayerAuthority();
 			tpCamera.Current = false;
-			model.Visible = !IsMultiplayerAuthority();
 			//GetParent<World>().GetNode<Area3D>("OutOfBounds").BodyEntered += OutOfBounds;
 
 			reloadLabel.Hide();
@@ -270,7 +269,7 @@ namespace Toonbox.Actors
 			{
 				if (toolToSpawn == null)
 				{
-					//AddTool(toolToSpawn);
+					AddTool(toolToSpawn);
 					toolToSpawn = null;
 					GodotObject collider = reach.GetCollider();
 					if (collider != null)
@@ -382,10 +381,10 @@ namespace Toonbox.Actors
 			{
 				model.Visible = true;
 			}
-			else if (fpCamera.Current == true)
+			else if (fpCamera.Current == true && IsMultiplayerAuthority())
 			{
-				model.Visible = !IsMultiplayerAuthority();
-			}
+				model.Visible = false;
+            }
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -673,7 +672,7 @@ namespace Toonbox.Actors
         }
 		private void HideSBMenu()
 		{
-			sbMenu.Hide();
+			sbMenuWindow.Hide();
 			Input.MouseMode = Input.MouseModeEnum.Captured;
 		}
 

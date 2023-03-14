@@ -4,7 +4,7 @@ using Toonbox.Runtime;
 
 namespace Toonbox.Actors
 {
-	public partial class PlayerModel : Node
+	public partial class PlayerModel : Node3D
 	{
 		int faceMaterial = 1;
         int torsoMaterial = 2;

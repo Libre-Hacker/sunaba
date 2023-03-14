@@ -289,7 +289,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "headPos", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sprintingIcon", "sbMenuWindow", "sbMenu") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "headPos", "akari", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sprintingIcon", "sbMenuWindow", "sbMenu", "toolTree") groups=["player"]]
 script = ExtResource("1_xe16v")
 footSounds = Array[AudioStreamOggVorbis]([ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")])
 head = NodePath("Head")
@@ -297,6 +297,7 @@ fpCamera = NodePath("Head/Camera3D")
 tpCamera = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera")
 model = NodePath("PlayerModel")
 headPos = NodePath("PlayerModel/Akari/GeneralSkeleton/Head/HeadPos")
+akari = NodePath("PlayerModel/Akari")
 collisionShape = NodePath("CollisionShape3D")
 animationPlayer = NodePath("PlayerModel/AnimationPlayer")
 gunAnimationPlayer = NodePath("Head/AnimationPlayer")
@@ -329,6 +330,7 @@ healthCounter = NodePath("Hud/Panel/HealthBar/Label")
 sprintingIcon = NodePath("Hud/Panel/SprintingIcon")
 sbMenuWindow = NodePath("Hud/SBMenuWindow")
 sbMenu = NodePath("Hud/SBMenuWindow/SBMenu")
+toolTree = NodePath("Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_rs28k")
@@ -648,11 +650,11 @@ bus = &"Sound"
 stream = ExtResource("16_c33kq")
 bus = &"Sound"
 
-[connection signal="close_requested" from="Hud/SBMenuWindow" to="." method="hide_sb_menu"]
-[connection signal="item_activated" from="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree" to="." method="_on_tool_tree_item_activated"]
-[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
-[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
-[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+[connection signal="close_requested" from="Hud/SBMenuWindow" to="." method="HideSBMenu"]
+[connection signal="item_activated" from="Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree" to="." method="OnToolTreeItemActivated"]
+[connection signal="timeout" from="ReloadTimer" to="." method="OnReloadTimerTimeout"]
+[connection signal="timeout" from="FireTimer" to="." method="OnFireTimerTimeout"]
+[connection signal="timeout" from="WalkTimer" to="." method="OnWalkTimerTimeout"]
 
 [editable path="PlayerModel"]
 [editable path="Hud/SBMenuWindow/SBMenu"]

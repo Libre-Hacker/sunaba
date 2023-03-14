@@ -289,12 +289,6 @@ pointing/emulate_touch_from_mouse=true
 locale_filter=[1, ["en", "es", "ja"]]
 translations=PackedStringArray()
 
-[mono]
-
-export/aot/enabled=true
-export/aot/full_aot=true
-export/aot/use_interpreter=false
-
 [panku]
 
 toggle_console_action="toggle_console"

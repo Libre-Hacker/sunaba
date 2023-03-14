@@ -186,7 +186,7 @@ namespace Toonbox.Actors
 			fpCamera.Current = IsMultiplayerAuthority();
 			tpCamera.Current = false;
 			//GetParent<World>().GetNode<Area3D>("OutOfBounds").BodyEntered += OutOfBounds;
-
+            
 			reloadLabel.Hide();
 			toolPanel.Hide();
 			speed = defaultSpeed;

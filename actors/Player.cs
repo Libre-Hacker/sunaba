@@ -147,6 +147,8 @@ namespace Toonbox.Actors
 		[Export]
 		public Label healthCounter;
 		[Export]
+		public TextureRect sprintingIcon;
+		[Export]
 		public Window sbMenuWindow;
 		[Export]
 		public Panel sbMenu;
@@ -433,196 +435,242 @@ namespace Toonbox.Actors
 					}
 					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 				}
-			}
-		}
-		/*
-		 
-		 func _physics_process(delta):
-	
-	else:
-		if max_speed == default_speed and is_on_floor():
-			animation_player.play("Locomotion-Library/walk")
-			model.position.y = 0
-			$PlayerModel/Akari.position = Vector3.ZERO
-			$PlayerModel/Akari.rotation = Vector3.ZERO
-			#animation_player.rpc("play", "walk")
-			if can_play_walk_sound:
-				can_play_walk_sound = false
-				$WalkSound.stream = foot_sounds.pick_random()
-				$WalkSound.play()
-				walk_timer.start()
-			if !is_reloading and !gun_ap.current_animation == "fire":
-				gun_ap.play("walk")
-				#gun_ap.rpc("play", "walk")
-		elif max_speed == crouch_move_speed and is_on_floor():
-			animation_player.play("crouch_library/crouch_walk")
-			model.position.y = 0.175
-			#animation_player.rpc("play", "walk")
-			if can_play_walk_sound:
-				can_play_walk_sound = false
-				$WalkSound.stream = foot_sounds.pick_random()
-				$WalkSound.play()
-				walk_timer.start()
-			if !is_reloading and !gun_ap.current_animation == "fire":
-				gun_ap.play("walk")
-				#gun_ap.rpc("play", "walk")
-		elif max_speed == sprint_speed and is_on_floor():
-			animation_player.play("Locomotion-Library/run")
-			model.position.y = 0
-			$PlayerModel/Akari.position = Vector3.ZERO
-			$PlayerModel/Akari.rotation = Vector3.ZERO
-			#animation_player.rpc("play", "walk")
-			if can_play_walk_sound:
-				can_play_walk_sound = false
-				$WalkSound.stream = foot_sounds.pick_random()
-				$WalkSound.play()
-				walk_timer.start()
-			if !is_reloading and !gun_ap.current_animation == "fire":
-				gun_ap.play("run")
-				#gun_ap.rpc("play", "walk")
-		elif !is_on_floor():
-			animation_player.play("Locomotion-Library/jump")
-			model.position.y = 0
-			$PlayerModel/Akari.position = Vector3.ZERO
-			$PlayerModel/Akari.rotation = Vector3.ZERO
-			#animation_player.rpc("play", "jump")
-			if !is_reloading and !gun_ap.current_animation == "fire":
-				gun_ap.play("idle")
-				#gun_ap.rpc("play", "idle")
-	
-	if is_multiplayer_authority() or !Global.isNetworkedGame:
-		max_speed = default_speed
-		walk_timer.wait_time = default_walk_sound_time
-		var input_vector = get_input_vector()
-		var direction = get_direction(input_vector)
-		jump()
-		vel = velocity
-		
-		$Hud/Panel/HealthBar.value = health
-		$Hud/Panel.theme = ThemeManager.theme
-		$Hud/ToolPanel.theme = ThemeManager.theme
-		crosshair.theme = ThemeManager.theme
-		sb_menu_window.theme = ThemeManager.theme
-		tool_ammo_bar.get_node("Label").text = var_to_str(ammo) + " / " + var_to_str(max_ammo)
-		tool_ammo_bar.value = ammo
-		tool_ammo_bar.max_value = max_ammo
-		
-		$Hud/Panel/SprintingIcon.hide()
-		
-		if Input.is_action_pressed("sprint"): #and is_on_floor():
-			max_speed = sprint_speed
-			walk_timer.wait_time = sprint_walk_sound_time
-			$Hud/Panel/SprintingIcon.show()
-		
-		if Input.is_action_pressed("crouch"):
-			coll_shape.shape.height = crouch_height #-= crouch_speed * delta
-			#head.position.y = head_crouch_height
-			max_speed = crouch_move_speed
-			walk_timer.wait_time = 0.8
-			model.position.y = 0.175
-		else:
-			coll_shape.shape.height = default_height#crouch_speed * delta 
-			#head.position.y = head_height
-			model.position.y = 0
-			$PlayerModel/Akari.position = Vector3.ZERO
-			$PlayerModel/Akari.rotation = Vector3.ZERO
-		
-		#coll_shape.shape.height = clamp(coll_shape.shape.height, 0.8, 1.497)
-		
-		apply_movement(direction, delta)
-		apply_gravity(delta)
-		apply_friction(direction, delta)
-		apply_controller_rotation()
-		set_velocity(velocity)
-		# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap_vector`
-		set_up_direction(Vector3.UP)
-		set_floor_stop_on_slope_enabled(true)
-		set_max_slides(4)
-		set_floor_max_angle(.7853)
-		move_and_slide()
-		velocity = velocity
-		vel = velocity
-	
-	if is_on_floor():
-		times_jumped = 0
-	
-	hand.global_transform.origin = hand_loc.global_transform.origin
-	hand.global_rotation = hand_loc.global_rotation
-	#hand.rotation.y = lerp_angle(hand.rotation.y, rotation.y, SWAY * delta)
-	#hand.rotation.x = lerp_angle(hand.rotation.x, head.rotation.x, VSWAY * delta)
-	$ReloadSound.global_transform.origin = hand_loc.global_transform.origin
-	$PickupSound.global_transform.origin = hand_loc.global_transform.origin
-	
-	if hand.get_child_count() > 0:
-		if hand.get_child(0) != null:
-			#if hand.get_child(0).get_name() == "Paintball Gun":
-				#tool_to_drop = pb_gun.instantiate()
-			#elif hand.get_child(0).get_name() == "Paintball Pistol":
-				#tool_to_drop = pb_pistol.instantiate()
-			tool_to_drop = hand.get_child(0).toolObjectPath
-		else:
-			tool_to_drop = null
-	else:
-		tool_to_drop = null
-	
-	if (!is_multiplayer_authority() and Global.isNetworkedGame) or Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-		return
-	
-	if !Global.gamePaused:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		crosshair.show()
-	
-	
-	
-	
-	
-	
-	if reach.is_colliding():
-		if "wp" in reach.get_collider().get_name() or "tl" in reach.get_collider().get_name():
-			tool_to_spawn = reach.get_collider().toolPath
-		else:
-			tool_to_spawn = null
-	else:
-		tool_to_spawn = null
-	
-	
-	
-	if weapon_type == "Semi":
-		if Input.is_action_just_pressed("action_button"):
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					if !has_fired:
-							_fire()
-		elif Input.is_action_just_released("action_button"):
-			has_fired = false
-	elif weapon_type == "Auto":
-		if Input.is_action_pressed("action_button"):
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					if !has_fired:
-							_fire()
-	elif weapon_type == "Shotgun":
-		if Input.is_action_just_pressed("action_button"):
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					if !has_fired:
-							_fire_shotgun()
-	elif weapon_type == "Spray":
-		if Input.is_action_pressed("action_button"):
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					if !has_fired:
-							_spray()
-	
-	if Global.gameMode == "Sandbox":
-		if Input.is_action_just_pressed("menu2") and !sb_menu_window.visible:
-			sb_menu_window.popup_centered()
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		elif Input.is_action_just_pressed("menu2"):
-			hide_sb_menu()
-		 
-		 */
+				else if (speed == crouchMoveSpeed && IsOnFloor())
+                {
+                    animationPlayer.Play("crouch_library/crouch_walk");
+                    Vector3 modelPosition = model.Position;
+                    modelPosition.Y = (float)0.175;
+                    model.Position = modelPosition;
+                    akari.Position = Vector3.Zero;
+                    akari.Rotation = Vector3.Zero;
+                    if (canPlayWalkSound)
+                    {
+                        walkSound.Stream = footSounds.PickRandom();
+                        walkSound.Play();
+                        walkTimer.Start();
+                        canPlayWalkSound = false;
+                    }
+                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+                }
+				else if (speed == sprintSpeed && IsOnFloor())
+                {
+                    animationPlayer.Play("Locomotion-Library/run");
+                    Vector3 modelPosition = model.Position;
+                    modelPosition.Y = 0;
+                    model.Position = modelPosition;
+                    akari.Position = Vector3.Zero;
+                    akari.Rotation = Vector3.Zero;
+                    if (canPlayWalkSound)
+                    {
+                        walkSound.Stream = footSounds.PickRandom();
+                        walkSound.Play();
+                        walkTimer.Start();
+                        canPlayWalkSound = false;
+                    }
+                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle_2");
+                }
+				else if (!IsOnFloor())
+				{
+					animationPlayer.Play("Locomotion-Library/jump");
+                    Vector3 modelPosition = model.Position;
+                    modelPosition.Y = 0;
+                    model.Position = modelPosition;
+                    akari.Position = Vector3.Zero;
+                    akari.Rotation = Vector3.Zero;
+                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+                }
+            }
 
+			if (IsMultiplayerAuthority() || !global.isNetworkedGame)
+			{
+				speed = defaultSpeed;
+				walkTimer.WaitTime = defaultWalkSoundTime;
+				Vector3 InputVector = GetInputVector();
+				Vector3 Direction = GetDirection(InputVector);
+				Jump();
+				vel = Velocity;
+
+				healthBar.Value = health;
+
+				ThemeManager themeManager = GetNode<ThemeManager>("/root/ThemeManager");
+				playerPanel.Theme = themeManager.theme;
+				toolPanel.Theme = themeManager.theme;
+				crosshair.Theme = themeManager.theme;
+				sbMenuWindow.Theme = themeManager.theme;
+				toolAmmoCounter.Text = ammo.ToString() + "/" + maxAmmo.ToString();
+				toolAmmoBar.Value = ammo;
+				toolAmmoBar.MaxValue = maxAmmo;
+
+				sprintingIcon.Hide();
+
+				if (Input.IsActionPressed("sprint"))
+				{
+					speed = sprintSpeed;
+					walkTimer.WaitTime = sprintWalkSoundTime;
+					sprintingIcon.Show();
+				}
+
+				if (Input.IsActionPressed("crouch"))
+				{
+					Shape3D shape3D = collisionShape.Shape;
+					if (shape3D is CapsuleShape3D capsule)
+					{
+						capsule.Height = (float)crouchHeight;
+					}
+
+					speed = crouchMoveSpeed;
+					walkTimer.WaitTime = (float)0.8;
+                    Vector3 modelPosition = model.Position;
+                    modelPosition.Y = (float)0.175;
+                    model.Position = modelPosition;
+                }
+				else
+                {
+                    Shape3D shape3D = collisionShape.Shape;
+                    if (shape3D is CapsuleShape3D capsule)
+                    {
+                        capsule.Height = (float)defaultHeight;
+                    }
+                    Vector3 modelPosition = model.Position;
+                    modelPosition.Y = (float)0.175;
+                    model.Position = modelPosition;
+                }
+
+				ApplyMovement(Direction, delta);
+				ApplyGravity(delta);
+				ApplyFriction(Direction, delta);
+				//ApplyControllerRotation();
+
+				UpDirection = Vector3.Up;
+				FloorStopOnSlope = true;
+                MaxSlides = 4;
+				FloorMaxAngle = (float).7853;
+				MoveAndSlide();
+				vel = Velocity;
+            }
+
+			if (IsOnFloor())
+			{
+				timesJumped = 0;
+			}
+
+			hand.GlobalPosition = handLoc.GlobalPosition;
+			hand.GlobalRotation = handLoc.GlobalRotation;
+			reloadSound.GlobalPosition = handLoc.GlobalPosition;
+			pickupSound.GlobalPosition = handLoc.GlobalPosition;
+
+			if ((!IsMultiplayerAuthority() && global.isNetworkedGame) || Input.MouseMode == Input.MouseModeEnum.Visible) return;
+			
+			if (!global.gamePaused)
+			{
+				Input.MouseMode = Input.MouseModeEnum.Captured;
+				crosshair.Show();
+			}
+
+			if (reach.IsColliding())
+			{
+				if (reach.GetCollider() is ToolObject toolObject)
+				{
+					String name = toolObject.Name.ToString();
+					toolToSpawn = toolObject.toolPath;
+				}
+				else
+				{
+					toolToSpawn = null;
+				}
+			}
+			else
+			{
+                toolToSpawn = null;
+            }
+
+			if (toolType == "Semi")
+			{
+				if (Input.IsActionJustPressed("action_button"))
+				{
+					if (hand.GetChildCount() > 0)
+					{
+						if (hand.GetChild(0) != null)
+						{
+							if (!hasFired)
+							{
+								Fire();
+							}
+						}
+					}
+				}
+				else if (Input.IsActionJustReleased("action_button"))
+				{
+					hasFired = false;
+				}
+			}
+			else if (toolType == "Auto")
+            {
+                if (Input.IsActionPressed("action_button"))
+                {
+                    if (hand.GetChildCount() > 0)
+                    {
+                        if (hand.GetChild(0) != null)
+                        {
+                            if (!hasFired)
+                            {
+                                Fire();
+                            }
+                        }
+                    }
+                }
+            }
+            else if (toolType == "Shotgun")
+            {
+                if (Input.IsActionJustPressed("action_button"))
+                {
+                    if (hand.GetChildCount() > 0)
+                    {
+                        if (hand.GetChild(0) != null)
+                        {
+                            if (!hasFired)
+                            {
+								FireShotgun();
+                            }
+                        }
+                    }
+                }
+                else if (Input.IsActionJustReleased("action_button"))
+                {
+                    hasFired = false;
+                }
+            }
+			else if (toolType == "Spray")
+            {
+                if (Input.IsActionPressed("action_button"))
+                {
+                    if (hand.GetChildCount() > 0)
+                    {
+                        if (hand.GetChild(0) != null)
+                        {
+                            if (!hasFired)
+                            {
+                                Spray();
+                            }
+                        }
+                    }
+                }
+            }
+
+			if (global.gameMode == "Sandbox")
+			{
+				if (Input.IsActionJustReleased("menu2") && !sbMenuWindow.Visible)
+				{
+					sbMenuWindow.PopupCentered();
+					Input.MouseMode = Input.MouseModeEnum.Visible;
+				}
+				else if (Input.IsActionJustReleased("menu2") && sbMenuWindow.Visible)
+				{
+					HideSBMenu();
+				}
+
+            }
+        }
 		private void HideSBMenu()
 		{
 			sbMenu.Hide();
@@ -754,6 +802,7 @@ namespace Toonbox.Actors
 			}
 
 			GD.Print("dead");
+			QueueFree();
 		}
 
 		private void Fire()
@@ -769,10 +818,6 @@ namespace Toonbox.Actors
 					var target = aimcast.GetCollider();
 					if (target != null)
 					{
-						/*if (target is Player player)
-						{
-							player.health -= damage;
-						}*/
 						if (target is Player player)
 						{
 							int id = player.Name.ToString().ToInt();

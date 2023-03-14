@@ -289,13 +289,14 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "headPos", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sbMenuWindow", "sbMenu") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "headPos", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sprintingIcon", "sbMenuWindow", "sbMenu") groups=["player"]]
 script = ExtResource("1_xe16v")
 footSounds = Array[AudioStreamOggVorbis]([ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")])
 head = NodePath("Head")
 fpCamera = NodePath("Head/Camera3D")
 tpCamera = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera")
 model = NodePath("PlayerModel")
+headPos = NodePath("PlayerModel/Akari/GeneralSkeleton/Head/HeadPos")
 collisionShape = NodePath("CollisionShape3D")
 animationPlayer = NodePath("PlayerModel/AnimationPlayer")
 gunAnimationPlayer = NodePath("Head/AnimationPlayer")
@@ -315,7 +316,6 @@ runSound = NodePath("RunSound")
 reloadSound = NodePath("ReloadSound")
 pickupSound = NodePath("PickupSound")
 jumpSound = NodePath("JumpSound")
-headPos = NodePath("PlayerModel/Akari/GeneralSkeleton/Head/HeadPos")
 crosshair = NodePath("Hud/Crosshair")
 reloadLabel = NodePath("Hud/Crosshair/Label")
 toolPanel = NodePath("Hud/ToolPanel")
@@ -326,6 +326,7 @@ playerPanel = NodePath("Hud/Panel")
 playerName = NodePath("Hud/ToolPanel/Label")
 healthBar = NodePath("Hud/Panel/HealthBar")
 healthCounter = NodePath("Hud/Panel/HealthBar/Label")
+sprintingIcon = NodePath("Hud/Panel/SprintingIcon")
 sbMenuWindow = NodePath("Hud/SBMenuWindow")
 sbMenu = NodePath("Hud/SBMenuWindow/SBMenu")
 

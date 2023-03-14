@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 using Toonbox.Runtime;
+using Toonbox.Tools;
 
 namespace Toonbox.Actors
 {
@@ -63,7 +64,7 @@ namespace Toonbox.Actors
 		private int spread = 25;
 		private bool isReloading;
 		private bool hasFired = false;
-		private String weaponType = "Semi";
+		private String toolType = "Semi";
 		private Node3D muzzle;
 		private bool canPlayWalkSound = true;
 		private int timesJumped = 0;
@@ -81,7 +82,11 @@ namespace Toonbox.Actors
 		public Camera3D tpCamera;
 		[Export]
 		public Node3D model;
-		[Export]
+        [Export]
+        public Node3D headPos;
+		[Export] 
+		public Node3D akari;
+        [Export]
 		public CollisionShape3D collisionShape;
 		[Export]
 		public AnimationPlayer animationPlayer;
@@ -119,7 +124,6 @@ namespace Toonbox.Actors
         public AudioStreamPlayer3D pickupSound;
         [Export]
         public AudioStreamPlayer3D jumpSound;
-
 
         // HUD Related Nodes
         [Export]
@@ -189,7 +193,7 @@ namespace Toonbox.Actors
         {
 			if (!IsMultiplayerAuthority() && global.isNetworkedGame) return;
 
-			if (@event.IsActionPressed("pause"))
+			if (Input.IsActionJustPressed("pause"))
 			{
 				if (Input.MouseMode == Input.MouseModeEnum.Captured)
 				{
@@ -205,7 +209,7 @@ namespace Toonbox.Actors
 				}
 			}
 
-			if (@event.IsActionPressed("view") && tpCamera.Current == true)
+			if (Input.IsActionJustPressed("view") && tpCamera.Current == true)
 			{
 				if (!viewMode)
 				{
@@ -240,7 +244,7 @@ namespace Toonbox.Actors
 				}
 			}
 
-			if (@event.IsActionPressed("camera_toggle"))
+			if (Input.IsActionJustPressed("camera_toggle"))
 			{
 				if (fpCamera.Current == true)
 				{
@@ -258,7 +262,7 @@ namespace Toonbox.Actors
                 }
 			}
 
-			if (@event.IsActionPressed("interact"))
+			if (Input.IsActionJustPressed("interact"))
 			{
 				if (toolToSpawn == null)
 				{
@@ -274,434 +278,165 @@ namespace Toonbox.Actors
 					}
 				}
 			}
+
+			if (Input.IsActionJustPressed("hands"))
+			{
+				if (hand.GetChildCount() > 0)
+				{
+					if (head.GetChild(0) != null)
+					{
+                        head.GetChild(0).QueueFree();
+						if (IsMultiplayerAuthority() || !global.isNetworkedGame)
+						{
+							toolPanel.Hide();
+						}
+						pickupSound.Play();
+						ammo = 1;
+						maxAmmo = 1;
+						damage = 0;
+						toolType = "";
+						currentTool = 0;
+                    }
+				}
+			}
+			else if (Input.IsActionJustPressed("tool1") && tool1 != null)
+			{
+				Equip(tool1);
+				currentTool = 1;
+			}
+            else if (Input.IsActionJustPressed("tool2") && tool2 != null)
+            {
+                Equip(tool2);
+                currentTool = 2;
+            }
+            else if (Input.IsActionJustPressed("tool3") && tool3 != null)
+            {
+                Equip(tool3);
+                currentTool = 3;
+            }
+            else if (Input.IsActionJustPressed("tool4") && tool4 != null)
+            {
+                Equip(tool4);
+                currentTool = 4;
+            }
+
+            if ((Input.IsActionJustPressed("reload") && ammo < maxAmmo) || ammo == 0)
+			{
+				if (isReloading) return;
+				isReloading = true;
+				reloadSound.Play();
+				reloadTimer.Start();
+				reloadLabel.Show();
+				gunAnimationPlayer.Play("reload");
+			}
         }
 
-        /*
-		 func _input(event):
-	
-	if Input.is_action_just_pressed("interact"):
-		if tool_to_spawn != null:
-			add_tool(tool_to_spawn)
-			tool_to_spawn = null
-			reach.get_collider().queue_free()
-			#if hand.get_child_count() > 0:
-				#if hand.get_child(0) != null:
-					#equip(tool_to_spawn, tool_to_drop)
-					#rpc("equip", tool_to_spawn, tool_to_drop)
-			#else:
-				#equip(tool_to_spawn)
-				#rpc("equip", tool_to_spawn)
-	if Input.is_action_just_pressed("hands"):
-		if hand.get_child_count() > 0:
-			if hand.get_child(0) != null:
-				hand.get_child(0).queue_free()
-				if is_multiplayer_authority() or !Global.isNetworkedGame:
-					$Hud/ToolPanel.hide()
-				$PickupSound.play()
-				ammo = 1
-				max_ammo = 1
-				damage = 0
-				weapon_type = ""
-				current_tool = 0
-	elif Input.is_action_just_pressed("tool1") and tool1 != null:
-		equip(tool1)
-		rpc("equip", tool1)
-		current_tool = 1
-	elif Input.is_action_just_pressed("tool2") and tool2 != null:
-		equip(tool2)
-		rpc("equip", tool2)
-		current_tool = 2
-	elif Input.is_action_just_pressed("tool3") and tool3 != null:
-		equip(tool3)
-		rpc("equip", tool3)
-		current_tool = 3
-	elif Input.is_action_just_pressed("tool4") and tool4 != null:
-		equip(tool4)
-		rpc("equip", tool4)
-		current_tool = 4
-	
-	if Input.is_action_just_pressed("last_tool") and current_tool != 0:
-		current_tool - 1
-		if current_tool == 0:
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					hand.get_child(0).queue_free()
-					if is_multiplayer_authority() or !Global.isNetworkedGame:
-						$Hud/ToolPanel.hide()
-					$PickupSound.play()
-					ammo = 1
-					max_ammo = 1
-					damage = 0
-					weapon_type = ""
-		elif current_tool == 1 and tool1 != null:
-			equip(tool1)
-			rpc("equip", tool1)
-		elif current_tool == 2 and tool2 != null:
-			equip(tool2)
-			rpc("equip", tool2)
-		elif current_tool == 3 and tool3 != null:
-			equip(tool3)
-			rpc("equip", tool3)
-		elif current_tool == 4 and tool4 != null:
-			equip(tool4)
-			rpc("equip", tool4)
-	if Input.is_action_just_pressed("next_tool") and current_tool != 4:
-		current_tool + 1
-		if current_tool == 0:
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					hand.get_child(0).queue_free()
-					if is_multiplayer_authority() or !Global.isNetworkedGame:
-						$Hud/ToolPanel.hide()
-					$PickupSound.play()
-					ammo = 1
-					max_ammo = 1
-					damage = 0
-					weapon_type = ""
-		elif current_tool == 1 and tool1 != null:
-			equip(tool1)
-			rpc("equip", tool1)
-		elif current_tool == 2 and tool2 != null:
-			equip(tool2)
-			rpc("equip", tool2)
-		elif current_tool == 3 and tool3 != null:
-			equip(tool3)
-			rpc("equip", tool3)
-		elif current_tool == 4 and tool4 != null:
-			equip(tool4)
-			rpc("equip", tool4)
-		
-	
-	
-	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:
-		if is_reloading: return
-		is_reloading = true
-		$ReloadSound.play()
-		#$ReloadSound.rpc("play")
-		$ReloadTimer.start()
-		reload_label.show()
-		gun_ap.play("reload")
-		#gun_ap.rpc("play", "reload")
-
-		 */
+		private void Equip(String t)
+		{
+			PackedScene toolToLoad = GD.Load<PackedScene>(t);
+			Tool tool2Spawn = toolToLoad.Instantiate<Tool>();
+            if (hand.GetChildCount() > 0)
+            {
+                if (head.GetChild(0) != null) head.GetChild(0).QueueFree();
+            }
+			toolLabel.Text = tool2Spawn.Name;
+			hand.AddChild(tool2Spawn);
+			ammo = tool2Spawn.maxAmmo;
+			maxAmmo = tool2Spawn.maxAmmo;
+			speed = tool2Spawn.spread;
+			GD.Randomize();
+            foreach (RayCast3D ray in fpRayContainer.GetChildren())
+			{
+				Vector3 targetPosition = ray.TargetPosition;
+                targetPosition.X = GD.RandRange(spread, -spread);
+                targetPosition.Y = GD.RandRange(spread, -spread);
+				ray.TargetPosition = targetPosition;
+            }
+			fireTimer.WaitTime = tool2Spawn.cooldownTime;
+			damage = tool2Spawn.damage;
+			toolType = tool2Spawn.toolType;
+            tool2Spawn.Rotation = handLoc.Rotation;
+			if (IsMultiplayerAuthority() || !global.isNetworkedGame) toolPanel.Show();
+            pickupSound.Play();
+        }
 
         // Called every frame. 'delta' is the elapsed time since the previous frame.
         public override void _Process(double delta)
 		{
+            if (IsMultiplayerAuthority() || !global.isNetworkedGame)
+            {
+                if (Input.MouseMode == Input.MouseModeEnum.Captured)
+                {
+                    crosshair.Show();
+                }
+                else
+                {
+                    crosshair.Hide();
+                }
+            }
+            if (tpCamera.Current == true)
+            {
+                model.Visible = true;
+            }
+            else if (fpCamera.Current == true)
+            {
+                model.Visible = !IsMultiplayerAuthority();
+            }
 		}
 
+        public override void _PhysicsProcess(double delta)
+        {
+            if (!viewMode)
+			{
+				head.GlobalPosition = headPos.GlobalPosition;
+				Vector3 headRotation = head.GlobalRotation;
+				headRotation.Y = headPos.GlobalRotation.Y;
+                headRotation.Z = headPos.GlobalRotation.Z;
+            }
 
-	}
-}
-
-/*
-
-var default_height = 1.497
-var crouch_height = 0.8
-var head_height = 1.111
-var head_crouch_height = 0.866
-var max_speed = default_speed
-var health = 100
-var reach = null
-var aimcast = null
-var ammo = 25
-var max_ammo = 25
-var damage = 100
-var spread = 25
-var is_reloading : bool
-var has_fired : bool = false
-var weapon_type : String = ""
-var muzzle = null
-var can_play_walk_sound : bool = true
-var times_jumped = 0
-const SWAY = 50
-const VSWAY = 45
-var view_mode : bool = false
-
-var player_model : String
-
-@onready var head = $Head
-@onready var fp_camera = $Head/Camera3D
-@onready var tp_camera = $Head/SpringArm3D/SpringArm3D/TPCamera
-@onready var model = $PlayerModel
-@onready var coll_shape = $CollisionShape3D
-#@onready var arms_model = $Head/arms
-@onready var animation_player = $PlayerModel/AnimationPlayer
-@onready var gun_ap = $Head/AnimationPlayer
-@onready var hand_loc = $Head/HandLoc
-@onready var hand = $Head/Hand
-@onready var fp_reach = $Head/Camera3D/Reach
-@onready var tp_reach = $Head/SpringArm3D/SpringArm3D/TPCamera/Reach
-@onready var fp_aimcast = $Head/Camera3D/AimCast
-@onready var tp_aimcast = $Head/SpringArm3D/SpringArm3D/TPCamera/AimCast
-@onready var fp_ray_container = $Head/Camera3D/RayContainer
-@onready var walk_timer = $WalkTimer
-
-# Hud Related Nodes
-@onready var crosshair = $Hud/Crosshair
-@onready var reload_label = $Hud/Crosshair/Label 
-@onready var tool_label = $Hud/ToolPanel/Label
-@onready var tool_ammo_bar = $Hud/ToolPanel/ProgressBar
-@onready var health_bar = $Hud/Panel/HealthBar
-@onready var health_counter = $Hud/Panel/HealthBar/Label 
-@onready var sb_menu_window = $Hud/SBMenuWindow
-@onready var sb_menu = $Hud/SBMenuWindow/SBMenu
-
-
-#@onready var pb_gun_hr = preload("res://weapons/paintball_gun_hr.tscn")
-#@onready var pb_gun = preload("res://entities/wp_pbgun.tscn")
-#@onready var pb_pistol_hr = preload("res://weapons/paintball_pistol_hr.tscn")
-#@onready var pb_pistol = preload("res://entities/wp_pistol.tscn")
-
-
-func _enter_tree(): if Global.isNetworkedGame: set_multiplayer_authority(str(name).to_int())
-
-func _ready():
-	if is_multiplayer_authority() or !Global.isNetworkedGame:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		reach = fp_reach
-		aimcast = fp_aimcast
-		if str(name) == var_to_str(multiplayer.get_unique_id()):
-			$Hud/Panel/Label.text = "Player " + str(name)
-		$Hud/Crosshair.show()
-		$Hud/Panel.show()
-		$Hud/ToolPanel.show()
-		#Console.register_env("player", self)
-	fp_camera.current = is_multiplayer_authority()
-	tp_camera.current = false
-	model.visible = !is_multiplayer_authority()
-	#arms_model.visible = is_multiplayer_authority()
-	get_parent().get_node("OutOfBounds").connect("body_entered", Callable(self, "out_of_bounds"))
+			if (((Velocity.Length() == 0) || (vel.Length() == 0)) && !Input.IsActionPressed("crouch"))
+			{
+				animationPlayer.Play("Locomotion-Library/idle1");
+				Vector3 modelPosition = model.Position;
+				modelPosition.Y = 0;
+				model.Position = modelPosition;
+				akari.Position = Vector3.Zero;
+				akari.Rotation = Vector3.Zero;
+				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+			}
+			else if (((Velocity.Length() == 0) || (vel.Length() == 0)) && Input.IsActionPressed("crouch"))
+			{
+				animationPlayer.Play("crouch_library/crouch_idle");
+				Vector3 modelPosition = model.Position;
+				modelPosition.Y = (float)0.175;
+				model.Position = modelPosition;
+				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+			}
+			else
+			{
+                if (speed == defaultSpeed && IsOnFloor())
+                {
+                    animationPlayer.Play("Locomotion-Library/walk");
+                    Vector3 modelPosition = model.Position;
+                    modelPosition.Y = 0;
+                    model.Position = modelPosition;
+                    akari.Position = Vector3.Zero;
+                    akari.Rotation = Vector3.Zero;
+					if (canPlayWalkSound)
+					{
+						walkSound.Stream = footSounds.PickRandom();
+						walkSound.Play();
+						walkTimer.Start();
+						canPlayWalkSound = false;
+					}
+                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+                }
+            }
+        }
+        /*
+		 
+		 func _physics_process(delta):
 	
-	reload_label.hide()
-	$Hud/ToolPanel.hide()
-	max_speed = default_speed
-	#hand.top_level = true
-
-func _input(event):
-	if !is_multiplayer_authority() and Global.isNetworkedGame:
-		return
-	
-	#if event.is_action_pressed("action_button") && get_parent().mouse_over_ui == false: 
-		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	
-	if event.is_action_pressed("pause"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			crosshair.hide()
-			Global.gamePaused = true
-		else: 
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			crosshair.show()
-			Global.gamePaused = false
-	
-	if Input.is_action_just_pressed("view") and tp_camera.current == true:
-		if !view_mode:
-			view_mode = true
-		else:
-			view_mode = false
-			head.global_rotation = Vector3.ZERO
-	
-	
-	if (event is InputEventMouseMotion) and (Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED):
-		if !view_mode:
-			var mouse_axis : Vector2 = event.relative if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED else Vector2.ZERO
-			rotation.y -= mouse_axis.x * mouse_sensitivity * .001
-			head.rotation.x = clamp(head.rotation.x - mouse_axis.y * mouse_sensitivity * .001, -1.5, 1.5)
-		else :
-			var mouse_axis : Vector2 = event.relative if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED else Vector2.ZERO
-			head.rotation.y -= mouse_axis.x * mouse_sensitivity * .001
-			head.rotation.x = clamp(head.rotation.x - mouse_axis.y * mouse_sensitivity * .001, -1.5, 1.5)
-			
-	
-	if Input.is_action_just_pressed("camera_toggle"):
-		if fp_camera.current == true:
-			fp_camera.current = false
-			tp_camera.current = true
-			#arms_model.visibtle = false
-			reach = tp_reach
-			aimcast = tp_aimcast
-		elif tp_camera.current == true:
-			fp_camera.current = true
-			tp_camera.current = false
-			#arms_model.visible = is_multiplayer_authority()
-			reach = fp_reach
-			aimcast = fp_aimcast
-	
-	if Input.is_action_just_pressed("interact"):
-		if tool_to_spawn != null:
-			add_tool(tool_to_spawn)
-			tool_to_spawn = null
-			reach.get_collider().queue_free()
-			#if hand.get_child_count() > 0:
-				#if hand.get_child(0) != null:
-					#equip(tool_to_spawn, tool_to_drop)
-					#rpc("equip", tool_to_spawn, tool_to_drop)
-			#else:
-				#equip(tool_to_spawn)
-				#rpc("equip", tool_to_spawn)
-	if Input.is_action_just_pressed("hands"):
-		if hand.get_child_count() > 0:
-			if hand.get_child(0) != null:
-				hand.get_child(0).queue_free()
-				if is_multiplayer_authority() or !Global.isNetworkedGame:
-					$Hud/ToolPanel.hide()
-				$PickupSound.play()
-				ammo = 1
-				max_ammo = 1
-				damage = 0
-				weapon_type = ""
-				current_tool = 0
-	elif Input.is_action_just_pressed("tool1") and tool1 != null:
-		equip(tool1)
-		rpc("equip", tool1)
-		current_tool = 1
-	elif Input.is_action_just_pressed("tool2") and tool2 != null:
-		equip(tool2)
-		rpc("equip", tool2)
-		current_tool = 2
-	elif Input.is_action_just_pressed("tool3") and tool3 != null:
-		equip(tool3)
-		rpc("equip", tool3)
-		current_tool = 3
-	elif Input.is_action_just_pressed("tool4") and tool4 != null:
-		equip(tool4)
-		rpc("equip", tool4)
-		current_tool = 4
-	
-	if Input.is_action_just_pressed("last_tool") and current_tool != 0:
-		current_tool - 1
-		if current_tool == 0:
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					hand.get_child(0).queue_free()
-					if is_multiplayer_authority() or !Global.isNetworkedGame:
-						$Hud/ToolPanel.hide()
-					$PickupSound.play()
-					ammo = 1
-					max_ammo = 1
-					damage = 0
-					weapon_type = ""
-		elif current_tool == 1 and tool1 != null:
-			equip(tool1)
-			rpc("equip", tool1)
-		elif current_tool == 2 and tool2 != null:
-			equip(tool2)
-			rpc("equip", tool2)
-		elif current_tool == 3 and tool3 != null:
-			equip(tool3)
-			rpc("equip", tool3)
-		elif current_tool == 4 and tool4 != null:
-			equip(tool4)
-			rpc("equip", tool4)
-	if Input.is_action_just_pressed("next_tool") and current_tool != 4:
-		current_tool + 1
-		if current_tool == 0:
-			if hand.get_child_count() > 0:
-				if hand.get_child(0) != null:
-					hand.get_child(0).queue_free()
-					if is_multiplayer_authority() or !Global.isNetworkedGame:
-						$Hud/ToolPanel.hide()
-					$PickupSound.play()
-					ammo = 1
-					max_ammo = 1
-					damage = 0
-					weapon_type = ""
-		elif current_tool == 1 and tool1 != null:
-			equip(tool1)
-			rpc("equip", tool1)
-		elif current_tool == 2 and tool2 != null:
-			equip(tool2)
-			rpc("equip", tool2)
-		elif current_tool == 3 and tool3 != null:
-			equip(tool3)
-			rpc("equip", tool3)
-		elif current_tool == 4 and tool4 != null:
-			equip(tool4)
-			rpc("equip", tool4)
-		
-	
-	
-	if (Input.is_action_just_pressed("reload") and ammo < max_ammo ) or ammo == 0:
-		if is_reloading: return
-		is_reloading = true
-		$ReloadSound.play()
-		#$ReloadSound.rpc("play")
-		$ReloadTimer.start()
-		reload_label.show()
-		gun_ap.play("reload")
-		#gun_ap.rpc("play", "reload")
-	
-@rpc("any_peer")
-func equip(t2, t1 = null):
-	var ttd
-	if t1 != null:
-		ttd = load(t1).instantiate()
-	var tts = load(t2).instantiate()
-	if hand.get_child_count() > 0:
-		if hand.get_child(0) != null:
-			if t1 != null:
-				get_parent().add_child(ttd)
-				ttd.global_transform = hand_loc.global_transform
-				ttd.dropped = true
-			hand.get_child(0).queue_free()
-	tool_label.text = tts.get_name()
-	hand.add_child(tts)
-	ammo = tts.maxAmmo
-	max_ammo = tts.maxAmmo
-	spread = tts.spread
-	randomize()
-	for r in fp_ray_container.get_children():
-		r.target_position.x = randi_range(spread, -spread)
-		r.target_position.y = randi_range(spread, -spread)
-	$FireTimer.wait_time = tts.cooldownTime
-	damage = tts.damage
-	weapon_type = tts.toolType
-	tts.rotation = hand_loc.rotation
-	muzzle = tts.get_node("Muzzle")
-	if is_multiplayer_authority() or !Global.isNetworkedGame:
-		$Hud/ToolPanel.show()
-	$PickupSound.play()
-
-func _process(_delta):
-	if is_multiplayer_authority() or !Global.isNetworkedGame:
-		player_model = Global.playerModel
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
-			crosshair.show()
-		else: 
-			crosshair.hide()
-	if tp_camera.current == true:
-		model.visible = true
-	elif fp_camera.current == true:
-		model.visible = !is_multiplayer_authority()
-		
-
-func _physics_process(delta):
-	if !view_mode:
-		var head_pos = $PlayerModel/Akari/GeneralSkeleton/Head/HeadPos
-		head.global_position = head_pos.global_position
-		head.global_rotation.y = head_pos.global_rotation.y
-		head.global_rotation.z = head_pos.global_rotation.z
-	#$Male/Akari/GeneralSkeleton.get_bone_pose_rotation($Male/Akari/GeneralSkeleton.find_bone("Head")).x = head.global_rotation.x
-	#$Female/Akari/GeneralSkeleton.get_bone_pose_rotation($Female/Akari/GeneralSkeleton.find_bone("Head")).x = head.global_rotation.x
-	
-	if ((velocity.length() == 0) or (vel.length() == 0)) and !Input.is_action_pressed("crouch"):
-		animation_player.play("Locomotion-Library/idle1")
-		model.position.y = 0
-		$PlayerModel/Akari.position = Vector3.ZERO
-		$PlayerModel/Akari.rotation = Vector3.ZERO
-		#animation_player.rpc("play", "idle")
-		if !is_reloading and !gun_ap.current_animation == "fire":
-			gun_ap.play("idle")
-			#gun_ap.rpc("play", "idle")
-	elif ((velocity.length() == 0) or (vel.length() == 0)) and Input.is_action_pressed("crouch"):
-		animation_player.play("crouch_library/crouch_idle")
-		model.position.y = 0.175
-		#animation_player.rpc("play", "idle")
-		if !is_reloading and !gun_ap.current_animation == "fire":
-			gun_ap.play("idle")
-			#gun_ap.rpc("play", "idle")
 	else:
 		if max_speed == default_speed and is_on_floor():
 			animation_player.play("Locomotion-Library/walk")
@@ -883,22 +618,42 @@ func _physics_process(delta):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		elif Input.is_action_just_pressed("menu2"):
 			hide_sb_menu()
-			
+		 
+		 */
 
-func hide_sb_menu():
-	sb_menu_window.hide()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		private void HideSBMenu()
+		{
+			sbMenu.Hide();
+			Input.MouseMode = Input.MouseModeEnum.Captured;
+		}
 
-func get_input_vector():
-	var input_vector = Vector3.ZERO
-	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_vector.z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
-	return input_vector if input_vector.length() > 1 else input_vector
+		private Vector3 GetInputVector()
+		{
+			Vector3 InputVector = Vector3.Zero;
+			InputVector.X = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
+            InputVector.Z = Input.GetActionStrength("move_backward") - Input.GetActionStrength("move_forward");
+			if (InputVector.Length() > 1)
+			{
+				return InputVector;
+			}
+			else
+			{
+				return InputVector;
+			}
+        }
 
-func get_direction(input_vector):
-	var direction = Vector3.ZERO
-	direction = (input_vector.x * transform.basis.x) + (input_vector.z * transform.basis.z)
-	return direction
+		private Vector3 GetDirection(Vector3 InputVector)
+		{
+			Vector3 direction = Vector3.Zero;
+			direction = (InputVector.X * Transform.Basis.X) + (InputVector.Z * Transform.Basis.Z);
+			return direction;
+		}
+
+
+    }
+}
+
+/*
 
 func apply_movement(direction, delta):
 	if direction != Vector3.ZERO:

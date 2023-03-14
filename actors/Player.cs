@@ -28,14 +28,14 @@ namespace Toonbox.Actors
 		public int gravity = -40;
 		[Export]
 		public double defaultWalkSoundTime = 0.35;
-        [Export]
-        public double sprintWalkSoundTime = 0.35;
+		[Export]
+		public double sprintWalkSoundTime = 0.35;
 		[Export]
 		public float mouseSensitivity = 1;
 		[Export]
 		public int controllerSensitivity = 25;
 
-        private Vector3 vel = Vector3.Zero;
+		private Vector3 vel = Vector3.Zero;
 
 		[Export]
 		public Array<AudioStreamOggVorbis> footSounds;
@@ -82,11 +82,11 @@ namespace Toonbox.Actors
 		public Camera3D tpCamera;
 		[Export]
 		public Node3D model;
-        [Export]
-        public Node3D headPos;
-		[Export] 
+		[Export]
+		public Node3D headPos;
+		[Export]
 		public Node3D akari;
-        [Export]
+		[Export]
 		public CollisionShape3D collisionShape;
 		[Export]
 		public AnimationPlayer animationPlayer;
@@ -100,49 +100,49 @@ namespace Toonbox.Actors
 		public RayCast3D fpReach;
 		[Export]
 		public RayCast3D tpReach;
-        [Export]
-        public RayCast3D fpAimCast;
-        [Export]
-        public RayCast3D tpAimCast;
+		[Export]
+		public RayCast3D fpAimCast;
+		[Export]
+		public RayCast3D tpAimCast;
 		[Export]
 		public Node3D fpRayContainer;
 		[Export]
 		public Node3D tpRayContainer;
 		[Export]
 		public Timer walkTimer;
-        [Export]
-        public Timer fireTimer;
-        [Export]
-        public Timer reloadTimer;
+		[Export]
+		public Timer fireTimer;
+		[Export]
+		public Timer reloadTimer;
 		[Export]
 		public AudioStreamPlayer3D walkSound;
-        [Export]
-        public AudioStreamPlayer3D runSound;
-        [Export]
-        public AudioStreamPlayer3D reloadSound;
-        [Export]
-        public AudioStreamPlayer3D pickupSound;
-        [Export]
-        public AudioStreamPlayer3D jumpSound;
+		[Export]
+		public AudioStreamPlayer3D runSound;
+		[Export]
+		public AudioStreamPlayer3D reloadSound;
+		[Export]
+		public AudioStreamPlayer3D pickupSound;
+		[Export]
+		public AudioStreamPlayer3D jumpSound;
 
-        // HUD Related Nodes
-        [Export]
+		// HUD Related Nodes
+		[Export]
 		public TextureRect crosshair;
 		[Export]
 		public Label reloadLabel;
-        [Export]
-        public Panel toolPanel;
-        [Export]
+		[Export]
+		public Panel toolPanel;
+		[Export]
 		public Label toolLabel;
 		[Export]
 		public ProgressBar toolAmmoBar;
-        [Export]
-        public Label toolAmmoCounter;
-        [Export]
-        public Panel playerPanel;
-        [Export]
-        public Label playerName;
-        [Export]
+		[Export]
+		public Label toolAmmoCounter;
+		[Export]
+		public Panel playerPanel;
+		[Export]
+		public Label playerName;
+		[Export]
 		public ProgressBar healthBar;
 		[Export]
 		public Label healthCounter;
@@ -150,25 +150,27 @@ namespace Toonbox.Actors
 		public Window sbMenuWindow;
 		[Export]
 		public Panel sbMenu;
+		[Export]
+		public Tree toolTree;
 
 		private Global global;
 
-        public override void _EnterTree()
-        {
-            global = GetNode<Global>("/root/Global/");
-            if (global.isNetworkedGame)
-            {
-                int playerId = Name.ToString().ToInt();
-                SetMultiplayerAuthority(playerId);
-            }
-        }
+		public override void _EnterTree()
+		{
+			global = GetNode<Global>("/root/Global/");
+			if (global.isNetworkedGame)
+			{
+				int playerId = Name.ToString().ToInt();
+				SetMultiplayerAuthority(playerId);
+			}
+		}
 
-        // Called when the node enters the scene tree for the first time.
-        public override void _Ready()
+		// Called when the node enters the scene tree for the first time.
+		public override void _Ready()
 		{
 			if (IsMultiplayerAuthority() || !global.isNetworkedGame)
 			{
-                Input.MouseMode = Input.MouseModeEnum.Captured;
+				Input.MouseMode = Input.MouseModeEnum.Captured;
 				reach = fpReach;
 				aimcast = fpAimCast;
 				if (Name.ToString() == Multiplayer.GetUniqueId().ToString())
@@ -178,7 +180,7 @@ namespace Toonbox.Actors
 				crosshair.Show();
 				playerPanel.Show();
 				toolPanel.Show();
-            }
+			}
 			fpCamera.Current = IsMultiplayerAuthority();
 			tpCamera.Current = false;
 			model.Visible = !IsMultiplayerAuthority();
@@ -187,10 +189,10 @@ namespace Toonbox.Actors
 			reloadLabel.Hide();
 			toolPanel.Hide();
 			speed = defaultSpeed;
-        }
+		}
 
-        public override void _Input(InputEvent @event)
-        {
+		public override void _Input(InputEvent @event)
+		{
 			if (!IsMultiplayerAuthority() && global.isNetworkedGame) return;
 
 			if (Input.IsActionJustPressed("pause"))
@@ -200,7 +202,7 @@ namespace Toonbox.Actors
 					Input.MouseMode = Input.MouseModeEnum.Visible;
 					crosshair.Hide();
 					global.gamePaused = true;
-                }
+				}
 				else
 				{
 					Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -227,9 +229,9 @@ namespace Toonbox.Actors
 				if (!viewMode)
 				{
 					Vector2 mouseAxis = motion.Relative;
-                    Vector3 newRotation = Rotation;
-                    newRotation.Y -= mouseAxis.X * mouseSensitivity * (float).001;
-                    Rotation = newRotation;
+					Vector3 newRotation = Rotation;
+					newRotation.Y -= mouseAxis.X * mouseSensitivity * (float).001;
+					Rotation = newRotation;
 					Vector3 newHeadRotation = head.Rotation;
 					newHeadRotation.X = Mathf.Clamp(newHeadRotation.X - mouseAxis.Y * mouseSensitivity * (float).001, (float)-1.5, (float)1.5);
 					head.Rotation = newHeadRotation;
@@ -239,7 +241,7 @@ namespace Toonbox.Actors
 					Vector2 mouseAxis = motion.Relative;
 					Vector3 newHeadRotation = head.Rotation;
 					newHeadRotation.Y -= mouseAxis.X * mouseSensitivity * (float).001;
-                    newHeadRotation.X = Mathf.Clamp(newHeadRotation.X - mouseAxis.Y * mouseSensitivity * (float).001, (float)-1.5, (float)1.5);
+					newHeadRotation.X = Mathf.Clamp(newHeadRotation.X - mouseAxis.Y * mouseSensitivity * (float).001, (float)-1.5, (float)1.5);
 					head.Rotation = newHeadRotation;
 				}
 			}
@@ -255,11 +257,11 @@ namespace Toonbox.Actors
 				}
 				else if (tpCamera.Current == true)
 				{
-                    fpCamera.Current = true;
-                    tpCamera.Current = false;
-                    reach = fpReach;
-                    aimcast = fpAimCast;
-                }
+					fpCamera.Current = true;
+					tpCamera.Current = false;
+					reach = fpReach;
+					aimcast = fpAimCast;
+				}
 			}
 
 			if (Input.IsActionJustPressed("interact"))
@@ -274,7 +276,7 @@ namespace Toonbox.Actors
 						if (collider is Node3D node3D)
 						{
 							node3D.QueueFree();
-                        }
+						}
 					}
 				}
 			}
@@ -285,7 +287,7 @@ namespace Toonbox.Actors
 				{
 					if (head.GetChild(0) != null)
 					{
-                        head.GetChild(0).QueueFree();
+						head.GetChild(0).QueueFree();
 						if (IsMultiplayerAuthority() || !global.isNetworkedGame)
 						{
 							toolPanel.Hide();
@@ -296,7 +298,7 @@ namespace Toonbox.Actors
 						damage = 0;
 						toolType = "";
 						currentTool = 0;
-                    }
+					}
 				}
 			}
 			else if (Input.IsActionJustPressed("tool1") && tool1 != null)
@@ -304,23 +306,23 @@ namespace Toonbox.Actors
 				Equip(tool1);
 				currentTool = 1;
 			}
-            else if (Input.IsActionJustPressed("tool2") && tool2 != null)
-            {
-                Equip(tool2);
-                currentTool = 2;
-            }
-            else if (Input.IsActionJustPressed("tool3") && tool3 != null)
-            {
-                Equip(tool3);
-                currentTool = 3;
-            }
-            else if (Input.IsActionJustPressed("tool4") && tool4 != null)
-            {
-                Equip(tool4);
-                currentTool = 4;
-            }
+			else if (Input.IsActionJustPressed("tool2") && tool2 != null)
+			{
+				Equip(tool2);
+				currentTool = 2;
+			}
+			else if (Input.IsActionJustPressed("tool3") && tool3 != null)
+			{
+				Equip(tool3);
+				currentTool = 3;
+			}
+			else if (Input.IsActionJustPressed("tool4") && tool4 != null)
+			{
+				Equip(tool4);
+				currentTool = 4;
+			}
 
-            if ((Input.IsActionJustPressed("reload") && ammo < maxAmmo) || ammo == 0)
+			if ((Input.IsActionJustPressed("reload") && ammo < maxAmmo) || ammo == 0)
 			{
 				if (isReloading) return;
 				isReloading = true;
@@ -329,70 +331,70 @@ namespace Toonbox.Actors
 				reloadLabel.Show();
 				gunAnimationPlayer.Play("reload");
 			}
-        }
+		}
 
 		private void Equip(String t)
 		{
 			PackedScene toolToLoad = GD.Load<PackedScene>(t);
 			Tool tool2Spawn = toolToLoad.Instantiate<Tool>();
-            if (hand.GetChildCount() > 0)
-            {
-                if (head.GetChild(0) != null) head.GetChild(0).QueueFree();
-            }
+			if (hand.GetChildCount() > 0)
+			{
+				if (head.GetChild(0) != null) head.GetChild(0).QueueFree();
+			}
 			toolLabel.Text = tool2Spawn.Name;
 			hand.AddChild(tool2Spawn);
 			ammo = tool2Spawn.maxAmmo;
 			maxAmmo = tool2Spawn.maxAmmo;
 			speed = tool2Spawn.spread;
 			GD.Randomize();
-            foreach (RayCast3D ray in fpRayContainer.GetChildren())
+			foreach (RayCast3D ray in fpRayContainer.GetChildren())
 			{
 				Vector3 targetPosition = ray.TargetPosition;
-                targetPosition.X = GD.RandRange(spread, -spread);
-                targetPosition.Y = GD.RandRange(spread, -spread);
+				targetPosition.X = GD.RandRange(spread, -spread);
+				targetPosition.Y = GD.RandRange(spread, -spread);
 				ray.TargetPosition = targetPosition;
-            }
+			}
 			fireTimer.WaitTime = tool2Spawn.cooldownTime;
 			damage = tool2Spawn.damage;
 			toolType = tool2Spawn.toolType;
-            tool2Spawn.Rotation = handLoc.Rotation;
+			tool2Spawn.Rotation = handLoc.Rotation;
 			if (IsMultiplayerAuthority() || !global.isNetworkedGame) toolPanel.Show();
-            pickupSound.Play();
-        }
-
-        // Called every frame. 'delta' is the elapsed time since the previous frame.
-        public override void _Process(double delta)
-		{
-            if (IsMultiplayerAuthority() || !global.isNetworkedGame)
-            {
-                if (Input.MouseMode == Input.MouseModeEnum.Captured)
-                {
-                    crosshair.Show();
-                }
-                else
-                {
-                    crosshair.Hide();
-                }
-            }
-            if (tpCamera.Current == true)
-            {
-                model.Visible = true;
-            }
-            else if (fpCamera.Current == true)
-            {
-                model.Visible = !IsMultiplayerAuthority();
-            }
+			pickupSound.Play();
 		}
 
-        public override void _PhysicsProcess(double delta)
-        {
-            if (!viewMode)
+		// Called every frame. 'delta' is the elapsed time since the previous frame.
+		public override void _Process(double delta)
+		{
+			if (IsMultiplayerAuthority() || !global.isNetworkedGame)
+			{
+				if (Input.MouseMode == Input.MouseModeEnum.Captured)
+				{
+					crosshair.Show();
+				}
+				else
+				{
+					crosshair.Hide();
+				}
+			}
+			if (tpCamera.Current == true)
+			{
+				model.Visible = true;
+			}
+			else if (fpCamera.Current == true)
+			{
+				model.Visible = !IsMultiplayerAuthority();
+			}
+		}
+
+		public override void _PhysicsProcess(double delta)
+		{
+			if (!viewMode)
 			{
 				head.GlobalPosition = headPos.GlobalPosition;
 				Vector3 headRotation = head.GlobalRotation;
 				headRotation.Y = headPos.GlobalRotation.Y;
-                headRotation.Z = headPos.GlobalRotation.Z;
-            }
+				headRotation.Z = headPos.GlobalRotation.Z;
+			}
 
 			if (((Velocity.Length() == 0) || (vel.Length() == 0)) && !Input.IsActionPressed("crouch"))
 			{
@@ -414,14 +416,14 @@ namespace Toonbox.Actors
 			}
 			else
 			{
-                if (speed == defaultSpeed && IsOnFloor())
-                {
-                    animationPlayer.Play("Locomotion-Library/walk");
-                    Vector3 modelPosition = model.Position;
-                    modelPosition.Y = 0;
-                    model.Position = modelPosition;
-                    akari.Position = Vector3.Zero;
-                    akari.Rotation = Vector3.Zero;
+				if (speed == defaultSpeed && IsOnFloor())
+				{
+					animationPlayer.Play("Locomotion-Library/walk");
+					Vector3 modelPosition = model.Position;
+					modelPosition.Y = 0;
+					model.Position = modelPosition;
+					akari.Position = Vector3.Zero;
+					akari.Rotation = Vector3.Zero;
 					if (canPlayWalkSound)
 					{
 						walkSound.Stream = footSounds.PickRandom();
@@ -429,11 +431,11 @@ namespace Toonbox.Actors
 						walkTimer.Start();
 						canPlayWalkSound = false;
 					}
-                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-                }
-            }
-        }
-        /*
+					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+				}
+			}
+		}
+		/*
 		 
 		 func _physics_process(delta):
 	
@@ -631,7 +633,7 @@ namespace Toonbox.Actors
 		{
 			Vector3 InputVector = Vector3.Zero;
 			InputVector.X = Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left");
-            InputVector.Z = Input.GetActionStrength("move_backward") - Input.GetActionStrength("move_forward");
+			InputVector.Z = Input.GetActionStrength("move_backward") - Input.GetActionStrength("move_forward");
 			if (InputVector.Length() > 1)
 			{
 				return InputVector;
@@ -640,7 +642,7 @@ namespace Toonbox.Actors
 			{
 				return InputVector;
 			}
-        }
+		}
 
 		private Vector3 GetDirection(Vector3 InputVector)
 		{
@@ -649,73 +651,143 @@ namespace Toonbox.Actors
 			return direction;
 		}
 
+		private void ApplyMovement(Vector3 direction, double delta)
+		{
+			if (direction != Vector3.Zero)
+			{
+				Vector3 velocity = Velocity;
+				velocity.X = velocity.MoveToward(direction * speed, acceleration * (float)delta).X;
+				velocity.Z = velocity.MoveToward(direction * speed, acceleration * (float)delta).Z;
+				Velocity = velocity;
+			}
+		}
 
-    }
-}
+		private void ApplyFriction(Vector3 direction, double delta)
+		{
+			if (direction == Vector3.Zero)
+			{
+				Vector3 velocity = Velocity;
+				if (IsOnFloor()) velocity = velocity.MoveToward(Vector3.Zero, friction * (float)delta);
+				else
+				{
+					velocity.X = velocity.MoveToward(direction * speed, airFricttion * (float)delta).X;
+					velocity.Z = velocity.MoveToward(direction * speed, airFricttion * (float)delta).Z;
+				}
+				Velocity = velocity;
+			}
+		}
 
-/*
+		private void ApplyGravity(double delta)
+		{
+			Vector3 velocity = Velocity;
+			velocity.Y += gravity * (float)delta;
+			velocity.Y = Mathf.Clamp(velocity.Y, gravity, jumpImpulse);
+			Velocity = velocity;
+		}
 
-func apply_movement(direction, delta):
-	if direction != Vector3.ZERO:
-		velocity.x = velocity.move_toward(direction * max_speed, acceleration * delta).x
-		velocity.z = velocity.move_toward(direction * max_speed, acceleration * delta).z
+		private void UpdateSnapVector()
+		{
+			if (!IsOnFloor())
+			{
+				snapVector = GetFloorNormal();
+			}
+			else
+			{
+				snapVector = Vector3.Down;
+			}
+		}
 
-func apply_friction(direction, delta):
-	if direction == Vector3.ZERO:
-		if is_on_floor():
-			velocity = velocity.move_toward(Vector3.ZERO, friction * delta)
-		else:
-			velocity.x = velocity.move_toward(direction * max_speed, air_friction * delta).x
-			velocity.z = velocity.move_toward(direction * max_speed, air_friction * delta).z
+		private void Jump()
+		{
+			if ((Input.IsActionJustPressed("jump") && IsOnFloor()) || (Input.IsActionJustPressed("jump") && timesJumped == 1))
+			{
+				jumpSound.Play();
+				snapVector = Vector3.Zero;
+				Vector3 velocity = Velocity;
+				velocity.Y = jumpImpulse;
+				Velocity = velocity;
+				timesJumped += 1;
+			}
+			if (Input.IsActionJustPressed("jump") && Velocity.Y > jumpImpulse / 2.0)
+			{
+				Vector3 velocity = Velocity;
+				velocity.Y = jumpImpulse / (float)2.0;
+				Velocity = velocity;
+			}
+		}
+		/*
+		private void ApplyControllerRotation()
+		{
+			Vector2 axisVector = Vector2.Zero;
+            axisVector.X = Input.GetActionStrength("look_right") - Input.GetActionStrength("look_left");
+            axisVector.Y = Input.GetActionStrength("look_down") - Input.GetActionStrength("look_up");
 
-func apply_gravity(delta):
-	velocity.y += gravity * delta
-	velocity.y = clamp(velocity.y, gravity, jump_impulse)
+			if (InputEvent is InputEventJoypadMotion)
+			{
+				Vector3 rotation = Rotation;
+				rotation.Y -= axisVector.X * controllerSensitivity * (float).001;
+				head.Rotation
+			}
+        }*/
 
-func update_snap_vector():
-	snap_vector = get_floor_normal() if is_on_floor() else Vector3.DOWN
-
-
-
-func jump():
-	if (Input.is_action_just_pressed("jump") and is_on_floor()) or (Input.is_action_just_pressed("jump") and times_jumped == 1): #or (Input.is_action_just_pressed("jump") and is_on_wall()):
-		$JumpSound.play()
-		snap_vector = Vector3.ZERO
-		velocity.y = jump_impulse
-		times_jumped += 1
-	if Input.is_action_just_released("jump") and velocity.y > jump_impulse / 2.0:
-		velocity.y = jump_impulse / 2.0
-
-func apply_controller_rotation():
-	var axis_vector = Vector2.ZERO
-	axis_vector.x = Input.get_action_strength("look_right") - Input.get_action_strength("look_left")
-	axis_vector.y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
+		/*
+		func apply_controller_rotation():
+			var axis_vector = Vector2.ZERO
+			axis_vector.x = Input.get_action_strength("look_right") - Input.get_action_strength("look_left")
+			axis_vector.y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
 	
-	if InputEventJoypadMotion:
-		rotation.y -= axis_vector.x * controller_sensitivity * .001
-		head.rotation.x = clamp(head.rotation.x - axis_vector.y * controller_sensitivity * .001, -1.5, 1.5)
+			if InputEventJoypadMotion:
+				rotation.y -= axis_vector.x * controller_sensitivity * .001
+				head.rotation.x = clamp(head.rotation.x - axis_vector.y * controller_sensitivity * .001, -1.5, 1.5)
+		 */
 
+		private void Die()
+		{
+			GetParent<World>().PrepForRespawn();
+			if (Name.ToString().ToInt() == 1 || !global.isNetworkedGame)
+			{
+				//Drop()
+			}
+			else
+			{
+				//Drop()
+			}
 
-func die():
-	get_parent().prep_for_respawn()
-	if (str_to_var(name) == 1) or !Global.isNetworkedGame:
-		drop()
-	else: 
-		drop()
-		rpc_id(1, "drop")
-	print("dead")
+			GD.Print("dead");
+		}
 
-func drop():
-	if hand.get_child_count() > 0:
-		if hand.get_child(0) != null:
-			var ttd = load(tool_to_drop).instantiate()
-			get_parent().add_child(ttd)
-			ttd.global_transform = hand_loc.global_transform
-			ttd.dropped = true
-			hand.get_child(0).queue_free()
-	queue_free()
+		private void Fire()
+		{
+			if (!isReloading && ammo != 0)
+			{
+				ammo -= 1;
+				hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
+				gunAnimationPlayer.Stop();
+				gunAnimationPlayer.Play("fire");
+				if (aimcast.IsColliding())
+				{
+					var target = aimcast.GetCollider();
+					if (target != null)
+					{
+						/*if (target is Player player)
+						{
+							player.health -= damage;
+						}*/
+						if (target is Player player)
+						{
+							int id = player.Name.ToString().ToInt();
+							player.RpcId(id, "take_damage", damage);
+						}
+						else
+						{
 
-func _fire():
+						}
+					}
+				}
+			}
+		}
+		/*
+		 func _fire():
 	if !is_reloading and ammo != 0:
 		ammo -= 1
 		hand.get_child(0).get_node("WeaponSound").play()
@@ -775,78 +847,99 @@ func _spray():
 	has_fired = true
 	if weapon_type == "auto":
 		$FireTimer.start()
+		 */
 
-func out_of_bounds(_area):
-	if global_position.y < -250:
-		print("out of bounds")
-		take_damage(100)
+		public void OutOfBounds(Area3D area)
+		{
+			if (GlobalPosition.Y < -250)
+			{
+				//Insert TakeDamage(100); Here
+			}
+		}
 
-@rpc("any_peer")
-func take_damage(dmg : int):
-	health -= dmg
-	health_bar.value = health
-	health_counter.text = var_to_str(health)
-	if health == 0:
-		die()
+		private void TakeDamage(int dmg)
+		{
+			health -= dmg;
+			healthBar.Value = health;
+			healthCounter.Text = health.ToString();
+			if (health == 0)
+			{
+				Die();
+			}
+		}
 
-@rpc("any_peer")
-func add_bullet_hole(b_dec_path, ac):
-	var target = ac.get_collider()
-	var b_decal = load(b_dec_path)
-	var b = b_decal.instantiate()
-	target.add_child(b)
-	b.global_transform.origin = ac.get_collision_point()
-	#b.look_at(ac.get_collision_point() + ac.get_collision_normal())
+		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+		public void AddBulletHole(String bDecPath, RayCast3D rayCast)
+		{
+			var target = aimcast.GetCollider();
+			if (target != null)
+			{
+				if (target is Node3D node3D)
+				{
+					PackedScene bDecal = GD.Load<PackedScene>(bDecPath);
+					Decal decal = bDecal.Instantiate<Decal>();
+					node3D.AddChild(decal);
+					Vector3 decTf = decal.GlobalPosition;
+					decTf = rayCast.GetCollisionPoint();
+				}
+			}
+		}
 
-func _on_reload_timer_timeout():
-	$ReloadTimer.stop()
-	ammo = max_ammo
-	reload_label.hide()
-	is_reloading = false
-	
+		public void OnReloadTimerTimeout()
+		{
+			reloadTimer.Stop();
+			ammo = maxAmmo;
+			reloadLabel.Hide();
+			isReloading = false;
+		}
 
+		public void OnFireTimerTimeout()
+		{
+			hasFired = false;
+		}
+		public void OnWalkTimerTimeout()
+		{
+			canPlayWalkSound = true;
+		}
 
-func _on_fire_timer_timeout():
-	has_fired = false
+		public void OnToolTreeItemActivated()
+		{
+			String toolName = toolTree.GetSelected().GetText(0);
+			String tool = "res://tools/" + toolName + ".tscn";
+			HideSBMenu();
+			AddTool(tool);
+        }
 
-
-
-func _on_walk_timer_timeout():
-	can_play_walk_sound = true
-
-
-func _on_tool_tree_item_activated():
-	var tool_name = $Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree.get_selected().get_text(0)
-	var tool = "res://tools/" + tool_name + ".tscn"
-	hide_sb_menu()
-	add_tool(tool)
-
-func add_tool(tool):
-	if tool1 == null:
-		tool1 = tool
-		print(tool1)
-		equip(tool1)
-		rpc("equip", tool1)
-		current_tool = 1
-	elif tool2 == null:
-		tool2 = tool
-		print(tool2)
-		equip(tool2)
-		rpc("equip", tool2)
-		current_tool = 2
-	elif tool3 == null:
-		tool3 = tool
-		print(tool3)
-		equip(tool3)
-		rpc("equip", tool3)
-		current_tool = 3
-	elif tool4 == null:
-		tool4 = tool
-		print(tool4)
-		equip(tool4)
-		rpc("equip", tool4)
-		current_tool = 4
-	else:
-		return
-
- */
+		private void AddTool(String toolName)
+		{
+			if (tool1 == null)
+			{
+				tool1 = toolName;
+				Equip(tool1);
+				currentTool = 1;
+			}
+			else if (tool2 == null)
+			{
+				tool2 = toolName;
+				Equip(tool2);
+                currentTool = 2;
+            }
+			else if (tool3 == null)
+			{
+				tool3 = toolName;
+				Equip(tool3);
+				currentTool = 3;
+			}
+			else if (tool4 == null)
+			{
+				tool4 = toolName;
+				Equip(tool4);
+				currentTool = 4;
+			}
+			else
+			{
+				return;
+			}
+		}
+	}
+}

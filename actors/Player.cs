@@ -780,80 +780,83 @@ namespace Toonbox.Actors
 						}
 						else
 						{
-
+							String decalPath = hand.GetChild<Tool>(0).decalPath;
+							AddBulletHole(decalPath, aimcast);
 						}
 					}
 				}
+				hasFired = true;
+				if (toolType == "Auto")
+				{
+					fireTimer.Start();
+				}
 			}
 		}
-		/*
-		 func _fire():
-	if !is_reloading and ammo != 0:
-		ammo -= 1
-		hand.get_child(0).get_node("WeaponSound").play()
-		gun_ap.stop()
-		gun_ap.play("fire")
-		if aimcast.is_colliding():
-			var target = aimcast.get_collider()
-			if target.is_in_group("bot") and !hand.get_child(0).name == "SprayGun":
-				print("hit bot")
-				target.health -= damage
-			elif target.is_in_group("player") and !hand.get_child(0).name == "SprayGun":
-				#print("hit player")
-				var id = target.name
-				target.rpc_id(str_to_var(id), "take_damage", damage)
-			else:
-				var b_decal = hand.get_child(0).decalPath
-				add_bullet_hole(b_decal, aimcast)
-				rpc("add_bullet_hole", b_decal)
-	has_fired = true
-	if weapon_type == "Auto":
-		$FireTimer.start()
 
-func _fire_shotgun():
-	if !is_reloading and ammo != 0:
-		ammo -= 1
-		hand.get_child(0).get_node("WeaponSound").play()
-		gun_ap.stop()
-		gun_ap.play("fire")
-		for r in fp_ray_container.get_children():
-			r.target_position.x = randi_range(spread, -spread)
-			r.target_position.y = randi_range(spread, -spread)
-		
-			if r.is_colliding():
-				var target = r.get_collider()
-				if target.is_in_group("bot") and !hand.get_child(0).name == "SprayGun":
-					print("hit bot")
-					target.health -= damage
-				elif target.is_in_group("player") and !hand.get_child(0).name == "SprayGun":
-					#print("hit player")
-					var id = target.name
-					target.rpc_id(str_to_var(id), "take_damage", damage)
-				else:
-					var b_decal = hand.get_child(0).decalPath
-					add_bullet_hole(b_decal, r)
-					rpc("add_bullet_hole", b_decal)
-	has_fired = true
-	$FireTimer.start()
+        private void FireShotgun()
+        {
+            if (!isReloading && ammo != 0)
+            {
+                ammo -= 1;
+                hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
+                gunAnimationPlayer.Stop();
+                gunAnimationPlayer.Play("fire");
+                if (aimcast.IsColliding())
+                {
+                    foreach(RayCast3D ray in fpRayContainer.GetChildren())
+					{
+                        Vector3 targetPosition = ray.TargetPosition;
+                        targetPosition.X = GD.RandRange(spread, -spread);
+                        targetPosition.Y = GD.RandRange(spread, -spread);
+                        ray.TargetPosition = targetPosition;
+                        var target = ray.GetCollider();
+                        if (target != null)
+                        {
+                            if (target is Player player)
+                            {
+                                int id = player.Name.ToString().ToInt();
+                                player.RpcId(id, "take_damage", damage);
+                            }
+                            else
+                            {
+                                String decalPath = hand.GetChild<Tool>(0).decalPath;
+                                AddBulletHole(decalPath, aimcast);
+                            }
+                        }
+                    }
+                }
+                hasFired = true;
+                if (toolType == "Auto")
+                {
+                    fireTimer.Start();
+                }
+            }
+        }
 
-func _spray():
-	if !is_reloading and ammo != 0:
-		ammo -= 1
-		hand.get_child(0).get_node("WeaponSound").play()
-		if aimcast.is_colliding():
-			var b_decal = hand.get_child(0).decalPath
-			add_bullet_hole(b_decal, aimcast)
-			rpc("add_bullet_hole", b_decal)
-	has_fired = true
-	if weapon_type == "auto":
-		$FireTimer.start()
-		 */
+		private void Spray()
+		{
+			if (!isReloading && ammo == 0)
+			{
+                ammo -= 1;
+                hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
+                if (aimcast.IsColliding())
+                {
+                    String decalPath = hand.GetChild<Tool>(0).decalPath;
+                    AddBulletHole(decalPath, aimcast);
+                }
+            }
+            hasFired = true;
+            if (toolType == "Auto")
+            {
+                fireTimer.Start();
+            }
+        }
 
-		public void OutOfBounds(Area3D area)
+        public void OutOfBounds(Area3D area)
 		{
 			if (GlobalPosition.Y < -250)
 			{
-				//Insert TakeDamage(100); Here
+				TakeDamage(100);
 			}
 		}
 

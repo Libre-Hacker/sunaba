@@ -27,6 +27,9 @@ namespace Toonbox.Tools
 		[Export]
 		public String decalPath = null;
 
+		[Export]
+		public bool showCounter = true;
+
 		public Resource getToolObject()
 		{
 			return GD.Load<Resource>(toolObjectPath);

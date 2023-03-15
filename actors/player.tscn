@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=36 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="Script" path="res://actors/Player.cs" id="1_xe16v"]
 [ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
@@ -266,6 +266,34 @@ tracks/0/keys = {
 "values": [Vector3(0.185186, -0.252234, -0.348759), Vector3(0.305189, -0.17009, -0.348759), Vector3(0.185186, -0.252234, -0.348759), Vector3(0.067556, -0.17, -0.349), Vector3(0.185186, -0.252234, -0.348759)]
 }
 
+[sub_resource type="Animation" id="Animation_iv5aj"]
+resource_name = "swing"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandLoc:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.185186, -0.168901, -0.348759), Vector3(0.185186, -0.379506, -0.500068), Vector3(0.185186, -0.168901, -0.348759)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HandLoc:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.85659, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ik67g"]
 _data = {
 "RESET": SubResource("Animation_pux5j"),
@@ -274,6 +302,7 @@ _data = {
 "idle_2": SubResource("Animation_7e306"),
 "reload": SubResource("Animation_rmhp7"),
 "run": SubResource("Animation_fpt3l"),
+"swing": SubResource("Animation_iv5aj"),
 "walk": SubResource("Animation_xtm0a")
 }
 
@@ -289,7 +318,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "headPos", "akari", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sprintingIcon", "sbMenuWindow", "sbMenu", "toolTree") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "headPos", "akari", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpSwordRange", "tpSwordRange", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sprintingIcon", "sbMenuWindow", "sbMenu", "toolTree") groups=["player"]]
 script = ExtResource("1_xe16v")
 footSounds = Array[AudioStreamOggVorbis]([ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")])
 head = NodePath("Head")
@@ -305,6 +334,8 @@ handLoc = NodePath("Head/HandLoc")
 hand = NodePath("Head/Hand")
 fpReach = NodePath("Head/Camera3D/Reach")
 tpReach = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera/Reach")
+fpSwordRange = NodePath("Head/Camera3D/SwordRange")
+tpSwordRange = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera/SwordRange")
 fpAimCast = NodePath("Head/Camera3D/AimCast")
 tpAimCast = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera/AimCast")
 fpRayContainer = NodePath("Head/Camera3D/RayContainer")
@@ -339,11 +370,64 @@ replication_config = SubResource("SceneReplicationConfig_rs28k")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 isPartOfActor = true
 
+[node name="GeneralSkeleton" parent="PlayerModel/Akari" index="0"]
+bones/0/position = Vector3(0, 0.580329, -0.0267357)
+bones/0/rotation = Quaternion(1.49012e-08, 0, 0, 1)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/2/rotation = Quaternion(-1.86265e-09, 0, 0, 1)
+bones/3/rotation = Quaternion(1.86265e-09, 0, 0, 1)
+bones/6/rotation = Quaternion(3.72529e-09, 0, 0, 1)
+bones/7/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
+bones/8/rotation = Quaternion(-0.000148967, 0.999986, 0.000252753, 0.00526106)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(8.51998e-05, -0.707109, 9.59473e-05, 0.707104)
+bones/10/rotation = Quaternion(0.000198367, 0.710821, -0.000168816, 0.703373)
+bones/10/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(5.96046e-08, -5.96046e-08, 0, 1)
+bones/13/rotation = Quaternion(2.98023e-08, -1.49012e-08, 0, 1)
+bones/14/rotation = Quaternion(1.49012e-08, 0, 0, 1)
+bones/15/rotation = Quaternion(0.060003, 0.540625, 0.455768, 0.704556)
+bones/16/rotation = Quaternion(-7.45058e-09, -3.72529e-08, 2.98023e-08, 1)
+bones/17/rotation = Quaternion(2.6077e-08, -7.45058e-09, 0, 1)
+bones/19/rotation = Quaternion(2.98023e-08, 2.98023e-08, 8.9407e-08, 1)
+bones/20/rotation = Quaternion(2.98023e-08, -2.98023e-08, 2.98023e-08, 1)
+bones/21/rotation = Quaternion(0, 0, 0, 1)
+bones/23/rotation = Quaternion(0, 0, 5.96046e-08, 1)
+bones/24/rotation = Quaternion(0, 0, 0, 1)
+bones/25/rotation = Quaternion(0, 0, 0, 1)
+bones/26/rotation = Quaternion(0.5, -0.5, -0.5, -0.5)
+bones/27/rotation = Quaternion(0.000148967, 0.999986, 0.000252753, -0.00526106)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/rotation = Quaternion(8.51998e-05, 0.707109, -9.59473e-05, 0.707104)
+bones/28/scale = Vector3(1, 1, 1)
+bones/29/rotation = Quaternion(0.000198367, -0.710821, 0.000168816, 0.703373)
+bones/29/scale = Vector3(1, 1, 1)
+bones/31/rotation = Quaternion(5.96046e-08, 5.96046e-08, 0, 1)
+bones/32/rotation = Quaternion(2.98023e-08, 1.49012e-08, 0, 1)
+bones/33/rotation = Quaternion(1.49012e-08, 0, 0, 1)
+bones/34/rotation = Quaternion(0.060003, -0.540625, -0.455768, 0.704556)
+bones/35/rotation = Quaternion(-7.45058e-09, 3.72529e-08, -2.98023e-08, 1)
+bones/36/rotation = Quaternion(2.6077e-08, 7.45058e-09, 0, 1)
+bones/38/rotation = Quaternion(2.98023e-08, -2.98023e-08, -8.9407e-08, 1)
+bones/39/rotation = Quaternion(2.98023e-08, 2.98023e-08, -2.98023e-08, 1)
+bones/40/rotation = Quaternion(0, 0, 0, 1)
+bones/42/rotation = Quaternion(0, 0, -5.96046e-08, 1)
+bones/43/rotation = Quaternion(0, 0, 0, 1)
+bones/44/rotation = Quaternion(0, 0, 0, 1)
+bones/47/rotation = Quaternion(-0.0129291, 2.41995e-05, 0.999916, 0.000230728)
+bones/48/rotation = Quaternion(1.09251e-07, 1, -6.18125e-05, -2.23576e-06)
+bones/49/rotation = Quaternion(0.00930635, 0.70702, -0.707075, 0.00898139)
+bones/50/rotation = Quaternion(-1.64636e-10, 1, 0, -1.64636e-10)
+bones/52/rotation = Quaternion(0.0129291, 2.41995e-05, 0.999916, -0.000230728)
+bones/53/rotation = Quaternion(-1.09251e-07, 1, -6.18125e-05, 2.23576e-06)
+bones/54/rotation = Quaternion(-0.00930635, 0.70702, -0.707075, -0.00898139)
+bones/55/rotation = Quaternion(1.64636e-10, 1, 0, 1.64636e-10)
+
 [node name="Hair" parent="PlayerModel/Akari/GeneralSkeleton" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+transform = Transform3D(1, 0, 0, 0, 1, -3.72529e-08, 0, 3.72529e-08, 1, -2.41328e-15, 0.945755, -0.00287098)
 
 [node name="Head" parent="PlayerModel/Akari/GeneralSkeleton" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+transform = Transform3D(1, 0, 0, 0, 1, -3.72529e-08, 0, 3.72529e-08, 1, -2.41328e-15, 0.945755, -0.00287098)
 bone_name = "face"
 
 [node name="Head" type="Node3D" parent="."]
@@ -359,6 +443,9 @@ target_position = Vector3(0, 0, -2.5)
 
 [node name="AimCast" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -1000)
+
+[node name="SwordRange" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -1.5)
 
 [node name="RayContainer" type="Node3D" parent="Head/Camera3D"]
 
@@ -394,6 +481,9 @@ target_position = Vector3(0, 0, -5)
 
 [node name="AimCast" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
 target_position = Vector3(0, 0, -1000)
+
+[node name="SwordRange" type="RayCast3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
+target_position = Vector3(0, 0, -5)
 
 [node name="RayContainer" type="Node3D" parent="Head/SpringArm3D/SpringArm3D/TPCamera"]
 

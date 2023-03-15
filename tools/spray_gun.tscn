@@ -11,6 +11,7 @@ maxAmmo = 9999
 toolType = "Spray"
 toolObjectPath = "res://entities/tl_spraygun.tscn"
 decalPath = "res://tools/decals/paint_decal.tscn"
+showCounter = false
 
 [node name="WeaponSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_fyyco")

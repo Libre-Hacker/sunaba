@@ -100,7 +100,11 @@ namespace Toonbox.Actors
 		public RayCast3D fpReach;
 		[Export]
 		public RayCast3D tpReach;
-		[Export]
+        [Export]
+        public RayCast3D fpSwordRange;
+        [Export]
+        public RayCast3D tpSwordRange;
+        [Export]
 		public RayCast3D fpAimCast;
 		[Export]
 		public RayCast3D tpAimCast;
@@ -348,17 +352,18 @@ namespace Toonbox.Actors
 			maxAmmo = tool2Spawn.maxAmmo;
 			speed = tool2Spawn.spread;
 			GD.Randomize();
-			foreach (RayCast3D ray in fpRayContainer.GetChildren())
-			{
-				Vector3 targetPosition = ray.TargetPosition;
-				targetPosition.X = GD.RandRange(spread, -spread);
-				targetPosition.Y = GD.RandRange(spread, -spread);
-				ray.TargetPosition = targetPosition;
-			}
 			fireTimer.WaitTime = tool2Spawn.cooldownTime;
 			damage = tool2Spawn.damage;
 			toolType = tool2Spawn.toolType;
 			tool2Spawn.Rotation = handLoc.Rotation;
+			if (tool2Spawn.showCounter == true)
+			{
+				toolAmmoBar.Show();
+			}
+			else if (tool2Spawn.showCounter == false)
+			{
+				toolAmmoBar.Hide();
+			}
 			if (IsMultiplayerAuthority() || !global.isNetworkedGame) toolPanel.Show();
 			pickupSound.Play();
 		}
@@ -566,7 +571,7 @@ namespace Toonbox.Actors
 				crosshair.Show();
 			}
 
-			if (reach.IsColliding())
+			/*if (reach.IsColliding())
 			{
 				if (reach.GetCollider() is ToolObject toolObject)
 				{
@@ -581,7 +586,7 @@ namespace Toonbox.Actors
 			else
 			{
                 toolToSpawn = null;
-            }
+            }*/
 
 			if (toolType == "Semi")
 			{
@@ -655,8 +660,28 @@ namespace Toonbox.Actors
                     }
                 }
             }
+			else if (toolType == "Melee")
+            {
+                if (Input.IsActionJustPressed("action_button"))
+                {
+                    if (hand.GetChildCount() > 0)
+                    {
+                        if (hand.GetChild(0) != null)
+                        {
+                            if (!hasFired)
+                            {
+                                Swing();
+                            }
+                        }
+                    }
+                }
+                else if (Input.IsActionJustReleased("action_button"))
+                {
+                    hasFired = false;
+                }
+            }
 
-			if (global.gameMode == "Sandbox")
+            if (global.gameMode == "Sandbox")
 			{
 				if (Input.IsActionJustReleased("menu2") && !sbMenuWindow.Visible)
 				{
@@ -893,6 +918,39 @@ namespace Toonbox.Actors
             if (toolType == "Auto")
             {
                 fireTimer.Start();
+            }
+        }
+
+        private void Swing()
+        {
+            if (!isReloading && ammo != 0)
+            {
+                ammo -= 1;
+                hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
+                gunAnimationPlayer.Stop();
+                gunAnimationPlayer.Play("swing");
+                if (fpSwordRange.IsColliding())
+                {
+                    var target = fpSwordRange.GetCollider();
+                    if (target != null)
+                    {
+                        if (target is Player player)
+                        {
+                            int id = player.Name.ToString().ToInt();
+                            player.RpcId(id, "take_damage", damage);
+                        }
+                        else
+                        {
+                            String decalPath = hand.GetChild<Tool>(0).decalPath;
+                            AddBulletHole(decalPath, fpSwordRange);
+                        }
+                    }
+                }
+                hasFired = true;
+                if (toolType == "Auto")
+                {
+                    fireTimer.Start();
+                }
             }
         }
 

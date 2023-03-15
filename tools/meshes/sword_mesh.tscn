@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://custw5mkjjr8"]
+
+[ext_resource type="PackedScene" uid="uid://txnltti2dpi1" path="res://assets/models/handprops/sword.gltf" id="1_ltoh4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q5fsy"]
+albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcfjr"]
+albedo_color = Color(0.733333, 0.733333, 0.733333, 1)
+metallic = 0.25
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w03c8"]
+albedo_color = Color(0.486275, 0.505882, 1, 1)
+roughness = 0.35
+
+[node name="sword" instance=ExtResource("1_ltoh4")]
+
+[node name="Sword" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q5fsy")
+surface_material_override/1 = SubResource("StandardMaterial3D_fcfjr")
+surface_material_override/2 = SubResource("StandardMaterial3D_w03c8")
+surface_material_override/3 = SubResource("StandardMaterial3D_w03c8")
+surface_material_override/4 = SubResource("StandardMaterial3D_fcfjr")

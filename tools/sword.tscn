@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://5k5ls8v1ayp3"]
+
+[ext_resource type="Script" path="res://tools/Tool.cs" id="1_ikdr1"]
+[ext_resource type="AudioStream" uid="uid://cevv6nalh32jg" path="res://assets/audio/swing.ogg" id="2_vb4db"]
+[ext_resource type="PackedScene" uid="uid://custw5mkjjr8" path="res://tools/meshes/sword_mesh.tscn" id="3_2i4ln"]
+
+[node name="Sword" type="Node3D"]
+script = ExtResource("1_ikdr1")
+damage = 45
+maxAmmo = 999999
+toolType = "Melee"
+toolObjectPath = "res://entities/wp_pbgun.tscn"
+decalPath = "res://tools/decals/dart_bullet_decal.tscn"
+showCounter = false
+
+[node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126623, -0.473867)
+
+[node name="WeaponSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vb4db")
+bus = &"Sound"
+
+[node name="sword" parent="." instance=ExtResource("3_2i4ln")]

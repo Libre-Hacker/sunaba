@@ -186,7 +186,10 @@ namespace Toonbox.Actors
 				crosshair.Show();
 				playerPanel.Show();
 				toolPanel.Show();
-			}
+
+                Console console = GetNode<Console>("/root/PConsole");
+                console.Register(Name, this);
+            }
 			fpCamera.Current = IsMultiplayerAuthority();
 			tpCamera.Current = false;
 			//GetParent<World>().GetNode<Area3D>("OutOfBounds").BodyEntered += OutOfBounds;

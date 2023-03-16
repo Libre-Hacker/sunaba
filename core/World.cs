@@ -39,8 +39,8 @@ namespace Toonbox.Runtime
 
 			main = GetParent<Main>();
 
-            var console = GetNode("/root/Console");
-            console.Call("register_env", "world", this);
+            Console console = GetNode<Console>("/root/PConsole");
+            console.Register(Name, this);
 
         }
 

@@ -28,8 +28,8 @@ namespace Toonbox.Runtime
 
 			Multiplayer.MultiplayerPeer = null;
 
-            var console = GetNode("/root/Console");
-            console.Call("register_env", "netman", this);
+            Console console = GetNode<Console>("/root/PConsole");
+            console.Register(Name, this);
         }
 
         public void CreateRoom()

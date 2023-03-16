@@ -12,12 +12,13 @@ namespace Toonbox.Runtime
 		NetworkManager networkManager;
 		World world;
 		RichTextLabel chatbox;
-		
+		Console console;
+
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
 			networkManager = GetNode<NetworkManager>("NetworkManager");
-			world = GetNode<World>("World3D");
+			world = GetNode<World>("World");
 			chatbox = GetNode<Control>("UI").GetNode<RichTextLabel>("Chatbox");
 
 			if (OS.GetName() == "Android")
@@ -29,28 +30,22 @@ namespace Toonbox.Runtime
 			Global global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
-			var console = GetNode("/root/Console");
-			console.Call("register_env", "Toonbox", this);
+			console = GetNode<Console>("/root/PConsole");
+			console.Register("Toonbox", this);
 			Build build = GetNode<Build>("/root/Build");
-			
 
-			LogToConsole("Toonbox");
-			LogToConsole("Version " + build.versionNumber);
-			LogToConsole("Compiled on " + build.buildDate);
-			LogToConsole("");
+            console.Print("");
+            console.Print("Toonbox");
+			console.Print("Version " + build.versionNumber);
+			console.Print("Compiled on " + build.buildDate);
+			console.Print("");
+
 			String[] args = OS.GetCmdlineArgs();
 			String arg1 = args[0];
 			if (arg1.Contains(".map"))
 			{
 				Play(arg1);
 			}
-		}
-
-		public void LogToConsole(String msg)
-		{
-			var console = GetNode("/root/Console");
-			console.Call("notify", msg);
-			GD.Print(msg);
 		}
 
 		public void CreateRoom()
@@ -72,7 +67,7 @@ namespace Toonbox.Runtime
 		public void Chat(String name, String msg)
 		{
 			String chatmsg = name + " : " + msg;
-			LogToConsole(chatmsg);
+			console.Print(chatmsg);
 			chatbox.AddText(chatmsg);
 			chatbox.Newline();
 		}
@@ -151,7 +146,7 @@ namespace Toonbox.Runtime
 				}
 				else
 				{
-					LogToConsole(file);
+					console.Print(file);
 				}
 			}
 

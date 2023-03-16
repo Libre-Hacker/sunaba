@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
 [ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
 [ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
-[ext_resource type="PackedScene" uid="uid://c88ijpr8qobb" path="res://core/world.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://core/world.tscn" id="12"]
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="12_e4k0p"]
 [ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="14_mxn15"]
 

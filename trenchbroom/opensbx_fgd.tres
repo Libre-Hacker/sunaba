@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=30 format=3 uid="uid://b7wbkk67gh1yf"]
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=30 format=3 uid="uid://bfwguwuflemm"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_gyj8k"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://b30vjnu67j4t6" path="res://entities/ev_night.tres" id="14_unjc1"]
 [ext_resource type="Resource" uid="uid://dxq8a6uojsb6p" path="res://entities/PlayerStart.tres" id="15_hc8b5"]
 [ext_resource type="Resource" uid="uid://dekeotstn463l" path="res://entities/ev_void.tres" id="15_oylio"]
-[ext_resource type="Resource" uid="uid://bg8gk2pq7nvq7" path="res://entities/wp_dartgun.tres" id="17_2mjsk"]
+[ext_resource type="Resource" uid="uid://bg8gk2pq7nvq7" path="res://entities/wp_nailgun.tres" id="17_2mjsk"]
 [ext_resource type="Resource" uid="uid://d1cywbw47btdi" path="res://entities/tl_sparygun.tres" id="18_0q27l"]
 [ext_resource type="Resource" uid="uid://bu8xj1bg8fil5" path="res://entities/wp_autogun.tres" id="18_85oad"]
 [ext_resource type="Resource" uid="uid://bmt1txjn5p74f" path="res://entities/wp_pistol.tres" id="19_4y8q4"]

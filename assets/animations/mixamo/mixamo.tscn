@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmanstop2psp"]
+
+[ext_resource type="PackedScene" uid="uid://cgomyprb8bxrn" path="res://assets/animations/mixamo/mixamo.gltf" id="1_m8ubp"]
+[ext_resource type="AnimationLibrary" uid="uid://cup4c74iqkde6" path="res://assets/animations/mixamo.res" id="2_lveye"]
+
+[node name="mixamo" instance=ExtResource("1_m8ubp")]
+
+[node name="Akari" parent="." index="0"]
+transform = Transform3D(0.730126, 0.0499542, -0.681484, 0.00418796, 0.996978, 0.0775675, 0.6833, -0.0594881, 0.72771, -0.034368, -0.0480037, 0.0363961)
+
+[node name="GeneralSkeleton" parent="Akari" index="0"]
+bones/1/rotation = Quaternion(0.0504426, 0.0402812, -0.0096398, 0.997868)
+bones/2/rotation = Quaternion(0.100634, 0.0810174, -0.0185518, 0.991446)
+bones/3/rotation = Quaternion(0.100634, 0.0810173, -0.0185518, 0.991446)
+bones/4/rotation = Quaternion(-0.0125226, -0.00370046, 0.000726974, 0.999915)
+bones/5/rotation = Quaternion(-0.0125226, -0.00370039, 0.00072692, 0.999915)
+bones/7/rotation = Quaternion(0.52416, 0.460961, 0.542141, -0.467819)
+bones/8/rotation = Quaternion(0.0363835, 0.843241, -0.530592, 0.0780621)
+bones/9/rotation = Quaternion(0.279101, -0.635232, 0.299026, 0.655107)
+bones/10/rotation = Quaternion(-0.102611, 0.784888, 0.134184, 0.596168)
+bones/12/rotation = Quaternion(0.0352886, -0.00575793, 0.0595574, 0.997584)
+bones/13/rotation = Quaternion(0.141549, 0.0175575, -0.00941303, 0.989731)
+bones/14/rotation = Quaternion(5.96046e-08, 0, 0, 1)
+bones/16/rotation = Quaternion(-0.144257, 0.73119, 0.218415, 0.629957)
+bones/17/rotation = Quaternion(0.00048472, 0.00248611, -0.0069513, 0.999973)
+bones/18/rotation = Quaternion(-2.98023e-08, 0, -2.98023e-08, 1)
+bones/21/rotation = Quaternion(0.121867, 0.0181639, -0.0881174, 0.98846)
+bones/22/rotation = Quaternion(0.189985, -0.00429226, 0.00906181, 0.981736)
+bones/25/rotation = Quaternion(0.283468, -0.0362069, -0.173347, 0.942489)
+bones/26/rotation = Quaternion(0.337446, -0.00762218, 0.040617, 0.940437)
+bones/27/rotation = Quaternion(-5.96046e-08, 0, 0, 1)
+bones/28/rotation = Quaternion(-5.96046e-08, 0, 0, 1)
+bones/30/rotation = Quaternion(0.490012, -0.485504, -0.588872, -0.421194)
+bones/31/rotation = Quaternion(0.193062, 0.845471, -0.49712, -0.0278753)
+bones/32/rotation = Quaternion(0.28235, 0.705754, -0.219025, 0.611733)
+bones/33/rotation = Quaternion(0.146238, -0.744767, 0.00470068, 0.651087)
+bones/35/rotation = Quaternion(0.0403555, 0.000577539, 0.0117427, 0.999116)
+bones/36/rotation = Quaternion(0.145913, -0.0186592, 0.01241, 0.989044)
+bones/37/rotation = Quaternion(2.98023e-08, 0, 1.49012e-08, 1)
+bones/39/rotation = Quaternion(-0.18664, -0.618411, -0.202436, 0.736039)
+bones/40/rotation = Quaternion(0.178884, -0.0372505, -0.0135941, 0.983071)
+bones/41/rotation = Quaternion(0, -2.98023e-08, -2.98023e-08, 1)
+bones/44/rotation = Quaternion(0.110592, 0.00109108, 0.0275901, 0.993482)
+bones/45/rotation = Quaternion(0.263878, 0.00537093, -0.00963175, 0.964493)
+bones/46/rotation = Quaternion(0, 0, 0, 1)
+bones/48/rotation = Quaternion(0.2049, 0.00655748, 0.0974378, 0.973899)
+bones/49/rotation = Quaternion(0.351105, 0.00800599, -0.0594376, 0.934413)
+bones/50/rotation = Quaternion(-1.49012e-08, -2.98023e-08, -1.49012e-08, 1)
+bones/51/rotation = Quaternion(-2.98023e-08, 2.98023e-08, 2.98023e-08, 1)
+bones/57/rotation = Quaternion(0.0756064, 0.228735, 0.963629, -0.115683)
+bones/58/rotation = Quaternion(0.0411756, 0.94336, -0.306295, -0.120662)
+bones/59/rotation = Quaternion(-0.0517005, 0.665933, -0.742028, 0.0570503)
+bones/60/rotation = Quaternion(-0.0279178, -0.999373, -0.0204248, 0.00757082)
+bones/64/rotation = Quaternion(-0.124991, -0.00583955, 0.983254, 0.132493)
+bones/65/rotation = Quaternion(0.0251147, 0.953963, -0.290516, -0.0701691)
+bones/66/rotation = Quaternion(0.109003, 0.528147, -0.833438, -0.120667)
+bones/67/rotation = Quaternion(-0.0031296, -0.999869, -0.0156121, 0.00292874)
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": ExtResource("2_lveye")
+}

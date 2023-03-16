@@ -407,7 +407,7 @@ namespace Toonbox.Actors
 
 			if (((Velocity.Length() == 0) || (vel.Length() == 0)) && !Input.IsActionPressed("crouch"))
 			{
-				animationPlayer.Play("Locomotion-Library/idle1");
+				animationPlayer.Play("mixamo/idle1");
 				Vector3 modelPosition = model.Position;
 				modelPosition.Y = 0;
 				model.Position = modelPosition;
@@ -427,7 +427,7 @@ namespace Toonbox.Actors
 			{
 				if (speed == defaultSpeed && IsOnFloor())
 				{
-					animationPlayer.Play("Locomotion-Library/walk");
+					animationPlayer.Play("mixamo/walk");
 					Vector3 modelPosition = model.Position;
 					modelPosition.Y = 0;
 					model.Position = modelPosition;
@@ -461,7 +461,7 @@ namespace Toonbox.Actors
                 }
 				else if (speed == sprintSpeed && IsOnFloor())
                 {
-                    animationPlayer.Play("Locomotion-Library/run");
+                    animationPlayer.Play("mixamo/run");
                     Vector3 modelPosition = model.Position;
                     modelPosition.Y = 0;
                     model.Position = modelPosition;
@@ -478,7 +478,7 @@ namespace Toonbox.Actors
                 }
 				else if (!IsOnFloor())
 				{
-					animationPlayer.Play("Locomotion-Library/jump");
+					animationPlayer.Play("mixamo/fall");
                     Vector3 modelPosition = model.Position;
                     modelPosition.Y = 0;
                     model.Position = modelPosition;

@@ -509,7 +509,7 @@ namespace Toonbox.Actors
 				toolAmmoBar.MaxValue = maxAmmo;
 
 				sprintingIcon.Hide();
-
+                
 				if (Input.IsActionPressed("sprint"))
 				{
 					speed = sprintSpeed;
@@ -533,15 +533,16 @@ namespace Toonbox.Actors
                 }
 				else
                 {
-                    Shape3D shape3D = collisionShape.Shape;
-                    if (shape3D is CapsuleShape3D capsule)
-                    {
-                        capsule.Height = (float)defaultHeight;
-                    }
-                    Vector3 modelPosition = model.Position;
-                    modelPosition.Y = (float)0.175;
-                    model.Position = modelPosition;
+					Shape3D shape3D = collisionShape.Shape;
+					if (shape3D is CapsuleShape3D capsule)
+					{
+						capsule.Height = (float)defaultHeight;
+					}
+					Vector3 modelPosition = model.Position;
+					modelPosition.Y = 0;
+					model.Position = modelPosition;
                 }
+				
 
 				ApplyMovement(Direction, delta);
 				ApplyGravity(delta);

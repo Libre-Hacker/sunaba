@@ -407,7 +407,7 @@ namespace Toonbox.Actors
 
 			if (((Velocity.Length() == 0) || (vel.Length() == 0)) && !Input.IsActionPressed("crouch"))
 			{
-				animationPlayer.Play("mixamo/idle1");
+				animationPlayer.Play("Locomotion-Library/idle1");
 				Vector3 modelPosition = model.Position;
 				modelPosition.Y = 0;
 				model.Position = modelPosition;
@@ -427,7 +427,7 @@ namespace Toonbox.Actors
 			{
 				if (speed == defaultSpeed && IsOnFloor())
 				{
-					animationPlayer.Play("mixamo/walk");
+					animationPlayer.Play("Locomotion-Library/walk");
 					Vector3 modelPosition = model.Position;
 					modelPosition.Y = 0;
 					model.Position = modelPosition;
@@ -461,7 +461,7 @@ namespace Toonbox.Actors
                 }
 				else if (speed == sprintSpeed && IsOnFloor())
                 {
-                    animationPlayer.Play("mixamo/run");
+                    animationPlayer.Play("Locomotion-Library/run");
                     Vector3 modelPosition = model.Position;
                     modelPosition.Y = 0;
                     model.Position = modelPosition;
@@ -478,7 +478,7 @@ namespace Toonbox.Actors
                 }
 				else if (!IsOnFloor())
 				{
-					animationPlayer.Play("mixamo/fall");
+					animationPlayer.Play("Locomotion-Library/jump");
                     Vector3 modelPosition = model.Position;
                     modelPosition.Y = 0;
                     model.Position = modelPosition;
@@ -510,6 +510,7 @@ namespace Toonbox.Actors
 
 				sprintingIcon.Hide();
                 
+				/*
 				if (Input.IsActionPressed("sprint"))
 				{
 					speed = sprintSpeed;
@@ -532,16 +533,16 @@ namespace Toonbox.Actors
                     model.Position = modelPosition;
                 }
 				else
-                {
-					Shape3D shape3D = collisionShape.Shape;
-					if (shape3D is CapsuleShape3D capsule)
-					{
-						capsule.Height = (float)defaultHeight;
-					}
-					Vector3 modelPosition = model.Position;
-					modelPosition.Y = 0;
-					model.Position = modelPosition;
-                }
+                {*/
+				Shape3D shape3D = collisionShape.Shape;
+				if (shape3D is CapsuleShape3D capsule)
+				{
+					capsule.Height = (float)defaultHeight;
+				}
+				Vector3 modelPosition = model.Position;
+				modelPosition.Y = 0;
+				model.Position = modelPosition;
+                //}
 				
 
 				ApplyMovement(Direction, delta);

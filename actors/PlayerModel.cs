@@ -15,21 +15,21 @@ namespace Toonbox.Actors
 		int headMaterial = 0;
 
         [Export]
-        public String headwear = "black_long_hair";
+        public String headwear = "minji";
         [Export]
         public String skinColor = "pale";
         [Export]
-        public String faceTexture = "face_lightblue";
+        public String faceTexture = "face_green";
         [Export]
-        public String torsoTexture = "lunar_blue";
+        public String torsoTexture = "minji-darkgreen";
         [Export]
-        public String armsTexture = "lunar_blue";
+        public String armsTexture = "minji-darkgreen";
         [Export]
-        public String handsTexture = "lunar_blue";
+        public String handsTexture = "minji-darkgreen";
         [Export]
-        public String pantsTexture = "lunar_blue";
+        public String pantsTexture = "minji-darkgreen";
         [Export]
-        public String shoesTexture = "lunar_blue";
+        public String shoesTexture = "minji-darkgreen";
 
         MeshInstance3D baseMesh = null;
 		BoneAttachment3D headwearAttachment = null;

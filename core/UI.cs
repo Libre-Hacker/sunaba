@@ -55,6 +55,10 @@ namespace Toonbox.Runtime
 			{
 				GetNode<Window>("ConnectDialog").PopupCentered();
 			}
+			else
+			{
+				GetNode<AcceptDialog>("AcceptDialog1").PopupCentered();
+			}
 		}
 
 		public void OnConnectDialogCloseRequested()

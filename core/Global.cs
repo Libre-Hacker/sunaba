@@ -18,14 +18,14 @@ namespace Toonbox.Runtime
 		public bool botsEnabled;
 		public int botAmount = 0;
 
-		public String headwear = "black_long_hair";
+		public String headwear = "minji";
         public String skinColor = "pale";
-        public String faceTexture = "face_lightblue";
-        public String torsoTexture = "lunar_blue";
-        public String armsTexture = "lunar_blue";
-        public String handsTexture = "lunar_blue";
-        public String pantsTexture = "lunar_blue";
-        public String shoesTexture = "lunar_blue";
+        public String faceTexture = "face_green";
+        public String torsoTexture = "minji-darkgreen";
+        public String armsTexture = "minji-darkgreen";
+        public String handsTexture = "minji-darkgreen";
+        public String pantsTexture = "minji-darkgreen";
+        public String shoesTexture = "minji-darkgreen";
 
         public override void _Ready()
         {

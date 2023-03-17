@@ -8,14 +8,14 @@ var hands_material = 4
 var foot_material = 6
 var head_material = 0
 
-var headwear : String = "black_long_hair"
+var headwear : String = "minji"
 var skin_color : String = "pale"
-var face_texture : String = "face_lightblue"
-var torso_texture : String = "lunar_blue"
-var arms_texture : String = "lunar_blue"
-var hands_texture : String = "lunar_blue"
-var pants_texture : String = "lunar_blue"
-var shoes_texture : String = "lunar_blue"
+var face_texture : String = "face_green"
+var torso_texture : String = "minji-darkgreen"
+var arms_texture : String = "minji-darkgreen"
+var hands_texture : String = "minji-darkgreen"
+var pants_texture : String = "minji-darkgreen"
+var shoes_texture : String = "minji-darkgreen"
 
 @onready var base_mesh = $"SubViewportContainer/SubViewport/basemodel/Akari/GeneralSkeleton/Base Mesh"
 

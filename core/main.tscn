@@ -138,11 +138,12 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Resume Game"
+text = "Resume"
 flat = true
 alignment = 0
 
 [node name="Button2" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -293,11 +294,12 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "New Game"
+text = "Play"
 flat = true
 alignment = 0
 
 [node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -399,6 +401,11 @@ visible = false
 min_size = Vector2i(475, 275)
 
 [node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("14_mxn15")]
+
+[node name="AcceptDialog1" type="AcceptDialog" parent="UI"]
+size = Vector2i(253, 109)
+dialog_text = "Online multiplayer is currently disabled."
+dialog_autowrap = true
 
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="Unpause"]
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button2" to="." method="Reload"]

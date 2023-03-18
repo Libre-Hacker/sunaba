@@ -1,9 +1,9 @@
 # Downloads
 
-* [Windows](https://drive.google.com/uc?export=download&id=1Oij1kS72vuvS38vl4Sj_T-0ke_8DcRCw)
+* [Windows](https://github.com/m1ntkat/toonbox/releases/download/0.4.0dev/Toonbox-win32.exe)
 
-* [Mac](https://drive.google.com/uc?export=download&id=1R4HRNG1TgJr0u5EmujK8mf8I4B_IFKnP)
+* [Mac](https://github.com/m1ntkat/toonbox/releases/download/0.4.0dev/Toonbox-mac.zip)
 
-* [Linux](https://drive.google.com/uc?export=download&id=1yaT2k8dd3zyDDeHh7qLtdZ31E4noIYaQ)
+* [Linux](https://github.com/m1ntkat/toonbox/releases/download/0.4.0dev/Toonbox-linux64.zip)
 
 * Android - Comming Soon

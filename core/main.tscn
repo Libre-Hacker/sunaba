@@ -1,10 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://cec4c5t31w0xk"]
+[gd_scene load_steps=16 format=3 uid="uid://cec4c5t31w0xk"]
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_v0323"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_3gh8e"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
 [ext_resource type="Script" path="res://core/UI.cs" id="5_lswxf"]
-[ext_resource type="Texture2D" uid="uid://dt8x6u8ink38t" path="res://assets/sunabaLogoWhite.png" id="6_5l2rv"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="7_iyyxn"]
 [ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="8_47m63"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
@@ -115,7 +114,7 @@ offset_top = -67.0
 offset_right = 146.0
 offset_bottom = -33.0
 grow_vertical = 0
-texture = ExtResource("6_5l2rv")
+texture = ExtResource("9_y7eeq")
 expand_mode = 1
 stretch_mode = 4
 

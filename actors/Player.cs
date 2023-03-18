@@ -181,7 +181,7 @@ namespace Toonbox.Actors
 				aimcast = fpAimCast;
 				if (Name.ToString() == Multiplayer.GetUniqueId().ToString())
 				{
-					playerName.Text = Name.ToString();
+					playerName.Text = "Player " + Name.ToString();
 				}
 				crosshair.Show();
 				playerPanel.Show();
@@ -415,14 +415,14 @@ namespace Toonbox.Actors
 				akari.Rotation = Vector3.Zero;
 				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 			}
-			else if (((Velocity.Length() == 0) || (vel.Length() == 0)) && Input.IsActionPressed("crouch"))
+			/*else if (((Velocity.Length() == 0) || (vel.Length() == 0)) && Input.IsActionPressed("crouch"))
 			{
 				animationPlayer.Play("crouch_library/crouch_idle");
 				Vector3 modelPosition = model.Position;
 				modelPosition.Y = (float)0.175;
 				model.Position = modelPosition;
 				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-			}
+			}*/
 			else
 			{
 				if (speed == defaultSpeed && IsOnFloor())
@@ -442,7 +442,7 @@ namespace Toonbox.Actors
 					}
 					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 				}
-				else if (speed == crouchMoveSpeed && IsOnFloor())
+				/*else if (speed == crouchMoveSpeed && IsOnFloor())
                 {
                     animationPlayer.Play("crouch_library/crouch_walk");
                     Vector3 modelPosition = model.Position;
@@ -458,7 +458,7 @@ namespace Toonbox.Actors
                         canPlayWalkSound = false;
                     }
                     if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-                }
+                }*/
 				else if (speed == sprintSpeed && IsOnFloor())
                 {
                     animationPlayer.Play("Locomotion-Library/run");

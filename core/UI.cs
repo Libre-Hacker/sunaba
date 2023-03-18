@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Toonbox.Runtime
+namespace Sunaba.Runtime
 {
 	public partial class UI : Control
 	{
@@ -26,7 +26,7 @@ namespace Toonbox.Runtime
 
         public void OnFileButtonPressed()
         {
-            GetNode<Window>("MapDialog").PopupCentered();
+            GetNode<FileDialog>("UserFileDialog").PopupCentered();
         }
 
 		public void OnFileMenuPressed(int id)
@@ -37,7 +37,7 @@ namespace Toonbox.Runtime
             }
 			else if (id == 1)
             {
-                GetNode<Window>("UserFileDialog").PopupCentered();
+                GetNode<FileDialog>("UserFileDialog").PopupCentered();
             }
         }
 		public void OnFileSelected(String path)

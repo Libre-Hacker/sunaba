@@ -4,7 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 
-namespace Toonbox.Runtime
+namespace Sunaba.Runtime
 {
 	public partial class Build : Node
 	{

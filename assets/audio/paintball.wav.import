@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://bbcu687jyvjbd"
-path="res://.godot/imported/paintball.wav-9093703f586666390b5c42eeab8100ac.sample"
-
-[deps]
-
-source_file="res://assets/audio/paintball.wav"
-dest_files=["res://.godot/imported/paintball.wav-9093703f586666390b5c42eeab8100ac.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:70f9ce3f556f17c3f99d817ede46013b91622da52eff43f549c14925c5d5423d
+size 522

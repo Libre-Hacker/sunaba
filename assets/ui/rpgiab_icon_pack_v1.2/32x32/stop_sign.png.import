@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://brlgqn1p7siif"
-path="res://.godot/imported/stop_sign.png-b14b7741a8fbf58b8fc13321b77b2456.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/stop_sign.png"
-dest_files=["res://.godot/imported/stop_sign.png-b14b7741a8fbf58b8fc13321b77b2456.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:2bf55819cfcc32e984b2ef099616d2fa599150f0cb1f3a465c5c33ec9b9e4a23
+size 799

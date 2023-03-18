@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://bjsq6xwunihv2"
-path="res://.godot/imported/favicon.png-f238f3fc79d4a6b1530f0fe7a825757c.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://site/assets/images/favicon.png"
-dest_files=["res://.godot/imported/favicon.png-f238f3fc79d4a6b1530f0fe7a825757c.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:b32186feae6c0b5697dc10f0de281905e1b22460f733932cd150b265a46e61a1
+size 774

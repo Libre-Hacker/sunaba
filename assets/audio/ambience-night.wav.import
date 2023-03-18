@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://by6ulehfmda1o"
-path="res://.godot/imported/ambience-night.wav-8855f9a45a4f29cb696138eec47fe429.sample"
-
-[deps]
-
-source_file="res://assets/audio/ambience-night.wav"
-dest_files=["res://.godot/imported/ambience-night.wav-8855f9a45a4f29cb696138eec47fe429.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=2
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:881bcfa0d96ae25872b49c76effe056940e21387eeb8bd9f4382fa2a88006eb3
+size 537

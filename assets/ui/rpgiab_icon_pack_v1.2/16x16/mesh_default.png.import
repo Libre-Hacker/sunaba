@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://3r42egcvamha"
-path="res://.godot/imported/mesh_default.png-f1560c34bc33eb1ebf70fe5a3a8fc15a.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/mesh_default.png"
-dest_files=["res://.godot/imported/mesh_default.png-f1560c34bc33eb1ebf70fe5a3a8fc15a.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:26f9ebf15cce63efa2a8c3e880eb3a1dd10a3ca17e55309f62ac711668884a94
+size 807

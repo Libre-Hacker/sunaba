@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://dr0la2iijh26q"
-path="res://.godot/imported/brain.png-b0ffeb925d21f49eb0e295b9c0fabaf6.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Misc/brain.png"
-dest_files=["res://.godot/imported/brain.png-b0ffeb925d21f49eb0e295b9c0fabaf6.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:27a70f67ac39e090db96c9f14313353f34e7d7cc609b4ade89cdfb4425bb5a27
+size 763

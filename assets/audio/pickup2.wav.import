@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://cjbf1d2mr84rt"
-path="res://.godot/imported/pickup2.wav-9f480b700c72b3e6d0ff9d05fd76f5e0.sample"
-
-[deps]
-
-source_file="res://assets/audio/pickup2.wav"
-dest_files=["res://.godot/imported/pickup2.wav-9f480b700c72b3e6d0ff9d05fd76f5e0.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:5893fa9f5881fecf605654549ea81c53e84d0e2c93a888c34f5dc3734ca7f870
+size 516

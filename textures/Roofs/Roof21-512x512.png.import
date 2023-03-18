@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://ben4n1o6hougy"
-path="res://.godot/imported/Roof21-512x512.png-07cd31479327b5e931181b9f2e946d91.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Roofs/Roof21-512x512.png"
-dest_files=["res://.godot/imported/Roof21-512x512.png-07cd31479327b5e931181b9f2e946d91.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:39eecbfd4a31234e66a9d0830fa7cd47b9256c03aeaa3d74fc584e180ac794c5
+size 791

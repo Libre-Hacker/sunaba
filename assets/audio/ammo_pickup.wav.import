@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://c15y24ipmu1da"
-path="res://.godot/imported/ammo_pickup.wav-d4071060ea986a7d703aead454cbf758.sample"
-
-[deps]
-
-source_file="res://assets/audio/ammo_pickup.wav"
-dest_files=["res://.godot/imported/ammo_pickup.wav-d4071060ea986a7d703aead454cbf758.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:d2c1d7d35e73cb7561b08e4fceb2e96450506b21594161751ba23e5e58965e6b
+size 528

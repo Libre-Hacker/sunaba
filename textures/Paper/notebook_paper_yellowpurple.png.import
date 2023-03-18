@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://bbf3j4axlqbu2"
-path="res://.godot/imported/notebook_paper_yellowpurple.png-c8617ba175493c579b4dca968a8a3c3d.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Paper/notebook_paper_yellowpurple.png"
-dest_files=["res://.godot/imported/notebook_paper_yellowpurple.png-c8617ba175493c579b4dca968a8a3c3d.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:dc88436ce8e5f922b581d0ee8ed70d27177651136c1b0ab742116eb0442f8172
+size 830

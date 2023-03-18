@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://di6sxabkerqng"
-path="res://.godot/imported/elevator.wav-6d2222b280e44b6359b852374de95f94.sample"
-
-[deps]
-
-source_file="res://assets/audio/elevator.wav"
-dest_files=["res://.godot/imported/elevator.wav-6d2222b280e44b6359b852374de95f94.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=2
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:509130f19dc116bfab72740240d86400f749100b8d1682849b5dfea68caaa059
+size 519

@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://crxyss5fvooch"
-path="res://.godot/imported/Brick_12-512x512.png-b0140efb26cf45f919926b63bc067af2.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Brick/Brick_12-512x512.png"
-dest_files=["res://.godot/imported/Brick_12-512x512.png-b0140efb26cf45f919926b63bc067af2.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:55ad20c29a64b9295ed9b80e6fc092ac5e52547e0bd6946a938458f79776c5a0
+size 797

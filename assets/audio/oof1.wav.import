@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://dejd4jqpglqo1"
-path="res://.godot/imported/oof1.wav-033a5c9deecd2ac9d7c7f11e80014655.sample"
-
-[deps]
-
-source_file="res://assets/audio/oof1.wav"
-dest_files=["res://.godot/imported/oof1.wav-033a5c9deecd2ac9d7c7f11e80014655.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:4dc162e787fa81151368d325330673715e28eae1ec4d2c94aa5509c9d9eb6abe
+size 507

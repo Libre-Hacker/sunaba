@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://byjc5l54weiod"
-path="res://.godot/imported/Photoreal_Stone_02-512x512.png-35ae850fbd164738ad92c5dc170092a2.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Stone/Photoreal_Stone_02-512x512.png"
-dest_files=["res://.godot/imported/Photoreal_Stone_02-512x512.png-35ae850fbd164738ad92c5dc170092a2.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:278a23ffc2cf4df4191a48350cdb39c719afff3d094f092795a711c8e271f405
+size 827

@@ -1,19 +1,3 @@
-[remap]
-
-importer="oggvorbisstr"
-type="AudioStreamOggVorbis"
-uid="uid://ciuhjf4lq1uxb"
-path="res://.godot/imported/playerfoot_06.ogg-7480d4446d48094c0983f5503de222e6.oggvorbisstr"
-
-[deps]
-
-source_file="res://assets/audio/walk/playerfoot_06.ogg"
-dest_files=["res://.godot/imported/playerfoot_06.ogg-7480d4446d48094c0983f5503de222e6.oggvorbisstr"]
-
-[params]
-
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
-bar_beats=4
+version https://git-lfs.github.com/spec/v1
+oid sha256:863018186229dd4024900890ca38f07034fd5cb705ed5321750a906b9202ffa2
+size 413

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Tools
+namespace Toonbox.Tools
 {
 	public partial class Tool : Node3D
 	{

@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://bjrhs8ne2mwns"
-path="res://.godot/imported/Black_Asphalt_01.png-f78b677d1b1383040651e4c9674d232d.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Black_Asphalt/Black_Asphalt_01.png"
-dest_files=["res://.godot/imported/Black_Asphalt_01.png-f78b677d1b1383040651e4c9674d232d.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:425299a398f7fa8b13a0e60ba5fd680c28d2e9e9a36f91b9deb18945152976a6
+size 805

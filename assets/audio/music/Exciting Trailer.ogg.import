@@ -1,19 +1,3 @@
-[remap]
-
-importer="oggvorbisstr"
-type="AudioStreamOggVorbis"
-uid="uid://dre48x8ivr2qd"
-path="res://.godot/imported/Exciting Trailer.ogg-a9c135d78ade65085a0d362f6f161006.oggvorbisstr"
-
-[deps]
-
-source_file="res://assets/audio/music/Exciting Trailer.ogg"
-dest_files=["res://.godot/imported/Exciting Trailer.ogg-a9c135d78ade65085a0d362f6f161006.oggvorbisstr"]
-
-[params]
-
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
-bar_beats=4
+version https://git-lfs.github.com/spec/v1
+oid sha256:98d063032056b1581e7d522a5ad6356ec9b2aefdb439c6ae851db4e467c8e352
+size 423

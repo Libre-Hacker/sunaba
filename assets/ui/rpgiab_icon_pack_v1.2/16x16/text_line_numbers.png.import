@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://c1nt3xyr3sabe"
-path="res://.godot/imported/text_line_numbers.png-598d63404f13ec5776d2bf772e2a8248.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/text_line_numbers.png"
-dest_files=["res://.godot/imported/text_line_numbers.png-598d63404f13ec5776d2bf772e2a8248.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:dfb6e75fffa277c649cdafe17d4dc265e7235e404f1afa074326a3f083822c80
+size 823

@@ -1,14 +1,3 @@
-[remap]
-
-importer="qodot.map"
-type="Resource"
-uid="uid://c6kdm40nefbb2"
-path="res://.godot/imported/paradise.map-dbc4011cecf712eda65fca304b12e979.tres"
-
-[deps]
-
-source_file="res://maps/paradise.map"
-dest_files=["res://.godot/imported/paradise.map-dbc4011cecf712eda65fca304b12e979.tres"]
-
-[params]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:682b8c79bf2df5e56c6c2ee62bec9bc579aaae1be84aa1bb8c512d64762b33c9
+size 298

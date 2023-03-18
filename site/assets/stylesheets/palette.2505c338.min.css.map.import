@@ -1,14 +1,3 @@
-[remap]
-
-importer="qodot.map"
-type="Resource"
-uid="uid://bbhe2x0sfp4g0"
-path="res://.godot/imported/palette.2505c338.min.css.map-36b2b63c4a3e7f573bbf89f6d722f3fc.tres"
-
-[deps]
-
-source_file="res://site/assets/stylesheets/palette.2505c338.min.css.map"
-dest_files=["res://.godot/imported/palette.2505c338.min.css.map-36b2b63c4a3e7f573bbf89f6d722f3fc.tres"]
-
-[params]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:3a7f2b9c2649dd71c0024cea84996ed2e052dcf6993b628d8a5eb92ccb8b17ec
+size 365

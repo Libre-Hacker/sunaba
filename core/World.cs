@@ -1,6 +1,6 @@
 /*
 
-This is a C# script that is used in the Sunaba game engine. The script represents the World class and contains methods that handle loading maps, respawning players, and adding bots to the game.
+This is a C# script that is used in the Toonbox game engine. The script represents the World class and contains methods that handle loading maps, respawning players, and adding bots to the game.
 
 The World class inherits from the Node3D class, which is a built-in class in the Godot game engine. The script initializes some member variables, such as mapManager, navRegion, and mainNode, in the _Ready method, which is called when the node enters the scene tree for the first time.
 
@@ -21,7 +21,7 @@ The AddBots and AddBot methods are not fully implemented and are left as exercis
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace Toonbox.Runtime
 {
 	public partial class World : Node3D
 	{

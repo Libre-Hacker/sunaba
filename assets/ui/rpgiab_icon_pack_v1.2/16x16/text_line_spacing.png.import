@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://bkfj2no4s87u8"
-path="res://.godot/imported/text_line_spacing.png-ede7a6248f1dee87b77d64450bef6227.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/text_line_spacing.png"
-dest_files=["res://.godot/imported/text_line_spacing.png-ede7a6248f1dee87b77d64450bef6227.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:7efc48d93af9fbf906f455f15869cd16b4d0e287bda6eb2210fdbe6227f13916
+size 823

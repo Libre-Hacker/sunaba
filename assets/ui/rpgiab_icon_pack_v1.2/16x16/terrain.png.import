@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://6gr4fq5me8kl"
-path="res://.godot/imported/terrain.png-e60b47385b70f30e4322c8676f899b45.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/terrain.png"
-dest_files=["res://.godot/imported/terrain.png-e60b47385b70f30e4322c8676f899b45.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:8ac93a7feeba2148a8df910feeab0ac6b17f4d3b15f051c3c5f94940dc19a010
+size 792

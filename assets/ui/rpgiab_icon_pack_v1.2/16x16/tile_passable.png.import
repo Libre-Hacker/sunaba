@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://doqodc2nrphu8"
-path="res://.godot/imported/tile_passable.png-ce77ddece8e1b0940428f1ac40d3cd7c.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/tile_passable.png"
-dest_files=["res://.godot/imported/tile_passable.png-ce77ddece8e1b0940428f1ac40d3cd7c.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:d9473dc58dd25f15b4433cc6f8b70fdc69307e65cdb5c7194852be2bf6be5002
+size 811

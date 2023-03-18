@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://bm0m05aqp7ns5"
-path="res://.godot/imported/ambient_occlusion_voxel.png-1fc883e8dbf1b562895d7a6f02ba8f2e.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/ambient_occlusion_voxel.png"
-dest_files=["res://.godot/imported/ambient_occlusion_voxel.png-1fc883e8dbf1b562895d7a6f02ba8f2e.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:ecaa3ee72bce0d7bd3d7ba625ebaae384d3ce334dbc8947dd370961c2a1bd0ae
+size 841

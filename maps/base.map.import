@@ -1,14 +1,3 @@
-[remap]
-
-importer="qodot.map"
-type="Resource"
-uid="uid://b08gmrbjwt3u4"
-path="res://.godot/imported/base.map-0188990ca4bdf0faa4c5869a8620135e.tres"
-
-[deps]
-
-source_file="res://maps/base.map"
-dest_files=["res://.godot/imported/base.map-0188990ca4bdf0faa4c5869a8620135e.tres"]
-
-[params]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:4efb84ab443ca5293a39f9c7ef89db8a5b2193fab11907565ed248a2fe8fb78d
+size 286

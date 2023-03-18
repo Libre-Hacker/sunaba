@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://cdle7loq2wafj"
-path="res://.godot/imported/orange_cross.png-a446f55a99c14ea5479c2102b294dd44.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/blockout/orange_cross.png"
-dest_files=["res://.godot/imported/orange_cross.png-a446f55a99c14ea5479c2102b294dd44.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:826ea1b1e75837973dba7ef9e03e3f60cf149cf159cfc1b4ca03fd2d8546d5ea
+size 788

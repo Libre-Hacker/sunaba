@@ -1,19 +1,3 @@
-[remap]
-
-importer="oggvorbisstr"
-type="AudioStreamOggVorbis"
-uid="uid://cooffoumkldpe"
-path="res://.godot/imported/Desert City.ogg-fa0d38e69fc802a8d16ea25911e4730c.oggvorbisstr"
-
-[deps]
-
-source_file="res://assets/audio/music/Desert City.ogg"
-dest_files=["res://.godot/imported/Desert City.ogg-fa0d38e69fc802a8d16ea25911e4730c.oggvorbisstr"]
-
-[params]
-
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
-bar_beats=4
+version https://git-lfs.github.com/spec/v1
+oid sha256:7f37c68ec97ff070263f7f5c3e255029641bbc924a28c7804af09f350224ef2c
+size 408

@@ -1,35 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://bq1ucr8euidpm"
-path.s3tc="res://.godot/imported/himiko_pants_pale.png-3f8fccdf5c618794db19137991d7ebfe.s3tc.ctex"
-metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
-}
-
-[deps]
-
-source_file="res://assets/textures/clothes/himiko_pants_pale.png"
-dest_files=["res://.godot/imported/himiko_pants_pale.png-3f8fccdf5c618794db19137991d7ebfe.s3tc.ctex"]
-
-[params]
-
-compress/mode=2
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=true
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:daead7ab49d7156867d6bb0f57f29f5c8add0b951ae690555fb13c17ac340e8e
+size 857

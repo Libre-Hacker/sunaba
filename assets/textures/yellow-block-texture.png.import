@@ -1,35 +1,3 @@
-[remap]
-
-importer="texture"
-type="StreamTexture"
-path="res://.import/yellow-block-texture.png-74b4c73d9eac516d876047959174c7e0.stex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://imports/textures/yellow-block-texture.png"
-dest_files=[ "res://.import/yellow-block-texture.png-74b4c73d9eac516d876047959174c7e0.stex" ]
-
-[params]
-
-compress/mode=0
-compress/lossy_quality=0.7
-compress/hdr_mode=0
-compress/bptc_ldr=0
-compress/normal_map=0
-flags/repeat=0
-flags/filter=true
-flags/mipmaps=false
-flags/anisotropic=false
-flags/srgb=2
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/HDR_as_SRGB=false
-process/invert_color=false
-process/normal_map_invert_y=false
-stream=false
-size_limit=0
-detect_3d=true
-svg/scale=1.0
+version https://git-lfs.github.com/spec/v1
+oid sha256:f84ef0e410d7c268f11b2ab6d4b15e9b118beb57723e3116778b368cc5812716
+size 774

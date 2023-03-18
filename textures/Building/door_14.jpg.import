@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://sa7xq7nxqtlo"
-path="res://.godot/imported/door_14.jpg-11e2e952d1024a231df6a9a778b5f796.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Building/door_14.jpg"
-dest_files=["res://.godot/imported/door_14.jpg-11e2e952d1024a231df6a9a778b5f796.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:1198f4301b803747ac73a9eb10a9ba60bb5760cf3e93c95c377e391c1d837ce5
+size 772

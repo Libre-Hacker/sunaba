@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://brd7ss53sg301"
-path="res://.godot/imported/arrow_raise_step.png-b89de3701e7d5e17ef3b9e9634155963.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/32x32/arrow_raise_step.png"
-dest_files=["res://.godot/imported/arrow_raise_step.png-b89de3701e7d5e17ef3b9e9634155963.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:d2d30f8df697621fd2114c4b99e347a8544602dfcb429de99a4652564838ceaa
+size 820

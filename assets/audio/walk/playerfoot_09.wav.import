@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://fhjjcheyyaqx"
-path="res://.godot/imported/playerfoot_09.wav-52ac88ec71b179c501a16eed70e65022.sample"
-
-[deps]
-
-source_file="res://assets/audio/walk/playerfoot_09.wav"
-dest_files=["res://.godot/imported/playerfoot_09.wav-52ac88ec71b179c501a16eed70e65022.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:dd5c7504ddfa22d9465d727d05ae61f432c790824ef08fce15d5d5f44aefda39
+size 538

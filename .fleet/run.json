@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "dotnet_launch_settings",
+            "name": "Godot",
+            "projectPath": "",
+            "exePath": "~/scoop/apps/godot-mono/4.0/godot-mono.exe",
+            "profileName": "",
+            "commandName": "",
+            "commandLineArgs": ["--path . --verbose"],
+        },
+
+    ]
+}

@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://ji4dbo72q6me"
-path="res://.godot/imported/clouds_07.png-c1f553f9c79c95448bbd6806cd99fa80.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/clouds/clouds_07.png"
-dest_files=["res://.godot/imported/clouds_07.png-c1f553f9c79c95448bbd6806cd99fa80.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:6e805b83337bd01791061d100b27a2ab5fe1dca6a452278fd2b97974b85b54eb
+size 776

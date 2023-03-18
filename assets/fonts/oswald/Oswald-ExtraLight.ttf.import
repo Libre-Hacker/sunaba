@@ -1,33 +1,3 @@
-[remap]
-
-importer="font_data_dynamic"
-type="FontFile"
-uid="uid://cy3fffe2sc2sb"
-path="res://.godot/imported/Oswald-ExtraLight.ttf-d35a84a065fa785da82561c5d550b95f.fontdata"
-
-[deps]
-
-source_file="res://assets/fonts/oswald/Oswald-ExtraLight.ttf"
-dest_files=["res://.godot/imported/Oswald-ExtraLight.ttf-d35a84a065fa785da82561c5d550b95f.fontdata"]
-
-[params]
-
-Rendering=null
-antialiasing=1
-generate_mipmaps=false
-multichannel_signed_distance_field=false
-msdf_pixel_range=8
-msdf_size=48
-allow_system_fallback=true
-force_autohinter=false
-hinting=1
-subpixel_positioning=1
-oversampling=0.0
-Fallbacks=null
-fallbacks=[]
-Compress=null
-compress=true
-preload=[]
-language_support={}
-script_support={}
-opentype_features={}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6a5d3b79a5c35f86ab19e4988a3f301cc409e012a635f2c263be5c5e1b56939b
+size 708

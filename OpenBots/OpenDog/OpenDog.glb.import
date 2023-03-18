@@ -1,32 +1,3 @@
-[remap]
-
-importer="scene"
-importer_version=1
-type="PackedScene"
-uid="uid://b1mc55mqs33j4"
-path="res://.godot/imported/OpenDog.glb-c578f0eb0ed4195fbb9bb9d44731cc5d.scn"
-
-[deps]
-
-source_file="res://OpenBots/OpenDog/OpenDog.glb"
-dest_files=["res://.godot/imported/OpenDog.glb-c578f0eb0ed4195fbb9bb9d44731cc5d.scn"]
-
-[params]
-
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
-nodes/apply_root_scale=true
-nodes/root_scale=1.0
-meshes/ensure_tangents=true
-meshes/generate_lods=true
-meshes/create_shadow_meshes=true
-meshes/light_baking=1
-meshes/lightmap_texel_size=0.2
-skins/use_named_skins=true
-animation/import=true
-animation/fps=30
-animation/trimming=false
-animation/remove_immutable_tracks=true
-import_script/path=""
-_subresources={}
-gltf/embedded_image_handling=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:f3550975fe0f8a7938c5e39c2ac617262fba068b7470ec1ae2166450fb530bba
+size 766

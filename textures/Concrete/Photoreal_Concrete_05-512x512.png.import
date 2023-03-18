@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://emrcwmwkikg3"
-path="res://.godot/imported/Photoreal_Concrete_05-512x512.png-3ecfc8e7be154fc31f0bf104e0190c20.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Concrete/Photoreal_Concrete_05-512x512.png"
-dest_files=["res://.godot/imported/Photoreal_Concrete_05-512x512.png-3ecfc8e7be154fc31f0bf104e0190c20.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:5c28025b7ea2f75f52048cb60b1f986b0c39932d896b655ea9d9320a4885c639
+size 838

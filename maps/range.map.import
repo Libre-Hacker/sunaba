@@ -1,14 +1,3 @@
-[remap]
-
-importer="qodot.map"
-type="Resource"
-uid="uid://b8vfy7ry4jmu0"
-path="res://.godot/imported/range.map-b862717f512794d263350f1199a065d7.tres"
-
-[deps]
-
-source_file="res://maps/range.map"
-dest_files=["res://.godot/imported/range.map-b862717f512794d263350f1199a065d7.tres"]
-
-[params]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:735cc53936ff211a30802f0acfc08d1ef35beb0a615289efd5a7b34f08eca7a1
+size 289

@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://1gemqc0k862s"
-path="res://.godot/imported/DNA_Lavalamp_02.png-70d25a733586a59a0553916e522fa71c.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/DNA_Lavalamp/DNA_Lavalamp_02.png"
-dest_files=["res://.godot/imported/DNA_Lavalamp_02.png-70d25a733586a59a0553916e522fa71c.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:26b7fe53faa3b6198b74665288dedb2b241ca081a3bba0acf5a1711e02a0abfd
+size 800

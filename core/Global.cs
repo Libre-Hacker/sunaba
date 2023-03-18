@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 using System.Linq;
 
-namespace Sunaba.Runtime
+namespace Toonbox.Runtime
 {
 	public partial class Global : Node
 	{

@@ -1,14 +1,3 @@
-[remap]
-
-importer="qodot.map"
-type="Resource"
-uid="uid://bfjwvvg6qple7"
-path="res://.godot/imported/city.map-425183580296223306637894a803785f.tres"
-
-[deps]
-
-source_file="res://maps/city.map"
-dest_files=["res://.godot/imported/city.map-425183580296223306637894a803785f.tres"]
-
-[params]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:da8f0f32670e853b693d7476c7efa2aee0879ae7918e50582182b2904f6f9738
+size 286

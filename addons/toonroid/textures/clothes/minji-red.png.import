@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://bgdsluiqv6etp"
-path="res://.godot/imported/minji-red.png-c69e9cc2b09f0ba982cc1ee9f242898e.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://addons/toonroid/textures/clothes/minji-red.png"
-dest_files=["res://.godot/imported/minji-red.png-c69e9cc2b09f0ba982cc1ee9f242898e.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:343d80adf5a3205b80b0c96cdc430441f58d2b7e4cfa11ef461a97d6650eff36
+size 794

@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://caqg1x0c5y8wu"
-path="res://.godot/imported/twitter_logo.png-d8999e51588c3fac7e0eea5f6b47dfa8.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/ui/rpgiab_icon_pack_v1.2/16x16/twitter_logo.png"
-dest_files=["res://.godot/imported/twitter_logo.png-d8999e51588c3fac7e0eea5f6b47dfa8.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:0378aabbb8bf61bb5651b94de8458f431cac1c3e08646b54a9dc0bba47872979
+size 808

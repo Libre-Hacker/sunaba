@@ -1,33 +1,3 @@
-[remap]
-
-importer="font_data_dynamic"
-type="FontFile"
-uid="uid://cu4sbkevqftej"
-path="res://.godot/imported/Play-Regular.ttf-1aa2fe5d2d42ccbcc710c40f91f37c5c.fontdata"
-
-[deps]
-
-source_file="res://assets/fonts/Play-Regular.ttf"
-dest_files=["res://.godot/imported/Play-Regular.ttf-1aa2fe5d2d42ccbcc710c40f91f37c5c.fontdata"]
-
-[params]
-
-Rendering=null
-antialiasing=1
-generate_mipmaps=false
-multichannel_signed_distance_field=false
-msdf_pixel_range=8
-msdf_size=48
-allow_system_fallback=true
-force_autohinter=false
-hinting=1
-subpixel_positioning=1
-oversampling=0.0
-Fallbacks=null
-fallbacks=[]
-Compress=null
-compress=true
-preload=[]
-language_support={}
-script_support={}
-opentype_features={}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f914ef78c7639713d85c0789a15b3b6d152c7f6be5d80fb666c0930a0bd4a313
+size 686

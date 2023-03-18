@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://rnypmpejfcbm"
-path="res://.godot/imported/purple_dots.png-6eea7dce2fff47b90e8227fae91e31fc.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/blockout/purple_dots.png"
-dest_files=["res://.godot/imported/purple_dots.png-6eea7dce2fff47b90e8227fae91e31fc.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:8626a7b8753307967a08ed0b74093d5a3ecb1fee3a13c46de27a53e19a0d01bf
+size 784

@@ -1,24 +1,3 @@
-[remap]
-
-importer="wav"
-type="AudioStreamWAV"
-uid="uid://5wdmgokytd60"
-path="res://.godot/imported/jump.wav-7ea4d93114fa52c0b9979f6b2117f13f.sample"
-
-[deps]
-
-source_file="res://assets/audio/jump.wav"
-dest_files=["res://.godot/imported/jump.wav-7ea4d93114fa52c0b9979f6b2117f13f.sample"]
-
-[params]
-
-force/8_bit=false
-force/mono=false
-force/max_rate=false
-force/max_rate_hz=44100
-edit/trim=false
-edit/normalize=false
-edit/loop_mode=0
-edit/loop_begin=0
-edit/loop_end=-1
-compress/mode=0
+version https://git-lfs.github.com/spec/v1
+oid sha256:6d6f82d11537b4220647b6b0f644afa5a08c740769faaead33f51c48278670a5
+size 506

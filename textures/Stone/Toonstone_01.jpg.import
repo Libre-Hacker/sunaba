@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://1rtpb00iqlb2"
-path="res://.godot/imported/Toonstone_01.jpg-ec83e379733a244ebc0b60f7ca3183cf.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Stone/Toonstone_01.jpg"
-dest_files=["res://.godot/imported/Toonstone_01.jpg-ec83e379733a244ebc0b60f7ca3183cf.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:41b709a81d58000bda23e75f527e957e4a73a81b0ca37698af0527a7a4b6ea10
+size 784

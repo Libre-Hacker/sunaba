@@ -1,32 +1,3 @@
-[remap]
-
-importer="scene"
-importer_version=1
-type="PackedScene"
-uid="uid://c1mv8pg12lcit"
-path="res://.godot/imported/minji.gltf-dc72dcdfab2834ab53bdb880ca0162c0.scn"
-
-[deps]
-
-source_file="res://addons/toonroid/models/minji.gltf"
-dest_files=["res://.godot/imported/minji.gltf-dc72dcdfab2834ab53bdb880ca0162c0.scn"]
-
-[params]
-
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
-nodes/apply_root_scale=true
-nodes/root_scale=1.0
-meshes/ensure_tangents=true
-meshes/generate_lods=true
-meshes/create_shadow_meshes=true
-meshes/light_baking=1
-meshes/lightmap_texel_size=0.2
-skins/use_named_skins=true
-animation/import=true
-animation/fps=30
-animation/trimming=false
-animation/remove_immutable_tracks=true
-import_script/path=""
-_subresources={}
-gltf/embedded_image_handling=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:9127773f77ebb6f46a2a3f8188384f3b663ef7955e82cba509419df6d8c90d97
+size 769

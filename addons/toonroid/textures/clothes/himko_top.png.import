@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://b1nx1rpsk4vxo"
-path="res://.godot/imported/himko_top.png-4cb3d8d92c8e7630891d285c3de13ee8.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://addons/toonroid/textures/clothes/himko_top.png"
-dest_files=["res://.godot/imported/himko_top.png-4cb3d8d92c8e7630891d285c3de13ee8.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:d9fcf70182a4a0cab156dca61cce49c4dc8de55152821ae9b4af23017d07cd67
+size 794

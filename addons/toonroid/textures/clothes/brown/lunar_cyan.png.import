@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://b44ybrg4o0bug"
-path="res://.godot/imported/lunar_cyan.png-2da6c12bcb58e53790d1106c72930d74.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://addons/toonroid/textures/clothes/brown/lunar_cyan.png"
-dest_files=["res://.godot/imported/lunar_cyan.png-2da6c12bcb58e53790d1106c72930d74.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:af54ee2d610b099d92b5c61feb8697e747cd30dd2b42488ec495924f2b76c60d
+size 803

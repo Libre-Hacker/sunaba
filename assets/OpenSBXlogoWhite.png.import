@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://db2fjjjc60215"
-path="res://.godot/imported/OpenSBXlogoWhite.png-d47fed3a523ee23f19d71059b00536e3.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://assets/OpenSBXlogoWhite.png"
-dest_files=["res://.godot/imported/OpenSBXlogoWhite.png-d47fed3a523ee23f19d71059b00536e3.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:6bd33de88c5671285361dd3dba735795b496b959ee601f1a8e97c236ebf085dc
+size 789

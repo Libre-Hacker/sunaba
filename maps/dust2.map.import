@@ -1,14 +1,3 @@
-[remap]
-
-importer="qodot.map"
-type="Resource"
-uid="uid://ctnr7sy4ru3og"
-path="res://.godot/imported/dust2.map-74fbec41becdc85ef754746bfbc44343.tres"
-
-[deps]
-
-source_file="res://maps/dust2.map"
-dest_files=["res://.godot/imported/dust2.map-74fbec41becdc85ef754746bfbc44343.tres"]
-
-[params]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:e46e48f290e4f09e906c5e90636293ae4b078184264c4e28819c7a657a60889a
+size 289

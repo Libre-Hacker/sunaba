@@ -1,14 +1,3 @@
-[remap]
-
-importer="qodot.palette"
-type="Resource"
-uid="uid://b1b1wyyoa6lpf"
-path="res://.godot/imported/palette.lmp-607fece05ca2e6d7092d2b1487763816.tres"
-
-[deps]
-
-source_file="res://addons/qodot/palette.lmp"
-dest_files=["res://.godot/imported/palette.lmp-607fece05ca2e6d7092d2b1487763816.tres"]
-
-[params]
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:ca69db9a633482b2be68c53aa3caa73586dbb0383d3b8690c7ad6d5d76e39081
+size 307

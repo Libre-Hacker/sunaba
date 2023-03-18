@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://b16v2h5ybhs45"
-path="res://.godot/imported/Voyager3_16.jpg-6ce1e09e172eb8a1479d177a6b7edaec.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Misc/Voyager3_16.jpg"
-dest_files=["res://.godot/imported/Voyager3_16.jpg-6ce1e09e172eb8a1479d177a6b7edaec.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:d29833ab7fc3affdd79620c76a274792fe67caeef4cf9fc1049789f9701478ce
+size 781

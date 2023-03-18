@@ -1,19 +1,3 @@
-[remap]
-
-importer="mp3"
-type="AudioStreamMP3"
-uid="uid://dhowolwhhtbay"
-path="res://.godot/imported/reload.mp3-7eceb517c9d23e67fb0d77f3c049ee5f.mp3str"
-
-[deps]
-
-source_file="res://assets/audio/reload.mp3"
-dest_files=["res://.godot/imported/reload.mp3-7eceb517c9d23e67fb0d77f3c049ee5f.mp3str"]
-
-[params]
-
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
-bar_beats=4
+version https://git-lfs.github.com/spec/v1
+oid sha256:ac27bcba4da32278bbaf925f1d4dccdc46cf84cdd51d124d9ad065995793d97f
+size 379

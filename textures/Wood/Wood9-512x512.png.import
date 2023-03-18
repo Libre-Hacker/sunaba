@@ -1,34 +1,3 @@
-[remap]
-
-importer="texture"
-type="CompressedTexture2D"
-uid="uid://cep2rs8ls8p7o"
-path="res://.godot/imported/Wood9-512x512.png-15fd852d56b02b93d58a5501eb252f7e.ctex"
-metadata={
-"vram_texture": false
-}
-
-[deps]
-
-source_file="res://textures/Wood/Wood9-512x512.png"
-dest_files=["res://.godot/imported/Wood9-512x512.png-15fd852d56b02b93d58a5501eb252f7e.ctex"]
-
-[params]
-
-compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
-compress/hdr_compression=1
-compress/normal_map=0
-compress/channel_pack=0
-mipmaps/generate=false
-mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:3b1c8542ada32d451c44aae0ea16b7dff987eea02234fbd2ee91a769eb50166e
+size 787

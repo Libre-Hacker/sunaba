@@ -1,32 +1,3 @@
-[remap]
-
-importer="scene"
-importer_version=1
-type="PackedScene"
-uid="uid://cdebqw6lv7dh"
-path="res://.godot/imported/OpenBot.glb-59914df62f6aec3ccc80e7dee5c3d762.scn"
-
-[deps]
-
-source_file="res://OpenBots/OpenBot/OpenBot.glb"
-dest_files=["res://.godot/imported/OpenBot.glb-59914df62f6aec3ccc80e7dee5c3d762.scn"]
-
-[params]
-
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
-nodes/apply_root_scale=true
-nodes/root_scale=1.0
-meshes/ensure_tangents=true
-meshes/generate_lods=true
-meshes/create_shadow_meshes=true
-meshes/light_baking=1
-meshes/lightmap_texel_size=0.2
-skins/use_named_skins=true
-animation/import=true
-animation/fps=30
-animation/trimming=false
-animation/remove_immutable_tracks=true
-import_script/path=""
-_subresources={}
-gltf/embedded_image_handling=1
+version https://git-lfs.github.com/spec/v1
+oid sha256:a7626b15072de27a14cbee4514610e228b77bb1a585da7fe6e4c3c5f101c4e32
+size 765

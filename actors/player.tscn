@@ -1,18 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=30 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="Script" path="res://actors/Player.cs" id="1_xe16v"]
-[ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_6kt2j"]
-[ext_resource type="AudioStream" uid="uid://ol7ob3feddtx" path="res://assets/audio/walk/playerfoot_02.ogg" id="3_h85wq"]
-[ext_resource type="AudioStream" uid="uid://cpco3qorfi2hu" path="res://assets/audio/walk/playerfoot_03.ogg" id="4_qyfso"]
-[ext_resource type="AudioStream" uid="uid://bnq3c31t46c8n" path="res://assets/audio/walk/playerfoot_04.ogg" id="5_ltvl1"]
-[ext_resource type="AudioStream" uid="uid://cj1xsufyc422m" path="res://assets/audio/walk/playerfoot_05.ogg" id="6_jjx6x"]
 [ext_resource type="Texture2D" uid="uid://sb6xtq5rhmrc" path="res://assets/ui/material/favorite_FILL0_wght700_GRAD-25_opsz48.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://psn3t1ed1c4l" path="res://assets/ui/directions_run_FILL0_wght400_GRAD0_opsz24.png" id="7_aigaw"]
-[ext_resource type="AudioStream" uid="uid://ciuhjf4lq1uxb" path="res://assets/audio/walk/playerfoot_06.ogg" id="7_qd3hu"]
-[ext_resource type="AudioStream" uid="uid://b2alrpik37gsg" path="res://assets/audio/walk/playerfoot_07.ogg" id="8_ragwt"]
 [ext_resource type="Texture2D" uid="uid://gtl8acrcv3bb" path="res://assets/ui/crosshair.png" id="9"]
-[ext_resource type="AudioStream" uid="uid://xsn4y0xr76bc" path="res://assets/audio/walk/playerfoot_08.ogg" id="9_ci5of"]
-[ext_resource type="AudioStream" uid="uid://cymksrs8jh8n3" path="res://assets/audio/walk/playerfoot_10.ogg" id="11_4145y"]
 [ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="12_7t0uy"]
 [ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
 [ext_resource type="AnimationLibrary" uid="uid://dwka0podvhgpc" path="res://Libraries/Humanoid/Locomotion-Library.res" id="13_4yg8w"]
@@ -321,50 +312,8 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 region_rect = Rect2(0, 0, 49, 45)
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "headPos", "akari", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpSwordRange", "tpSwordRange", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sprintingIcon", "sbMenuWindow", "sbMenu", "toolTree") groups=["player"]]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_xe16v")
-footSounds = Array[AudioStreamOggVorbis]([ExtResource("2_6kt2j"), ExtResource("3_h85wq"), ExtResource("4_qyfso"), ExtResource("5_ltvl1"), ExtResource("6_jjx6x"), ExtResource("7_qd3hu"), ExtResource("8_ragwt"), ExtResource("9_ci5of"), ExtResource("12_dicte"), ExtResource("11_4145y")])
-head = NodePath("Head")
-fpCamera = NodePath("Head/Camera3D")
-tpCamera = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera")
-model = NodePath("PlayerModel")
-headPos = NodePath("PlayerModel/Akari/GeneralSkeleton/Head/HeadPos")
-akari = NodePath("PlayerModel/Akari")
-collisionShape = NodePath("CollisionShape3D")
-animationPlayer = NodePath("PlayerModel/AnimationPlayer")
-gunAnimationPlayer = NodePath("Head/AnimationPlayer")
-handLoc = NodePath("Head/HandLoc")
-hand = NodePath("Head/Hand")
-fpReach = NodePath("Head/Camera3D/Reach")
-tpReach = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera/Reach")
-fpSwordRange = NodePath("Head/Camera3D/SwordRange")
-tpSwordRange = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera/SwordRange")
-fpAimCast = NodePath("Head/Camera3D/AimCast")
-tpAimCast = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera/AimCast")
-fpRayContainer = NodePath("Head/Camera3D/RayContainer")
-tpRayContainer = NodePath("Head/SpringArm3D/SpringArm3D/TPCamera/RayContainer")
-walkTimer = NodePath("WalkTimer")
-fireTimer = NodePath("FireTimer")
-reloadTimer = NodePath("ReloadTimer")
-walkSound = NodePath("WalkSound")
-runSound = NodePath("RunSound")
-reloadSound = NodePath("ReloadSound")
-pickupSound = NodePath("PickupSound")
-jumpSound = NodePath("JumpSound")
-crosshair = NodePath("Hud/Crosshair")
-reloadLabel = NodePath("Hud/Crosshair/Label")
-toolPanel = NodePath("Hud/ToolPanel")
-toolLabel = NodePath("Hud/ToolPanel/Label")
-toolAmmoBar = NodePath("Hud/ToolPanel/ProgressBar")
-toolAmmoCounter = NodePath("Hud/ToolPanel/ProgressBar/Label")
-playerPanel = NodePath("Hud/Panel")
-playerName = NodePath("Hud/ToolPanel/Label")
-healthBar = NodePath("Hud/Panel/HealthBar")
-healthCounter = NodePath("Hud/Panel/HealthBar/Label")
-sprintingIcon = NodePath("Hud/Panel/SprintingIcon")
-sbMenuWindow = NodePath("Hud/SBMenuWindow")
-sbMenu = NodePath("Hud/SBMenuWindow/SBMenu")
-toolTree = NodePath("Hud/SBMenuWindow/SBMenu/TabBar/TabContainer/Tools/Tree")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_rs28k")

@@ -108,7 +108,7 @@ namespace Toonbox.Runtime
             var global = GetNode("/root/Global");
 			var gameStarted = global.Get("gameStarted");
             var gamePaused = global.Get("gamePaused");
-
+			
 
 
 			if (gameStarted.AsBool() == true)

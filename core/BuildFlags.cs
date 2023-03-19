@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Reflection;
 
-namespace Toonbox.Runtime
+namespace Sunaba.Runtime
 {
     public partial class BuildFlags : Resource
     {

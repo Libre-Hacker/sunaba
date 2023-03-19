@@ -1,10 +1,10 @@
 using Godot;
 using Godot.Collections;
 using System;
-using Toonbox.Runtime;
-using Toonbox.Tools;
+using Sunaba.Runtime;
+using Sunaba.Tools;
 
-namespace Toonbox.Actors
+namespace Sunaba.Actors
 {
 	public partial class Player : CharacterBody3D
 	{

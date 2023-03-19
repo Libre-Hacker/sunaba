@@ -2,7 +2,7 @@
 
 a 3D sandbox game with user-generated map support. Powered by Godot 4.
 
-[Discord Server](https://discord.new/kwpAK54dRBjY)
+[Discord Server](https://discord.gg/McfgW6Kx)
 
 ## Features
 

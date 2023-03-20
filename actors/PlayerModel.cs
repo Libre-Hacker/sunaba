@@ -40,6 +40,8 @@ namespace Sunaba.Actors
 
         public override void _EnterTree()
         {
+            if (isPartOfActor) return;
+
             string nameString = GetParent<CharacterBody3D>().Name.ToString();
             string networkID = Multiplayer.GetUniqueId().ToString();
 
@@ -62,7 +64,6 @@ namespace Sunaba.Actors
 		{
 			if (IsMultiplayerAuthority())
 			{
-
                 headwear = global.headwear;
 				skinColor = global.skinColor;
 				faceTexture = global.faceTexture;
@@ -71,7 +72,7 @@ namespace Sunaba.Actors
 				handsTexture = global.handsTexture;
 				pantsTexture = global.pantsTexture;
 				shoesTexture = global.shoesTexture;
-    }
+            }
 
             ChangeHeadwear(headwear);
             ChangeTexture(headMaterial, "res://addons/toonroid/textures/" + skinColor + ".png");

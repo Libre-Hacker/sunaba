@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwqmmruyfs4tx"]
+
+[ext_resource type="Script" path="res://entities/NPC.cs" id="1_r3407"]
+[ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="2_g5ujn"]
+[ext_resource type="AnimationLibrary" uid="uid://dwka0podvhgpc" path="res://Libraries/Humanoid/Locomotion-Library.res" id="3_thn8r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fg2ii"]
+radius = 0.28
+height = 1.497
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_r3407")
+npcScript = "npcTest1"
+
+[node name="PlayerModel" parent="." instance=ExtResource("2_g5ujn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="GeneralSkeleton" parent="PlayerModel/Akari" index="0"]
+bones/22/rotation = Quaternion(0.283468, -0.0362069, -0.173347, 0.942489)
+bones/41/rotation = Quaternion(0.2049, 0.00655748, 0.0974378, 0.973899)
+
+[node name="Hair" parent="PlayerModel/Akari/GeneralSkeleton" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+
+[node name="Head" parent="PlayerModel/Akari/GeneralSkeleton" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.7253e-08, 0, 3.7253e-08, 1, -2.41328e-15, 0.945755, -0.00287097)
+bone_name = "face"
+
+[node name="AnimationPlayer" parent="PlayerModel" index="1"]
+autoplay = "mixamo/idle1"
+libraries = {
+"Locomotion-Library": ExtResource("3_thn8r")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748726, 0)
+shape = SubResource("CapsuleShape3D_fg2ii")
+
+[editable path="PlayerModel"]

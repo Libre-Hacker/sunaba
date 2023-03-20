@@ -1,7 +1,6 @@
-site_name: Toonbox
-site_url: https://m1ntkat.github.io/toonbox-site/
+site_name: Sunaba
+site_url: https://m1ntkat.github.io/sunaba/
 nav:
     - Home: index.md
-    - Downloads: downloads.md
 theme:
   name: material

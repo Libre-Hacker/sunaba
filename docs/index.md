@@ -1,11 +1,11 @@
 # Home
 
-## The 3D sandbox game
+## The open source 3D sandbox game
 
 
-Toonbox is a 3D sandbox game with user-generated map support. Powered by Godot 4
+Sunaba is a 3D sandbox game with user-generated map support. Powered by Godot 4
 
-[Download Now](downloads.md)
+[Download Now](https://github.com/m1ntkat/sunaba/releases)
 
 ## Features
 

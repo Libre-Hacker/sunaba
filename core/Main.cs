@@ -1,4 +1,5 @@
 using Godot;
+using MoonSharp.Interpreter;
 using System;
 
 namespace Sunaba.Runtime
@@ -31,7 +32,7 @@ namespace Sunaba.Runtime
 			global.gameStarted = false;
 			global.gamePaused = false;
 			console = GetNode<Console>("/root/Console");
-			console.Register("Sunaba", this);
+			//console.Register("Sunaba", this);
 			Build build = GetNode<Build>("/root/Build");
 
             GD.Print("");

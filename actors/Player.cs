@@ -188,7 +188,7 @@ namespace Sunaba.Actors
 				toolPanel.Show();
 
                 Console console = GetNode<Console>("/root/Console");
-                console.Register(Name, this);
+                //console.Register(Name, this);
             }
 			fpCamera.Current = IsMultiplayerAuthority();
 			tpCamera.Current = false;

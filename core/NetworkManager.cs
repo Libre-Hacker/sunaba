@@ -1,9 +1,10 @@
 using Godot;
+using MoonSharp.Interpreter;
 using System;
 
 namespace Sunaba.Runtime
 {
-	public partial class NetworkManager : Node
+    public partial class NetworkManager : Node
 	{
 		private String matchId = null;
 
@@ -29,7 +30,7 @@ namespace Sunaba.Runtime
 			Multiplayer.MultiplayerPeer = null;
 
             Console console = GetNode<Console>("/root/Console");
-            console.Register(Name, this);
+            //console.Register(Name, this);
         }
 
         public void CreateRoom()

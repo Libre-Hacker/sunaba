@@ -9,7 +9,7 @@ public partial class Settings : Node
     public override void _Ready()
 	{
         Console console = GetNode<Console>("/root/Console");
-        //console.Register(Name, this);
+        ////console.Register(Name, this);
     }
 
 	

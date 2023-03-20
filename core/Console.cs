@@ -14,7 +14,7 @@ public partial class Console : Node
     [Export]
     public LineEdit lineEdit;
 
-    MoonSharp.Interpreter.Script script = new MoonSharp.Interpreter.Script();
+    public MoonSharp.Interpreter.Script script = new MoonSharp.Interpreter.Script();
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -58,10 +58,14 @@ public partial class Console : Node
 
 	public void Register(String name, Node node)
 	{
-		/*if (console != null)
+        /*if (console != null)
 		{
 			console.Call("register_env", name, node);
 		}*/
+
+        //script.Globals["obj"] = new MyClass();
+        script.Globals[name] = node;
+
     }
 
     public void OnWindowCloseRequested()

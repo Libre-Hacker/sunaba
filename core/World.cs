@@ -39,14 +39,14 @@ namespace Sunaba.Runtime
 
 			main = GetParent<Main>();
 
-            Console console = GetNode<Console>("/root/Console");
-            //console.Register(Name, this);
+            Console console = GetNode<Console>("/root/PConsole");
+            console.Register(Name, this);
 
         }
 
 		public void LoadMapPath(string path)
 		{
-			PackedScene mapHolderPath = GD.Load<PackedScene>("res://core/map_holder.tscn");
+			PackedScene mapHolderPath = GD.Load<PackedScene>("res://core/MapHolder.tscn");
 			MapHolder mapHolder = mapHolderPath.Instantiate<MapHolder>();
 			AddChild(mapHolder);
 			mapHolder.map = path;

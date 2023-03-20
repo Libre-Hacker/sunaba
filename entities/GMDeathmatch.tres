@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_lh7pl"]
+[ext_resource type="PackedScene" uid="uid://byq50pq3tgyl0" path="res://entities/GMDeathmatch.tscn" id="1_ln78a"]
+
+
+[resource]
+script = ExtResource("1_lh7pl")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_ln78a")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "gm_deathmatch"
+description = "Deathmatch Game Mode"
+qodot_internal = false
+base_classes = []
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

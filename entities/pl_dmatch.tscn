@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b37n3d3e6uiix"]
-
-[ext_resource type="Script" path="res://entities/pl_dmatch.gd" id="1_8x4sh"]
-
-[node name="player" type="Node3D"]
-script = ExtResource("1_8x4sh")

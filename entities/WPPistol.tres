@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bmt1txjn5p74f"]
+
+[ext_resource type="PackedScene" uid="uid://un767v26k0na" path="res://entities/WPPistol.tscn" id="1_tis4q"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_t1k3m"]
+
+[resource]
+script = ExtResource("2_t1k3m")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_tis4q")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "wp_pistol"
+description = "Pistol"
+qodot_internal = false
+base_classes = []
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://dvhvn45g310nk"]
+
+[ext_resource type="PackedScene" uid="uid://fes56iisosr1" path="res://entities/WPSemigun.tscn" id="1_ak2n4"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_hesm6"]
+
+[resource]
+script = ExtResource("2_hesm6")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_ak2n4")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "wp_semigun"
+description = "Paintball Gun"
+qodot_internal = false
+base_classes = []
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

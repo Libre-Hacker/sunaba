@@ -31,8 +31,8 @@ namespace Sunaba.Runtime
 			Global global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
-			console = GetNode<Console>("/root/Console");
-			//console.Register("Sunaba", this);
+			console = GetNode<Console>("/root/PConsole");
+			console.Register("Sunaba", this);
 			Build build = GetNode<Build>("/root/Build");
 
             GD.Print("");
@@ -106,7 +106,8 @@ namespace Sunaba.Runtime
 			global.gameStarted = false;
 			global.gamePaused = false;
 			global.player = null;
-			GetTree().ReloadCurrentScene();
+
+			GetTree().ChangeSceneToFile("res://core/Reload.tscn");
 		}
 
 		public void Connect()

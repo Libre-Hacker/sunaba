@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw1j4grnb38f2"]
+[gd_scene load_steps=3 format=3 uid="uid://lm1hqh4yke5p"]
 
 [ext_resource type="Script" path="res://core/Console.cs" id="1_qnb4d"]
 [ext_resource type="PackedScene" uid="uid://chctfe5uts1c" path="res://core/ConsolePanel.tscn" id="2_4mid1"]
 
-[node name="Console" type="Node" node_paths=PackedStringArray("window", "output", "lineEdit")]
+[node name="Console" type="Node"]
 script = ExtResource("1_qnb4d")
-window = NodePath("Window")
-output = NodePath("Window/Panel/Panel/Output")
-lineEdit = NodePath("Window/Panel/LineEdit")
 
 [node name="Window" type="Window" parent="."]
 title = "Console"

@@ -1,30 +1,31 @@
-[gd_scene load_steps=16 format=3 uid="uid://cec4c5t31w0xk"]
+[gd_scene load_steps=15 format=3 uid="uid://d06blf4ftkgn8"]
 
-[ext_resource type="Script" path="res://core/Main.cs" id="1_v0323"]
-[ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_3gh8e"]
-[ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_4cpvj"]
-[ext_resource type="Script" path="res://core/UI.cs" id="5_lswxf"]
-[ext_resource type="Texture2D" uid="uid://dt8x6u8ink38t" path="res://assets/sunabaLogoWhite.png" id="6_jk0rr"]
-[ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="7_iyyxn"]
-[ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="8_47m63"]
-[ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/new_room.tscn" id="8_nlpex"]
-[ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_cj05d"]
-[ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/standard_map_picker.tscn" id="10_wye3g"]
-[ext_resource type="PackedScene" uid="uid://gld5ww40xaln" path="res://core/settings_dialog.tscn" id="11"]
-[ext_resource type="PackedScene" uid="uid://cbf3gpuk88g03" path="res://core/world.tscn" id="12"]
-[ext_resource type="Script" path="res://core/ConnectDialog.cs" id="12_e4k0p"]
-[ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="14_mxn15"]
+[ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
+[ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
+[ext_resource type="PackedScene" uid="uid://cbf3gpuk88g03" path="res://core/World.tscn" id="3_ptygb"]
+[ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
+[ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
+[ext_resource type="Texture2D" uid="uid://dt8x6u8ink38t" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
+[ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="7_6esbo"]
+[ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
+[ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/NewRoom.tscn" id="9_lb0pj"]
+[ext_resource type="Script" path="res://core/ConnectDialog.cs" id="9_y4502"]
+[ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_sl8b6"]
+[ext_resource type="PackedScene" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
+[ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="12_1y7j4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
 
 [node name="Main" type="Node"]
-script = ExtResource("1_v0323")
+script = ExtResource("1_ig20j")
 
-[node name="NetworkManager" type="Node" parent="."]
-script = ExtResource("2_3gh8e")
+[node name="NetworkManager" type="Node" parent="." node_paths=PackedStringArray("world", "ui")]
+script = ExtResource("2_gi6fg")
+world = NodePath("../World")
+ui = NodePath("../UI")
 
-[node name="World" parent="." instance=ExtResource("12")]
+[node name="World" parent="." instance=ExtResource("3_ptygb")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -33,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_lswxf")
+script = ExtResource("4_jc6me")
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
 layout_mode = 1
@@ -86,7 +87,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "v0.3.0dev"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_4cpvj")
+script = ExtResource("5_fu8ap")
 
 [node name="TextureRect" type="TextureRect" parent="UI/PauseMenu/Control"]
 layout_mode = 1
@@ -114,7 +115,7 @@ offset_top = -67.0
 offset_right = 146.0
 offset_bottom = -33.0
 grow_vertical = 0
-texture = ExtResource("6_jk0rr")
+texture = ExtResource("6_q0jy5")
 expand_mode = 1
 stretch_mode = 4
 
@@ -206,7 +207,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_47m63")
+texture = ExtResource("7_6esbo")
 expand_mode = 1
 stretch_mode = 6
 
@@ -241,7 +242,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "v0.3.0dev"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_4cpvj")
+script = ExtResource("5_fu8ap")
 
 [node name="TextureRect" type="TextureRect" parent="UI/MainMenu/TextureRect/Control"]
 layout_mode = 1
@@ -256,7 +257,7 @@ offset_right = 217.0
 offset_bottom = 53.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("7_iyyxn")
+texture = ExtResource("8_8u70e")
 expand_mode = 1
 flip_h = true
 
@@ -270,7 +271,7 @@ offset_top = -67.0
 offset_right = 146.0
 offset_bottom = -33.0
 grow_vertical = 0
-texture = ExtResource("6_jk0rr")
+texture = ExtResource("6_q0jy5")
 expand_mode = 1
 stretch_mode = 4
 
@@ -356,16 +357,7 @@ extend_to_title = true
 min_size = Vector2i(435, 289)
 max_size = Vector2i(435, 289)
 
-[node name="NewRoom" parent="UI/NewRoomDialog" instance=ExtResource("8_nlpex")]
-
-[node name="MapDialog" type="Window" parent="UI"]
-initial_position = 2
-title = "Open a File"
-size = Vector2i(260, 90)
-visible = false
-min_size = Vector2i(260, 90)
-
-[node name="StandardMapPicker" parent="UI/MapDialog" instance=ExtResource("10_wye3g")]
+[node name="NewRoom" parent="UI/NewRoomDialog" instance=ExtResource("9_lb0pj")]
 
 [node name="UserFileDialog" type="FileDialog" parent="UI"]
 initial_position = 2
@@ -378,18 +370,19 @@ access = 2
 filters = PackedStringArray("*.map")
 show_hidden_files = true
 
-[node name="ConnectDialog" type="Window" parent="UI"]
+[node name="ConnectDialog" type="Window" parent="UI" node_paths=PackedStringArray("networkManager")]
 initial_position = 2
 title = "Connect"
 size = Vector2i(410, 287)
 visible = false
 min_size = Vector2i(410, 287)
 max_size = Vector2i(410, 287)
-script = ExtResource("12_e4k0p")
+script = ExtResource("9_y4502")
+networkManager = NodePath("../../NetworkManager")
 
-[node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_cj05d")]
+[node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_sl8b6")]
 
-[node name="SettingsDialog" parent="UI" node_paths=PackedStringArray("ui") instance=ExtResource("11")]
+[node name="SettingsDialog" parent="UI" node_paths=PackedStringArray("ui") instance=ExtResource("11_aiwch")]
 initial_position = 1
 title = "Settings"
 visible = false
@@ -401,7 +394,7 @@ size = Vector2i(475, 275)
 visible = false
 min_size = Vector2i(475, 275)
 
-[node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("14_mxn15")]
+[node name="CharacterCreator" parent="UI/CharacterWindow" instance=ExtResource("12_1y7j4")]
 
 [node name="AcceptDialog1" type="AcceptDialog" parent="UI"]
 size = Vector2i(253, 109)
@@ -421,8 +414,6 @@ dialog_autowrap = true
 [connection signal="close_requested" from="UI/NewRoomDialog" to="UI" method="OnNewRoomDialogCloseRequested"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/MapPath/Button" to="UI" method="OnFileButtonPressed"]
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="CreateRoom"]
-[connection signal="close_requested" from="UI/MapDialog" to="UI" method="OnMapDialogCloseRequested"]
-[connection signal="pressed" from="UI/MapDialog/StandardMapPicker/Button" to="UI" method="OnMapSelected"]
 [connection signal="close_requested" from="UI/UserFileDialog" to="UI" method="_on_file_dialog_close_requested"]
 [connection signal="file_selected" from="UI/UserFileDialog" to="UI" method="OnFileSelected"]
 [connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="OnConnectDialogCloseRequested"]
@@ -433,5 +424,4 @@ dialog_autowrap = true
 [connection signal="close_requested" from="UI/CharacterWindow" to="UI" method="OnCharacterWindowCloseRequested"]
 
 [editable path="UI/NewRoomDialog/NewRoom"]
-[editable path="UI/MapDialog/StandardMapPicker"]
 [editable path="UI/ConnectDialog/Connect"]

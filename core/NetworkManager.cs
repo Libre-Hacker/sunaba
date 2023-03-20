@@ -28,7 +28,7 @@ namespace Sunaba.Runtime
 
 			Multiplayer.MultiplayerPeer = null;
 
-            Console console = GetNode<Console>("/root/PConsole");
+            Console console = GetNode<Console>("/root/Console");
             console.Register(Name, this);
         }
 

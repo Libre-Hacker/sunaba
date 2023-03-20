@@ -30,11 +30,11 @@ namespace Sunaba.Runtime
 			Global global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
-			console = GetNode<Console>("/root/PConsole");
+			console = GetNode<Console>("/root/Console");
 			console.Register("Sunaba", this);
 			Build build = GetNode<Build>("/root/Build");
 
-            console.Print("");
+            GD.Print("");
             console.Print("Sunaba");
 			console.Print("Version " + build.versionNumber);
 			console.Print("Compiled on " + build.buildDate);

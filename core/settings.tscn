@@ -99,6 +99,7 @@ offset_right = -5.0
 offset_bottom = -5.0
 
 [node name="Label2" type="Label" parent="TabBar/TabContainer/Client/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Player Model
 "

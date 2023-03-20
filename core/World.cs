@@ -39,7 +39,7 @@ namespace Sunaba.Runtime
 
 			main = GetParent<Main>();
 
-            Console console = GetNode<Console>("/root/PConsole");
+            Console console = GetNode<Console>("/root/Console");
             console.Register(Name, this);
 
         }

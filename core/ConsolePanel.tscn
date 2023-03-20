@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://chctfe5uts1c"]
+
+[ext_resource type="Texture2D" uid="uid://dh5861ddoknpq" path="res://assets/consoleBG.png" id="1_6j83h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dyks0"]
+texture = ExtResource("1_6j83h")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="SystemFont" id="SystemFont_wn5jq"]
+font_names = PackedStringArray("Consolas", "DejaVu Sans Mono")
+
+[node name="ConsolePanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+placeholder_text = " insert command here"
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dyks0")
+
+[node name="Output" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0, 0, 1, 1)
+theme_override_fonts/normal_font = SubResource("SystemFont_wn5jq")

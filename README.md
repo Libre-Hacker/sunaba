@@ -11,3 +11,7 @@ a 3D sandbox game with user-generated map support. Powered by Godot 4.
 * User-generated map support
 * Play in first and third person prespectives
 * Quake-style map editing using TrenchBroom
+
+## Status
+
+The game is stil under active development and what you is not representativ of the final product. As such, compatibility may change between versions.

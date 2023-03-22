@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://entities/MusicPlayer.cs" id="1_csjne"]
 
-[node name="MusicPlayer" type="Node" node_paths=PackedStringArray("audioStreamPlayer")]
+[node name="MusicPlayer" type="Node3D" node_paths=PackedStringArray("audioStreamPlayer")]
 script = ExtResource("1_csjne")
 audioStreamPlayer = NodePath("AudioStreamPlayer")
 

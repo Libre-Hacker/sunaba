@@ -1,0 +1,32 @@
+// Game: Sunaba
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/blockout"
+// brush 0
+{
+( -64 -64 -16 ) ( -64 -63 -16 ) ( -64 -64 -15 ) blockout/gray_check 0 0 0 0.0625 0.0625
+( -64 -64 -16 ) ( -64 -64 -15 ) ( -63 -64 -16 ) blockout/gray_check 0 0 0 0.0625 0.0625
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) blockout/gray_check 0 0 0 0.0625 0.0625
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) blockout/gray_check 0 0 0 0.0625 0.0625
+( 64 64 16 ) ( 65 64 16 ) ( 64 64 17 ) blockout/gray_check 0 0 0 0.0625 0.0625
+( 64 64 16 ) ( 64 64 17 ) ( 64 65 16 ) blockout/gray_check 0 0 0 0.0625 0.0625
+}
+}
+// entity 1
+{
+"classname" "music_player"
+"origin" "24 -24 24"
+"music" "Ouroboros"
+}
+// entity 2
+{
+"classname" "player"
+"origin" "-40 40 24"
+}
+// entity 3
+{
+"classname" "ev_void"
+"origin" "-40 -40 24"
+}

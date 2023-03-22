@@ -3,7 +3,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public partial class MusicPlayer : Node
+public partial class MusicPlayer : Node3D
 {
 	[Export]
 	public Dictionary properties;
@@ -30,7 +30,7 @@ public partial class MusicPlayer : Node
 		if (properties.ContainsKey("music"))
 		{
 			String musicName = properties.GetValueOrDefault("music").ToString();
-			String musicPath = "res//music/" + musicName + ".ogg";
+			String musicPath = "res://music/" + musicName + ".ogg";
 			AudioStream musicStream = GD.Load<AudioStream>(musicPath);
 			audioStreamPlayer.Stream = musicStream;
 			audioStreamPlayer.Play();

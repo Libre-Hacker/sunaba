@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://cbfi2nngcvicg"]
+[gd_scene load_steps=2 format=3 uid="uid://cbfi2nngcvicg"]
 
-[node name="MusicPlayer" type="Node"]
+[ext_resource type="Script" path="res://entities/MusicPlayer.cs" id="1_csjne"]
+
+[node name="MusicPlayer" type="Node" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("1_csjne")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

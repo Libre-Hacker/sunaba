@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=29 format=3 uid="uid://bnw43cpa56y4k"]
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=30 format=3 uid="uid://bnw43cpa56y4k"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_gyj8k"]
 [ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://de3revmmi5yvk" path="res://entities/WPSniper.tres" id="24_vfn6q"]
 [ext_resource type="Resource" path="res://entities/ANCity.tres" id="26_k2o1r"]
 [ext_resource type="Resource" uid="uid://b3qeix2ifsyyt" path="res://entities/WPShotgun.tres" id="27_mm36p"]
+[ext_resource type="Resource" uid="uid://cc87rrcd7uprk" path="res://entities/MusicPlayer.tres" id="28_0pn4y"]
 [ext_resource type="Resource" path="res://entities/GMSandbox.tres" id="28_0pppj"]
 [ext_resource type="Resource" uid="uid://r8r0tjfi5a2u" path="res://entities/EVDynamic.tres" id="29_et5qv"]
 [ext_resource type="Resource" uid="uid://dv85707rjgemw" path="res://entities/Water.tres" id="30_cs2v3"]
@@ -35,4 +36,4 @@ export_file = false
 target_folder = "C:/QuakeDev/TrenchBroom/games/OpenSBX"
 fgd_name = "Sunaba"
 base_fgd_files = Array[Resource]([])
-entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_ksys4"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("15_hc8b5"), ExtResource("17_2mjsk"), ExtResource("18_85oad"), ExtResource("19_4y8q4"), ExtResource("7_ksys4"), ExtResource("21_qde4r"), ExtResource("22_6yv6f"), ExtResource("24_vfn6q"), ExtResource("18_0q27l"), ExtResource("26_k2o1r"), ExtResource("27_mm36p"), ExtResource("28_0pppj"), ExtResource("29_et5qv"), ExtResource("30_cs2v3")]
+entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_ksys4"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("15_hc8b5"), ExtResource("17_2mjsk"), ExtResource("18_85oad"), ExtResource("19_4y8q4"), ExtResource("7_ksys4"), ExtResource("21_qde4r"), ExtResource("22_6yv6f"), ExtResource("24_vfn6q"), ExtResource("18_0q27l"), ExtResource("26_k2o1r"), ExtResource("27_mm36p"), ExtResource("28_0pppj"), ExtResource("29_et5qv"), ExtResource("30_cs2v3"), ExtResource("28_0pn4y")]

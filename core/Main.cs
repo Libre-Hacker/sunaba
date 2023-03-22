@@ -35,8 +35,8 @@ namespace Sunaba.Runtime
 			console.Register("Sunaba", this);
 			Build build = GetNode<Build>("/root/Build");
 
-            GD.Print("");
-            console.Print("Sunaba");
+			GD.Print("");
+			console.Print("Sunaba");
 			console.Print("Version " + build.versionNumber);
 			console.Print("Compiled on " + build.buildDate);
 			console.Print("");

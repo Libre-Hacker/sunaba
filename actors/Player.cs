@@ -504,7 +504,7 @@ namespace Sunaba.Actors
 				toolPanel.Theme = themeManager.theme;
 				crosshair.Theme = themeManager.theme;
 				sbMenuWindow.Theme = themeManager.theme;
-				toolAmmoCounter.Text = ammo.ToString() + "/" + maxAmmo.ToString();
+				toolAmmoCounter.Text = ammo.ToString() + " / " + maxAmmo.ToString();
 				toolAmmoBar.Value = ammo;
 				toolAmmoBar.MaxValue = maxAmmo;
 

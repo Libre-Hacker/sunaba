@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq4ujgublmd66"]
 
-[ext_resource type="Script" path="res://tools/ToolObject.cs" id="1_15bph"]
+[ext_resource type="Script" path="res://tools/toolObject.cs" id="1_15bph"]
 [ext_resource type="PackedScene" uid="uid://cnnovmjscs5fd" path="res://tools/meshes/shotgun_mesh.tscn" id="2_ciprb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ibqw"]

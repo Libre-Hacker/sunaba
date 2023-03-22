@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://wsjawg2skf8t"]
 
 [ext_resource type="PackedScene" uid="uid://cxpjwab4kep6w" path="res://tools/meshes/pistol_mesh.tscn" id="1_rub0h"]
-[ext_resource type="Script" path="res://tools/ToolObject.cs" id="1_up3tt"]
+[ext_resource type="Script" path="res://tools/toolObject.cs" id="1_up3tt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58kxc"]
 size = Vector3(0.047419, 0.179502, 0.261986)

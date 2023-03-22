@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvsndrvbm5jxw"]
 
-[ext_resource type="Script" path="res://tools/ToolObject.cs" id="1_gr7wt"]
+[ext_resource type="Script" path="res://tools/toolObject.cs" id="1_gr7wt"]
 [ext_resource type="PackedScene" uid="uid://c7g7tlswjg62f" path="res://tools/meshes/semi_gun_mesh.tscn" id="2_c4135"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ibqw"]

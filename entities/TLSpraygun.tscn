@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8xfumu1uyud4"]
 
-[ext_resource type="Script" path="res://tools/ToolObject.cs" id="1_axkfv"]
+[ext_resource type="Script" path="res://tools/toolObject.cs" id="1_axkfv"]
 [ext_resource type="PackedScene" uid="uid://c726b88n6akyi" path="res://tools/meshes/spray_gun_mesh.tscn" id="2_kumc8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ibqw"]

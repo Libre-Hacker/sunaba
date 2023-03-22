@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlmog2oilfdsf"]
 
-[ext_resource type="Script" path="res://tools/ToolObject.cs" id="1_ispn1"]
+[ext_resource type="Script" path="res://tools/toolObject.cs" id="1_ispn1"]
 [ext_resource type="PackedScene" uid="uid://dua45vbx6dbk" path="res://tools/meshes/paintball_gun_mesh.tscn" id="2_epykp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ibqw"]

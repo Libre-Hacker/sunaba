@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3js6hk2tgu5b"]
 
-[ext_resource type="Script" path="res://tools/ToolObject.cs" id="1_wq32l"]
+[ext_resource type="Script" path="res://tools/toolObject.cs" id="1_wq32l"]
 [ext_resource type="PackedScene" uid="uid://8y2wb4rvutm2" path="res://tools/meshes/dartgun_mesh.tscn" id="2_82p1d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ibqw"]

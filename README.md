@@ -14,7 +14,7 @@ a 3D sandbox game with user-generated map support. Powered by Godot 4.
 
 ## Status
 
-The game is stil under active development and what you is not representative of the final product. As such, compatibility may change between versions.
+The game is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions.
 
 ## Getting Started
 

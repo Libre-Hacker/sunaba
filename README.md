@@ -48,13 +48,13 @@ See [Exporting projects¶](https://docs.godotengine.org/en/4.0/tutorials/export/
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](example.com) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
 * **mintkat** - *Initial work* - [m1ntkat](https://github.com/m1ntkat)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/m1ntkat/sunaba/contributors) who participated in this project.
 
 ## License
 

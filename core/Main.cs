@@ -41,6 +41,8 @@ namespace Sunaba.Runtime
 			console.Print("Compiled on " + build.buildDate);
 			console.Print("");
 
+			OS.Alert("Sunaba is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions.");
+
 			String[] args = OS.GetCmdlineArgs();
 			String arg1 = args[0];
 			if (arg1.Contains(".map"))

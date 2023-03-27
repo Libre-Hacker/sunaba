@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="9_y4502"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_sl8b6"]
 [ext_resource type="PackedScene" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
-[ext_resource type="PackedScene" path="res://addons/toonroid/src/main.tscn" id="12_1y7j4"]
+[ext_resource type="PackedScene" uid="uid://cbpb3x1xtj73g" path="res://Godime/src/main.tscn" id="12_1y7j4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)

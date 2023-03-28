@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cidmc083epu4k"]
+
+[ext_resource type="PackedScene" uid="uid://4a8vw70shuwk" path="res://assets/models/hair.gltf" id="1_8ma77"]
+[ext_resource type="Material" uid="uid://bapp6pbg83kab" path="res://Godime/materials/hair_shade.tres" id="2_t71lt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6pxmc"]
+next_pass = ExtResource("2_t71lt")
+albedo_color = Color(0.227451, 0.137255, 0, 1)
+roughness = 0.2
+
+[node name="hair" instance=ExtResource("1_8ma77")]
+
+[node name="Hair" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6pxmc")

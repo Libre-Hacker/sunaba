@@ -15,21 +15,21 @@ namespace Sunaba.Actors
 		int headMaterial = 0;
 
         [Export]
-        public String headwear = "minji";
+        public String headwear = "brown_male_hair";
         [Export]
         public String skinColor = "pale";
         [Export]
-        public String faceTexture = "face_green";
+        public String faceTexture = "face_grey";
         [Export]
-        public String torsoTexture = "minji-darkgreen";
+        public String torsoTexture = "generic_male";
         [Export]
-        public String armsTexture = "minji-darkgreen";
+        public String armsTexture = "generic_male";
         [Export]
-        public String handsTexture = "minji-darkgreen";
+        public String handsTexture = "generic_male";
         [Export]
-        public String pantsTexture = "minji-darkgreen";
+        public String pantsTexture = "generic_male";
         [Export]
-        public String shoesTexture = "minji-darkgreen";
+        public String shoesTexture = "generic_male";
 
         MeshInstance3D baseMesh = null;
 		BoneAttachment3D headwearAttachment = null;

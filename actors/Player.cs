@@ -415,14 +415,14 @@ namespace Sunaba.Actors
 				akari.Rotation = Vector3.Zero;
 				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 			}
-			/*else if (((Velocity.Length() == 0) || (vel.Length() == 0)) && Input.IsActionPressed("crouch"))
+			else if (((Velocity.Length() == 0) || (vel.Length() == 0)) && Input.IsActionPressed("crouch"))
 			{
 				animationPlayer.Play("crouch_library/crouch_idle");
 				Vector3 modelPosition = model.Position;
 				modelPosition.Y = (float)0.175;
 				model.Position = modelPosition;
 				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-			}*/
+			}
 			else
 			{
 				if (speed == defaultSpeed && IsOnFloor())
@@ -442,7 +442,7 @@ namespace Sunaba.Actors
 					}
 					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 				}
-				/*else if (speed == crouchMoveSpeed && IsOnFloor())
+				else if (speed == crouchMoveSpeed && IsOnFloor())
                 {
                     animationPlayer.Play("crouch_library/crouch_walk");
                     Vector3 modelPosition = model.Position;
@@ -458,7 +458,7 @@ namespace Sunaba.Actors
                         canPlayWalkSound = false;
                     }
                     if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-                }*/
+                }
 				else if (speed == sprintSpeed && IsOnFloor())
                 {
                     animationPlayer.Play("Locomotion-Library/run");
@@ -510,7 +510,7 @@ namespace Sunaba.Actors
 
 				sprintingIcon.Hide();
                 
-				/*
+				
 				if (Input.IsActionPressed("sprint"))
 				{
 					speed = sprintSpeed;
@@ -533,7 +533,7 @@ namespace Sunaba.Actors
                     model.Position = modelPosition;
                 }
 				else
-                {*/
+                {
 				Shape3D shape3D = collisionShape.Shape;
 				if (shape3D is CapsuleShape3D capsule)
 				{
@@ -542,7 +542,7 @@ namespace Sunaba.Actors
 				Vector3 modelPosition = model.Position;
 				modelPosition.Y = 0;
 				model.Position = modelPosition;
-                //}
+                }
 				
 
 				ApplyMovement(Direction, delta);

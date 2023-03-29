@@ -18,6 +18,8 @@ namespace Sunaba.Entities
         {
             console = GetNode<Console>("/root/PConsole");
 
+            if (npcScript == null) return;
+
             String scriptPath = "res://Scripts/" + npcScript + ".lua";
 
             script.DoFile(scriptPath);
@@ -26,11 +28,13 @@ namespace Sunaba.Entities
 
         public override void _Process(double delta)
         {
+            if (npcScript == null) return;
             script.Call(script.Globals["update"]);
         }
 
         public override void _PhysicsProcess(double delta)
         {
+            if (npcScript == null) return;
             script.Call(script.Globals["physicsUpdate"]);
         }
     }

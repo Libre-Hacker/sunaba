@@ -26,7 +26,9 @@ What things you need to install the software and how to install them
 
 * Godot 4.0 ( Mono Build )
 
-* .Net SDK 6.0
+* .NET SDK 6.0
+
+* Git LFS
 
 ### Opening the Project
 

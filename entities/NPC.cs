@@ -1,5 +1,7 @@
 using Godot;
+using Godot.Collections;
 using System;
+using System.Collections.Generic;
 using MoonSharp.Interpreter;
 using Script = MoonSharp.Interpreter.Script;
 
@@ -10,7 +12,10 @@ namespace Sunaba.Entities
         Console console;
 
         [Export]
-        public String npcScript = "";
+	    public Dictionary properties;
+
+        //[Export]
+        private String npcScript = "";
 
         Script script = new Script();
 
@@ -18,11 +23,15 @@ namespace Sunaba.Entities
         {
             console = GetNode<Console>("/root/PConsole");
 
+            npcScript = properties.GetValueOrDefault("script").ToString();
+
             if (npcScript == null) return;
 
-            String scriptPath = "res://Scripts/" + npcScript + ".lua";
+            //String scriptPath = "res://Scripts/" + npcScript + ".lua";
 
-            script.DoFile(scriptPath);
+            
+            script.Globals["print"] = (Print);
+            script.DoString(npcScript);
             script.Call(script.Globals["start"]);
         }
 
@@ -36,6 +45,11 @@ namespace Sunaba.Entities
         {
             if (npcScript == null) return;
             script.Call(script.Globals["physicsUpdate"]);
+        }
+
+        void Print(String _string)
+        {
+            console.Print(_string);
         }
     }
 }

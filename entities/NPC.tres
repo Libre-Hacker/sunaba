@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://dhb4w2tmkgtal"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_432q1"]
+[ext_resource type="PackedScene" uid="uid://cwqmmruyfs4tx" path="res://entities/NPC.tscn" id="1_cy7r5"]
+
+[resource]
+script = ExtResource("1_432q1")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_cy7r5")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "npc"
+description = ""
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {
+"script": ""
+}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

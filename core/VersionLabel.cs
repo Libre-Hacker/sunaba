@@ -10,11 +10,7 @@ namespace Sunaba.Runtime
 		{
             Build build = GetNode<Build>("/root/Build");
             
-			Text = "v" + build.versionNumber + "dev";
+			Text = "v" + build.versionNumber;
 		}
 	}
 }
-
-/*
-
-*/

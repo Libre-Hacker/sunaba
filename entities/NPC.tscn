@@ -10,7 +10,6 @@ height = 1.497
 
 [node name="NPC" type="CharacterBody3D"]
 script = ExtResource("1_r3407")
-npcScript = "npcTest1"
 
 [node name="PlayerModel" parent="." instance=ExtResource("2_g5ujn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

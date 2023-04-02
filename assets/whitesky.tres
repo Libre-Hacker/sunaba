@@ -13,3 +13,7 @@ sky_material = SubResource("ProceduralSkyMaterial_b8ucv")
 background_mode = 2
 sky = SubResource("Sky_ph77k")
 tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true

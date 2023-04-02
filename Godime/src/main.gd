@@ -10,7 +10,7 @@ var head_material = 0
 
 var headwear : String = "brown_male_hair"
 var skin_color : String = "pale"
-var face_texture : String = "face_grey_xl"
+var face_texture : String = "face_grey"
 var torso_texture : String = "generic_male"
 var arms_texture : String = "generic_male"
 var hands_texture : String = "generic_male"

@@ -20,7 +20,7 @@ namespace Sunaba.Runtime
 
 		public String headwear = "brown_male_hair";
         public String skinColor = "pale";
-        public String faceTexture = "face_grey_xl";
+        public String faceTexture = "face_grey";
         public String torsoTexture = "generic_male";
         public String armsTexture = "generic_male";
         public String handsTexture = "generic_male";

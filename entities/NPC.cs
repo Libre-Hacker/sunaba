@@ -19,7 +19,7 @@ namespace Sunaba.Entities
 
         Script script = new Script();
 
-        public override void _Ready()
+        public void Start()
         {
             console = GetNode<Console>("/root/PConsole");
 
@@ -38,13 +38,13 @@ namespace Sunaba.Entities
         public override void _Process(double delta)
         {
             if (npcScript == null) return;
-            script.Call(script.Globals["update"]);
+            //script.Call(script.Globals["update"]);
         }
 
         public override void _PhysicsProcess(double delta)
         {
             if (npcScript == null) return;
-            script.Call(script.Globals["physicsUpdate"]);
+            //script.Call(script.Globals["physicsUpdate"]);
         }
 
         void Print(String _string)

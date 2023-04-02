@@ -19,7 +19,7 @@ namespace Sunaba.Actors
         [Export]
         public String skinColor = "pale";
         [Export]
-        public String faceTexture = "face_grey";
+        public String faceTexture = "face_grey_xl";
         [Export]
         public String torsoTexture = "generic_male";
         [Export]

@@ -127,11 +127,24 @@
 "classname" "npc"
 "origin" "40 -488 24"
 "script" "function start()
-    print('Start function')
+    print('Hello World! Im an NPC')
+end
+
+function update()
+
+end
+
+function physicsUpdate()
+    
 end"
 }
 // entity 2
 {
 "classname" "player"
 "origin" "40 -296 104"
+}
+// entity 3
+{
+"classname" "ev_void"
+"origin" "152 -296 104"
 }

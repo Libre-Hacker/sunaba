@@ -7,49 +7,72 @@ using Script = MoonSharp.Interpreter.Script;
 
 namespace Sunaba.Entities
 {
-    public partial class NPC : CharacterBody3D
-    {
-        Console console;
+	public partial class NPC : CharacterBody3D
+	{
+		Console console;
 
-        [Export]
-	    public Dictionary properties;
+		[Export]
+		public Dictionary properties;
 
-        //[Export]
-        private String npcScript = "";
+		//[Export]
+		private String npcScript = "";
 
-        Script script = new Script();
+		Script script = new Script();
 
-        public void Start()
-        {
-            console = GetNode<Console>("/root/PConsole");
+		Timer timer;
+		
+		bool canExecute = false;
 
-            npcScript = properties.GetValueOrDefault("script").ToString();
+		// Called when the node enters the scene tree for the first time.
+		public override void _Ready()
+		{
+			timer = new Timer();
+			timer.WaitTime = 0.5;
+			timer.OneShot = true;
+			AddChild(timer);
+			timer.Timeout += Start;
+			timer.Start();
+		}
 
-            if (npcScript == null) return;
+		public void Start()
+		{
+			console = GetNode<Console>("/root/PConsole");
 
-            //String scriptPath = "res://Scripts/" + npcScript + ".lua";
+			timer.QueueFree();
 
-            
-            script.Globals["print"] = (Print);
-            script.DoString(npcScript);
-            script.Call(script.Globals["start"]);
-        }
+			if (properties.ContainsKey("script"))
+			{
+				npcScript = properties.GetValueOrDefault("script").ToString();
 
-        public override void _Process(double delta)
-        {
-            if (npcScript == null) return;
-            //script.Call(script.Globals["update"]);
-        }
+				if (npcScript == null) return;
 
-        public override void _PhysicsProcess(double delta)
-        {
-            if (npcScript == null) return;
-            //script.Call(script.Globals["physicsUpdate"]);
-        }
+				
+				//String scriptPath = "res://Scripts/" + npcScript + ".lua";
 
-        void Print(String _string)
-        {
-            console.Print(_string);
-        }
-    }
+				script.Globals["print"] = (Print);
+				script.DoString(npcScript);
+				script.Call(script.Globals["start"]);
+				canExecute = true;
+			}
+		}
+
+		public override void _Process(double delta)
+		{
+			if (canExecute == false) return;
+			
+				script.Call(script.Globals["update"]);
+		}
+
+		public override void _PhysicsProcess(double delta)
+		{
+			if (canExecute == false) return;
+			
+			script.Call(script.Globals["physicsUpdate"]);
+		}
+
+		void Print(String _string)
+		{
+			console.Print(_string);
+		}
+	}
 }

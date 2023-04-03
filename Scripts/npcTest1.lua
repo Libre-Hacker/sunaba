@@ -1,11 +1,11 @@
 function start()
-    print('Start function')
+    print('Hello World! Im an NPC')
 end
 
 function update()
-    print('Update function')
+
 end
 
 function physicsUpdate()
-    print('PhysicsUpdate function')
+    
 end

@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://bnw43cpa56y4k" path="res://trenchbroom/fgd.tres" id="1_7ejqi"]
 [ext_resource type="Resource" uid="uid://drs2qwlkyiceg" path="res://trenchbroom/trenchbroom_config_file.tres" id="2_aj5a0"]
-[ext_resource type="Texture2D" uid="uid://bq37uif5q0uhd" path="res://assets/iconSquare.png" id="3_jjw7r"]
+[ext_resource type="Texture2D" uid="uid://hsjsrirpn5dq" path="res://assets/icon.png" id="3_ykdv5"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_game_config_folder.gd" id="4_abrc7"]
 
 [resource]
@@ -10,6 +10,6 @@ script = ExtResource("4_abrc7")
 export_file = false
 trenchbroom_games_folder = "/home/mintkat/.TrenchBroom/games"
 game_name = "Sunaba"
-icon = ExtResource("3_jjw7r")
+icon = ExtResource("3_ykdv5")
 game_config_file = ExtResource("2_aj5a0")
 fgd_files = Array[Resource]([ExtResource("1_7ejqi")])

@@ -21,15 +21,15 @@ The AddBots and AddBot methods are not fully implemented and are left as exercis
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
 	public partial class World : Node3D
 	{
-		public Node3D mapManager;
-		public NavigationRegion3D navRegion;
-		public Main main;
+		private Node3D mapManager;
+		private NavigationRegion3D navRegion;
+		private Main main;
 
-		public static bool spectatorMode = false;
+		private static bool spectatorMode = false;
 		
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
@@ -69,7 +69,7 @@ namespace Sunaba.Runtime
 		}
 
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
-		public void SetMap(String path)
+		private void SetMap(String path)
 		{
             if (Multiplayer.GetUniqueId() == 1)
 			{
@@ -104,7 +104,7 @@ namespace Sunaba.Runtime
 		}
 
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
-		public void InstancePlayer(int id)
+		private void InstancePlayer(int id)
 		{
 			//GetNode<Camera3D>("Camera3D").Current = false;
 			PackedScene player = GD.Load<PackedScene>("res://actors/player.tscn");
@@ -128,7 +128,7 @@ namespace Sunaba.Runtime
 			RpcId(id, "LoadMapRemote");
 		}
 
-		public void AddBots()
+		private void AddBots()
 		{
             var global = GetNode("/root/Global");
 			bool botsEnabled = global.Get("bots_enabled").As<bool>();
@@ -136,7 +136,7 @@ namespace Sunaba.Runtime
             String gameMode = global.Get("game_mode").As<string>();
         }
 
-        public void AddBot()
+		private void AddBot()
         {
 			PackedScene bot = GD.Load<PackedScene>("res://actors/dm_bot.tscn");
 			CharacterBody3D botInstance = bot.Instantiate<CharacterBody3D>();

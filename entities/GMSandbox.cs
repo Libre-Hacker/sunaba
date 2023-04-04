@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using Sunaba.Runtime;
+using Sunaba.Core;
 
 namespace Sunaba.Entities
 {

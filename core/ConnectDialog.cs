@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
 	public partial class ConnectDialog : Window
 	{

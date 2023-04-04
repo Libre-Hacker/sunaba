@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 using System;
-using Sunaba.Runtime;
+using Sunaba.Core;
 using Sunaba.Tools;
 
 namespace Sunaba.Actors

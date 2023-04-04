@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Reflection;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
     public partial class BuildFlags : Resource
     {

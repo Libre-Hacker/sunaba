@@ -2,7 +2,7 @@ using Godot;
 using MoonSharp.Interpreter;
 using System;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
 	public partial class Main : Node
 	{

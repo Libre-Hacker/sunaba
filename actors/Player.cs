@@ -293,9 +293,9 @@ namespace Sunaba.Actors
 			{
 				if (hand.GetChildCount() > 0)
 				{
-					if (head.GetChild(0) != null)
+					if (hand.GetChild(0) != null)
 					{
-						head.GetChild(0).QueueFree();
+						hand.GetChild(0).QueueFree();
 						if (IsMultiplayerAuthority() || !global.isNetworkedGame)
 						{
 							toolPanel.Hide();
@@ -347,7 +347,8 @@ namespace Sunaba.Actors
 			Tool tool2Spawn = toolToLoad.Instantiate<Tool>();
 			if (hand.GetChildCount() > 0)
 			{
-				if (head.GetChild(0) != null) head.GetChild(0).QueueFree();
+				if (hand.GetChild(0) != null) 
+					hand.GetChild(0).QueueFree();
 			}
 			toolLabel.Text = tool2Spawn.Name;
 			hand.AddChild(tool2Spawn);

@@ -1,4 +1,4 @@
-#  Sunaba3D
+#  Sunaba
 
 a 3D sandbox game with user-generated map support. Powered by Godot 4.
 

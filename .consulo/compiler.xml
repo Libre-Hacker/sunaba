@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <component name="CompilerManager">
+    <module name="Sunaba">
+      <output url="file://$PROJECT_DIR$/.godot/mono/temp/bin/Debug" type="PRODUCTION" />
+      <output url="file://$PROJECT_DIR$/.godot/mono/temp/bin/Debug" type="PRODUCTION_RESOURCE" />
+      <output url="file://$PROJECT_DIR$/.godot/mono/temp/bin/Debug" type="TEST" />
+      <output url="file://$PROJECT_DIR$/.godot/mono/temp/bin/Debug" type="TEST_RESOURCE" />
+    </module>
+  </component>
+</project>

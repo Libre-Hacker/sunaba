@@ -57,7 +57,7 @@ namespace Sunaba.Actors
 		private int speed = 5;
 		private int health = 100;
 		private RayCast3D reach;
-		private RayCast3D aimcast;
+		private RayCast3D aimCast;
 		private int ammo = 25;
 		private int maxAmmo = 25;
 		private int damage = 100;
@@ -178,7 +178,7 @@ namespace Sunaba.Actors
 			{
 				Input.MouseMode = Input.MouseModeEnum.Captured;
 				reach = fpReach;
-				aimcast = fpAimCast;
+				aimCast = fpAimCast;
 				if (Name.ToString() == Multiplayer.GetUniqueId().ToString())
 				{
 					playerName.Text = "Player " + Name.ToString();
@@ -261,14 +261,14 @@ namespace Sunaba.Actors
 					fpCamera.Current = false;
 					tpCamera.Current = true;
 					reach = tpReach;
-					aimcast = tpAimCast;
+					aimCast = tpAimCast;
 				}
 				else if (tpCamera.Current == true)
 				{
 					fpCamera.Current = true;
 					tpCamera.Current = false;
 					reach = fpReach;
-					aimcast = fpAimCast;
+					aimCast = fpAimCast;
 				}
 			}
 
@@ -842,9 +842,9 @@ namespace Sunaba.Actors
 				hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
 				gunAnimationPlayer.Stop();
 				gunAnimationPlayer.Play("fire");
-				if (aimcast.IsColliding())
+				if (aimCast.IsColliding())
 				{
-					var target = aimcast.GetCollider();
+					var target = aimCast.GetCollider();
 					if (target != null)
 					{
 						if (target is Player player)
@@ -855,7 +855,7 @@ namespace Sunaba.Actors
 						else
 						{
 							String decalPath = hand.GetChild<Tool>(0).decalPath;
-							AddBulletHole(decalPath, aimcast);
+							AddBulletHole(decalPath, aimCast);
 						}
 					}
 				}
@@ -875,7 +875,7 @@ namespace Sunaba.Actors
                 hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
                 gunAnimationPlayer.Stop();
                 gunAnimationPlayer.Play("fire");
-                if (aimcast.IsColliding())
+                if (aimCast.IsColliding())
                 {
                     foreach(RayCast3D ray in fpRayContainer.GetChildren())
 					{
@@ -894,7 +894,7 @@ namespace Sunaba.Actors
                             else
                             {
                                 String decalPath = hand.GetChild<Tool>(0).decalPath;
-                                AddBulletHole(decalPath, aimcast);
+                                AddBulletHole(decalPath, aimCast);
                             }
                         }
                     }
@@ -913,10 +913,10 @@ namespace Sunaba.Actors
 			{
                 ammo -= 1;
                 hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
-                if (aimcast.IsColliding())
+                if (aimCast.IsColliding())
                 {
                     String decalPath = hand.GetChild<Tool>(0).decalPath;
-                    AddBulletHole(decalPath, aimcast);
+                    AddBulletHole(decalPath, aimCast);
                 }
             }
             hasFired = true;
@@ -981,7 +981,7 @@ namespace Sunaba.Actors
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
 		public void AddBulletHole(String bDecPath, RayCast3D rayCast)
 		{
-			var target = aimcast.GetCollider();
+			var target = aimCast.GetCollider();
 			if (target != null)
 			{
 				if (target is Node3D node3D)

@@ -1,0 +1,1207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <component name="ModuleManager">
+    <modules>
+      <module name="sunaba (Root)" dirurl="file://$PROJECT_DIR$" current-layer="Default">
+        <module-layer name="Default">
+          <extension id="msbuild-dotnet-core" sdk=".NET 6.0.113" solution-url="file://$MODULE_DIR$/Sunaba.sln" provider-id="dotnet-core" />
+          <content url="file://$MODULE_DIR$" />
+          <orderEntry type="sourceFolder" />
+        </module-layer>
+      </module>
+      <module name="Sunaba" current-layer="Default">
+        <module-layer name="Default">
+          <extension id="dotnet-core-by-msbuild" sdk-module-name="" sdk-name=".NET 6.0.113" target="LIBRARY" debug="true" allow-source-roots="false" file-name="Sunaba.$TargetFileExt$" output-dir="$USER_HOME$/sunaba/.godot/mono/temp/bin/Debug/" namespace-prefix="">
+            <define>GODOT</define>
+            <define>GODOT_LINUXBSD</define>
+            <define>GODOT_PC</define>
+            <define>TRACE</define>
+            <define>TOOLS</define>
+            <define>DEBUG</define>
+            <define>NET</define>
+            <define>NET6_0</define>
+            <define>NETCOREAPP</define>
+          </extension>
+          <extension id="dotnet-core-csharp-by-msbuild" unsafe-code="false" optimize-code="false" platform="ANY_CPU" />
+          <content url="file://$USER_HOME$/sunaba/.godot/mono/temp/bin/Debug">
+            <content-folder type="EXCLUDED" url="file://$USER_HOME$/sunaba/.godot/mono/temp/bin/Debug" />
+          </content>
+          <content url="file://$USER_HOME$/sunaba/Sunaba.csproj" />
+          <content url="file://$USER_HOME$/sunaba/actors/DMBot.cs" />
+          <content url="file://$USER_HOME$/sunaba/actors/Player.cs" />
+          <content url="file://$USER_HOME$/sunaba/actors/PlayerModel.cs" />
+          <content url="file://$USER_HOME$/sunaba/actors/SBMenu.cs" />
+          <content url="file://$USER_HOME$/sunaba/addons/qodot/src/core/GeoGenerator.cs" />
+          <content url="file://$USER_HOME$/sunaba/addons/qodot/src/core/MapData.cs" />
+          <content url="file://$USER_HOME$/sunaba/addons/qodot/src/core/MapParser.cs" />
+          <content url="file://$USER_HOME$/sunaba/addons/qodot/src/core/Qodot.cs" />
+          <content url="file://$USER_HOME$/sunaba/addons/qodot/src/core/SurfaceGatherer.cs" />
+          <content url="file://$USER_HOME$/sunaba/addons/qodot/src/core/Types.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/Build.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/BuildFlags.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/Camera.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/ConnectDialog.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/Console.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/Global.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/Main.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/MapHolder.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/MapPicker.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/NetworkManager.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/NewRoom.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/ScaleManager.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/ScriptEngine.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/Settings.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/SettingsDialog.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/ThemeManager.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/UI.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/VersionLabel.cs" />
+          <content url="file://$USER_HOME$/sunaba/core/World.cs" />
+          <content url="file://$USER_HOME$/sunaba/entities/EVDynamic.cs" />
+          <content url="file://$USER_HOME$/sunaba/entities/GMDeathmatch.cs" />
+          <content url="file://$USER_HOME$/sunaba/entities/GMSandbox.cs" />
+          <content url="file://$USER_HOME$/sunaba/entities/MusicPlayer.cs" />
+          <content url="file://$USER_HOME$/sunaba/entities/NPC.cs" />
+          <content url="file://$USER_HOME$/sunaba/entities/PlayerStart.cs" />
+          <content url="file://$USER_HOME$/sunaba/entities/Water.cs" />
+          <content url="file://$USER_HOME$/sunaba/tools/Tool.cs" />
+          <content url="file://$USER_HOME$/sunaba/tools/toolObject.cs" />
+          <orderEntry type="sourceFolder" />
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll://$USER_HOME$/.local/share/godot/mono/GodotNuGetFallbackFolder/godotsharp/4.0.1/lib/net6.0/GodotSharp.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll://$USER_HOME$/.local/share/godot/mono/GodotNuGetFallbackFolder/godotsharpeditor/4.0.1/lib/net6.0/GodotSharpEditor.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/Microsoft.CSharp.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/Microsoft.VisualBasic.Core.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/Microsoft.VisualBasic.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/Microsoft.Win32.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/Microsoft.Win32.Registry.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll://$USER_HOME$/.nuget/packages/moonsharp/2.0.0/lib/netstandard1.6/MoonSharp.Interpreter.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/mscorlib.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/netstandard.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.AppContext.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Buffers.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Collections.Concurrent.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Collections.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Collections.Immutable.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Collections.NonGeneric.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Collections.Specialized.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ComponentModel.Annotations.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ComponentModel.DataAnnotations.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ComponentModel.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ComponentModel.EventBasedAsync.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ComponentModel.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ComponentModel.TypeConverter.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Configuration.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Console.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Core.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Data.Common.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Data.DataSetExtensions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Data.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.Contracts.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.Debug.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.DiagnosticSource.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.FileVersionInfo.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.Process.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.StackTrace.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.TextWriterTraceListener.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.Tools.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.TraceSource.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Diagnostics.Tracing.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Drawing.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Drawing.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Dynamic.Runtime.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Formats.Asn1.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Globalization.Calendars.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Globalization.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Globalization.Extensions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.Compression.Brotli.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.Compression.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.Compression.FileSystem.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.Compression.ZipFile.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.FileSystem.AccessControl.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.FileSystem.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.FileSystem.DriveInfo.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.FileSystem.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.FileSystem.Watcher.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.IsolatedStorage.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.MemoryMappedFiles.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.Pipes.AccessControl.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.Pipes.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.IO.UnmanagedMemoryStream.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Linq.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Linq.Expressions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Linq.Parallel.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Linq.Queryable.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Memory.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Http.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Http.Json.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.HttpListener.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Mail.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.NameResolution.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.NetworkInformation.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Ping.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Requests.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Security.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.ServicePoint.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.Sockets.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.WebClient.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.WebHeaderCollection.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.WebProxy.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.WebSockets.Client.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Net.WebSockets.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Numerics.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Numerics.Vectors.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ObjectModel.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.DispatchProxy.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.Emit.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.Emit.ILGeneration.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.Emit.Lightweight.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.Extensions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.Metadata.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Reflection.TypeExtensions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Resources.Reader.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Resources.ResourceManager.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Resources.Writer.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.CompilerServices.Unsafe.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.CompilerServices.VisualC.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Extensions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Handles.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.InteropServices.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.InteropServices.RuntimeInformation.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Intrinsics.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Loader.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Numerics.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Serialization.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Serialization.Formatters.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Serialization.Json.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Serialization.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Runtime.Serialization.Xml.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.AccessControl.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Claims.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Cryptography.Algorithms.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Cryptography.Cng.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Cryptography.Csp.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Cryptography.Encoding.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Cryptography.OpenSsl.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Cryptography.Primitives.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Cryptography.X509Certificates.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Principal.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.Principal.Windows.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Security.SecureString.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ServiceModel.Web.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ServiceProcess.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Text.Encoding.CodePages.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Text.Encoding.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Text.Encoding.Extensions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Text.Encodings.Web.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Text.Json.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Text.RegularExpressions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Channels.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Overlapped.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Tasks.Dataflow.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Tasks.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Tasks.Extensions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Tasks.Parallel.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Thread.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.ThreadPool.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Threading.Timer.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Transactions.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Transactions.Local.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.ValueTuple.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Web.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Web.HttpUtility.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Windows.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.Linq.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.ReaderWriter.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.Serialization.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.XDocument.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.XmlDocument.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.XmlSerializer.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.XPath.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/System.Xml.XPath.XDocument.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+          <orderEntry type="module-library">
+            <library>
+              <binaries>
+                <root url="netdll:///usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.13/ref/net6.0/WindowsBase.dll!/" />
+              </binaries>
+            </library>
+          </orderEntry>
+        </module-layer>
+      </module>
+    </modules>
+  </component>
+</project>

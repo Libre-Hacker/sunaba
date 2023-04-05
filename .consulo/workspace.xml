@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <component name="ChangeListManager">
+    <list default="true" id="4707b234-f1ec-49f3-8257-87e51b9e3508" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="EditorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/actors/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/actors/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Sunaba" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Player.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/actors/Player.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <favorite-branches>
+      <branch-storage />
+    </favorite-branches>
+    <excluded-from-favorite>
+      <branch-storage />
+    </excluded-from-favorite>
+  </component>
+  <component name="MSBuildSolutionManager">
+    <option name="projectInfos">
+      <map>
+        <entry key="{7CAA7277-BE21-47D1-B398-56FB2255BF58}">
+          <value>
+            <ProjectInfo>
+              <option name="targets">
+                <set>
+                  <option value="AddDepsJsonAndRuntimeConfigToCopyItemsForReferencingProjects" />
+                  <option value="AddDepsJsonAndRuntimeConfigToPublishItemsForReferencingProjects" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzers" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersDesign" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersDocumentation" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersGlobalization" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersInteroperability" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersMaintainability" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersNaming" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersPerformance" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersReliability" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersSecurity" />
+                  <option value="AddGlobalAnalyzerConfigForPackage_MicrosoftCodeAnalysisNetAnalyzersUsage" />
+                  <option value="AddImplicitDefineConstants" />
+                  <option value="AddRuntimeConfigFileToBuiltProjectOutputGroupOutput" />
+                  <option value="AddSourceRevisionToInformationalVersion" />
+                  <option value="AddTransitiveFrameworkReferences" />
+                  <option value="AddWindowsSdkKnownFrameworkReferences" />
+                  <option value="AdjustDefaultPlatformTargetForNetFrameworkExeWithNoNativeCopyLocalItems" />
+                  <option value="AfterBuild" />
+                  <option value="AfterClean" />
+                  <option value="AfterCompile" />
+                  <option value="AfterPublish" />
+                  <option value="AfterRebuild" />
+                  <option value="AfterResGen" />
+                  <option value="AfterResolveReferences" />
+                  <option value="AllProjectOutputGroups" />
+                  <option value="AllProjectOutputGroupsDependencies" />
+                  <option value="ApplyImplicitVersions" />
+                  <option value="AssignLinkMetadata" />
+                  <option value="AssignProjectConfiguration" />
+                  <option value="AssignTargetPaths" />
+                  <option value="BeforeBuild" />
+                  <option value="BeforeClean" />
+                  <option value="BeforeCompile" />
+                  <option value="BeforePublish" />
+                  <option value="BeforeRebuild" />
+                  <option value="BeforeResGen" />
+                  <option value="BeforeResolveReferences" />
+                  <option value="Build" />
+                  <option value="BuildCompile" />
+                  <option value="BuildCompileTraverse" />
+                  <option value="BuildGenerateSources" />
+                  <option value="BuildGenerateSourcesTraverse" />
+                  <option value="BuildLink" />
+                  <option value="BuildLinkTraverse" />
+                  <option value="BuildOnlySettings" />
+                  <option value="BuildProject" />
+                  <option value="BuiltProjectOutputGroup" />
+                  <option value="BuiltProjectOutputGroupDependencies" />
+                  <option value="CheckForDuplicateItems" />
+                  <option value="CheckForImplicitPackageReferenceOverrides" />
+                  <option value="Clean" />
+                  <option value="CleanAppxPackage" />
+                  <option value="CleanPublishFolder" />
+                  <option value="CleanReferencedProjects" />
+                  <option value="CollectCentralPackageVersions" />
+                  <option value="CollectFrameworkReferences" />
+                  <option value="CollectPackageDownloads" />
+                  <option value="CollectPackageReferences" />
+                  <option value="CollectReferencedNuGetPackages" />
+                  <option value="CollectResolvedSDKReferencesDesignTime" />
+                  <option value="CollectSDKReferencesDesignTime" />
+                  <option value="Compile" />
+                  <option value="CompileLicxFiles" />
+                  <option value="ComposeStore" />
+                  <option value="ComputeAndCopyFilesToPublishDirectory" />
+                  <option value="ComputeAndCopyFilesToStoreDirectory" />
+                  <option value="ComputeDependencyFileCompilerOptions" />
+                  <option value="ComputeEmbeddedApphostPaths" />
+                  <option value="ComputeFilesCopiedToPublishDir" />
+                  <option value="ComputeFilesToPublish" />
+                  <option value="ComputeFilesToStore" />
+                  <option value="ComputeIntermediateSatelliteAssemblies" />
+                  <option value="ComputeRefAssembliesToPublish" />
+                  <option value="ComputeResolvedFilesToPublishList" />
+                  <option value="ContentFilesProjectOutputGroup" />
+                  <option value="CopyAdditionalFiles" />
+                  <option value="CopyFilesToOutputDirectory" />
+                  <option value="CopyFilesToPublishDirectory" />
+                  <option value="CopyFilesToStoreDirectory" />
+                  <option value="CopyRunEnvironmentFiles" />
+                  <option value="CoreBuild" />
+                  <option value="CoreClean" />
+                  <option value="CoreCompile" />
+                  <option value="CoreGenerateAssemblyInfo" />
+                  <option value="CoreGenerateSatelliteAssemblies" />
+                  <option value="CoreResGen" />
+                  <option value="CreateCompilerGeneratedFilesOutputPath" />
+                  <option value="CreateCustomManifestResourceNames" />
+                  <option value="CreateGeneratedAssemblyInfoInputsCacheFile" />
+                  <option value="CreateManifestResourceNames" />
+                  <option value="CreateReadyToRunImages" />
+                  <option value="CreateSatelliteAssemblies" />
+                  <option value="DebugSymbolsProjectOutputGroup" />
+                  <option value="DebugSymbolsProjectOutputGroupDependencies" />
+                  <option value="DefaultCopyToPublishDirectoryMetadata" />
+                  <option value="DesignTimeResolveAssemblyReferences" />
+                  <option value="DesignerRuntimeImplementationProjectOutputGroup" />
+                  <option value="DocumentationProjectOutputGroup" />
+                  <option value="DocumentationProjectOutputGroupDependencies" />
+                  <option value="EnableIntermediateOutputPathMismatchWarning" />
+                  <option value="EnsureNETCoreAppRuntime" />
+                  <option value="ExpandSDKReferences" />
+                  <option value="ExpandSDKReferencesDesignTime" />
+                  <option value="ExportWindowsMDFile" />
+                  <option value="FindInvalidProjectReferences" />
+                  <option value="FindReferenceAssembliesForReferences" />
+                  <option value="GenerateAdditionalSources" />
+                  <option value="GenerateApplicationManifest" />
+                  <option value="GenerateAssemblyInfo" />
+                  <option value="GenerateBindingRedirects" />
+                  <option value="GenerateBindingRedirectsUpdateAppConfig" />
+                  <option value="GenerateBuildDependencyFile" />
+                  <option value="GenerateBuildRuntimeConfigurationFiles" />
+                  <option value="GenerateDeploymentManifest" />
+                  <option value="GenerateGlobalUsings" />
+                  <option value="GenerateMSBuildEditorConfigFile" />
+                  <option value="GenerateMSBuildEditorConfigFileCore" />
+                  <option value="GenerateMSBuildEditorConfigFileShouldRun" />
+                  <option value="GenerateManifests" />
+                  <option value="GenerateNETCompatibleDefineConstants" />
+                  <option value="GenerateNuspec" />
+                  <option value="GeneratePlatformCompatibleDefineConstants" />
+                  <option value="GeneratePublishDependencyFile" />
+                  <option value="GenerateRestoreGraphFile" />
+                  <option value="GenerateSatelliteAssemblies" />
+                  <option value="GenerateSerializationAssemblies" />
+                  <option value="GenerateShimsAssets" />
+                  <option value="GenerateSingleFileBundle" />
+                  <option value="GenerateSupportedRuntime" />
+                  <option value="GenerateSupportedTargetFrameworkAlias" />
+                  <option value="GenerateTargetFrameworkMonikerAttribute" />
+                  <option value="GenerateTargetPlatformDefineConstants" />
+                  <option value="GenerateToolsSettingsFileFromBuildProperty" />
+                  <option value="GetAllRuntimeIdentifiers" />
+                  <option value="GetAssemblyAttributes" />
+                  <option value="GetAssemblyVersion" />
+                  <option value="GetCompile" />
+                  <option value="GetCopyToOutputDirectoryItems" />
+                  <option value="GetCopyToPublishDirectoryItems" />
+                  <option value="GetFrameworkPaths" />
+                  <option value="GetInstalledSDKLocations" />
+                  <option value="GetItemTargetPaths" />
+                  <option value="GetNativeManifest" />
+                  <option value="GetPackagingOutputs" />
+                  <option value="GetPotentialEditorConfigFiles" />
+                  <option value="GetReferenceAssemblyPaths" />
+                  <option value="GetReferenceTargetPlatformMonikers" />
+                  <option value="GetResolvedSDKReferences" />
+                  <option value="GetSuggestedWorkloads" />
+                  <option value="GetTargetFrameworkDirectories" />
+                  <option value="GetTargetFrameworkMoniker" />
+                  <option value="GetTargetFrameworkMonikerDisplayName" />
+                  <option value="GetTargetFrameworkProperties" />
+                  <option value="GetTargetFrameworkVersion" />
+                  <option value="GetTargetFrameworks" />
+                  <option value="GetTargetFrameworksWithPlatformForSingleTargetFramework" />
+                  <option value="GetTargetPath" />
+                  <option value="GetTargetPathWithTargetPlatformMoniker" />
+                  <option value="ILLink" />
+                  <option value="IncludeTargetingPackReference" />
+                  <option value="IncludeTransitiveProjectReferences" />
+                  <option value="IncrementalClean" />
+                  <option value="InitializeSourceControlInformation" />
+                  <option value="InitializeSourceRootMappedPaths" />
+                  <option value="Pack" />
+                  <option value="PackTool" />
+                  <option value="PostBuildEvent" />
+                  <option value="PreBuildEvent" />
+                  <option value="PrepOptimizer" />
+                  <option value="PrepRestoreForStoreProjects" />
+                  <option value="PrepareForBuild" />
+                  <option value="PrepareForBundle" />
+                  <option value="PrepareForComposeStore" />
+                  <option value="PrepareForILLink" />
+                  <option value="PrepareForPublish" />
+                  <option value="PrepareForRun" />
+                  <option value="PrepareProjectReferences" />
+                  <option value="PrepareResourceNames" />
+                  <option value="PrepareResources" />
+                  <option value="PrepforRestoreForComposeStore" />
+                  <option value="PriFilesOutputGroup" />
+                  <option value="ProcessFrameworkReferences" />
+                  <option value="Publish" />
+                  <option value="PublishBuild" />
+                  <option value="PublishItemsOutputGroup" />
+                  <option value="PublishOnly" />
+                  <option value="Rebuild" />
+                  <option value="ReferenceCopyLocalPathsOutputGroup" />
+                  <option value="ResGen" />
+                  <option value="ResolveAssemblyReferences" />
+                  <option value="ResolveAssemblyReferencesDesignTime" />
+                  <option value="ResolveCodeAnalysisRuleSet" />
+                  <option value="ResolveComReferences" />
+                  <option value="ResolveComReferencesDesignTime" />
+                  <option value="ResolveFrameworkReferences" />
+                  <option value="ResolveKeySource" />
+                  <option value="ResolveLockFileAnalyzers" />
+                  <option value="ResolveLockFileCopyLocalFiles" />
+                  <option value="ResolveLockFileReferences" />
+                  <option value="ResolveNativeReferences" />
+                  <option value="ResolvePackageAssets" />
+                  <option value="ResolvePackageDependenciesDesignTime" />
+                  <option value="ResolvePackageDependenciesForBuild" />
+                  <option value="ResolveProjectReferences" />
+                  <option value="ResolveProjectReferencesDesignTime" />
+                  <option value="ResolveReadyToRunCompilers" />
+                  <option value="ResolveReferences" />
+                  <option value="ResolveRuntimePackAssets" />
+                  <option value="ResolveSDKReferences" />
+                  <option value="ResolveSDKReferencesDesignTime" />
+                  <option value="ResolveTargetingPackAssets" />
+                  <option value="Restore" />
+                  <option value="RestoreForComposeStore" />
+                  <option value="Run" />
+                  <option value="RunCrossGen" />
+                  <option value="RunPackageValidation" />
+                  <option value="RunProduceContentAssets" />
+                  <option value="RunResolvePackageDependencies" />
+                  <option value="RunResolvePublishAssemblies" />
+                  <option value="SDKRedistOutputGroup" />
+                  <option value="SGenFilesOutputGroup" />
+                  <option value="SGenFilesOutputGroupDependencies" />
+                  <option value="SatelliteDllsProjectOutputGroup" />
+                  <option value="SatelliteDllsProjectOutputGroupDependencies" />
+                  <option value="SetGenerateManifests" />
+                  <option value="SetWin32ManifestProperties" />
+                  <option value="ShimReferencePathsWhenCommonTargetsDoesNotUnderstandReferenceAssemblies" />
+                  <option value="ShowCallOfVSTestTaskWithParameter" />
+                  <option value="ShowInfoMessageIfProjectHasNoIsTestProjectProperty" />
+                  <option value="ShowMsbuildWithParameter" />
+                  <option value="SourceFilesProjectOutputGroup" />
+                  <option value="SplitResourcesByCulture" />
+                  <option value="StoreFinalizer" />
+                  <option value="StoreResolver" />
+                  <option value="StoreWorkerMain" />
+                  <option value="StoreWorkerMapper" />
+                  <option value="StoreWorkerPerformWork" />
+                  <option value="UnmanagedRegistration" />
+                  <option value="UnmanagedUnregistration" />
+                  <option value="UpdateAspNetToFrameworkReference" />
+                  <option value="VSTest" />
+                  <option value="ValidateCommandLineProperties" />
+                  <option value="ValidateExecutableReferences" />
+                  <option value="WarnForExplicitVersions" />
+                  <option value="XamlPreCompile" />
+                  <option value="_AddOutputPathToGlobalPropertiesToRemove" />
+                  <option value="_AddPriFileToPackBuildOutput" />
+                  <option value="_BeforeVBCSCoreCompile" />
+                  <option value="_BlockWinMDsOnUnsupportedTFMs" />
+                  <option value="_CalculateInputsOutputsForPack" />
+                  <option value="_CheckBrowserWorkloadNeededButNotAvailable" />
+                  <option value="_CheckForBuildWithNoBuild" />
+                  <option value="_CheckForCompileOutputs" />
+                  <option value="_CheckForEolTargetFrameworks" />
+                  <option value="_CheckForFailedSDKResolution" />
+                  <option value="_CheckForInvalidConfigurationAndPlatform" />
+                  <option value="_CheckForInvalidTargetPlatformVersion" />
+                  <option value="_CheckForInvalidWindowsDesktopTargetingConfiguration" />
+                  <option value="_CheckForLanguageAndFeatureCombinationSupport" />
+                  <option value="_CheckForLanguageAndPublishFeatureCombinationSupport" />
+                  <option value="_CheckForMismatchingPlatform" />
+                  <option value="_CheckForMissingWorkload" />
+                  <option value="_CheckForNETCoreSdkIsPreview" />
+                  <option value="_CheckForObsoleteDotNetCliToolReferences" />
+                  <option value="_CheckForSupportedOSPlatformVersionHigherThanTargetPlatformVersion" />
+                  <option value="_CheckForTransitiveWindowsDesktopDependencies" />
+                  <option value="_CheckForUnnecessaryWindowsDesktopSDK" />
+                  <option value="_CheckForUnsupportedAppHostUsage" />
+                  <option value="_CheckForUnsupportedCppNETCoreVersion" />
+                  <option value="_CheckForUnsupportedHostingUsage" />
+                  <option value="_CheckForUnsupportedNETCoreVersion" />
+                  <option value="_CheckForUnsupportedNETStandardVersion" />
+                  <option value="_CheckForUnsupportedTargetFramework" />
+                  <option value="_CheckForUnsupportedTargetFrameworkAndFeatureCombination" />
+                  <option value="_CheckForUnsupportedTargetPlatformIdentifier" />
+                  <option value="_ChooseAppHost" />
+                  <option value="_CleanGetCurrentAndPriorFileWrites" />
+                  <option value="_CleanPackageFiles" />
+                  <option value="_CleanRecordFileWrites" />
+                  <option value="_CodeAnalysisTreatWarningsNotAsErrors" />
+                  <option value="_CollectTargetFrameworkForTelemetry" />
+                  <option value="_ComputeAssembliesToPostprocessOnPublish" />
+                  <option value="_ComputeCopyToPublishDirectoryItems" />
+                  <option value="_ComputeExpectedEmbeddedApphostPaths" />
+                  <option value="_ComputeFilesToBundle" />
+                  <option value="_ComputeManagedAssemblyToLink" />
+                  <option value="_ComputeManagedRuntimePackAssemblies" />
+                  <option value="_ComputeNETCoreBuildOutputFiles" />
+                  <option value="_ComputeNonExistentFileProperty" />
+                  <option value="_ComputePackageReferencePublish" />
+                  <option value="_ComputeReferenceAssemblies" />
+                  <option value="_ComputeResolvedCopyLocalPublishAssets" />
+                  <option value="_ComputeResolvedFilesToPublishTypes" />
+                  <option value="_ComputeResolvedFilesToStoreTypes" />
+                  <option value="_ComputeSkipAnalyzers" />
+                  <option value="_ComputeUseBuildDependencyFile" />
+                  <option value="_ComputeUserRuntimeAssemblies" />
+                  <option value="_CopyAppConfigFile" />
+                  <option value="_CopyFilesMarkedCopyLocal" />
+                  <option value="_CopyFilesToPublishFolder" />
+                  <option value="_CopyManifestFiles" />
+                  <option value="_CopyOutOfDateSourceItemsToOutputDirectory" />
+                  <option value="_CopyOutOfDateSourceItemsToOutputDirectoryAlways" />
+                  <option value="_CopyReferenceOnlyAssembliesForBuild" />
+                  <option value="_CopyResolvedFilesToPublishAlways" />
+                  <option value="_CopyResolvedFilesToPublishPreserveNewest" />
+                  <option value="_CopyResolvedOptimizedFiles" />
+                  <option value="_CopyResolvedUnOptimizedFiles" />
+                  <option value="_CopySourceItemsToOutputDirectory" />
+                  <option value="_CreateAppHost" />
+                  <option value="_CreateComHost" />
+                  <option value="_CreateR2RImages" />
+                  <option value="_CreateR2RSymbols" />
+                  <option value="_DefaultMicrosoftNETPlatformLibrary" />
+                  <option value="_DeploymentComputeClickOnceManifestInfo" />
+                  <option value="_DeploymentComputeNativeManifestInfo" />
+                  <option value="_DeploymentGenerateBootstrapper" />
+                  <option value="_DeploymentGenerateLauncher" />
+                  <option value="_DeploymentGenerateTrustInfo" />
+                  <option value="_DeploymentSetClickOnceVersions" />
+                  <option value="_DeploymentSignClickOnceDeployment" />
+                  <option value="_DeploymentUnpublishable" />
+                  <option value="_ErrorDisabledWorkload" />
+                  <option value="_FilterRestoreGraphProjectInputItems" />
+                  <option value="_FilterSatelliteResourcesForPublish" />
+                  <option value="_GatherDesignerShadowCopyFiles" />
+                  <option value="_GenerateClsidMap" />
+                  <option value="_GenerateCompileDependencyCache" />
+                  <option value="_GenerateCompileInputs" />
+                  <option value="_GenerateDesignerDepsFile" />
+                  <option value="_GenerateDesignerRuntimeConfigFile" />
+                  <option value="_GenerateDotnetCliToolReferenceSpecs" />
+                  <option value="_GenerateProjectRestoreGraph" />
+                  <option value="_GenerateProjectRestoreGraphAllFrameworks" />
+                  <option value="_GenerateProjectRestoreGraphCurrentProject" />
+                  <option value="_GenerateProjectRestoreGraphPerFramework" />
+                  <option value="_GenerateRegFreeComManifest" />
+                  <option value="_GenerateResolvedDeploymentManifestEntryPoint" />
+                  <option value="_GenerateRestoreDependencies" />
+                  <option value="_GenerateRestoreGraph" />
+                  <option value="_GenerateRestoreGraphProjectEntry" />
+                  <option value="_GenerateRestoreProjectPathItems" />
+                  <option value="_GenerateRestoreProjectPathItemsAllFrameworks" />
+                  <option value="_GenerateRestoreProjectPathItemsCurrentProject" />
+                  <option value="_GenerateRestoreProjectPathItemsPerFramework" />
+                  <option value="_GenerateRestoreProjectPathWalk" />
+                  <option value="_GenerateRestoreProjectSpec" />
+                  <option value="_GenerateRestoreSpecs" />
+                  <option value="_GenerateRuntimeConfigurationFilesInputCache" />
+                  <option value="_GenerateSatelliteAssemblyInputs" />
+                  <option value="_GenerateShimInputCache" />
+                  <option value="_GenerateSuggestedBindingRedirectsCache" />
+                  <option value="_GetAbsoluteOutputPathsForPack" />
+                  <option value="_GetAllRestoreProjectPathItems" />
+                  <option value="_GetAppHostPaths" />
+                  <option value="_GetAssemblyInfoFromTemplateFile" />
+                  <option value="_GetBuildOutputFilesWithTfm" />
+                  <option value="_GetComHostPaths" />
+                  <option value="_GetCopyToOutputDirectoryItemsFromThisProject" />
+                  <option value="_GetCopyToOutputDirectoryItemsFromTransitiveProjectReferences" />
+                  <option value="_GetCrossgenProps" />
+                  <option value="_GetCurrentAndPriorPublishFileWrites" />
+                  <option value="_GetDebugSymbolsWithTfm" />
+                  <option value="_GetFrameworkAssemblyReferences" />
+                  <option value="_GetFrameworksWithSuppressedDependencies" />
+                  <option value="_GetIjwHostPaths" />
+                  <option value="_GetOutputItemsFromPack" />
+                  <option value="_GetPackageFiles" />
+                  <option value="_GetProjectJsonPath" />
+                  <option value="_GetProjectReferencePlatformProperties" />
+                  <option value="_GetProjectReferenceTargetFrameworkProperties" />
+                  <option value="_GetProjectReferenceVersions" />
+                  <option value="_GetProjectVersion" />
+                  <option value="_GetReferencePathForPackageValidation" />
+                  <option value="_GetReferencePathFromInnerProjects" />
+                  <option value="_GetRequiredWorkloads" />
+                  <option value="_GetResolvedFilesToStore" />
+                  <option value="_GetRestoreFallbackFoldersOverride" />
+                  <option value="_GetRestorePackagesPathOverride" />
+                  <option value="_GetRestoreProjectStyle" />
+                  <option value="_GetRestoreRepositoryPathOverride" />
+                  <option value="_GetRestoreSettings" />
+                  <option value="_GetRestoreSettingsAllFrameworks" />
+                  <option value="_GetRestoreSettingsCurrentProject" />
+                  <option value="_GetRestoreSettingsOverrides" />
+                  <option value="_GetRestoreSettingsPerFramework" />
+                  <option value="_GetRestoreSourcesOverride" />
+                  <option value="_GetRestoreTargetFrameworksAsItems" />
+                  <option value="_GetRestoreTargetFrameworksOutput" />
+                  <option value="_GetTargetFrameworksOutput" />
+                  <option value="_GetTfmSpecificContentForPackage" />
+                  <option value="_GetUserSecretsAssemblyAttribute" />
+                  <option value="_HandleFileConflictsForPublish" />
+                  <option value="_HandlePackageFileConflicts" />
+                  <option value="_HandlePackageFileConflictsForPublish" />
+                  <option value="_IncrementalCleanPublishDirectory" />
+                  <option value="_InitializeBasicProps" />
+                  <option value="_InitializeNuspecRepositoryInformationProperties" />
+                  <option value="_InitializeSourceRootMappedPathsFromSourceControl" />
+                  <option value="_IntermediatePack" />
+                  <option value="_IsProjectRestoreSupported" />
+                  <option value="_LoadPackInputItems" />
+                  <option value="_LoadRestoreGraphEntryPoints" />
+                  <option value="_NormalizeTargetPlatformVersion" />
+                  <option value="_PackAsBuildAfterTarget" />
+                  <option value="_PackProjectToolValidation" />
+                  <option value="_PackToolValidation" />
+                  <option value="_ParseTargetManifestFiles" />
+                  <option value="_PopulateCommonStateForGetCopyToOutputDirectoryItems" />
+                  <option value="_PrepareForReadyToRunCompilation" />
+                  <option value="_PreventProjectReferencesFromBuilding" />
+                  <option value="_PublishBuildAlternative" />
+                  <option value="_PublishNoBuildAlternative" />
+                  <option value="_ReportUpgradeNetAnalyzersNuGetWarning" />
+                  <option value="_ResolveCompilerVersion" />
+                  <option value="_ResolveCopyLocalAssetsForPublish" />
+                  <option value="_RestoreCrossgen" />
+                  <option value="_RunILLink" />
+                  <option value="_RunOptimizer" />
+                  <option value="_SGenCheckForOutputs" />
+                  <option value="_SdkBeforeClean" />
+                  <option value="_SdkBeforeRebuild" />
+                  <option value="_SetEmbeddedWin32ManifestProperties" />
+                  <option value="_SetExternalWin32ManifestProperties" />
+                  <option value="_SetPathMapFromSourceRoots" />
+                  <option value="_SetTargetFrameworkMonikerAttribute" />
+                  <option value="_SetupStageForCrossgen" />
+                  <option value="_SplitProjectReferencesByFileExistence" />
+                  <option value="_SplitResolvedFiles" />
+                  <option value="_TimeStampAfterCompile" />
+                  <option value="_TimeStampBeforeCompile" />
+                  <option value="_TouchLastBuildWithSkipAnalyzers" />
+                  <option value="_WalkEachTargetPerFramework" />
+                  <option value="_WarnWhenUsingNET6AndVSPriorTo17" />
+                  <option value="_WriteAppConfigWithSupportedRuntime" />
+                </set>
+              </option>
+              <option name="items">
+                <list>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="actors/DMBot.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.6606909" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:27.0798950" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/actors/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="DMBot" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/actors/DMBot.cs" />
+                        <entry key="Identity" value="actors/DMBot.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:27.0798950" />
+                        <entry key="RecursiveDir" value="actors/" />
+                        <entry key="RelativeDir" value="actors/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="actors/Player.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.6648597" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1123316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/actors/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Player" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/actors/Player.cs" />
+                        <entry key="Identity" value="actors/Player.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1123316" />
+                        <entry key="RecursiveDir" value="actors/" />
+                        <entry key="RelativeDir" value="actors/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="actors/PlayerModel.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.6808678" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1243316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/actors/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="PlayerModel" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/actors/PlayerModel.cs" />
+                        <entry key="Identity" value="actors/PlayerModel.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1243316" />
+                        <entry key="RecursiveDir" value="actors/" />
+                        <entry key="RelativeDir" value="actors/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="actors/SBMenu.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:03.1566872" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:27.0798950" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/actors/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="SBMenu" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/actors/SBMenu.cs" />
+                        <entry key="Identity" value="actors/SBMenu.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:27.0798950" />
+                        <entry key="RecursiveDir" value="actors/" />
+                        <entry key="RelativeDir" value="actors/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="addons/qodot/src/core/GeoGenerator.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8406913" />
+                        <entry key="CreatedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/addons/qodot/src/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="GeoGenerator" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/addons/qodot/src/core/GeoGenerator.cs" />
+                        <entry key="Identity" value="addons/qodot/src/core/GeoGenerator.cs" />
+                        <entry key="ModifiedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="RecursiveDir" value="addons/qodot/src/core/" />
+                        <entry key="RelativeDir" value="addons/qodot/src/core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="addons/qodot/src/core/MapData.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8526913" />
+                        <entry key="CreatedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/addons/qodot/src/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="MapData" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/addons/qodot/src/core/MapData.cs" />
+                        <entry key="Identity" value="addons/qodot/src/core/MapData.cs" />
+                        <entry key="ModifiedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="RecursiveDir" value="addons/qodot/src/core/" />
+                        <entry key="RelativeDir" value="addons/qodot/src/core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="addons/qodot/src/core/MapParser.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8526913" />
+                        <entry key="CreatedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/addons/qodot/src/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="MapParser" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/addons/qodot/src/core/MapParser.cs" />
+                        <entry key="Identity" value="addons/qodot/src/core/MapParser.cs" />
+                        <entry key="ModifiedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="RecursiveDir" value="addons/qodot/src/core/" />
+                        <entry key="RelativeDir" value="addons/qodot/src/core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="addons/qodot/src/core/Qodot.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8606913" />
+                        <entry key="CreatedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/addons/qodot/src/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Qodot" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/addons/qodot/src/core/Qodot.cs" />
+                        <entry key="Identity" value="addons/qodot/src/core/Qodot.cs" />
+                        <entry key="ModifiedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="RecursiveDir" value="addons/qodot/src/core/" />
+                        <entry key="RelativeDir" value="addons/qodot/src/core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="addons/qodot/src/core/SurfaceGatherer.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8646914" />
+                        <entry key="CreatedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/addons/qodot/src/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="SurfaceGatherer" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/addons/qodot/src/core/SurfaceGatherer.cs" />
+                        <entry key="Identity" value="addons/qodot/src/core/SurfaceGatherer.cs" />
+                        <entry key="ModifiedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="RecursiveDir" value="addons/qodot/src/core/" />
+                        <entry key="RelativeDir" value="addons/qodot/src/core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="addons/qodot/src/core/Types.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8686914" />
+                        <entry key="CreatedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/addons/qodot/src/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Types" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/addons/qodot/src/core/Types.cs" />
+                        <entry key="Identity" value="addons/qodot/src/core/Types.cs" />
+                        <entry key="ModifiedTime" value="2023-03-30 07:56:22.8458141" />
+                        <entry key="RecursiveDir" value="addons/qodot/src/core/" />
+                        <entry key="RelativeDir" value="addons/qodot/src/core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/Build.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:16:58.7138669" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1443316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Build" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/Build.cs" />
+                        <entry key="Identity" value="core/Build.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1443316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/BuildFlags.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:30.8940507" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1243316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="BuildFlags" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/BuildFlags.cs" />
+                        <entry key="Identity" value="core/BuildFlags.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1243316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/Camera.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:30.8980527" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1043315" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Camera" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/Camera.cs" />
+                        <entry key="Identity" value="core/Camera.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1043315" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/ConnectDialog.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.4207369" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1203316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="ConnectDialog" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/ConnectDialog.cs" />
+                        <entry key="Identity" value="core/ConnectDialog.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1203316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/Console.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:02.5966858" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:27.6918955" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Console" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/Console.cs" />
+                        <entry key="Identity" value="core/Console.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:27.6918955" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/Global.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:16:58.7338769" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1323316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Global" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/Global.cs" />
+                        <entry key="Identity" value="core/Global.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1323316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/Main.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.1245880" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1403316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Main" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/Main.cs" />
+                        <entry key="Identity" value="core/Main.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1403316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/MapHolder.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:30.8980527" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1363316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="MapHolder" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/MapHolder.cs" />
+                        <entry key="Identity" value="core/MapHolder.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1363316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/MapPicker.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:30.8940507" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1083316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="MapPicker" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/MapPicker.cs" />
+                        <entry key="Identity" value="core/MapPicker.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1083316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/NetworkManager.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.1325920" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1163316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="NetworkManager" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/NetworkManager.cs" />
+                        <entry key="Identity" value="core/NetworkManager.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1163316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/NewRoom.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.4167349" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1003315" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="NewRoom" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/NewRoom.cs" />
+                        <entry key="Identity" value="core/NewRoom.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1003315" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/ScaleManager.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:16:58.7338769" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.0923315" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="ScaleManager" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/ScaleManager.cs" />
+                        <entry key="Identity" value="core/ScaleManager.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.0923315" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/ScriptEngine.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:30.8980527" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1443316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="ScriptEngine" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/ScriptEngine.cs" />
+                        <entry key="Identity" value="core/ScriptEngine.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1443316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/Settings.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8806914" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:27.6918955" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Settings" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/Settings.cs" />
+                        <entry key="Identity" value="core/Settings.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:27.6918955" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/SettingsDialog.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.4207369" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.0963315" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="SettingsDialog" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/SettingsDialog.cs" />
+                        <entry key="Identity" value="core/SettingsDialog.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.0963315" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/ThemeManager.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:16:58.7298749" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1283316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="ThemeManager" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/ThemeManager.cs" />
+                        <entry key="Identity" value="core/ThemeManager.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1283316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/UI.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.3767148" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.0883315" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="UI" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/UI.cs" />
+                        <entry key="Identity" value="core/UI.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.0883315" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/VersionLabel.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.3807168" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1323316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="VersionLabel" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/VersionLabel.cs" />
+                        <entry key="Identity" value="core/VersionLabel.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1323316" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="core/World.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 19:57:42.1132657" />
+                        <entry key="CreatedTime" value="2023-04-04 19:57:40.8692606" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/core/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="World" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/core/World.cs" />
+                        <entry key="Identity" value="core/World.cs" />
+                        <entry key="ModifiedTime" value="2023-04-04 19:57:40.8692606" />
+                        <entry key="RecursiveDir" value="core/" />
+                        <entry key="RelativeDir" value="core/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="entities/EVDynamic.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8846914" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:27.6918955" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/entities/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="EVDynamic" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/entities/EVDynamic.cs" />
+                        <entry key="Identity" value="entities/EVDynamic.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:27.6918955" />
+                        <entry key="RecursiveDir" value="entities/" />
+                        <entry key="RelativeDir" value="entities/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="entities/GMDeathmatch.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.2366443" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1003315" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/entities/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="GMDeathmatch" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/entities/GMDeathmatch.cs" />
+                        <entry key="Identity" value="entities/GMDeathmatch.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1003315" />
+                        <entry key="RecursiveDir" value="entities/" />
+                        <entry key="RelativeDir" value="entities/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="entities/GMSandbox.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.3126826" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1483316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/entities/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="GMSandbox" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/entities/GMSandbox.cs" />
+                        <entry key="Identity" value="entities/GMSandbox.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1483316" />
+                        <entry key="RecursiveDir" value="entities/" />
+                        <entry key="RelativeDir" value="entities/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="entities/MusicPlayer.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 17:26:12.4139899" />
+                        <entry key="CreatedTime" value="2023-04-02 15:42:42.1931441" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/entities/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="MusicPlayer" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/entities/MusicPlayer.cs" />
+                        <entry key="Identity" value="entities/MusicPlayer.cs" />
+                        <entry key="ModifiedTime" value="2023-04-02 15:42:42.1931441" />
+                        <entry key="RecursiveDir" value="entities/" />
+                        <entry key="RelativeDir" value="entities/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="entities/NPC.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 17:26:12.4179899" />
+                        <entry key="CreatedTime" value="2023-04-02 16:06:40.8003323" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/entities/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="NPC" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/entities/NPC.cs" />
+                        <entry key="Identity" value="entities/NPC.cs" />
+                        <entry key="ModifiedTime" value="2023-04-02 16:06:40.8003323" />
+                        <entry key="RecursiveDir" value="entities/" />
+                        <entry key="RelativeDir" value="entities/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="entities/PlayerStart.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-05 06:17:04.1686101" />
+                        <entry key="CreatedTime" value="2023-04-03 20:39:49.1403316" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/entities/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="PlayerStart" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/entities/PlayerStart.cs" />
+                        <entry key="Identity" value="entities/PlayerStart.cs" />
+                        <entry key="ModifiedTime" value="2023-04-03 20:39:49.1403316" />
+                        <entry key="RecursiveDir" value="entities/" />
+                        <entry key="RelativeDir" value="entities/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="entities/Water.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8846914" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:27.6958955" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/entities/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Water" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/entities/Water.cs" />
+                        <entry key="Identity" value="entities/Water.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:27.6958955" />
+                        <entry key="RecursiveDir" value="entities/" />
+                        <entry key="RelativeDir" value="entities/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="tools/Tool.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:02.5886858" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:28.6038964" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/tools/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="Tool" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/tools/Tool.cs" />
+                        <entry key="Identity" value="tools/Tool.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:28.6038964" />
+                        <entry key="RecursiveDir" value="tools/" />
+                        <entry key="RelativeDir" value="tools/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                  <ProjectItemInfo>
+                    <option name="name" value="Compile" />
+                    <option name="itemSpec" value="tools/toolObject.cs" />
+                    <option name="metadata">
+                      <map>
+                        <entry key="AccessedTime" value="2023-04-04 12:14:04.8846914" />
+                        <entry key="CreatedTime" value="2023-03-25 22:07:28.6198964" />
+                        <entry key="DefiningProjectDirectory" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/" />
+                        <entry key="DefiningProjectExtension" value=".props" />
+                        <entry key="DefiningProjectFullPath" value="/usr/lib/dotnet/sdk/6.0.113/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props" />
+                        <entry key="DefiningProjectName" value="Microsoft.NET.Sdk.DefaultItems" />
+                        <entry key="Directory" value="home/mintkat/sunaba/tools/" />
+                        <entry key="Extension" value=".cs" />
+                        <entry key="Filename" value="toolObject" />
+                        <entry key="FullPath" value="$PROJECT_DIR$/tools/toolObject.cs" />
+                        <entry key="Identity" value="tools/toolObject.cs" />
+                        <entry key="ModifiedTime" value="2023-03-25 22:07:28.6198964" />
+                        <entry key="RecursiveDir" value="tools/" />
+                        <entry key="RelativeDir" value="tools/" />
+                        <entry key="RootDir" value="/" />
+                      </map>
+                    </option>
+                  </ProjectItemInfo>
+                </list>
+              </option>
+            </ProjectInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="width" value="1920" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Sunaba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sunaba" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sunaba" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sunaba" type="462c0819:PsiDirectoryNode" />
+              <item name="actors" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="SolutionViewPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Solution 'Sunaba' (1 project(s))" type="7d1ec4c7:SolutionViewRootNode" />
+            </path>
+            <path>
+              <item name="Solution 'Sunaba' (1 project(s))" type="7d1ec4c7:SolutionViewRootNode" />
+              <item name="" type="f9decbce:SolutionViewProjectNode" />
+            </path>
+            <path>
+              <item name="Solution 'Sunaba' (1 project(s))" type="7d1ec4c7:SolutionViewRootNode" />
+              <item name="" type="f9decbce:SolutionViewProjectNode" />
+              <item name="MapParser.cs" type="ac75016c:CSharpElementTreeNode" />
+            </path>
+            <path>
+              <item name="Solution 'Sunaba' (1 project(s))" type="7d1ec4c7:SolutionViewRootNode" />
+              <item name="" type="f9decbce:SolutionViewProjectNode" />
+              <item name="SurfaceGatherer.cs" type="ac75016c:CSharpElementTreeNode" />
+            </path>
+            <path>
+              <item name="Solution 'Sunaba' (1 project(s))" type="7d1ec4c7:SolutionViewRootNode" />
+              <item name="" type="f9decbce:SolutionViewProjectNode" />
+              <item name="Types.cs" type="ac75016c:CSharpElementTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4707b234-f1ec-49f3-8257-87e51b9e3508" name="Default" comment="" />
+      <created>1680715258785</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680715258785</updated>
+      <workItem from="1680715260724" duration="196000" />
+      <workItem from="1680716095523" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="199000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1038" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25586355" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="MSBuild" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="530" y="329" width="849" height="378" key="IdeErrosDialog" timestamp="1680715396569">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="530" y="329" width="849" height="378" key="IdeErrosDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1680715396569" />
+    <state x="446" y="269" width="1028" height="500" key="OptionsEditor" timestamp="1680715385537">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="446" y="269" width="1028" height="500" key="OptionsEditor/0.0.1920.1038@0.0.1920.1038" timestamp="1680715385537" />
+    <state x="585" y="269" width="750" height="500" key="com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1680715276864">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="585" y="269" width="750" height="500" key="com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1680715276864" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="com.intellij.openapi.vcs.changes.shelf.ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+</project>

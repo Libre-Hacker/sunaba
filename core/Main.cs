@@ -2,6 +2,16 @@ using Godot;
 using MoonSharp.Interpreter;
 using System;
 
+/*
+ *
+ * CONGRATULATIONS
+ *
+ *	(｀・ω・´)
+ *
+ *	You found the main entrypoint code for this codebase.
+ * 
+ */
+
 namespace Sunaba.Core
 {
 	public partial class Main : Node
@@ -43,11 +53,14 @@ namespace Sunaba.Core
 
 			OS.Alert("Sunaba is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions.");
 
-			String[] args = OS.GetCmdlineArgs();
-			String arg1 = args[0];
-			if (arg1.Contains(".map"))
+			if (!OS.HasFeature("editor"))
 			{
-				Play(arg1);
+				String[] args = OS.GetCmdlineArgs();
+				String arg1 = args[0];
+				if (arg1.Contains(".map"))
+				{
+					Play(arg1);
+				}
 			}
 		}
 

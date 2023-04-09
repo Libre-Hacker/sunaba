@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhwpmut8og8ab"]
+
+[ext_resource type="PackedScene" uid="uid://oowm7ps4q4h6" path="res://assets/models/handprops/CR1.gltf" id="1_4h54n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32v0s"]
+albedo_color = Color(0.34902, 0.34902, 0.34902, 1)
+metallic = 0.5
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0k01"]
+albedo_color = Color(0.207843, 0, 0.941176, 1)
+metallic = 0.31
+metallic_specular = 0.4
+roughness = 0.34
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_niuqk"]
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.66
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wb84v"]
+albedo_color = Color(0.443137, 0.443137, 0.443137, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.66
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l88e0"]
+albedo_color = Color(0.270588, 0.105882, 1, 1)
+
+[node name="CR1" instance=ExtResource("1_4h54n")]
+
+[node name="CR12" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_32v0s")
+surface_material_override/1 = SubResource("StandardMaterial3D_u0k01")
+surface_material_override/2 = SubResource("StandardMaterial3D_32v0s")
+surface_material_override/3 = SubResource("StandardMaterial3D_32v0s")
+surface_material_override/4 = SubResource("StandardMaterial3D_niuqk")
+surface_material_override/5 = SubResource("StandardMaterial3D_wb84v")
+surface_material_override/6 = SubResource("StandardMaterial3D_niuqk")
+surface_material_override/7 = SubResource("StandardMaterial3D_wb84v")
+surface_material_override/8 = SubResource("StandardMaterial3D_niuqk")
+surface_material_override/9 = SubResource("StandardMaterial3D_niuqk")
+surface_material_override/10 = SubResource("StandardMaterial3D_niuqk")
+surface_material_override/11 = SubResource("StandardMaterial3D_32v0s")
+surface_material_override/12 = SubResource("StandardMaterial3D_niuqk")
+
+[node name="bolt" parent="CR12" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_niuqk")
+
+[node name="Mag" parent="CR12" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_niuqk")
+surface_material_override/1 = SubResource("StandardMaterial3D_l88e0")

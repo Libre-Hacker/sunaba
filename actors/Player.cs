@@ -982,7 +982,7 @@ namespace Sunaba.Actors
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
 		public void AddBulletHole(String bDecPath, RayCast3D rayCast)
 		{
-			var target = aimCast.GetCollider();
+			var target = rayCast.GetCollider();
 			if (target != null)
 			{
 				if (target is Node3D node3D)
@@ -991,8 +991,10 @@ namespace Sunaba.Actors
 					Decal decal = bDecal.Instantiate<Decal>();
 					node3D.AddChild(decal);
 					Vector3 decTf = decal.GlobalPosition;
-					decTf = rayCast.GetCollisionPoint();
+					decTf = aimCast.GetCollisionPoint();
+					decal.GlobalPosition = decTf;
 				}
+				
 			}
 		}
 

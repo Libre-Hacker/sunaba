@@ -60,6 +60,7 @@ priority = 4.0
 shape = SubResource("BoxShape3D_b46la")
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
+visible = false
 subdiv = 3
 size = Vector3(256, 256, 256)
 camera_attributes = SubResource("CameraAttributesPhysical_q5rjg")

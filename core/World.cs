@@ -176,9 +176,22 @@ namespace Sunaba.Core
 			}
 		}
 
-		public static void setSpectatorMode(bool enabled)
+		public static void SetSpectatorMode(bool enabled)
 		{
 			spectatorMode = enabled;
         }
+
+		public void SetVoxelGi(bool _bool)
+		{
+			VoxelGI voxelGi = GetNode<VoxelGI>("VoxelGI");
+			if (_bool == true)
+			{
+				voxelGi.Show();
+			}
+			else
+			{
+				voxelGi.Hide();
+			}
+		}
     }
 }

@@ -8,6 +8,7 @@
 data_*/
 
 bin/
+binWin32/
 webrtc/
 webrtc_debug/
 

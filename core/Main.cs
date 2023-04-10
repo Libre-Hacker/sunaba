@@ -50,9 +50,7 @@ namespace Sunaba.Core
 			console.Print("Version " + build.versionNumber);
 			console.Print("Compiled on " + build.buildDate);
 			console.Print("");
-
-			OS.Alert("Sunaba is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions.");
-
+			
 			if (!OS.HasFeature("editor"))
 			{
 				String[] args = OS.GetCmdlineArgs();

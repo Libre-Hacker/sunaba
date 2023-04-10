@@ -26,7 +26,8 @@ namespace Sunaba.Core
 
         public void OnFileButtonPressed()
         {
-            GetNode<FileDialog>("UserFileDialog").PopupCentered();
+            //GetNode<FileDialog>("UserFileDialog").PopupCentered();
+            GetNode<Node>("NativeDialogManager").Call("show_native_file_dialog");
         }
 
 		public void OnFileMenuPressed(int id)

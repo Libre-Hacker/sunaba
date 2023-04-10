@@ -39,35 +39,57 @@ namespace Sunaba.Entities
 			console = GetNode<Console>("/root/PConsole");
 
 			timer.QueueFree();
+			
+			if (properties.ContainsKey("angle"))
+			{
+				String angleString = "-" + properties.GetValueOrDefault("angle").ToString();
+				float angle = angleString.ToFloat();
+				Print(angle.ToString());
 
+				
+				Vector3 rotation = GlobalRotation;
+				rotation.Y = angle;
+				GlobalRotation = rotation;
+				Print(GlobalRotation.Y.ToString());
+			}
+			
 			if (properties.ContainsKey("script"))
 			{
 				npcScript = properties.GetValueOrDefault("script").ToString();
 
 				if (npcScript == null) return;
 
-				
+			
 				//String scriptPath = "res://Scripts/" + npcScript + ".lua";
 
 				script.Globals["print"] = (Print);
+				script.Globals["setYPosition"] = (SetYPosition);
 				script.DoString(npcScript);
 				script.Call(script.Globals["start"]);
 				canExecute = true;
 			}
+			
 		}
 
 		public override void _Process(double delta)
 		{
 			if (canExecute == false) return;
-			
+		
 				script.Call(script.Globals["update"]);
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
 			if (canExecute == false) return;
-			
+		
 			script.Call(script.Globals["physicsUpdate"]);
+		}
+
+		void SetYPosition(double yPos)
+		{
+			Vector3 rotation = GlobalRotation;
+			rotation.Y = (float)yPos;
+			GlobalRotation = rotation;
 		}
 
 		void Print(String _string)

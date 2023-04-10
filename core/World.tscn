@@ -29,7 +29,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="MapManager" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("2_vkw6t")
-map_file = "C:/sunaba/maps/base.map"
+map_file = "/home/mintkat/sunaba/maps/sp/m1.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("3_xtjbn")
 base_texture_dir = "res://textures"

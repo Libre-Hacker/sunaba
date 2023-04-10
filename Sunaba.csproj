@@ -9,4 +9,7 @@
   <ItemGroup>
     <PackageReference Include="MoonSharp" Version="2.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="addons\qodot\src\import_plugins\" />
+  </ItemGroup>
 </Project>

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="QodotFGDFile" load_steps=31 format=3 uid="uid://bnw43cpa56y4k"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_gyj8k"]
-[ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
+[ext_resource type="Resource" uid="uid://dfi8hq0com5v" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
 [ext_resource type="Resource" uid="uid://b8aisardk4k4u" path="res://addons/qodot/game_definitions/fgd/solid_classes/detail_solid_class.tres" id="3_cs25y"]
-[ext_resource type="Resource" path="res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres" id="4_4enci"]
+[ext_resource type="Resource" uid="uid://oce52bw3ysdu" path="res://addons/qodot/game_definitions/fgd/solid_classes/illusionary_solid_class.tres" id="4_4enci"]
 [ext_resource type="Resource" uid="uid://c5o31v30rw7v5" path="res://addons/qodot/game_definitions/fgd/base_classes/light_base_class.tres" id="5_5yf0g"]
 [ext_resource type="Resource" uid="uid://ccwosedfa8v8d" path="res://addons/qodot/game_definitions/fgd/point_classes/light_point_class.tres" id="6_0rqv5"]
 [ext_resource type="Resource" path="res://entities/LTOmni.tres" id="7_ksys4"]
@@ -37,4 +37,4 @@ export_file = false
 target_folder = "C:/QuakeDev/TrenchBroom/games/OpenSBX"
 fgd_name = "Sunaba"
 base_fgd_files = Array[Resource]([])
-entity_definitions = [ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_ksys4"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("15_hc8b5"), ExtResource("17_2mjsk"), ExtResource("18_85oad"), ExtResource("19_4y8q4"), ExtResource("7_ksys4"), ExtResource("21_qde4r"), ExtResource("22_6yv6f"), ExtResource("24_vfn6q"), ExtResource("18_0q27l"), ExtResource("26_k2o1r"), ExtResource("27_mm36p"), ExtResource("28_0pppj"), ExtResource("29_et5qv"), ExtResource("30_cs2v3"), ExtResource("28_0pn4y"), ExtResource("29_066kl")]
+entity_definitions = Array[Resource]([ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("7_ksys4"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("12_lr6v5"), ExtResource("13_7fjv3"), ExtResource("14_unjc1"), ExtResource("15_oylio"), ExtResource("15_hc8b5"), ExtResource("17_2mjsk"), ExtResource("18_85oad"), ExtResource("19_4y8q4"), ExtResource("7_ksys4"), ExtResource("21_qde4r"), ExtResource("22_6yv6f"), ExtResource("24_vfn6q"), ExtResource("18_0q27l"), ExtResource("26_k2o1r"), ExtResource("27_mm36p"), ExtResource("28_0pppj"), ExtResource("29_et5qv"), ExtResource("30_cs2v3"), ExtResource("28_0pn4y"), ExtResource("29_066kl")])

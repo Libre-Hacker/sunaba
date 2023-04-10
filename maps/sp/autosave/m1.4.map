@@ -530,7 +530,7 @@
 // entity 3
 {
 "classname" "npc"
-"origin" "376.455 311.859 24"
+"origin" "376 312 24"
 "angle" "270"
 "script" "function start()
     

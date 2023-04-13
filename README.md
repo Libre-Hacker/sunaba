@@ -24,15 +24,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to build the software
 
-* Godot 4.0 ( Mono Build )
+* [Godot 4.0 ( Mono Build )](https://github.com/godotengine/godot/releases/tag/4.0.2-stable)
 
-* .NET SDK 6.0
+* [.NET SDK 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-* Python 3.10 (Used for build scripts)
+* [Python 3.10 (Used for build scripts)](https://www.python.org/downloads/release/python-3100/)
 
-* NSIS 3.x (Only needed for building the Windows version)
-
-* Git LFS
+* [NSIS 3.x (Only needed for building the Windows version)](https://nsis.sourceforge.io/Download)
 
 ### Opening the Project
 

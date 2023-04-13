@@ -66,7 +66,7 @@ elif target == "linux":
     mkdir("./bin")
     mkdir("./bin/linux")
 
-command = godot_path + " --export-release " + '"' + target + '"' + " " + bin_path
+command = godot_path + " --export-release " + '"' + target + '"' + " --headless " + bin_path
 
 print("Exporting Project")
 

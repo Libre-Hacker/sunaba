@@ -41,7 +41,7 @@
 ; MUI end ------
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "bin\Sunaba0.8Win32.exe"
+OutFile "bin\output.exe"
 InstallDir "$PROGRAMFILES\Sunaba"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
@@ -118,7 +118,7 @@ Section "MainSection" SEC01
   File "binWin32\data_Sunaba_x86_32\Microsoft.Win32.Registry.dll"
   File "binWin32\data_Sunaba_x86_32\MoonSharp.Interpreter.dll"
   File "binWin32\data_Sunaba_x86_32\mscordaccore.dll"
-  File "binWin32\data_Sunaba_x86_32\mscordaccore_x86_x86_6.0.1523.11507.dll"
+  #File "binWin32\data_Sunaba_x86_32\mscordaccore_x86_x86_6.0.1523.11507.dll"
   File "binWin32\data_Sunaba_x86_32\mscordbi.dll"
   File "binWin32\data_Sunaba_x86_32\mscorlib.dll"
   File "binWin32\data_Sunaba_x86_32\mscorrc.dll"

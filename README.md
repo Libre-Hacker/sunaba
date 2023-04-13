@@ -28,6 +28,8 @@ What things you need to install the software and how to install them
 
 * .NET SDK 6.0
 
+* Python 3.10 (Used for build scripts)
+
 * Git LFS
 
 ### Opening the Project
@@ -40,7 +42,18 @@ Run the game by pressing F5
 
 ## Deployment
 
-See [Exporting projects¶](https://docs.godotengine.org/en/4.0/tutorials/export/exporting_projects.html)
+To Build the game, use one of the following commands
+
+
+```pwsh
+
+python ./build.py linux [GODOT_PATH] # Linux
+
+python ./build.py win32 [GODOT_PATH] # Windows
+
+```
+
+[GODOT_PATH] is used to specify a path to the Godot executable, if one isn't specified, it will default to the one provided by the system path
 
 ## Built With
 

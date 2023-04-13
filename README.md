@@ -30,6 +30,8 @@ What things you need to install the software and how to install them
 
 * Python 3.10 (Used for build scripts)
 
+* NSIS 3.x
+
 * Git LFS
 
 ### Opening the Project

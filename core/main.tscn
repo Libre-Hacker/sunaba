@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d06blf4ftkgn8"]
+[gd_scene load_steps=15 format=3 uid="uid://d06blf4ftkgn8"]
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/NewRoom.tscn" id="9_lb0pj"]
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="9_y4502"]
-[ext_resource type="Script" path="res://core/NativeDialogManager.gd" id="10_gwmnd"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_sl8b6"]
 [ext_resource type="PackedScene" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
 [ext_resource type="PackedScene" uid="uid://cbpb3x1xtj73g" path="res://Godime/src/main.tscn" id="12_1y7j4"]
@@ -375,29 +374,6 @@ access = 2
 filters = PackedStringArray("*.map")
 show_hidden_files = true
 
-[node name="NativeDialogManager" type="Node" parent="UI"]
-script = ExtResource("10_gwmnd")
-
-[node name="NativeFileDialog" type="NativeFileDialog" parent="UI/NativeDialogManager"]
-title = "Open a File"
-file_mode = 0
-access = 2
-filters = PackedStringArray("*.map ; Game Map Files")
-
-[node name="NativeAcceptDialog1" type="NativeAcceptDialog" parent="UI/NativeDialogManager"]
-title = "Warning!"
-dialog_text = "Sunaba is stil under active development and what 
-you see is not representative of the final product. 
-As such, compatibility may change between 
-versions."
-
-[node name="NativeNotification1" type="NativeNotification" parent="UI/NativeDialogManager"]
-title = "Warning!"
-notification_text = "Sunaba is stil under active development and what 
-you see is not representative of the final product. 
-As such, compatibility may change between 
-versions."
-
 [node name="ConnectDialog" type="Window" parent="UI"]
 initial_position = 2
 title = "Connect"
@@ -409,10 +385,11 @@ script = ExtResource("9_y4502")
 
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_sl8b6")]
 
-[node name="SettingsDialog" parent="UI" instance=ExtResource("11_aiwch")]
+[node name="SettingsDialog" parent="UI" node_paths=PackedStringArray("ui") instance=ExtResource("11_aiwch")]
 initial_position = 1
 title = "Settings"
 visible = false
+ui = NodePath("..")
 
 [node name="CharacterWindow" type="Window" parent="UI"]
 own_world_3d = true
@@ -425,6 +402,11 @@ min_size = Vector2i(475, 275)
 [node name="AcceptDialog1" type="AcceptDialog" parent="UI"]
 size = Vector2i(253, 109)
 dialog_text = "Online multiplayer is currently disabled."
+dialog_autowrap = true
+
+[node name="AcceptDialog2" type="AcceptDialog" parent="UI"]
+size = Vector2i(400, 161)
+dialog_text = "Sunaba is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions."
 dialog_autowrap = true
 
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="Unpause"]
@@ -442,7 +424,6 @@ dialog_autowrap = true
 [connection signal="pressed" from="UI/NewRoomDialog/NewRoom/CreateRoomButton" to="." method="CreateRoom"]
 [connection signal="close_requested" from="UI/UserFileDialog" to="UI" method="_on_file_dialog_close_requested"]
 [connection signal="file_selected" from="UI/UserFileDialog" to="UI" method="OnFileSelected"]
-[connection signal="file_selected" from="UI/NativeDialogManager/NativeFileDialog" to="UI/NativeDialogManager" method="_on_native_file_dialog_file_selected"]
 [connection signal="close_requested" from="UI/ConnectDialog" to="UI" method="OnConnectDialogCloseRequested"]
 [connection signal="text_changed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/LineEdit" to="." method="_on_address_changed"]
 [connection signal="pressed" from="UI/ConnectDialog/Connect/TabBar/TabContainer/Online/ConnectButton" to="UI/ConnectDialog" method="Connect"]

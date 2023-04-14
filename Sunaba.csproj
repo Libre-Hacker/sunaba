@@ -5,11 +5,16 @@
     <SourceRevisionId>build$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</SourceRevisionId>
     <AssemblyVersion>0.8.0</AssemblyVersion>
     <FileVersion>0.8.0</FileVersion>
+    <Configurations>Debug;ExportDebug;ExportRelease</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MoonSharp" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="addons\qodot\src\import_plugins\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="buildall.py" />
   </ItemGroup>
 </Project>

@@ -98,8 +98,6 @@ if target == "win32":
     else:
         print("makensis ran with exit code %d" % makensis)
     
-    print("")
-    exit()
 elif target == "mac":
     outputzip = "./bin/macoutput.zip"
     zipname = "./bin/Sunaba-" + str(version) + "-Mac.zip"
@@ -117,8 +115,6 @@ elif target == "mac":
                     #shutil.copy(map, build_path)
                     pass
     
-    print("")
-    exit()
 elif target == "linux":
     print("Copying map files to game directory")
 
@@ -150,5 +146,5 @@ elif target == "linux":
                     zip.write(fp, arcname=fl)
     
 
-    print("")
-    exit()
+print("")
+exit()

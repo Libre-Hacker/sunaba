@@ -94,7 +94,7 @@ if target == "win32":
             newname = "./bin/Sunaba-" + str(version) + "-Win32.exe"
             output = os.path.abspath(nsisout)
             destination = os.path.abspath(str(newname))
-            os.rename(output, destination)
+            os.replace(output, destination)
     else:
         print("makensis ran with exit code %d" % makensis)
     

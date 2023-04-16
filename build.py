@@ -40,8 +40,8 @@ print("Version : ", version)
 
 print("Build Target : ", target)
 
-if len(sys.argv) == 3:
-    godot_path = sys.argv[2]
+if len(sys.argv) == 4:
+    godot_path = sys.argv[3]
 
     print("Godot binary : ", godot_path)
 else:
@@ -80,23 +80,25 @@ else:
 
 print("")
 
+
 if target == "win32":
     mkdir("./bin")
-    
-    print("Generating Windows Installer")
-    makensis = os.system("makensis installer.nsi")
+    if len(sys.argv) != 2:
+        if sys.argv[2] == "nsis":
+            print("Generating Windows Installer")
+            makensis = os.system("makensis installer.nsi")
 
-    if makensis == 0:
-        print("makensis ran successfully")
+            if makensis == 0:
+                print("makensis ran successfully")
 
-        nsisout = "./bin/output.exe"
-        if os.path.exists(nsisout):
-            newname = "./bin/Sunaba-" + str(version) + "-Win32.exe"
-            output = os.path.abspath(nsisout)
-            destination = os.path.abspath(str(newname))
-            os.replace(output, destination)
-    else:
-        print("makensis ran with exit code %d" % makensis)
+                nsisout = "./bin/output.exe"
+                if os.path.exists(nsisout):
+                    newname = "./bin/Sunaba-" + str(version) + "-Win32.exe"
+                    output = os.path.abspath(nsisout)
+                    destination = os.path.abspath(str(newname))
+                    os.replace(output, destination)
+            else:
+                print("makensis ran with exit code %d" % makensis)
     
 elif target == "mac":
     outputzip = "./bin/macoutput.zip"
@@ -130,20 +132,23 @@ elif target == "linux":
     
     print("")
 
-    zipname = "./bin/Sunaba-" + str(version) + "-Linux.zip"
-    
-    print("Packing Build into Zip : " + zipname)
+    if len(sys.argv) != 2:
+        if sys.argv[2] == "zip":
 
-    with zipfile.ZipFile(zipname, mode="w") as zip:
-        for f in os.scandir(build_path):
-            print("Adding " + f.name + " to " + zipname)
-            zip.write(f, arcname=f.name)
-            if f.is_dir():
-                for file in os.scandir(f):
-                    fl = f.name + "/" + file.name
-                    print("Adding " + fl + " to " + zipname)
-                    fp = os.path.abspath(build_path + "/" + fl)
-                    zip.write(fp, arcname=fl)
+            zipname = "./bin/Sunaba-" + str(version) + "-Linux.zip"
+    
+            print("Packing Build into Zip : " + zipname)
+
+            with zipfile.ZipFile(zipname, mode="w") as zip:
+                for f in os.scandir(build_path):
+                    print("Adding " + f.name + " to " + zipname)
+                    zip.write(f, arcname=f.name)
+                    if f.is_dir():
+                       for file in os.scandir(f):
+                          fl = f.name + "/" + file.name
+                          print("Adding " + fl + " to " + zipname)
+                          fp = os.path.abspath(build_path + "/" + fl)
+                          zip.write(fp, arcname=fl)
     
 
 print("")

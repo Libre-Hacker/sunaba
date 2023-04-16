@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/NewRoom.tscn" id="9_lb0pj"]
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="9_y4502"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_sl8b6"]
-[ext_resource type="PackedScene" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
+[ext_resource type="PackedScene" uid="uid://3csr62nc6ajl" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
 [ext_resource type="PackedScene" uid="uid://cbpb3x1xtj73g" path="res://Godime/src/main.tscn" id="12_1y7j4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
@@ -296,7 +296,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Play"
@@ -309,7 +308,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Connect"
@@ -321,7 +319,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Customize"
@@ -333,7 +330,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Settings"
@@ -345,7 +341,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 text = "Quit"
@@ -389,6 +384,7 @@ script = ExtResource("9_y4502")
 initial_position = 1
 title = "Settings"
 visible = false
+unresizable = false
 ui = NodePath("..")
 
 [node name="CharacterWindow" type="Window" parent="UI"]

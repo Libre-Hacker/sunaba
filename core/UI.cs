@@ -13,7 +13,6 @@ namespace Sunaba.Core
 			
 			GetNode<AcceptDialog>("AcceptDialog2").PopupCentered();
 		}
-        
 
 		public void OnCreateButtonPressed()
 		{

@@ -14,7 +14,7 @@ namespace Sunaba.Core
         public override void _Ready()
 		{
 			themeDropdown = 
-				GetNode<Panel>("Panel")
+				GetNode<Control>("Control")
 				.GetNode<TabBar>("TabBar")
 				.GetNode<TabContainer>("TabContainer")
 				.GetNode<Control>("UI")

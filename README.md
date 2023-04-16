@@ -55,7 +55,7 @@ python ./build.py win32 [GODOT_PATH] nsis # Windows
 
 [GODOT_PATH] is used to specify a path to the Godot executable, if one isn't specified, it will default to the one provided by the system path
 
-The Arguments "nsis" and zip are optional
+The Arguments "nsis" and "zip" are optional
 
 ## Built With
 

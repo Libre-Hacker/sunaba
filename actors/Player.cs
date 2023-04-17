@@ -394,6 +394,26 @@ namespace Sunaba.Actors
 			{
 				model.Visible = false;
             }
+
+			if (global.showUI == true)
+			{
+				crosshair.Show();
+				playerPanel.Show();
+				if (currentTool == 0)
+				{
+					toolPanel.Hide();
+				}
+				else
+				{
+					toolPanel.Show();
+				}
+			}
+			else
+			{
+				crosshair.Hide();
+				playerPanel.Hide();
+				toolPanel.Hide();
+			}
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -519,7 +539,7 @@ namespace Sunaba.Actors
 					sprintingIcon.Show();
 				}
 
-				if (Input.IsActionPressed("crouch"))
+				if (Input.IsActionPressed("crouch") && !Input.IsKeyPressed(Key.Alt))
 				{
 					Shape3D shape3D = collisionShape.Shape;
 					if (shape3D is CapsuleShape3D capsule)

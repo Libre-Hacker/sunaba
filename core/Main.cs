@@ -25,6 +25,7 @@ namespace Sunaba.Core
 		RichTextLabel chatbox;
 		Console console;
 
+		private Global global;
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
@@ -38,7 +39,7 @@ namespace Sunaba.Core
 			}
 			ThemeManager themeMan = GetNode<ThemeManager>("/root/ThemeManager/");
 			GetNode<Control>("UI").Theme = themeMan.theme;
-			Global global = GetNode<Global>("/root/Global/");
+			global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
 			console = GetNode<Console>("/root/PConsole");
@@ -112,17 +113,19 @@ namespace Sunaba.Core
 				Reload();
 			}
 			
-			if ((Input.IsKeyPressed(Key.Ctrl)) && (Input.IsKeyPressed(Key.Alt)) && (Input.IsKeyPressed(Key.C)))
+			if (Input.IsKeyPressed(Key.Ctrl) && Input.IsKeyPressed(Key.Alt) && Input.IsKeyPressed(Key.C))
 			{
 				UI ui = GetNode<UI>("UI");
 
 				if (ui.Visible)
 				{
 					ui.Hide();
+					global.showUI = false;
 				}
 				else
 				{
 					ui.Show();
+					global.showUI = true;
 				}
 			}
 

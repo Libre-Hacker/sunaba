@@ -17,6 +17,7 @@ namespace Sunaba.Core
 		public CharacterBody3D player;
 		public bool botsEnabled;
 		public int botAmount = 0;
+		public bool showUI = true;
 
 		public String headwear = "brown_male_hair";
         public String skinColor = "pale";

@@ -9,8 +9,12 @@ exclusive = true
 unresizable = true
 min_size = Vector2i(400, 300)
 script = ExtResource("1_ixb6n")
+credits = Array[String](["m1ntkat - Creator and Lead Developer", "Kevin MacLeod - Music"])
 
 [node name="Control" parent="." instance=ExtResource("2_lyet8")]
+
+[node name="Label2" parent="Control/TabBar/TabContainer/About" index="0"]
+credits = PackedStringArray("m1ntkat - Creator and Lead Developer", "Kevin MacLeod - Music")
 
 [node name="ModelOptionButton" parent="Control/TabBar/TabContainer/Client/VBoxContainer/Label2" index="0"]
 item_count = 3

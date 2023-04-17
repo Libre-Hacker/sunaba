@@ -6,6 +6,8 @@
 [sub_resource type="GDScript" id="GDScript_qb0mn"]
 script/source = "extends RichTextLabel
 
+@export var credits : PackedStringArray
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,14 @@ func _ready():
 	add_text(\"Compiled on \" + Build.buildDate)
 	newline()
 	add_text(\"(C) 2022-2023 mintkat\")
+	newline()
+	newline()
+	add_text(\"Credits\")
+	
+	for string in credits:
+		if string is String:
+			newline()
+			add_text(string)
 "
 
 [node name="Control" type="Control"]

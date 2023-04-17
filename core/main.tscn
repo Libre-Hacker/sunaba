@@ -20,8 +20,10 @@ bg_color = Color(0, 0, 0, 0.607843)
 [node name="Main" type="Node"]
 script = ExtResource("1_ig20j")
 
-[node name="NetworkManager" type="Node" parent="."]
+[node name="NetworkManager" type="Node" parent="." node_paths=PackedStringArray("world", "ui")]
 script = ExtResource("2_gi6fg")
+world = NodePath("../World")
+ui = NodePath("../UI")
 
 [node name="World" parent="." instance=ExtResource("3_ptygb")]
 
@@ -378,11 +380,12 @@ script = ExtResource("9_y4502")
 
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_sl8b6")]
 
-[node name="SettingsDialog" parent="UI" instance=ExtResource("11_aiwch")]
+[node name="SettingsDialog" parent="UI" node_paths=PackedStringArray("ui") instance=ExtResource("11_aiwch")]
 initial_position = 1
 title = "Settings"
 visible = false
 unresizable = false
+ui = NodePath("..")
 
 [node name="CharacterWindow" type="Window" parent="UI"]
 own_world_3d = true

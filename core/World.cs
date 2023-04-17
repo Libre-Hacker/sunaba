@@ -174,9 +174,22 @@ namespace Sunaba.Core
 					InstancePlayer(id);
 				}
 			}
+			else
+			{
+				SpawnCamera();
+			}
 		}
 
-		public static void SetSpectatorMode(bool enabled)
+		public void SpawnCamera()
+		{
+			//GetNode<Camera3D>("Camera3D").Current = false;
+			PackedScene cameraScene = GD.Load<PackedScene>("res://core/Camera.tscn");
+			Camera3D camera = cameraScene.Instantiate<Camera3D>();
+			AddChild(camera);
+			camera.Current = true;
+		}
+
+		public void SetSpectatorMode(bool enabled)
 		{
 			spectatorMode = enabled;
         }

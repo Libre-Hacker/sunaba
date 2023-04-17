@@ -111,6 +111,34 @@ namespace Sunaba.Core
 			{
 				Reload();
 			}
+			
+			if ((Input.IsKeyPressed(Key.Ctrl)) && (Input.IsKeyPressed(Key.Alt)) && (Input.IsKeyPressed(Key.C)))
+			{
+				UI ui = GetNode<UI>("UI");
+
+				if (ui.Visible)
+				{
+					ui.Hide();
+				}
+				else
+				{
+					ui.Show();
+				}
+			}
+
+			if (Input.IsKeyPressed(Key.F11))
+			{
+				if (DisplayServer.WindowGetMode() != DisplayServer.WindowMode.Fullscreen)
+				{
+					DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+				}
+				else
+				{
+					DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+				}
+
+				
+			}
 		}
 
 		public void Reload()

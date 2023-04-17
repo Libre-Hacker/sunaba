@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
 [ext_resource type="Texture2D" uid="uid://dt8x6u8ink38t" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
-[ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="7_6esbo"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
+[ext_resource type="Texture2D" uid="uid://ckkej6m32knbr" path="res://assets/bg2.png" id="8_pg1aa"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/NewRoom.tscn" id="9_lb0pj"]
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="9_y4502"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_sl8b6"]
@@ -209,7 +209,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_6esbo")
+texture = ExtResource("8_pg1aa")
 expand_mode = 1
 stretch_mode = 6
 

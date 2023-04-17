@@ -11,7 +11,7 @@ build_linux = os.system("python ./build.py linux zip " + godot_path)
 if build_linux == 0:
     build_win32 = os.system("python ./build.py win32 nsis " + godot_path)
     
-    if build_win32 == 1:
+    if build_win32 == 0:
         exit()
     else:
         exit(1)

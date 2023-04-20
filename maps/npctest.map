@@ -126,17 +126,7 @@
 {
 "classname" "npc"
 "origin" "40 -488 24"
-"script" "function start()
-    print('Hello World! Im an NPC')
-end
-
-function update()
-
-end
-
-function physicsUpdate()
-    
-end"
+"script" "npcTest1.lua"
 }
 // entity 2
 {

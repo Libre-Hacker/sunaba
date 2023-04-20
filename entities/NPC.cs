@@ -59,13 +59,29 @@ namespace Sunaba.Entities
 
 				if (npcScript == null) return;
 
-			
-				//String scriptPath = "res://Scripts/" + npcScript + ".lua";
+				String scriptPath = "res://Scripts/" + npcScript;
 
-				script.Globals["print"] = (Print);
-				script.Globals["setYPosition"] = (SetYPosition);
-				script.DoString(npcScript);
-				script.Call(script.Globals["start"]);
+				if (!FileAccess.FileExists(scriptPath))
+				{
+					scriptPath = "user://Scripts/" + npcScript;
+					if (!FileAccess.FileExists(scriptPath))
+					{
+						console.Print("Error: Script not found");
+						return;
+					}
+				}
+
+				if (npcScript.Contains(".lua"))
+				{
+					FileAccess luaScript = FileAccess.Open(scriptPath, FileAccess.ModeFlags.Read);
+					Print(scriptPath);
+					Print(luaScript.GetAsText());
+					script.Globals["print"] = (Print);
+					script.Globals["setYPosition"] = (SetYPosition);
+					//script.DoString(luaScript.GetAsText());
+					//script.Call(script.Globals["start"]);
+				}
+
 				canExecute = true;
 			}
 			

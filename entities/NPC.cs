@@ -91,7 +91,7 @@ namespace Sunaba.Entities
 		{
 			if (canExecute == false) return;
 		
-				script.Call(script.Globals["update"]);
+			script.Call(script.Globals["update"]);
 		}
 
 		public override void _PhysicsProcess(double delta)

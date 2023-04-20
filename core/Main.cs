@@ -70,6 +70,7 @@ namespace Sunaba.Core
 				networkManager.CreateRoom();
 				GetNode<UI>("UI").GetNode<Window>("NewRoomDialog").Hide();
 				GetNode<UI>("UI").GetNode<Control>("MainMenu").Hide();
+				GetNode<UI>("UI").GetNode<Control>("MainMenu").GetNode<AudioStreamPlayer>("BackgroundMusic").Stop();
 
 			}
 		}
@@ -146,7 +147,6 @@ namespace Sunaba.Core
 
 		public void Reload()
 		{
-			Global global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
 			global.player = null;

@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Sunaba"
-!define PRODUCT_VERSION "0.8"
+!define PRODUCT_VERSION "0.4.3"
 !define PRODUCT_PUBLISHER "mintkat"
 !define PRODUCT_WEB_SITE "https://m1ntkat.github.io/sunaba-site/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Sunaba.exe"

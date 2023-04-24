@@ -107,15 +107,15 @@ elif target == "mac":
     print("Copying map files to game directory")
 
     map_path = "./maps"
-    build_path = "./bin/linux"
-
-    for map in os.scandir(map_path):
-        if map.is_file():
-            if (".map" in str(map)):
-                if not ".import" in str(map):
-                    #print("Copying map file '", map.path, "' to '", build_path, "'")
-                    #shutil.copy(map, build_path)
-                    pass
+    
+    with zipfile.ZipFile(zipname, mode="a") as zip:
+        for map in os.scandir(map_path):
+            if map.is_file():
+                if (".map" in str(map)):
+                    if not ".import" in str(map):
+                        print("Adding " + map.name + " to " + zipname)
+                        zip.write(map, arcname=map.name)
+                            
     
 elif target == "linux":
     print("Copying map files to game directory")

@@ -51,6 +51,8 @@ python ./build.py linux [GODOT_PATH] zip # Linux
 
 python ./build.py win32 [GODOT_PATH] nsis # Windows 
 
+python ./build.py mac [GODOT_PATH] # MacOS 
+
 ```
 
 [GODOT_PATH] is used to specify a path to the Godot executable, if one isn't specified, it will default to the one provided by the system path

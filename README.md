@@ -47,9 +47,9 @@ To Build the game, use one of the following commands
 
 ```pwsh
 
-python ./build.py linux [GODOT_PATH] zip # Linux
+python ./build.py linux zip [GODOT_PATH] # Linux
 
-python ./build.py win32 [GODOT_PATH] nsis # Windows 
+python ./build.py win32 nsis [GODOT_PATH] # Windows 
 
 python ./build.py mac [GODOT_PATH] # MacOS 
 

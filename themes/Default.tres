@@ -35,13 +35,13 @@ expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfjwr"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iw8wp"]
+bg_color = Color(0.431373, 0.729412, 0.984314, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.431373, 0.729412, 0.984314, 1)
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -51,13 +51,13 @@ expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iw8wp"]
-bg_color = Color(0.431373, 0.729412, 0.984314, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfjwr"]
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
+border_color = Color(0.431373, 0.729412, 0.984314, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -388,9 +388,10 @@ default_font = ExtResource("2_vamx6")
 AcceptDialog/styles/panel = SubResource("StyleBoxFlat_ic3nl")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 0.501961)
-Button/colors/font_focus_color = Color(0.431373, 0.729412, 0.984314, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.431373, 0.729412, 0.984314, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_kf3wc")
-Button/styles/focus = SubResource("StyleBoxFlat_sfjwr")
+Button/styles/focus = SubResource("StyleBoxFlat_iw8wp")
 Button/styles/hover = SubResource("StyleBoxFlat_sfjwr")
 Button/styles/normal = SubResource("StyleBoxFlat_kf3wc")
 Button/styles/pressed = SubResource("StyleBoxFlat_iw8wp")

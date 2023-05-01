@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://kmm5126efhc1"]
+[gd_scene load_steps=22 format=3 uid="uid://kmm5126efhc1"]
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
 [ext_resource type="Texture2D" uid="uid://ckkej6m32knbr" path="res://assets/bg2.png" id="8_pg1aa"]
 [ext_resource type="Texture2D" uid="uid://cralqs2d4nvhx" path="res://assets/ui/tango/32x32/actions/media-playback-start.png" id="9_bjejk"]
+[ext_resource type="Texture2D" uid="uid://dp86j66212ned" path="res://assets/ui/tango/32x32/status/network-offline.png" id="9_grui2"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/NewRoom.tscn" id="9_lb0pj"]
 [ext_resource type="AudioStream" uid="uid://dxg17qdup01qe" path="res://music/ImpactAllegretto.ogg" id="9_mb52i"]
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="9_y4502"]
@@ -146,7 +147,8 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Resume"
+text = " Resume"
+icon = ExtResource("9_bjejk")
 flat = true
 alignment = 0
 
@@ -158,7 +160,8 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Disconnect"
+text = " Disconnect"
+icon = ExtResource("9_grui2")
 flat = true
 alignment = 0
 
@@ -170,7 +173,8 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Customize"
+text = " Customize"
+icon = ExtResource("10_qqi1s")
 flat = true
 alignment = 0
 
@@ -182,7 +186,8 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Settings"
+text = " Settings"
+icon = ExtResource("11_kfdd1")
 flat = true
 alignment = 0
 
@@ -194,11 +199,13 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Quit"
+text = " Quit"
+icon = ExtResource("12_bvo12")
 flat = true
 alignment = 0
 
 [node name="MainMenu" type="Control" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -353,7 +360,6 @@ alignment = 0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="UI/MainMenu"]
 stream = ExtResource("9_mb52i")
-autoplay = true
 script = ExtResource("10_tt1q6")
 
 [node name="NewRoomDialog" type="Window" parent="UI"]

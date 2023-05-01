@@ -529,6 +529,15 @@ namespace Sunaba.Actors
 				toolAmmoBar.Value = ammo;
 				toolAmmoBar.MaxValue = maxAmmo;
 
+				String hbThemePath = "res://themes/HealthBar/" + themeManager.themeName + ".tres";
+				if (ResourceLoader.Exists(hbThemePath) == true)
+				{
+					GD.Print("Theme Exits");
+					StyleBox hbTheme = GD.Load<StyleBox>(hbThemePath);
+					healthBar.RemoveThemeStyleboxOverride("fill");
+					healthBar.AddThemeStyleboxOverride("fill", hbTheme);
+				}
+
 				sprintingIcon.Hide();
                 
 				

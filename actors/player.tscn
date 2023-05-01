@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dyssdc8jlqn0n"]
+[gd_scene load_steps=32 format=3 uid="uid://dyssdc8jlqn0n"]
 
 [ext_resource type="Script" path="res://actors/Player.cs" id="1_xe16v"]
 [ext_resource type="AudioStream" uid="uid://dchg2awdol51g" path="res://assets/audio/walk/playerfoot_01.ogg" id="2_j0c7m"]
@@ -16,13 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://1cjoiev0sjur" path="res://actors/sb_menu.tscn" id="12_7t0uy"]
 [ext_resource type="AudioStream" uid="uid://ddfbui0lwcyip" path="res://assets/audio/walk/playerfoot_09.ogg" id="12_dicte"]
 [ext_resource type="PackedScene" uid="uid://b78wj858mu20l" path="res://actors/playermodel.tscn" id="13_ehkwf"]
-[ext_resource type="StyleBox" uid="uid://dmelctufg6fwq" path="res://assets/ui/2kui/panel.tres" id="13_r7sp4"]
 [ext_resource type="AudioStream" uid="uid://hyy8b3hp8t35" path="res://assets/audio/walk/run.ogg" id="13_xlyhy"]
 [ext_resource type="AudioStream" uid="uid://boy6burcg46sc" path="res://assets/audio/reload.ogg" id="14_hvgws"]
-[ext_resource type="Texture2D" uid="uid://c74ktavsf347g" path="res://assets/ui/2kui/red_button09.png" id="14_m3in7"]
 [ext_resource type="AudioStream" uid="uid://us3l5m6ksqpi" path="res://assets/audio/pickup1.ogg" id="15_6o4pc"]
 [ext_resource type="AudioStream" uid="uid://by8biiykns88" path="res://assets/audio/jump.ogg" id="16_c33kq"]
-[ext_resource type="StyleBox" uid="uid://cnvxg8c8vdq8d" path="res://assets/ui/2kui/button_blue.tres" id="17_lnhu0"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rs28k"]
 properties/0/path = NodePath(".:position")
@@ -310,14 +307,6 @@ _data = {
 radius = 0.28
 height = 1.497
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u4jpf"]
-texture = ExtResource("14_m3in7")
-texture_margin_left = 5.0
-texture_margin_top = 5.0
-texture_margin_right = 5.0
-texture_margin_bottom = 5.0
-region_rect = Rect2(0, 0, 49, 45)
-
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("head", "fpCamera", "tpCamera", "model", "headPos", "akari", "collisionShape", "animationPlayer", "gunAnimationPlayer", "handLoc", "hand", "fpReach", "tpReach", "fpSwordRange", "tpSwordRange", "fpAimCast", "tpAimCast", "fpRayContainer", "tpRayContainer", "walkTimer", "fireTimer", "reloadTimer", "walkSound", "runSound", "reloadSound", "pickupSound", "jumpSound", "crosshair", "reloadLabel", "toolPanel", "toolLabel", "toolAmmoBar", "toolAmmoCounter", "playerPanel", "playerName", "healthBar", "healthCounter", "sprintingIcon", "sbMenuWindow", "sbMenu", "toolTree") groups=["player"]]
 script = ExtResource("1_xe16v")
 footSounds = Array[AudioStreamOggVorbis]([ExtResource("2_j0c7m"), ExtResource("3_fdfq2"), ExtResource("4_1lqct"), ExtResource("5_88xku"), ExtResource("6_gcifh"), ExtResource("7_3n430"), ExtResource("8_b6krc"), ExtResource("9_dmyv4"), ExtResource("12_dicte"), ExtResource("11_ltnm2")])
@@ -497,8 +486,6 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("13_r7sp4")
-theme_override_styles/fill = SubResource("StyleBoxTexture_u4jpf")
 value = 100.0
 show_percentage = false
 
@@ -591,8 +578,6 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = ExtResource("13_r7sp4")
-theme_override_styles/fill = ExtResource("17_lnhu0")
 value = 100.0
 show_percentage = false
 

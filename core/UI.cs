@@ -111,8 +111,9 @@ namespace Sunaba.Core
             var global = GetNode("/root/Global");
 			var gameStarted = global.Get("gameStarted");
             var gamePaused = global.Get("gamePaused");
-			
+            ThemeManager themeManager = GetNode<ThemeManager>("/root/ThemeManager");
 
+            Theme = themeManager.theme;
 
 			if (gameStarted.AsBool() == true)
 			{

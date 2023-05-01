@@ -97,6 +97,8 @@ namespace Sunaba.Core
 
 		public void OnThemeSelected(int index)
 		{
+			var themeManager = GetNode<ThemeManager>("/root/ThemeManager");
+			themeManager.themeName = themeDropdown.GetItemText(index);
 			String themePath = "res://themes/" + themeDropdown.GetItemText(index) + ".tres";
 			Godot.Theme theme = GD.Load<Theme>(themePath);
 			ChangeTheme(theme);

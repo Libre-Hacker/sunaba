@@ -288,6 +288,8 @@ Section "MainSection" SEC01
   File "binWin32\data_Sunaba_x86_32\System.Xml.XPath.XDocument.dll"
   File "binWin32\data_Sunaba_x86_32\ucrtbase.dll"
   File "binWin32\data_Sunaba_x86_32\WindowsBase.dll"
+  File "binWin32\data_Sunaba_x86_32\LibSunaba.dll"
+  File "binWin32\data_Sunaba_x86_32\LibSunaba.pdb"
 SectionEnd
 
 Section "Maps" SEC02

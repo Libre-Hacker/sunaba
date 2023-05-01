@@ -18,4 +18,13 @@
   <ItemGroup>
     <Content Include="buildall.py" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="LibSunaba\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="LibSunaba\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="LibSunaba\LibSunaba.csproj" />
+  </ItemGroup>
 </Project>

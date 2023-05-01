@@ -12,6 +12,5 @@
 
 addons/** linguist-vendored
 *.nsi linguist-detectable=false
-*Makefile linguist-detectable=false
 
 

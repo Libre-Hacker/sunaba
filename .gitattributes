@@ -12,5 +12,6 @@
 
 addons/** linguist-vendored
 *.nsi linguist-detectable=false
+*.in linguist-detectable=false
 
 

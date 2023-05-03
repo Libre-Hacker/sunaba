@@ -11,11 +11,8 @@ namespace Sunaba.Core
 		private ENetMultiplayerPeer enetPeer = new ENetMultiplayerPeer();
         Upnp upnp = new Upnp();
 
-        [Export]
-		public World world;
-
-		[Export]
-		public UI ui;
+		private World world;
+		private UI ui;
 
         [Export]
         public String protocol = "ENet";
@@ -26,7 +23,10 @@ namespace Sunaba.Core
         public override void _Ready()
 		{
             main = GetParent<Main>();
-
+            world = main.GetNode<World>("World");
+            ui = main.GetNode<UI>("UI");
+            
+            
 			Multiplayer.MultiplayerPeer = null;
 
             Console console = GetNode<Console>("/root/PConsole");

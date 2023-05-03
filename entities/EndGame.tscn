@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://quikl8vl6erx"]
+
+[ext_resource type="Texture2D" uid="uid://dubpfrkj0dxa8" path="res://assets/ui/tango/scalable/actions/media-playback-stop.svg" id="1_oanwy"]
+[ext_resource type="Script" path="res://entities/EndGame.cs" id="1_wdbr6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esu25"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lpsmx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inlgq"]
+transparency = 1
+albedo_color = Color(0, 0.913725, 0.415686, 0.313726)
+
+[node name="EndGame" type="Area3D"]
+script = ExtResource("1_wdbr6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_esu25")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_lpsmx")
+surface_material_override/0 = SubResource("StandardMaterial3D_inlgq")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+billboard = 1
+fixed_size = true
+texture = ExtResource("1_oanwy")

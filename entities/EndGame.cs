@@ -3,6 +3,8 @@ using System;
 using Sunaba.Actors;
 using Sunaba.Core;
 
+namespace Sunaba.Entities;
+
 public partial class EndGame : Area3D
 {
 	// Called when the node enters the scene tree for the first time.

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbf3gpuk88g03" path="res://core/World.tscn" id="3_ptygb"]
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
-[ext_resource type="Texture2D" uid="uid://dt8x6u8ink38t" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
+[ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
 [ext_resource type="Texture2D" uid="uid://ckkej6m32knbr" path="res://assets/bg2.png" id="8_pg1aa"]
 [ext_resource type="Texture2D" uid="uid://cralqs2d4nvhx" path="res://assets/ui/tango/32x32/actions/media-playback-start.png" id="9_bjejk"]

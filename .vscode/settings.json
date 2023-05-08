@@ -1,3 +1,5 @@
 {
-    "godot_tools.editor_path": "/home/mintkat/Apps/Godot_v4.0.2-stable_mono_linux_x86_64/godot"
+    "godot_tools.editor_path": "/home/mintkat/Apps/Godot_v4.0.2-stable_mono_linux_x86_64/godot",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

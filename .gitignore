@@ -16,3 +16,5 @@ webrtc_debug/
 /maps/autosave/
 
 .vs/
+
+tmp/

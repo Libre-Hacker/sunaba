@@ -58,9 +58,9 @@ jobs:
         with:
           macos: python ./build.py mac
           linux: python ./build.py linux zip
-          windows: python ./build.py win32 ; npm install makensis; makensis installer.nsi
-
-        
+          windows: npm install makensis; makensis installer.nsi; python ./build.py win32 nsis C:\Users\runneradmin\godot\Godot_v4.0.2-stable_mono_win64\Godot_v4.0.2-stable_mono_win64.exe
+      
+      
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:

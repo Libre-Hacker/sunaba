@@ -177,6 +177,10 @@ elif target == "linux":
                           print("Adding " + fl + " to " + zipname)
                           fp = os.path.abspath(build_path + "/" + fl)
                           zip.write(fp, arcname=fl)
+            if len(sys.argv) != 3:
+                if sys.argv[3] == "removedir":
+                    if os.path.exists(build_path):
+                        shutil.rmtree(build_path)
     
 
 print("")

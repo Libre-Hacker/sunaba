@@ -8,5 +8,5 @@ if platform.system() == "Linux":
 elif platform.system() == "Darwin":
     os.system("python ./build.py mac")
 elif platform.system() == "Windows":
-    os.system("python ./build.py win32 nsis")
+    os.system("python ./build.py win32")
 

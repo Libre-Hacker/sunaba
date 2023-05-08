@@ -17,6 +17,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="buildall.py" />
+    <Content Include="global.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="LibSunaba\**" />

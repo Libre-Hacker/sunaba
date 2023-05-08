@@ -1,5 +1,7 @@
 name: 🚥 Build Game
-on: push
+on: 
+  push
+  workflow_dispatch
 
 jobs:
   tests:

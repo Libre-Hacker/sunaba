@@ -58,7 +58,7 @@ jobs:
         with:
           macos: python ./build.py mac
           linux: python ./build.py linux zip
-          windows: winget install -e --id NSIS.NSIS && python ./build.py win32
+          windows: npm install makensis; python ./build.py win32
 
         
       - name: Upload Artifact

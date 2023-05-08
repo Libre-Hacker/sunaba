@@ -16,7 +16,6 @@
     <Folder Include="addons\qodot\src\import_plugins\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="buildaction.py" />
     <Content Include="buildall.py" />
     <Content Include="global.json" />
   </ItemGroup>

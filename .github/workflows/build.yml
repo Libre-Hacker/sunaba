@@ -54,13 +54,13 @@ jobs:
           python-version: '3.10'
           
       - name: Build Game
+        uses: knicknic/os-specific-run@v1.0.3
+        with:
+          macos: python ./build.py mac
+          linux: python ./build.py linux zip
+          windows: python ./build.py win32
         run: python buildaction.py
 
-      - name: Install NSIS
-        if: ${{ matrix.os }} == 'windows-latest'
-        uses: joncloud/makensis-action@v4
-        with:
-          arguments: "/V3"
         
       - name: Upload Artifact
         uses: actions/upload-artifact@v3

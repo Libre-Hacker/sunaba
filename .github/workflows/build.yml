@@ -59,7 +59,6 @@ jobs:
           macos: python ./build.py mac
           linux: python ./build.py linux zip
           windows: python ./build.py win32
-        run: python buildaction.py
 
         
       - name: Upload Artifact

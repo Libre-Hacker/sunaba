@@ -4,6 +4,7 @@ import shutil
 import xml.etree.ElementTree as ET
 import zipfile
 import time
+import tarfile
 
 def get_version():
     tree = ET.parse("./Sunaba.csproj")
@@ -54,7 +55,7 @@ version = get_version()
 #print("")
 #print("------------------------------------------------------------")
 
-print("")
+#print("")
 print("Sunaba")
 print("")
 
@@ -177,7 +178,29 @@ elif target == "linux":
                           print("Adding " + fl + " to " + zipname)
                           fp = os.path.abspath(build_path + "/" + fl)
                           zip.write(fp, arcname=fl)
-            if len(sys.argv) != 4:
+            if len(sys.argv) > 4:
+                if sys.argv[4] == "removedir":
+                    if os.path.exists(build_path):
+                        shutil.rmtree(build_path)
+                        print("Removed Linux Directory")
+        if sys.argv[2] == "targz":
+    
+            tarballname = "./bin/Sunaba-" + str(version) + "-Linux.tar.gz"
+    
+            print("Packing Build into Tarball : " + tarballname)
+
+            tarball = tarfile.open(tarballname, mode="w:gz")
+            for f in os.scandir(build_path):
+                print("Adding " + f.name + " to " + tarballname)
+                tarball.add(f, arcname=f.name)
+                if f.is_dir():
+                    print("dir")
+                    for file in os.scandir(f):
+                        fl = f.name + "/" + file.name
+                        print("Adding " + fl + " to " + tarballname)
+                        fp = os.path.abspath(build_path + "/" + fl)
+                        tarball.add(fp)
+            if len(sys.argv) > 4:
                 if sys.argv[4] == "removedir":
                     if os.path.exists(build_path):
                         shutil.rmtree(build_path)

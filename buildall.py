@@ -6,7 +6,7 @@ godot_path = "godot"
 if len(sys.argv) == 2:
     godot_path = sys.argv[1]
 
-build_linux = os.system("python ./build.py linux zip " + godot_path)
+build_linux = os.system("python ./build.py linux targz " + godot_path)
 
 if build_linux == 0:
     build_mac = os.system("python ./build.py mac " + godot_path)

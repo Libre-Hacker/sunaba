@@ -78,8 +78,8 @@ namespace Sunaba.Entities
 					Print(luaScript.GetAsText());
 					script.Globals["print"] = (Print);
 					script.Globals["setYPosition"] = (SetYPosition);
-					//script.DoString(luaScript.GetAsText());
-					//script.Call(script.Globals["start"]);
+					script.DoString(luaScript.GetAsText());
+					script.Call(script.Globals["start"]);
 				}
 
 				canExecute = true;

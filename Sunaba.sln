@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sunaba", "Sunaba.csproj", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSunaba", "LibSunaba\LibSunaba.csproj", "{FC7DBC73-EBC1-43A4-BB86-C7ED128C09AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronWren", "IronWren\IronWren.csproj", "{C070BB2B-9147-4D44-BBD9-21A7C2C3F5E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 	Debug|Any CPU = Debug|Any CPU
@@ -23,5 +25,11 @@ Global
 		{FC7DBC73-EBC1-43A4-BB86-C7ED128C09AC}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
 		{FC7DBC73-EBC1-43A4-BB86-C7ED128C09AC}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC7DBC73-EBC1-43A4-BB86-C7ED128C09AC}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{C070BB2B-9147-4D44-BBD9-21A7C2C3F5E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C070BB2B-9147-4D44-BBD9-21A7C2C3F5E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C070BB2B-9147-4D44-BBD9-21A7C2C3F5E7}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C070BB2B-9147-4D44-BBD9-21A7C2C3F5E7}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{C070BB2B-9147-4D44-BBD9-21A7C2C3F5E7}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{C070BB2B-9147-4D44-BBD9-21A7C2C3F5E7}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

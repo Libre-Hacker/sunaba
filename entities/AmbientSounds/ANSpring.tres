@@ -1,17 +1,17 @@
-[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3]
+[gd_resource type="Resource" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_lh7pl"]
-[ext_resource type="PackedScene" uid="uid://byq50pq3tgyl0" path="res://entities/GMDeathmatch.tscn" id="1_ln78a"]
+[ext_resource type="PackedScene" uid="uid://d2fud4lvqtq0q" path="res://entities/AmbientSounds/ANSpring.tscn" id="1_snmkq"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_10obl"]
 
 
 [resource]
-script = ExtResource("1_lh7pl")
+script = ExtResource("2_10obl")
 scene = "----------------------------------------------------------------"
-scene_file = ExtResource("1_ln78a")
+scene_file = ExtResource("1_snmkq")
 scripting = "----------------------------------------------------------------"
 class_options = "----------------------------------------------------------------"
-classname = "gm_deathmatch"
-description = "Deathmatch Game Mode"
+classname = "an_spring"
+description = ""
 qodot_internal = false
 base_classes = []
 class_properties = {}

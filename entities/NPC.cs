@@ -81,6 +81,10 @@ namespace Sunaba.Entities
 					script.DoString(luaScript.GetAsText());
 					script.Call(script.Globals["start"]);
 				}
+				else if (npcScript.Contains(".wren"))
+				{
+					
+				}
 
 				canExecute = true;
 			}

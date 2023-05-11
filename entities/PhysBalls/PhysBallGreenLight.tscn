@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8xbm4ayf6mum"]
+
+[ext_resource type="Texture2D" uid="uid://bolbl18w1ebmn" path="res://textures/blockout/green_light_check.png" id="1_pgd4k"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2m32a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvart"]
+albedo_texture = ExtResource("1_pgd4k")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1hos4"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_2m32a")
+surface_material_override/0 = SubResource("StandardMaterial3D_mvart")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_1hos4")

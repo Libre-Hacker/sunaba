@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://byq50pq3tgyl0"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/GMDeathmatch.cs" id="1_ogd42"]
+[ext_resource type="Script" path="res://entities/GameModes/GMDeathmatch.cs" id="1_ogd42"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dkrmi"]
 properties/0/path = NodePath(".:spawnpoints")

@@ -1,17 +1,16 @@
-[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://dqkpdvr3087ms"]
 
-[ext_resource type="PackedScene" uid="uid://dul8x57omki0d" path="res://entities/GMSandbox.tscn" id="1_8onxs"]
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_srlq0"]
-
+[ext_resource type="PackedScene" uid="uid://dsu4lg0j7u7ea" path="res://entities/PhysBalls/PhysBallBlack.tscn" id="1_1ajnx"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_3soag"]
 
 [resource]
-script = ExtResource("1_srlq0")
+script = ExtResource("2_3soag")
 scene = "----------------------------------------------------------------"
-scene_file = ExtResource("1_8onxs")
+scene_file = ExtResource("1_1ajnx")
 scripting = "----------------------------------------------------------------"
 class_options = "----------------------------------------------------------------"
-classname = "gm_sandbox"
-description = ""
+classname = "physball_black"
+description = "PhysBall"
 qodot_internal = false
 base_classes = Array[Resource]([])
 class_properties = {}

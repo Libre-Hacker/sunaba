@@ -1,16 +1,15 @@
 [gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://dtlsm1cko1ugj" path="res://entities/ANCity.tscn" id="1_xqsmn"]
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_x7iib"]
-
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_qm5c8"]
+[ext_resource type="PackedScene" path="res://entities/Enviroments/EVVoid.tscn" id="1_wxkky"]
 
 [resource]
-script = ExtResource("2_x7iib")
+script = ExtResource("1_qm5c8")
 scene = "----------------------------------------------------------------"
-scene_file = ExtResource("1_xqsmn")
+scene_file = ExtResource("1_wxkky")
 scripting = "----------------------------------------------------------------"
 class_options = "----------------------------------------------------------------"
-classname = "an_city"
+classname = "ev_void"
 description = ""
 qodot_internal = false
 base_classes = Array[Resource]([])

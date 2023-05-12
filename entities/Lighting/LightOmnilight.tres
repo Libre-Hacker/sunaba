@@ -1,19 +1,18 @@
-[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://c1dw3spc5ku6a"]
 
-[ext_resource type="PackedScene" uid="uid://o5mmhrb5hokd" path="res://entities/LTOmni.tscn" id="1_mc4jg"]
-[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_cc7k4"]
-
+[ext_resource type="PackedScene" uid="uid://o5mmhrb5hokd" path="res://entities/Lighting/LightOmnilight.tscn" id="1_yruqr"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_tkt7j"]
 
 [resource]
-script = ExtResource("2_cc7k4")
+script = ExtResource("2_tkt7j")
 scene = "----------------------------------------------------------------"
-scene_file = ExtResource("1_mc4jg")
+scene_file = ExtResource("1_yruqr")
 scripting = "----------------------------------------------------------------"
 class_options = "----------------------------------------------------------------"
-classname = "lt_omni"
+classname = "light_omnilight"
 description = ""
 qodot_internal = false
-base_classes = []
+base_classes = Array[Resource]([])
 class_properties = {}
 class_property_descriptions = {}
 meta_properties = {

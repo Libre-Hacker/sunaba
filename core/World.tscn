@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbf3gpuk88g03"]
+[gd_scene load_steps=9 format=3 uid="uid://cw4gnyn5s8sh4"]
 
 [ext_resource type="Script" path="res://core/World.cs" id="1_3aha2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
-[ext_resource type="Resource" uid="uid://bnw43cpa56y4k" path="res://trenchbroom/fgd.tres" id="3_xtjbn"]
+[ext_resource type="Resource" uid="uid://m342wmd40md8" path="res://trenchbroom/fgd.tres" id="3_7qy3n"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
 cell_height = 0.01
@@ -31,7 +31,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 script = ExtResource("2_vkw6t")
 map_file = "/home/mintkat/sunaba/maps/sp/m1.map"
 inverse_scale_factor = 16.0
-entity_fgd = ExtResource("3_xtjbn")
+entity_fgd = ExtResource("3_7qy3n")
 base_texture_dir = "res://textures"
 texture_file_extensions = PackedStringArray("png", "jpg")
 worldspawn_layers = []

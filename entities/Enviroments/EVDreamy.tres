@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cv4yjq4r2oy0g"]
 
-[ext_resource type="PackedScene" uid="uid://d4m4kmx20mpnx" path="res://entities/EVDreamy.tscn" id="1_gugm0"]
+[ext_resource type="PackedScene" uid="uid://d4m4kmx20mpnx" path="res://entities/Enviroments/EVDreamy.tscn" id="1_gugm0"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_cdkk5"]
 
 [resource]

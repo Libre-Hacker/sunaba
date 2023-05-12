@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://de3revmmi5yvk"]
 
-[ext_resource type="PackedScene" uid="uid://du7jbdq2xbapo" path="res://entities/WPSniper.tscn" id="1_dnlrd"]
+[ext_resource type="PackedScene" uid="uid://du7jbdq2xbapo" path="res://entities/Tools/WPSniper.tscn" id="1_dnlrd"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_xmksf"]
 
 [resource]

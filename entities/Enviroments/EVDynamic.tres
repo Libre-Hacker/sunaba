@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://r8r0tjfi5a2u"]
 
-[ext_resource type="PackedScene" uid="uid://bqo6nemybpmff" path="res://entities/EVDynamic.tscn" id="1_74p4d"]
+[ext_resource type="PackedScene" uid="uid://bqo6nemybpmff" path="res://entities/Enviroments/EVDynamic.tscn" id="1_74p4d"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_pmhes"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bmt1txjn5p74f"]
 
-[ext_resource type="PackedScene" uid="uid://un767v26k0na" path="res://entities/WPPistol.tscn" id="1_tis4q"]
+[ext_resource type="PackedScene" uid="uid://un767v26k0na" path="res://entities/Tools/WPPistol.tscn" id="1_tis4q"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_t1k3m"]
 
 [resource]

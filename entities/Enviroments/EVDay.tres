@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b72b0c2y0vkd2"]
 
-[ext_resource type="PackedScene" uid="uid://buowo1g152een" path="res://entities/EVDaytime.tscn" id="1_ewwle"]
+[ext_resource type="PackedScene" uid="uid://buowo1g152een" path="res://entities/Enviroments/EVDaytime.tscn" id="1_ewwle"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_vsbuc"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b30vjnu67j4t6"]
 
-[ext_resource type="PackedScene" uid="uid://c27t7nackvcim" path="res://entities/EVNight.tscn" id="1_u8ecb"]
+[ext_resource type="PackedScene" uid="uid://c27t7nackvcim" path="res://entities/Enviroments/EVNight.tscn" id="1_u8ecb"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_dpuuj"]
 
 [resource]

@@ -1,0 +1,70 @@
+name: 🚥 Build Game
+on: push
+
+jobs:
+  tests:
+    name: 👀 Evaluate on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      # Don't cancel other OS runners if one fails.
+      fail-fast: false
+      matrix:
+        # Put the operating systems you want to run on here.
+        os: [ubuntu-latest,windows-latest]
+        #  macos-latest,
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      DOTNET_NOLOGO: true
+    defaults:
+      run:
+        # Use bash shells on all platforms.
+        shell: bash
+    steps:
+      - uses: actions/checkout@v3
+        name: 🧾 Checkout
+
+      - uses: actions/setup-dotnet@v3
+        name: 💽 Setup .NET SDK
+        with:
+          # Use the .NET SDK from global.json in the root of the repository.
+          global-json-file: global.json
+
+      - name: 📦 Restore Dependencies
+        run: dotnet restore
+
+      - uses: chickensoft-games/setup-godot@v1
+        name: 🤖 Setup Godot
+        with:
+          # Version must include major, minor, and patch, and be >= 4.0.0
+          # Pre-release label is optional.
+          version: 4.0.2 # also valid: 4.0.0.rc1 or 4.0.0, etc
+          # Use .NET-enabled version of Godot (the default is also true).
+          use-dotnet: true
+
+      - name: 🔬 Verify Setup
+        run: |
+          dotnet --version
+          godot --version
+
+      - name: 🧑‍🔬 Generate .NET Bindings
+        run: godot --headless --build-solutions --quit || exit 0
+
+      - uses: actions/setup-python@v4
+        name: Setup Python
+        with:
+          python-version: '3.10'
+          
+      - name: Build Game
+        uses: knicknic/os-specific-run@v1.0.3
+        with:
+          macos: python ./build.py mac
+          linux: python ./build.py linux targz godot removedir
+          windows: npm install makensis; python ./build.py win32 nsis C:\Users\runneradmin\godot\Godot_v4.0.2-stable_mono_win64\Godot_v4.0.2-stable_mono_win64.exe
+      
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.os }}
+          path: bin/
+      # Do whatever you want!

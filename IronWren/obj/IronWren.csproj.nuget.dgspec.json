@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/mintkat/sunaba/IronWren/IronWren.csproj": {}
+  },
+  "projects": {
+    "/home/mintkat/sunaba/IronWren/IronWren.csproj": {
+      "version": "2.0.0",
+      "restore": {
+        "projectUniqueName": "/home/mintkat/sunaba/IronWren/IronWren.csproj",
+        "projectName": "IronWren",
+        "projectPath": "/home/mintkat/sunaba/IronWren/IronWren.csproj",
+        "packagesPath": "/home/mintkat/.nuget/packages/",
+        "outputPath": "/home/mintkat/sunaba/IronWren/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/home/mintkat/.local/share/godot/mono/GodotNuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/mintkat/.nuget/NuGet/NuGet.Config",
+          "/home/mintkat/.nuget/NuGet/config/Godot.Offline.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.116/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

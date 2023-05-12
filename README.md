@@ -1,10 +1,10 @@
-#  Sunaba3D
+#  Sunaba
 
 a 3D sandbox game with user-generated map support. Powered by Godot 4.
 
  [Sunaba is a Japanese word that means Sandbox](https://en.wiktionary.org/wiki/%E7%A0%82%E5%A0%B4#Japanese)
 
-[Discord Server](https://discord.gg/McfgW6Kx)
+[Discord Server](https://discord.gg/cbKbJtvKPd)
 
 ## Features
 
@@ -22,11 +22,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What things you need to build the software
 
-* Godot 4.0 ( Mono Build )
+* [Godot 4.0 ( Mono Build )](https://github.com/godotengine/godot/releases/tag/4.0.2-stable)
 
-* .Net SDK 6.0
+* [.NET SDK 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+* [Python 3.10 (Used for build scripts)](https://www.python.org/downloads/release/python-3100/)
+
+* [NSIS 3.x (Only needed for building the Windows version)](https://nsis.sourceforge.io/Download)
 
 ### Opening the Project
 
@@ -38,7 +42,22 @@ Run the game by pressing F5
 
 ## Deployment
 
-See [Exporting projects¶](https://docs.godotengine.org/en/4.0/tutorials/export/exporting_projects.html)
+To Build the game, use one of the following commands
+
+
+```pwsh
+
+python ./build.py linux zip [GODOT_PATH] # Linux
+
+python ./build.py win32 nsis [GODOT_PATH] # Windows 
+
+python ./build.py mac [GODOT_PATH] # MacOS 
+
+```
+
+[GODOT_PATH] is used to specify a path to the Godot executable, if one isn't specified, it will default to the one provided by the system path
+
+The Arguments "nsis" and "zip" are optional
 
 ## Built With
 
@@ -58,4 +77,4 @@ See also the list of [contributors](https://github.com/m1ntkat/sunaba/contributo
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the GPL-3.0 And CC-BY 4.0 Licenses - see the [LICENSE.md (GPL-3.0) ](LICENSE.md) and [assets/LICENSE.md (CC-BY 4.0) ](assets/LICENSE.md) files for details

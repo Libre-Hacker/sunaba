@@ -3,7 +3,7 @@ using Godot.Collections;
 using System;
 using System.Linq;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
 	public partial class Global : Node
 	{
@@ -17,15 +17,16 @@ namespace Sunaba.Runtime
 		public CharacterBody3D player;
 		public bool botsEnabled;
 		public int botAmount = 0;
+		public bool showUI = true;
 
-		public String headwear = "minji";
+		public String headwear = "brown_male_hair";
         public String skinColor = "pale";
-        public String faceTexture = "face_green";
-        public String torsoTexture = "minji-darkgreen";
-        public String armsTexture = "minji-darkgreen";
-        public String handsTexture = "minji-darkgreen";
-        public String pantsTexture = "minji-darkgreen";
-        public String shoesTexture = "minji-darkgreen";
+        public String faceTexture = "face_grey";
+        public String torsoTexture = "generic_male";
+        public String armsTexture = "generic_male";
+        public String handsTexture = "generic_male";
+        public String pantsTexture = "generic_male";
+        public String shoesTexture = "generic_male";
 
         public override void _Ready()
         {

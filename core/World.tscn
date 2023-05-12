@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://core/World.cs" id="1_3aha2"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
-[ext_resource type="Resource" uid="uid://bfwguwuflemm" path="res://trenchbroom/fgd.tres" id="3_xtjbn"]
+[ext_resource type="Resource" uid="uid://bnw43cpa56y4k" path="res://trenchbroom/fgd.tres" id="3_xtjbn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pypmj"]
 cell_height = 0.01
@@ -21,7 +21,7 @@ size = Vector3(10000, 1, 10000)
 script = ExtResource("1_3aha2")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://core/map_holder.tscn", "res://actors/player.tscn")
+_spawnable_scenes = PackedStringArray("res://actors/player.tscn")
 spawn_path = NodePath("..")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -29,7 +29,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="MapManager" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("2_vkw6t")
-map_file = "C:/sunaba/maps/base.map"
+map_file = "/home/mintkat/sunaba/maps/sp/m1.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("3_xtjbn")
 base_texture_dir = "res://textures"

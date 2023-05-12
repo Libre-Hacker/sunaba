@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using Sunaba.Runtime;
+using Sunaba.Core;
 
 namespace Sunaba.Actors
 {
@@ -15,21 +15,21 @@ namespace Sunaba.Actors
 		int headMaterial = 0;
 
         [Export]
-        public String headwear = "minji";
+        public String headwear = "brown_male_hair";
         [Export]
         public String skinColor = "pale";
         [Export]
-        public String faceTexture = "face_green";
+        public String faceTexture = "face_grey";
         [Export]
-        public String torsoTexture = "minji-darkgreen";
+        public String torsoTexture = "generic_male";
         [Export]
-        public String armsTexture = "minji-darkgreen";
+        public String armsTexture = "generic_male";
         [Export]
-        public String handsTexture = "minji-darkgreen";
+        public String handsTexture = "generic_male";
         [Export]
-        public String pantsTexture = "minji-darkgreen";
+        public String pantsTexture = "generic_male";
         [Export]
-        public String shoesTexture = "minji-darkgreen";
+        public String shoesTexture = "generic_male";
 
         MeshInstance3D baseMesh = null;
 		BoneAttachment3D headwearAttachment = null;
@@ -42,7 +42,7 @@ namespace Sunaba.Actors
         {
             if (isPartOfActor) return;
 
-            string nameString = GetParent<CharacterBody3D>().Name.ToString();
+            string nameString = GetParent<Player>().Name.ToString();
             string networkID = Multiplayer.GetUniqueId().ToString();
 
 			if (nameString == networkID)
@@ -84,25 +84,25 @@ namespace Sunaba.Actors
             ChangeTexture(footMaterial, GetClothingTexture(shoesTexture));
         }
 
-		private String GetHeadwearModelPath(String name)
+		public String GetHeadwearModelPath(String name)
 		{
 			String path = "res://Godime/headwear/" + name + ".tscn";
 			return path;
 		}
 		
-		private PackedScene GetHeadwearModel(String name)
+		public PackedScene GetHeadwearModel(String name)
 		{
 			PackedScene model = GD.Load<PackedScene>(GetHeadwearModelPath(name));
 			return model;
 		}
 
-        private String GetFaceTexture(String name)
+        public String GetFaceTexture(String name)
         {
             String path = "res://Godime/textures/face/" + skinColor + "/" + name + ".png";
             return path;
         }
 
-        private String GetClothingTexture(String name)
+        public String GetClothingTexture(String name)
         {
             String path = "res://Godime/textures/clothes/" + skinColor + "/" + name + ".png";
 			if (name == "skin")
@@ -113,7 +113,7 @@ namespace Sunaba.Actors
             return path;
         }
 
-		private void ChangeTexture(int material, String texturePath)
+		public void ChangeTexture(int material, String texturePath)
 		{
 			Resource texture = GD.Load(texturePath);
 			Material mat = baseMesh.GetSurfaceOverrideMaterial(material);
@@ -121,12 +121,12 @@ namespace Sunaba.Actors
 
         }
 
-		private void ChangeFaceTexture(String texture)
+		public void ChangeFaceTexture(String texture)
 		{
 			ChangeTexture(faceMaterial, GetFaceTexture(texture));
 		}
 
-		private void ChangeHeadwear(String headwearName)
+		public void ChangeHeadwear(String headwearName)
 		{
 			if (headwearAttachment.GetChildCount() > 0)
 			{

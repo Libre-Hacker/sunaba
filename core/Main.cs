@@ -2,7 +2,17 @@ using Godot;
 using MoonSharp.Interpreter;
 using System;
 
-namespace Sunaba.Runtime
+/*
+ *
+ * CONGRATULATIONS
+ *
+ *	(｀・ω・´)
+ *
+ *	You found the main entrypoint code for this codebase.
+ * 
+ */
+
+namespace Sunaba.Core
 {
 	public partial class Main : Node
 	{
@@ -15,6 +25,7 @@ namespace Sunaba.Runtime
 		RichTextLabel chatbox;
 		Console console;
 
+		private Global global;
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
@@ -28,7 +39,7 @@ namespace Sunaba.Runtime
 			}
 			ThemeManager themeMan = GetNode<ThemeManager>("/root/ThemeManager/");
 			GetNode<Control>("UI").Theme = themeMan.theme;
-			Global global = GetNode<Global>("/root/Global/");
+			global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
 			console = GetNode<Console>("/root/PConsole");
@@ -40,12 +51,15 @@ namespace Sunaba.Runtime
 			console.Print("Version " + build.versionNumber);
 			console.Print("Compiled on " + build.buildDate);
 			console.Print("");
-
-			String[] args = OS.GetCmdlineArgs();
-			String arg1 = args[0];
-			if (arg1.Contains(".map"))
+			
+			if (!OS.HasFeature("editor"))
 			{
-				Play(arg1);
+				String[] args = OS.GetCmdlineArgs();
+				String arg1 = args[0];
+				if (arg1.Contains(".map"))
+				{
+					Play(arg1);
+				}
 			}
 		}
 
@@ -56,6 +70,7 @@ namespace Sunaba.Runtime
 				networkManager.CreateRoom();
 				GetNode<UI>("UI").GetNode<Window>("NewRoomDialog").Hide();
 				GetNode<UI>("UI").GetNode<Control>("MainMenu").Hide();
+				GetNode<UI>("UI").GetNode<Control>("MainMenu").GetNode<AudioStreamPlayer>("BackgroundMusic").Stop();
 
 			}
 		}
@@ -98,11 +113,40 @@ namespace Sunaba.Runtime
 			{
 				Reload();
 			}
+			
+			if (Input.IsKeyPressed(Key.Ctrl) && Input.IsKeyPressed(Key.Alt) && Input.IsKeyPressed(Key.C))
+			{
+				UI ui = GetNode<UI>("UI");
+
+				if (ui.Visible)
+				{
+					ui.Hide();
+					global.showUI = false;
+				}
+				else
+				{
+					ui.Show();
+					global.showUI = true;
+				}
+			}
+
+			if (Input.IsKeyPressed(Key.F11))
+			{
+				if (DisplayServer.WindowGetMode() != DisplayServer.WindowMode.Fullscreen)
+				{
+					DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+				}
+				else
+				{
+					DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+				}
+
+				
+			}
 		}
 
 		public void Reload()
 		{
-			Global global = GetNode<Global>("/root/Global/");
 			global.gameStarted = false;
 			global.gamePaused = false;
 			global.player = null;

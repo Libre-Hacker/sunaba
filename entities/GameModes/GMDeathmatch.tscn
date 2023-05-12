@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://entities/GameModes/GMDeathmatch.cs" id="1_ogd42"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dkrmi"]
+properties/0/path = NodePath(".:spawnpoints")
+properties/0/spawn = true
+properties/0/sync = true
+
+[node name="Deathmatch" type="Node3D"]
+script = ExtResource("1_ogd42")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_dkrmi")

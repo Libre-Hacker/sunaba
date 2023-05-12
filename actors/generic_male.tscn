@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://5lxojp38qwi7"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bsqx6fi8oksal" path="res://assets/models/akari/akari.gltf" id="1_h0oxm"]
-[ext_resource type="PackedScene" uid="uid://bmemscralfmbr" path="res://actors/hair.tscn" id="2_eay4n"]
+[ext_resource type="PackedScene" uid="uid://bmemscralfmbr" path="res://Godime/headwear/black_male_hair.tscn" id="2_eay4n"]
 [ext_resource type="Texture2D" uid="uid://dm1vjmabeln7i" path="res://assets/textures/pale.png" id="3_r5j4s"]
 [ext_resource type="Material" uid="uid://58qwk3nbc2m0" path="res://assets/materials/generic_face.tres" id="3_x2wu3"]
 [ext_resource type="Material" uid="uid://50d4vi014djd" path="res://assets/materials/male_clothes.tres" id="4_y2r34"]

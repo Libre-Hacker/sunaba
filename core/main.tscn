@@ -1,18 +1,25 @@
-[gd_scene load_steps=15 format=3 uid="uid://d06blf4ftkgn8"]
+[gd_scene load_steps=22 format=3 uid="uid://kmm5126efhc1"]
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
 [ext_resource type="PackedScene" uid="uid://cbf3gpuk88g03" path="res://core/World.tscn" id="3_ptygb"]
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
-[ext_resource type="Texture2D" uid="uid://dt8x6u8ink38t" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
-[ext_resource type="Texture2D" uid="uid://dpw2b1w4yqeon" path="res://assets/bg.jpg" id="7_6esbo"]
+[ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
+[ext_resource type="Texture2D" uid="uid://ckkej6m32knbr" path="res://assets/bg2.png" id="8_pg1aa"]
+[ext_resource type="Texture2D" uid="uid://cralqs2d4nvhx" path="res://assets/ui/tango/32x32/actions/media-playback-start.png" id="9_bjejk"]
+[ext_resource type="Texture2D" uid="uid://dp86j66212ned" path="res://assets/ui/tango/32x32/status/network-offline.png" id="9_grui2"]
 [ext_resource type="PackedScene" uid="uid://du621tdl15o4v" path="res://core/NewRoom.tscn" id="9_lb0pj"]
+[ext_resource type="AudioStream" uid="uid://dxg17qdup01qe" path="res://music/ImpactAllegretto.ogg" id="9_mb52i"]
 [ext_resource type="Script" path="res://core/ConnectDialog.cs" id="9_y4502"]
+[ext_resource type="Texture2D" uid="uid://ysohvdxrccnq" path="res://assets/ui/tango/32x32/apps/preferences-desktop-theme.png" id="10_qqi1s"]
 [ext_resource type="PackedScene" uid="uid://yy6p84r16yur" path="res://core/connect.tscn" id="10_sl8b6"]
-[ext_resource type="PackedScene" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
+[ext_resource type="Script" path="res://core/BackgroundMusic.cs" id="10_tt1q6"]
+[ext_resource type="PackedScene" uid="uid://3csr62nc6ajl" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
+[ext_resource type="Texture2D" uid="uid://h3h33hdtenhj" path="res://assets/ui/tango/32x32/categories/applications-system.png" id="11_kfdd1"]
 [ext_resource type="PackedScene" uid="uid://cbpb3x1xtj73g" path="res://Godime/src/main.tscn" id="12_1y7j4"]
+[ext_resource type="Texture2D" uid="uid://dl7mhirmlm82b" path="res://assets/ui/tango/32x32/actions/system-log-out.png" id="12_bvo12"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
@@ -78,11 +85,13 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -94.0
+offset_left = -78.0
+offset_top = -1.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "v0.3.0dev"
+text = "v0.0.0.0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_fu8ap")
@@ -94,12 +103,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -460.0
+offset_left = -441.0
 offset_top = -339.0
-offset_right = 217.0
+offset_right = 236.0
 offset_bottom = 53.0
 grow_horizontal = 0
 grow_vertical = 0
+texture = ExtResource("8_8u70e")
 expand_mode = 1
 flip_h = true
 
@@ -137,12 +147,12 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Resume"
+text = " Resume"
+icon = ExtResource("9_bjejk")
 flat = true
 alignment = 0
 
 [node name="Button2" type="Button" parent="UI/PauseMenu/VBoxContainer2"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
@@ -150,7 +160,8 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Disconnect"
+text = " Disconnect"
+icon = ExtResource("9_grui2")
 flat = true
 alignment = 0
 
@@ -162,7 +173,8 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Customize"
+text = " Customize"
+icon = ExtResource("10_qqi1s")
 flat = true
 alignment = 0
 
@@ -174,7 +186,8 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Settings"
+text = " Settings"
+icon = ExtResource("11_kfdd1")
 flat = true
 alignment = 0
 
@@ -186,11 +199,13 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Quit"
+text = " Quit"
+icon = ExtResource("12_bvo12")
 flat = true
 alignment = 0
 
 [node name="MainMenu" type="Control" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -205,7 +220,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_6esbo")
+texture = ExtResource("8_pg1aa")
 expand_mode = 1
 stretch_mode = 6
 
@@ -233,11 +248,13 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -94.0
+offset_left = -78.0
+offset_top = -1.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "v0.3.0dev"
+text = "v0.0.0.0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_fu8ap")
@@ -249,9 +266,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -460.0
+offset_left = -441.0
 offset_top = -339.0
-offset_right = 217.0
+offset_right = 236.0
 offset_bottom = 53.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -288,12 +305,11 @@ alignment = 2
 [node name="Button4" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Play"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " Play"
+icon = ExtResource("9_bjejk")
 flat = true
 alignment = 0
 
@@ -301,50 +317,50 @@ alignment = 0
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Connect"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " Connect"
+icon = ExtResource("9_bjejk")
 flat = true
 alignment = 0
 
 [node name="Button5" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Customize"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " Customize"
+icon = ExtResource("10_qqi1s")
 flat = true
 alignment = 0
 
 [node name="Button2" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Settings"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " Settings"
+icon = ExtResource("11_kfdd1")
 flat = true
 alignment = 0
 
 [node name="Button3" type="Button" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-text = "Quit"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " Quit"
+icon = ExtResource("12_bvo12")
 flat = true
 alignment = 0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="UI/MainMenu"]
+stream = ExtResource("9_mb52i")
+script = ExtResource("10_tt1q6")
 
 [node name="NewRoomDialog" type="Window" parent="UI"]
 initial_position = 2
@@ -379,10 +395,12 @@ script = ExtResource("9_y4502")
 
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_sl8b6")]
 
-[node name="SettingsDialog" parent="UI" instance=ExtResource("11_aiwch")]
+[node name="SettingsDialog" parent="UI" node_paths=PackedStringArray("ui") instance=ExtResource("11_aiwch")]
 initial_position = 1
 title = "Settings"
 visible = false
+unresizable = false
+ui = NodePath("..")
 
 [node name="CharacterWindow" type="Window" parent="UI"]
 own_world_3d = true
@@ -395,6 +413,11 @@ min_size = Vector2i(475, 275)
 [node name="AcceptDialog1" type="AcceptDialog" parent="UI"]
 size = Vector2i(253, 109)
 dialog_text = "Online multiplayer is currently disabled."
+dialog_autowrap = true
+
+[node name="AcceptDialog2" type="AcceptDialog" parent="UI"]
+size = Vector2i(400, 161)
+dialog_text = "Sunaba is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions."
 dialog_autowrap = true
 
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="Unpause"]

@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 using System;
-using Sunaba.Runtime;
+using Sunaba.Core;
 using Sunaba.Tools;
 
 namespace Sunaba.Actors
@@ -57,7 +57,7 @@ namespace Sunaba.Actors
 		private int speed = 5;
 		private int health = 100;
 		private RayCast3D reach;
-		private RayCast3D aimcast;
+		private RayCast3D aimCast;
 		private int ammo = 25;
 		private int maxAmmo = 25;
 		private int damage = 100;
@@ -178,7 +178,7 @@ namespace Sunaba.Actors
 			{
 				Input.MouseMode = Input.MouseModeEnum.Captured;
 				reach = fpReach;
-				aimcast = fpAimCast;
+				aimCast = fpAimCast;
 				if (Name.ToString() == Multiplayer.GetUniqueId().ToString())
 				{
 					playerName.Text = "Player " + Name.ToString();
@@ -188,7 +188,7 @@ namespace Sunaba.Actors
 				toolPanel.Show();
 
                 Console console = GetNode<Console>("/root/PConsole");
-                console.Register(Name, this);
+                console.Register((string) Name, this);
             }
 			fpCamera.Current = IsMultiplayerAuthority();
 			tpCamera.Current = false;
@@ -261,14 +261,14 @@ namespace Sunaba.Actors
 					fpCamera.Current = false;
 					tpCamera.Current = true;
 					reach = tpReach;
-					aimcast = tpAimCast;
+					aimCast = tpAimCast;
 				}
 				else if (tpCamera.Current == true)
 				{
 					fpCamera.Current = true;
 					tpCamera.Current = false;
 					reach = fpReach;
-					aimcast = fpAimCast;
+					aimCast = fpAimCast;
 				}
 			}
 
@@ -293,9 +293,9 @@ namespace Sunaba.Actors
 			{
 				if (hand.GetChildCount() > 0)
 				{
-					if (head.GetChild(0) != null)
+					if (hand.GetChild(0) != null)
 					{
-						head.GetChild(0).QueueFree();
+						hand.GetChild(0).QueueFree();
 						if (IsMultiplayerAuthority() || !global.isNetworkedGame)
 						{
 							toolPanel.Hide();
@@ -347,7 +347,8 @@ namespace Sunaba.Actors
 			Tool tool2Spawn = toolToLoad.Instantiate<Tool>();
 			if (hand.GetChildCount() > 0)
 			{
-				if (head.GetChild(0) != null) head.GetChild(0).QueueFree();
+				if (hand.GetChild(0) != null) 
+					hand.GetChild(0).QueueFree();
 			}
 			toolLabel.Text = tool2Spawn.Name;
 			hand.AddChild(tool2Spawn);
@@ -393,6 +394,26 @@ namespace Sunaba.Actors
 			{
 				model.Visible = false;
             }
+
+			if (global.showUI == true)
+			{
+				crosshair.Show();
+				playerPanel.Show();
+				if (currentTool == 0)
+				{
+					toolPanel.Hide();
+				}
+				else
+				{
+					toolPanel.Show();
+				}
+			}
+			else
+			{
+				crosshair.Hide();
+				playerPanel.Hide();
+				toolPanel.Hide();
+			}
 		}
 
 		public override void _PhysicsProcess(double delta)
@@ -415,14 +436,14 @@ namespace Sunaba.Actors
 				akari.Rotation = Vector3.Zero;
 				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 			}
-			/*else if (((Velocity.Length() == 0) || (vel.Length() == 0)) && Input.IsActionPressed("crouch"))
+			else if (((Velocity.Length() == 0) || (vel.Length() == 0)) && Input.IsActionPressed("crouch"))
 			{
 				animationPlayer.Play("crouch_library/crouch_idle");
 				Vector3 modelPosition = model.Position;
 				modelPosition.Y = (float)0.175;
 				model.Position = modelPosition;
 				if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-			}*/
+			}
 			else
 			{
 				if (speed == defaultSpeed && IsOnFloor())
@@ -442,7 +463,7 @@ namespace Sunaba.Actors
 					}
 					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 				}
-				/*else if (speed == crouchMoveSpeed && IsOnFloor())
+				else if (speed == crouchMoveSpeed && IsOnFloor())
                 {
                     animationPlayer.Play("crouch_library/crouch_walk");
                     Vector3 modelPosition = model.Position;
@@ -458,7 +479,7 @@ namespace Sunaba.Actors
                         canPlayWalkSound = false;
                     }
                     if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-                }*/
+                }
 				else if (speed == sprintSpeed && IsOnFloor())
                 {
                     animationPlayer.Play("Locomotion-Library/run");
@@ -508,9 +529,17 @@ namespace Sunaba.Actors
 				toolAmmoBar.Value = ammo;
 				toolAmmoBar.MaxValue = maxAmmo;
 
+				String hbThemePath = "res://themes/HealthBar/" + themeManager.themeName + ".tres";
+				if (ResourceLoader.Exists(hbThemePath) == true)
+				{
+					StyleBox hbTheme = GD.Load<StyleBox>(hbThemePath);
+					healthBar.RemoveThemeStyleboxOverride("fill");
+					healthBar.AddThemeStyleboxOverride("fill", hbTheme);
+				}
+
 				sprintingIcon.Hide();
                 
-				/*
+				
 				if (Input.IsActionPressed("sprint"))
 				{
 					speed = sprintSpeed;
@@ -518,7 +547,7 @@ namespace Sunaba.Actors
 					sprintingIcon.Show();
 				}
 
-				if (Input.IsActionPressed("crouch"))
+				if (Input.IsActionPressed("crouch") && !Input.IsKeyPressed(Key.Alt))
 				{
 					Shape3D shape3D = collisionShape.Shape;
 					if (shape3D is CapsuleShape3D capsule)
@@ -533,16 +562,16 @@ namespace Sunaba.Actors
                     model.Position = modelPosition;
                 }
 				else
-                {*/
-				Shape3D shape3D = collisionShape.Shape;
-				if (shape3D is CapsuleShape3D capsule)
-				{
-					capsule.Height = (float)defaultHeight;
-				}
-				Vector3 modelPosition = model.Position;
-				modelPosition.Y = 0;
-				model.Position = modelPosition;
-                //}
+                {
+					Shape3D shape3D = collisionShape.Shape;
+					if (shape3D is CapsuleShape3D capsule)
+					{
+						capsule.Height = (float)defaultHeight;
+					}
+					Vector3 modelPosition = model.Position;
+					modelPosition.Y = 0;
+					model.Position = modelPosition;
+                }
 				
 
 				ApplyMovement(Direction, delta);
@@ -842,9 +871,9 @@ namespace Sunaba.Actors
 				hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
 				gunAnimationPlayer.Stop();
 				gunAnimationPlayer.Play("fire");
-				if (aimcast.IsColliding())
+				if (aimCast.IsColliding())
 				{
-					var target = aimcast.GetCollider();
+					var target = aimCast.GetCollider();
 					if (target != null)
 					{
 						if (target is Player player)
@@ -855,7 +884,7 @@ namespace Sunaba.Actors
 						else
 						{
 							String decalPath = hand.GetChild<Tool>(0).decalPath;
-							AddBulletHole(decalPath, aimcast);
+							AddBulletHole(decalPath, aimCast);
 						}
 					}
 				}
@@ -875,7 +904,7 @@ namespace Sunaba.Actors
                 hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
                 gunAnimationPlayer.Stop();
                 gunAnimationPlayer.Play("fire");
-                if (aimcast.IsColliding())
+                if (aimCast.IsColliding())
                 {
                     foreach(RayCast3D ray in fpRayContainer.GetChildren())
 					{
@@ -894,7 +923,7 @@ namespace Sunaba.Actors
                             else
                             {
                                 String decalPath = hand.GetChild<Tool>(0).decalPath;
-                                AddBulletHole(decalPath, aimcast);
+                                AddBulletHole(decalPath, aimCast);
                             }
                         }
                     }
@@ -913,10 +942,10 @@ namespace Sunaba.Actors
 			{
                 ammo -= 1;
                 hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
-                if (aimcast.IsColliding())
+                if (aimCast.IsColliding())
                 {
                     String decalPath = hand.GetChild<Tool>(0).decalPath;
-                    AddBulletHole(decalPath, aimcast);
+                    AddBulletHole(decalPath, aimCast);
                 }
             }
             hasFired = true;
@@ -981,7 +1010,7 @@ namespace Sunaba.Actors
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
 		public void AddBulletHole(String bDecPath, RayCast3D rayCast)
 		{
-			var target = aimcast.GetCollider();
+			var target = rayCast.GetCollider();
 			if (target != null)
 			{
 				if (target is Node3D node3D)
@@ -990,8 +1019,10 @@ namespace Sunaba.Actors
 					Decal decal = bDecal.Instantiate<Decal>();
 					node3D.AddChild(decal);
 					Vector3 decTf = decal.GlobalPosition;
-					decTf = rayCast.GetCollisionPoint();
+					decTf = aimCast.GetCollisionPoint();
+					decal.GlobalPosition = decTf;
 				}
+				
 			}
 		}
 

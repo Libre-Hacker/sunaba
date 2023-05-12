@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn5nhpxeqcbrt"]
+
+[ext_resource type="PackedScene" uid="uid://d2iikia58wo4r" path="res://Godime/models/ninjamask_blue.gltf" id="1_t1ysc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk064"]
+resource_name = "Material.003"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+roughness = 0.5
+
+[node name="ninjamask_blue" instance=ExtResource("1_t1ysc")]
+
+[node name="Sphere" parent="." index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_jk064")

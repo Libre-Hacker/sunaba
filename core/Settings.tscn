@@ -6,6 +6,8 @@
 [sub_resource type="GDScript" id="GDScript_qb0mn"]
 script/source = "extends RichTextLabel
 
+@export var credits : PackedStringArray
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,20 +17,46 @@ func _ready():
 	add_text(\"Compiled on \" + Build.buildDate)
 	newline()
 	add_text(\"(C) 2022-2023 mintkat\")
+	newline()
+	newline()
+	add_text(\"Credits\")
+	
+	for string in credits:
+		if string is String:
+			newline()
+			add_text(string)
 "
 
-[node name="Panel" type="Panel"]
+[node name="Control" type="Control"]
 custom_minimum_size = Vector2(400, 300)
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 401.0
-offset_bottom = 301.0
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TabBar" type="TabBar" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 

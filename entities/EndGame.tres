@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://bh8tax8cht0o5"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_ijrdg"]
+[ext_resource type="PackedScene" uid="uid://quikl8vl6erx" path="res://entities/EndGame.tscn" id="1_t6av2"]
+
+[resource]
+script = ExtResource("1_ijrdg")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_t6av2")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "endgame"
+description = ""
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

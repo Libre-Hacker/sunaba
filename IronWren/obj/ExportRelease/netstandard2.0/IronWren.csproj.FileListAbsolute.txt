@@ -1,0 +1,14 @@
+/home/mintkat/sunaba/IronWren/bin/ExportRelease/netstandard2.0/Native/wren.dll
+/home/mintkat/sunaba/IronWren/bin/ExportRelease/netstandard2.0/Native/wren.exp
+/home/mintkat/sunaba/IronWren/bin/ExportRelease/netstandard2.0/Native/wren.pdb
+/home/mintkat/sunaba/IronWren/bin/ExportRelease/netstandard2.0/IronWren.deps.json
+/home/mintkat/sunaba/IronWren/bin/ExportRelease/netstandard2.0/IronWren.dll
+/home/mintkat/sunaba/IronWren/bin/ExportRelease/netstandard2.0/IronWren.pdb
+/home/mintkat/sunaba/IronWren/obj/ExportRelease/netstandard2.0/IronWren.csproj.AssemblyReference.cache
+/home/mintkat/sunaba/IronWren/obj/ExportRelease/netstandard2.0/IronWren.GeneratedMSBuildEditorConfig.editorconfig
+/home/mintkat/sunaba/IronWren/obj/ExportRelease/netstandard2.0/IronWren.AssemblyInfoInputs.cache
+/home/mintkat/sunaba/IronWren/obj/ExportRelease/netstandard2.0/IronWren.AssemblyInfo.cs
+/home/mintkat/sunaba/IronWren/obj/ExportRelease/netstandard2.0/IronWren.csproj.CoreCompileInputs.cache
+/home/mintkat/sunaba/IronWren/obj/ExportRelease/netstandard2.0/IronWren.dll
+/home/mintkat/sunaba/IronWren/obj/ExportRelease/netstandard2.0/IronWren.pdb
+/home/mintkat/sunaba/IronWren/bin/ExportRelease/netstandard2.0/Native/wren.so

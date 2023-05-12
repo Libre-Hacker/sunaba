@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
 	public partial class SettingsDialog : Window
 	{
@@ -14,7 +14,7 @@ namespace Sunaba.Runtime
         public override void _Ready()
 		{
 			themeDropdown = 
-				GetNode<Panel>("Panel")
+				GetNode<Control>("Control")
 				.GetNode<TabBar>("TabBar")
 				.GetNode<TabContainer>("TabContainer")
 				.GetNode<Control>("UI")
@@ -97,6 +97,8 @@ namespace Sunaba.Runtime
 
 		public void OnThemeSelected(int index)
 		{
+			var themeManager = GetNode<ThemeManager>("/root/ThemeManager");
+			themeManager.themeName = themeDropdown.GetItemText(index);
 			String themePath = "res://themes/" + themeDropdown.GetItemText(index) + ".tres";
 			Godot.Theme theme = GD.Load<Theme>(themePath);
 			ChangeTheme(theme);

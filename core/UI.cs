@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
 	public partial class UI : Control
 	{
@@ -10,8 +10,9 @@ namespace Sunaba.Runtime
 		{
 			GetNode<Control>("MainMenu").Show();
 			GetNode<Panel>("PauseMenu").Hide();
+			
+			GetNode<AcceptDialog>("AcceptDialog2").PopupCentered();
 		}
-        
 
 		public void OnCreateButtonPressed()
 		{
@@ -27,6 +28,7 @@ namespace Sunaba.Runtime
         public void OnFileButtonPressed()
         {
             GetNode<FileDialog>("UserFileDialog").PopupCentered();
+            //GetNode<Node>("NativeDialogManager").Call("show_native_file_dialog");
         }
 
 		public void OnFileMenuPressed(int id)
@@ -109,8 +111,9 @@ namespace Sunaba.Runtime
             var global = GetNode("/root/Global");
 			var gameStarted = global.Get("gameStarted");
             var gamePaused = global.Get("gamePaused");
-			
+            ThemeManager themeManager = GetNode<ThemeManager>("/root/ThemeManager");
 
+            Theme = themeManager.theme;
 
 			if (gameStarted.AsBool() == true)
 			{

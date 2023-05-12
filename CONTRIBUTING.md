@@ -21,4 +21,3 @@ Again, defining this up front means less work for you. If someone ignores your g
 > * Ensure cross-platform compatibility for every change that's accepted. Windows, Mac, Debian & Ubuntu Linux.
 > * Create issues for any major changes and enhancements that you wish to make. Discuss things transparently and get community feedback.
 > * Be welcoming to newcomers and encourage diverse new contributors from all backgrounds.
-> * The Code must be written in C#

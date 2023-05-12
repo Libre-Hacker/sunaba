@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace Sunaba.Runtime
+namespace Sunaba.Core
 {
 	public partial class VersionLabel : Label
 	{
@@ -10,11 +10,7 @@ namespace Sunaba.Runtime
 		{
             Build build = GetNode<Build>("/root/Build");
             
-			Text = "v" + build.versionNumber + "dev";
+			Text = "v" + build.versionNumber;
 		}
 	}
 }
-
-/*
-
-*/

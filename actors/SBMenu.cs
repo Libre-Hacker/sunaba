@@ -31,10 +31,18 @@ namespace Sunaba.Actors
                 {
                     break;
                 }
-                else if ((!file.EndsWith(".import")) && (file.EndsWith(".tscn")))
+                else if ((!file.EndsWith(".import")) && (file.Contains(".tscn")))
                 {
                     var toolName = file.GetBaseName();
-                    AddToolToTree(toolName);
+                    if (toolName.Contains(".tscn"))
+                    {
+	                    toolName = toolName.GetBaseName();
+	                    AddToolToTree(toolName);
+                    }
+                    else
+                    {
+	                    AddToolToTree(toolName);
+                    }
                 }
             }
 

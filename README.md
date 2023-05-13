@@ -77,4 +77,4 @@ See also the list of [contributors](https://github.com/m1ntkat/sunaba/contributo
 
 ## License
 
-This project is licensed under the GPL-3.0 And CC-BY 4.0 Licenses - see the [LICENSE.md (GPL-3.0) ](LICENSE.md) and [assets/LICENSE.md (CC-BY 4.0) ](assets/LICENSE.md) files for details
+This project is licensed under the MIT And CC-BY 4.0 Licenses - see the [LICENSE.md (GPL-3.0) ](LICENSE.md) and [assets/LICENSE.md (CC-BY 4.0) ](assets/LICENSE.md) files for details

@@ -3,7 +3,7 @@ John = {}
 
 -- Define a method for the class
 function John:start()
-    Chat.print(John:name 'Hello World! Im an NPC')
+    Chat:print(John:name 'Hello World! Im an NPC')
 end
 
 function John:update()

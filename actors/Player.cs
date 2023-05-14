@@ -584,6 +584,7 @@ namespace Sunaba.Actors
                 MaxSlides = 4;
 				FloorMaxAngle = (float).7853;
 				MoveAndSlide();
+				ProcessCollisions();
 				vel = Velocity;
             }
 
@@ -729,6 +730,26 @@ namespace Sunaba.Actors
 
             }
         }
+		
+		public void ProcessCollisions()
+		{
+			for (var i = 0; i < GetSlideCollisionCount(); i++)
+			{
+				var collision = GetSlideCollision(i);
+				for (var k = 0; k < collision.GetCollisionCount(); k++)
+				{
+					var body = collision.GetCollider(k) as RigidBody3D;
+					if (body == null)
+						continue;
+					var point = collision.GetPosition(k) - body.GlobalPosition;
+
+					var force = 5; // put whatever force amount you want here
+
+					body.ApplyImpulse(-collision.GetNormal(k) * force, point);
+				}
+			}
+		}
+		
 		private void HideSBMenu()
 		{
 			sbMenuWindow.Hide();

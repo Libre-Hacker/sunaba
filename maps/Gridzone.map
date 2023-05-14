@@ -465,3 +465,18 @@
 "classname" "ev_day"
 "origin" "-200 -200 24"
 }
+// entity 4
+{
+"classname" "physball_black"
+"origin" "-168 168 40"
+}
+// entity 5
+{
+"classname" "physball_blue"
+"origin" "-168 -136 40"
+}
+// entity 6
+{
+"classname" "physball_bluelight"
+"origin" "-120 8 24"
+}

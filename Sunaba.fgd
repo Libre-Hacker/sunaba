@@ -1,0 +1,137 @@
+@SolidClass = worldspawn : "World Entity" [
+]
+
+@SolidClass = group : "Brush Group" [
+]
+
+@SolidClass = detail : "Detail Brush" [
+]
+
+@SolidClass = illusionary : "Non-colliding Brush" [
+]
+
+@SolidClass = worldspawn : "World Entity" [
+]
+
+@BaseClass color(255 255 40) = Light[
+	_color(color255) : "Light color"  : "255 255 255"
+	delay(choices) : "Attenuation"  = [
+		1 : "Inverse distance falloff"
+		2 : "Inverse distance squared"
+		5 : "Inverse distance squared B"
+		0 : "Linear falloff (Default)"
+		4 : "Local minlight"
+		3 : "No falloff"
+	]
+	light(integer) : "Brightness"  : 300
+	mangle(string) : "Spotlight angle"  : "0.00499999988824 0 0"
+	wait(integer) : "Fade distance multiplier"  : 1
+]
+
+@PointClass size(-8 -8 -8, 8 8 8) base(Light) = light : "Invisible light source" [
+	angle(float) : "Rotation Angle"  : 0
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = an_city[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = an_day[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = an_night[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = an_spring[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = ev_day : "Daytime Enviroment" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = ev_dreamy : "Dreamy Enviroment" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = ev_dynamic[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = ev_night : "Night Enviroment" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = ev_void[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = gm_deathmatch : "Deathmatch Game Mode" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = gm_sandbox[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_aqua : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_aqualight : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_black : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_blue : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_bluelight : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_gray : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_green : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_greenlight : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_light : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_orange : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_orangelight : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_purple : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_purplelight : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_red : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_redlight : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_yellow : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = physball_yellowlight : "PhysBall" [
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = endgame[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = light_omnilight[
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = music_player[
+	music(string) : ""  : "Pixelland"
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = npc[
+	script(string) : ""  : ""
+]
+
+@PointClass color(204 204 204) size(-8 -8 -8, 8 8 8) = player[
+]
+
+@SolidClass color(204 204 204) size(-8 -8 -8, 8 8 8) = water[
+]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
-[ext_resource type="PackedScene" uid="uid://cbf3gpuk88g03" path="res://core/World.tscn" id="3_ptygb"]
+[ext_resource type="PackedScene" uid="uid://cw4gnyn5s8sh4" path="res://core/World.tscn" id="3_ptygb"]
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
 [ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]

@@ -18,6 +18,7 @@ namespace Sunaba.Core
 		public bool botsEnabled;
 		public int botAmount = 0;
 		public bool showUI = true;
+		public bool flyMode = false;
 
 		public String headwear = "brown_male_hair";
         public String skinColor = "pale";
@@ -39,6 +40,7 @@ namespace Sunaba.Core
 			gamePaused = false;
 			gameMode = "";
 			spawnpoints.Clear();
+			flyMode = false;
 		}
 
 		public Vector3 GetSpawnpoints()

@@ -9,6 +9,7 @@ cell_height = 0.01
 agent_max_climb = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j5um"]
+transparency = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b46la"]
 size = Vector3(10000, 1, 10000)
@@ -49,7 +50,7 @@ tree_attach_batch_size = null
 set_owner_batch_size = 1000
 
 [node name="RespawnTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 0.75
 one_shot = true
 
 [node name="OutOfBounds" type="Area3D" parent="."]

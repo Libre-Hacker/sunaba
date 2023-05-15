@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=42 format=3 uid="uid://m342wmd40md8"]
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=43 format=3 uid="uid://m342wmd40md8"]
 
 [ext_resource type="Resource" uid="uid://dxp37dladbquv" path="res://addons/qodot/game_definitions/fgd/solid_classes/worldspawn_solid_class.tres" id="1_gyj8k"]
 [ext_resource type="Resource" uid="uid://dfi8hq0com5v" path="res://addons/qodot/game_definitions/fgd/solid_classes/group_solid_class.tres" id="2_kxkxs"]
@@ -41,6 +41,7 @@
 [ext_resource type="Resource" uid="uid://bxq2v5nkmnpdd" path="res://entities/PhysBalls/PhysBallYellow.tres" id="33_if37g"]
 [ext_resource type="Resource" uid="uid://bxiocmsvxgc2i" path="res://entities/PhysBalls/PhysBallYellowLight.tres" id="34_fn3vw"]
 [ext_resource type="Resource" uid="uid://c1dw3spc5ku6a" path="res://entities/Lighting/LightOmnilight.tres" id="36_grp4u"]
+[ext_resource type="Resource" uid="uid://bvbc8d7vndrqt" path="res://entities/GameConfig.tres" id="41_owrxk"]
 
 [resource]
 script = ExtResource("7_n3wa5")
@@ -48,4 +49,4 @@ export_file = false
 target_folder = "res://"
 fgd_name = "Sunaba"
 base_fgd_files = Array[Resource]([])
-entity_definitions = Array[Resource]([ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("26_k2o1r"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("11_t4mh6"), ExtResource("12_lxfwq"), ExtResource("13_ll7xo"), ExtResource("14_tpw5d"), ExtResource("15_oylio"), ExtResource("21_qde4r"), ExtResource("28_0pppj"), ExtResource("18_752gh"), ExtResource("19_p1bfg"), ExtResource("20_gdvvm"), ExtResource("21_lud3n"), ExtResource("22_74l3t"), ExtResource("23_ly2qc"), ExtResource("24_gb3dl"), ExtResource("25_jbdfn"), ExtResource("26_qeem3"), ExtResource("27_ai0x2"), ExtResource("28_wx1jm"), ExtResource("29_l73pk"), ExtResource("30_a18yy"), ExtResource("31_bbp8h"), ExtResource("32_gbsi3"), ExtResource("33_if37g"), ExtResource("34_fn3vw"), ExtResource("30_o1gtd"), ExtResource("36_grp4u"), ExtResource("28_0pn4y"), ExtResource("29_066kl"), ExtResource("15_hc8b5"), ExtResource("30_cs2v3")])
+entity_definitions = Array[Resource]([ExtResource("1_gyj8k"), ExtResource("2_kxkxs"), ExtResource("3_cs25y"), ExtResource("4_4enci"), ExtResource("1_gyj8k"), ExtResource("5_5yf0g"), ExtResource("6_0rqv5"), ExtResource("26_k2o1r"), ExtResource("9_ckr3q"), ExtResource("10_jtiu1"), ExtResource("11_q2qjt"), ExtResource("11_t4mh6"), ExtResource("12_lxfwq"), ExtResource("13_ll7xo"), ExtResource("14_tpw5d"), ExtResource("15_oylio"), ExtResource("21_qde4r"), ExtResource("28_0pppj"), ExtResource("18_752gh"), ExtResource("19_p1bfg"), ExtResource("20_gdvvm"), ExtResource("21_lud3n"), ExtResource("22_74l3t"), ExtResource("23_ly2qc"), ExtResource("24_gb3dl"), ExtResource("25_jbdfn"), ExtResource("26_qeem3"), ExtResource("27_ai0x2"), ExtResource("28_wx1jm"), ExtResource("29_l73pk"), ExtResource("30_a18yy"), ExtResource("31_bbp8h"), ExtResource("32_gbsi3"), ExtResource("33_if37g"), ExtResource("34_fn3vw"), ExtResource("30_o1gtd"), ExtResource("36_grp4u"), ExtResource("28_0pn4y"), ExtResource("29_066kl"), ExtResource("15_hc8b5"), ExtResource("30_cs2v3"), ExtResource("41_owrxk")])

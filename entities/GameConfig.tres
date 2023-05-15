@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://bvbc8d7vndrqt"]
+
+[ext_resource type="PackedScene" uid="uid://dl8wvxqaay1nq" path="res://entities/GameConfig.tscn" id="1_4gyjl"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="1_5esey"]
+
+[resource]
+script = ExtResource("1_5esey")
+scene = "----------------------------------------------------------------"
+scene_file = ExtResource("1_4gyjl")
+scripting = "----------------------------------------------------------------"
+class_options = "----------------------------------------------------------------"
+classname = "config"
+description = ""
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {
+"fly_mode": "false"
+}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

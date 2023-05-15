@@ -135,3 +135,7 @@
 
 @SolidClass color(204 204 204) size(-8 -8 -8, 8 8 8) = water[
 ]
+
+@PointClass size(-8 -8 -8, 8 8 8) color(204 204 204) = config[
+	fly_mode(string) : ""  : "false"
+]

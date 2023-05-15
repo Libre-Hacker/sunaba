@@ -28,6 +28,8 @@ namespace Sunaba.Core
 		private Node3D mapManager;
 		private NavigationRegion3D navRegion;
 		private Main main;
+		private Global global;
+		private Timer respawnTimer;
 
 		private static bool spectatorMode = false;
 		
@@ -36,8 +38,10 @@ namespace Sunaba.Core
 		{
 			navRegion = GetNode<NavigationRegion3D>("NavigationRegion3D");
 			mapManager = navRegion.GetNode<Node3D>("MapManager");
+			respawnTimer = GetNode<Timer>("RespawnTimer");
 
 			main = GetParent<Main>();
+			global = GetNode<Global>("/root/Global");
 
             Console console = GetNode<Console>("/root/PConsole");
             console.Register(Name, this);
@@ -91,16 +95,23 @@ namespace Sunaba.Core
 
         public void OnRespawnTimerTimeout()
 		{
-            main.LogToChat("Respawning Player");
-			int id = Multiplayer.GetUniqueId(); 
-			if (id != 1)
-			{
-				RpcId(1, "InstancePlayer", id);
-			}
-			else
-			{
-				InstancePlayer(id);
-			}
+            //main.LogToChat("Respawning Player");
+            if ( global.flyMode == false )
+            {
+	            int id = Multiplayer.GetUniqueId();
+	            if (id != 1)
+	            {
+		            RpcId(1, "InstancePlayer", id);
+	            }
+	            else
+	            {
+		            InstancePlayer(id);
+	            }
+            }
+            else
+            {
+	            SpawnCamera();
+            }
 		}
 
 		[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
@@ -111,7 +122,6 @@ namespace Sunaba.Core
 			CharacterBody3D playerInstance = player.Instantiate<CharacterBody3D>();
 			playerInstance.Name = GD.VarToStr(id);
 			AddChild(playerInstance);
-            Global global = GetNode<Global>("/root/Global/");
             if (id ==  Multiplayer.GetUniqueId())
 			{
 				global.player = playerInstance;
@@ -130,7 +140,6 @@ namespace Sunaba.Core
 
 		private void AddBots()
 		{
-            var global = GetNode("/root/Global");
 			bool botsEnabled = global.Get("bots_enabled").As<bool>();
             int botAmount = global.Get("bot_amount").As<int>();
             String gameMode = global.Get("game_mode").As<string>();
@@ -141,7 +150,6 @@ namespace Sunaba.Core
 			PackedScene bot = GD.Load<PackedScene>("res://actors/dm_bot.tscn");
 			CharacterBody3D botInstance = bot.Instantiate<CharacterBody3D>();
 			AddChild(botInstance);
-            var global = GetNode("/root/Global");
             String gameMode = global.Get("game_mode").As<string>();
             if (gameMode == "Deathmatch")
 			{
@@ -162,22 +170,7 @@ namespace Sunaba.Core
 			mapManager.Call("unwrap_uv2");
 			navRegion.BakeNavigationMesh();
 
-			if ( !spectatorMode )
-			{
-				int id = Multiplayer.GetUniqueId();
-				if (id != 1)
-				{
-					RpcId(1, "InstancePlayer", id);
-				}
-				else
-				{
-					InstancePlayer(id);
-				}
-			}
-			else
-			{
-				SpawnCamera();
-			}
+			respawnTimer.Start();
 		}
 
 		public void SpawnCamera()
@@ -187,12 +180,15 @@ namespace Sunaba.Core
 			Camera3D camera = cameraScene.Instantiate<Camera3D>();
 			AddChild(camera);
 			camera.Current = true;
+			Vector3 spawnpoint = global.GetSpawnpoints();
+			camera.GlobalPosition = spawnpoint;
 		}
 
 		public void SetSpectatorMode(bool enabled)
 		{
-			spectatorMode = enabled;
-        }
+			global.flyMode = enabled;
+			spectatorMode = global.flyMode;
+		}
 
 		public void SetVoxelGi(bool _bool)
 		{

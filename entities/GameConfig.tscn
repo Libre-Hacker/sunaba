@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl8wvxqaay1nq"]
+
+[ext_resource type="Script" path="res://entities/GameConfig.cs" id="1_6hihy"]
+
+[node name="Config" type="Node3D"]
+script = ExtResource("1_6hihy")

@@ -28,8 +28,4 @@
     <EmbeddedResource Remove="LibSunaba\**" />
     <EmbeddedResource Remove="IronWren\**" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="IronWren\IronWren.csproj" />
-    <ProjectReference Include="LibSunaba\LibSunaba.csproj" />
-  </ItemGroup>
 </Project>

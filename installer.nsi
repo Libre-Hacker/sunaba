@@ -2,9 +2,9 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "Sunaba"
-!define PRODUCT_VERSION "0.4.4"
+!define PRODUCT_VERSION "0.4.5"
 !define PRODUCT_PUBLISHER "mintkat"
-!define PRODUCT_WEB_SITE "https://m1ntkat.github.io/sunaba-site/"
+!define PRODUCT_WEB_SITE "https://thesunabaproject.github.io/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Sunaba.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -288,8 +288,6 @@ Section "MainSection" SEC01
   File "binWin32\data_Sunaba_x86_32\System.Xml.XPath.XDocument.dll"
   File "binWin32\data_Sunaba_x86_32\ucrtbase.dll"
   File "binWin32\data_Sunaba_x86_32\WindowsBase.dll"
-  File "binWin32\data_Sunaba_x86_32\LibSunaba.dll"
-  File "binWin32\data_Sunaba_x86_32\LibSunaba.pdb"
 SectionEnd
 
 Section "Maps" SEC02

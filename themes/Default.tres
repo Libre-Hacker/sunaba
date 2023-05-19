@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=27 format=3 uid="uid://d0fredyh2mbr0"]
 
 [ext_resource type="Texture2D" uid="uid://dkrwbo3vb38l4" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="1_wots1"]
-[ext_resource type="FontFile" uid="uid://bmqpn44cpqtt6" path="res://assets/fonts/Roboto-Light.ttf" id="2_vamx6"]
+[ext_resource type="FontFile" uid="uid://dpnrguc4suta4" path="res://assets/fonts/BalooChettan2-Regular.ttf" id="2_n38hb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic3nl"]
 content_margin_left = 10.0
@@ -384,7 +384,7 @@ expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
 [resource]
-default_font = ExtResource("2_vamx6")
+default_font = ExtResource("2_n38hb")
 AcceptDialog/styles/panel = SubResource("StyleBoxFlat_ic3nl")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 0.501961)

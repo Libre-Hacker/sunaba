@@ -168,6 +168,7 @@ namespace Sunaba.Core
 		public void OnMapManagerBuildComplete()
 		{
 			mapManager.Call("unwrap_uv2");
+			mapManager.PrintTreePretty();
 			navRegion.BakeNavigationMesh();
 
 			respawnTimer.Start();

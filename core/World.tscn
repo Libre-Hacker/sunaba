@@ -9,7 +9,6 @@ cell_height = 0.01
 agent_max_climb = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6j5um"]
-transparency = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b46la"]
 size = Vector3(10000, 1, 10000)
@@ -30,7 +29,7 @@ navigation_mesh = SubResource("NavigationMesh_pypmj")
 
 [node name="MapManager" type="Node3D" parent="NavigationRegion3D"]
 script = ExtResource("2_vkw6t")
-map_file = "/home/mintkat/sunaba/maps/sp/m1.map"
+map_file = "/home/mintkat/sunaba/maps/construct.map"
 inverse_scale_factor = 16.0
 entity_fgd = ExtResource("3_7qy3n")
 base_texture_dir = "res://textures"
@@ -45,7 +44,7 @@ default_material_albedo_uniform = ""
 default_material = SubResource("StandardMaterial3D_6j5um")
 uv_unwrap_texel_size = 1.0
 print_profiling_data = false
-use_trenchbroom_group_hierarchy = false
+use_trenchbroom_group_hierarchy = true
 tree_attach_batch_size = null
 set_owner_batch_size = 1000
 

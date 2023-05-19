@@ -60,7 +60,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/panku_console/plugin.cfg", "res://addons/qodot/plugin.cfg")
+enabled=PackedStringArray("res://addons/qodot/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [gdnative]
 
@@ -300,7 +300,6 @@ common/physics_fps=240
 
 [rendering]
 
-renderer/rendering_method="mobile"
 occlusion_culling/use_occlusion_culling=true
 vram_compression/import_etc=true
 misc/lossless_compression/force_png=true

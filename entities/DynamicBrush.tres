@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="QodotFGDSolidClass" load_steps=3 format=3 uid="uid://djaib4l0ap0w"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_solid_class.gd" id="1_lontd"]
+[ext_resource type="Script" path="res://entities/DynamicBrush.cs" id="2_iof6i"]
+
+[resource]
+script = ExtResource("1_lontd")
+spawn = "----------------------------------------------------------------"
+spawn_type = 2
+visual_build = "----------------------------------------------------------------"
+build_visuals = true
+collision_build = "----------------------------------------------------------------"
+collision_shape_type = 1
+scripting = "----------------------------------------------------------------"
+script_class = ExtResource("2_iof6i")
+class_options = "----------------------------------------------------------------"
+classname = "dynamic_brush"
+description = ""
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+}
+node_options = "----------------------------------------------------------------"
+node_class = ""
+transient_node = false

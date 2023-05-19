@@ -20,6 +20,7 @@ The AddBots and AddBot methods are not fully implemented and are left as exercis
 
 using Godot;
 using System;
+using Sunaba.Actors;
 
 namespace Sunaba.Core
 {
@@ -47,6 +48,24 @@ namespace Sunaba.Core
             console.Register(Name, this);
 
         }
+
+		public override void _Input(InputEvent @event)
+		{
+			if (Input.IsActionPressed("fly_mode_toggle"))
+			{
+				SetSpectatorMode(!global.flyMode);
+				if (global.flyMode == false)
+				{
+					GetNode<Camera3D>("FlyCamera").QueueFree();
+				}
+				else
+				{
+					int id = Multiplayer.GetUniqueId();
+					GetNode<Player>(GD.VarToStr(id)).QueueFree();
+				}
+				OnRespawnTimerTimeout();
+			}
+		}
 
 		public void LoadMapPath(string path)
 		{
@@ -181,6 +200,7 @@ namespace Sunaba.Core
 			Camera3D camera = cameraScene.Instantiate<Camera3D>();
 			AddChild(camera);
 			camera.Current = true;
+			camera.Name = "FlyCamera";
 			Vector3 spawnpoint = global.GetSpawnpoints();
 			camera.GlobalPosition = spawnpoint;
 		}

@@ -1,0 +1,22 @@
+[gd_scene load_steps=9 format=3 uid="uid://caxuvvqpx5l3d"]
+
+[ext_resource type="PackedScene" uid="uid://n5usra8t1lt0" path="res://CharacterSystem/base.gltf" id="1_7jbcy"]
+[ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://CharacterSystem/materials/head.tres" id="2_euv28"]
+[ext_resource type="Material" uid="uid://ckf4wa8n3pmr6" path="res://CharacterSystem/materials/face.tres" id="3_opf54"]
+[ext_resource type="Material" uid="uid://c8h7ap1l3xhtr" path="res://CharacterSystem/materials/torso.tres" id="4_ywgxs"]
+[ext_resource type="Material" uid="uid://depkb5v04bgsi" path="res://CharacterSystem/materials/arms.tres" id="5_uhy6r"]
+[ext_resource type="Material" uid="uid://cbhkphuq2wtwk" path="res://CharacterSystem/materials/hands.tres" id="6_o164c"]
+[ext_resource type="Material" uid="uid://bgadwol0pm2lm" path="res://CharacterSystem/materials/pants.tres" id="7_liobt"]
+[ext_resource type="Material" uid="uid://dyfnpaqmxkv28" path="res://CharacterSystem/materials/shoes.tres" id="8_nqlhl"]
+
+
+[node name="base" instance=ExtResource("1_7jbcy")]
+
+[node name="Base Mesh" parent="metarig/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_euv28")
+surface_material_override/1 = ExtResource("3_opf54")
+surface_material_override/2 = ExtResource("4_ywgxs")
+surface_material_override/3 = ExtResource("5_uhy6r")
+surface_material_override/4 = ExtResource("6_o164c")
+surface_material_override/5 = ExtResource("7_liobt")
+surface_material_override/6 = ExtResource("8_nqlhl")

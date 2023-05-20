@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca31spdt1pd1v"]
-
-[ext_resource type="PackedScene" uid="uid://d2iikia58wo4r" path="res://Godime/models/ninjamask_blue.gltf" id="1_xcbm4"]
-
-[node name="ninjamask_blue" instance=ExtResource("1_xcbm4")]

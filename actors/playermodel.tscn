@@ -3,14 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bsqx6fi8oksal" path="res://assets/models/akari/akari.gltf" id="1_ltyvj"]
 [ext_resource type="AnimationLibrary" uid="uid://dwka0podvhgpc" path="res://Libraries/Humanoid/Locomotion-Library.res" id="2_i15ho"]
 [ext_resource type="Script" path="res://actors/PlayerModel.cs" id="2_jrqb6"]
-[ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://Godime/materials/head.tres" id="3_4dnek"]
+[ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://CharacterSystem/materials/head.tres" id="3_4dnek"]
 [ext_resource type="AnimationLibrary" uid="uid://bo3lcnw82bah5" path="res://assets/animations/crouch_library.res" id="3_q7xhc"]
-[ext_resource type="Material" uid="uid://ckf4wa8n3pmr6" path="res://Godime/materials/face.tres" id="4_4n1ve"]
-[ext_resource type="Material" uid="uid://c8h7ap1l3xhtr" path="res://Godime/materials/torso.tres" id="5_vjrgo"]
-[ext_resource type="Material" uid="uid://depkb5v04bgsi" path="res://Godime/materials/arms.tres" id="6_bvgr8"]
-[ext_resource type="Material" uid="uid://cbhkphuq2wtwk" path="res://Godime/materials/hands.tres" id="7_wcf6g"]
-[ext_resource type="Material" uid="uid://bgadwol0pm2lm" path="res://Godime/materials/pants.tres" id="8_nn88p"]
-[ext_resource type="Material" uid="uid://dyfnpaqmxkv28" path="res://Godime/materials/shoes.tres" id="9_jm7n5"]
+[ext_resource type="Material" uid="uid://ckf4wa8n3pmr6" path="res://CharacterSystem/materials/face.tres" id="4_4n1ve"]
+[ext_resource type="Material" uid="uid://c8h7ap1l3xhtr" path="res://CharacterSystem/materials/torso.tres" id="5_vjrgo"]
+[ext_resource type="Material" uid="uid://depkb5v04bgsi" path="res://CharacterSystem/materials/arms.tres" id="6_bvgr8"]
+[ext_resource type="Material" uid="uid://cbhkphuq2wtwk" path="res://CharacterSystem/materials/hands.tres" id="7_wcf6g"]
+[ext_resource type="Material" uid="uid://bgadwol0pm2lm" path="res://CharacterSystem/materials/pants.tres" id="8_nn88p"]
+[ext_resource type="Material" uid="uid://dyfnpaqmxkv28" path="res://CharacterSystem/materials/shoes.tres" id="9_jm7n5"]
+
 
 [node name="PlayerModel" instance=ExtResource("1_ltyvj")]
 script = ExtResource("2_jrqb6")

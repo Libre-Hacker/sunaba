@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bsqx6fi8oksal" path="res://assets/models/akari/akari.gltf" id="1_gp4q6"]
-[ext_resource type="PackedScene" uid="uid://bmemscralfmbr" path="res://Godime/headwear/black_male_hair.tscn" id="2_uxegm"]
+[ext_resource type="PackedScene" uid="uid://bmemscralfmbr" path="res://CharacterSystem/headwear/black_male_hair.tscn" id="2_uxegm"]
 [ext_resource type="Texture2D" uid="uid://dm1vjmabeln7i" path="res://assets/textures/pale.png" id="3_1f1l2"]
 [ext_resource type="Material" uid="uid://58qwk3nbc2m0" path="res://assets/materials/generic_face.tres" id="4_1povw"]
 [ext_resource type="Material" uid="uid://50d4vi014djd" path="res://assets/materials/male_clothes.tres" id="5_d0e5s"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7833"]
 diffuse_mode = 3

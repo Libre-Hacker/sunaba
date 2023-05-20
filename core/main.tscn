@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://core/BackgroundMusic.cs" id="10_tt1q6"]
 [ext_resource type="PackedScene" uid="uid://3csr62nc6ajl" path="res://core/SettingsDialog.tscn" id="11_aiwch"]
 [ext_resource type="Texture2D" uid="uid://h3h33hdtenhj" path="res://assets/ui/tango/32x32/categories/applications-system.png" id="11_kfdd1"]
-[ext_resource type="PackedScene" uid="uid://cbpb3x1xtj73g" path="res://Godime/src/main.tscn" id="12_1y7j4"]
+[ext_resource type="PackedScene" uid="uid://cbpb3x1xtj73g" path="res://CharacterSystem/src/main.tscn" id="12_1y7j4"]
 [ext_resource type="Texture2D" uid="uid://dl7mhirmlm82b" path="res://assets/ui/tango/32x32/actions/system-log-out.png" id="12_bvo12"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]

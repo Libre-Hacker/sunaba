@@ -75,7 +75,7 @@ namespace Sunaba.Actors
             }
 
             ChangeHeadwear(headwear);
-            ChangeTexture(headMaterial, "res://Godime/textures/" + skinColor + ".png");
+            ChangeTexture(headMaterial, "res://CharacterSystem/textures/" + skinColor + ".png");
             ChangeFaceTexture(faceTexture);
             ChangeTexture(torsoMaterial, GetClothingTexture(torsoTexture));
             ChangeTexture(armsMaterial, GetClothingTexture(armsTexture));
@@ -86,7 +86,7 @@ namespace Sunaba.Actors
 
 		public String GetHeadwearModelPath(String name)
 		{
-			String path = "res://Godime/headwear/" + name + ".tscn";
+			String path = "res://CharacterSystem/headwear/" + name + ".tscn";
 			return path;
 		}
 		
@@ -98,17 +98,17 @@ namespace Sunaba.Actors
 
         public String GetFaceTexture(String name)
         {
-            String path = "res://Godime/textures/face/" + skinColor + "/" + name + ".png";
+            String path = "res://CharacterSystem/textures/face/" + skinColor + "/" + name + ".png";
             return path;
         }
 
         public String GetClothingTexture(String name)
         {
-            String path = "res://Godime/textures/clothes/" + skinColor + "/" + name + ".png";
+            String path = "res://CharacterSystem/textures/clothes/" + skinColor + "/" + name + ".png";
 			if (name == "skin")
 			{
                 Global global = GetNode<Global>("/root/Global");
-                path = "res://Godime/textures/" + skinColor + ".png";
+                path = "res://CharacterSystem/textures/" + skinColor + ".png";
             }
             return path;
         }

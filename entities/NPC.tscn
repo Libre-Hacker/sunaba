@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://5hgsyid8j5qi" path="res://assets/models/akari/akari_face_purple_xl.png" id="2_hacn4"]
 [ext_resource type="Texture2D" uid="uid://crk1a5p78nchl" path="res://assets/models/akari/akari_akari.png" id="3_fmlhs"]
 [ext_resource type="AnimationLibrary" uid="uid://dwka0podvhgpc" path="res://Libraries/Humanoid/Locomotion-Library.res" id="3_thn8r"]
-[ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://Godime/materials/head.tres" id="4_ydyjd"]
-[ext_resource type="Material" uid="uid://ckf4wa8n3pmr6" path="res://Godime/materials/face.tres" id="5_p03bq"]
-[ext_resource type="Material" uid="uid://c8h7ap1l3xhtr" path="res://Godime/materials/torso.tres" id="6_35tj6"]
-[ext_resource type="Material" uid="uid://depkb5v04bgsi" path="res://Godime/materials/arms.tres" id="7_vn3cr"]
-[ext_resource type="Material" uid="uid://cbhkphuq2wtwk" path="res://Godime/materials/hands.tres" id="8_tud1n"]
-[ext_resource type="Material" uid="uid://bgadwol0pm2lm" path="res://Godime/materials/pants.tres" id="9_ubj38"]
-[ext_resource type="Material" uid="uid://dyfnpaqmxkv28" path="res://Godime/materials/shoes.tres" id="10_jho6m"]
+[ext_resource type="Material" uid="uid://ck8g30pcnded" path="res://CharacterSystem/materials/head.tres" id="4_ydyjd"]
+[ext_resource type="Material" uid="uid://ckf4wa8n3pmr6" path="res://CharacterSystem/materials/face.tres" id="5_p03bq"]
+[ext_resource type="Material" uid="uid://c8h7ap1l3xhtr" path="res://CharacterSystem/materials/torso.tres" id="6_35tj6"]
+[ext_resource type="Material" uid="uid://depkb5v04bgsi" path="res://CharacterSystem/materials/arms.tres" id="7_vn3cr"]
+[ext_resource type="Material" uid="uid://cbhkphuq2wtwk" path="res://CharacterSystem/materials/hands.tres" id="8_tud1n"]
+[ext_resource type="Material" uid="uid://bgadwol0pm2lm" path="res://CharacterSystem/materials/pants.tres" id="9_ubj38"]
+[ext_resource type="Material" uid="uid://dyfnpaqmxkv28" path="res://CharacterSystem/materials/shoes.tres" id="10_jho6m"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vysn"]
 resource_name = "Material"

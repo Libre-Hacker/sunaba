@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq8v2dhpm2cvk"]
+
+[ext_resource type="PackedScene" uid="uid://dt0xotl43l4ky" path="res://CharacterSystem/models/himiko's_hair.gltf" id="1_q7hu8"]
+[ext_resource type="Material" uid="uid://bapp6pbg83kab" path="res://CharacterSystem/materials/hair_shade.tres" id="2_meugb"]
+
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m425a"]
+next_pass = ExtResource("2_meugb")
+albedo_color = Color(0.0313726, 0.0313726, 0.0313726, 1)
+roughness = 0.2
+
+[node name="himiko" instance=ExtResource("1_q7hu8")]
+
+[node name="Hair" parent="." index="0"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_m425a")

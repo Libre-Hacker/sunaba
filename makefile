@@ -50,9 +50,14 @@ clean:
 
 install: $(BINDIR)
 	install -d $(DESTDIR)$(PREFIX)/bin/
-	install -m +x $(filter-out $(BINDIR)data_Sunaba_x86_64, $(wildcard $(BINDIR)*)) $(DESTDIR)$(PREFIX)/bin/
-	install -d $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64
-	install -m +x $(wildcard $(BINDIR)data_Sunaba_x86_64/*) -t $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64/
+	install -m +rx $(filter-out $(BINDIR)data_Sunaba_x86_64, $(wildcard $(BINDIR)*)) $(DESTDIR)$(PREFIX)/bin/
+	install -m +rx ./assets/sunaba.png $(DESTDIR)$(PREFIX)/bin/
+	install -m +rx ./assets/sunaba.png $(DESTDIR)/usr/share/pixmaps/
+	install -d $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64/
+	install -m +rx $(wildcard $(BINDIR)data_Sunaba_x86_64/*) -t $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64/
+
+	install -d $(DESTDIR)$(PREFIX)/share/applications/
+	install -m +rx ./sunaba.desktop $(DESTDIR)$(PREFIX)/share/applications/
 
 
 all: build-linux build-win32

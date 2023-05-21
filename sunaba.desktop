@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.4.5
+Type=Application
+Terminal=false
+Exec=sunaba.x86_64
+Name=Sunaba
+Icon=/usr/share/pixmaps/sunaba.png

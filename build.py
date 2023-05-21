@@ -114,6 +114,19 @@ else:
 
 print("")
 
+def copy_map_files():
+    print("Copying map files to game directory")
+
+    map_path = "./maps"
+    build_path = "./bin/linux"
+
+    for map in os.scandir(map_path):
+        if map.is_file():
+            if (".map" in str(map)):
+                if not ".import" in str(map):
+                    print("Copying map file '", map.path, "' to '", build_path, "'")
+                    shutil.copy(map, build_path)
+    print("")
 
 if target == "win32":
     mkdir("./bin")
@@ -152,28 +165,10 @@ elif target == "mac":
                             
     
 elif target == "linux":
-    print("Copying map files to game directory")
-
-    map_path = "./maps"
-    build_path = "./bin/linux"
-
-    for map in os.scandir(map_path):
-        if map.is_file():
-            if (".map" in str(map)):
-                if not ".import" in str(map):
-                    print("Copying map file '", map.path, "' to '", build_path, "'")
-                    shutil.copy(map, build_path)
     
-    print("")
-
-    executable_file = "./bin/linux/sunaba"
-    #os.replace(bin_path, executable_file)
-
-    st = os.stat(bin_path)
-    os.chmod(bin_path, st.st_mode | stat.S_IEXEC)
-
     if len(sys.argv) != 2:
         if sys.argv[2] == "zip":
+            copy_map_files()
 
             zipname = "./bin/Sunaba-" + str(version) + "-Linux.zip"
     
@@ -195,7 +190,8 @@ elif target == "linux":
                         shutil.rmtree(build_path)
                         print("Removed Linux Directory")
         if sys.argv[2] == "targz":
-    
+            copy_map_files()
+
             tarballname = "./bin/Sunaba-" + str(version) + "-Linux.tar.gz"
     
             print("Packing Build into Tarball : " + tarballname)

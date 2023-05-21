@@ -10,62 +10,48 @@ offset_right = 436.0
 offset_bottom = 290.0
 script = ExtResource("1_48lhw")
 
-[node name="RoomName" type="LineEdit" parent="."]
-visible = false
-layout_mode = 0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = 11.0
-offset_top = 15.0
-offset_right = 34.3125
-offset_bottom = 44.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
 grow_horizontal = 2
-placeholder_text = "Node3D Name"
+grow_vertical = 2
 
-[node name="MapPath" type="LineEdit" parent="."]
-layout_mode = 0
-anchor_right = 1.0
-offset_left = 21.0
-offset_top = 15.0
-offset_right = -23.0
-offset_bottom = 45.0
-grow_horizontal = 2
-placeholder_text = "Map Path"
-editable = false
+[node name="MapPath" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
 
-[node name="Button" type="Button" parent="MapPath"]
-layout_mode = 0
+[node name="Label" type="Label" parent="VBoxContainer/MapPath"]
+layout_mode = 2
+size_flags_vertical = 1
+text = " Map Path"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/MapPath/Label"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 1
+anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -46.0
+offset_left = -24.0
 grow_horizontal = 0
 grow_vertical = 2
 icon = ExtResource("1_27q1k")
 icon_alignment = 1
 
-[node name="CreateRoomButton" type="Button" parent="."]
-layout_mode = 0
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -62.0
-offset_right = -23.0
-offset_bottom = -25.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Create"
+[node name="BotsPanel" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
 
-[node name="Bots" type="CheckBox" parent="."]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 58.0
-offset_right = 414.0
-offset_bottom = 88.0
+[node name="Bots" type="CheckBox" parent="VBoxContainer/BotsPanel"]
+layout_mode = 2
 text = "Bots"
 
-[node name="BotAmount" type="SpinBox" parent="Bots"]
+[node name="BotAmount" type="SpinBox" parent="VBoxContainer/BotsPanel/Bots"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -77,5 +63,9 @@ grow_horizontal = 0
 grow_vertical = 2
 max_value = 12.0
 
-[connection signal="toggled" from="Bots" to="." method="OnBotsToggled"]
-[connection signal="value_changed" from="Bots/BotAmount" to="." method="OnBotAmountChanged"]
+[node name="CreateRoomButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Create"
+
+[connection signal="toggled" from="VBoxContainer/BotsPanel/Bots" to="." method="OnBotsToggled"]
+[connection signal="value_changed" from="VBoxContainer/BotsPanel/Bots/BotAmount" to="." method="OnBotAmountChanged"]

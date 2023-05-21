@@ -46,7 +46,7 @@ namespace Sunaba.Core
 		{
 			Main parent = GetParent<Main>();
 			parent.path = path;
-			GetNode<Window>("NewRoomDialog").GetNode<NewRoom>("NewRoom").GetNode<LineEdit>("MapPath").Text = path;
+			GetNode<Window>("NewRoomDialog").GetNode<NewRoom>("NewRoom").GetNode<VBoxContainer>("VBoxContainer").GetNode<PanelContainer>("MapPath").GetNode<Label>("Label").Text = " " + path;
 		}
 
 		public void OnConnectButtonPressed()

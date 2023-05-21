@@ -67,6 +67,10 @@ if len(sys.argv) == 4:
     godot_path = sys.argv[3]
 
     print("Godot binary : ", godot_path)
+elif len(sys.argv) == 3:
+    godot_path = sys.argv[2]
+
+    print("Godot binary : ", godot_path)
 else:
     print("Godot binary : Using binary from path")
 

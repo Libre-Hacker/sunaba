@@ -19,9 +19,11 @@ namespace Sunaba.Core
 				.GetNode<TabContainer>("TabContainer")
 				.GetNode<Control>("UI")
 				.GetNode<VBoxContainer>("VBoxContainer")
-				.GetNode<Label>("Label2")
+				.GetNode<PanelContainer>("ThemingOption")
+				.GetNode<Label>("Label")
 				.GetNode<OptionButton>("ThemingOptionButton");
 
+			themeDropdown.AddItem("Default");
 
             DirAccess dir = DirAccess.Open("res://themes");
 

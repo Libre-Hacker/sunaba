@@ -66,6 +66,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="About" type="Control" parent="TabBar/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label2" type="RichTextLabel" parent="TabBar/TabContainer/About"]
@@ -113,58 +114,7 @@ texture = ExtResource("2_rxxbx")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Client" type="Control" parent="TabBar/TabContainer"]
-visible = false
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabBar/TabContainer/Client"]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -5.0
-
-[node name="Label2" type="Label" parent="TabBar/TabContainer/Client/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Player Model
-"
-
-[node name="ModelOptionButton" type="OptionButton" parent="TabBar/TabContainer/Client/VBoxContainer/Label2"]
-layout_mode = 0
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -12.0
-offset_bottom = 12.0
-item_count = 2
-selected = 0
-popup/item_0/text = "Male"
-popup/item_0/id = 0
-popup/item_1/text = "Female"
-popup/item_1/id = 1
-
-[node name="Label4" type="Label" parent="TabBar/TabContainer/Client/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Ui Scale"
-
-[node name="OptionButton" type="OptionButton" parent="TabBar/TabContainer/Client/VBoxContainer/Label4"]
-layout_mode = 0
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -12.0
-offset_bottom = 12.0
-
 [node name="UI" type="Control" parent="TabBar/TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabBar/TabContainer/UI"]
@@ -175,36 +125,6 @@ offset_left = 5.0
 offset_top = 5.0
 offset_right = -5.0
 offset_bottom = -5.0
-
-[node name="Label2" type="Label" parent="TabBar/TabContainer/UI/VBoxContainer"]
-layout_mode = 2
-text = "Theme"
-
-[node name="ThemingOptionButton" type="OptionButton" parent="TabBar/TabContainer/UI/VBoxContainer/Label2"]
-layout_mode = 0
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -146.0
-offset_top = -12.0
-offset_bottom = 12.0
-item_count = 7
-selected = 0
-popup/item_0/text = "2kUI"
-popup/item_0/id = 0
-popup/item_1/text = "Carbon Light"
-popup/item_1/id = 1
-popup/item_2/text = "Carbon Dark"
-popup/item_2/id = 2
-popup/item_3/text = "Godot"
-popup/item_3/id = 3
-popup/item_4/text = "Adwaita"
-popup/item_4/id = 4
-popup/item_5/text = "RayGUI"
-popup/item_5/id = 5
-popup/item_6/text = "Windows 3.1"
-popup/item_6/id = 6
 
 [node name="Label4" type="Label" parent="TabBar/TabContainer/UI/VBoxContainer"]
 visible = false
@@ -220,6 +140,24 @@ anchor_bottom = 0.5
 offset_left = -146.0
 offset_top = -12.0
 offset_bottom = 12.0
+
+[node name="ThemingOption" type="PanelContainer" parent="TabBar/TabContainer/UI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabBar/TabContainer/UI/VBoxContainer/ThemingOption"]
+layout_mode = 2
+text = "Theme"
+
+[node name="ThemingOptionButton" type="OptionButton" parent="TabBar/TabContainer/UI/VBoxContainer/ThemingOption/Label"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -141.0
+grow_horizontal = 0
+grow_vertical = 2
+selected = 0
 
 [node name="TBWO" type="Control" parent="."]
 visible = false

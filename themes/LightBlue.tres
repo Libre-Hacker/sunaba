@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=113 format=3 uid="uid://b34fc3124r6mh"]
+[gd_resource type="Theme" load_steps=114 format=3 uid="uid://b34fc3124r6mh"]
 
 [ext_resource type="Texture2D" uid="uid://ckpc5fl3jlmmm" path="res://assets/ui/light_blue/ui_tex.png" id="1_axtje"]
 [ext_resource type="Texture2D" uid="uid://cwkf1dtevvh5d" path="res://assets/ui/light_blue/switch_uncheck.png" id="2_27oc8"]
@@ -278,6 +278,9 @@ texture_margin_bottom = 26.0
 region_rect = Rect2(15, 15, 110, 110)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgpjj"]
+bg_color = Color(0.960784, 0.968627, 0.984314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbupp"]
 bg_color = Color(0.960784, 0.968627, 0.984314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aljvg"]
@@ -849,6 +852,7 @@ OptionButton/styles/hover = SubResource("StyleBoxTexture_ytnew")
 OptionButton/styles/normal = SubResource("StyleBoxTexture_8mq2q")
 OptionButton/styles/pressed = SubResource("StyleBoxTexture_gvd51")
 Panel/styles/panel = SubResource("StyleBoxFlat_fgpjj")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_lbupp")
 PopupMenu/colors/font_color = Color(0.168627, 0.188235, 0.239216, 1)
 PopupMenu/colors/font_disabled_color = Color(0.168627, 0.188235, 0.239216, 0.392157)
 PopupMenu/colors/font_hover_color = Color(0.121569, 0.368627, 1, 1)

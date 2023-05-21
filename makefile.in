@@ -1,18 +1,12 @@
 APPNAME := Sunaba
 APPNAME_LC := sunaba
 
-PYTHON := /usr/bin/python3
-GODOT := /usr/local/bin/godot
+GODOT := godot
 
 ifndef GODOT
 $(error GODOT is not set)
 endif
 $(info Version is: $(GODOT))
-
-ifndef PYTHON
-$(error PYTHON is not set)
-endif
-$(info Version is: $(PYTHON))
 
 APPVER := 0.5.0
 #APPVER := $(PYTHON) 
@@ -36,11 +30,11 @@ def:
 
 build-linux:
 	GODOT_MAKE_CONSTANTS="GODOT_BUILD_PROD" \
-	$(PYTHON) ./build.py linux $(GODOT)
+	$(GODOT) --export-release linux --headless ./bin/linux/sunaba.x86_64
 
 build-win32:
 	GODOT_MAKE_CONSTANTS="GODOT_BUILD_PROD" \
-	$(PYTHON) ./build.py win32 $(GODOT)
+	$(GODOT) --export-release win32 --headless ./binWin32/Sunaba.exe
 
 clean:
 	rm -rf bin/linux || true

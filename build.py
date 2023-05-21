@@ -103,6 +103,7 @@ elif target == "linux32":
 command = godot_path + " --export-release " + '"' + target + '"' + " --headless " + bin_path
 
 print("Exporting Project")
+print(command)
 
 export = os.system(command)
 

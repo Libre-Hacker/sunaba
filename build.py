@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 import time
 import tarfile
+import stat
 
 def get_version():
     tree = ET.parse("./Sunaba.csproj")
@@ -164,6 +165,12 @@ elif target == "linux":
                     shutil.copy(map, build_path)
     
     print("")
+
+    executable_file = "./bin/linux/sunaba"
+    #os.replace(bin_path, executable_file)
+
+    st = os.stat(bin_path)
+    os.chmod(bin_path, st.st_mode | stat.S_IEXEC)
 
     if len(sys.argv) != 2:
         if sys.argv[2] == "zip":

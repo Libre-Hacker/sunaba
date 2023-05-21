@@ -49,10 +49,10 @@ clean:
 	touch export/.gdignore || true
 
 install: $(BINDIR)
-	install -d $(DESTDIR)$(PREFIX)/bin/$(APPNAME_LC)
-	install -m 644 $(filter-out $(BINDIR)data_Sunaba_x86_64, $(wildcard $(BINDIR)*)) $(DESTDIR)$(PREFIX)/bin/$(APPNAME_LC)
-	install -d $(DESTDIR)$(PREFIX)/bin/$(APPNAME_LC)/data_Sunaba_x86_64
-	install -m 644 $(wildcard $(BINDIR)data_Sunaba_x86_64/*) -t $(DESTDIR)$(PREFIX)/bin/$(APPNAME_LC)/data_Sunaba_x86_64/
+	install -d $(DESTDIR)$(PREFIX)/bin/
+	install -m +x $(filter-out $(BINDIR)data_Sunaba_x86_64, $(wildcard $(BINDIR)*)) $(DESTDIR)$(PREFIX)/bin/
+	install -d $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64
+	install -m +x $(wildcard $(BINDIR)data_Sunaba_x86_64/*) -t $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64/
 
 
 all: build-linux build-win32

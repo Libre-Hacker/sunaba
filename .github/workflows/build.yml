@@ -58,7 +58,7 @@ jobs:
         uses: knicknic/os-specific-run@v1.0.3
         with:
           macos: python ./build.py mac
-          linux: python ./build.py linux targz godot removedir
+          linux: python ./build.py linux targz godot; python ./build.py linux zip skip; python ./build.py linux deb skip removedir;
           windows: npm install makensis; python ./build.py win32 nsis C:\Users\runneradmin\godot\Godot_v4.0.2-stable_mono_win64\Godot_v4.0.2-stable_mono_win64.exe
       
       

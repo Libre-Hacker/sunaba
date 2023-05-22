@@ -1,0 +1,8 @@
+Package: sunaba
+Version: 0.4.5-1
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: 
+Maintainer: Lucas Abbas <lucasbear9@gmail.com>
+Description: a 3D sandbox game with user-generated map support

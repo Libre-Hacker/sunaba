@@ -37,7 +37,7 @@ jobs:
         with:
           # Version must include major, minor, and patch, and be >= 4.0.0
           # Pre-release label is optional.
-          version: 4.0.2 # also valid: 4.0.0.rc1 or 4.0.0, etc
+          version: 4.0.3 # also valid: 4.0.0.rc1 or 4.0.0, etc
           # Use .NET-enabled version of Godot (the default is also true).
           use-dotnet: true
 

@@ -254,9 +254,9 @@ elif target == "linux":
             
             print("Running sudo make install")
     
-            makensis = os.system("sudo make install")
+            make = os.system("sudo make install")
 
-            if makensis == 0:
+            if make == 0:
                 print("sudo make install ran successfully")
         if sys.argv[2] == "deb":
             debname = "sunaba-" + str(version) + "-Linux"
@@ -269,8 +269,9 @@ elif target == "linux":
             print("Packing Build into Deb : " + debname)
 
             debfile = os.system("dpkg-deb --build " + vroot)
-            shutil.copy(vroot + ".deb", "./bin")
-            os.remove(vroot + ".deb")
+            if debfile == 0:
+                shutil.copy(vroot + ".deb", "./bin")
+                os.remove(vroot + ".deb")
 
     if len(sys.argv) > 4:
         if sys.argv[4] == "removedir":

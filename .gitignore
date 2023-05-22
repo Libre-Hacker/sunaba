@@ -154,6 +154,19 @@ $RECYCLE.BIN/
 # Built Visual Studio Code Extensions
 *.vsix
 
+# http://www.gnu.org/software/automake
+
+Makefile.in
+/ar-lib
+/mdate-sh
+/py-compile
+/test-driver
+/ylwrap
+.deps/
+.dirstamp
+
+# http://www.gnu.org/software/autoconf
+
 autom4te.cache
 /autoscan.log
 /autoscan-*.log
@@ -172,18 +185,15 @@ autom4te.cache
 /missing
 /stamp-h1
 
-
-/ar-lib
-/mdate-sh
-/py-compile
-/test-driver
-/ylwrap
-.deps/
-.dirstamp
+# https://www.gnu.org/software/libtool/
 
 /ltmain.sh
 
+# http://www.gnu.org/software/texinfo
+
 /texinfo.tex
+
+# http://www.gnu.org/software/m4/
 
 m4/libtool.m4
 m4/ltoptions.m4
@@ -191,4 +201,8 @@ m4/ltsugar.m4
 m4/ltversion.m4
 m4/lt~obsolete.m4
 
-makefile
+# Generated Makefile
+# (meta build system like autotools,
+# can automatically generate from config.status script
+# (which is called by configure script))
+Makefile

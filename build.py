@@ -185,11 +185,6 @@ elif target == "linux":
                           print("Adding " + fl + " to " + zipname)
                           fp = os.path.abspath(build_path + "/" + fl)
                           zip.write(fp, arcname=fl)
-            if len(sys.argv) > 4:
-                if sys.argv[4] == "removedir":
-                    if os.path.exists(build_path):
-                        shutil.rmtree(build_path)
-                        print("Removed Linux Directory")
         if sys.argv[2] == "targz":
             copy_map_files()
 
@@ -208,11 +203,21 @@ elif target == "linux":
                         print("Adding " + fl + " to " + tarballname)
                         fp = os.path.abspath(build_path + "/" + fl)
                         tarball.add(fp)
-            if len(sys.argv) > 4:
-                if sys.argv[4] == "removedir":
-                    if os.path.exists(build_path):
-                        shutil.rmtree(build_path)
-                        print("Removed Linux Directory")
+
+        if sys.argv[2] == "install":
+            
+            print("Running sudo make install")
+    
+            makensis = os.system("sudo make install")
+
+            if makensis == 0:
+                print("sudo make install ran successfully")
+
+    if len(sys.argv) > 4:
+        if sys.argv[4] == "removedir":
+            if os.path.exists(build_path):
+                shutil.rmtree(build_path)
+                print("Removed Linux Directory")
     
 
 print("")

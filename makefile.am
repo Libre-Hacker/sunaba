@@ -1,3 +1,7 @@
+export DEBEMAIL="sunabagame@gmail.com"
+export DEBFULLNAME="Lucas Abbas"
+ 
+
 # APPNAME and APPNAME_LC variables
 APPNAME := Sunaba
 APPNAME_LC := sunaba

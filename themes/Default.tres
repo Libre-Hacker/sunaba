@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=27 format=3 uid="uid://d0fredyh2mbr0"]
+[gd_resource type="Theme" load_steps=28 format=3 uid="uid://d0fredyh2mbr0"]
 
 [ext_resource type="Texture2D" uid="uid://dkrwbo3vb38l4" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="1_wots1"]
 [ext_resource type="FontFile" uid="uid://dpnrguc4suta4" path="res://assets/fonts/BalooChettan2-Regular.ttf" id="2_n38hb"]
@@ -132,6 +132,22 @@ expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p18nm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ema1n"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -419,6 +435,7 @@ MenuBar/colors/font_pressed_color = Color(0.431373, 0.729412, 0.984314, 1)
 MenuButton/colors/font_hover_color = Color(0, 0, 0, 1)
 MenuButton/colors/font_pressed_color = Color(0.431373, 0.729412, 0.984314, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_p18nm")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ema1n")
 PopupDialog/styles/panel = SubResource("StyleBoxFlat_odflt")
 PopupMenu/colors/font_color = Color(0, 0, 0, 1)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)

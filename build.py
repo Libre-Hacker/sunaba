@@ -5,6 +5,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 import time
 import tarfile
+import stat
 
 def get_version():
     tree = ET.parse("./Sunaba.csproj")
@@ -67,6 +68,10 @@ if len(sys.argv) == 4:
     godot_path = sys.argv[3]
 
     print("Godot binary : ", godot_path)
+elif len(sys.argv) == 3:
+    godot_path = sys.argv[2]
+
+    print("Godot binary : ", godot_path)
 else:
     print("Godot binary : Using binary from path")
 
@@ -95,20 +100,76 @@ elif target == "linux32":
     mkdir("./bin")
     mkdir("./bin/linux32")
 
-command = godot_path + " --export-release " + '"' + target + '"' + " --headless " + bin_path
+def export():
+	command = godot_path + " --export-release " + '"' + target + '"' + " --headless " + bin_path
 
-print("Exporting Project")
+	print("Exporting Project")
+	print(command)
 
-export = os.system(command)
+	export = os.system(command)
 
-if export == 0:
-    print("Godot Export ran successfully")
+	if export == 0:
+		print("Godot Export ran successfully")
+	else:
+		print("Godot Export ran with exit code %d" % export)
+		exit(2)
+
+if godot_path == "skip":
+    print("Skipping Godot Export")
 else:
-    print("Godot Export ran with exit code %d" % export)
-    exit(2)
+    export()
 
 print("")
 
+def copy_map_files(bpath):
+    print("Copying map files to game directory")
+
+    map_path = "./maps"
+    for map in os.scandir(map_path):
+        if map.is_file():
+            if (".map" in str(map)):
+                if not ".import" in str(map):
+                    print("Copying map file '", map.path, "' to '", build_path, "'")
+                    shutil.copy(map, bpath)
+    print("")
+
+def create_vroot(debname):
+    print("Creating Virtual Root Folder")
+    print("")
+    mkdir("./vroot")
+    vroot = "./vroot/" + str(debname)
+    mkdir(vroot + "/usr")
+    vroot_bin_folder = vroot + "/usr/bin"
+    mkdir(vroot_bin_folder)
+
+    print("Copying '", bin_path, "' to '", vroot_bin_folder, "'")
+    shutil.copy(bin_path, vroot_bin_folder)
+    vroot_data_folder = vroot_bin_folder + "/data_Sunaba_x86_64"
+    mkdir(vroot_data_folder)
+    data_folder = "./bin/linux/data_Sunaba_x86_64"
+        
+    for file in os.scandir(data_folder):
+        print("Copying '", file.path, "' to '", vroot_data_folder, "'")
+        shutil.copy(file, vroot_data_folder)
+
+    vroot_share_folder = vroot + "/usr/share"
+    mkdir(vroot_share_folder)
+    vroot_pixmaps_folder = vroot_share_folder + "/pixmaps"
+    mkdir(vroot_pixmaps_folder)
+    vroot_desktop_folder = vroot_share_folder + "/desktop"
+    mkdir(vroot_desktop_folder)
+
+    desktop_icon = "./assets/sunaba.png"
+    print("Copying '", desktop_icon, "' to '", vroot_pixmaps_folder, "'")
+    shutil.copy(desktop_icon, vroot_pixmaps_folder)
+
+    desktop_entry = "./sunaba.desktop"
+    print("Copying '", desktop_entry, "' to '", vroot_desktop_folder, "'")
+    shutil.copy(desktop_entry, vroot_desktop_folder)
+                
+    print("")
+    
+    return vroot
 
 if target == "win32":
     mkdir("./bin")
@@ -147,22 +208,12 @@ elif target == "mac":
                             
     
 elif target == "linux":
-    print("Copying map files to game directory")
-
-    map_path = "./maps"
-    build_path = "./bin/linux"
-
-    for map in os.scandir(map_path):
-        if map.is_file():
-            if (".map" in str(map)):
-                if not ".import" in str(map):
-                    print("Copying map file '", map.path, "' to '", build_path, "'")
-                    shutil.copy(map, build_path)
     
-    print("")
-
     if len(sys.argv) != 2:
         if sys.argv[2] == "zip":
+            build_path = "./bin/linux"
+
+            copy_map_files(build_path)
 
             zipname = "./bin/Sunaba-" + str(version) + "-Linux.zip"
     
@@ -178,13 +229,11 @@ elif target == "linux":
                           print("Adding " + fl + " to " + zipname)
                           fp = os.path.abspath(build_path + "/" + fl)
                           zip.write(fp, arcname=fl)
-            if len(sys.argv) > 4:
-                if sys.argv[4] == "removedir":
-                    if os.path.exists(build_path):
-                        shutil.rmtree(build_path)
-                        print("Removed Linux Directory")
         if sys.argv[2] == "targz":
-    
+            build_path = "./bin/linux"
+
+            copy_map_files(build_path)
+
             tarballname = "./bin/Sunaba-" + str(version) + "-Linux.tar.gz"
     
             print("Packing Build into Tarball : " + tarballname)
@@ -200,12 +249,37 @@ elif target == "linux":
                         print("Adding " + fl + " to " + tarballname)
                         fp = os.path.abspath(build_path + "/" + fl)
                         tarball.add(fp)
-            if len(sys.argv) > 4:
-                if sys.argv[4] == "removedir":
-                    if os.path.exists(build_path):
-                        shutil.rmtree(build_path)
-                        print("Removed Linux Directory")
+
+        if sys.argv[2] == "install":
+            
+            print("Running sudo make install")
     
+            make = os.system("sudo make install")
+
+            if make == 0:
+                print("sudo make install ran successfully")
+        if sys.argv[2] == "deb":
+            debname = "sunaba-" + str(version) + "-Linux"
+            vroot = create_vroot(debname)
+
+            debfolder = vroot + "/DEBIAN"
+            mkdir(debfolder)
+            shutil.copy("./control", debfolder)
+            
+            print("Packing Build into Deb : " + debname)
+
+            debfile = os.system("dpkg-deb --build " + vroot)
+            if debfile == 0:
+                shutil.copy(vroot + ".deb", "./bin")
+                os.remove(vroot + ".deb")
+
+    if len(sys.argv) > 4:
+        if sys.argv[4] == "removedir":
+            build_path = "./bin/linux"
+            if os.path.exists(build_path):
+                shutil.rmtree(build_path)
+                print("Removed Linux Directory")
+
 
 print("")
 exit()

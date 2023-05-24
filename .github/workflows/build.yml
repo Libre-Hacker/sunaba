@@ -37,7 +37,7 @@ jobs:
         with:
           # Version must include major, minor, and patch, and be >= 4.0.0
           # Pre-release label is optional.
-          version: 4.0.2 # also valid: 4.0.0.rc1 or 4.0.0, etc
+          version: 4.0.3 # also valid: 4.0.0.rc1 or 4.0.0, etc
           # Use .NET-enabled version of Godot (the default is also true).
           use-dotnet: true
 
@@ -58,8 +58,8 @@ jobs:
         uses: knicknic/os-specific-run@v1.0.3
         with:
           macos: python ./build.py mac
-          linux: python ./build.py linux targz godot removedir
-          windows: npm install makensis; python ./build.py win32 nsis C:\Users\runneradmin\godot\Godot_v4.0.2-stable_mono_win64\Godot_v4.0.2-stable_mono_win64.exe
+          linux: python ./build.py linux targz godot; python ./build.py linux zip skip; python ./build.py linux deb skip removedir;
+          windows: npm install makensis; python ./build.py win32 nsis C:\Users\runneradmin\godot\Godot_v4.0.3-stable_mono_win64\Godot_v4.0.3-stable_mono_win64.exe
       
       
       - name: Upload Artifact

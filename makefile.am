@@ -1,0 +1,51 @@
+export DEBEMAIL="sunabagame@gmail.com"
+export DEBFULLNAME="Lucas Abbas"
+ 
+
+# APPNAME and APPNAME_LC variables
+APPNAME := Sunaba
+APPNAME_LC := sunaba
+
+PREFIX := /usr/local
+
+
+BINDIR = ./bin/linux/
+
+.PHONY: def
+def: 
+	$(info No target defined)
+
+# build-linux target
+build-linux:
+	GODOT_MAKE_CONSTANTS="GODOT_BUILD_PROD" \
+	$(godot) --export-release linux --headless ./bin/linux/sunaba.x86_64
+
+# build-win32 target
+build-win32:
+	GODOT_MAKE_CONSTANTS="GODOT_BUILD_PROD" \
+	$(godot) --export-release win32 --headless ./binWin32/Sunaba.exe
+
+# clean target
+clean:
+	rm -rf bin/linux || true
+	rm -rf binWin32 || true
+	rm -rf bin || true
+	@rm config.status configure config.log
+	@rm Makefile 
+	@rm -r autom4te.cache/
+	@rm aclocal.m4 
+	@rm compile install-sh missing Makefile.in
+
+# install target
+install: $(BINDIR)
+	install -d $(DESTDIR)$(PREFIX)/bin/
+	install -m +rx $(filter-out $(BINDIR)data_Sunaba_x86_64, $(wildcard $(BINDIR)*)) $(DESTDIR)$(PREFIX)/bin/
+	install -m +rx ./assets/sunaba.png $(DESTDIR)$(PREFIX)/bin/
+	install -m +rx ./assets/sunaba.png $(DESTDIR)/usr/share/pixmaps/
+	install -d $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64/
+	install -m +rx $(wildcard $(BINDIR)data_Sunaba_x86_64/*) -t $(DESTDIR)$(PREFIX)/bin/data_Sunaba_x86_64/
+	install -d $(DESTDIR)$(PREFIX)/share/applications/
+	install -m +rx ./sunaba.desktop $(DESTDIR)$(PREFIX)/share/applications/
+
+# all target
+all: build-linux build-win32

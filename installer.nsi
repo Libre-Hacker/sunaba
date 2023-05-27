@@ -47,7 +47,7 @@ InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show
 ShowUnInstDetails show
 
-Section "MainSection" SEC01
+Section "Sunaba" SEC01
   SetOutPath "$INSTDIR"
   SetOverwrite ifnewer
   File "binWin32\Sunaba.exe"
@@ -57,6 +57,7 @@ Section "MainSection" SEC01
   CreateShortCut "$STARTMENU\Sunaba.lnk" "$INSTDIR\Sunaba.exe"
   File "binWin32\Sunaba.console.exe"
   File "binWin32\Sunaba.pck"
+  File "binWin32\godot-jolt_windows-x86.dll"
   SetOutPath "$INSTDIR\data_Sunaba_x86_32"
   SetOverwrite try
   File "binWin32\data_Sunaba_x86_32\api-ms-win-core-console-l1-1-0.dll"
@@ -288,6 +289,8 @@ Section "MainSection" SEC01
   File "binWin32\data_Sunaba_x86_32\System.Xml.XPath.XDocument.dll"
   File "binWin32\data_Sunaba_x86_32\ucrtbase.dll"
   File "binWin32\data_Sunaba_x86_32\WindowsBase.dll"
+  File "binWin32\data_Sunaba_x86_32\Jint.dll"
+  File "binWin32\data_Sunaba_x86_32\Esprima.dll"
 SectionEnd
 
 Section "Maps" SEC02

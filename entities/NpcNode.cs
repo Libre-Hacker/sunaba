@@ -3,6 +3,7 @@ using Godot.Collections;
 using System;
 using System.Collections.Generic;
 using MoonSharp.Interpreter;
+using Sunaba.Entities.Api;
 using Script = MoonSharp.Interpreter.Script;
 
 namespace Sunaba.Entities
@@ -81,9 +82,10 @@ namespace Sunaba.Entities
 					script.DoString(luaScript.GetAsText());
 					script.Call(script.Globals["start"]);
 				}
-				else if (npcScript.Contains(".wren"))
+				else if (npcScript.Contains(".cs"))
 				{
-					
+					var npc = ResourceLoader.Load<CSharpScript>(scriptPath).New();
+					AddChild(npc.As<NPC>());
 				}
 
 				canExecute = true;
@@ -95,14 +97,14 @@ namespace Sunaba.Entities
 		{
 			if (canExecute == false) return;
 		
-			script.Call(script.Globals["update"]);
+			//script.Call(script.Globals["update"]);
 		}
 
 		public override void _PhysicsProcess(double delta)
 		{
 			if (canExecute == false) return;
 		
-			script.Call(script.Globals["physicsUpdate"]);
+			//script.Call(script.Globals["physicsUpdate"]);
 		}
 
 		void SetYPosition(double yPos)

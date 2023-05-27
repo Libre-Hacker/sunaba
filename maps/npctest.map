@@ -126,7 +126,7 @@
 {
 "classname" "npc"
 "origin" "40 -488 24"
-"script" "npcTest1.lua"
+"script" "John.cs"
 }
 // entity 2
 {

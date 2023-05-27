@@ -2,7 +2,7 @@ using Godot;
 
 namespace Sunaba.Entities.Api;
 
-public class NPC : Entity
+public partial class NPC : Entity
 {
     
 }

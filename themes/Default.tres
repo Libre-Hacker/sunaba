@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=28 format=3 uid="uid://d0fredyh2mbr0"]
 
 [ext_resource type="Texture2D" uid="uid://dkrwbo3vb38l4" path="res://assets/ui/2kui/close_FILL0_wght500_GRAD0_opsz24.png" id="1_wots1"]
-[ext_resource type="FontFile" uid="uid://dpnrguc4suta4" path="res://assets/fonts/BalooChettan2-Regular.ttf" id="2_n38hb"]
+[ext_resource type="SystemFont" uid="uid://bm2qptywwnt6s" path="res://assets/fonts/system.tres" id="2_w3iu1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic3nl"]
 content_margin_left = 10.0
@@ -400,7 +400,7 @@ expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
 [resource]
-default_font = ExtResource("2_n38hb")
+default_font = ExtResource("2_w3iu1")
 AcceptDialog/styles/panel = SubResource("StyleBoxFlat_ic3nl")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 0.501961)

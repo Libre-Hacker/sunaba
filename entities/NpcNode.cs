@@ -7,7 +7,7 @@ using Script = MoonSharp.Interpreter.Script;
 
 namespace Sunaba.Entities
 {
-	public partial class NPC : CharacterBody3D
+	public partial class NpcNode : CharacterBody3D
 	{
 		Console console;
 

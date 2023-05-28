@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://kmm5126efhc1"]
+[gd_scene load_steps=23 format=3 uid="uid://kmm5126efhc1"]
 
-[ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
-[ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
+[ext_resource type="Script" path="res://core/main.gd" id="1_su7ir"]
+[ext_resource type="Script" path="res://core/network_manager.gd" id="2_38pkc"]
 [ext_resource type="PackedScene" uid="uid://cw4gnyn5s8sh4" path="res://core/World.tscn" id="3_ptygb"]
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
+[ext_resource type="Script" path="res://core/world.gd" id="4_qlf3r"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
 [ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
 [ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
@@ -25,12 +26,14 @@
 bg_color = Color(0, 0, 0, 0.607843)
 
 [node name="Main" type="Node"]
-script = ExtResource("1_ig20j")
+script = ExtResource("1_su7ir")
 
 [node name="NetworkManager" type="Node" parent="."]
-script = ExtResource("2_gi6fg")
+script = ExtResource("2_38pkc")
 
 [node name="World" parent="." instance=ExtResource("3_ptygb")]
+script = ExtResource("4_qlf3r")
+game_start_window_path = NodePath("")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

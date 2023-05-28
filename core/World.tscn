@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cw4gnyn5s8sh4"]
 
-[ext_resource type="Script" path="res://core/World.cs" id="1_3aha2"]
+[ext_resource type="Script" path="res://core/world.gd" id="1_uqush"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2_vkw6t"]
 [ext_resource type="Resource" uid="uid://m342wmd40md8" path="res://trenchbroom/fgd.tres" id="3_7qy3n"]
 
@@ -18,7 +18,7 @@ size = Vector3(10000, 1, 10000)
 [sub_resource type="VoxelGIData" id="VoxelGIData_prmsx"]
 
 [node name="World3D" type="Node3D"]
-script = ExtResource("1_3aha2")
+script = ExtResource("1_uqush")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://actors/player.tscn")

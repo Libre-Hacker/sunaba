@@ -26,13 +26,13 @@ boot_splash/minimum_display_time=10000
 
 [autoload]
 
-Build="*res://core/Build.cs"
-ThemeManager="*res://core/ThemeManager.cs"
-Global="*res://core/Global.cs"
-ScaleManager="*res://core/ScaleManager.cs"
+Build="*res://core/build.gd"
+ThemeManager="*res://core/theme_manager.gd"
+Global="*res://core/global.gd"
+ScaleManager="*res://core/scale_manager.gd"
 Settings="*res://core/Settings.cs"
-PConsole="*res://core/Console.cs"
 Console="*res://addons/panku_console/console.tscn"
+Log4Sn="*res://core/log4sn.gd"
 
 [debug]
 

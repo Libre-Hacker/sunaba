@@ -14,7 +14,7 @@ var settings = {
 # Themes
 
 # Graphics-related variables
-@onready var theme_dropdown = $Panel/TabBar/TabContainer/UI/VBoxContainer/Label2/ThemingOptionButton
+@onready var theme_dropdown = $Panel/TabBar/TabContainer/UI/VBoxContainer/ThemingOption/Label/ThemingOptionButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,25 +48,18 @@ func _ready():
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_F11):
-		#if !OS.window_fullscreen:
-			#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		#else:
-		#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		pass#save()
+		var fullscreen = ProjectSettings.get_setting("display/window/size/mode")
+		
+		if fullscreen != 4:
+			ProjectSettings.set_setting("display/window/size/mode", 4)
+		else:
+			ProjectSettings.set_setting("display/window/size/mode", 0)
 
 func change_theme(_theme):
 	theme = _theme
 	get_node(gui).theme = _theme
 	ThemeManager.theme = _theme
 	#save()
-
-func _on_model_selected(index):
-	if index == 0:
-		Global.player_model = "male"
-	elif index == 1:
-		Global.player_model = "female"
-	elif index == 2:
-		Global.player_model = "custom"
 
 func _on_theme_selected(index):
 	print(index)

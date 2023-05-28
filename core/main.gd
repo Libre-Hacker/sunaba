@@ -13,13 +13,12 @@ func _ready() -> void:
 	$UI.theme = ThemeManager.theme
 	Global.game_started = false
 	Global.game_paused = false
-	Console.register_env("sb", self)
+	Console.register_env("sunaba", self)
 	
-	println("Sunaba")
-	println("Version " + Build.version_number)
-	println("Compiled on " + Build.build_date)
-	println("(C) 2022-2023 mintkat")
-	println("")
+	Log4Sn.print_line("Sunaba")
+	Log4Sn.print_line("Version " + Build.version_number)
+	Log4Sn.print_line("(C) 2022-2023 mintkat")
+	Log4Sn.print_line("")
 	
 	var args = OS.get_cmdline_args()
 	var file = args[0]
@@ -35,13 +34,13 @@ func create_room() -> void:
 
 func log_to_chat(logstring):
 	logstring = "Room : " + logstring
-	print(logstring)
+	Log4Sn.print_line(logstring)
 	chatbox.add_text(logstring)
 	chatbox.newline()
 
 func chat(_name , chatstring):
 	chatstring = _name + " : " + chatstring
-	print(chatstring)
+	Log4Sn.print_line(chatstring)
 	chatbox.add_text(chatstring)
 	chatbox.newline()
 	#chat_entry.focus_mode = false
@@ -111,10 +110,7 @@ func check_dir(dirname : String):
 		if file == "":
 			break
 		else :
-			Console.notify(file)
+			Log4Sn.print_line(file)
 			
 	dir.list_dir_end()
 
-func println(msg):
-	Console.notify(var_to_str(msg))
-	print(msg)

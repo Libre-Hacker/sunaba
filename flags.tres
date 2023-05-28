@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BuildFlags" load_steps=2 format=3 uid="uid://bytd3wgfd71x8"]
+
+[ext_resource type="Script" path="res://core/build_flags.gd" id="1_n2skh"]
+
+[resource]
+script = ExtResource("1_n2skh")
+use_native_fd = false
+online_play_enabled = true
+version_number = "0.4.5"
+build_date = "May 27th 2023"

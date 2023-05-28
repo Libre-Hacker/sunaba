@@ -32,7 +32,7 @@ var shoes_texture : String = "generic_male"
 func _ready():
 	change_headwear(headwear)
 	change_texture(head_material, "res://CharacterSystem/textures/" + skin_color + ".png")
-	change_face_texture(Global.faceTexture)
+	change_face_texture(Global.face_texture)
 	change_texture(torso_material, get_clothing_texture(torso_texture))
 	change_texture(arms_material, get_clothing_texture(arms_texture))
 	change_texture(hands_material, get_clothing_texture(hands_texture))
@@ -130,13 +130,13 @@ func _ready():
 
 func _process(delta):
 	Global.headwear = headwear
-	Global.skinColor = skin_color
-	Global.faceTexture = face_texture
-	Global.torsoTexture = torso_texture
-	Global.armsTexture = arms_texture
-	Global.handsTexture = hands_texture
-	Global.pantsTexture = pants_texture
-	Global.shoesTexture = shoes_texture
+	Global.skin_color = skin_color
+	Global.face_texture = face_texture
+	Global.torso_texture = torso_texture
+	Global.arms_texture = arms_texture
+	Global.hands_texture = hands_texture
+	Global.pants_texture = pants_texture
+	Global.shoes_texture = shoes_texture
 
 func add_item(item : String):
 	create_item(torso_tree, item)

@@ -31,8 +31,8 @@ ThemeManager="*res://core/theme_manager.gd"
 Global="*res://core/global.gd"
 ScaleManager="*res://core/scale_manager.gd"
 Settings="*res://core/Settings.cs"
-Console="*res://addons/panku_console/console.tscn"
 Log4Sn="*res://core/log4sn.gd"
+Console="*res://addons/panku_console/console.tscn"
 
 [debug]
 

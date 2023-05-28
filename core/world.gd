@@ -1,7 +1,5 @@
 extends Node3D
 
-@export var game_start_window_path : NodePath
-
 var map = null
 
 var prop_num : int = 1

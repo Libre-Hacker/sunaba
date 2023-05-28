@@ -14,7 +14,7 @@ var settings = {
 # Themes
 
 # Graphics-related variables
-@onready var theme_dropdown = $Panel/TabBar/TabContainer/UI/VBoxContainer/ThemingOption/Label/ThemingOptionButton
+@onready var theme_dropdown = $Control/TabBar/TabContainer/UI/VBoxContainer/ThemingOption/Label/ThemingOptionButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

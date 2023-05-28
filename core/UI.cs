@@ -54,14 +54,16 @@ namespace Sunaba.Core
             Build build = GetNode<Build>("/root/Build");
 			Settings settings = GetNode<Settings>("/root/Settings");
 
-			if (settings.multiplayerEnabled == true)
-			{
-				GetNode<Window>("ConnectDialog").PopupCentered();
-			}
+			
+			//if (settings.multiplayerEnabled == true)
+			//{
+			GetNode<Window>("ConnectDialog").PopupCentered();
+			/*}
 			else
 			{
 				GetNode<AcceptDialog>("AcceptDialog1").PopupCentered();
 			}
+			*/
 		}
 
 		public void OnConnectDialogCloseRequested()

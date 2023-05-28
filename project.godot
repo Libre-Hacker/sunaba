@@ -30,8 +30,8 @@ Build="*res://core/Build.cs"
 ThemeManager="*res://core/ThemeManager.cs"
 Global="*res://core/Global.cs"
 ScaleManager="*res://core/ScaleManager.cs"
-Settings="*res://core/Settings.cs"
 PConsole="*res://core/Console.cs"
+Console="*res://addons/panku_console/console.tscn"
 
 [debug]
 
@@ -46,6 +46,7 @@ multirun/other_window_args="join"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/subwindows/embed_subwindows=false
 window/dpi/allow_hidpi=false
 window/size/width=800
 
@@ -60,7 +61,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/qodot/plugin.cfg", "res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/panku_console/plugin.cfg")
 
 [filesystem]
 
@@ -292,6 +293,11 @@ fly_mode_toggle={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":89,"key_label":0,"unicode":121,"echo":false,"script":null)
 ]
 }
+toggle_console={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":96,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
 
 [input_devices]
 
@@ -301,6 +307,10 @@ pointing/emulate_touch_from_mouse=true
 
 locale_filter=[1, ["en", "es", "ja"]]
 translations=PackedStringArray()
+
+[panku]
+
+toggle_console_action="toggle_console"
 
 [physics]
 

@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://coxkdgt58jr31"]
+
+[ext_resource type="Script" path="res://Runtime/Launcher.cs" id="1_48v4b"]
+[ext_resource type="FontFile" uid="uid://c6atve04s7ete" path="res://assets/fonts/BalooChettan2-Bold.ttf" id="1_ajb25"]
+
+[node name="Launcher" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48v4b")
+
+[node name="Topbar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Topbar"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = 135.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ajb25")
+theme_override_font_sizes/font_size = 24
+text = "sunaba"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="Control/TabBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/TabBar/TabContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Control/TabBar/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="Control/TabBar/TabContainer"]
+visible = false
+layout_mode = 2

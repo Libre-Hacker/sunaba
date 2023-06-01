@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://kmm5126efhc1"]
+[gd_scene load_steps=23 format=3 uid="uid://kmm5126efhc1"]
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://h3h33hdtenhj" path="res://assets/ui/tango/32x32/categories/applications-system.png" id="11_kfdd1"]
 [ext_resource type="PackedScene" uid="uid://cbpb3x1xtj73g" path="res://CharacterSystem/src/main.tscn" id="12_1y7j4"]
 [ext_resource type="Texture2D" uid="uid://dl7mhirmlm82b" path="res://assets/ui/tango/32x32/actions/system-log-out.png" id="12_bvo12"]
+[ext_resource type="Texture2D" uid="uid://4g1mmftt6ysa" path="res://assets/ui/tango/32x32/status/network-transmit.png" id="14_7ja1e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
@@ -205,7 +206,6 @@ flat = true
 alignment = 0
 
 [node name="MainMenu" type="Control" parent="UI"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -314,14 +314,13 @@ flat = true
 alignment = 0
 
 [node name="Button1" type="Button" parent="UI/MainMenu/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = " Connect"
-icon = ExtResource("9_bjejk")
+icon = ExtResource("14_7ja1e")
 flat = true
 alignment = 0
 
@@ -384,7 +383,7 @@ access = 2
 filters = PackedStringArray("*.map")
 show_hidden_files = true
 
-[node name="ConnectDialog" type="Window" parent="UI"]
+[node name="ConnectDialog" type="Window" parent="UI" node_paths=PackedStringArray("networkManager")]
 initial_position = 2
 title = "Connect"
 size = Vector2i(410, 287)
@@ -392,6 +391,7 @@ visible = false
 min_size = Vector2i(410, 287)
 max_size = Vector2i(410, 287)
 script = ExtResource("9_y4502")
+networkManager = NodePath("../../NetworkManager")
 
 [node name="Connect" parent="UI/ConnectDialog" instance=ExtResource("10_sl8b6")]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://m342wmd40md8" path="res://trenchbroom/fgd.tres" id="1_7ejqi"]
 [ext_resource type="Resource" uid="uid://drs2qwlkyiceg" path="res://trenchbroom/trenchbroom_config_file.tres" id="2_aj5a0"]
-[ext_resource type="Texture2D" uid="uid://bqdr1xr7bt1wd" path="res://assets/icon.png" id="3_ykdv5"]
+[ext_resource type="Texture2D" uid="uid://bqdr1xr7bt1wd" path="res://assets/Icon.png" id="3_ykdv5"]
 [ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_game_config_folder.gd" id="4_abrc7"]
 
 [resource]

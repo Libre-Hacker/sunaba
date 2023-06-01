@@ -19,6 +19,7 @@ The AddBots and AddBot methods are not fully implemented and are left as exercis
  */
 
 using Godot;
+using Godot.Collections;
 using System;
 using Sunaba.Actors;
 
@@ -107,14 +108,14 @@ namespace Sunaba.Core
         }
 
         [Rpc(MultiplayerApi.RpcMode.AnyPeer)]
-        public void LoadMapRemote()
-		{
-			LoadMap(GetNode<MapHolder>("MapHolder").map);
+        public void LoadMapRemote(String mapPath)
+        {
+	        LoadMap(mapPath);
 		}
 
         public void OnRespawnTimerTimeout()
 		{
-            //main.LogToChat("Respawning Player");
+            main.LogToChat("Spawning Player");
             if ( global.flyMode == false )
             {
 	            int id = Multiplayer.GetUniqueId();
@@ -148,13 +149,14 @@ namespace Sunaba.Core
 
             String gameMode = global.Get("game_mode").As<string>();
 
+            main.LogToChat(global.spawnpoints.ToString());
 			Vector3 spawnpoint = global.GetSpawnpoints();
             playerInstance.GlobalPosition = spawnpoint;
         }
 
 		public void PlayerJoined(int id)
 		{
-			RpcId(id, "LoadMapRemote");
+			RpcId(id, "LoadMapRemote", main.path);
 		}
 
 		private void AddBots()

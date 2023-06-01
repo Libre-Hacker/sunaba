@@ -49,7 +49,7 @@ tree_attach_batch_size = null
 set_owner_batch_size = 1000
 
 [node name="RespawnTimer" type="Timer" parent="."]
-wait_time = 0.75
+wait_time = 3.0
 one_shot = true
 
 [node name="OutOfBounds" type="Area3D" parent="."]

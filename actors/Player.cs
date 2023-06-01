@@ -80,9 +80,9 @@ namespace Sunaba.Actors
 		public Camera3D fpCamera;
 		[Export]
 		public Camera3D tpCamera;
-        [Export]
-        public PlayerModel model;
-        [Export]
+		[Export]
+		public PlayerModel model;
+		[Export]
 		public Node3D headPos;
 		[Export]
 		public Node3D akari;
@@ -100,11 +100,11 @@ namespace Sunaba.Actors
 		public RayCast3D fpReach;
 		[Export]
 		public RayCast3D tpReach;
-        [Export]
-        public RayCast3D fpSwordRange;
-        [Export]
-        public RayCast3D tpSwordRange;
-        [Export]
+		[Export]
+		public RayCast3D fpSwordRange;
+		[Export]
+		public RayCast3D tpSwordRange;
+		[Export]
 		public RayCast3D fpAimCast;
 		[Export]
 		public RayCast3D tpAimCast;
@@ -187,13 +187,18 @@ namespace Sunaba.Actors
 				playerPanel.Show();
 				toolPanel.Show();
 
-                Console console = GetNode<Console>("/root/PConsole");
-                console.Register((string) Name, this);
-            }
+				Console console = GetNode<Console>("/root/PConsole");
+				console.Register((string) Name, this);
+			}
+			else
+			{
+				crosshair.Hide();
+				playerPanel.Hide();
+			}
 			fpCamera.Current = IsMultiplayerAuthority();
 			tpCamera.Current = false;
 			//GetParent<World>().GetNode<Area3D>("OutOfBounds").BodyEntered += OutOfBounds;
-            
+			
 			reloadLabel.Hide();
 			toolPanel.Hide();
 			speed = defaultSpeed;
@@ -385,6 +390,25 @@ namespace Sunaba.Actors
 				{
 					crosshair.Hide();
 				}
+				if (global.showUI == true)
+				{
+					crosshair.Show();
+					playerPanel.Show();
+					if (currentTool == 0)
+					{
+						toolPanel.Hide();
+					}
+					else
+					{
+						toolPanel.Show();
+					}
+				}
+				else
+				{
+					crosshair.Hide();
+					playerPanel.Hide();
+					toolPanel.Hide();
+				}
 			}
 			if (tpCamera.Current == true)
 			{
@@ -393,26 +417,6 @@ namespace Sunaba.Actors
 			else if (fpCamera.Current == true && IsMultiplayerAuthority())
 			{
 				model.Visible = false;
-            }
-
-			if (global.showUI == true)
-			{
-				crosshair.Show();
-				playerPanel.Show();
-				if (currentTool == 0)
-				{
-					toolPanel.Hide();
-				}
-				else
-				{
-					toolPanel.Show();
-				}
-			}
-			else
-			{
-				crosshair.Hide();
-				playerPanel.Hide();
-				toolPanel.Hide();
 			}
 		}
 
@@ -464,50 +468,50 @@ namespace Sunaba.Actors
 					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
 				}
 				else if (speed == crouchMoveSpeed && IsOnFloor())
-                {
-                    animationPlayer.Play("crouch_library/crouch_walk");
-                    Vector3 modelPosition = model.Position;
-                    modelPosition.Y = (float)0.175;
-                    model.Position = modelPosition;
-                    akari.Position = Vector3.Zero;
-                    akari.Rotation = Vector3.Zero;
-                    if (canPlayWalkSound)
-                    {
-                        walkSound.Stream = footSounds.PickRandom();
-                        walkSound.Play();
-                        walkTimer.Start();
-                        canPlayWalkSound = false;
-                    }
-                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-                }
+				{
+					animationPlayer.Play("crouch_library/crouch_walk");
+					Vector3 modelPosition = model.Position;
+					modelPosition.Y = (float)0.175;
+					model.Position = modelPosition;
+					akari.Position = Vector3.Zero;
+					akari.Rotation = Vector3.Zero;
+					if (canPlayWalkSound)
+					{
+						walkSound.Stream = footSounds.PickRandom();
+						walkSound.Play();
+						walkTimer.Start();
+						canPlayWalkSound = false;
+					}
+					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+				}
 				else if (speed == sprintSpeed && IsOnFloor())
-                {
-                    animationPlayer.Play("Locomotion-Library/run");
-                    Vector3 modelPosition = model.Position;
-                    modelPosition.Y = 0;
-                    model.Position = modelPosition;
-                    akari.Position = Vector3.Zero;
-                    akari.Rotation = Vector3.Zero;
-                    if (canPlayWalkSound)
-                    {
-                        walkSound.Stream = footSounds.PickRandom();
-                        walkSound.Play();
-                        walkTimer.Start();
-                        canPlayWalkSound = false;
-                    }
-                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle_2");
-                }
+				{
+					animationPlayer.Play("Locomotion-Library/run");
+					Vector3 modelPosition = model.Position;
+					modelPosition.Y = 0;
+					model.Position = modelPosition;
+					akari.Position = Vector3.Zero;
+					akari.Rotation = Vector3.Zero;
+					if (canPlayWalkSound)
+					{
+						walkSound.Stream = footSounds.PickRandom();
+						walkSound.Play();
+						walkTimer.Start();
+						canPlayWalkSound = false;
+					}
+					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle_2");
+				}
 				else if (!IsOnFloor())
 				{
 					animationPlayer.Play("Locomotion-Library/jump");
-                    Vector3 modelPosition = model.Position;
-                    modelPosition.Y = 0;
-                    model.Position = modelPosition;
-                    akari.Position = Vector3.Zero;
-                    akari.Rotation = Vector3.Zero;
-                    if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
-                }
-            }
+					Vector3 modelPosition = model.Position;
+					modelPosition.Y = 0;
+					model.Position = modelPosition;
+					akari.Position = Vector3.Zero;
+					akari.Rotation = Vector3.Zero;
+					if (!isReloading && gunAnimationPlayer.CurrentAnimation == "fire") gunAnimationPlayer.Play("idle");
+				}
+			}
 
 			if (IsMultiplayerAuthority() || !global.isNetworkedGame)
 			{
@@ -538,7 +542,7 @@ namespace Sunaba.Actors
 				}
 
 				sprintingIcon.Hide();
-                
+				
 				
 				if (Input.IsActionPressed("sprint"))
 				{
@@ -557,12 +561,12 @@ namespace Sunaba.Actors
 
 					speed = crouchMoveSpeed;
 					walkTimer.WaitTime = (float)0.8;
-                    Vector3 modelPosition = model.Position;
-                    modelPosition.Y = (float)0.175;
-                    model.Position = modelPosition;
-                }
+					Vector3 modelPosition = model.Position;
+					modelPosition.Y = (float)0.175;
+					model.Position = modelPosition;
+				}
 				else
-                {
+				{
 					Shape3D shape3D = collisionShape.Shape;
 					if (shape3D is CapsuleShape3D capsule)
 					{
@@ -571,7 +575,7 @@ namespace Sunaba.Actors
 					Vector3 modelPosition = model.Position;
 					modelPosition.Y = 0;
 					model.Position = modelPosition;
-                }
+				}
 				
 
 				ApplyMovement(Direction, delta);
@@ -581,12 +585,18 @@ namespace Sunaba.Actors
 
 				UpDirection = Vector3.Up;
 				FloorStopOnSlope = true;
-                MaxSlides = 4;
+				MaxSlides = 4;
 				FloorMaxAngle = (float).7853;
 				MoveAndSlide();
 				ProcessCollisions();
 				vel = Velocity;
-            }
+			}
+			else
+			{
+				playerPanel.Hide();
+				toolPanel.Hide();
+				crosshair.Hide();
+			}
 
 			if (IsOnFloor())
 			{
@@ -620,8 +630,8 @@ namespace Sunaba.Actors
 			}
 			else
 			{
-                toolToSpawn = null;
-            }*/
+				toolToSpawn = null;
+			}*/
 
 			if (toolType == "Semi")
 			{
@@ -644,79 +654,79 @@ namespace Sunaba.Actors
 				}
 			}
 			else if (toolType == "Auto")
-            {
-                if (Input.IsActionPressed("action_button"))
-                {
-                    if (hand.GetChildCount() > 0)
-                    {
-                        if (hand.GetChild(0) != null)
-                        {
-                            if (!hasFired)
-                            {
-                                Fire();
-                            }
-                        }
-                    }
-                }
-            }
-            else if (toolType == "Shotgun")
-            {
-                if (Input.IsActionJustPressed("action_button"))
-                {
-                    if (hand.GetChildCount() > 0)
-                    {
-                        if (hand.GetChild(0) != null)
-                        {
-                            if (!hasFired)
-                            {
+			{
+				if (Input.IsActionPressed("action_button"))
+				{
+					if (hand.GetChildCount() > 0)
+					{
+						if (hand.GetChild(0) != null)
+						{
+							if (!hasFired)
+							{
+								Fire();
+							}
+						}
+					}
+				}
+			}
+			else if (toolType == "Shotgun")
+			{
+				if (Input.IsActionJustPressed("action_button"))
+				{
+					if (hand.GetChildCount() > 0)
+					{
+						if (hand.GetChild(0) != null)
+						{
+							if (!hasFired)
+							{
 								FireShotgun();
-                            }
-                        }
-                    }
-                }
-                else if (Input.IsActionJustReleased("action_button"))
-                {
-                    hasFired = false;
-                }
-            }
+							}
+						}
+					}
+				}
+				else if (Input.IsActionJustReleased("action_button"))
+				{
+					hasFired = false;
+				}
+			}
 			else if (toolType == "Spray")
-            {
-                if (Input.IsActionPressed("action_button"))
-                {
-                    if (hand.GetChildCount() > 0)
-                    {
-                        if (hand.GetChild(0) != null)
-                        {
-                            if (!hasFired)
-                            {
-                                Spray();
-                            }
-                        }
-                    }
-                }
-            }
+			{
+				if (Input.IsActionPressed("action_button"))
+				{
+					if (hand.GetChildCount() > 0)
+					{
+						if (hand.GetChild(0) != null)
+						{
+							if (!hasFired)
+							{
+								Spray();
+							}
+						}
+					}
+				}
+			}
 			else if (toolType == "Melee")
-            {
-                if (Input.IsActionJustPressed("action_button"))
-                {
-                    if (hand.GetChildCount() > 0)
-                    {
-                        if (hand.GetChild(0) != null)
-                        {
-                            if (!hasFired)
-                            {
-                                Swing();
-                            }
-                        }
-                    }
-                }
-                else if (Input.IsActionJustReleased("action_button"))
-                {
-                    hasFired = false;
-                }
-            }
+			{
+				if (Input.IsActionJustPressed("action_button"))
+				{
+					if (hand.GetChildCount() > 0)
+					{
+						if (hand.GetChild(0) != null)
+						{
+							if (!hasFired)
+							{
+								Swing();
+							}
+						}
+					}
+				}
+				else if (Input.IsActionJustReleased("action_button"))
+				{
+					hasFired = false;
+				}
+			}
 
-            if (global.gameMode == "Sandbox")
+			if (global.gameMode == "Sandbox")
 			{
 				if (Input.IsActionJustReleased("menu2") && !sbMenuWindow.Visible)
 				{
@@ -728,8 +738,8 @@ namespace Sunaba.Actors
 					HideSBMenu();
 				}
 
-            }
-        }
+			}
+		}
 		
 		public void ProcessCollisions()
 		{
@@ -846,8 +856,8 @@ namespace Sunaba.Actors
 		private void ApplyControllerRotation()
 		{
 			Vector2 axisVector = Vector2.Zero;
-            axisVector.X = Input.GetActionStrength("look_right") - Input.GetActionStrength("look_left");
-            axisVector.Y = Input.GetActionStrength("look_down") - Input.GetActionStrength("look_up");
+			axisVector.X = Input.GetActionStrength("look_right") - Input.GetActionStrength("look_left");
+			axisVector.Y = Input.GetActionStrength("look_down") - Input.GetActionStrength("look_up");
 
 			if (InputEvent is InputEventJoypadMotion)
 			{
@@ -855,7 +865,7 @@ namespace Sunaba.Actors
 				rotation.Y -= axisVector.X * controllerSensitivity * (float).001;
 				head.Rotation
 			}
-        }*/
+		}*/
 
 		/*
 		func apply_controller_rotation():
@@ -917,99 +927,99 @@ namespace Sunaba.Actors
 			}
 		}
 
-        private void FireShotgun()
-        {
-            if (!isReloading && ammo != 0)
-            {
-                ammo -= 1;
-                hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
-                gunAnimationPlayer.Stop();
-                gunAnimationPlayer.Play("fire");
-                if (aimCast.IsColliding())
-                {
-                    foreach(RayCast3D ray in fpRayContainer.GetChildren())
+		private void FireShotgun()
+		{
+			if (!isReloading && ammo != 0)
+			{
+				ammo -= 1;
+				hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
+				gunAnimationPlayer.Stop();
+				gunAnimationPlayer.Play("fire");
+				if (aimCast.IsColliding())
+				{
+					foreach(RayCast3D ray in fpRayContainer.GetChildren())
 					{
-                        Vector3 targetPosition = ray.TargetPosition;
-                        targetPosition.X = GD.RandRange(spread, -spread);
-                        targetPosition.Y = GD.RandRange(spread, -spread);
-                        ray.TargetPosition = targetPosition;
-                        var target = ray.GetCollider();
-                        if (target != null)
-                        {
-                            if (target is Player player)
-                            {
-                                int id = player.Name.ToString().ToInt();
-                                player.RpcId(id, "take_damage", damage);
-                            }
-                            else
-                            {
-                                String decalPath = hand.GetChild<Tool>(0).decalPath;
-                                AddBulletHole(decalPath, aimCast);
-                            }
-                        }
-                    }
-                }
-                hasFired = true;
-                if (toolType == "Auto")
-                {
-                    fireTimer.Start();
-                }
-            }
-        }
+						Vector3 targetPosition = ray.TargetPosition;
+						targetPosition.X = GD.RandRange(spread, -spread);
+						targetPosition.Y = GD.RandRange(spread, -spread);
+						ray.TargetPosition = targetPosition;
+						var target = ray.GetCollider();
+						if (target != null)
+						{
+							if (target is Player player)
+							{
+								int id = player.Name.ToString().ToInt();
+								player.RpcId(id, "take_damage", damage);
+							}
+							else
+							{
+								String decalPath = hand.GetChild<Tool>(0).decalPath;
+								AddBulletHole(decalPath, aimCast);
+							}
+						}
+					}
+				}
+				hasFired = true;
+				if (toolType == "Auto")
+				{
+					fireTimer.Start();
+				}
+			}
+		}
 
 		private void Spray()
 		{
 			if (!isReloading && ammo == 0)
 			{
-                ammo -= 1;
-                hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
-                if (aimCast.IsColliding())
-                {
-                    String decalPath = hand.GetChild<Tool>(0).decalPath;
-                    AddBulletHole(decalPath, aimCast);
-                }
-            }
-            hasFired = true;
-            if (toolType == "Auto")
-            {
-                fireTimer.Start();
-            }
-        }
+				ammo -= 1;
+				hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
+				if (aimCast.IsColliding())
+				{
+					String decalPath = hand.GetChild<Tool>(0).decalPath;
+					AddBulletHole(decalPath, aimCast);
+				}
+			}
+			hasFired = true;
+			if (toolType == "Auto")
+			{
+				fireTimer.Start();
+			}
+		}
 
-        private void Swing()
-        {
-            if (!isReloading && ammo != 0)
-            {
-                ammo -= 1;
-                hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
-                gunAnimationPlayer.Stop();
-                gunAnimationPlayer.Play("swing");
-                if (fpSwordRange.IsColliding())
-                {
-                    var target = fpSwordRange.GetCollider();
-                    if (target != null)
-                    {
-                        if (target is Player player)
-                        {
-                            int id = player.Name.ToString().ToInt();
-                            player.RpcId(id, "take_damage", damage);
-                        }
-                        else
-                        {
-                            String decalPath = hand.GetChild<Tool>(0).decalPath;
-                            AddBulletHole(decalPath, fpSwordRange);
-                        }
-                    }
-                }
-                hasFired = true;
-                if (toolType == "Auto")
-                {
-                    fireTimer.Start();
-                }
-            }
-        }
+		private void Swing()
+		{
+			if (!isReloading && ammo != 0)
+			{
+				ammo -= 1;
+				hand.GetChild(0).GetNode<AudioStreamPlayer>("WeaponSound").Play();
+				gunAnimationPlayer.Stop();
+				gunAnimationPlayer.Play("swing");
+				if (fpSwordRange.IsColliding())
+				{
+					var target = fpSwordRange.GetCollider();
+					if (target != null)
+					{
+						if (target is Player player)
+						{
+							int id = player.Name.ToString().ToInt();
+							player.RpcId(id, "take_damage", damage);
+						}
+						else
+						{
+							String decalPath = hand.GetChild<Tool>(0).decalPath;
+							AddBulletHole(decalPath, fpSwordRange);
+						}
+					}
+				}
+				hasFired = true;
+				if (toolType == "Auto")
+				{
+					fireTimer.Start();
+				}
+			}
+		}
 
-        public void OutOfBounds(Area3D area)
+		public void OutOfBounds(Area3D area)
 		{
 			if (GlobalPosition.Y < -250)
 			{
@@ -1070,7 +1080,7 @@ namespace Sunaba.Actors
 			String tool = "res://tools/" + toolName + ".tscn";
 			HideSBMenu();
 			AddTool(tool);
-        }
+		}
 
 		private void AddTool(String toolName)
 		{
@@ -1084,8 +1094,8 @@ namespace Sunaba.Actors
 			{
 				tool2 = toolName;
 				Equip(tool2);
-                currentTool = 2;
-            }
+				currentTool = 2;
+			}
 			else if (tool3 == null)
 			{
 				tool3 = toolName;

@@ -465,6 +465,7 @@ shape = SubResource("CapsuleShape3D_ehqc2")
 [node name="Hud" type="Node" parent="."]
 
 [node name="Panel" type="Panel" parent="Hud"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -541,6 +542,7 @@ grow_horizontal = 0
 texture = ExtResource("7_aigaw")
 
 [node name="ToolPanel" type="Panel" parent="Hud"]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

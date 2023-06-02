@@ -128,7 +128,7 @@ func _ready():
 	#add_item("lunar_silver")
 	
 
-func _process(delta):
+func _process(_delta):
 	Global.headwear = headwear
 	Global.skinColor = skin_color
 	Global.faceTexture = face_texture
@@ -148,9 +148,9 @@ func add_item(item : String):
 func add_headwear(hw : String):
 	create_item(hw_tree, hw)
 
-func create_item(tree : Tree, name : String):
+func create_item(tree : Tree, _name : String):
 	var item = tree.create_item()
-	item.set_text(0, name)
+	item.set_text(0, _name)
 
 func get_headwear_model(model_name : String):
 	var path = "res:///CharacterSystem/headwear/" + model_name + ".tscn"
@@ -166,13 +166,13 @@ func get_clothing_texture(texture_name : String):
 		path = "res:///CharacterSystem/textures/" + skin_color + ".png"
 	return path
 
-func change_texture(material, texture_path):
+func change_texture(_material, texture_path):
 	var texture = load(texture_path)
-	base_mesh.get_surface_override_material(material).albedo_texture = texture
+	base_mesh.get_surface_override_material(_material).albedo_texture = texture
 
 
-func change_face_texture(name):
-	face_texture = name + "_xl"
+func change_face_texture(_name):
+	face_texture = _name + "_xl"
 	change_texture(face_material, get_face_texture(face_texture))
 
 

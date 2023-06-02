@@ -164,11 +164,9 @@ namespace Sunaba.Actors
 		public override void _EnterTree()
 		{
 			global = GetNode<Global>("/root/Global/");
-			if (global.isNetworkedGame)
-			{
-				int playerId = Name.ToString().ToInt();
-				SetMultiplayerAuthority(playerId);
-			}
+			
+			int playerId = Name.ToString().ToInt();
+			SetMultiplayerAuthority(playerId);
 		}
 
 		// Called when the node enters the scene tree for the first time.
@@ -176,6 +174,8 @@ namespace Sunaba.Actors
 		{
 			if (IsMultiplayerAuthority() || !global.isNetworkedGame)
 			{
+				Vector3 spawnpoint = global.GetSpawnpoints();
+				GlobalPosition = spawnpoint;
 				Input.MouseMode = Input.MouseModeEnum.Captured;
 				reach = fpReach;
 				aimCast = fpAimCast;

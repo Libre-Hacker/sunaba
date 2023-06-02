@@ -150,9 +150,7 @@ namespace Sunaba.Core
             String gameMode = global.Get("game_mode").As<string>();
 
             main.LogToChat(global.spawnpoints.ToString());
-			Vector3 spawnpoint = global.GetSpawnpoints();
-            playerInstance.GlobalPosition = spawnpoint;
-        }
+		}
 
 		public void PlayerJoined(int id)
 		{

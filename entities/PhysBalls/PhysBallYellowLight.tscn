@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://mef2x54jcmur"]
+[gd_scene load_steps=6 format=3 uid="uid://mef2x54jcmur"]
 
 [ext_resource type="Texture2D" uid="uid://belbe0k776l15" path="res://textures/blockout/yellow_light_check.png" id="1_0f6f6"]
+[ext_resource type="Script" path="res://entities/PhysBalls/PhysBall.cs" id="1_vd05v"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_2m32a"]
 
@@ -11,6 +12,7 @@ albedo_texture = ExtResource("1_0f6f6")
 
 [node name="RigidBody3D" type="RigidBody3D"]
 can_sleep = false
+script = ExtResource("1_vd05v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

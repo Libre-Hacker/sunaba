@@ -21,8 +21,6 @@ namespace Sunaba.Entities
 		Script script = new Script();
 
 		Timer timer;
-		
-		bool canExecute = false;
 
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
@@ -72,39 +70,13 @@ namespace Sunaba.Entities
 					}
 				}
 
-				if (npcScript.Contains(".lua"))
-				{
-					FileAccess luaScript = FileAccess.Open(scriptPath, FileAccess.ModeFlags.Read);
-					Print(scriptPath);
-					Print(luaScript.GetAsText());
-					script.Globals["print"] = (Print);
-					script.Globals["setYPosition"] = (SetYPosition);
-					script.DoString(luaScript.GetAsText());
-					script.Call(script.Globals["start"]);
-				}
-				else if (npcScript.Contains(".cs"))
+				if (npcScript.Contains(".cs"))
 				{
 					var npc = ResourceLoader.Load<CSharpScript>(scriptPath).New();
 					AddChild(npc.As<NPC>());
 				}
-
-				canExecute = true;
 			}
 			
-		}
-
-		public override void _Process(double delta)
-		{
-			if (canExecute == false) return;
-		
-			//script.Call(script.Globals["update"]);
-		}
-
-		public override void _PhysicsProcess(double delta)
-		{
-			if (canExecute == false) return;
-		
-			//script.Call(script.Globals["physicsUpdate"]);
 		}
 
 		void SetYPosition(double yPos)

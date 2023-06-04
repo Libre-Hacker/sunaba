@@ -5,8 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cw4gnyn5s8sh4" path="res://core/World.tscn" id="3_ptygb"]
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
-[ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/SunabaLogoWhite.png" id="6_q0jy5"]
-[ext_resource type="Texture2D" uid="uid://nt1rysofe2eh" path="res://assets/sbgirl2.png" id="8_8u70e"]
+[ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
 [ext_resource type="Texture2D" uid="uid://ckkej6m32knbr" path="res://assets/bg2.png" id="8_pg1aa"]
 [ext_resource type="Texture2D" uid="uid://cralqs2d4nvhx" path="res://assets/ui/tango/32x32/actions/media-playback-start.png" id="9_bjejk"]
 [ext_resource type="Texture2D" uid="uid://dp86j66212ned" path="res://assets/ui/tango/32x32/status/network-offline.png" id="9_grui2"]
@@ -24,6 +23,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmqc6"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig20j")
@@ -62,67 +65,34 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n63q7")
 
-[node name="Control" type="Control" parent="UI/PauseMenu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu/Control"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="UI/PauseMenu/Control/ColorRect"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -1.0
-offset_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "v0.0.0.0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_fu8ap")
-
-[node name="TextureRect" type="TextureRect" parent="UI/PauseMenu/Control"]
+[node name="Label" type="Label" parent="UI/PauseMenu"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -441.0
-offset_top = -339.0
-offset_right = 236.0
-offset_bottom = 53.0
+offset_left = -78.0
+offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("8_8u70e")
-expand_mode = 1
-flip_h = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "v0.0.0.0"
+label_settings = SubResource("LabelSettings_kmqc6")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_fu8ap")
 
 [node name="Logo" type="TextureRect" parent="UI/PauseMenu"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = -67.0
-offset_right = 146.0
-offset_bottom = -33.0
+offset_left = 37.0
+offset_top = -44.0
+offset_right = 152.0
+offset_bottom = -15.0
 grow_vertical = 0
 texture = ExtResource("6_q0jy5")
 expand_mode = 1
@@ -133,10 +103,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 35.0
-offset_top = -314.0
-offset_right = 213.0
-offset_bottom = -69.0
+offset_left = 32.0
+offset_top = -292.0
+offset_right = 210.0
+offset_bottom = -47.0
 grow_vertical = 0
 alignment = 2
 
@@ -224,67 +194,34 @@ texture = ExtResource("8_pg1aa")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Control" type="Control" parent="UI/MainMenu/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="UI/MainMenu/TextureRect/Control"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -24.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="UI/MainMenu/TextureRect/Control/ColorRect"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -78.0
-offset_top = -1.0
-offset_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "v0.0.0.0"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("5_fu8ap")
-
-[node name="TextureRect" type="TextureRect" parent="UI/MainMenu/TextureRect/Control"]
+[node name="Label" type="Label" parent="UI/MainMenu"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -441.0
-offset_top = -339.0
-offset_right = 236.0
-offset_bottom = 53.0
+offset_left = -78.0
+offset_top = -26.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("8_8u70e")
-expand_mode = 1
-flip_h = true
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "v0.0.0.0"
+label_settings = SubResource("LabelSettings_kmqc6")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_fu8ap")
 
 [node name="Logo" type="TextureRect" parent="UI/MainMenu"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = -67.0
-offset_right = 146.0
-offset_bottom = -33.0
+offset_left = 37.0
+offset_top = -44.0
+offset_right = 152.0
+offset_bottom = -15.0
 grow_vertical = 0
 texture = ExtResource("6_q0jy5")
 expand_mode = 1
@@ -295,10 +232,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 35.0
-offset_top = -197.0
-offset_right = 213.0
-offset_bottom = -69.0
+offset_left = 32.0
+offset_top = -263.0
+offset_right = 210.0
+offset_bottom = -47.0
 grow_vertical = 0
 alignment = 2
 

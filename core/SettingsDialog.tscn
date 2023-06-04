@@ -12,27 +12,10 @@ script = ExtResource("1_ixb6n")
 
 [node name="Control" parent="." instance=ExtResource("2_lyet8")]
 
-[node name="About" parent="Control/TabBar/TabContainer" index="1"]
-visible = true
-
 [node name="Label2" parent="Control/TabBar/TabContainer/About" index="0"]
 credits = PackedStringArray("m1ntkat - Creator and Lead Developer", "Kevin MacLeod - Music")
 
-[node name="ModelOptionButton" parent="Control/TabBar/TabContainer/Client/VBoxContainer/Label2" index="0"]
-item_count = 3
-popup/item_0/text = "Custom"
-popup/item_1/text = "Male"
-popup/item_2/text = "Female"
-popup/item_2/id = 2
-
-[node name="UI" parent="Control/TabBar/TabContainer" index="3"]
-visible = false
-
-[node name="ThemingOptionButton" parent="Control/TabBar/TabContainer/UI/VBoxContainer/ThemingOption/Label" index="0"]
-selected = -1
-
 [connection signal="close_requested" from="." to="." method="OnCloseRequested"]
-[connection signal="item_selected" from="Control/TabBar/TabContainer/Client/VBoxContainer/Label2/ModelOptionButton" to="." method="OnModelSelected"]
 [connection signal="item_selected" from="Control/TabBar/TabContainer/UI/VBoxContainer/ThemingOption/Label/ThemingOptionButton" to="." method="OnThemeSelected"]
 
 [editable path="Control"]

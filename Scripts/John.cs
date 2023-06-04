@@ -2,7 +2,7 @@ using Sunaba.Entities.Api;
 
 namespace Sunaba.Scripts;
 
-public partial class John : NPC
+public partial class John : NpcBehaviour
 {
     public override void Awake()
     {

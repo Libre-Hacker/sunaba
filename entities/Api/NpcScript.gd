@@ -1,0 +1,2 @@
+extends EntityScript
+class_name NpcScript

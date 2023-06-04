@@ -8,7 +8,7 @@ using Script = MoonSharp.Interpreter.Script;
 
 namespace Sunaba.Entities
 {
-	public partial class NpcNode : CharacterBody3D
+	public partial class Npc : CharacterBody3D
 	{
 		Console console;
 
@@ -73,7 +73,13 @@ namespace Sunaba.Entities
 				if (npcScript.Contains(".cs"))
 				{
 					var npc = ResourceLoader.Load<CSharpScript>(scriptPath).New();
-					AddChild(npc.As<NPC>());
+					AddChild(npc.As<NpcBehaviour>());
+				}
+				else if (npcScript.Contains(".gd"))
+				{
+					GDScript npcGDScript = ResourceLoader.Load<GDScript>(npcScript);
+					Node npc = (Node)npcGDScript.New();
+					AddChild(npc);
 				}
 			}
 			

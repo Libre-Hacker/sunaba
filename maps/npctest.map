@@ -138,3 +138,9 @@
 "classname" "ev_void"
 "origin" "152 -296 104"
 }
+// entity 4
+{
+"classname" "npc"
+"origin" "152 -488 24"
+"script" "Sam.gd"
+}

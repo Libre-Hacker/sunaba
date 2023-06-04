@@ -4,7 +4,7 @@ using Sunaba.Core;
 
 namespace Sunaba.Entities.Api;
 
-public partial class Entity : Node
+public partial class EntityBehaviour : Node
 {
     public Console console;
 

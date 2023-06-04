@@ -110,16 +110,14 @@ namespace Sunaba.Core
         // Called every frame. 'delta' is the elapsed time since the previous frame.
         public override void _Process(double delta)
 		{
-            var global = GetNode("/root/Global");
-			var gameStarted = global.Get("gameStarted");
-            var gamePaused = global.Get("gamePaused");
+            Global global = GetNode<Global>("/root/Global");
             ThemeManager themeManager = GetNode<ThemeManager>("/root/ThemeManager");
 
             Theme = themeManager.theme;
 
-			if (gameStarted.AsBool() == true)
+			if (global.gameStarted)
 			{
-                if (gamePaused.AsBool() == true)
+                if (global.gamePaused)
                 {
 					GetNode<Panel>("PauseMenu").Show();
                 }

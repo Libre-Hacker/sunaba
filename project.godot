@@ -61,7 +61,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/panku_console/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/qodot/plugin.cfg")
 
 [filesystem]
 

@@ -189,6 +189,21 @@ if target == "win32":
                     os.replace(output, destination)
             else:
                 print("makensis ran with exit code %d" % makensis)
+        elif sys.argv[2] == "innosetup":
+            print("Generating Windows Installer")
+            iscc = os.system("iscc ./installer.iss")
+
+            if iscc == 0:
+                print("iscc ran successfully")
+
+                isccout = "./bin/output.exe"
+                if os.path.exists(isccout):
+                    newname = "./bin/Sunaba-" + str(version) + "-Win32.exe"
+                    output = os.path.abspath(isccout)
+                    destination = os.path.abspath(str(newname))
+                    os.replace(output, destination)
+            else:
+                print("iscc ran with exit code %d" % iscc)
     
 elif target == "mac":
     outputzip = "./bin/macoutput.zip"

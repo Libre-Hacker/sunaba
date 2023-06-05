@@ -20,17 +20,20 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=C:\sunaba\licenses.txt
-InfoBeforeFile=C:\sunaba\info.txt
+LicenseFile=licenses.txt
+InfoBeforeFile=info.txt
 ; Remove the following line to run in administrative install mode (install for all users.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\sunaba\bin
+OutputDir=bin
 OutputBaseFilename=output
-SetupIconFile=C:\sunaba\assets\icon.ico
+SetupIconFile=assets/icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
+WizardImageFile=assets\wellcome.bmp
+WizardSmallImageFile=assets\icon.bmp
+DisableWelcomePage=no
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -39,8 +42,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\sunaba\binWin32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\sunaba\binWin32\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "binWin32\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "binWin32\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

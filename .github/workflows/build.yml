@@ -59,7 +59,7 @@ jobs:
         with:
           macos: python ./build.py mac
           linux: python ./build.py linux targz godot; python ./build.py linux zip skip; python ./build.py linux deb skip removedir;
-          windows: npm install makensis; python ./build.py win32 nsis C:\Users\runneradmin\godot\Godot_v4.0.3-stable_mono_win64\Godot_v4.0.3-stable_mono_win64.exe
+          windows: npm install innosetup-compiler; python ./build.py win32 innosetup C:\Users\runneradmin\godot\Godot_v4.0.3-stable_mono_win64\Godot_v4.0.3-stable_mono_win64.exe
       
       
       - name: Upload Artifact

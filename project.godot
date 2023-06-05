@@ -32,6 +32,7 @@ Global="*res://core/Global.cs"
 ScaleManager="*res://core/ScaleManager.cs"
 PConsole="*res://core/Console.cs"
 Console="*res://addons/panku_console/console.tscn"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 
 [debug]
 

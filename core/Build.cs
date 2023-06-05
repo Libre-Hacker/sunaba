@@ -44,12 +44,18 @@ namespace Sunaba.Core
                     value = value.Substring(index + BuildVersionMetadataPrefix.Length);
                     if (DateTime.TryParseExact(value, "yyyyMMddHHmmss", CultureInfo.InvariantCulture, DateTimeStyles.None, out var result))
                     {
-                        return result;
+                        return result.ToLocalTime();
                     }
                 }
             }
 
             return default;
+        }
+
+        public String GetEngineVersion()
+        {
+            var engineVersionInfo = Engine.GetVersionInfo();
+            return engineVersionInfo["string"].ToString();
         }
     }
 }

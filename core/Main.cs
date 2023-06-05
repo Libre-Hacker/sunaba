@@ -1,5 +1,4 @@
 using Godot;
-using MoonSharp.Interpreter;
 using System;
 
 /*
@@ -50,6 +49,7 @@ namespace Sunaba.Core
 			console.Print("Sunaba");
 			console.Print("Version " + build.versionNumber);
 			console.Print("Compiled on " + build.buildDate);
+			console.Print("Godot Version " + build.GetEngineVersion());
 			console.Print("");
 			
 			if (!OS.HasFeature("editor"))

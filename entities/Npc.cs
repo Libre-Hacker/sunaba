@@ -2,9 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 using System.Collections.Generic;
-using MoonSharp.Interpreter;
 using Sunaba.Entities.Api;
-using Script = MoonSharp.Interpreter.Script;
 
 namespace Sunaba.Entities
 {
@@ -17,8 +15,6 @@ namespace Sunaba.Entities
 
 		//[Export]
 		private String npcScript = "";
-
-		Script script = new Script();
 
 		Timer timer;
 

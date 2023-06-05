@@ -4,7 +4,7 @@
 !define PRODUCT_NAME "Sunaba"
 !define PRODUCT_VERSION "0.5.0"
 !define PRODUCT_PUBLISHER "mintkat"
-!define PRODUCT_WEB_SITE "https://thesunabaproject.github.io/"
+!define PRODUCT_WEB_SITE "https://sunaba.ga/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\Sunaba.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -16,7 +16,7 @@
 !define MUI_ABORTWARNING
 !define MUI_ICON "assets\icon.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-#!define MUI_WELCOMEFINISHPAGE_BITMAP "assets\welcome.bmp"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "assets\welcome.bmp"
 
 ; Welcome page
 !insertmacro MUI_PAGE_WELCOME
@@ -117,7 +117,6 @@ Section "Sunaba" SEC01
   File "binWin32\data_Sunaba_x86_32\Microsoft.VisualBasic.dll"
   File "binWin32\data_Sunaba_x86_32\Microsoft.Win32.Primitives.dll"
   File "binWin32\data_Sunaba_x86_32\Microsoft.Win32.Registry.dll"
-  File "binWin32\data_Sunaba_x86_32\MoonSharp.Interpreter.dll"
   File "binWin32\data_Sunaba_x86_32\mscordaccore.dll"
   #File "binWin32\data_Sunaba_x86_32\mscordaccore_x86_x86_6.0.1523.11507.dll"
   File "binWin32\data_Sunaba_x86_32\mscordbi.dll"
@@ -289,22 +288,6 @@ Section "Sunaba" SEC01
   File "binWin32\data_Sunaba_x86_32\System.Xml.XPath.XDocument.dll"
   File "binWin32\data_Sunaba_x86_32\ucrtbase.dll"
   File "binWin32\data_Sunaba_x86_32\WindowsBase.dll"
-  File "binWin32\data_Sunaba_x86_32\Jint.dll"
-  File "binWin32\data_Sunaba_x86_32\Esprima.dll"
-SectionEnd
-
-Section "Maps" SEC02
-  SetOutPath "$INSTDIR"
-  File "maps\base.map"
-  File "maps\city.map"
-  File "maps\construct.map"
-  File "maps\dm_test.map"
-  File "maps\dust2.map"
-  File "maps\musictest1.map"
-  File "maps\musictest2.map"
-  File "maps\npctest.map"
-  File "maps\paradise.map"
-  File "maps\range.map"
 SectionEnd
 
 Section -AdditionalIcons
@@ -345,23 +328,6 @@ Section Uninstall
   Delete "$INSTDIR\${PRODUCT_NAME}.url"
   Delete "$INSTDIR\uninst.exe"
   Delete "$INSTDIR\txtscale.txt"
-  Delete "$INSTDIR\range.map.import"
-  Delete "$INSTDIR\range.map"
-  Delete "$INSTDIR\paradise.map.import"
-  Delete "$INSTDIR\paradise.map"
-  Delete "$INSTDIR\npctest.map"
-  Delete "$INSTDIR\musictest2.map"
-  Delete "$INSTDIR\musictest1.map"
-  Delete "$INSTDIR\dust2.map.import"
-  Delete "$INSTDIR\dust2.map"
-  Delete "$INSTDIR\dm_test.map.import"
-  Delete "$INSTDIR\dm_test.map"
-  Delete "$INSTDIR\construct.map.import"
-  Delete "$INSTDIR\construct.map"
-  Delete "$INSTDIR\city.map.import"
-  Delete "$INSTDIR\city.map"
-  Delete "$INSTDIR\base.map.import"
-  Delete "$INSTDIR\base.map"
   Delete "$INSTDIR\data_Sunaba_x86_32\WindowsBase.dll"
   Delete "$INSTDIR\data_Sunaba_x86_32\ucrtbase.dll"
   Delete "$INSTDIR\data_Sunaba_x86_32\System.Xml.XPath.XDocument.dll"
@@ -533,7 +499,6 @@ Section Uninstall
   Delete "$INSTDIR\data_Sunaba_x86_32\mscordbi.dll"
   Delete "$INSTDIR\data_Sunaba_x86_32\mscordaccore_x86_x86_6.0.1523.11507.dll"
   Delete "$INSTDIR\data_Sunaba_x86_32\mscordaccore.dll"
-  Delete "$INSTDIR\data_Sunaba_x86_32\MoonSharp.Interpreter.dll"
   Delete "$INSTDIR\data_Sunaba_x86_32\Microsoft.Win32.Registry.dll"
   Delete "$INSTDIR\data_Sunaba_x86_32\Microsoft.Win32.Primitives.dll"
   Delete "$INSTDIR\data_Sunaba_x86_32\Microsoft.VisualBasic.dll"

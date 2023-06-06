@@ -21,6 +21,7 @@ boot_splash/image="res://assets/splashscreen.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://assets/Icon.png"
+config/windows_native_icon="res://assets/icon.ico"
 boot_splash/minimum_display_time=10000
 
 [autoload]
@@ -46,6 +47,7 @@ multirun/other_window_args="join"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
+window/subwindows/embed_subwindows=false
 window/dpi/allow_hidpi=false
 window/size/width=800
 

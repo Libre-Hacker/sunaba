@@ -6,6 +6,8 @@ a 3D sandbox game with user-generated map support. Powered by Godot 4.
 
 [Discord Server](https://discord.gg/cbKbJtvKPd)
 
+![Screenshot](https://github.com/TheSunabaProject/sunaba/blob/main/assets/screenshot.png?raw=true)
+
 ## Features
 
 * User-generated map support

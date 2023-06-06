@@ -14,6 +14,16 @@
         "args": [],
         "cwd": "${workspaceFolder}",
         "stopAtEntry": false,
+      },
+      {
+        "name": "Play (godot-mono path)",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "godot-mono",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "stopAtEntry": false,
       }
     ]
   }

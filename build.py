@@ -174,22 +174,7 @@ def create_vroot(debname):
 if target == "win32":
     mkdir("./bin")
     if len(sys.argv) != 2:
-        if sys.argv[2] == "nsis":
-            print("Generating Windows Installer")
-            makensis = os.system("makensis installer.nsi")
-
-            if makensis == 0:
-                print("makensis ran successfully")
-
-                nsisout = "./bin/output.exe"
-                if os.path.exists(nsisout):
-                    newname = "./bin/Sunaba-" + str(version) + "-Win32.exe"
-                    output = os.path.abspath(nsisout)
-                    destination = os.path.abspath(str(newname))
-                    os.replace(output, destination)
-            else:
-                print("makensis ran with exit code %d" % makensis)
-        elif sys.argv[2] == "innosetup":
+        if sys.argv[2] == "innosetup":
             print("Generating Windows Installer")
             iscc = os.system("iscc ./installer.iss")
 

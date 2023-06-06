@@ -32,7 +32,7 @@ What things you need to build the software
 
 * [Python 3.10 (Used for build scripts)](https://www.python.org/downloads/release/python-3100/)
 
-* [NSIS 3.x (Only needed for building the Windows version)](https://nsis.sourceforge.io/Download)
+* [Inno Setup (Only needed for building the installer for the Windows version)](https://jrsoftware.org/isinfo.php)
 
 ### Opening the Project
 
@@ -49,9 +49,9 @@ To Build the game, use one of the following commands
 
 ```pwsh
 
-python ./build.py linux zip [GODOT_PATH] # Linux
+python ./build.py linux [ADDITIONAL_ARGUMENT] [GODOT_PATH] # Linux
 
-python ./build.py win32 nsis [GODOT_PATH] # Windows 
+python ./build.py win32 [ADDITIONAL_ARGUMENT] [GODOT_PATH] # Windows 
 
 python ./build.py mac [GODOT_PATH] # MacOS 
 
@@ -59,7 +59,27 @@ python ./build.py mac [GODOT_PATH] # MacOS
 
 [GODOT_PATH] is used to specify a path to the Godot executable, if one isn't specified, it will default to the one provided by the system path
 
-The Arguments "nsis" and "zip" are optional
+Additional arguments
+
+Windows
+```
+
+innosetup
+
+```
+
+Linux
+```
+
+zip
+
+targz
+
+install
+
+deb
+
+```
 
 ## Built With
 

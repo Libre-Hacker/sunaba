@@ -1,8 +1,9 @@
-# MIT License
+The MIT License (MIT)
+=====================
 
-Copyright (c) 2022-2023 m1ntkat
+Copyright © `2022-2023` `m1ntkat`
 
-Copyright (c) 2023 The Sunaba Project
+Copyright © `2023` `The Sunaba Project`
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

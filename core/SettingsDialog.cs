@@ -23,7 +23,7 @@ namespace Sunaba.Core
 				.GetNode<Label>("Label")
 				.GetNode<OptionButton>("ThemingOptionButton");
 
-			themeDropdown.AddItem("Default");
+			themeDropdown.AddItem("2kUI");
 
             DirAccess dir = DirAccess.Open("res://themes");
 
@@ -36,12 +36,12 @@ namespace Sunaba.Core
                 {
                     break;
                 }
-                else if ((!file.EndsWith(".import")) && (file.EndsWith(".tres")) && (file != "Default.tres"))
+                else if ((!file.EndsWith(".import")) && (file.EndsWith(".tres")) && (file != "2kUI.tres"))
                 {
                     var themeName = file.GetBaseName();
                    themeDropdown.AddItem(themeName);
                 }
-                else if ((file.EndsWith(".tres.remap")) && (file != "Default.tres.remap"))
+                else if ((file.EndsWith(".tres.remap")) && (file != "2kUI.tres.remap"))
                 {
                     var themeName = file.GetBaseName();
                     themeDropdown.AddItem(themeName);
@@ -49,7 +49,7 @@ namespace Sunaba.Core
             }
 
             dir.ListDirEnd();
-			ChangeTheme(GD.Load<Theme>("res://themes/Default.tres"));
+			ChangeTheme(GD.Load<Theme>("res://themes/2kUI.tres"));
         }
 
         public override void _Input(InputEvent @event)

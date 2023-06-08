@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://kmm5126efhc1"]
+[gd_scene load_steps=25 format=3 uid="uid://kmm5126efhc1"]
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
 [ext_resource type="PackedScene" uid="uid://cw4gnyn5s8sh4" path="res://core/World.tscn" id="3_ptygb"]
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
-[ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/SunabaLogoWhite.png" id="6_q0jy5"]
+[ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
 [ext_resource type="Texture2D" uid="uid://ckkej6m32knbr" path="res://assets/bg2.png" id="8_pg1aa"]
 [ext_resource type="Texture2D" uid="uid://cralqs2d4nvhx" path="res://assets/ui/tango/32x32/actions/media-playback-start.png" id="9_bjejk"]
 [ext_resource type="Texture2D" uid="uid://dp86j66212ned" path="res://assets/ui/tango/32x32/status/network-offline.png" id="9_grui2"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dl7mhirmlm82b" path="res://assets/ui/tango/32x32/actions/system-log-out.png" id="12_bvo12"]
 [ext_resource type="Texture2D" uid="uid://4g1mmftt6ysa" path="res://assets/ui/tango/32x32/status/network-transmit.png" id="14_7ja1e"]
 [ext_resource type="PackedScene" uid="uid://cggqb75a8w8r" path="res://addons/debug_menu/debug_menu.tscn" id="21_b05o5"]
+[ext_resource type="PackedScene" uid="uid://dueru4em8jqyv" path="res://core/MapPicker.tscn" id="21_s2xsr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n63q7"]
 bg_color = Color(0, 0, 0, 0.607843)
@@ -317,7 +318,7 @@ size = Vector2i(335, 300)
 min_size = Vector2i(335, 300)
 ok_button_text = "Open"
 file_mode = 0
-access = 2
+root_subfolder = "res://maps/"
 filters = PackedStringArray("*.map")
 show_hidden_files = true
 
@@ -357,6 +358,13 @@ size = Vector2i(400, 161)
 dialog_text = "Sunaba is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions."
 dialog_autowrap = true
 
+[node name="MapPickerDialog" type="Window" parent="UI"]
+size = Vector2i(250, 250)
+visible = false
+min_size = Vector2i(250, 250)
+
+[node name="StandardMapPicker" parent="UI/MapPickerDialog" instance=ExtResource("21_s2xsr")]
+
 [node name="DebugMenu" parent="." instance=ExtResource("21_b05o5")]
 
 [connection signal="pressed" from="UI/PauseMenu/VBoxContainer2/Button1" to="UI" method="Unpause"]
@@ -383,3 +391,4 @@ dialog_autowrap = true
 
 [editable path="UI/NewRoomDialog/NewRoom"]
 [editable path="UI/ConnectDialog/Connect"]
+[editable path="UI/MapPickerDialog/StandardMapPicker"]

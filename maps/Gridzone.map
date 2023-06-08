@@ -478,5 +478,10 @@
 // entity 6
 {
 "classname" "physball_bluelight"
-"origin" "-120 8 24"
+"origin" "-168 8 24"
+}
+// entity 7
+{
+"classname" "gm_sandbox"
+"origin" "-120 216 24"
 }

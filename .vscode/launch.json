@@ -16,11 +16,11 @@
         "stopAtEntry": false,
       },
       {
-        "name": "Play (godot-mono path)",
+        "name": "Play (scoop godot-mono path)",
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
-        "program": "godot-mono",
+        "program": "C:/Users/mintkat/scoop/apps/godot-mono/current/godot-mono.exe",
         "args": [],
         "cwd": "${workspaceFolder}",
         "stopAtEntry": false,

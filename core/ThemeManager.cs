@@ -7,7 +7,7 @@ namespace Sunaba.Core
 	{
 		public Theme theme;
 
-		public String themeName = "Default";
+		public String themeName = "2kUI";
 	}
 }
 

@@ -836,7 +836,7 @@ namespace Sunaba.Actors
 
 		private void Jump()
 		{
-			if ((Input.IsActionJustPressed("jump") && IsOnFloor()) || (Input.IsActionJustPressed("jump") && timesJumped == 1))
+			if ((Input.IsActionJustPressed("jump") && IsOnFloor()))// || (Input.IsActionJustPressed("jump") && timesJumped == 1))
 			{
 				jumpSound.Play();
 				snapVector = Vector3.Zero;

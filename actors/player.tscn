@@ -409,10 +409,12 @@ target_position = Vector3(0, 0, -1000)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Head"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-spring_length = 0.75
+collision_mask = 0
+spring_length = 0.5
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Head/SpringArm3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.25637e-08, 0, 0.744974)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.15106e-08, 0, 0.492109)
+collision_mask = 0
 spring_length = 2.0
 
 [node name="TPCamera" type="Camera3D" parent="Head/SpringArm3D/SpringArm3D"]

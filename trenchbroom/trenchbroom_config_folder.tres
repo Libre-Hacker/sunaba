@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("4_abrc7")
 export_file = false
-trenchbroom_games_folder = "/home/mintkat/.TrenchBroom/games"
+trenchbroom_games_folder = "C:/TrenchBroom/games"
 game_name = "Sunaba"
 icon = ExtResource("3_ykdv5")
 game_config_file = ExtResource("2_aj5a0")

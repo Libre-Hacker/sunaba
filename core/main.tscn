@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://kmm5126efhc1"]
+[gd_scene load_steps=26 format=3 uid="uid://kmm5126efhc1"]
 
 [ext_resource type="Script" path="res://core/Main.cs" id="1_ig20j"]
 [ext_resource type="Script" path="res://core/NetworkManager.cs" id="2_gi6fg"]
 [ext_resource type="PackedScene" uid="uid://cw4gnyn5s8sh4" path="res://core/World.tscn" id="3_ptygb"]
 [ext_resource type="Script" path="res://core/UI.cs" id="4_jc6me"]
+[ext_resource type="Theme" uid="uid://l77ckodjfb54" path="res://themes/2kUI.tres" id="4_s2thm"]
 [ext_resource type="Script" path="res://core/VersionLabel.cs" id="5_fu8ap"]
 [ext_resource type="Texture2D" uid="uid://pxexgx6n7n7a" path="res://assets/sunabaLogoWhite.png" id="6_q0jy5"]
 [ext_resource type="Texture2D" uid="uid://ckkej6m32knbr" path="res://assets/bg2.png" id="8_pg1aa"]
@@ -45,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_s2thm")
 script = ExtResource("4_jc6me")
 
 [node name="Chatbox" type="RichTextLabel" parent="UI"]
@@ -354,7 +356,7 @@ dialog_text = "Online multiplayer is currently disabled."
 dialog_autowrap = true
 
 [node name="AcceptDialog2" type="AcceptDialog" parent="UI"]
-size = Vector2i(400, 161)
+size = Vector2i(400, 121)
 dialog_text = "Sunaba is stil under active development and what you see is not representative of the final product. As such, compatibility may change between versions."
 dialog_autowrap = true
 
